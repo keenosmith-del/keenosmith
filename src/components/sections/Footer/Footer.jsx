@@ -28,6 +28,7 @@ function Footer() {
                 </div>
             </section>
 
+            {/*
             <div className="footer-banner">
                 <div className="footer-inner">
                     <div className="footer-directory">
@@ -177,6 +178,7 @@ function Footer() {
                     </div>
                 </div>
             </div>
+            */}
         </footer>
     );
 }

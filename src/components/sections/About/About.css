@@ -47,13 +47,18 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+
     min-width: 170px;
     min-height: 48px;
+
     padding: 0 22px;
+
     border-radius: 999px;
+
     font-size: 14px;
     font-weight: 500;
     letter-spacing: -0.01em;
+
     transition:
         transform 180ms ease,
         background-color 180ms ease,
@@ -81,27 +86,48 @@
     transform: translateY(-2px);
 }
 
-/* Tile composition */
+
+/* =========================================================
+   TILE GRID
+   ========================================================= */
 
 .about-grid {
     display: grid;
+
     grid-template-columns:
         1.45fr 1.1fr 0.7fr 1.15fr;
-    grid-template-rows: 310px 220px;
+
+    grid-template-rows:
+        310px 220px;
+
     gap: 16px;
+
     width: min(1400px, 88vw);
+
     margin: 0 auto;
 }
 
+
+/* =========================================================
+   BASE TILE
+   ========================================================= */
+
 .about-tile {
     position: relative;
+
     overflow: hidden;
+
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+
+    min-width: 0;
+
     padding: 32px;
+
     border-radius: 28px;
+
     background: var(--surface);
+
     box-shadow:
         0 20px 55px rgba(45, 45, 45, 0.055),
         0 5px 16px rgba(45, 45, 45, 0.025);
@@ -111,75 +137,744 @@
     animation-range: entry 5% cover 25%;
 }
 
-.about-tile span {
-    color: #77777c;
-    font-size: 15px;
-    font-weight: 500;
-    line-height: 1.4;
-    letter-spacing: -0.01em;
+
+/* =========================================================
+   TILE 1
+   ========================================================= */
+
+.about-tile-one {
+    grid-column: 1;
+    grid-row: 1;
+
+    justify-content: flex-end;
+
+    background: var(--charcoal);
 }
 
-.about-tile strong {
-    display: block;
-    margin-bottom: 8px;
+.about-tile-one-top {
+    position: absolute;
+
+    top: 26px;
+    left: 28px;
+    right: 28px;
+
+    display: flex;
+    align-items: flex-start;
+}
+
+.about-tile-one-pills {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 7px;
+}
+
+.about-tile-one-pills span {
+    display: inline-flex;
+    align-items: center;
+
+    min-height: 28px;
+
+    padding: 0 11px;
+
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.10);
+
+    color: #d1d1d4;
+
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -0.005em;
+}
+
+.about-tile-one-content {
+    width: 100%;
+}
+
+.about-tile-one-content h3 {
+    max-width: 680px;
+
+    margin: 0;
+
+    color: #e2e2e5;
+
+    font-size: clamp(24px, 2.1vw, 34px);
+    font-weight: 500;
+    line-height: 1.02;
+    letter-spacing: -0.03em;
+}
+
+.about-tile-one-content p {
+    max-width: 650px;
+
+    margin: 18px 0 0;
+
+    color: #b9b9bd;
+
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.55;
+    letter-spacing: -0.005em;
+}
+
+
+/* =========================================================
+   TILE 2
+   ========================================================= */
+
+.about-tile-two {
+    grid-column: 2;
+    grid-row: 1;
+
+    justify-content: flex-end;
+}
+
+.about-tile-two-logo {
+    position: absolute;
+
+    top: 28px;
+    right: 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-tile-two-logo img {
+    width: 32px;
+    height: 32px;
+
+    object-fit: contain;
+
+    opacity: 0.72;
+}
+
+.about-tile-two-content {
+    width: 100%;
+}
+
+.about-tile-two-content h3 {
+    margin: 0;
+
+    color: #5b5b60;
+
+    font-size: clamp(24px, 2vw, 32px);
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -0.03em;
+}
+
+.about-tile-two-credentials {
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+
+    margin-top: 13px;
+}
+
+.about-tile-two-credentials span {
+    color: #79797e;
+
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.35;
+    letter-spacing: -0.005em;
+}
+
+.about-tile-two-content p {
+    max-width: 400px;
+
+    margin: 16px 0 0;
+
+    color: #858589;
+
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   TILE 3 — AWS BADGES
+   ========================================================= */
+
+.about-tile-three {
+    grid-column: 3;
+    grid-row: 1;
+
+    justify-content: flex-end;
+
+    background: #eeede9;
+}
+
+.about-tile-three-logo {
+    position: absolute;
+
+    top: 26px;
+    right: 26px;
+}
+
+.about-tile-three-logo img {
+    width: 29px;
+    height: 29px;
+
+    object-fit: contain;
+
+    opacity: 0.72;
+}
+
+.about-tile-three-content {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+}
+
+.about-tile-three-content strong {
+    margin: 0;
+
     color: #555559;
-    font-size: clamp(42px, 4vw, 64px);
+
+    font-size: clamp(44px, 4vw, 64px);
     font-weight: 500;
     line-height: 0.9;
     letter-spacing: -0.04em;
 }
 
-/* Top row */
+.about-tile-three-content span {
+    margin-top: 9px;
 
-.about-tile-large {
-    grid-column: 1;
-    grid-row: 1;
-    background: var(--charcoal);
+    color: #77777c;
+
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.2;
 }
 
-.about-tile-large span {
-    color: #d0d0d3;
-    font-size: 20px;
+
+/* =========================================================
+   TILE 3 — ARROW
+   ========================================================= */
+
+.about-tile-three-link {
+    position: absolute;
+
+    right: 26px;
+    bottom: 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 34px;
+    height: 34px;
+
+    border-radius: 999px;
+
+    background: rgba(60, 60, 62, 0.08);
+
+    color: #66666b;
+
+    opacity: 0;
+
+    transform: translateX(-5px);
+
+    transition:
+        opacity 180ms ease,
+        transform 220ms ease,
+        background-color 180ms ease;
 }
 
-.about-tile-medium {
-    grid-column: 2;
-    grid-row: 1;
+.about-tile-three:hover .about-tile-three-link {
+    opacity: 1;
+    transform: translateX(0);
 }
 
-.about-tile-small {
-    grid-column: 3;
-    grid-row: 1;
-    background: #eeede9;
+.about-tile-three-link:hover {
+    background: rgba(60, 60, 62, 0.14);
 }
 
-.about-tile-medium-2 {
+
+/* =========================================================
+   TILE 4 — GENERATIVE AI
+   ========================================================= */
+
+.about-tile-four {
     grid-column: 4;
     grid-row: 1;
+
+    justify-content: flex-end;
 }
 
-/* Bottom row */
+.about-tile-four-header {
+    position: absolute;
 
-.about-tile-small-2 {
+    top: 26px;
+    left: 28px;
+    right: 28px;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 12px;
+}
+
+.about-tile-four-pills {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    min-width: 0;
+}
+
+.about-tile-four-pills span {
+    display: inline-flex;
+    align-items: center;
+
+    min-height: 28px;
+
+    padding: 0 10px;
+
+    border-radius: 999px;
+
+    background: var(--surface-muted);
+
+    color: #77777c;
+
+    font-size: 9px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -0.005em;
+}
+
+.about-tile-four-logo {
+    width: 29px;
+    height: 29px;
+
+    flex-shrink: 0;
+
+    object-fit: contain;
+
+    opacity: 0.72;
+}
+
+.about-tile-four-content {
+    width: 100%;
+}
+
+.about-tile-four-content h3 {
+    margin: 0;
+
+    color: #5b5b60;
+
+    font-size: clamp(21px, 1.7vw, 28px);
+    font-weight: 500;
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+}
+
+.about-tile-four-content p {
+    max-width: 440px;
+
+    margin: 15px 0 0;
+
+    color: #858589;
+
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   TILE 5 — AWS MICRO CREDENTIALS
+   ========================================================= */
+
+.about-tile-five {
     grid-column: 1;
     grid-row: 2;
+
+    justify-content: flex-end;
+
     background: #e9e8e4;
 }
 
-.about-grid .about-tile-small:nth-of-type(6) {
+.about-tile-five-logo {
+    position: absolute;
+
+    top: 25px;
+    right: 26px;
+}
+
+.about-tile-five-logo img {
+    width: 28px;
+    height: 28px;
+
+    object-fit: contain;
+
+    opacity: 0.72;
+}
+
+.about-tile-five-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-tile-five-content strong {
+    margin: 0;
+
+    color: #555559;
+
+    font-size: clamp(44px, 4vw, 64px);
+    font-weight: 500;
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+}
+
+.about-tile-five-content span {
+    margin-top: 9px;
+
+    color: #77777c;
+
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+
+/* =========================================================
+   TILE 5 — ARROW
+   ========================================================= */
+
+.about-tile-five-link {
+    position: absolute;
+
+    right: 26px;
+    bottom: 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 34px;
+    height: 34px;
+
+    border-radius: 999px;
+
+    background: rgba(60, 60, 62, 0.08);
+
+    color: #66666b;
+
+    opacity: 0;
+
+    transform: translateX(-5px);
+
+    transition:
+        opacity 180ms ease,
+        transform 220ms ease,
+        background-color 180ms ease;
+}
+
+.about-tile-five:hover .about-tile-five-link {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.about-tile-five-link:hover {
+    background: rgba(60, 60, 62, 0.14);
+}
+
+
+/* =========================================================
+   TILE 6 — GITHUB
+   ========================================================= */
+
+.about-tile-six {
     grid-column: 2;
     grid-row: 2;
+
+    justify-content: flex-end;
 }
 
-.about-grid .about-tile-medium:nth-of-type(7) {
+.about-tile-six-logos {
+    position: absolute;
+
+    top: 25px;
+    right: 26px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+}
+
+.about-tile-six-logos img {
+    width: 25px;
+    height: 25px;
+
+    object-fit: contain;
+
+    opacity: 0.68;
+}
+
+.about-tile-six-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-tile-six-content strong {
+    margin: 0;
+
+    color: #555559;
+
+    font-size: clamp(44px, 4vw, 64px);
+    font-weight: 500;
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+}
+
+.about-tile-six-content span {
+    margin-top: 9px;
+
+    color: #77777c;
+
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+
+/* =========================================================
+   TILE 6 — ARROW
+   ========================================================= */
+
+.about-tile-six-link {
+    position: absolute;
+
+    right: 26px;
+    bottom: 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 34px;
+    height: 34px;
+
+    border-radius: 999px;
+
+    background: rgba(60, 60, 62, 0.08);
+
+    color: #66666b;
+
+    opacity: 0;
+
+    transform: translateX(-5px);
+
+    transition:
+        opacity 180ms ease,
+        transform 220ms ease,
+        background-color 180ms ease;
+}
+
+.about-tile-six:hover .about-tile-six-link {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.about-tile-six-link:hover {
+    background: rgba(60, 60, 62, 0.14);
+}
+
+
+/* =========================================================
+   TILE 7 — PRODUCT & UX
+   ========================================================= */
+
+.about-tile-seven {
     grid-column: 3;
     grid-row: 2;
+
+    justify-content: flex-end;
 }
 
-.about-grid .about-tile-medium-2:nth-of-type(8) {
+.about-tile-seven-logo {
+    position: absolute;
+
+    top: 25px;
+    right: 26px;
+}
+
+.about-tile-seven-logo img {
+    width: 28px;
+    height: 28px;
+
+    object-fit: contain;
+
+    opacity: 0.72;
+}
+
+.about-tile-seven-content {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+}
+
+.about-tile-seven-content h3 {
+    margin: 0;
+
+    color: #5b5b60;
+
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -0.025em;
+}
+
+.about-tile-seven-content span {
+    max-width: 190px;
+
+    margin-top: 10px;
+
+    color: #808085;
+
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   TILE 7 — ARROW
+   ========================================================= */
+
+.about-tile-seven-link {
+    position: absolute;
+
+    right: 22px;
+    bottom: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 32px;
+    height: 32px;
+
+    border-radius: 999px;
+
+    background: rgba(60, 60, 62, 0.08);
+
+    color: #66666b;
+
+    opacity: 0;
+
+    transform: translateX(-5px);
+
+    transition:
+        opacity 180ms ease,
+        transform 220ms ease,
+        background-color 180ms ease;
+}
+
+.about-tile-seven:hover .about-tile-seven-link {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.about-tile-seven-link:hover {
+    background: rgba(60, 60, 62, 0.14);
+}
+
+
+/* =========================================================
+   TILE 8 — AGENT ARCHITECT
+   ========================================================= */
+
+.about-tile-eight {
     grid-column: 4;
     grid-row: 2;
+
+    justify-content: flex-end;
 }
+
+.about-tile-eight-header {
+    position: absolute;
+
+    top: 25px;
+    left: 28px;
+    right: 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about-tile-eight-pill {
+    display: inline-flex;
+    align-items: center;
+
+    min-height: 28px;
+
+    padding: 0 11px;
+
+    border-radius: 999px;
+
+    background: var(--surface-muted);
+
+    color: #77777c;
+
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.about-tile-eight-logo {
+    width: 30px;
+    height: 30px;
+
+    object-fit: contain;
+
+    opacity: 0.72;
+}
+
+.about-tile-eight-content {
+    width: 100%;
+}
+
+.about-tile-eight-content h3 {
+    margin: 0;
+
+    color: #5b5b60;
+
+    font-size: clamp(22px, 1.8vw, 29px);
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -0.025em;
+}
+
+.about-tile-eight-content p {
+    max-width: 430px;
+
+    margin: 14px 0 0;
+
+    color: #858589;
+
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   TILE ENTRANCE ANIMATION
+   ========================================================= */
 
 @keyframes about-tile-in {
     0% {
@@ -193,59 +888,86 @@
     }
 }
 
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
 @media (max-width: 1000px) {
+
     .about {
         padding-top: 140px;
     }
 
     .about-grid {
         width: 90vw;
-        grid-template-columns: 1.3fr 1fr 0.8fr;
-        grid-template-rows: 280px 220px 220px;
+
+        grid-template-columns:
+            1.3fr 1fr 0.8fr;
+
+        grid-template-rows:
+            280px 220px 220px;
     }
 
-    .about-tile-large {
+    .about-tile-one {
         grid-column: 1 / 3;
         grid-row: 1;
     }
 
-    .about-tile-medium {
+    .about-tile-two {
         grid-column: 3;
         grid-row: 1;
     }
 
-    .about-tile-small {
+    .about-tile-three {
         grid-column: 1;
         grid-row: 2;
     }
 
-    .about-tile-medium-2 {
+    .about-tile-four {
         grid-column: 2 / 4;
         grid-row: 2;
     }
 
-    .about-tile-small-2 {
+    .about-tile-five {
         grid-column: 1;
         grid-row: 3;
     }
 
-    .about-grid .about-tile-small:nth-of-type(6) {
+    .about-tile-six {
         grid-column: 2;
         grid-row: 3;
     }
 
-    .about-grid .about-tile-medium:nth-of-type(7) {
+    .about-tile-seven {
         grid-column: 3;
         grid-row: 3;
     }
 
-    .about-grid .about-tile-medium-2:nth-of-type(8) {
+    .about-tile-eight {
         grid-column: 2 / 4;
         grid-row: 4;
     }
+
+    .about-tile {
+        padding: 28px;
+    }
+
+    .about-tile-one-top,
+    .about-tile-four-header,
+    .about-tile-eight-header {
+        left: 24px;
+        right: 24px;
+    }
 }
 
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
 @media (max-width: 700px) {
+
     .about {
         padding: 110px 0 100px;
     }
@@ -270,33 +992,125 @@
     .about-grid {
         display: flex;
         flex-direction: column;
+
         width: calc(100% - 32px);
+
         gap: 12px;
     }
 
     .about-tile {
         min-height: 220px;
+
         padding: 26px;
+
         border-radius: 24px;
     }
 
-    .about-tile-small,
-    .about-tile-small-2 {
+    .about-tile-three,
+    .about-tile-five,
+    .about-tile-six,
+    .about-tile-seven {
         min-height: 170px;
     }
 
-    .about-tile-medium-2,
-    .about-grid .about-tile-medium-2:nth-of-type(8) {
+    .about-tile-four,
+    .about-tile-eight {
         min-height: 240px;
+    }
+
+    .about-tile-one-top,
+    .about-tile-four-header,
+    .about-tile-eight-header {
+        top: 20px;
+        left: 22px;
+        right: 22px;
+    }
+
+    .about-tile-one-pills,
+    .about-tile-four-pills {
+        gap: 5px;
+    }
+
+    .about-tile-one-pills span,
+    .about-tile-four-pills span,
+    .about-tile-eight-pill {
+        min-height: 25px;
+
+        padding: 0 9px;
+
+        font-size: 9px;
+    }
+
+    .about-tile-one-content h3 {
+        font-size: clamp(24px, 7vw, 32px);
+    }
+
+    .about-tile-one-content p {
+        font-size: 12px;
+    }
+
+    .about-tile-two-logo {
+        top: 22px;
+        right: 22px;
+    }
+
+    .about-tile-two-logo img,
+    .about-tile-four-logo,
+    .about-tile-eight-logo {
+        width: 26px;
+        height: 26px;
+    }
+
+    .about-tile-four-content h3 {
+        font-size: 24px;
+    }
+
+    .about-tile-four-content p,
+    .about-tile-eight-content p {
+        font-size: 12px;
+    }
+
+    .about-tile-three-logo,
+    .about-tile-five-logo,
+    .about-tile-seven-logo {
+        top: 22px;
+        right: 22px;
+    }
+
+    .about-tile-three-link,
+    .about-tile-five-link,
+    .about-tile-six-link,
+    .about-tile-seven-link {
+        opacity: 1;
+
+        transform: none;
+
+        pointer-events: auto;
+    }
+
+    .about-tile-three-content strong,
+    .about-tile-five-content strong,
+    .about-tile-six-content strong {
+        font-size: 48px;
     }
 }
 
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
 @media (prefers-reduced-motion: reduce) {
+
     .about-tile {
         animation: none;
     }
 
-    .about-button {
+    .about-button,
+    .about-tile-three-link,
+    .about-tile-five-link,
+    .about-tile-six-link,
+    .about-tile-seven-link {
         transition: none;
     }
 }

@@ -1,12 +1,15 @@
 .skills {
     position: relative;
-    min-height: 110vh;
-    padding: 50px 0 50px;
+
+    min-height: 180vh;
+
+    padding: 50px 0;
 }
 
 .skills-stage {
     position: relative;
-    min-height: 90vh;
+
+    min-height: 170vh;
 }
 
 .skills-container {
@@ -30,11 +33,17 @@
 
 .skills-content {
     display: grid;
-    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+
+    grid-template-columns:
+        minmax(0, 0.9fr) minmax(0, 1.1fr);
+
     align-items: center;
-    gap: 64px;
-    width: min(1320px, 80vw);
+
+    gap: 56px;
+
+    width: min(1360px, 82vw);
     height: 100%;
+
     margin: 0 auto;
 }
 
@@ -62,26 +71,125 @@
 
 .skills-video {
     width: 100%;
-    max-width: 600px;
+    max-width: 680px;
+
     justify-self: end;
 }
 
 .skills-video-placeholder {
+    position: relative;
+
+    width: 100%;
+    aspect-ratio: 16 / 10;
+
+    overflow: hidden;
+
+    padding: 16px;
+
+    border-radius: 24px;
+
+    background:
+        radial-gradient(circle at 18% 22%,
+            rgba(105, 125, 145, 0.30),
+            transparent 34%),
+        radial-gradient(circle at 82% 76%,
+            rgba(125, 105, 135, 0.24),
+            transparent 36%),
+        #3f4044;
+}
+
+.skills-mosaic-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-rows: repeat(3, minmax(0, 1fr));
+
+    gap: 12px;
+
+    width: 100%;
+    height: 100%;
+}
+
+.skills-mosaic-tile {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    aspect-ratio: 16 / 10;
+    gap: 9px;
+
+    min-width: 0;
+    min-height: 0;
+
+    padding: 10px;
+
     overflow: hidden;
-    border-radius: 24px;
-    background: #4a4a4d;
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(145deg,
+            rgba(255, 255, 255, 0.94),
+            rgba(231, 232, 230, 0.82));
+
+    box-shadow:
+        0 12px 26px rgba(15, 16, 20, 0.12),
+        0 2px 6px rgba(15, 16, 20, 0.08);
+
+    opacity: 0;
+
+    transform:
+        translate3d(0,
+            -26px,
+            0) scale(0.78);
+
+    filter: blur(12px);
+
+    animation:
+        skills-mosaic-tile-cycle 9.6s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+
+    animation-delay:
+        calc(var(--tile-order) * 0.22s);
+
+    will-change:
+        transform,
+        opacity,
+        filter;
 }
 
-.skills-video-placeholder span {
-    color: #8f8f94;
-    font-size: 13px;
+.skills-mosaic-icon {
+    width: 30px;
+    height: 30px;
+
+    flex-shrink: 0;
+
+    object-fit: contain;
+
+    opacity: 0.78;
+
+    transition:
+        opacity 240ms ease,
+        transform 240ms ease;
+}
+
+.skills-mosaic-tile:hover .skills-mosaic-icon {
+    opacity: 1;
+    transform: scale(1.08);
+}
+
+.skills-mosaic-name {
+    min-width: 0;
+
+    overflow: hidden;
+
+    color: #3a3a3c;
+
+    font-size: 12px;
     font-weight: 500;
-    letter-spacing: 0.01em;
+
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 @keyframes skills-container-expand {
@@ -98,6 +206,101 @@
     100% {
         width: 86vw;
         border-radius: 34px;
+    }
+}
+
+@keyframes skills-mosaic-tile-cycle {
+    0% {
+        opacity: 0;
+
+        transform:
+            translate3d(0,
+                -26px,
+                0) scale(0.78);
+
+        filter: blur(12px);
+    }
+
+    5% {
+        opacity: 0.35;
+
+        transform:
+            translate3d(0,
+                -16px,
+                0) scale(0.86);
+
+        filter: blur(8px);
+    }
+
+    11% {
+        opacity: 1;
+
+        transform:
+            translate3d(0,
+                4px,
+                0) scale(1.04);
+
+        filter: blur(0);
+    }
+
+    15% {
+        transform:
+            translate3d(0,
+                0,
+                0) scale(1);
+    }
+
+    65% {
+        opacity: 1;
+
+        transform:
+            translate3d(0,
+                0,
+                0) scale(1);
+
+        filter: blur(0);
+    }
+
+    72% {
+        opacity: 0.96;
+
+        transform:
+            translate3d(0,
+                -4px,
+                0) scale(1.01);
+    }
+
+    79% {
+        opacity: 0.55;
+
+        transform:
+            translate3d(0,
+                -18px,
+                0) scale(0.91);
+
+        filter: blur(5px);
+    }
+
+    86% {
+        opacity: 0;
+
+        transform:
+            translate3d(0,
+                -34px,
+                0) scale(0.76);
+
+        filter: blur(12px);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translate3d(0,
+                -26px,
+                0) scale(0.78);
+
+        filter: blur(12px);
     }
 }
 
@@ -202,5 +405,17 @@
 @media (prefers-reduced-motion: reduce) {
     .skills-container {
         animation: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .skills-mosaic-tile {
+        animation: none;
+
+        opacity: 1;
+
+        transform: none;
+
+        filter: none;
     }
 }
