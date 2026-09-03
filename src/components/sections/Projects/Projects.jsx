@@ -4,6 +4,9 @@ import { ArrowRight } from 'lucide-react';
 import './Projects.css';
 
 import aiAssistantCover from '../../../assets/projects/ai/1.png';
+import productivityCover from '../../../assets/projects/productivity/1.png'
+import musicCover from '../../../assets/projects/music/1.png'
+import enterpriseCover from '../../../assets/projects/enterprise/1.png'
 
 const projects = [
     {
@@ -20,6 +23,7 @@ const projects = [
         skill: 'Full-stack architecture',
         description:
             'A full-stack productivity platform bringing tasks, projects, goals, reminders, notes and calendar functionality into one cohesive application.',
+        image: productivityCover,
     },
     {
         id: 'music-api',
@@ -27,6 +31,7 @@ const projects = [
         skill: 'API & backend development',
         description:
             'A full-stack music application combining discovery, playback, queue management and API-driven backend architecture.',
+        image: musicCover,
     },
 ];
 
@@ -119,15 +124,18 @@ function Projects() {
 
             <article className="project-tile project-tile-wide is-active">
                 <div className="project-image">
-                    <div className="project-image-placeholder">
-                        <span>Project image</span>
-                    </div>
+                    <img
+                        src={enterpriseCover}
+                        alt="Enterprise Workspace"
+                    />
                 </div>
 
                 <div className="project-overlay" />
 
-                <div className="project-badge">
-                    Enterprise application architecture
+                <div className="project-badges">
+                    <span className="project-badge">SQL</span>
+                    <span className="project-badge">Application Architecture</span>
+                    <span className="project-badge">Full-stack Development</span>
                 </div>
 
                 <div className="project-content">

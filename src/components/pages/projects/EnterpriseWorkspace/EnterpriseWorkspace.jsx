@@ -56,22 +56,18 @@ function EnterpriseWorkspace() {
 
                             <a
                                 className="enterprise-project-button enterprise-project-button-primary"
-                                href="#"
+                                target='_blank'
+                                href="https://enterprise-workspace-liard.vercel.app/"
                             >
-                                View Project
-
-                                <ExternalLink
-                                    size={15}
-                                    strokeWidth={1.7}
-                                    aria-hidden="true"
-                                />
+                                Go to Site
                             </a>
 
                             <a
                                 className="enterprise-project-button enterprise-project-button-secondary"
-                                href="#"
+                                href="https://github.com/keenosmith-del/enterprise-workspace"
+                                target='_blank'
                             >
-                                GitHub
+                                GitHub Repo
 
                             </a>
 
@@ -278,12 +274,6 @@ function EnterpriseWorkspace() {
                         href="/"
                     >
                         Back to Portfolio
-
-                        <ArrowRight
-                            size={16}
-                            strokeWidth={1.7}
-                            aria-hidden="true"
-                        />
                     </a>
 
                 </div>

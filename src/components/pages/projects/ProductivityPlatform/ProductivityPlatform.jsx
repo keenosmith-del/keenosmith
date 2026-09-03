@@ -56,22 +56,19 @@ function ProductivityPlatform() {
 
                             <a
                                 className="productivity-project-button productivity-project-button-primary"
-                                href="#"
+                                target='_blank'
+                                href="https://personal-productivity-desktop.vercel.app/"
                             >
-                                View Project
+                                Go to Site
 
-                                <ExternalLink
-                                    size={15}
-                                    strokeWidth={1.7}
-                                    aria-hidden="true"
-                                />
                             </a>
 
                             <a
                                 className="productivity-project-button productivity-project-button-secondary"
-                                href="#"
+                                target='_blank'
+                                href="https://github.com/keenosmith-del/personal-productivity-desktop"
                             >
-                                GitHub
+                                GitHub Repo
 
                             </a>
 
@@ -413,12 +410,6 @@ function ProductivityPlatform() {
                         href="/"
                     >
                         Back to Portfolio
-
-                        <ArrowRight
-                            size={16}
-                            strokeWidth={1.7}
-                            aria-hidden="true"
-                        />
                     </a>
 
                 </div>

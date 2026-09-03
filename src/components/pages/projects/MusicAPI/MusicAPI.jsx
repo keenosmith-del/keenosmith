@@ -57,20 +57,16 @@ function MusicAPI() {
                                 className="music-project-button music-project-button-primary"
                                 href="#"
                             >
-                                View Project
+                                Go to Site
 
-                                <ExternalLink
-                                    size={15}
-                                    strokeWidth={1.7}
-                                    aria-hidden="true"
-                                />
                             </a>
 
                             <a
                                 className="music-project-button music-project-button-secondary"
-                                href="#"
+                                target='_blank'
+                                href="https://github.com/keenosmith-del/music-api"
                             >
-                                GitHub
+                                GitHub Repo
 
                                 
                             </a>
@@ -441,12 +437,6 @@ function MusicAPI() {
                         href="/"
                     >
                         Back to Portfolio
-
-                        <ArrowRight
-                            size={16}
-                            strokeWidth={1.7}
-                            aria-hidden="true"
-                        />
                     </a>
 
                 </div>

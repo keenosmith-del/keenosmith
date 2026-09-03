@@ -30,7 +30,7 @@ function AIModel() {
 
                     <div className="ai-project-hero-meta">
                         <span>Generative AI</span>
-                        <span>AI Assistant</span>
+                        <span>AI Model</span>
                     </div>
 
                     <h1>AI Assistant</h1>
@@ -46,22 +46,18 @@ function AIModel() {
 
                         <a
                             className="ai-project-button ai-project-button-primary"
-                            href="#"
+                            target='_blank'
+                            href="https://ai-entity-5gof-npotlei52-keenosmith-dels-projects.vercel.app/"
                         >
-                            View Project
-
-                            <ExternalLink
-                                size={15}
-                                strokeWidth={1.7}
-                                aria-hidden="true"
-                            />
+                            Go to Site
                         </a>
 
                         <a
                             className="ai-project-button ai-project-button-secondary"
-                            href="#"
+                            target='_blank'
+                            href="https://github.com/keenosmith-del/ai-entity"
                         >
-                            GitHub
+                            GitHub Repo
                         </a>
 
                     </div>
@@ -296,12 +292,7 @@ function AIModel() {
                         href="/"
                     >
                         Back to Portfolio
-
-                        <ArrowRight
-                            size={16}
-                            strokeWidth={1.7}
-                            aria-hidden="true"
-                        />
+                        
                     </a>
 
                 </div>
