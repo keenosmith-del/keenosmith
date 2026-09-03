@@ -3,20 +3,23 @@ import { ArrowRight } from 'lucide-react';
 
 import './Projects.css';
 
+import aiAssistantCover from '../../../assets/projects/ai/1.png';
+
 const projects = [
+    {
+        id: 'ai-assistant',
+        title: 'AI Model',
+        skill: 'Generative AI',
+        description:
+            'A Generative AI application exploring LLM integration, prompt engineering, Retrieval-Augmented Generation and the architecture of intelligent, context-aware software systems.',
+        image: aiAssistantCover,
+    },
     {
         id: 'productivity-platform',
         title: 'Productivity Platform',
         skill: 'Full-stack architecture',
         description:
             'A full-stack productivity platform bringing tasks, projects, goals, reminders, notes and calendar functionality into one cohesive application.',
-    },
-    {
-        id: 'ai-assistant',
-        title: 'AI Assistant',
-        skill: 'AI application development',
-        description:
-            'An AI assistant exploring LLM integration, prompt engineering, Retrieval-Augmented Generation and modern AI application architecture.',
     },
     {
         id: 'music-api',
@@ -74,9 +77,16 @@ function Projects() {
                             }
                         >
                             <div className="project-image">
-                                <div className="project-image-placeholder">
-                                    <span>Project image</span>
-                                </div>
+                                {project.image ? (
+                                    <img
+                                        src={project.image}
+                                        alt={`${project.title} project`}
+                                    />
+                                ) : (
+                                    <div className="project-image-placeholder">
+                                        <span>Project image</span>
+                                    </div>
+                                )}
                             </div>
 
                             <div className="project-overlay" />

@@ -1,0 +1,809 @@
+.ai-project {
+    position: relative;
+
+    min-height: 100vh;
+
+    overflow: visible;
+
+    background: var(--surface);
+
+    color: var(--charcoal);
+}
+
+
+/* Back button */
+
+.ai-project-back {
+    position: fixed;
+
+    top: 28px;
+    left: 28px;
+
+    z-index: 20;
+
+    display: inline-flex;
+
+    align-items: center;
+    gap: 8px;
+
+    min-height: 44px;
+
+    padding: 0 17px;
+
+    border-radius: 999px;
+
+    background: rgba(250, 249, 246, 0.78);
+
+    color: #66666b;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    letter-spacing: -0.01em;
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 10px 30px rgba(45, 45, 45, 0.06);
+
+    transition:
+        transform 180ms ease,
+        background-color 180ms ease,
+        color 180ms ease;
+}
+
+.ai-project-back:hover {
+    transform: translateY(-2px);
+
+    background: #ffffff;
+
+    color: #444448;
+}
+
+
+/* Hero */
+
+.ai-project-hero {
+    min-height: 100vh;
+
+    padding:
+        170px 7vw 120px;
+
+    display: flex;
+
+    align-items: center;
+}
+
+.ai-project-hero-content {
+    width: min(1100px, 100%);
+
+    margin: 0 auto;
+
+    animation:
+        ai-project-hero-in linear both;
+
+    animation-timeline: view();
+    animation-range: entry 0% exit 100%;
+}
+
+.ai-project-hero-meta {
+    display: flex;
+
+    align-items: center;
+    gap: 8px;
+
+    margin-bottom: 26px;
+}
+
+.ai-project-hero-meta span {
+    padding: 8px 13px;
+
+    border-radius: 999px;
+
+    background: var(--surface-muted);
+
+    color: #77777c;
+
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.ai-project-hero h1 {
+    max-width: 1000px;
+
+    margin: 0;
+
+    color: #555559;
+
+    font-size: clamp(72px, 11vw, 150px);
+
+    font-weight: 500;
+
+    line-height: 0.88;
+
+    letter-spacing: -0.055em;
+}
+
+.ai-project-hero-description {
+    max-width: 700px;
+
+    margin: 38px 0 0;
+
+    color: #858589;
+
+    font-size: clamp(18px, 1.5vw, 23px);
+
+    font-weight: 400;
+
+    line-height: 1.5;
+
+    letter-spacing: -0.02em;
+}
+
+.ai-project-actions {
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 34px;
+}
+
+.ai-project-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    min-height: 48px;
+
+    padding: 0 20px;
+
+    border-radius: 999px;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    transition:
+        transform 180ms ease,
+        background-color 180ms ease,
+        color 180ms ease;
+}
+
+.ai-project-button-primary {
+    background: var(--charcoal);
+
+    color: var(--surface);
+}
+
+.ai-project-button-secondary {
+    background: var(--surface-muted);
+
+    color: #77777c;
+}
+
+.ai-project-button:hover {
+    transform: translateY(-2px);
+}
+
+.ai-project-button-primary:hover {
+    background: #29292b;
+}
+
+.ai-project-button-secondary:hover {
+    background: #dfded9;
+
+    color: #555559;
+}
+
+
+/* Gallery */
+
+.ai-project-gallery {
+    width: min(1400px, 88vw);
+
+    margin: 0 auto;
+
+    padding-bottom: 150px;
+}
+
+.ai-project-gallery-item {
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 30px;
+
+    background: #deddd9;
+
+    animation:
+        ai-project-image-in linear both;
+
+    animation-timeline: view();
+    animation-range: entry 5% cover 28%;
+}
+
+.ai-project-gallery-large {
+    height: min(700px, 58vw);
+}
+
+.ai-project-gallery-row {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 16px;
+
+    margin-top: 16px;
+}
+
+.ai-project-gallery-row .ai-project-gallery-item {
+    height: 500px;
+}
+
+.ai-project-placeholder {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.ai-project-placeholder span,
+.ai-project-video-placeholder span {
+    color: #99999d;
+
+    font-size: 13px;
+
+    font-weight: 500;
+}
+
+
+/* Content sections */
+
+.ai-project-section {
+    width: min(1200px, calc(100% - 48px));
+
+    margin: 0 auto;
+
+    padding: 140px 0;
+
+    display: grid;
+
+    grid-template-columns: 280px 1fr;
+
+    gap: 80px;
+
+    animation:
+        ai-project-section-in linear both;
+
+    animation-timeline: view();
+    animation-range: entry 5% cover 30%;
+}
+
+.ai-project-section-label,
+.ai-project-feature-label {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    color: #99999d;
+
+    font-size: 11px;
+
+    font-weight: 500;
+
+    line-height: 1.3;
+}
+
+.ai-project-section-content h2 {
+    max-width: 850px;
+
+    margin: 0;
+
+    color: #5b5b5f;
+
+    font-size: clamp(38px, 5vw, 68px);
+
+    font-weight: 500;
+
+    line-height: 0.98;
+
+    letter-spacing: -0.04em;
+}
+
+.ai-project-section-content p {
+    max-width: 700px;
+
+    margin: 30px 0 0;
+
+    color: #858589;
+
+    font-size: 17px;
+
+    line-height: 1.65;
+
+    letter-spacing: -0.01em;
+}
+
+
+/* Feature sections */
+
+.ai-project-feature {
+    width: min(1400px, 88vw);
+
+    margin: 0 auto 24px;
+
+    padding: 24px;
+
+    display: grid;
+
+    grid-template-columns: 0.8fr 1.2fr;
+
+    gap: 24px;
+
+    border-radius: 36px;
+
+    background: var(--surface-muted);
+
+    animation:
+        ai-project-feature-in linear both;
+
+    animation-timeline: view();
+    animation-range: entry 5% cover 28%;
+}
+
+.ai-project-feature-reverse {
+    grid-template-columns: 1.2fr 0.8fr;
+}
+
+.ai-project-feature-reverse .ai-project-feature-content {
+    order: 2;
+}
+
+.ai-project-feature-reverse .ai-project-feature-media {
+    order: 1;
+}
+
+.ai-project-feature-content {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 60px 48px;
+}
+
+.ai-project-feature-content h2 {
+    max-width: 520px;
+
+    margin: 34px 0 0;
+
+    color: #5b5b5f;
+
+    font-size: clamp(36px, 4vw, 58px);
+
+    font-weight: 500;
+
+    line-height: 0.98;
+
+    letter-spacing: -0.04em;
+}
+
+.ai-project-feature-content>p {
+    max-width: 500px;
+
+    margin: 26px 0 0;
+
+    color: #858589;
+
+    font-size: 16px;
+
+    line-height: 1.6;
+}
+
+.ai-project-tech-list {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    margin-top: 30px;
+}
+
+.ai-project-tech-list span {
+    padding: 8px 11px;
+
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.65);
+
+    color: #7b7b80;
+
+    font-size: 11px;
+
+    font-weight: 500;
+}
+
+.ai-project-feature-media {
+    min-height: 620px;
+
+    overflow: hidden;
+
+    border-radius: 26px;
+
+    background: #d9d8d4;
+}
+
+.ai-project-video-placeholder {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Skills */
+
+.ai-project-skills {
+    width: min(1200px, calc(100% - 48px));
+
+    margin: 0 auto;
+
+    padding: 180px 0;
+
+    display: grid;
+
+    grid-template-columns: 280px 1fr;
+
+    gap: 80px;
+
+    animation:
+        ai-project-section-in linear both;
+
+    animation-timeline: view();
+    animation-range: entry 5% cover 30%;
+}
+
+.ai-project-skills-content h2 {
+    max-width: 780px;
+
+    margin: 0;
+
+    color: #5b5b5f;
+
+    font-size: clamp(38px, 5vw, 68px);
+
+    font-weight: 500;
+
+    line-height: 0.98;
+
+    letter-spacing: -0.04em;
+}
+
+.ai-project-skills-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 60px 40px;
+
+    margin-top: 80px;
+}
+
+.ai-project-skills-grid>div {
+    padding-top: 20px;
+
+    border-top: 1px solid #d7d6d2;
+}
+
+.ai-project-skills-grid span {
+    color: #a0a0a4;
+
+    font-size: 11px;
+
+    font-weight: 500;
+}
+
+.ai-project-skills-grid h3 {
+    margin: 22px 0 0;
+
+    color: #66666b;
+
+    font-size: 22px;
+
+    font-weight: 500;
+
+    letter-spacing: -0.025em;
+}
+
+.ai-project-skills-grid p {
+    max-width: 330px;
+
+    margin: 12px 0 0;
+
+    color: #8b8b90;
+
+    font-size: 14px;
+
+    line-height: 1.55;
+}
+
+
+/* Closing */
+
+.ai-project-closing {
+    padding: 120px 24px 150px;
+
+    animation:
+        ai-project-section-in linear both;
+
+    animation-timeline: view();
+    animation-range: entry 5% cover 30%;
+}
+
+.ai-project-closing-inner {
+    width: min(900px, 100%);
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+.ai-project-closing p {
+    margin: 0;
+
+    color: #66666b;
+
+    font-size: clamp(28px, 4vw, 52px);
+
+    font-weight: 500;
+
+    line-height: 1.05;
+
+    letter-spacing: -0.035em;
+}
+
+.ai-project-closing-button {
+    display: inline-flex;
+
+    align-items: center;
+    gap: 8px;
+
+    margin-top: 38px;
+
+    min-height: 48px;
+
+    padding: 0 20px;
+
+    border-radius: 999px;
+
+    background: var(--charcoal);
+
+    color: var(--surface);
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    transition: transform 180ms ease;
+}
+
+.ai-project-closing-button:hover {
+    transform: translateY(-2px);
+}
+
+
+/* Scroll animations */
+
+@keyframes ai-project-hero-in {
+    0% {
+        opacity: 0;
+        transform: translateY(32px);
+    }
+
+    20% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    80% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-32px);
+    }
+}
+
+@keyframes ai-project-image-in {
+    0% {
+        opacity: 0;
+        transform: translateY(40px) scale(0.97);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes ai-project-section-in {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes ai-project-feature-in {
+    0% {
+        opacity: 0;
+        transform: translateY(50px) scale(0.985);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* Responsive */
+
+@media (max-width: 900px) {
+
+    .ai-project-hero {
+        padding:
+            150px 6vw 100px;
+    }
+
+    .ai-project-section,
+    .ai-project-skills {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+    .ai-project-feature,
+    .ai-project-feature-reverse {
+        grid-template-columns: 1fr;
+    }
+
+    .ai-project-feature-reverse .ai-project-feature-content,
+    .ai-project-feature-reverse .ai-project-feature-media {
+        order: initial;
+    }
+
+    .ai-project-feature-media {
+        min-height: 500px;
+    }
+
+    .ai-project-gallery-large {
+        height: 55vw;
+    }
+
+    .ai-project-gallery-row .ai-project-gallery-item {
+        height: 380px;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .ai-project-back {
+        top: 18px;
+        left: 18px;
+    }
+
+    .ai-project-hero {
+        min-height: auto;
+
+        padding:
+            130px 24px 90px;
+    }
+
+    .ai-project-hero h1 {
+        font-size: clamp(62px, 18vw, 100px);
+    }
+
+    .ai-project-actions {
+        flex-wrap: wrap;
+    }
+
+    .ai-project-gallery {
+        width: calc(100% - 32px);
+
+        padding-bottom: 90px;
+    }
+
+    .ai-project-gallery-large {
+        height: 400px;
+
+        border-radius: 24px;
+    }
+
+    .ai-project-gallery-row {
+        grid-template-columns: 1fr;
+    }
+
+    .ai-project-gallery-row .ai-project-gallery-item {
+        height: 320px;
+
+        border-radius: 24px;
+    }
+
+    .ai-project-section,
+    .ai-project-skills {
+        width: calc(100% - 48px);
+
+        padding: 100px 0;
+    }
+
+    .ai-project-feature {
+        width: calc(100% - 32px);
+
+        padding: 12px;
+
+        border-radius: 28px;
+    }
+
+    .ai-project-feature-content {
+        padding: 45px 24px;
+    }
+
+    .ai-project-feature-media {
+        min-height: 360px;
+
+        border-radius: 20px;
+    }
+
+    .ai-project-skills-grid {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+
+        margin-top: 55px;
+    }
+
+    .ai-project-closing {
+        padding-bottom: 110px;
+    }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    .ai-project-hero-content,
+    .ai-project-gallery-item,
+    .ai-project-section,
+    .ai-project-feature,
+    .ai-project-skills,
+    .ai-project-closing {
+        animation: none;
+    }
+
+    .ai-project-back,
+    .ai-project-button,
+    .ai-project-closing-button {
+        transition: none;
+    }
+}
