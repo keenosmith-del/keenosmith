@@ -7,6 +7,10 @@
     width: min(760px, calc(100% - 48px));
     margin: 0 auto 100px;
     text-align: center;
+
+    animation: about-intro-scroll linear both;
+    animation-timeline: view();
+    animation-range: entry 0% exit 100%;
 }
 
 .about-eyebrow {
@@ -888,6 +892,29 @@
     }
 }
 
+/* animation of buttons text and descr */
+@keyframes about-intro-scroll {
+    0% {
+        opacity: 0;
+        transform: translateY(28px);
+    }
+
+    20% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    80% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-28px);
+    }
+}
+
 
 /* =========================================================
    TABLET
@@ -1102,6 +1129,7 @@
 
 @media (prefers-reduced-motion: reduce) {
 
+    .about-intro,
     .about-tile {
         animation: none;
     }

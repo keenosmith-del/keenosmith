@@ -18,9 +18,7 @@ function Hero() {
                     <div className="hero-actions">
                         <a
                             className="hero-button hero-button-primary"
-                            href="/Keeno-Smith-CV.pdf"
-                            target="_blank"
-                            rel="noopener noreferrer"
+                            href="/cv"
                         >
                             View CV
                         </a>

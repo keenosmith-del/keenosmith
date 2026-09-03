@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
-import { ChevronDown, ArrowRight } from 'lucide-react';
+import emailjs from '@emailjs/browser';
+import { ChevronDown, ArrowRight, Check } from 'lucide-react';
 
 import './Header.css';
 
@@ -128,11 +129,12 @@ const linkGroups = [
             },
             {
                 name: 'GitLab',
-                url: '#',
+                url: 'https://gitlab.com/keenosmith-del',
             },
             {
                 name: 'Bitbucket',
                 url: '#',
+                disabled: true,
             },
         ],
     },
@@ -141,19 +143,21 @@ const linkGroups = [
         links: [
             {
                 name: 'Codewars',
-                url: '#',
+                url: 'https://www.codewars.com/users/keenosmith-del',
             },
             {
                 name: 'HackerRank',
                 url: '#',
+                disabled: true,
             },
             {
                 name: 'Docker Hub',
                 url: '#',
+                disabled: true,
             },
             {
                 name: 'Stack Overflow',
-                url: '#',
+                url: 'https://stackoverflow.com/users/32030841/keenosmith',
             },
         ],
     },
@@ -162,11 +166,11 @@ const linkGroups = [
         links: [
             {
                 name: 'Hugging Face',
-                url: '#',
+                url: 'https://huggingface.co/keenosmith',
             },
             {
                 name: 'Kaggle',
-                url: '#',
+                url: 'https://www.kaggle.com/keenotreysmith',
             },
         ],
     },
@@ -179,11 +183,11 @@ const linkGroups = [
             },
             {
                 name: 'AWS Skill Builder',
-                url: '#',
+                url: 'https://skillsprofile.skillbuilder.aws/user/keenosmith',
             },
             {
                 name: 'Credly',
-                url: '#',
+                url: 'https://www.credly.com/users/keeno-smith',
             },
         ],
     },
@@ -192,11 +196,11 @@ const linkGroups = [
         links: [
             {
                 name: 'npm',
-                url: '#',
+                url: 'https://www.npmjs.com/~keenosmith',
             },
             {
                 name: 'PyPI',
-                url: '#',
+                url: 'https://pypi.org/user/keenosmith/',
             },
         ],
     },
@@ -205,15 +209,16 @@ const linkGroups = [
         links: [
             {
                 name: 'Dev.to',
-                url: '#',
+                url: 'https://dev.to/keenosmithdel',
             },
             {
                 name: 'Medium',
-                url: '#',
+                url: 'https://medium.com/@business.keenosmith',
             },
             {
                 name: 'Product Hunt',
                 url: '#',
+                disabled: true,
             },
         ],
     },
@@ -227,6 +232,13 @@ function Header() {
     const [isLinksOpen, setIsLinksOpen] = useState(false);
 
     const navigationRef = useRef(null);
+
+    const formRef = useRef(null);
+
+    const nameRef = useRef(null);
+    const emailRef = useRef(null);
+    const subjectRef = useRef(null);
+    const messageRef = useRef(null);
 
     const closeAllDropdowns = () => {
         setIsSkillsOpen(false);
@@ -247,11 +259,19 @@ function Header() {
         message: '',
     });
 
-    const isFormValid =
+    const [invalidFields, setInvalidFields] = useState({});
+    const [sending, setSending] = useState(false);
+    const [showSuccess, setShowSuccess] = useState(false);
+    const [toastExiting, setToastExiting] = useState(false);
+
+    const isFormComplete =
         formData.name.trim() !== '' &&
-        /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim()) &&
+        formData.email.trim() !== '' &&
         formData.subject.trim() !== '' &&
         formData.message.trim() !== '';
+
+    const isEmailValid =
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim());
 
     const handleChatOpen = () => {
         closeAllDropdowns();
@@ -260,6 +280,9 @@ function Header() {
 
     const handleChatClose = () => {
         setIsChatOpen(false);
+        setInvalidFields({});
+        setShowSuccess(false);
+        setToastExiting(false);
     };
 
     const handleInputChange = (event) => {
@@ -269,16 +292,97 @@ function Header() {
             ...currentData,
             [name]: value,
         }));
+
+        if (invalidFields[name]) {
+            setInvalidFields((currentFields) => ({
+                ...currentFields,
+                [name]: false,
+            }));
+        }
+
+        if (showSuccess) {
+            setShowSuccess(false);
+            setToastExiting(false);
+        }
     };
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
 
-        if (!isFormValid) {
+        if (sending) {
             return;
         }
 
-        // Submission logic will be added later.
+        const name = formData.name.trim();
+        const email = formData.email.trim();
+        const subject = formData.subject.trim();
+        const message = formData.message.trim();
+
+        const nextInvalidFields = {
+            name: !name,
+            email: !email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email),
+            subject: !subject,
+        };
+
+        setInvalidFields(nextInvalidFields);
+
+        if (nextInvalidFields.name) {
+            nameRef.current?.focus();
+            return;
+        }
+
+        if (nextInvalidFields.email) {
+            emailRef.current?.focus();
+            return;
+        }
+
+        if (nextInvalidFields.subject) {
+            subjectRef.current?.focus();
+            return;
+        }
+
+        if (!message) {
+            return;
+        }
+
+        setSending(true);
+
+        try {
+            await emailjs.sendForm(
+                'service_hbhtr4l',
+                'template_xtmmpnl',
+                formRef.current,
+                {
+                    publicKey: 'Wy06Fl_fod1rRHsv4',
+                }
+            );
+
+            setFormData({
+                name: '',
+                email: '',
+                subject: '',
+                message: '',
+            });
+
+            setInvalidFields({});
+            setShowSuccess(true);
+            setToastExiting(false);
+
+            setTimeout(() => {
+                setToastExiting(true);
+            }, 3200);
+
+            setTimeout(() => {
+                setShowSuccess(false);
+                setToastExiting(false);
+            }, 3500);
+
+        } catch (error) {
+            console.error('EMAILJS FAILED');
+            console.error(error);
+        } finally {
+            setSending(false);
+        }
     };
 
     useEffect(() => {
@@ -337,6 +441,20 @@ function Header() {
             document.removeEventListener('keydown', handleEscape);
         };
     }, [isSkillsOpen, isProjectsOpen, isLinksOpen]);
+
+    useEffect(() => {
+        if (!Object.values(invalidFields).some(Boolean)) {
+            return undefined;
+        }
+
+        const timeout = setTimeout(() => {
+            setInvalidFields({});
+        }, 1800);
+
+        return () => {
+            clearTimeout(timeout);
+        };
+    }, [invalidFields]);
 
     return (
         <>
@@ -565,26 +683,34 @@ function Header() {
                                         {group.links.map((link) => (
                                             <a
                                                 key={link.name}
-                                                href={link.url}
+                                                href={link.disabled ? undefined : link.url}
                                                 target={
-                                                    link.url.startsWith('http')
+                                                    !link.disabled && link.url.startsWith('http')
                                                         ? '_blank'
                                                         : undefined
                                                 }
                                                 rel={
-                                                    link.url.startsWith('http')
+                                                    !link.disabled && link.url.startsWith('http')
                                                         ? 'noopener noreferrer'
                                                         : undefined
                                                 }
-                                                onClick={closeAllDropdowns}
+                                                className={link.disabled ? 'is-disabled' : ''}
+                                                aria-disabled={link.disabled || undefined}
+                                                onClick={
+                                                    link.disabled
+                                                        ? (event) => event.preventDefault()
+                                                        : closeAllDropdowns
+                                                }
                                             >
                                                 <span>{link.name}</span>
 
-                                                <ArrowRight
-                                                    size={13}
-                                                    strokeWidth={1.8}
-                                                    aria-hidden="true"
-                                                />
+                                                {!link.disabled && (
+                                                    <ArrowRight
+                                                        size={13}
+                                                        strokeWidth={1.8}
+                                                        aria-hidden="true"
+                                                    />
+                                                )}
                                             </a>
                                         ))}
                                     </div>
@@ -639,6 +765,13 @@ function Header() {
                         >
                             Let's chat
                         </button>
+
+                        <a
+                            className="navigation-cv"
+                            href="/cv"
+                        >
+                            View CV
+                        </a>
                     </div>
 
                 </nav>
@@ -666,20 +799,13 @@ function Header() {
                         </button>
 
                         <div className="chat-modal-header">
-                            <p className="chat-modal-eyebrow">
-                                Get in touch
-                            </p>
-
-                            <h2 id="chat-modal-title">
-                                Let's chat
-                            </h2>
-
                             <p>
                                 Have a project, idea, or opportunity in mind?
                             </p>
                         </div>
 
                         <form
+                            ref={formRef}
                             className="chat-form"
                             onSubmit={handleSubmit}
                             noValidate
@@ -691,12 +817,14 @@ function Header() {
                                     </label>
 
                                     <input
+                                        ref={nameRef}
                                         id="chat-name"
                                         name="name"
                                         type="text"
                                         value={formData.name}
                                         onChange={handleInputChange}
                                         autoComplete="name"
+                                        className={invalidFields.name ? 'is-invalid' : ''}
                                         required
                                     />
                                 </div>
@@ -707,12 +835,14 @@ function Header() {
                                     </label>
 
                                     <input
+                                        ref={emailRef}
                                         id="chat-email"
                                         name="email"
                                         type="email"
                                         value={formData.email}
                                         onChange={handleInputChange}
                                         autoComplete="email"
+                                        className={invalidFields.email ? 'is-invalid' : ''}
                                         required
                                     />
                                 </div>
@@ -724,11 +854,13 @@ function Header() {
                                 </label>
 
                                 <input
+                                    ref={subjectRef}
                                     id="chat-subject"
                                     name="subject"
                                     type="text"
                                     value={formData.subject}
                                     onChange={handleInputChange}
+                                    className={invalidFields.subject ? 'is-invalid' : ''}
                                     required
                                 />
                             </div>
@@ -739,6 +871,7 @@ function Header() {
                                 </label>
 
                                 <textarea
+                                    ref={messageRef}
                                     id="chat-message"
                                     name="message"
                                     value={formData.message}
@@ -760,13 +893,34 @@ function Header() {
                                 <button
                                     className="chat-button chat-button-send"
                                     type="submit"
-                                    disabled={!isFormValid}
+                                    disabled={!formData.message.trim() || sending}
                                 >
-                                    Send
+                                    {sending ? 'Sending...' : 'Send'}
                                 </button>
                             </div>
                         </form>
                     </div>
+                </div>
+            )}
+
+            {/* toast */}
+            {showSuccess && (
+                <div
+                    className={`chat-form-success ${toastExiting ? 'is-exiting' : ''}`}
+                    role="status"
+                    aria-live="polite"
+                >
+                    <div className="chat-form-success-icon">
+                        <Check
+                            size={17}
+                            strokeWidth={2.2}
+                            aria-hidden="true"
+                        />
+                    </div>
+
+                    <span className="chat-form-success-text">
+                        Message sent successfully.
+                    </span>
                 </div>
             )}
         </>

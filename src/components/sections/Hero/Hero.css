@@ -24,6 +24,10 @@
     margin: 0 auto;
 
     gap: clamp(60px, 8vw, 150px);
+
+    animation: hero-content-scroll linear both;
+    animation-timeline: view();
+    animation-range: entry 0% exit 100%;
 }
 
 .hero-visual {
@@ -267,6 +271,28 @@
 
         transform:
             translateX(0) translateY(0);
+    }
+}
+
+@keyframes hero-content-scroll {
+    0% {
+        opacity: 0;
+        transform: translateY(28px);
+    }
+
+    20% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    80% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-28px);
     }
 }
 
