@@ -1,4 +1,5 @@
 // change current and run npm run cv:pdf
+// must be running on local
 
 import puppeteer from "puppeteer";
 import fs from "fs";
@@ -43,16 +44,49 @@ if (!cvPage) {
     throw new Error("Could not find .cv-page");
 }
 
-const box = await cvPage.boundingBox();
+/*
+ * Calculate the actual rendered height of the CV.
+ *
+ * This is more reliable than boundingBox() because the CV uses
+ * relative positioning, negative margins, and vertically shifted
+ * content throughout the layout.
+ */
+const cvHeight = await page.evaluate(() => {
+    const cv = document.querySelector(".cv-page");
 
-if (!box) {
-    throw new Error("Could not determine CV dimensions");
+    if (!cv) {
+        throw new Error("Could not find .cv-page");
+    }
+
+    const cvRect = cv.getBoundingClientRect();
+
+    let bottom = cvRect.bottom;
+
+    cv.querySelectorAll("*").forEach((element) => {
+        const rect = element.getBoundingClientRect();
+
+        if (rect.bottom > bottom) {
+            bottom = rect.bottom;
+        }
+    });
+
+    return Math.ceil(bottom - cvRect.top);
+});
+
+if (!cvHeight || cvHeight <= 0) {
+    throw new Error("Could not determine CV height");
 }
+
+/*
+ * Add a small safety buffer so the final content is not clipped
+ * at the very bottom of the PDF.
+ */
+const pdfHeight = cvHeight + 40;
 
 await page.pdf({
     path: "Keeno-Smith-CV.pdf",
-    width: `${box.width}px`,
-    height: `${box.height}px`,
+    width: "1100px",
+    height: `${pdfHeight}px`,
     printBackground: true,
     margin: {
         top: "0px",
@@ -60,7 +94,6 @@ await page.pdf({
         bottom: "0px",
         left: "0px",
     },
-    pageRanges: "1",
 });
 
 await browser.close();

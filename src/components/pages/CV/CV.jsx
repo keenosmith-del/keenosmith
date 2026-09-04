@@ -52,7 +52,7 @@ function CV() {
                     <div className="cv-intro-links">
                         <span>github.com/keenosmith-del</span>
                         <span>linkedin.com/in/keenosmith</span>
-                        <span>keenosmith.com</span>
+                        <span>keenosmith.vercel.app/</span>
                     </div>
 
                     <div className="cv-intro-contact">
@@ -459,11 +459,11 @@ function CV() {
                     <div className="cv-project-links">
 
                         <a
-                            href="https://keenosmith.com"
+                            href="https://keenosmith.vercel.app/"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            Portfolio: keenosmith.com
+                            Portfolio: keenosmith.vercel.app/
                         </a>
 
                         <a
@@ -552,11 +552,11 @@ function CV() {
 
                                 <div className="cv-project-direct-links">
                                     <a href="#" target="_blank" rel="noopener noreferrer">
-                                        GitHub Repo: github.com/placeholder
+                                        GitHub Repo: github.com/keenosmith-del/personal-productivity-desktop
                                     </a>
 
                                     <a href="#" target="_blank" rel="noopener noreferrer">
-                                        Live URL: project-placeholder.com
+                                        Live URL: personal-productivity-desktop.vercel.app/
                                     </a>
                                 </div>
                             </div>
@@ -587,11 +587,11 @@ function CV() {
 
                                 <div className="cv-project-direct-links">
                                     <a href="#" target="_blank" rel="noopener noreferrer">
-                                        GitHub Repo: github.com/placeholder
+                                        GitHub Repo: github.com/keenosmith-del/ai-entity
                                     </a>
 
                                     <a href="#" target="_blank" rel="noopener noreferrer">
-                                        Live URL: project-placeholder.com
+                                        Live URL: ai-entity-psi.vercel.app/
                                     </a>
                                 </div>
                             </div>
@@ -622,12 +622,14 @@ function CV() {
 
                                 <div className="cv-project-direct-links">
                                     <a href="#" target="_blank" rel="noopener noreferrer">
-                                        GitHub Repo: github.com/placeholder
+                                        GitHub Repo: github.com/keenosmith-del/music-api
                                     </a>
 
+                                    {/*
                                     <a href="#" target="_blank" rel="noopener noreferrer">
                                         Live URL: project-placeholder.com
                                     </a>
+                                    */}
                                 </div>
                             </div>
                         </div>
@@ -658,11 +660,11 @@ function CV() {
 
                                 <div className="cv-project-direct-links">
                                     <a href="#" target="_blank" rel="noopener noreferrer">
-                                        GitHub Repo: github.com/placeholder
+                                        GitHub Repo: github.com/keenosmith-del/enterprise-workspace
                                     </a>
 
                                     <a href="#" target="_blank" rel="noopener noreferrer">
-                                        Live URL: project-placeholder.com
+                                        Live URL: enterprise-workspace-liard.vercel.app/
                                     </a>
                                 </div>
                             </div>
