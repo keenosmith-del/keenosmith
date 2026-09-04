@@ -1,8 +1,43 @@
-import { ArrowLeft, ArrowRight, ExternalLink } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ExternalLink, ArrowUp } from 'lucide-react';
 
 import './AIModel.css';
 
+import { useEffect, useState } from 'react';
+
+import aiPreviewVideo from '../../../../assets/projects/ai/videos/preview_ai_1.mp4';
+import aiImage1 from '../../../../assets/projects/ai/2.png';
+import aiImage2 from '../../../../assets/projects/ai/3.png';
+
+import aiImage3 from '../../../../assets/projects/ai/7.png';
+import aiPreviewVideo2 from '../../../../assets/projects/ai/videos/preview_ai_3.mp4';
+
+import aiPreviewVideo3 from '../../../../assets/projects/ai/videos/preview_ai_2.mp4';
+import aiImage4 from '../../../../assets/projects/ai/4.png';
+
 function AIModel() {
+    const [showBackToTop, setShowBackToTop] = useState(false);
+
+    useEffect(() => {
+
+        const handleScroll = () => {
+            setShowBackToTop(window.scrollY > 300);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+
+    }, []);
+
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        });
+    };
+
     return (
         <main className="ai-project">
 
@@ -33,7 +68,7 @@ function AIModel() {
                         <span>AI Model</span>
                     </div>
 
-                    <h1>AI Assistant</h1>
+                    <h1>AI Model</h1>
 
                     <p className="ai-project-hero-description">
                         A Generative AI application exploring LLM integration,
@@ -72,23 +107,30 @@ function AIModel() {
             <section className="ai-project-gallery">
 
                 <div className="ai-project-gallery-item ai-project-gallery-large">
-                    <div className="ai-project-placeholder">
-                        <span>Project image</span>
-                    </div>
+                    <video
+                        src={aiPreviewVideo}
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        aria-label="AI Assistant application preview"
+                    />
                 </div>
 
                 <div className="ai-project-gallery-row">
 
                     <div className="ai-project-gallery-item">
-                        <div className="ai-project-placeholder">
-                            <span>Project image</span>
-                        </div>
+                        <img
+                            src={aiImage1}
+                            alt="AI Assistant application interface"
+                        />
                     </div>
 
                     <div className="ai-project-gallery-item">
-                        <div className="ai-project-placeholder">
-                            <span>Project image</span>
-                        </div>
+                        <img
+                            src={aiImage2}
+                            alt="AI Assistant application interface"
+                        />
                     </div>
 
                 </div>
@@ -165,9 +207,10 @@ function AIModel() {
                 </div>
 
                 <div className="ai-project-feature-media">
-                    <div className="ai-project-video-placeholder">
-                        <span>Video</span>
-                    </div>
+                    <img
+                        src={aiImage3}
+                        alt="AI Assistant application interface"
+                    />
                 </div>
 
             </section>
@@ -205,10 +248,16 @@ function AIModel() {
 
                 </div>
 
+                {/* needs to be wider */}
                 <div className="ai-project-feature-media">
-                    <div className="ai-project-video-placeholder">
-                        <span>Video</span>
-                    </div>
+                    <video
+                        src={aiPreviewVideo2}
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        aria-label="AI Assistant application demonstration"
+                    />
                 </div>
 
             </section>
@@ -274,6 +323,34 @@ function AIModel() {
 
             </section>
 
+            {/* Additional visual showcase */}
+
+            <section className="ai-project-visual-showcase">
+
+                <div className="ai-project-visual-strip">
+
+                    <video
+                        src={aiPreviewVideo3}
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        aria-label="AI Assistant application demonstration"
+                    />
+
+                </div>
+
+                <div className="ai-project-visual-strip">
+
+                    <img
+                        src={aiImage4}
+                        alt="AI Assistant application interface"
+                    />
+
+                </div>
+
+            </section>
+
 
             {/* Closing */}
 
@@ -287,17 +364,53 @@ function AIModel() {
                         converge into a single application.
                     </p>
 
-                    <a
-                        className="ai-project-closing-button"
-                        href="/"
-                    >
-                        Back to Portfolio
-                        
-                    </a>
+                    <div className="music-project-closing-actions">
+
+                        <a
+                            className="music-project-closing-button"
+                            href="/"
+                        >
+                            Back to Portfolio
+                        </a>
+
+                        <button
+                            className="music-project-closing-top"
+                            type="button"
+                            onClick={() => {
+                                window.scrollTo({
+                                    top: 0,
+                                    behavior: 'smooth',
+                                });
+                            }}
+                            aria-label="Back to top"
+                        >
+                            <ArrowUp
+                                size={16}
+                                strokeWidth={1.7}
+                                aria-hidden="true"
+                            />
+                        </button>
+
+                    </div>
 
                 </div>
 
             </section>
+
+            {showBackToTop && (
+                <button
+                    className="productivity-project-top"
+                    type="button"
+                    onClick={scrollToTop}
+                    aria-label="Back to top"
+                >
+                    <ArrowUp
+                        size={17}
+                        strokeWidth={1.7}
+                        aria-hidden="true"
+                    />
+                </button>
+            )}
 
         </main>
     );

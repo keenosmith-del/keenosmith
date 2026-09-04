@@ -2,11 +2,48 @@ import {
     ArrowLeft,
     ArrowRight,
     ExternalLink,
+    ArrowUp,
 } from 'lucide-react';
+
+import { useEffect, useState } from 'react';
 
 import './ProductivityPlatform.css';
 
+import productivityVideo1 from '../../../../assets/projects/productivity/videos/preview_productivity_1.mp4';
+import productivityImage2 from '../../../../assets/projects/productivity/4.png';
+
+import productivityVideo2 from '../../../../assets/projects/productivity/videos/preview_productivity_2.mp4';
+import productivityVideo3 from '../../../../assets/projects/productivity/videos/preview_productivity_3.mp4';
+
+import productivityVideo4 from '../../../../assets/projects/productivity/videos/preview_productivity_4.mp4';
+
+import productivityImage3 from '../../../../assets/projects/productivity/5.png';
+import productivityImage4 from '../../../../assets/projects/productivity/7.png';
+
 function ProductivityPlatform() {
+    const [showBackToTop, setShowBackToTop] = useState(false);
+
+    useEffect(() => {
+
+        const handleScroll = () => {
+            setShowBackToTop(window.scrollY > 300);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+
+    }, []);
+
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        });
+    };
+
     return (
         <main className="productivity-project">
 
@@ -93,21 +130,21 @@ function ProductivityPlatform() {
                 <div className="productivity-project-gallery-grid">
 
                     <div className="productivity-project-image">
-                        <div className="productivity-project-placeholder">
-                            <span>Project image</span>
-                        </div>
+                        <video
+                            src={productivityVideo1}
+                            autoPlay
+                            muted
+                            loop
+                            playsInline
+                            aria-label="Productivity Platform application preview"
+                        />
                     </div>
 
                     <div className="productivity-project-image">
-                        <div className="productivity-project-placeholder">
-                            <span>Project image</span>
-                        </div>
-                    </div>
-
-                    <div className="productivity-project-image">
-                        <div className="productivity-project-placeholder">
-                            <span>Project image</span>
-                        </div>
+                        <img
+                            src={productivityImage2}
+                            alt="Productivity Platform application interface"
+                        />
                     </div>
 
                 </div>
@@ -180,9 +217,14 @@ function ProductivityPlatform() {
 
                 <div className="productivity-project-video">
 
-                    <div className="productivity-project-video-placeholder">
-                        <span>Video</span>
-                    </div>
+                    <video
+                        src={productivityVideo2}
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        aria-label="Productivity Platform application demonstration"
+                    />
 
                 </div>
 
@@ -195,9 +237,14 @@ function ProductivityPlatform() {
 
                 <div className="productivity-project-video">
 
-                    <div className="productivity-project-video-placeholder">
-                        <span>Video</span>
-                    </div>
+                    <video
+                        src={productivityVideo3}
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        aria-label="Productivity Platform application demonstration"
+                    />
 
                 </div>
 
@@ -316,6 +363,88 @@ function ProductivityPlatform() {
 
             </section>
 
+            {/* Platform showcase */}
+
+            <section className="productivity-project-media-showcase">
+
+                <div className="productivity-project-media-header">
+
+                    <div>
+                        <span>(05A)</span>
+                        <span>Platform in use</span>
+                    </div>
+
+                    <p>
+                        A closer look at the interface, interactions and
+                        workflows that bring the productivity platform together.
+                    </p>
+
+                </div>
+
+                <div className="productivity-project-media-grid">
+
+                    <div className="productivity-project-media-image">
+                        <img
+                            src={productivityImage3}
+                            alt="Productivity Platform application interface"
+                        />
+                    </div>
+
+                    <div className="productivity-project-media-image">
+                        <img
+                            src={productivityImage4}
+                            alt="Productivity Platform application interface"
+                        />
+                    </div>
+
+                </div>
+
+            </section>
+
+            {/* Product experience */}
+
+            <section className="productivity-project-media-feature">
+
+                <div className="productivity-project-media-feature-copy">
+
+                    <span>(05B)</span>
+
+                    <div>
+
+                        <h2>
+                            Designed as a
+                            system, not just
+                            a collection of screens.
+                        </h2>
+
+                        <p>
+                            The platform brings tasks, projects, goals, notes,
+                            reminders and other productivity workflows into a
+                            single connected environment. The interface is
+                            designed to make those relationships feel simple,
+                            while the underlying application handles the
+                            complexity.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div className="productivity-project-media-feature-video">
+
+                    <video
+                        src={productivityVideo4}
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        aria-label="Productivity Platform application demonstration"
+                    />
+
+                </div>
+
+            </section>
+
 
             {/* Technology stack */}
 
@@ -405,16 +534,53 @@ function ProductivityPlatform() {
                         productivity workflow into one connected system.
                     </p>
 
-                    <a
-                        className="productivity-project-closing-button"
-                        href="/"
-                    >
-                        Back to Portfolio
-                    </a>
+                    <div className="productivity-project-closing-actions">
+
+                        <a
+                            className="productivity-project-closing-button"
+                            href="/"
+                        >
+                            Back to Portfolio
+                        </a>
+
+                        <button
+                            className="productivity-project-closing-top"
+                            type="button"
+                            onClick={() => {
+                                window.scrollTo({
+                                    top: 0,
+                                    behavior: 'smooth',
+                                });
+                            }}
+                            aria-label="Back to top"
+                        >
+                            <ArrowUp
+                                size={16}
+                                strokeWidth={1.7}
+                                aria-hidden="true"
+                            />
+                        </button>
+
+                    </div>
 
                 </div>
 
             </section>
+
+            {showBackToTop && (
+                <button
+                    className="productivity-project-top"
+                    type="button"
+                    onClick={scrollToTop}
+                    aria-label="Back to top"
+                >
+                    <ArrowUp
+                        size={17}
+                        strokeWidth={1.7}
+                        aria-hidden="true"
+                    />
+                </button>
+            )}
 
         </main>
     );

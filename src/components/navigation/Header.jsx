@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { ChevronDown, ArrowRight, Check } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 import './Header.css';
 
@@ -100,9 +101,9 @@ const projectGroups = [
         path: '/projects/productivity-platform',
     },
     {
-        title: 'AI Assistant',
+        title: 'AI Model',
         description:
-            'An AI-powered assistant exploring LLM integration, prompt engineering, RAG and intelligent application workflows.',
+            'An AI-powered entity exploring LLM integration, prompt engineering, RAG and intelligent application workflows.',
         path: '/projects/ai-assistant',
     },
     {
@@ -615,9 +616,10 @@ function Header() {
 
                                     <p>{project.description}</p>
 
-                                    <a
-                                        href={project.path}
+                                    <Link
+                                        to={project.path}
                                         className="navigation-project-link"
+                                        onClick={closeAllDropdowns}
                                     >
                                         <span>View project</span>
 
@@ -626,7 +628,7 @@ function Header() {
                                             strokeWidth={1.8}
                                             aria-hidden="true"
                                         />
-                                    </a>
+                                    </Link>
                                 </div>
                             ))}
                         </div>

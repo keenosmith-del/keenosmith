@@ -57,7 +57,7 @@ function CV() {
 
                     <div className="cv-intro-contact">
                         <span>business.keenosmith@icloud.com</span>
-                        <span>+123 456 7891</span>
+                        <span>+27 82 415 8441</span>
                     </div>
 
                     <div className="cv-intro-content">
@@ -606,7 +606,7 @@ function CV() {
                                 <h3>Music API Web Application</h3>
 
                                 <div className="cv-project-meta">
-                                    <span>API &amp; Backend Development</span>
+                                    <span>API &amp; Backend</span>
                                     <span>React · Vite · Node.js · Express · MongoDB · Mongoose</span>
                                 </div>
 
@@ -641,7 +641,7 @@ function CV() {
                                 <h3>Enterprise Workspace</h3>
 
                                 <div className="cv-project-meta">
-                                    <span>Enterprise Application Architecture</span>
+                                    <span>SQL</span>
                                     <span>React · Vite · Node.js · Express · PostgreSQL · Prisma</span>
                                 </div>
 
@@ -685,19 +685,15 @@ function CV() {
                         </a>
 
                         <a href="#" target="_blank" rel="noopener noreferrer">
-                            Codewars: codewars.com/users/placeholder
+                            Codewars: codewars.com/users/keenosmith-del
                         </a>
 
                         <a href="#" target="_blank" rel="noopener noreferrer">
-                            HackerRank: hackerrank.com/placeholder
+                            LeetCode: leetcode.com/u/keenosmith/
                         </a>
 
                         <a href="#" target="_blank" rel="noopener noreferrer">
-                            LeetCode: leetcode.com/placeholder
-                        </a>
-
-                        <a href="#" target="_blank" rel="noopener noreferrer">
-                            freeCodeCamp: freecodecamp.org/placeholder
+                            freeCodeCamp: freecodecamp.org/keenosmith
                         </a>
 
                     </div>
@@ -770,7 +766,7 @@ function CV() {
                     <ArrowUp size={15} strokeWidth={1.8} />
                 </button>
             )}
-            
+
         </main>
     );
 }
