@@ -32,7 +32,7 @@ function Home() {
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/keenosmith">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/cv" element={<CV />} />
