@@ -107,14 +107,14 @@ function CV() {
 
                     <div className="cv-headshot">
                         <img
-                            src="/src/assets/images/avatar/avatar-cv.png"
+                            src="/cv/avatar-cv.png"
                             alt="Keeno Smith"
                         />
                     </div>
 
                     <div className="cv-signature">
                         <img
-                            src="/src/assets/images/signature/signature.png"
+                            src="/cv/signature.png"
                             alt="Keeno Smith signature"
                         />
                     </div>
