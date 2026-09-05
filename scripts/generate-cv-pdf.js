@@ -64,6 +64,21 @@ await page.addStyleTag({
             overflow: visible !important;
         }
 
+        /* =========================================
+           PDF-ONLY HORIZONTAL POSITIONING
+        ========================================= */
+
+        .cv-education-item,
+        .cv-certification-item,
+        .cv-experience-item,
+        .cv-project-item {
+            margin-left: 420px !important;
+        }
+
+        .cv-skills-content {
+            margin-left: 450px !important;
+        }
+
         .cv-page-controls {
             display: none !important;
         }

@@ -60,7 +60,7 @@
     letter-spacing: -0.04em;
 }
 
-.projects-intro > p {
+.projects-intro>p {
     max-width: 544px;
 
     margin: 19.2px 0 0;
@@ -83,7 +83,7 @@
 
     gap: 12.8px;
 
-    width: min(1120px, 70.4vw);
+    width: min(1120px, 82vw);
 
     margin: 0 auto 12.8px;
 }
@@ -171,12 +171,10 @@
     z-index: 1;
 
     background:
-        linear-gradient(
-            to top,
+        linear-gradient(to top,
             rgba(25, 25, 27, 0.82) 0%,
             rgba(25, 25, 27, 0.38) 42%,
-            rgba(25, 25, 27, 0.05) 72%
-        );
+            rgba(25, 25, 27, 0.05) 72%);
 
     opacity: 0.85;
 
@@ -326,8 +324,7 @@
     opacity: 0;
 
     transform:
-        translateY(9.6px)
-        scale(0.9);
+        translateY(9.6px) scale(0.9);
 
     transition:
         opacity 200ms ease 96ms,
@@ -339,8 +336,7 @@
     background: #ffffff;
 
     transform:
-        translateY(-1.6px)
-        scale(1.03);
+        translateY(-1.6px) scale(1.03);
 }
 
 
@@ -349,9 +345,9 @@
    ========================================================= */
 
 .project-tile-wide {
-    width: min(1120px, 70.4vw);
+    width: min(1120px, 82vw);
 
-    height: 336px;
+    height: 400px;
 
     margin: 0 auto;
 }
@@ -371,8 +367,7 @@
     opacity: 1;
 
     transform:
-        translateY(0)
-        scale(1);
+        translateY(0) scale(1);
 }
 
 
@@ -385,16 +380,14 @@
         opacity: 0;
 
         transform:
-            translateY(22.4px)
-            scale(0.98);
+            translateY(22.4px) scale(0.98);
     }
 
     100% {
         opacity: 1;
 
         transform:
-            translateY(0)
-            scale(1);
+            translateY(0) scale(1);
     }
 }
 
@@ -430,7 +423,7 @@
     }
 
     .projects-featured {
-        width: 72vw;
+        width: 82vw;
     }
 
     .project-tile {
@@ -449,7 +442,7 @@
     }
 
     .project-tile-wide {
-        width: 72vw;
+        width: 82vw;
     }
 }
 
@@ -476,7 +469,7 @@
         font-size: clamp(35.2px, 9.6vw, 49.6px);
     }
 
-    .projects-intro > p {
+    .projects-intro>p {
         font-size: 12.8px;
     }
 
