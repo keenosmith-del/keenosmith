@@ -10,9 +10,9 @@
 -------------------------------- */
 
 .footer-outro {
-    width: min(980px, calc(100% - 48px));
+    width: min(784px, calc(100% - 38px));
     margin: 0 auto;
-    padding: 56px 0 62px;
+    padding: 45px 0 50px;
     text-align: center;
 
     animation: footer-outro-scroll linear both;
@@ -24,18 +24,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 8px;
-    margin-bottom: 30px;
+    gap: 6px;
+    margin-bottom: 24px;
 }
 
 .footer-outro-button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 7px;
+    gap: 6px;
 
-    min-height: 42px;
-    padding: 0 28px;
+    min-height: 34px;
+    padding: 0 22px;
 
     border: 0;
     border-radius: 999px;
@@ -43,7 +43,7 @@
     background: rgba(232, 231, 227, 0.72);
     color: #77777c;
 
-    font-size: 13px;
+    font-size: 10px;
     font-weight: 500;
     letter-spacing: -0.01em;
 
@@ -66,7 +66,7 @@
     background: rgba(222, 221, 217, 0.9);
     color: #5f5f64;
     transform: translateY(-1px);
-    gap: 9px;
+    gap: 7px;
 }
 
 .footer-outro-button:hover svg,
@@ -78,7 +78,7 @@
     width: 100%;
     margin: 0;
     color: var(--text-primary);
-    font-size: clamp(14px, 1vw, 16px);
+    font-size: clamp(11px, 0.8vw, 13px);
     font-weight: 400;
     line-height: 1.8;
     letter-spacing: -0.008em;
@@ -88,13 +88,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
-    margin-top: 28px;
+    gap: 8px;
+    margin-top: 22px;
 }
 
 .footer-outro-meta span:first-child {
     color: var(--text-secondary);
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 500;
     line-height: 1.6;
     letter-spacing: -0.005em;
@@ -102,7 +102,7 @@
 
 .footer-outro-meta span:last-child {
     color: var(--text-light);
-    font-size: 11px;
+    font-size: 9px;
     font-weight: 500;
 }
 
@@ -114,7 +114,7 @@
 @keyframes footer-outro-scroll {
     0% {
         opacity: 0;
-        transform: translateY(28px);
+        transform: translateY(22px);
     }
 
     20% {
@@ -129,7 +129,7 @@
 
     100% {
         opacity: 0;
-        transform: translateY(-28px);
+        transform: translateY(-22px);
     }
 }
 
@@ -141,18 +141,18 @@
 @media (max-width: 1100px) {
     .footer-directory {
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 42px 36px;
+        gap: 34px 29px;
     }
 }
 
 @media (max-width: 900px) {
     .footer-outro {
-        width: min(760px, calc(100% - 48px));
-        padding: 50px 0 56px;
+        width: min(608px, calc(100% - 38px));
+        padding: 40px 0 45px;
     }
 
     .footer-inner {
-        width: calc(100% - 64px);
+        width: calc(100% - 51px);
     }
 
     .footer-directory {
@@ -160,7 +160,7 @@
     }
 
     .footer-signature img {
-        width: 175px;
+        width: 140px;
     }
 
     .footer-bottom {
@@ -180,46 +180,46 @@
 
 @media (max-width: 600px) {
     .footer-outro {
-        width: calc(100% - 40px);
-        padding: 44px 0 50px;
+        width: calc(100% - 32px);
+        padding: 35px 0 40px;
     }
 
     .footer-outro-copy {
-        font-size: 13px;
+        font-size: 10px;
         line-height: 1.75;
     }
 
     .footer-outro-meta {
-        margin-top: 24px;
+        margin-top: 19px;
     }
 
     .footer-outro-meta span:first-child {
-        max-width: 340px;
-        font-size: 11px;
+        max-width: 272px;
+        font-size: 9px;
         line-height: 1.6;
     }
 
     .footer-inner {
-        width: calc(100% - 48px);
-        padding: 40px 0 24px;
+        width: calc(100% - 38px);
+        padding: 32px 0 19px;
     }
 
     .footer-directory {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 36px 24px;
+        gap: 29px 19px;
     }
 
     .footer-signature {
         justify-content: flex-start;
-        margin-top: 8px;
+        margin-top: 6px;
     }
 
     .footer-signature img {
-        width: 165px;
+        width: 132px;
     }
 
     .footer-bottom {
-        margin-top: 24px;
+        margin-top: 19px;
     }
 }
 

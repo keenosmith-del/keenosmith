@@ -1,7 +1,7 @@
 .ai-project {
     position: relative;
 
-    min-height: 100vh;
+    min-height: 80vh;
 
     overflow: visible;
 
@@ -16,19 +16,19 @@
 .ai-project-back {
     position: fixed;
 
-    top: 28px;
-    left: 28px;
+    top: 22px;
+    left: 22px;
 
     z-index: 20;
 
     display: inline-flex;
 
     align-items: center;
-    gap: 8px;
+    gap: 6px;
 
-    min-height: 44px;
+    min-height: 35px;
 
-    padding: 0 17px;
+    padding: 0 14px;
 
     border-radius: 999px;
 
@@ -36,16 +36,16 @@
 
     color: #66666b;
 
-    font-size: 13px;
+    font-size: 10px;
     font-weight: 500;
 
     letter-spacing: -0.01em;
 
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
 
     box-shadow:
-        0 10px 30px rgba(45, 45, 45, 0.06);
+        0 8px 24px rgba(45, 45, 45, 0.06);
 
     transition:
         transform 180ms ease,
@@ -65,10 +65,10 @@
 /* Hero */
 
 .ai-project-hero {
-    min-height: 100vh;
+    min-height: 80vh;
 
     padding:
-        170px 7vw 120px;
+        136px 5.6vw 96px;
 
     display: flex;
 
@@ -76,7 +76,7 @@
 }
 
 .ai-project-hero-content {
-    width: min(1100px, 100%);
+    width: min(880px, 100%);
 
     margin: 0 auto;
 
@@ -91,13 +91,13 @@
     display: flex;
 
     align-items: center;
-    gap: 8px;
+    gap: 6px;
 
-    margin-bottom: 26px;
+    margin-bottom: 21px;
 }
 
 .ai-project-hero-meta span {
-    padding: 8px 13px;
+    padding: 6px 10px;
 
     border-radius: 999px;
 
@@ -105,18 +105,18 @@
 
     color: #77777c;
 
-    font-size: 11px;
+    font-size: 9px;
     font-weight: 500;
 }
 
 .ai-project-hero h1 {
-    max-width: 1000px;
+    max-width: 800px;
 
     margin: 0;
 
     color: #555559;
 
-    font-size: clamp(72px, 11vw, 150px);
+    font-size: clamp(58px, 8.8vw, 120px);
 
     font-weight: 500;
 
@@ -126,13 +126,13 @@
 }
 
 .ai-project-hero-description {
-    max-width: 700px;
+    max-width: 560px;
 
-    margin: 38px 0 0;
+    margin: 30px 0 0;
 
     color: #858589;
 
-    font-size: clamp(18px, 1.5vw, 23px);
+    font-size: clamp(14px, 1.2vw, 18px);
 
     font-weight: 400;
 
@@ -144,9 +144,9 @@
 .ai-project-actions {
     display: flex;
 
-    gap: 10px;
+    gap: 8px;
 
-    margin-top: 34px;
+    margin-top: 27px;
 }
 
 .ai-project-button {
@@ -155,15 +155,15 @@
     align-items: center;
     justify-content: center;
 
-    gap: 8px;
+    gap: 6px;
 
-    min-height: 48px;
+    min-height: 38px;
 
-    padding: 0 20px;
+    padding: 0 16px;
 
     border-radius: 999px;
 
-    font-size: 13px;
+    font-size: 11px;
     font-weight: 500;
 
     transition:
@@ -202,11 +202,11 @@
 /* Gallery */
 
 .ai-project-gallery {
-    width: min(1400px, 88vw);
+    width: min(1120px, 70.4vw);
 
     margin: 0 auto;
 
-    padding-bottom: 150px;
+    padding-bottom: 120px;
 }
 
 .ai-project-gallery-item {
@@ -214,7 +214,7 @@
 
     overflow: hidden;
 
-    border-radius: 30px;
+    border-radius: 24px;
 
     background: #deddd9;
 
@@ -226,7 +226,7 @@
 }
 
 .ai-project-gallery-large {
-    height: min(700px, 58vw);
+    height: min(560px, 46.4vw);
 }
 
 .ai-project-gallery-item video {
@@ -241,13 +241,13 @@
 
     grid-template-columns: 1fr 1fr;
 
-    gap: 16px;
+    gap: 13px;
 
-    margin-top: 16px;
+    margin-top: 13px;
 }
 
 .ai-project-gallery-row .ai-project-gallery-item {
-    height: 500px;
+    height: 400px;
 }
 
 .ai-project-placeholder {
@@ -265,7 +265,7 @@
 .ai-project-video-placeholder span {
     color: #99999d;
 
-    font-size: 13px;
+    font-size: 10px;
 
     font-weight: 500;
 }
@@ -274,17 +274,17 @@
 /* Content sections */
 
 .ai-project-section {
-    width: min(1200px, calc(100% - 48px));
+    width: min(960px, calc(100% - 38px));
 
     margin: 0 auto;
 
-    padding: 140px 0;
+    padding: 112px 0;
 
     display: grid;
 
-    grid-template-columns: 280px 1fr;
+    grid-template-columns: 224px 1fr;
 
-    gap: 80px;
+    gap: 64px;
 
     animation:
         ai-project-section-in linear both;
@@ -299,11 +299,11 @@
 
     flex-direction: column;
 
-    gap: 5px;
+    gap: 4px;
 
     color: #99999d;
 
-    font-size: 11px;
+    font-size: 9px;
 
     font-weight: 500;
 
@@ -311,13 +311,13 @@
 }
 
 .ai-project-section-content h2 {
-    max-width: 850px;
+    max-width: 680px;
 
     margin: 0;
 
     color: #5b5b5f;
 
-    font-size: clamp(38px, 5vw, 68px);
+    font-size: clamp(30px, 4vw, 54px);
 
     font-weight: 500;
 
@@ -327,13 +327,13 @@
 }
 
 .ai-project-section-content p {
-    max-width: 700px;
+    max-width: 560px;
 
-    margin: 30px 0 0;
+    margin: 24px 0 0;
 
     color: #858589;
 
-    font-size: 17px;
+    font-size: 14px;
 
     line-height: 1.65;
 
@@ -344,19 +344,19 @@
 /* Feature sections */
 
 .ai-project-feature {
-    width: min(1400px, 88vw);
+    width: min(1120px, 70.4vw);
 
-    margin: 0 auto 24px;
+    margin: 0 auto 19px;
 
-    padding: 24px;
+    padding: 19px;
 
     display: grid;
 
     grid-template-columns: 0.8fr 1.2fr;
 
-    gap: 24px;
+    gap: 19px;
 
-    border-radius: 36px;
+    border-radius: 29px;
 
     background: var(--surface-muted);
 
@@ -386,17 +386,17 @@
 
     justify-content: center;
 
-    padding: 60px 48px;
+    padding: 48px 38px;
 }
 
 .ai-project-feature-content h2 {
-    max-width: 520px;
+    max-width: 416px;
 
-    margin: 34px 0 0;
+    margin: 27px 0 0;
 
     color: #5b5b5f;
 
-    font-size: clamp(36px, 4vw, 58px);
+    font-size: clamp(29px, 3.2vw, 46px);
 
     font-weight: 500;
 
@@ -406,13 +406,13 @@
 }
 
 .ai-project-feature-content>p {
-    max-width: 500px;
+    max-width: 400px;
 
-    margin: 26px 0 0;
+    margin: 21px 0 0;
 
     color: #858589;
 
-    font-size: 16px;
+    font-size: 13px;
 
     line-height: 1.6;
 }
@@ -422,13 +422,13 @@
 
     flex-wrap: wrap;
 
-    gap: 7px;
+    gap: 6px;
 
-    margin-top: 30px;
+    margin-top: 24px;
 }
 
 .ai-project-tech-list span {
-    padding: 8px 11px;
+    padding: 6px 9px;
 
     border-radius: 999px;
 
@@ -436,17 +436,17 @@
 
     color: #7b7b80;
 
-    font-size: 11px;
+    font-size: 9px;
 
     font-weight: 500;
 }
 
 .ai-project-feature-media {
-    min-height: 620px;
+    min-height: 496px;
 
     overflow: hidden;
 
-    border-radius: 26px;
+    border-radius: 21px;
 
     background: #d9d8d4;
 }
@@ -479,17 +479,17 @@
 /* Skills */
 
 .ai-project-skills {
-    width: min(1200px, calc(100% - 48px));
+    width: min(960px, calc(100% - 38px));
 
     margin: 0 auto;
 
-    padding: 180px 0;
+    padding: 144px 0;
 
     display: grid;
 
-    grid-template-columns: 280px 1fr;
+    grid-template-columns: 224px 1fr;
 
-    gap: 80px;
+    gap: 64px;
 
     animation:
         ai-project-section-in linear both;
@@ -499,13 +499,13 @@
 }
 
 .ai-project-skills-content h2 {
-    max-width: 780px;
+    max-width: 624px;
 
     margin: 0;
 
     color: #5b5b5f;
 
-    font-size: clamp(38px, 5vw, 68px);
+    font-size: clamp(30px, 4vw, 54px);
 
     font-weight: 500;
 
@@ -519,13 +519,13 @@
 
     grid-template-columns: 1fr 1fr;
 
-    gap: 60px 40px;
+    gap: 48px 32px;
 
-    margin-top: 80px;
+    margin-top: 64px;
 }
 
 .ai-project-skills-grid>div {
-    padding-top: 20px;
+    padding-top: 16px;
 
     border-top: 1px solid #d7d6d2;
 }
@@ -533,17 +533,17 @@
 .ai-project-skills-grid span {
     color: #a0a0a4;
 
-    font-size: 11px;
+    font-size: 9px;
 
     font-weight: 500;
 }
 
 .ai-project-skills-grid h3 {
-    margin: 22px 0 0;
+    margin: 18px 0 0;
 
     color: #66666b;
 
-    font-size: 22px;
+    font-size: 18px;
 
     font-weight: 500;
 
@@ -551,13 +551,13 @@
 }
 
 .ai-project-skills-grid p {
-    max-width: 330px;
+    max-width: 264px;
 
-    margin: 12px 0 0;
+    margin: 10px 0 0;
 
     color: #8b8b90;
 
-    font-size: 14px;
+    font-size: 11px;
 
     line-height: 1.55;
 }
@@ -565,18 +565,18 @@
 /* Additional visual showcase */
 
 .ai-project-visual-showcase {
-    width: min(1400px, 88vw);
+    width: min(1120px, 90vw);
 
     margin: 0 auto;
 
     padding:
-        20px 0 100px;
+        20px 0 80px;
 
     display: grid;
 
     grid-template-columns: 1fr 1fr;
 
-    gap: 24px;
+    gap: 19px;
 }
 
 .ai-project-visual-strip {
@@ -588,7 +588,7 @@
 
     overflow: hidden;
 
-    border-radius: 30px;
+    border-radius: 24px;
 
     background: #deddd9;
 
@@ -622,7 +622,7 @@
 /* Closing */
 
 .ai-project-closing {
-    padding: 120px 24px 150px;
+    padding: 96px 19px 120px;
 
     animation:
         ai-project-section-in linear both;
@@ -632,7 +632,7 @@
 }
 
 .ai-project-closing-inner {
-    width: min(900px, 100%);
+    width: min(720px, 100%);
 
     margin: 0 auto;
 
@@ -644,7 +644,7 @@
 
     color: #66666b;
 
-    font-size: clamp(28px, 4vw, 52px);
+    font-size: clamp(22px, 3.2vw, 42px);
 
     font-weight: 500;
 
@@ -653,61 +653,45 @@
     letter-spacing: -0.035em;
 }
 
+/* --------------------------------
+   Closing actions
+-------------------------------- */
+
+.ai-project-closing-actions {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    margin-top: 32px;
+}
+
+
+/* Back to Portfolio */
+
 .ai-project-closing-button {
     display: inline-flex;
 
     align-items: center;
-    gap: 8px;
+    justify-content: center;
 
-    margin-top: 38px;
+    min-height: 40px;
 
-    min-height: 48px;
+    padding: 0 13px;
 
-    padding: 0 20px;
-
+    border: 0;
     border-radius: 999px;
 
     background: var(--charcoal);
-
     color: var(--surface);
 
-    font-size: 13px;
-
+    font-size: 10px;
     font-weight: 500;
 
-    transition: transform 180ms ease;
-}
-
-.ai-project-closing-button:hover {
-    transform: translateY(-2px);
-}
-
-/* Back to top */
-
-.music-project-top {
-    position: fixed;
-    right: 28px;
-    bottom: 28px;
-    z-index: 20;
-
-    width: 46px;
-    height: 46px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border: 0;
-    border-radius: 50%;
-
-    background: rgba(250, 249, 246, 0.78);
-    color: #66666b;
-
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-
-    box-shadow:
-        0 10px 30px rgba(45, 45, 45, 0.08);
+    line-height: 1;
+    text-decoration: none;
 
     cursor: pointer;
 
@@ -717,34 +701,30 @@
         color 180ms ease;
 }
 
-.music-project-top:hover {
-    transform: translateY(-3px);
+.ai-project-closing-button:hover {
+    transform: translateY(-1px);
 
-    background: #ffffff;
-    color: #444448;
+    background: #29292b;
+
+    color: var(--surface);
 }
 
-.music-project-closing-actions {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
 
-    margin-top: 40px;
-}
+/* Back to top */
 
-.music-project-closing-top {
-    width: 48px;
-    height: 48px;
+.ai-project-closing-top {
+    width: 40px;
+    height: 40px;
 
     display: inline-flex;
+
     align-items: center;
     justify-content: center;
 
     padding: 0;
 
     border: none;
-    border-radius: 999px;
+    border-radius: 50%;
 
     background: var(--surface-muted);
     color: #77777c;
@@ -757,19 +737,72 @@
         color 180ms ease;
 }
 
-.music-project-closing-top:hover {
+.ai-project-closing-top:hover {
     background: #dfded9;
+
     color: #555559;
 
-    transform: translateY(-2px);
+    transform: translateY(-1px);
 }
+
+/* --------------------------------
+   Floating back to top
+-------------------------------- */
+
+.ai-project-top {
+    position: fixed;
+
+    right: 22px;
+    bottom: 22px;
+
+    z-index: 20;
+
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: 0;
+    border-radius: 50%;
+
+    background: rgba(250, 249, 246, 0.78);
+
+    color: #66666b;
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    box-shadow:
+        0 8px 24px rgba(45, 45, 45, 0.08);
+
+    cursor: pointer;
+
+    transition:
+        transform 180ms ease,
+        background-color 180ms ease,
+        color 180ms ease;
+}
+
+.ai-project-top:hover {
+    transform: translateY(-2px);
+
+    background: #ffffff;
+
+    color: #444448;
+}
+
 
 /* Scroll animations */
 
 @keyframes ai-project-hero-in {
     0% {
         opacity: 0;
-        transform: translateY(32px);
+        transform: translateY(26px);
     }
 
     20% {
@@ -784,14 +817,14 @@
 
     100% {
         opacity: 0;
-        transform: translateY(-32px);
+        transform: translateY(-26px);
     }
 }
 
 @keyframes ai-project-image-in {
     0% {
         opacity: 0;
-        transform: translateY(40px) scale(0.97);
+        transform: translateY(32px) scale(0.97);
     }
 
     100% {
@@ -803,7 +836,7 @@
 @keyframes ai-project-section-in {
     0% {
         opacity: 0;
-        transform: translateY(40px);
+        transform: translateY(32px);
     }
 
     100% {
@@ -815,7 +848,7 @@
 @keyframes ai-project-feature-in {
     0% {
         opacity: 0;
-        transform: translateY(50px) scale(0.985);
+        transform: translateY(40px) scale(0.985);
     }
 
     100% {
@@ -831,14 +864,14 @@
 
     .ai-project-hero {
         padding:
-            150px 6vw 100px;
+            120px 4.8vw 80px;
     }
 
     .ai-project-section,
     .ai-project-skills {
         grid-template-columns: 1fr;
 
-        gap: 40px;
+        gap: 32px;
     }
 
     .ai-project-feature,
@@ -852,15 +885,15 @@
     }
 
     .ai-project-feature-media {
-        min-height: 500px;
+        min-height: 400px;
     }
 
     .ai-project-gallery-large {
-        height: 55vw;
+        height: 44vw;
     }
 
     .ai-project-gallery-row .ai-project-gallery-item {
-        height: 380px;
+        height: 304px;
     }
 }
 
@@ -868,19 +901,19 @@
 @media (max-width: 700px) {
 
     .ai-project-back {
-        top: 18px;
-        left: 18px;
+        top: 14px;
+        left: 14px;
     }
 
     .ai-project-hero {
         min-height: auto;
 
         padding:
-            130px 24px 90px;
+            104px 19px 72px;
     }
 
     .ai-project-hero h1 {
-        font-size: clamp(62px, 18vw, 100px);
+        font-size: clamp(50px, 14.4vw, 80px);
     }
 
     .ai-project-actions {
@@ -888,15 +921,15 @@
     }
 
     .ai-project-gallery {
-        width: calc(100% - 32px);
+        width: calc(100% - 26px);
 
-        padding-bottom: 90px;
+        padding-bottom: 72px;
     }
 
     .ai-project-gallery-large {
-        height: 400px;
+        height: 320px;
 
-        border-radius: 24px;
+        border-radius: 19px;
     }
 
     .ai-project-gallery-row {
@@ -904,46 +937,46 @@
     }
 
     .ai-project-gallery-row .ai-project-gallery-item {
-        height: 320px;
+        height: 256px;
 
-        border-radius: 24px;
+        border-radius: 19px;
     }
 
     .ai-project-section,
     .ai-project-skills {
-        width: calc(100% - 48px);
+        width: calc(100% - 38px);
 
-        padding: 100px 0;
+        padding: 80px 0;
     }
 
     .ai-project-feature {
-        width: calc(100% - 32px);
+        width: calc(100% - 26px);
 
-        padding: 12px;
+        padding: 10px;
 
-        border-radius: 28px;
+        border-radius: 22px;
     }
 
     .ai-project-feature-content {
-        padding: 45px 24px;
+        padding: 36px 19px;
     }
 
     .ai-project-feature-media {
-        min-height: 360px;
+        min-height: 288px;
 
-        border-radius: 20px;
+        border-radius: 16px;
     }
 
     .ai-project-skills-grid {
         grid-template-columns: 1fr;
 
-        gap: 40px;
+        gap: 32px;
 
-        margin-top: 55px;
+        margin-top: 44px;
     }
 
     .ai-project-closing {
-        padding-bottom: 110px;
+        padding-bottom: 88px;
     }
 }
 

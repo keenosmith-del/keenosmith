@@ -50,14 +50,43 @@ function CV() {
                     <div className="cv-intro-divider" />
 
                     <div className="cv-intro-links">
-                        <span>github.com/keenosmith-del</span>
-                        <span>linkedin.com/in/keenosmith</span>
-                        <span>keenosmith.vercel.app/</span>
+
+                        <a
+                            href="https://github.com/keenosmith-del"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            github.com/keenosmith-del
+                        </a>
+
+                        <a
+                            href="https://linkedin.com/in/keenotreysmith"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            linkedin.com/in/keenotreysmith
+                        </a>
+
+                        <a
+                            href="https://keenosmith.vercel.app/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            keenosmith.vercel.app/
+                        </a>
+
                     </div>
 
                     <div className="cv-intro-contact">
-                        <span>business.keenosmith@icloud.com</span>
-                        <span>+27 82 415 8441</span>
+
+                        <a href="mailto:business.keenosmith@icloud.com">
+                            business.keenosmith@icloud.com
+                        </a>
+
+                        <a href="tel:+27824158441">
+                            +27 82 415 8441
+                        </a>
+
                     </div>
 
                     <div className="cv-intro-content">
@@ -551,13 +580,23 @@ function CV() {
                                 </p>
 
                                 <div className="cv-project-direct-links">
-                                    <a href="#" target="_blank" rel="noopener noreferrer">
+
+                                    <a
+                                        href="https://github.com/keenosmith-del/personal-productivity-desktop"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
                                         GitHub Repo: github.com/keenosmith-del/personal-productivity-desktop
                                     </a>
 
-                                    <a href="#" target="_blank" rel="noopener noreferrer">
+                                    <a
+                                        href="https://personal-productivity-desktop.vercel.app/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
                                         Live URL: personal-productivity-desktop.vercel.app/
                                     </a>
+
                                 </div>
                             </div>
                         </div>
@@ -586,13 +625,23 @@ function CV() {
                                 </p>
 
                                 <div className="cv-project-direct-links">
-                                    <a href="#" target="_blank" rel="noopener noreferrer">
+
+                                    <a
+                                        href="https://github.com/keenosmith-del/ai-entity"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
                                         GitHub Repo: github.com/keenosmith-del/ai-entity
                                     </a>
 
-                                    <a href="#" target="_blank" rel="noopener noreferrer">
+                                    <a
+                                        href="https://ai-entity-psi.vercel.app/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
                                         Live URL: ai-entity-psi.vercel.app/
                                     </a>
+
                                 </div>
                             </div>
                         </div>
@@ -621,15 +670,15 @@ function CV() {
                                 </p>
 
                                 <div className="cv-project-direct-links">
-                                    <a href="#" target="_blank" rel="noopener noreferrer">
+
+                                    <a
+                                        href="https://github.com/keenosmith-del/music-api"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
                                         GitHub Repo: github.com/keenosmith-del/music-api
                                     </a>
 
-                                    {/*
-                                    <a href="#" target="_blank" rel="noopener noreferrer">
-                                        Live URL: project-placeholder.com
-                                    </a>
-                                    */}
                                 </div>
                             </div>
                         </div>
@@ -659,13 +708,23 @@ function CV() {
                                 </p>
 
                                 <div className="cv-project-direct-links">
-                                    <a href="#" target="_blank" rel="noopener noreferrer">
+
+                                    <a
+                                        href="https://github.com/keenosmith-del/enterprise-workspace"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
                                         GitHub Repo: github.com/keenosmith-del/enterprise-workspace
                                     </a>
 
-                                    <a href="#" target="_blank" rel="noopener noreferrer">
+                                    <a
+                                        href="https://enterprise-workspace-liard.vercel.app/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
                                         Live URL: enterprise-workspace-liard.vercel.app/
                                     </a>
+
                                 </div>
                             </div>
                         </div>
@@ -682,19 +741,35 @@ function CV() {
 
                     <div className="cv-skills-links">
 
-                        <a href="#" target="_blank" rel="noopener noreferrer">
+                        <a
+                            href="https://github.com/keenosmith-del"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
                             GitHub: github.com/keenosmith-del
                         </a>
 
-                        <a href="#" target="_blank" rel="noopener noreferrer">
+                        <a
+                            href="https://www.codewars.com/users/keenosmith-del"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
                             Codewars: codewars.com/users/keenosmith-del
                         </a>
 
-                        <a href="#" target="_blank" rel="noopener noreferrer">
+                        <a
+                            href="https://leetcode.com/u/keenosmith/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
                             LeetCode: leetcode.com/u/keenosmith/
                         </a>
 
-                        <a href="#" target="_blank" rel="noopener noreferrer">
+                        <a
+                            href="https://www.freecodecamp.org/keenosmith"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
                             freeCodeCamp: freecodecamp.org/keenosmith
                         </a>
 

@@ -364,24 +364,19 @@ function AIModel() {
                         converge into a single application.
                     </p>
 
-                    <div className="music-project-closing-actions">
+                    <div className="ai-project-closing-actions">
 
                         <a
-                            className="music-project-closing-button"
+                            className="ai-project-closing-button"
                             href="/"
                         >
                             Back to Portfolio
                         </a>
 
                         <button
-                            className="music-project-closing-top"
+                            className="ai-project-closing-top"
                             type="button"
-                            onClick={() => {
-                                window.scrollTo({
-                                    top: 0,
-                                    behavior: 'smooth',
-                                });
-                            }}
+                            onClick={scrollToTop}
                             aria-label="Back to top"
                         >
                             <ArrowUp
@@ -399,13 +394,13 @@ function AIModel() {
 
             {showBackToTop && (
                 <button
-                    className="productivity-project-top"
+                    className="ai-project-top"
                     type="button"
                     onClick={scrollToTop}
                     aria-label="Back to top"
                 >
                     <ArrowUp
-                        size={17}
+                        size={16}
                         strokeWidth={1.7}
                         aria-hidden="true"
                     />

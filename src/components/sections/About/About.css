@@ -1,11 +1,11 @@
 .about {
     position: relative;
-    padding: 30px 0 120px;
+    padding: 24px 0 96px;
 }
 
 .about-intro {
-    width: min(760px, calc(100% - 48px));
-    margin: 0 auto 100px;
+    width: min(608px, calc(100% - 48px));
+    margin: 0 auto 80px;
     text-align: center;
 
     animation: about-intro-scroll linear both;
@@ -14,9 +14,9 @@
 }
 
 .about-eyebrow {
-    margin: 0 0 12px;
+    margin: 0 0 10px;
     color: #a0a0a4;
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 500;
     letter-spacing: 0.02em;
 }
@@ -24,17 +24,17 @@
 .about-intro h2 {
     margin: 0;
     color: #555559;
-    font-size: clamp(44px, 5vw, 72px);
+    font-size: clamp(35px, 4vw, 58px);
     font-weight: 500;
     line-height: 0.98;
     letter-spacing: -0.035em;
 }
 
 .about-intro-description {
-    max-width: 680px;
-    margin: 26px auto 0;
+    max-width: 544px;
+    margin: 21px auto 0;
     color: #858589;
-    font-size: clamp(16px, 1.25vw, 19px);
+    font-size: clamp(13px, 1vw, 15px);
     font-weight: 400;
     line-height: 1.6;
     letter-spacing: -0.012em;
@@ -43,8 +43,8 @@
 .about-actions {
     display: flex;
     justify-content: center;
-    gap: 12px;
-    margin-top: 32px;
+    gap: 10px;
+    margin-top: 26px;
 }
 
 .about-button {
@@ -52,14 +52,14 @@
     align-items: center;
     justify-content: center;
 
-    min-width: 170px;
-    min-height: 48px;
+    min-width: 136px;
+    min-height: 38px;
 
-    padding: 0 22px;
+    padding: 0 18px;
 
     border-radius: 999px;
 
-    font-size: 14px;
+    font-size: 11px;
     font-weight: 500;
     letter-spacing: -0.01em;
 
@@ -102,11 +102,11 @@
         1.45fr 1.1fr 0.7fr 1.15fr;
 
     grid-template-rows:
-        310px 220px;
+        248px 176px;
 
-    gap: 16px;
+    gap: 13px;
 
-    width: min(1400px, 88vw);
+    width: min(1120px, 88vw);
 
     margin: 0 auto;
 }
@@ -126,15 +126,15 @@
 
     min-width: 0;
 
-    padding: 32px;
+    padding: 26px;
 
-    border-radius: 28px;
+    border-radius: 22px;
 
     background: var(--surface);
 
     box-shadow:
-        0 20px 55px rgba(45, 45, 45, 0.055),
-        0 5px 16px rgba(45, 45, 45, 0.025);
+        0 16px 44px rgba(45, 45, 45, 0.055),
+        0 4px 13px rgba(45, 45, 45, 0.025);
 
     animation: about-tile-in linear both;
     animation-timeline: view();
@@ -158,9 +158,9 @@
 .about-tile-one-top {
     position: absolute;
 
-    top: 26px;
-    left: 28px;
-    right: 28px;
+    top: 21px;
+    left: 22px;
+    right: 22px;
 
     display: flex;
     align-items: flex-start;
@@ -170,16 +170,16 @@
     display: flex;
     flex-wrap: wrap;
 
-    gap: 7px;
+    gap: 6px;
 }
 
 .about-tile-one-pills span {
     display: inline-flex;
     align-items: center;
 
-    min-height: 28px;
+    min-height: 22px;
 
-    padding: 0 11px;
+    padding: 0 9px;
 
     border-radius: 999px;
 
@@ -187,7 +187,7 @@
 
     color: #d1d1d4;
 
-    font-size: 10px;
+    font-size: 8px;
     font-weight: 500;
     line-height: 1;
     letter-spacing: -0.005em;
@@ -198,26 +198,26 @@
 }
 
 .about-tile-one-content h3 {
-    max-width: 680px;
+    max-width: 544px;
 
     margin: 0;
 
     color: #e2e2e5;
 
-    font-size: clamp(24px, 2.1vw, 34px);
+    font-size: clamp(19px, 1.7vw, 27px);
     font-weight: 500;
     line-height: 1.02;
     letter-spacing: -0.03em;
 }
 
 .about-tile-one-content p {
-    max-width: 650px;
+    max-width: 520px;
 
-    margin: 18px 0 0;
+    margin: 14px 0 0;
 
     color: #b9b9bd;
 
-    font-size: 13px;
+    font-size: 10px;
     font-weight: 400;
     line-height: 1.55;
     letter-spacing: -0.005em;
@@ -238,8 +238,8 @@
 .about-tile-two-logo {
     position: absolute;
 
-    top: 28px;
-    right: 28px;
+    top: 22px;
+    right: 22px;
 
     display: flex;
     align-items: center;
@@ -247,8 +247,8 @@
 }
 
 .about-tile-two-logo img {
-    width: 32px;
-    height: 32px;
+    width: 26px;
+    height: 26px;
 
     object-fit: contain;
 
@@ -264,7 +264,7 @@
 
     color: #5b5b60;
 
-    font-size: clamp(24px, 2vw, 32px);
+    font-size: clamp(19px, 1.6vw, 26px);
     font-weight: 500;
     line-height: 1;
     letter-spacing: -0.03em;
@@ -274,28 +274,28 @@
     display: flex;
     flex-direction: column;
 
-    gap: 5px;
+    gap: 4px;
 
-    margin-top: 13px;
+    margin-top: 10px;
 }
 
 .about-tile-two-credentials span {
     color: #79797e;
 
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 400;
     line-height: 1.35;
     letter-spacing: -0.005em;
 }
 
 .about-tile-two-content p {
-    max-width: 400px;
+    max-width: 320px;
 
-    margin: 16px 0 0;
+    margin: 13px 0 0;
 
     color: #858589;
 
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 400;
     line-height: 1.5;
 }
@@ -317,13 +317,13 @@
 .about-tile-three-logo {
     position: absolute;
 
-    top: 26px;
-    right: 26px;
+    top: 21px;
+    right: 21px;
 }
 
 .about-tile-three-logo img {
-    width: 29px;
-    height: 29px;
+    width: 23px;
+    height: 23px;
 
     object-fit: contain;
 
@@ -342,18 +342,18 @@
 
     color: #555559;
 
-    font-size: clamp(44px, 4vw, 64px);
+    font-size: clamp(35px, 3.2vw, 51px);
     font-weight: 500;
     line-height: 0.9;
     letter-spacing: -0.04em;
 }
 
 .about-tile-three-content span {
-    margin-top: 9px;
+    margin-top: 7px;
 
     color: #77777c;
 
-    font-size: 14px;
+    font-size: 11px;
     font-weight: 500;
     line-height: 1.2;
 }
@@ -366,15 +366,15 @@
 .about-tile-three-link {
     position: absolute;
 
-    right: 26px;
-    bottom: 24px;
+    right: 21px;
+    bottom: 19px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    width: 34px;
-    height: 34px;
+    width: 27px;
+    height: 27px;
 
     border-radius: 999px;
 
@@ -384,7 +384,7 @@
 
     opacity: 0;
 
-    transform: translateX(-5px);
+    transform: translateX(-4px);
 
     transition:
         opacity 180ms ease,
@@ -416,22 +416,22 @@
 .about-tile-four-header {
     position: absolute;
 
-    top: 26px;
-    left: 28px;
-    right: 28px;
+    top: 21px;
+    left: 22px;
+    right: 22px;
 
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
 
-    gap: 12px;
+    gap: 10px;
 }
 
 .about-tile-four-pills {
     display: flex;
     flex-wrap: wrap;
 
-    gap: 7px;
+    gap: 6px;
 
     min-width: 0;
 }
@@ -440,9 +440,9 @@
     display: inline-flex;
     align-items: center;
 
-    min-height: 28px;
+    min-height: 22px;
 
-    padding: 0 10px;
+    padding: 0 8px;
 
     border-radius: 999px;
 
@@ -450,15 +450,15 @@
 
     color: #77777c;
 
-    font-size: 9px;
+    font-size: 7px;
     font-weight: 500;
     line-height: 1;
     letter-spacing: -0.005em;
 }
 
 .about-tile-four-logo {
-    width: 29px;
-    height: 29px;
+    width: 23px;
+    height: 23px;
 
     flex-shrink: 0;
 
@@ -476,20 +476,20 @@
 
     color: #5b5b60;
 
-    font-size: clamp(21px, 1.7vw, 28px);
+    font-size: clamp(17px, 1.35vw, 22px);
     font-weight: 500;
     line-height: 1.05;
     letter-spacing: -0.025em;
 }
 
 .about-tile-four-content p {
-    max-width: 440px;
+    max-width: 352px;
 
-    margin: 15px 0 0;
+    margin: 12px 0 0;
 
     color: #858589;
 
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 400;
     line-height: 1.5;
 }
@@ -511,13 +511,13 @@
 .about-tile-five-logo {
     position: absolute;
 
-    top: 25px;
-    right: 26px;
+    top: 20px;
+    right: 21px;
 }
 
 .about-tile-five-logo img {
-    width: 28px;
-    height: 28px;
+    width: 22px;
+    height: 22px;
 
     object-fit: contain;
 
@@ -534,18 +534,18 @@
 
     color: #555559;
 
-    font-size: clamp(44px, 4vw, 64px);
+    font-size: clamp(35px, 3.2vw, 51px);
     font-weight: 500;
     line-height: 0.9;
     letter-spacing: -0.04em;
 }
 
 .about-tile-five-content span {
-    margin-top: 9px;
+    margin-top: 7px;
 
     color: #77777c;
 
-    font-size: 14px;
+    font-size: 11px;
     font-weight: 500;
     line-height: 1.2;
 }
@@ -558,15 +558,15 @@
 .about-tile-five-link {
     position: absolute;
 
-    right: 26px;
-    bottom: 24px;
+    right: 21px;
+    bottom: 19px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    width: 34px;
-    height: 34px;
+    width: 27px;
+    height: 27px;
 
     border-radius: 999px;
 
@@ -576,7 +576,7 @@
 
     opacity: 0;
 
-    transform: translateX(-5px);
+    transform: translateX(-4px);
 
     transition:
         opacity 180ms ease,
@@ -608,18 +608,18 @@
 .about-tile-six-logos {
     position: absolute;
 
-    top: 25px;
-    right: 26px;
+    top: 20px;
+    right: 21px;
 
     display: flex;
     align-items: center;
 
-    gap: 7px;
+    gap: 6px;
 }
 
 .about-tile-six-logos img {
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
 
     object-fit: contain;
 
@@ -636,18 +636,18 @@
 
     color: #555559;
 
-    font-size: clamp(44px, 4vw, 64px);
+    font-size: clamp(35px, 3.2vw, 51px);
     font-weight: 500;
     line-height: 0.9;
     letter-spacing: -0.04em;
 }
 
 .about-tile-six-content span {
-    margin-top: 9px;
+    margin-top: 7px;
 
     color: #77777c;
 
-    font-size: 14px;
+    font-size: 11px;
     font-weight: 500;
     line-height: 1.2;
 }
@@ -660,15 +660,15 @@
 .about-tile-six-link {
     position: absolute;
 
-    right: 26px;
-    bottom: 24px;
+    right: 21px;
+    bottom: 19px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    width: 34px;
-    height: 34px;
+    width: 27px;
+    height: 27px;
 
     border-radius: 999px;
 
@@ -678,7 +678,7 @@
 
     opacity: 0;
 
-    transform: translateX(-5px);
+    transform: translateX(-4px);
 
     transition:
         opacity 180ms ease,
@@ -710,13 +710,13 @@
 .about-tile-seven-logo {
     position: absolute;
 
-    top: 25px;
-    right: 26px;
+    top: 20px;
+    right: 21px;
 }
 
 .about-tile-seven-logo img {
-    width: 28px;
-    height: 28px;
+    width: 22px;
+    height: 22px;
 
     object-fit: contain;
 
@@ -735,20 +735,20 @@
 
     color: #5b5b60;
 
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 500;
     line-height: 1;
     letter-spacing: -0.025em;
 }
 
 .about-tile-seven-content span {
-    max-width: 190px;
+    max-width: 152px;
 
-    margin-top: 10px;
+    margin-top: 8px;
 
     color: #808085;
 
-    font-size: 11px;
+    font-size: 9px;
     font-weight: 400;
     line-height: 1.4;
 }
@@ -761,15 +761,15 @@
 .about-tile-seven-link {
     position: absolute;
 
-    right: 22px;
-    bottom: 20px;
+    right: 18px;
+    bottom: 16px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    width: 32px;
-    height: 32px;
+    width: 26px;
+    height: 26px;
 
     border-radius: 999px;
 
@@ -779,7 +779,7 @@
 
     opacity: 0;
 
-    transform: translateX(-5px);
+    transform: translateX(-4px);
 
     transition:
         opacity 180ms ease,
@@ -811,9 +811,9 @@
 .about-tile-eight-header {
     position: absolute;
 
-    top: 25px;
-    left: 28px;
-    right: 28px;
+    top: 20px;
+    left: 22px;
+    right: 22px;
 
     display: flex;
     align-items: center;
@@ -824,9 +824,9 @@
     display: inline-flex;
     align-items: center;
 
-    min-height: 28px;
+    min-height: 22px;
 
-    padding: 0 11px;
+    padding: 0 9px;
 
     border-radius: 999px;
 
@@ -834,14 +834,14 @@
 
     color: #77777c;
 
-    font-size: 10px;
+    font-size: 8px;
     font-weight: 500;
     line-height: 1;
 }
 
 .about-tile-eight-logo {
-    width: 30px;
-    height: 30px;
+    width: 24px;
+    height: 24px;
 
     object-fit: contain;
 
@@ -857,20 +857,20 @@
 
     color: #5b5b60;
 
-    font-size: clamp(22px, 1.8vw, 29px);
+    font-size: clamp(18px, 1.45vw, 23px);
     font-weight: 500;
     line-height: 1;
     letter-spacing: -0.025em;
 }
 
 .about-tile-eight-content p {
-    max-width: 430px;
+    max-width: 344px;
 
-    margin: 14px 0 0;
+    margin: 11px 0 0;
 
     color: #858589;
 
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 400;
     line-height: 1.5;
 }
@@ -883,7 +883,7 @@
 @keyframes about-tile-in {
     0% {
         opacity: 0;
-        transform: translateY(28px) scale(0.98);
+        transform: translateY(22px) scale(0.98);
     }
 
     100% {
@@ -896,7 +896,7 @@
 @keyframes about-intro-scroll {
     0% {
         opacity: 0;
-        transform: translateY(28px);
+        transform: translateY(22px);
     }
 
     20% {
@@ -911,7 +911,7 @@
 
     100% {
         opacity: 0;
-        transform: translateY(-28px);
+        transform: translateY(-22px);
     }
 }
 
@@ -923,7 +923,7 @@
 @media (max-width: 1000px) {
 
     .about {
-        padding-top: 140px;
+        padding-top: 112px;
     }
 
     .about-grid {
@@ -933,7 +933,7 @@
             1.3fr 1fr 0.8fr;
 
         grid-template-rows:
-            280px 220px 220px;
+            224px 176px 176px;
     }
 
     .about-tile-one {
@@ -977,14 +977,14 @@
     }
 
     .about-tile {
-        padding: 28px;
+        padding: 22px;
     }
 
     .about-tile-one-top,
     .about-tile-four-header,
     .about-tile-eight-header {
-        left: 24px;
-        right: 24px;
+        left: 19px;
+        right: 19px;
     }
 }
 
@@ -996,15 +996,15 @@
 @media (max-width: 700px) {
 
     .about {
-        padding: 110px 0 100px;
+        padding: 88px 0 80px;
     }
 
     .about-intro {
-        margin-bottom: 60px;
+        margin-bottom: 48px;
     }
 
     .about-intro h2 {
-        font-size: clamp(40px, 11vw, 58px);
+        font-size: clamp(32px, 8.8vw, 46px);
     }
 
     .about-actions {
@@ -1022,86 +1022,86 @@
 
         width: calc(100% - 32px);
 
-        gap: 12px;
+        gap: 10px;
     }
 
     .about-tile {
-        min-height: 220px;
+        min-height: 176px;
 
-        padding: 26px;
+        padding: 21px;
 
-        border-radius: 24px;
+        border-radius: 19px;
     }
 
     .about-tile-three,
     .about-tile-five,
     .about-tile-six,
     .about-tile-seven {
-        min-height: 170px;
+        min-height: 136px;
     }
 
     .about-tile-four,
     .about-tile-eight {
-        min-height: 240px;
+        min-height: 192px;
     }
 
     .about-tile-one-top,
     .about-tile-four-header,
     .about-tile-eight-header {
-        top: 20px;
-        left: 22px;
-        right: 22px;
+        top: 16px;
+        left: 18px;
+        right: 18px;
     }
 
     .about-tile-one-pills,
     .about-tile-four-pills {
-        gap: 5px;
+        gap: 4px;
     }
 
     .about-tile-one-pills span,
     .about-tile-four-pills span,
     .about-tile-eight-pill {
-        min-height: 25px;
+        min-height: 20px;
 
-        padding: 0 9px;
+        padding: 0 7px;
 
-        font-size: 9px;
+        font-size: 7px;
     }
 
     .about-tile-one-content h3 {
-        font-size: clamp(24px, 7vw, 32px);
+        font-size: clamp(19px, 5.6vw, 26px);
     }
 
     .about-tile-one-content p {
-        font-size: 12px;
+        font-size: 10px;
     }
 
     .about-tile-two-logo {
-        top: 22px;
-        right: 22px;
+        top: 18px;
+        right: 18px;
     }
 
     .about-tile-two-logo img,
     .about-tile-four-logo,
     .about-tile-eight-logo {
-        width: 26px;
-        height: 26px;
+        width: 21px;
+        height: 21px;
     }
 
     .about-tile-four-content h3 {
-        font-size: 24px;
+        font-size: 19px;
     }
 
     .about-tile-four-content p,
     .about-tile-eight-content p {
-        font-size: 12px;
+        font-size: 10px;
     }
 
     .about-tile-three-logo,
     .about-tile-five-logo,
     .about-tile-seven-logo {
-        top: 22px;
-        right: 22px;
+        top: 18px;
+        right: 18px;
     }
 
     .about-tile-three-link,
@@ -1118,7 +1118,7 @@
     .about-tile-three-content strong,
     .about-tile-five-content strong,
     .about-tile-six-content strong {
-        font-size: 48px;
+        font-size: 38px;
     }
 }
 

@@ -4,7 +4,7 @@
     min-height: 100vh;
 
     padding:
-        150px 7vw 100px;
+        120px 7vw 80px;
 
     display: flex;
     align-items: center;
@@ -14,16 +14,16 @@
     display: grid;
 
     grid-template-columns:
-        minmax(360px, 0.9fr) minmax(420px, 1.1fr);
+        minmax(300px, 0.9fr) minmax(350px, 1.1fr);
 
     align-items: center;
 
     width: 100%;
-    max-width: 1500px;
+    max-width: 1200px;
 
     margin: 0 auto;
 
-    gap: clamp(60px, 8vw, 150px);
+    gap: clamp(48px, 6.4vw, 120px);
 
     animation: hero-content-scroll linear both;
     animation-timeline: view();
@@ -41,7 +41,7 @@
 }
 
 .hero-avatar {
-    width: min(34vw, 460px);
+    width: min(27vw, 368px);
     aspect-ratio: 1;
 
     overflow: hidden;
@@ -51,8 +51,8 @@
     background: var(--surface-muted);
 
     box-shadow:
-        0 30px 80px rgba(45, 45, 45, 0.08),
-        0 8px 25px rgba(45, 45, 45, 0.04);
+        0 24px 64px rgba(45, 45, 45, 0.08),
+        0 6px 20px rgba(45, 45, 45, 0.04);
 }
 
 .hero-avatar img {
@@ -69,11 +69,11 @@
     display: flex;
     align-items: center;
 
-    width: min(34vw, 460px);
+    width: min(27vw, 368px);
 
-    gap: 12px;
+    gap: 10px;
 
-    margin-top: 24px;
+    margin-top: 19px;
 
     animation:
         hero-actions-in 700ms cubic-bezier(0.22, 1, 0.36, 1) 500ms both;
@@ -87,13 +87,13 @@
 
     flex: 1;
 
-    min-height: 50px;
+    min-height: 40px;
 
-    padding: 0 22px;
+    padding: 0 18px;
 
     border-radius: 999px;
 
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 500;
 
     letter-spacing: -0.01em;
@@ -131,7 +131,7 @@
 }
 
 .hero-copy {
-    max-width: 680px;
+    max-width: 544px;
 
     animation:
         hero-copy-in 900ms cubic-bezier(0.22, 1, 0.36, 1) 250ms both;
@@ -142,7 +142,7 @@
 
     color: #555559;
 
-    font-size: clamp(64px, 7.5vw, 124px);
+    font-size: clamp(51px, 6vw, 99px);
 
     font-weight: 500;
 
@@ -152,11 +152,11 @@
 }
 
 .hero-title {
-    margin: 10px 0 0;
+    margin: 8px 0 0;
 
     color: #96969a;
 
-    font-size: clamp(14px, 1.15vw, 18px);
+    font-size: clamp(11px, 0.92vw, 14px);
 
     font-weight: 500;
 
@@ -166,11 +166,11 @@
 }
 
 .hero-subtitle {
-    margin: 6px 0 0;
+    margin: 5px 0 0;
 
     color: #a6a6aa;
 
-    font-size: clamp(11px, 0.85vw, 14px);
+    font-size: clamp(9px, 0.68vw, 11px);
 
     font-weight: 500;
 
@@ -180,9 +180,9 @@
 }
 
 .hero-description {
-    max-width: 570px;
+    max-width: 456px;
 
-    margin-top: 34px;
+    margin-top: 27px;
 }
 
 .hero-description p {
@@ -190,7 +190,7 @@
 
     color: #858589;
 
-    font-size: clamp(18px, 1.7vw, 24px);
+    font-size: clamp(14px, 1.36vw, 19px);
 
     font-weight: 400;
 
@@ -200,7 +200,7 @@
 }
 
 .hero-description p+p {
-    margin-top: 20px;
+    margin-top: 16px;
 }
 
 @keyframes hero-visual-in {
@@ -208,7 +208,7 @@
         opacity: 0;
 
         transform:
-            translateX(-30px) translateY(18px);
+            translateX(-24px) translateY(14px);
     }
 
     100% {
@@ -224,7 +224,7 @@
         opacity: 0;
 
         transform:
-            scale(0.78) translateY(25px);
+            scale(0.78) translateY(20px);
     }
 
     60% {
@@ -247,7 +247,7 @@
         opacity: 0;
 
         transform:
-            translateY(15px);
+            translateY(12px);
     }
 
     100% {
@@ -263,7 +263,7 @@
         opacity: 0;
 
         transform:
-            translateX(25px) translateY(12px);
+            translateX(20px) translateY(10px);
     }
 
     100% {
@@ -277,7 +277,7 @@
 @keyframes hero-content-scroll {
     0% {
         opacity: 0;
-        transform: translateY(28px);
+        transform: translateY(22px);
     }
 
     20% {
@@ -292,69 +292,69 @@
 
     100% {
         opacity: 0;
-        transform: translateY(-28px);
+        transform: translateY(-22px);
     }
 }
 
 @media (max-width: 900px) {
     .hero {
         padding:
-            130px 6vw 80px;
+            104px 6vw 64px;
     }
 
     .hero-content {
         grid-template-columns: 1fr;
 
-        gap: 60px;
+        gap: 48px;
     }
 
     .hero-avatar {
-        width: min(65vw, 440px);
+        width: min(52vw, 352px);
     }
 
     .hero-actions {
-        width: min(65vw, 440px);
+        width: min(52vw, 352px);
     }
 
     .hero-copy {
-        max-width: 720px;
+        max-width: 576px;
     }
 
     .hero-heading-group h1 {
-        font-size: clamp(64px, 13vw, 110px);
+        font-size: clamp(51px, 10.4vw, 88px);
     }
 }
 
 @media (max-width: 600px) {
     .hero {
         padding:
-            110px 24px 70px;
+            88px 24px 56px;
     }
 
     .hero-content {
-        gap: 42px;
+        gap: 34px;
     }
 
     .hero-avatar {
-        width: min(82vw, 400px);
+        width: min(66vw, 320px);
     }
 
     .hero-actions {
-        width: min(82vw, 400px);
+        width: min(66vw, 320px);
     }
 
     .hero-button {
         flex: 1;
 
-        padding-inline: 16px;
+        padding-inline: 13px;
     }
 
     .hero-description {
-        margin-top: 36px;
+        margin-top: 29px;
     }
 
     .hero-description p {
-        font-size: 19px;
+        font-size: 15px;
     }
 }
 

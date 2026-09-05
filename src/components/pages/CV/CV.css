@@ -1,6 +1,6 @@
 .cv {
     min-height: 100vh;
-    padding: 110px 24px 80px;
+    padding: 88px 19px 64px;
 
     background: #f6f5f1;
     color: #3a3a3c;
@@ -18,8 +18,8 @@
 /* CV page controls */
 
 .cv-page-controls {
-    width: min(100%, 1100px);
-    margin: 0 auto 18px;
+    width: min(100%, 880px);
+    margin: 0 auto 14px;
 
     display: flex;
     align-items: center;
@@ -29,9 +29,9 @@
 .cv-page-control {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
 
-    padding: 9px 13px;
+    padding: 7px 10px;
 
     border: 0;
     border-radius: 999px;
@@ -48,14 +48,14 @@
         Arial,
         sans-serif;
 
-    font-size: 11px;
+    font-size: 9px;
     font-weight: 400;
     line-height: 1;
 
     cursor: pointer;
 
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(13px);
+    -webkit-backdrop-filter: blur(13px);
 
     transition:
         background 180ms ease,
@@ -79,15 +79,15 @@
 /* page */
 
 .cv-page {
-    width: min(100%, 1100px);
+    width: min(100%, 880px);
     margin: 0 auto;
 
     background: #faf9f6;
 
-    border-radius: 32px;
+    border-radius: 26px;
 
     box-shadow:
-        0 24px 80px rgba(35, 35, 37, 0.07);
+        0 19px 64px rgba(35, 35, 37, 0.07);
 
     overflow: hidden;
 }
@@ -100,7 +100,7 @@
 .cv-intro {
     position: relative;
 
-    height: 760px;
+    height: 608px;
 }
 
 
@@ -111,9 +111,9 @@
 .cv-intro-divider {
     position: absolute;
 
-    top: 100px;
+    top: 80px;
     left: 0px;
-    right: 80px;
+    right: 64px;
 
     height: 1px;
 
@@ -128,21 +128,36 @@
 .cv-intro-links {
     position: absolute;
 
-    top: 120px;
-    left: 80px;
+    top: 96px;
+    left: 64px;
 
     display: flex;
     flex-direction: column;
-    gap: 3px;
+    gap: 2px;
 }
 
 .cv-intro-links span {
+    color: #858589;
+
+    font-size: 9px;
+    font-weight: 400;
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+}
+
+.cv-intro-links a {
     color: #858589;
 
     font-size: 11px;
     font-weight: 400;
     line-height: 1.35;
     letter-spacing: -0.01em;
+
+    text-decoration: none;
+}
+
+.cv-intro-links a:hover {
+    color: #4a4a4e;
 }
 
 
@@ -153,20 +168,35 @@
 .cv-intro-contact {
     position: absolute;
 
-    top: 120px;
-    right: 455px;
+    top: 96px;
+    right: 364px;
 
     display: flex;
     flex-direction: column;
-    gap: 3px;
+    gap: 2px;
 
     text-align: right;
+}
+
+.cv-intro-contact a {
+    color: #858589;
+
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+
+    text-decoration: none;
+}
+
+.cv-intro-contact a:hover {
+    color: #4a4a4e;
 }
 
 .cv-intro-contact span {
     color: #858589;
 
-    font-size: 11px;
+    font-size: 9px;
     font-weight: 400;
     line-height: 1.35;
     letter-spacing: -0.01em;
@@ -180,8 +210,8 @@
 .cv-intro-content {
     position: absolute;
 
-    top: 360px;
-    left: 80px;
+    top: 288px;
+    left: 64px;
 }
 
 .cv-intro h1 {
@@ -189,31 +219,31 @@
 
     color: #3a3a3c;
 
-    font-size: clamp(56px, 7vw, 92px);
+    font-size: clamp(45px, 7vw, 74px);
     font-weight: 500;
     line-height: 0.92;
     letter-spacing: -0.055em;
 }
 
 .cv-title {
-    margin: 18px 0 0;
+    margin: 14px 0 0;
 
     color: #69696e;
 
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 400;
     line-height: 1.15;
     letter-spacing: -0.025em;
 }
 
 .cv-positioning {
-    max-width: 520px;
+    max-width: 416px;
 
-    margin: 4px 0 0;
+    margin: 3px 0 0;
 
     color: #9a9a9f;
 
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 500;
     line-height: 1.6;
 }
@@ -226,9 +256,9 @@
 .cv-bio {
     position: absolute;
 
-    top: 570px;
-    left: 80px;
-    right: 80px;
+    top: 456px;
+    left: 64px;
+    right: 64px;
 
     margin: 0;
 }
@@ -238,13 +268,13 @@
 
     color: #77777c;
 
-    font-size: 14px;
+    font-size: 11px;
     font-weight: 450;
     line-height: 1.3;
 }
 
 .cv-bio p+p {
-    margin-top: 18px;
+    margin-top: 14px;
 }
 
 
@@ -255,10 +285,10 @@
 .cv-headshot {
     position: absolute;
 
-    top: 100px;
-    right: 80px;
+    top: 80px;
+    right: 64px;
 
-    width: 360px;
+    width: 288px;
     aspect-ratio: 4 / 5;
 
     overflow: hidden;
@@ -283,8 +313,8 @@
 .cv-signature {
     position: absolute;
 
-    top: 190px;
-    right: 330px;
+    top: 152px;
+    right: 264px;
 
     z-index: 5;
 
@@ -294,7 +324,7 @@
 .cv-signature img {
     display: block;
 
-    width: 140px;
+    width: 112px;
     height: auto;
 
     opacity: 0.65;
@@ -306,7 +336,7 @@
 ======================================== */
 
 .cv-section {
-    padding: 40px 80px 72px;
+    padding: 32px 64px 58px;
 
     border-top: 1px solid rgba(58, 58, 60, 0.07);
 }
@@ -314,15 +344,15 @@
 .cv-section-heading {
     display: flex;
     align-items: baseline;
-    gap: 18px;
+    gap: 14px;
 
-    margin-bottom: 42px;
+    margin-bottom: 34px;
 }
 
 .cv-section-heading span {
     color: #aaaab0;
 
-    font-size: 11px;
+    font-size: 9px;
     font-weight: 500;
 }
 
@@ -331,7 +361,7 @@
 
     color: #4a4a4e;
 
-    font-size: 34px;
+    font-size: 27px;
     font-weight: 500;
     letter-spacing: -0.035em;
 }
@@ -344,22 +374,22 @@
 /* Education items */
 
 .cv-education {
-    margin-top: 30px;
+    margin-top: 24px;
 }
 
 .cv-education-content {
     position: relative;
-    top: -62px;
+    top: -50px;
 }
 
 .cv-education-item {
     display: grid;
-    grid-template-columns: 18px minmax(0, 1fr);
+    grid-template-columns: 14px minmax(0, 1fr);
 
-    column-gap: 18px;
+    column-gap: 14px;
 
-    margin-left: 360px;
-    margin-bottom: 42px;
+    margin-left: 288px;
+    margin-bottom: 34px;
 }
 
 .cv-education-item:last-child {
@@ -367,14 +397,14 @@
 }
 
 .cv-education-marker {
-    padding-top: 7px;
+    padding-top: 6px;
 }
 
 .cv-education-marker span {
     display: block;
 
-    width: 7px;
-    height: 7px;
+    width: 6px;
+    height: 6px;
 
     border-radius: 50%;
 
@@ -386,7 +416,7 @@
 
     color: #4a4a4e;
 
-    font-size: 19px;
+    font-size: 15px;
     font-weight: 500;
     line-height: 1.1;
     letter-spacing: -0.025em;
@@ -394,49 +424,51 @@
 
 .cv-education-meta {
     display: flex;
-    gap: 18px;
+    gap: 14px;
 
-    margin-top: 5px;
+    margin-top: 4px;
 }
 
 .cv-education-meta span {
     color: #aaaab0;
 
-    font-size: 11px;
+    font-size: 9px;
     font-weight: 500;
     line-height: 1.2;
 }
 
 .cv-education-details p {
-    max-width: 620px;
+    max-width: 496px;
 
-    margin: 12px 0 0;
+    margin: 10px 0 0;
 
     color: #858589;
 
-    font-size: 13px;
+    font-size: 10px;
     font-weight: 400;
     line-height: 1.2;
 }
 
 /* certs */
+
 .cv-certifications {
-    margin-top: -70px;
+    margin-top: -56px;
 }
 
 .cv-certifications-content {
     position: relative;
-    top: -105px;
+    top: -84px;
+    z-index: 1;
 }
 
 .cv-certification-item {
     display: grid;
-    grid-template-columns: 18px minmax(0, 1fr);
+    grid-template-columns: 14px minmax(0, 1fr);
 
-    column-gap: 18px;
+    column-gap: 14px;
 
-    margin-left: 360px;
-    margin-bottom: 42px;
+    margin-left: 288px;
+    margin-bottom: 34px;
 }
 
 .cv-certification-item:last-of-type {
@@ -444,14 +476,14 @@
 }
 
 .cv-certification-marker {
-    padding-top: 7px;
+    padding-top: 6px;
 }
 
 .cv-certification-marker span {
     display: block;
 
-    width: 7px;
-    height: 7px;
+    width: 6px;
+    height: 6px;
 
     border-radius: 50%;
 
@@ -463,7 +495,7 @@
 
     color: #4a4a4e;
 
-    font-size: 19px;
+    font-size: 15px;
     font-weight: 500;
     line-height: 1.1;
     letter-spacing: -0.025em;
@@ -471,63 +503,97 @@
 
 .cv-certification-meta {
     display: flex;
-    gap: 18px;
+    gap: 14px;
 
-    margin-top: 5px;
+    margin-top: 4px;
 }
 
 .cv-certification-details p {
-    max-width: 620px;
-    margin: 12px 0 0;
+    max-width: 496px;
+
+    margin: 10px 0 0;
+
     color: #858589;
-    font-size: 13px;
+
+    font-size: 10px;
+
     font-weight: 400;
+
     line-height: 1.2;
 }
 
 .cv-certification-meta span {
     color: #aaaab0;
 
-    font-size: 11px;
+    font-size: 9px;
+
     font-weight: 500;
+
     line-height: 1.2;
 }
 
 .cv-certification-links {
+    position: relative;
+    z-index: 10;
+
     display: flex;
     flex-direction: column;
-    gap: 3px;
+    gap: 2px;
 
-    margin-top: -32px;
-    margin-bottom: 42px;
+    margin-top: -26px;
+    margin-bottom: 34px;
+
+    pointer-events: auto;
 }
 
 .cv-certification-links a {
+    position: relative;
+    z-index: 11;
+
+    display: block;
+
+    width: max-content;
+    max-width: 100%;
+
     color: #858589;
 
-    font-size: 10px;
+    font-size: 8px;
     font-weight: 400;
     line-height: 1.2;
 
     text-decoration: none;
+
+    cursor: pointer;
+    pointer-events: auto;
 }
 
+.cv-certification-links a:hover {
+   color: #4a4a4e; 
+}
+
+
 /* exp */
+
 .cv-experience {
-    margin-top: -120px;
+    margin-top: -96px;
 }
 
 .cv-experience-content {
     position: relative;
-    top: -62px;
+
+    top: -50px;
 }
 
 .cv-experience-item {
     display: grid;
-    grid-template-columns: 18px minmax(0, 1fr);
-    column-gap: 18px;
-    margin-left: 360px;
-    margin-bottom: 42px;
+
+    grid-template-columns: 14px minmax(0, 1fr);
+
+    column-gap: 14px;
+
+    margin-left: 288px;
+
+    margin-bottom: 34px;
 }
 
 .cv-experience-item:last-child {
@@ -535,87 +601,133 @@
 }
 
 .cv-experience-marker {
-    padding-top: 7px;
+    padding-top: 6px;
 }
 
 .cv-experience-marker span {
     display: block;
-    width: 7px;
-    height: 7px;
+
+    width: 6px;
+
+    height: 6px;
+
     border-radius: 50%;
+
     background: #858589;
 }
 
 .cv-experience-details h3 {
     margin: 0;
+
     color: #4a4a4e;
-    font-size: 19px;
+
+    font-size: 15px;
+
     font-weight: 500;
+
     line-height: 1.1;
+
     letter-spacing: -0.025em;
 }
 
 .cv-experience-meta {
     display: flex;
-    gap: 18px;
-    margin-top: 5px;
+
+    gap: 14px;
+
+    margin-top: 4px;
 }
 
 .cv-experience-meta span {
     color: #aaaab0;
-    font-size: 11px;
+
+    font-size: 9px;
+
     font-weight: 500;
+
     line-height: 1.2;
 }
 
 .cv-experience-details p {
-    max-width: 620px;
-    margin: 12px 0 0;
+    max-width: 496px;
+
+    margin: 10px 0 0;
+
     color: #858589;
-    font-size: 13px;
+
+    font-size: 10px;
+
     font-weight: 400;
+
     line-height: 1.2;
 }
 
+
 /* projects */
+
 .cv-projects {
-    margin-top: -80px;
+    margin-top: -64px;
 }
 
 .cv-projects-content {
     position: relative;
-    top: -730px;
+    top: -584px;
+    z-index: 1;
 }
 
 .cv-project-links {
+    position: relative;
+    z-index: 10;
+
     display: flex;
     flex-direction: column;
-    gap: 3px;
+    gap: 2px;
 
-    margin-top: -32px;
-    margin-bottom: 42px;
+    margin-top: -26px;
+    margin-bottom: 34px;
+
+    pointer-events: auto;
 }
 
 .cv-project-links a {
+    position: relative;
+    z-index: 11;
+
+    display: block;
+
+    width: max-content;
+    max-width: 100%;
+
     color: #858589;
 
-    font-size: 10px;
+    font-size: 8px;
     font-weight: 400;
     line-height: 1.2;
 
     text-decoration: none;
+
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.cv-project-links a:hover {
+    color: #4a4a4e;
 }
 
 .cv-project-skills {
-    margin-top: 56px;
-    width: 230px;
+    margin-top: 45px;
+
+    width: 184px;
 }
 
 .cv-project-skills-group {
     display: flex;
+
     flex-direction: column;
-    gap: 3px;
-    margin-bottom: 28px;
+
+    gap: 2px;
+
+    margin-bottom: 22px;
 }
 
 .cv-project-skills-group:last-child {
@@ -623,27 +735,39 @@
 }
 
 .cv-project-skills-group h4 {
-    margin: 0 0 7px;
+    margin: 0 0 6px;
+
     color: #4a4a4e;
-    font-size: 12px;
+
+    font-size: 10px;
+
     font-weight: 500;
+
     line-height: 1.2;
+
     letter-spacing: -0.015em;
 }
 
 .cv-project-skills-group span {
     color: #858589;
-    font-size: 10px;
+
+    font-size: 8px;
+
     font-weight: 400;
+
     line-height: 1.35;
 }
 
 .cv-project-item {
     display: grid;
-    grid-template-columns: 18px minmax(0, 1fr);
-    column-gap: 18px;
-    margin-left: 360px;
-    margin-bottom: 42px;
+
+    grid-template-columns: 14px minmax(0, 1fr);
+
+    column-gap: 14px;
+
+    margin-left: 288px;
+
+    margin-bottom: 34px;
 }
 
 .cv-project-item:last-child {
@@ -651,82 +775,115 @@
 }
 
 .cv-project-marker {
-    padding-top: 7px;
+    padding-top: 6px;
 }
 
 .cv-project-marker span {
     display: block;
-    width: 7px;
-    height: 7px;
+
+    width: 6px;
+
+    height: 6px;
+
     border-radius: 50%;
+
     background: #858589;
 }
 
 .cv-project-details h3 {
     margin: 0;
+
     color: #4a4a4e;
-    font-size: 19px;
+
+    font-size: 15px;
+
     font-weight: 500;
+
     line-height: 1.1;
+
     letter-spacing: -0.025em;
 }
 
 .cv-project-meta {
     display: flex;
-    gap: 18px;
-    margin-top: 5px;
+
+    gap: 14px;
+
+    margin-top: 4px;
 }
 
 .cv-project-meta span {
     color: #aaaab0;
-    font-size: 11px;
+
+    font-size: 9px;
+
     font-weight: 500;
+
     line-height: 1.2;
 }
 
 .cv-project-details p {
-    max-width: 620px;
-    margin: 12px 0 0;
+    max-width: 496px;
+
+    margin: 10px 0 0;
+
     color: #858589;
-    font-size: 13px;
+
+    font-size: 10px;
+
     font-weight: 400;
+
     line-height: 1.2;
 }
 
 .cv-project-direct-links {
     display: flex;
+
     flex-direction: column;
-    gap: 3px;
-    margin-top: 14px;
+
+    gap: 2px;
+
+    margin-top: 11px;
 }
 
 .cv-project-direct-links a {
     color: #858589;
-    font-size: 10px;
+
+    font-size: 8px;
+
     font-weight: 400;
+
     line-height: 1.2;
+
     text-decoration: none;
 }
 
+
 /* all skills */
+
 .cv-skills {
-    margin-top: -720px;
+    margin-top: -576px;
 }
 
 .cv-skills-links {
     display: flex;
-    flex-direction: column;
-    gap: 3px;
 
-    margin-top: -32px;
-    margin-bottom: 56px;
+    flex-direction: column;
+
+    gap: 2px;
+
+    margin-top: -26px;
+
+    margin-bottom: 45px;
 }
 
 .cv-skills-links a {
     color: #858589;
 
-    font-size: 10px;
+    font-size: 8px;
+
     font-weight: 400;
+
     line-height: 1.2;
 
     text-decoration: none;
@@ -734,12 +891,14 @@
 
 .cv-skills-content {
     position: relative;
-    top: -160px;
-    margin-left: 390px;
+
+    top: -128px;
+
+    margin-left: 312px;
 }
 
 .cv-skill-group {
-    margin-bottom: 28px;
+    margin-bottom: 22px;
 }
 
 .cv-skill-group:last-child {
@@ -748,54 +907,86 @@
 
 .cv-skill-group h3 {
     margin: 0;
+
     color: #4a4a4e;
-    font-size: 19px;
+
+    font-size: 15px;
+
     font-weight: 500;
+
     line-height: 1.1;
+
     letter-spacing: -0.025em;
 }
 
 .cv-skill-group p {
-    max-width: 620px;
-    margin: 8px 0 0;
+    max-width: 496px;
+
+    margin: 6px 0 0;
+
     color: #858589;
-    font-size: 13px;
+
+    font-size: 10px;
+
     font-weight: 400;
+
     line-height: 1.35;
 }
+
 
 /* back to top btn */
 /* scroll to top */
 
 .cv-scroll-top {
     position: fixed;
-    right: 28px;
-    bottom: 28px;
-    width: 34px;
-    height: 34px;
+
+    right: 22px;
+
+    bottom: 22px;
+
+    width: 27px;
+
+    height: 27px;
+
     display: flex;
+
     align-items: center;
+
     justify-content: center;
+
     border: 0;
+
     border-radius: 50%;
+
     background: rgba(250, 249, 246, 0.82);
+
     color: #858589;
+
     cursor: pointer;
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    box-shadow: 0 8px 24px rgba(35, 35, 37, 0.08);
+
+    backdrop-filter: blur(13px);
+
+    -webkit-backdrop-filter: blur(13px);
+
+    box-shadow:
+        0 6px 19px rgba(35, 35, 37, 0.08);
+
     transition:
         background 180ms ease,
         color 180ms ease,
         transform 180ms ease;
+
     z-index: 20;
 }
 
 .cv-scroll-top:hover {
     background: rgba(250, 249, 246, 0.96);
+
     color: #4a4a4e;
+
     transform: translateY(-2px);
 }
+
 
 /* ========================================
    RESPONSIVE
@@ -804,55 +995,65 @@
 @media (max-width: 800px) {
 
     .cv {
-        padding: 96px 16px 48px;
+        padding: 77px 13px 38px;
     }
 
     .cv-intro {
         height: auto;
-        min-height: 1050px;
+
+        min-height: 840px;
     }
 
     .cv-intro-divider {
-        left: 32px;
+        left: 26px;
+
         right: 0;
     }
 
     .cv-intro-links {
-        left: 32px;
+        left: 26px;
     }
 
     .cv-intro-contact {
-        right: 32px;
+        right: 26px;
     }
 
     .cv-intro-content {
-        top: 210px;
-        left: 32px;
-        right: 32px;
+        top: 168px;
+
+        left: 26px;
+
+        right: 26px;
     }
 
     .cv-bio {
-        top: 510px;
-        left: 32px;
-        right: 32px;
+        top: 408px;
+
+        left: 26px;
+
+        right: 26px;
     }
 
     .cv-headshot {
-        top: 700px;
-        left: 32px;
+        top: 560px;
+
+        left: 26px;
+
         right: auto;
 
-        width: min(100%, 320px);
+        width: min(100%, 256px);
     }
 
     .cv-signature {
-        top: 940px;
-        left: 80px;
+        top: 752px;
+
+        left: 64px;
+
         right: auto;
     }
 
     .cv-section {
-        padding: 52px 32px;
+        padding: 42px 26px;
     }
 }
 
@@ -860,65 +1061,74 @@
 @media (max-width: 520px) {
 
     .cv {
-        padding: 88px 10px 32px;
+        padding: 70px 8px 26px;
     }
 
     .cv-page {
-        border-radius: 24px;
+        border-radius: 19px;
     }
 
     .cv-intro {
-        min-height: 1000px;
+        min-height: 800px;
     }
 
     .cv-intro-divider {
-        left: 24px;
+        left: 19px;
     }
 
     .cv-intro-links {
-        top: 115px;
-        left: 24px;
+        top: 92px;
+
+        left: 19px;
     }
 
     .cv-intro-contact {
-        top: 115px;
-        right: 24px;
+        top: 92px;
+
+        right: 19px;
     }
 
+
     .cv-intro-content {
-        top: 200px;
-        left: 24px;
-        right: 24px;
+        top: 160px;
+
+        left: 19px;
+
+        right: 19px;
     }
 
     .cv-intro h1 {
-        font-size: 52px;
+        font-size: 42px;
     }
 
     .cv-title {
-        font-size: 21px;
+        font-size: 17px;
     }
 
     .cv-bio {
-        top: 490px;
-        left: 24px;
-        right: 24px;
+        top: 392px;
+
+        left: 19px;
+
+        right: 19px;
     }
 
     .cv-headshot {
-        top: 690px;
-        left: 24px;
+        top: 552px;
 
-        width: min(100%, 300px);
+        left: 19px;
+
+        width: min(100%, 240px);
     }
 
     .cv-signature {
-        top: 910px;
-        left: 60px;
+        top: 728px;
+
+        left: 48px;
     }
 
     .cv-section {
-        padding: 44px 24px;
+        padding: 35px 19px;
     }
 }
 
@@ -930,13 +1140,17 @@
 @media print {
     .cv {
         padding: 0;
+
         background: #faf9f6;
     }
 
     .cv-page {
         width: 100%;
+
         margin: 0;
+
         border-radius: 0;
+
         box-shadow: none;
     }
 
