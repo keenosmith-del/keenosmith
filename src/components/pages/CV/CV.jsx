@@ -256,6 +256,14 @@ function CV() {
                         </a>
 
                         <a
+                            href="https://learn.microsoft.com/en-us/users/keenosmith/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Microsoft Learn: learn.microsoft.com/en-us/users/keenosmith/
+                        </a>
+
+                        <a
                             href="https://www.credly.com/users/keeno-smith"
                             target="_blank"
                             rel="noopener noreferrer"
@@ -273,7 +281,29 @@ function CV() {
                             </div>
 
                             <div className="cv-certification-details">
+                                <h3>Microsoft Applied Skills: Microsoft Defender XDR</h3>
+
+                                <div className="cv-certification-meta">
+                                    <span>2026</span>
+                                    <span>Microsoft</span>
+                                </div>
+
+                                <p>
+                                    Demonstrating practical security operations skills with Microsoft
+                                    Defender XDR, including incident management, endpoint investigation,
+                                    threat detection and Advanced Hunting with KQL.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div className="cv-certification-item">
+                            <div className="cv-certification-marker">
+                                <span></span>
+                            </div>
+
+                            <div className="cv-certification-details">
                                 <h3>Agent Architect</h3>
+                                <h3>CyberGenius - Inside the Breach</h3>
 
                                 <div className="cv-certification-meta">
                                     <span>2026</span>
@@ -322,9 +352,10 @@ function CV() {
 
                             <div className="cv-certification-details">
                                 <h3>Generative AI for Software Engineers</h3>
+                                <h3>AI Course for Developers</h3>
 
                                 <div className="cv-certification-meta">
-                                    <span>2025</span>
+                                    <span>2025 / 2026</span>
                                     <span>WeThinkCode_</span>
                                 </div>
 
@@ -378,6 +409,27 @@ function CV() {
                                     and technology-focused digital skills, combining IBM's design thinking
                                     methodology with practical exploration of AI agents and Umuzi's
                                     ITExperience programme.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div className="cv-certification-item">
+                            <div className="cv-certification-marker">
+                                <span></span>
+                            </div>
+
+                            <div className="cv-certification-details">
+                                <h3>Forward Academy</h3>
+
+                                <div className="cv-certification-meta">
+                                    <span>2026</span>
+                                    <span>McKinsey & Company</span>
+                                </div>
+
+                                <p>
+                                    Developing professional capabilities through McKinsey Academy,
+                                    strengthening structured problem-solving, communication,
+                                    collaboration and practical approaches to working effectively.
                                 </p>
                             </div>
                         </div>

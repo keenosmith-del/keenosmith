@@ -179,29 +179,6 @@ function EnterpriseWorkspace() {
             </section>
 
 
-
-            {/* Initial application showcase */}
-
-            <section className="enterprise-project-images">
-
-                <div className="enterprise-project-image">
-                    <img
-                        src={enterpriseImage1}
-                        alt="Enterprise Workspace application interface"
-                    />
-                </div>
-
-                <div className="enterprise-project-image">
-                    <img
-                        src={enterpriseImage2}
-                        alt="Enterprise Workspace database workspace"
-                    />
-                </div>
-
-            </section>
-
-
-
             {/* SQL focus */}
 
             <section className="enterprise-project-sql">
@@ -307,29 +284,6 @@ function EnterpriseWorkspace() {
                 </div>
 
             </section>
-
-
-
-            {/* Database workspace showcase */}
-
-            <section className="enterprise-project-images enterprise-project-images-secondary">
-
-                <div className="enterprise-project-image">
-                    <img
-                        src={enterpriseImage3}
-                        alt="Enterprise Workspace schema and database interface"
-                    />
-                </div>
-
-                <div className="enterprise-project-image">
-                    <img
-                        src={enterpriseImage4}
-                        alt="Enterprise Workspace relational database workspace"
-                    />
-                </div>
-
-            </section>
-
 
 
             {/* Technology */}
@@ -694,30 +648,6 @@ function EnterpriseWorkspace() {
 
             </section>
 
-
-
-            {/* Workspace showcase */}
-
-            <section className="enterprise-project-images enterprise-project-images-final">
-
-                <div className="enterprise-project-image">
-                    <img
-                        src={enterpriseImage5}
-                        alt="Enterprise Workspace database statistics"
-                    />
-                </div>
-
-                <div className="enterprise-project-image">
-                    <img
-                        src={enterpriseImage6}
-                        alt="Enterprise Workspace schema and table management"
-                    />
-                </div>
-
-            </section>
-
-
-
             {/* Closing */}
 
             <section className="enterprise-project-closing">
@@ -758,8 +688,6 @@ function EnterpriseWorkspace() {
                 </div>
 
             </section>
-
-
 
             {/* Floating back to top */}
 

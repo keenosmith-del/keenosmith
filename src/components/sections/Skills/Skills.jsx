@@ -79,41 +79,87 @@ const skills = [
 function Skills() {
     return (
         <section className="skills" id="skills">
+
+            {/* =========================================================
+                SKILLS INTRO
+                ========================================================= */}
+
+            <div className="skills-intro">
+
+                <span className="skills-eyebrow">
+                    Technical capabilities
+                </span>
+
+                <h2>
+                    Engineering,
+                    <br />
+                    AI &amp; Infrastructure.
+                </h2>
+
+                <p>
+                    A practical engineering stack spanning full-stack
+                    development, databases, AI application development,
+                    cloud-native tooling and modern software infrastructure.
+                </p>
+
+            </div>
+
+
+            {/* =========================================================
+                SKILLS STAGE
+                ========================================================= */}
+
             <div className="skills-stage">
+
                 <div className="skills-container">
+
                     <div className="skills-content">
 
                         <div className="skills-copy">
+
+                            <div className="skills-copy-label">
+                                <span>Core stack</span>
+                                <span>AI development</span>
+                                <span>DevOps</span>
+                            </div>
+
                             <div className="skills-description">
+
                                 <p>
                                     My engineering foundation is rooted in
                                     JavaScript and modern full-stack development,
                                     with hands-on experience across React, Node.js,
-                                    Express, APIs, databases, authentication,
-                                    deployment and responsive web architecture. I
-                                    also work with Python, SQL, MongoDB and
-                                    PostgreSQL, and continue to expand into
-                                    cloud-native and DevOps practices.
+                                    Express, APIs, databases, authentication and
+                                    responsive application architecture.
                                 </p>
 
                                 <p>
-                                    More recently, my development has increasingly
-                                    focused on AI-enabled software, including LLM
-                                    integration, Retrieval-Augmented Generation
-                                    (RAG), prompt engineering, external AI
-                                    services and agentic workflows. I’m
-                                    particularly interested in how these
-                                    capabilities can be integrated into
-                                    conventional software architecture to create
-                                    useful, production-oriented applications rather
-                                    than isolated AI demonstrations.
+                                    Alongside full-stack development, I work across
+                                    Python, SQL, MongoDB and PostgreSQL, while
+                                    continuing to develop cloud-native and DevOps
+                                    capabilities through Docker, Kubernetes and
+                                    modern deployment workflows.
                                 </p>
+
+                                <p>
+                                    My current focus increasingly sits at the
+                                    intersection of software engineering and
+                                    artificial intelligence, including LLM
+                                    integration, NLP, RAG, prompt engineering,
+                                    AI services and agentic application workflows.
+                                </p>
+
                             </div>
+
                         </div>
 
+
                         <div className="skills-video">
+
                             <div className="skills-video-placeholder">
+
                                 <div className="skills-mosaic-grid">
+
                                     {skills.map((skill) => (
                                         <div
                                             className="skills-mosaic-tile"
@@ -122,6 +168,7 @@ function Skills() {
                                                 '--tile-order': skill.order,
                                             }}
                                         >
+
                                             <img
                                                 className="skills-mosaic-icon"
                                                 src={skill.icon}
@@ -131,15 +178,22 @@ function Skills() {
                                             <span className="skills-mosaic-name">
                                                 {skill.name}
                                             </span>
+
                                         </div>
                                     ))}
+
                                 </div>
+
                             </div>
+
                         </div>
 
                     </div>
+
                 </div>
+
             </div>
+
         </section>
     );
 }

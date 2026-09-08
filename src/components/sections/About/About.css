@@ -300,6 +300,45 @@
     line-height: 1.5;
 }
 
+.about-tile-two-top {
+    position: absolute;
+
+    top: 21px;
+    left: 22px;
+    right: 22px;
+
+    display: flex;
+    align-items: flex-start;
+}
+
+.about-tile-two-pills {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 6px;
+}
+
+.about-tile-two-pills span {
+    display: inline-flex;
+    align-items: center;
+
+    min-height: 22px;
+
+    padding: 0 8px;
+
+    border-radius: 999px;
+
+    background: var(--surface-muted);
+
+    color: #77777c;
+
+    font-size: 7px;
+    font-weight: 500;
+
+    line-height: 1;
+    letter-spacing: -0.005em;
+}
+
 
 /* =========================================================
    TILE 3 — AWS BADGES
@@ -595,11 +634,11 @@
 
 
 /* =========================================================
-   TILE 6 — GITHUB
+   TILE 6 — CLOUDQUEST
    ========================================================= */
 
 .about-tile-six {
-    grid-column: 2;
+    grid-column: 2 / 4;
     grid-row: 2;
 
     justify-content: flex-end;
@@ -629,27 +668,33 @@
 .about-tile-six-content {
     display: flex;
     flex-direction: column;
+
+    max-width: 420px;
 }
 
-.about-tile-six-content strong {
+.about-tile-six-content h3 {
     margin: 0;
 
-    color: #555559;
+    color: #5b5b60;
 
-    font-size: clamp(35px, 3.2vw, 51px);
+    font-size: clamp(18px, 1.5vw, 24px);
     font-weight: 500;
-    line-height: 0.9;
-    letter-spacing: -0.04em;
+
+    line-height: 1;
+    letter-spacing: -0.03em;
 }
 
-.about-tile-six-content span {
-    margin-top: 7px;
+.about-tile-six-content p {
+    max-width: 390px;
 
-    color: #77777c;
+    margin: 10px 0 0;
 
-    font-size: 11px;
-    font-weight: 500;
-    line-height: 1.2;
+    color: #858589;
+
+    font-size: 10px;
+    font-weight: 400;
+
+    line-height: 1.5;
 }
 
 
@@ -798,81 +843,93 @@
 
 
 /* =========================================================
-   TILE 8 — AGENT ARCHITECT
+   TILE 8 — AWS SKILL BUILDER
    ========================================================= */
 
 .about-tile-eight {
     grid-column: 4;
     grid-row: 2;
 
-    justify-content: flex-end;
+    padding: 0;
+
+    background: var(--surface);
 }
 
-.about-tile-eight-header {
+.about-tile-eight-image {
     position: absolute;
 
-    top: 20px;
-    left: 22px;
-    right: 22px;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+}
+
+.about-tile-eight-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+.about-tile-eight-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    background:
+        linear-gradient(to top,
+            rgba(25, 25, 27, 0.38) 0%,
+            rgba(25, 25, 27, 0.08) 45%,
+            rgba(25, 25, 27, 0) 70%);
+
+    opacity: 0.7;
+
+    transition: opacity 180ms ease;
+}
+
+.about-tile-eight-link {
+    position: absolute;
+
+    right: 18px;
+    bottom: 16px;
+
+    z-index: 3;
 
     display: flex;
     align-items: center;
-    justify-content: space-between;
-}
+    justify-content: center;
 
-.about-tile-eight-pill {
-    display: inline-flex;
-    align-items: center;
-
-    min-height: 22px;
-
-    padding: 0 9px;
+    width: 27px;
+    height: 27px;
 
     border-radius: 999px;
 
-    background: var(--surface-muted);
+    background: rgba(250, 249, 246, 0.92);
 
-    color: #77777c;
+    color: #66666b;
 
-    font-size: 8px;
-    font-weight: 500;
-    line-height: 1;
+    opacity: 0;
+
+    transform: translateX(-4px);
+
+    transition:
+        opacity 180ms ease,
+        transform 220ms ease,
+        background-color 180ms ease;
 }
 
-.about-tile-eight-logo {
-    width: 24px;
-    height: 24px;
+.about-tile-eight:hover .about-tile-eight-link {
+    opacity: 1;
 
-    object-fit: contain;
-
-    opacity: 0.72;
+    transform: translateX(0);
 }
 
-.about-tile-eight-content {
-    width: 100%;
-}
-
-.about-tile-eight-content h3 {
-    margin: 0;
-
-    color: #5b5b60;
-
-    font-size: clamp(18px, 1.45vw, 23px);
-    font-weight: 500;
-    line-height: 1;
-    letter-spacing: -0.025em;
-}
-
-.about-tile-eight-content p {
-    max-width: 344px;
-
-    margin: 11px 0 0;
-
-    color: #858589;
-
-    font-size: 10px;
-    font-weight: 400;
-    line-height: 1.5;
+.about-tile-eight-link:hover {
+    background: #ffffff;
 }
 
 
@@ -1141,4 +1198,1337 @@
     .about-tile-seven-link {
         transition: none;
     }
+}
+
+/* =========================================================
+   MICROSOFT SECTION
+   ========================================================= */
+
+.about-microsoft {
+    position: relative;
+
+    width: min(1120px, 88vw);
+
+    margin: 112px auto 0;
+}
+
+
+/* =========================================================
+   MICROSOFT INTRO
+   ========================================================= */
+
+.about-microsoft-intro {
+    width: min(608px, 100%);
+
+    margin: 0 auto 60px;
+
+    text-align: center;
+
+    animation:
+        about-microsoft-intro-scroll linear both;
+
+    animation-timeline: view();
+
+    animation-range:
+        entry 0% exit 100%;
+}
+
+.about-microsoft-eyebrow {
+    display: inline-block;
+
+    margin-bottom: 12px;
+
+    color: #a0a0a4;
+
+    font-size: 10px;
+    font-weight: 500;
+
+    letter-spacing: 0.02em;
+}
+
+.about-microsoft-intro h2 {
+    margin: 0;
+
+    color: #555559;
+
+    font-size: clamp(35px, 4vw, 58px);
+    font-weight: 500;
+
+    line-height: 0.98;
+    letter-spacing: -0.035em;
+}
+
+.about-microsoft-intro p {
+    max-width: 544px;
+
+    margin: 21px auto 0;
+
+    color: #858589;
+
+    font-size: clamp(13px, 1vw, 15px);
+    font-weight: 400;
+
+    line-height: 1.6;
+    letter-spacing: -0.012em;
+}
+
+
+/* =========================================================
+   MICROSOFT TILE GRID
+   ========================================================= */
+
+.about-microsoft-grid {
+    display: grid;
+
+    grid-template-columns:
+        1.45fr 0.85fr 0.85fr;
+
+    grid-template-rows:
+        248px 176px 176px;
+
+    gap: 13px;
+}
+
+
+/* =========================================================
+   MICROSOFT BASE TILE
+   ========================================================= */
+
+.microsoft-tile {
+    position: relative;
+
+    overflow: hidden;
+
+    min-width: 0;
+
+    padding: 26px;
+
+    border-radius: 22px;
+
+    background: var(--surface);
+
+    box-shadow:
+        0 16px 44px rgba(45, 45, 45, 0.055),
+        0 4px 13px rgba(45, 45, 45, 0.025);
+
+    animation:
+        about-microsoft-tile-in linear both;
+
+    animation-timeline: view();
+
+    animation-range:
+        entry 5% cover 25%;
+}
+
+
+/* =========================================================
+   MICROSOFT LEARN — STANDOUT TILE
+   ========================================================= */
+
+.microsoft-tile-learn {
+    grid-column: 1 / 3;
+    grid-row: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    background: var(--charcoal);
+}
+
+.microsoft-tile-visual {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 0;
+
+    overflow: hidden;
+}
+
+.microsoft-image-placeholder {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+
+    color: rgba(255, 255, 255, 0.28);
+
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.microsoft-tile-learn .microsoft-tile-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 560px;
+}
+
+.microsoft-tile-learn .microsoft-tile-content h3 {
+    color: #e2e2e5;
+}
+
+.microsoft-tile-learn .microsoft-tile-content p {
+    color: #b9b9bd;
+}
+
+/* top pills */
+.microsoft-tile-top {
+    position: absolute;
+
+    top: 21px;
+    left: 22px;
+    right: 22px;
+
+    z-index: 2;
+}
+
+.microsoft-tile-pills {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 6px;
+}
+
+.microsoft-tile-pills span {
+    display: inline-flex;
+    align-items: center;
+
+    min-height: 22px;
+
+    padding: 0 8px;
+
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.10);
+
+    color: #d1d1d4;
+
+    font-size: 7px;
+    font-weight: 500;
+
+    line-height: 1;
+    letter-spacing: -0.005em;
+}
+
+/* =========================================================
+   MICROSOFT BADGE
+   ========================================================= */
+
+.microsoft-tile-badge {
+    position: absolute;
+
+    top: 22px;
+    right: 22px;
+
+    z-index: 3;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.microsoft-tile-badge img {
+    width: 24px;
+    height: 24px;
+
+    object-fit: contain;
+
+    opacity: 0.72;
+}
+
+
+/* =========================================================
+   COUNTERS
+   ========================================================= */
+
+.microsoft-tile-counter {
+    display: flex;
+
+    align-items: flex-end;
+
+    background: #eeede9;
+}
+
+.microsoft-counter-content {
+    display: flex;
+
+    flex-direction: column;
+}
+
+.microsoft-counter-content strong {
+    color: #555559;
+
+    font-size: clamp(35px, 3.2vw, 51px);
+    font-weight: 500;
+
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+}
+
+.microsoft-counter-content span {
+    margin-top: 7px;
+
+    color: #77777c;
+
+    font-size: 11px;
+    font-weight: 500;
+
+    line-height: 1.2;
+}
+
+
+/* =========================================================
+   CREDENTIAL TILES
+   ========================================================= */
+
+.microsoft-tile-credential {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-end;
+}
+
+.microsoft-tile-content {
+    position: relative;
+
+    z-index: 2;
+}
+
+.microsoft-tile-label {
+    display: inline-flex;
+
+    align-items: center;
+
+    width: fit-content;
+
+    min-height: 22px;
+
+    padding: 0 9px;
+
+    margin-bottom: 12px;
+
+    border-radius: 999px;
+
+    background: var(--surface-muted);
+
+    color: #77777c;
+
+    font-size: 8px;
+    font-weight: 500;
+
+    line-height: 1;
+}
+
+.microsoft-tile-content h3 {
+    margin: 0;
+
+    color: #5b5b60;
+
+    font-size: clamp(18px, 1.45vw, 24px);
+    font-weight: 500;
+
+    line-height: 1;
+    letter-spacing: -0.025em;
+}
+
+.microsoft-tile-content p {
+    max-width: 360px;
+
+    margin: 11px 0 0;
+
+    color: #858589;
+
+    font-size: 10px;
+    font-weight: 400;
+
+    line-height: 1.5;
+}
+
+/* =========================================================
+   CREDENTIAL PILLS
+   ========================================================= */
+
+.microsoft-credential-pills {
+    position: absolute;
+
+    top: 21px;
+    left: 22px;
+    right: 70px;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 6px;
+}
+
+.microsoft-credential-pills span {
+    display: inline-flex;
+
+    align-items: center;
+
+    min-height: 22px;
+
+    padding: 0 8px;
+
+    border-radius: 999px;
+
+    background: var(--surface-muted);
+
+    color: #77777c;
+
+    font-size: 7px;
+    font-weight: 500;
+
+    line-height: 1;
+    letter-spacing: -0.005em;
+}
+
+
+/* =========================================================
+   FOUNDERZ BADGE
+   ========================================================= */
+
+.microsoft-credential-badge {
+    position: absolute;
+
+    top: 20px;
+    right: 21px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.microsoft-credential-badge img {
+    width: 24px;
+    height: 24px;
+
+    object-fit: contain;
+
+    opacity: 0.72;
+}
+
+
+/* =========================================================
+   MORE TO COME — COVER IMAGE
+   ========================================================= */
+
+.microsoft-tile-placeholder {
+    position: relative;
+
+    overflow: hidden;
+
+    background: #242426;
+}
+
+.microsoft-placeholder-image {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 0;
+}
+
+.microsoft-placeholder-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+.microsoft-placeholder-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    background:
+        linear-gradient(to top,
+            rgba(20, 20, 22, 0.82) 0%,
+            rgba(20, 20, 22, 0.42) 55%,
+            rgba(20, 20, 22, 0.08) 100%);
+}
+
+.microsoft-tile-placeholder .microsoft-tile-content {
+    position: relative;
+
+    z-index: 2;
+}
+
+.microsoft-tile-placeholder .microsoft-tile-label {
+    background: rgba(255, 255, 255, 0.13);
+
+    color: #e6e6e8;
+}
+
+.microsoft-tile-placeholder .microsoft-tile-content h3 {
+    color: #eeeeef;
+}
+
+.microsoft-tile-placeholder .microsoft-tile-content p {
+    color: #bdbdc1;
+}
+
+/* =========================================================
+   MICROSOFT — SHARED ARROW
+   ========================================================= */
+
+.microsoft-tile-arrow {
+    position: absolute;
+
+    right: 21px;
+    bottom: 19px;
+
+    z-index: 5;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 27px;
+    height: 27px;
+
+    border-radius: 999px;
+
+    background: rgba(60, 60, 62, 0.08);
+
+    color: #66666b;
+
+    opacity: 0;
+
+    transform: translateX(-4px);
+
+    transition:
+        opacity 180ms ease,
+        transform 220ms ease,
+        background-color 180ms ease;
+}
+
+.microsoft-tile:hover .microsoft-tile-arrow,
+.microsoft-tile:focus-within .microsoft-tile-arrow {
+    opacity: 1;
+
+    transform: translateX(0);
+}
+
+.microsoft-tile-arrow:hover {
+    background: rgba(60, 60, 62, 0.14);
+}
+
+
+/* =========================================================
+   LIGHT IMAGE TILE ARROW
+   ========================================================= */
+
+.microsoft-tile-arrow-light {
+    background: rgba(250, 249, 246, 0.92);
+
+    color: #66666b;
+}
+
+.microsoft-tile-arrow-light:hover {
+    background: #ffffff;
+}
+
+/* =========================================================
+   MICROSOFT — STANDOUT TILE ARROW
+   ========================================================= */
+
+.microsoft-tile-learn .microsoft-tile-arrow {
+    background: rgba(250, 249, 246, 0.92);
+
+    color: #66666b;
+}
+
+.microsoft-tile-learn .microsoft-tile-arrow:hover {
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   MICROSOFT SECTION ANIMATIONS
+   ========================================================= */
+
+@keyframes about-microsoft-intro-scroll {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(22px);
+    }
+
+    20% {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+    80% {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translateY(-22px);
+    }
+}
+
+
+@keyframes about-microsoft-tile-in {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(22px) scale(0.98);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateY(0) scale(1);
+    }
+}
+
+
+/* =========================================================
+   MICROSOFT — TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .about-microsoft {
+        width: 90vw;
+
+        margin-top: 96px;
+    }
+
+    .about-microsoft-grid {
+        grid-template-columns:
+            1.3fr 1fr;
+
+        grid-template-rows:
+            224px 176px 176px 176px;
+    }
+
+    .microsoft-tile-learn {
+        grid-column: 1 / 3;
+        grid-row: 1;
+    }
+
+    .microsoft-tile-counter:nth-child(2) {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .microsoft-tile-counter:nth-child(3) {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .microsoft-tile-credential:nth-child(4) {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    .microsoft-tile-credential:nth-child(5) {
+        grid-column: 2;
+        grid-row: 3;
+    }
+
+    .microsoft-tile-credential:nth-child(6) {
+        grid-column: 1;
+        grid-row: 4;
+    }
+
+    .microsoft-tile-placeholder {
+        grid-column: 2;
+        grid-row: 4;
+    }
+}
+
+
+/* =========================================================
+   MICROSOFT — MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .about-microsoft {
+        width: calc(100% - 32px);
+
+        margin-top: 80px;
+    }
+
+    .about-microsoft-intro {
+        margin-bottom: 48px;
+    }
+
+    .about-microsoft-intro h2 {
+        font-size: clamp(32px, 8.8vw, 46px);
+    }
+
+    .about-microsoft-grid {
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+    .microsoft-tile {
+        min-height: 176px;
+
+        padding: 21px;
+
+        border-radius: 19px;
+    }
+
+    .microsoft-tile-learn {
+        min-height: 320px;
+    }
+
+    .microsoft-tile-counter {
+        min-height: 136px;
+    }
+
+    .microsoft-tile-arrow {
+        right: 14px;
+        bottom: 14px;
+
+        opacity: 1;
+
+        transform: none;
+    }
+}
+
+
+/* =========================================================
+   MICROSOFT — REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .about-microsoft-intro,
+    .microsoft-tile {
+        animation: none;
+    }
+
+    .microsoft-tile-arrow {
+        transition: none;
+    }
+}
+
+/* =========================================================
+   SECTION 3 — ENGINEERING, AI & PRODUCT
+   ========================================================= */
+
+.about-section-three {
+    padding-top: 112px;
+}
+
+
+/* =========================================================
+   SECTION 3 GRID
+   Different composition from Microsoft section.
+   ========================================================= */
+
+.about-grid-three {
+    display: grid;
+
+    grid-template-columns:
+        1.15fr 0.72fr 0.72fr;
+
+    grid-template-rows:
+        250px 180px 154px;
+
+    gap: 13px;
+
+    width: min(1120px, 88vw);
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   BASE
+   ========================================================= */
+
+.about-grid-three .about-tile {
+    animation: about-tile-in linear both;
+    animation-timeline: view();
+    animation-range: entry 5% cover 25%;
+}
+
+
+/* =========================================================
+   TILE 1 — FULL-STACK ENGINEERING
+   LARGE FEATURE
+   ========================================================= */
+
+.about-three-engineering {
+    grid-column: 1;
+    grid-row: 1;
+
+    justify-content: flex-end;
+
+    background: var(--charcoal);
+}
+
+.about-three-engineering .about-three-label {
+    color: #d1d1d4;
+}
+
+.about-three-engineering .about-three-label span {
+    background: rgba(255, 255, 255, 0.10);
+    color: #d1d1d4;
+}
+
+.about-three-engineering .about-three-content h3 {
+    color: #e2e2e5;
+}
+
+.about-three-engineering .about-three-content p {
+    color: #b9b9bd;
+}
+
+/* =========================================================
+   TILE 2 — GITHUB COPILOT
+   VISUAL COVER
+   ========================================================= */
+
+.about-three-copilot {
+    grid-column: 2;
+    grid-row: 1;
+
+    padding: 0;
+
+    background: var(--surface);
+}
+
+.about-three-copilot-image {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+}
+
+.about-three-copilot-image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.about-three-copilot-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    background:
+        linear-gradient(to bottom,
+            rgba(20, 20, 22, 0.04) 0%,
+            rgba(20, 20, 22, 0.14) 100%);
+}
+
+
+/* =========================================================
+   TILE 2 — GENERATIVE AI
+   ========================================================= */
+
+.about-three-ai {
+    grid-column: 3;
+    grid-row: 1;
+
+    justify-content: flex-end;
+}
+
+
+/* =========================================================
+   TILE 3 — GITHUB
+   SMALL COUNTER
+   ========================================================= */
+
+.about-three-github {
+    grid-column: 1;
+    grid-row: 2 / 4;
+
+    justify-content: flex-end;
+
+    background: #eeede9;
+}
+
+.about-three-github-logo {
+    position: absolute;
+
+    top: 21px;
+    right: 21px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+}
+
+.about-three-github-logo img {
+    width: 22px;
+    height: 22px;
+
+    object-fit: contain;
+
+    opacity: 0.68;
+}
+
+.about-three-counter {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-three-counter strong {
+    margin: 0;
+
+    color: #555559;
+
+    font-size: clamp(42px, 4vw, 60px);
+    font-weight: 500;
+    line-height: 0.9;
+    letter-spacing: -0.045em;
+}
+
+.about-three-counter span {
+    margin-top: 8px;
+
+    color: #77777c;
+
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+
+/* =========================================================
+   TILE 4 — WETHINKCODE
+   WIDE FEATURE
+   ========================================================= */
+
+.about-three-wethinkcode {
+    grid-column: 2 / 4;
+    grid-row: 2;
+
+    justify-content: flex-end;
+}
+
+.about-three-wethinkcode .about-three-content {
+    max-width: 520px;
+}
+
+
+/* =========================================================
+   TILE 5 — MCKINSEY
+   ========================================================= */
+
+.about-three-mckinsey {
+    grid-column: 2;
+    grid-row: 3;
+
+    justify-content: flex-end;
+
+    background: #e9e8e4;
+}
+
+
+/* =========================================================
+   TILE 6 — UNISA
+   ========================================================= */
+
+.about-three-unisa {
+    grid-column: 3;
+    grid-row: 3;
+
+    justify-content: flex-end;
+}
+
+
+/* =========================================================
+   LABELS / PILLS
+   ========================================================= */
+
+.about-three-label {
+    position: absolute;
+
+    top: 21px;
+    left: 22px;
+    right: 22px;
+
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+    gap: 6px;
+}
+
+.about-three-label span {
+    display: inline-flex;
+    align-items: center;
+
+    min-height: 22px;
+
+    padding: 0 9px;
+
+    border-radius: 999px;
+
+    background: var(--surface-muted);
+
+    color: #77777c;
+
+    font-size: 8px;
+    font-weight: 500;
+
+    line-height: 1;
+    letter-spacing: -0.005em;
+}
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.about-three-content {
+    width: 100%;
+}
+
+.about-three-content h3 {
+    margin: 0;
+
+    color: #5b5b60;
+
+    font-size: clamp(19px, 1.65vw, 27px);
+    font-weight: 500;
+
+    line-height: 1.02;
+    letter-spacing: -0.03em;
+}
+
+.about-three-content p {
+    max-width: 500px;
+
+    margin: 12px 0 0;
+
+    color: #858589;
+
+    font-size: 10px;
+    font-weight: 400;
+
+    line-height: 1.5;
+    letter-spacing: -0.005em;
+}
+
+/* =========================================================
+   BADGES
+   ========================================================= */
+
+.about-three-badge {
+    position: absolute;
+
+    top: 20px;
+    right: 21px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 3;
+}
+
+.about-three-badge img {
+    width: 24px;
+    height: 24px;
+
+    object-fit: contain;
+
+    opacity: 0.72;
+}
+
+.about-three-mckinsey .about-three-badge img {
+    width: 30px;
+    height: 30px;
+}
+
+
+/* =========================================================
+   GITHUB ARROW
+   ========================================================= */
+
+.about-three-arrow {
+    position: absolute;
+
+    right: 21px;
+    bottom: 19px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 28px;
+    height: 28px;
+
+    border-radius: 999px;
+
+    background: rgba(60, 60, 62, 0.08);
+
+    color: #66666b;
+
+    opacity: 0;
+
+    transform: translateX(-4px);
+
+    transition:
+        opacity 180ms ease,
+        transform 220ms ease,
+        background-color 180ms ease;
+}
+
+.about-three-github:hover .about-three-arrow,
+.about-three-github:focus-within .about-three-arrow {
+    opacity: 1;
+
+    transform: translateX(0);
+}
+
+.about-three-arrow:hover {
+    background: rgba(60, 60, 62, 0.14);
+}
+
+/* =========================================================
+   LINKEDIN ACTION
+   ========================================================= */
+
+.about-linkedin-action {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 32px;
+}
+
+.about-linkedin-action .about-button {
+    gap: 8px;
+}
+
+/* =========================================================
+   LINKEDIN ACTION — FADE IN
+   ========================================================= */
+
+.about-linkedin-action {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 32px;
+
+    animation: about-linkedin-in linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 25%;
+}
+
+
+@keyframes about-linkedin-in {
+
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .about-grid-three {
+        width: 90vw;
+
+        grid-template-columns:
+            1.3fr 1fr;
+
+        grid-template-rows:
+            224px 176px 176px 176px;
+    }
+
+    .about-three-engineering {
+        grid-column: 1 / 3;
+        grid-row: 1;
+    }
+
+    .about-three-ai {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .about-three-github {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .about-three-wethinkcode {
+        grid-column: 1 / 3;
+        grid-row: 3;
+    }
+
+    .about-three-mckinsey {
+        grid-column: 1;
+        grid-row: 4;
+    }
+
+    .about-three-unisa {
+        grid-column: 2;
+        grid-row: 4;
+    }
+
+    .about-three-label {
+        left: 19px;
+        right: 19px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .about-section-three {
+        padding-top: 88px;
+    }
+
+    .about-grid-three {
+        display: flex;
+        flex-direction: column;
+
+        width: calc(100% - 32px);
+
+        gap: 10px;
+    }
+
+    .about-grid-three .about-tile {
+        min-height: 176px;
+
+        padding: 21px;
+
+        border-radius: 19px;
+    }
+
+    .about-grid-three .about-three-github,
+    .about-grid-three .about-three-mckinsey,
+    .about-grid-three .about-three-unisa {
+        min-height: 136px;
+    }
+
+    .about-grid-three .about-three-wethinkcode,
+    .about-grid-three .about-three-engineering {
+        min-height: 192px;
+    }
+
+    .about-three-label {
+        top: 16px;
+        left: 18px;
+        right: 18px;
+
+        gap: 4px;
+    }
+
+    .about-three-label span {
+        min-height: 20px;
+
+        padding: 0 7px;
+
+        font-size: 7px;
+    }
+
+    .about-three-content h3 {
+        font-size: 20px;
+    }
+
+    .about-three-content p {
+        font-size: 10px;
+    }
+
+    .about-three-counter strong {
+        font-size: 38px;
+    }
+
+    .about-three-github-logo {
+        top: 18px;
+        right: 18px;
+
+        gap: 6px;
+    }
+
+    .about-three-github-logo img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .about-three-arrow {
+        right: 18px;
+        bottom: 17px;
+
+        opacity: 1;
+
+        transform: none;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .about-grid-three .about-tile {
+        animation: none;
+    }
+
+    .about-three-arrow {
+        transition: none;
+    }
+
+    .about-linkedin-action {
+        animation: none;
+    }
+
 }

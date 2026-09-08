@@ -143,6 +143,13 @@
     object-fit: cover;
 }
 
+.project-image-git {
+    width: 50%;
+    height: 50%;
+
+    object-fit: cover;
+}
+
 .project-image-placeholder {
     display: flex;
     align-items: center;
@@ -341,26 +348,128 @@
 
 
 /* =========================================================
-   WIDE PROJECT
+   ENTERPRISE WORKSPACE — FINAL TILE
    ========================================================= */
 
 .project-tile-wide {
+    position: relative;
+
     width: min(1120px, 82vw);
 
-    height: 400px;
+    height: 224px;
 
     margin: 0 auto;
+
+    background: #303033;
 }
 
-.project-tile-wide .project-content {
-    max-width: 560px;
+
+/* =========================================================
+   ENTERPRISE BADGES — TOP LEFT
+   ========================================================= */
+
+.project-enterprise-badges {
+    position: absolute;
+
+    top: 19.2px;
+    left: 19.2px;
+
+    z-index: 3;
+
+    display: flex;
+    align-items: center;
+
+    gap: 6.4px;
+
+    flex-wrap: wrap;
 }
 
-.project-tile-wide .project-content p {
+.project-enterprise-badges .project-badge {
+    position: static;
+
+    max-width: none;
+
+    padding: 7.2px 10.4px;
+
+    background: rgba(255, 255, 255, 0.10);
+
+    color: #d1d1d4;
+
+    backdrop-filter: blur(9.6px);
+    -webkit-backdrop-filter: blur(9.6px);
+}
+
+
+/* =========================================================
+   ENTERPRISE TECHNOLOGY LOGOS — TOP RIGHT
+   ========================================================= */
+
+.project-enterprise-logos {
+    position: absolute;
+
+    top: 21px;
+    right: 21px;
+
+    z-index: 3;
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+}
+
+.project-enterprise-logos img {
+    width: px;
+    height: 18px;
+
+    object-fit: contain;
+
+    opacity: 0.82;
+
+    filter: brightness(0) invert(1);
+}
+
+
+/* =========================================================
+   ENTERPRISE CONTENT
+   ========================================================= */
+
+.project-tile-enterprise .project-content {
+    right: 25.6px;
+    bottom: 27.2px;
+    left: 25.6px;
+
+    max-width: 650px;
+}
+
+.project-tile-enterprise .project-content h3 {
+    color: #e2e2e5;
+}
+
+.project-tile-enterprise .project-content p {
+    max-width: 620px;
+
+    color: #b9b9bd;
+
     opacity: 1;
 
     transform: translateY(0);
 }
+
+
+/* =========================================================
+   ENTERPRISE ARROW
+   ========================================================= */
+
+.project-tile-enterprise .project-arrow {
+    background: rgba(250, 249, 246, 0.94);
+
+    color: #555559;
+}
+
+/* =========================================================
+   PROJECT ARROW — SHARED HOVER
+   ========================================================= */
 
 .project-tile:hover .project-arrow,
 .project-tile:focus-within .project-arrow {
@@ -369,7 +478,6 @@
     transform:
         translateY(0) scale(1);
 }
-
 
 /* =========================================================
    INTRO ANIMATION

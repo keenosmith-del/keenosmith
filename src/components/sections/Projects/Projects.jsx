@@ -6,7 +6,14 @@ import './Projects.css';
 import aiAssistantCover from '../../../assets/projects/ai/1.png';
 import productivityCover from '../../../assets/projects/productivity/1.png'
 import musicCover from '../../../assets/projects/music/1.png'
-import enterpriseCover from '../../../assets/projects/enterprise/1.png'
+// import enterpriseCover from '../../../assets/projects/enterprise/1.png'
+
+import githubCover from '../../../assets/images/about/github.png'
+
+import postgresqlLogo from '../../../assets/svgs/skills/postgresql.svg';
+import prismaLogo from '../../../assets/svgs/skills/prisma.svg';
+import githubLogo from '../../../assets/svgs/about/github-icon.svg';
+import dbLogo from '../../../assets/svgs/about/database.svg';
 
 const projects = [
     {
@@ -112,7 +119,7 @@ function Projects() {
                                 aria-label={`View ${project.title}`}
                             >
                                 <ArrowRight
-                                    size={20}
+                                    size={18}
                                     strokeWidth={1.7}
                                     aria-hidden="true"
                                 />
@@ -122,30 +129,62 @@ function Projects() {
                 })}
             </div>
 
-            <article className="project-tile project-tile-wide is-active">
-                <div className="project-image">
-                    <img
-                        src={enterpriseCover}
-                        alt="Enterprise Workspace"
-                    />
+            <article className="project-tile project-tile-wide project-tile-enterprise is-active">
+
+                <div className="project-enterprise-badges">
+
+                    <span className="project-badge">
+                        SQL
+                    </span>
+
+                    <span className="project-badge">
+                        Full-Stack
+                    </span>
+
+                    <span className="project-badge">
+                        Enterprise Architecture
+                    </span>
+
                 </div>
 
-                <div className="project-overlay" />
+                <div className="project-enterprise-logos">
 
-                <div className="project-badges">
-                    <span className="project-badge">SQL</span>
-                    <span className="project-badge">Application Architecture</span>
-                    <span className="project-badge">Full-stack Development</span>
+                    <img
+                        src={postgresqlLogo}
+                        alt="PostgreSQL"
+                    />
+
+                    <img
+                        src={prismaLogo}
+                        alt="Prisma"
+                    />
+
+                    <img
+                        src={githubLogo}
+                        alt="git"
+                    />
+
+                    <img
+                        src={dbLogo}
+                        alt="db"
+                    />
+
                 </div>
 
                 <div className="project-content">
-                    <h3>Enterprise Workspace</h3>
+
+                    <h3>
+                        Enterprise Workspace
+                    </h3>
 
                     <p>
-                        A structured enterprise workspace built with modern
-                        frontend architecture, a Node.js backend and
-                        PostgreSQL data management through Prisma.
+                        A full-stack enterprise workspace built around structured
+                        application architecture, relational data modelling and
+                        scalable backend services. The project combines React,
+                        Node.js, PostgreSQL and Prisma to explore robust data-driven
+                        application design.
                     </p>
+
                 </div>
 
                 <a
@@ -154,11 +193,12 @@ function Projects() {
                     aria-label="View Enterprise Workspace"
                 >
                     <ArrowRight
-                        size={20}
+                        size={18}
                         strokeWidth={1.7}
                         aria-hidden="true"
                     />
                 </a>
+
             </article>
         </section>
     );
