@@ -22,12 +22,13 @@
     margin: 0 auto 60px;
 
     animation:
-        skills-intro-in linear both;
+        skills-intro-scroll linear both;
 
-    animation-timeline: view();
+    animation-timeline:
+        view();
 
     animation-range:
-        entry 5% cover 25%;
+        entry 0% exit 100%;
 }
 
 .skills-eyebrow {
@@ -130,13 +131,13 @@
         0 8px 24px rgba(20, 20, 22, 0.10);
 
     animation:
-        skills-container-expand linear both;
+        skills-container-scroll linear both;
 
     animation-timeline:
-        scroll(nearest);
+        view();
 
     animation-range:
-        0% 100%;
+        entry 0% exit 100%;
 }
 
 
@@ -689,9 +690,17 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+
+    .skills,
     .skills-container {
         animation: none;
     }
+
+    .skills {
+        opacity: 1;
+        transform: none;
+    }
+
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -703,5 +712,148 @@
         transform: none;
 
         filter: none;
+    }
+}
+
+/* =========================================================
+   SECTION FADE IN / OUT
+   ========================================================= */
+
+@keyframes skills-section-scroll {
+
+    0% {
+        opacity: 0;
+        transform: translateY(28px);
+    }
+
+    12% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    82% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-28px);
+    }
+}
+
+/* =========================================================
+   INTRO SCROLL FADE
+   ========================================================= */
+
+@keyframes skills-intro-scroll {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translate3d(0, 24px, 0) scale(0.985);
+    }
+
+    16% {
+        opacity: 1;
+
+        transform:
+            translate3d(0, 0, 0) scale(1);
+    }
+
+    48% {
+        opacity: 1;
+
+        transform:
+            translate3d(0, 0, 0) scale(1);
+    }
+
+    72% {
+        opacity: 0.45;
+
+        transform:
+            translate3d(0, -14px, 0) scale(0.99);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translate3d(0, -30px, 0) scale(0.975);
+    }
+}
+
+/* =========================================================
+   CONTAINER SCROLL
+   FADE IN → EXPAND → FADE OUT
+   ========================================================= */
+
+@keyframes skills-container-scroll {
+
+    0% {
+        opacity: 0;
+
+        width: 86vw;
+
+        border-radius: 27px;
+
+        transform:
+            translate3d(0, 26px, 0) scale(0.985);
+    }
+
+    14% {
+        opacity: 1;
+
+        width: 86vw;
+
+        border-radius: 27px;
+
+        transform:
+            translate3d(0, 0, 0) scale(1);
+    }
+
+    48% {
+        opacity: 1;
+
+        width: 100vw;
+
+        border-radius: 0;
+
+        transform:
+            translate3d(0, 0, 0) scale(1);
+    }
+
+    68% {
+        opacity: 1;
+
+        width: 100vw;
+
+        border-radius: 0;
+
+        transform:
+            translate3d(0, 0, 0) scale(1);
+    }
+
+    84% {
+        opacity: 0.55;
+
+        width: 100vw;
+
+        border-radius: 0;
+
+        transform:
+            translate3d(0, -10px, 0) scale(0.995);
+    }
+
+    100% {
+        opacity: 0;
+
+        width: 86vw;
+
+        border-radius: 27px;
+
+        transform:
+            translate3d(0, -28px, 0) scale(0.98);
     }
 }
