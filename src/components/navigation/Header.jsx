@@ -147,6 +147,10 @@ const linkGroups = [
                 url: 'https://www.codewars.com/users/keenosmith-del',
             },
             {
+                name: 'LeetCode',
+                url: 'https://leetcode.com/u/keenosmith/',
+            },
+            {
                 name: 'HackerRank',
                 url: '#',
                 disabled: true,
@@ -185,6 +189,10 @@ const linkGroups = [
             {
                 name: 'AWS Skill Builder',
                 url: 'https://skillsprofile.skillbuilder.aws/user/keenosmith',
+            },
+            {
+                name: 'Microsoft Learn',
+                url: 'https://learn.microsoft.com/en-us/users/keenosmith/',
             },
             {
                 name: 'Credly',
