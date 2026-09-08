@@ -691,12 +691,13 @@
 
 @media (prefers-reduced-motion: reduce) {
 
-    .skills,
+    .skills-intro,
     .skills-container {
         animation: none;
     }
 
-    .skills {
+    .skills-intro,
+    .skills-container {
         opacity: 1;
         transform: none;
     }
@@ -712,33 +713,6 @@
         transform: none;
 
         filter: none;
-    }
-}
-
-/* =========================================================
-   SECTION FADE IN / OUT
-   ========================================================= */
-
-@keyframes skills-section-scroll {
-
-    0% {
-        opacity: 0;
-        transform: translateY(28px);
-    }
-
-    12% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    82% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    100% {
-        opacity: 0;
-        transform: translateY(-28px);
     }
 }
 
