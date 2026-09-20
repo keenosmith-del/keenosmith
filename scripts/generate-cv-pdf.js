@@ -65,13 +65,15 @@ await page.addStyleTag({
         }
 
         /* =========================================
-           PDF-ONLY HORIZONTAL POSITIONING
+        PDF-ONLY HORIZONTAL POSITIONING
         ========================================= */
 
         .cv-education-item,
         .cv-certification-item,
         .cv-experience-item,
-        .cv-project-item {
+        .cv-project-item,
+        .cv-cloud-item,
+        .cv-project-group {
             margin-left: 420px !important;
         }
 

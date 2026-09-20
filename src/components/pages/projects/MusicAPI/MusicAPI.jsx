@@ -82,22 +82,35 @@ function MusicAPI() {
                 <div className="music-project-hero-inner">
 
                     <div className="music-project-meta">
+                        {/* add more skills chips here */}
                         <span>Full-Stack Development</span>
-                        <span>API Integration</span>
+                        <span>REST API Integration</span>
+                        <span>React Application Arhitecture</span>
+                        <span>Node.js / Express</span>
+                        <span>MongoDB / Mongoose</span>
+                        <span>External API Integration</span>
                     </div>
 
+                    {/* Change title - more technical */}
                     <h1>
-                        Music API
+                        Music
                         <br />
-                        Web App
+                        API-Driven
+                        <br />
+                        Web Application
                     </h1>
 
                     <div className="music-project-hero-bottom">
 
+                        {/* change description - more technical */}
                         <p>
-                            A full-stack music application built around
-                            API-driven discovery, playback, queue management
-                            and an interactive music experience.
+                            A full-stack web application implementing a
+                            React-based frontend, Node.js/Express REST API,
+                            MongoDB persistence, and external music and podcast API
+                            integrations. The system includes API-driven data retrieval,
+                            normalized provider data, client-side state management,
+                            persistent user library operations,
+                            and browser-based audio playback with queue orchestration.
                         </p>
 
                         <div className="music-project-actions">
@@ -134,7 +147,7 @@ function MusicAPI() {
             <section className="music-project-gallery">
 
                 <div className="music-project-gallery-header">
-                    <span>(01)</span>
+                    <span></span>
                     <span>Application interface</span>
                 </div>
 
@@ -165,36 +178,49 @@ function MusicAPI() {
 
             </section>
 
+            {/* Technical Executive Summary */}
+
+            <div className="music-project-executive-summary">
+                <a
+                    className="music-project-executive-summary-button"
+                    href="/documents/supporting-doc-project-2.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Technical Executive Summary
+                </a>
+            </div>
 
             {/* Overview */}
 
             <section className="music-project-overview">
 
                 <div className="music-project-section-label">
-                    <span>(02)</span>
+                    <span></span>
                     <span>Project overview</span>
                 </div>
 
                 <div className="music-project-overview-content">
 
                     <h2>
-                        An application built around
-                        external data and interaction.
+                        External APIs as an application layer.
                     </h2>
 
                     <div className="music-project-overview-text">
 
                         <p>
-                            The Music API Web App explores how external music
-                            services can become the foundation for a complete
-                            interactive application.
+                            The implementation separates external provider integrations
+                            from application logic through dedicated service and
+                            provider layers. External responses are normalized into
+                            consistent application data
+                            structures before being returned to the frontend.
                         </p>
 
                         <p>
-                            Rather than treating an API as a simple data
-                            source, the project connects discovery, search,
-                            playback and queue management into a cohesive
-                            frontend and backend experience.
+                            The system combines API integration, client-side state
+                            management, MongoDB persistence, user library operations,
+                            search, and browser audio
+                            playback into a single application architecture.
                         </p>
 
                     </div>
@@ -226,26 +252,27 @@ function MusicAPI() {
                 <div className="music-project-video-copy">
 
                     <div className="music-project-section-label">
-                        <span>(03)</span>
-                        <span>Music discovery</span>
+                        <span></span>
+                        {/* change */}
+                        <span>Data Processing</span>
                     </div>
 
+                    {/* change */}
                     <h2>
-                        Searching, discovering
-                        and exploring music.
+                        Asynchronous search and result processing.
                     </h2>
 
+                    {/* change */}
                     <p>
-                        The application uses API-driven data to create a
-                        responsive discovery experience, allowing users to
-                        search for music and interact with results through
-                        the application interface.
+                        The application implements asynchronous search across
+                        multiple data types, with the frontend coordinating
+                        requests through dedicated service functions and
+                        processing structured JSON responses into application state.
                     </p>
 
                     <div className="music-project-pill-list">
 
                         <span>API requests</span>
-                        <span>Search</span>
                         <span>External data</span>
                         <span>Async operations</span>
                         <span>JSON</span>
@@ -264,30 +291,31 @@ function MusicAPI() {
                 <div className="music-project-api-heading">
 
                     <div className="music-project-section-label">
-                        <span>(04)</span>
-                        <span>API ecosystem</span>
+                        <span></span>
+                        {/* change */}
+                        <span>REST API ecosystem</span>
                     </div>
 
+                    {/* change */}
                     <h2>
-                        Working across the
-                        API development lifecycle.
+                        Designing the request and response lifecycle.
                     </h2>
 
                 </div>
 
                 <div className="music-project-api-content">
 
+                    {/* keep */}
                     <p>
-                        The project demonstrates practical API consumption
-                        from development through to application integration,
-                        including external services, request testing,
-                        structured responses and frontend consumption.
+                        Search requests are debounced to reduce unnecessary
+                        network calls while users enter queries. Returned results
+                        are separated into their respective data structures and rendered according to the available result set, with
+                        explicit handling for loading, empty, and error states.
                     </p>
 
                     <div className="music-project-api-pills">
 
                         <span>Spotify API</span>
-                        <span>REST APIs</span>
                         <span>Postman</span>
                         <span>HTTP</span>
                         <span>JSON</span>
@@ -313,20 +341,20 @@ function MusicAPI() {
                 <div className="music-project-video-copy">
 
                     <div className="music-project-section-label">
-                        <span>(05)</span>
+                        <span></span>
                         <span>Playback &amp; queue management</span>
                     </div>
 
                     <h2>
-                        Turning API data into
-                        an interactive experience.
+                        Coordinating playback state and queue operations.
                     </h2>
 
                     <p>
-                        Music data becomes actionable through playback,
-                        queue management and application state, connecting
-                        individual API responses to a continuous user
-                        experience.
+                        The backend separates HTTP routing, controller
+                        responsibilities, application logic, provider
+                        integrations, and database access. This establishes a
+                        clear request pipeline while keeping external service-specific
+                        implementation outside the API controller layer.
                     </p>
 
                     <div className="music-project-pill-list">
@@ -365,20 +393,18 @@ function MusicAPI() {
                 <div className="music-project-wide-header">
 
                     <div className="music-project-section-label">
-                        <span>(06)</span>
-                        <span>Application experience</span>
+                        <span></span>
+                        <span>Data Processing</span>
                     </div>
 
                     <h2>
-                        Designed around
-                        the music experience.
+                        Processing and normalizing external API data.
                     </h2>
 
                     <p>
-                        The interface brings discovery, playback and application
-                        interaction together into a focused music environment, keeping
-                        the experience visual while the underlying API architecture
-                        handles the data and services behind it.
+                        The backend performs the underlying provider queries
+                        and applies result filtering and normalization before
+                        returning the response to the client.
                     </p>
 
                 </div>
@@ -412,19 +438,20 @@ function MusicAPI() {
                 <div className="music-project-wide-header">
 
                     <div className="music-project-section-label">
-                        <span>(07)</span>
-                        <span>Interactive media</span>
+                        <span></span>
+                        <span>Client Application Architecture</span>
                     </div>
 
                     <h2>
-                        Connecting data
-                        to interaction.
+                        Coordinating shared state across the application.
                     </h2>
 
                     <p>
-                        Music data becomes part of a continuous application experience,
-                        connecting external services with frontend state, playback
-                        controls and the user's interaction with the application.
+                        The React application centralizes shared
+                        application state through Context and a common layout layer,
+                        coordinating user state, theme state, playback state,
+                        queue operations and
+                        API responses across routed application areas.
                     </p>
 
                 </div>
@@ -451,28 +478,25 @@ function MusicAPI() {
                 <div className="music-project-video-copy">
 
                     <div className="music-project-section-label">
-                        <span>(08)</span>
-                        <span>Application interaction</span>
+                        <span></span>
+                        <span>UI Engineering</span>
                     </div>
 
                     <h2>
-                        Turning a music API
-                        into a real application.
+                        Styling and browser interaction
                     </h2>
 
                     <p>
-                        The project goes beyond retrieving music data by connecting API
-                        responses with application state and interactive frontend
-                        behaviour. Search results, selected tracks and playback controls
-                        work together as part of one continuous interface.
+                        The frontend uses reusable React components, shared
+                        theme tokens, responsive layout patterns, and browser
+                        event handling to implement consistent interface behaviour across the application without relying on a component
+                        framework or utility CSS system.
                     </p>
 
                     <div className="music-project-pill-list">
 
                         <span>React state</span>
                         <span>Interactive UI</span>
-                        <span>API data</span>
-                        <span>Playback controls</span>
                         <span>Event handling</span>
 
                     </div>
@@ -487,15 +511,15 @@ function MusicAPI() {
             <section className="music-project-stack">
 
                 <div className="music-project-section-label">
-                    <span>(10)</span>
-                    <span>Technology &amp; skills</span>
+                    <span></span>
+                    <span>Technology Stack</span>
                 </div>
 
                 <div className="music-project-stack-content">
 
                     <h2>
-                        A broad stack supporting
-                        the application end to end.
+                        Technologies and implementation
+                        across the application stack.
                     </h2>
 
                     <div className="music-project-stack-groups">
@@ -507,20 +531,19 @@ function MusicAPI() {
                             </span>
 
                             <div className="music-project-stack-pills">
-                                <span>React</span>
-                                <span>Vite</span>
+                                <span>React 19</span>
                                 <span>JavaScript</span>
+                                <span>Vite</span>
+                                <span>React Router</span>
+                                <span>React Context</span>
+                                <span>Framer Motion</span>
+                                <span>Lucide React</span>
                                 <span>HTML</span>
                                 <span>CSS</span>
-                                <span>React Router</span>
-                                <span>Lucide React</span>
-                                <span>Responsive UI</span>
-                                <span>Component architecture</span>
-                                <span>State management</span>
+                                <span>Fetch API</span>
                             </div>
 
                         </div>
-
 
                         <div className="music-project-stack-group">
 
@@ -530,73 +553,69 @@ function MusicAPI() {
 
                             <div className="music-project-stack-pills">
                                 <span>Node.js</span>
-                                <span>Express</span>
-                                <span>REST APIs</span>
-                                <span>API routes</span>
-                                <span>Middleware</span>
-                                <span>Server architecture</span>
-                                <span>Error handling</span>
-                            </div>
-
-                        </div>
-
-
-                        <div className="music-project-stack-group">
-
-                            <span className="music-project-stack-group-title">
-                                APIs &amp; Integration
-                            </span>
-
-                            <div className="music-project-stack-pills">
-                                <span>Spotify API</span>
-                                <span>Postman</span>
-                                <span>REST</span>
-                                <span>HTTP</span>
+                                <span>Express 5</span>
+                                <span>REST API</span>
+                                <span>Express Router</span>
+                                <span>Controllers</span>
+                                <span>Application Services</span>
+                                <span>Provider Services</span>
+                                <span>Axios</span>
                                 <span>JSON</span>
-                                <span>Authentication</span>
-                                <span>API testing</span>
-                                <span>External services</span>
-                                <span>Data transformation</span>
-                                <span>Async operations</span>
                             </div>
 
                         </div>
 
-
                         <div className="music-project-stack-group">
 
                             <span className="music-project-stack-group-title">
-                                Data &amp; application logic
+                                Database
                             </span>
 
                             <div className="music-project-stack-pills">
                                 <span>MongoDB</span>
                                 <span>Mongoose</span>
-                                <span>Data modelling</span>
-                                <span>Application state</span>
-                                <span>Queue management</span>
-                                <span>Data persistence</span>
+                                <span>Schema Modelling</span>
+                                <span>ObjectId References</span>
+                                <span>Document Relationships</span>
+                                <span>Population</span>
+                                <span>CRUD Operations</span>
+                                <span>Data Persistence</span>
                             </div>
 
                         </div>
 
+                        <div className="music-project-stack-group">
+
+                            <span className="music-project-stack-group-title">
+                                External Services
+                            </span>
+
+                            <div className="music-project-stack-pills">
+                                <span>Deezer API</span>
+                                <span>iTunes Search API</span>
+                                <span>Podcast RSS</span>
+                                <span>rss-parser</span>
+                                <span>API Response Normalization</span>
+                                <span>Async Operations</span>
+                            </div>
+
+                        </div>
 
                         <div className="music-project-stack-group">
 
                             <span className="music-project-stack-group-title">
-                                Engineering
+                                Development
                             </span>
 
                             <div className="music-project-stack-pills">
-                                <span>Full-stack development</span>
-                                <span>API architecture</span>
-                                <span>Frontend architecture</span>
-                                <span>Backend architecture</span>
-                                <span>Debugging</span>
+                                <span>npm</span>
                                 <span>Git</span>
                                 <span>GitHub</span>
-                                <span>Deployment</span>
-                                <span>Responsive development</span>
+                                <span>Vite</span>
+                                <span>Nodemon</span>
+                                <span>Oxlint</span>
+                                <span>Environment Variables</span>
+                                <span>ES Modules</span>
                             </div>
 
                         </div>
@@ -607,36 +626,40 @@ function MusicAPI() {
 
             </section>
 
+
             {/* Video four */}
 
             <section className="music-project-video music-project-video-reverse">
 
+
                 <div className="music-project-video-copy">
 
                     <div className="music-project-section-label">
-                        <span>(09)</span>
-                        <span>Full-stack integration</span>
+                        <span></span>
+                        <span>Data Persistence</span>
                     </div>
 
                     <h2>
-                        Connecting frontend,
-                        backend and external services.
+                        Persisting user data
+                        with MongoDB.
                     </h2>
 
                     <p>
-                        The final experience brings the different layers of the project
-                        together: React on the frontend, Node and Express on the backend,
-                        MongoDB for application data and external music services providing
-                        the core music information.
+                        MongoDB stores application entities including users, tracks and
+                        playlists. Mongoose schemas define references between these
+                        entities, while user library, favourite and pinned-track
+                        operations update persisted relationships and return populated
+                        records to the client.
                     </p>
 
                     <div className="music-project-pill-list">
 
-                        <span>React</span>
-                        <span>Node.js</span>
-                        <span>Express</span>
                         <span>MongoDB</span>
-                        <span>External APIs</span>
+                        <span>Mongoose</span>
+                        <span>Schema modelling</span>
+                        <span>ObjectId references</span>
+                        <span>CRUD operations</span>
+                        <span>Population</span>
 
                     </div>
 
@@ -658,13 +681,14 @@ function MusicAPI() {
             </section>
 
 
+
             {/* Closing */}
 
             <section className="music-project-closing">
 
                 <div className="music-project-closing-inner">
 
-                    <span>(11)</span>
+                    <span></span>
 
                     <p>
                         A full-stack exploration of APIs, application state,

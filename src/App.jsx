@@ -14,6 +14,10 @@ import ProductivityPlatform from './components/pages/projects/ProductivityPlatfo
 import MusicAPI from './components/pages/projects/MusicAPI/MusicAPI.jsx';
 import EnterpriseWorkspace from './components/pages/projects/EnterpriseWorkspace/EnterpriseWorkspace.jsx';
 
+import Microsoft from './components/pages/projects/Microsoft/Microsoft.jsx';
+import AWS from './components/pages/projects/AWS/AWS.jsx';
+import GCP from './components/pages/projects/GCP/GCP.jsx';
+
 function Home() {
   return (
     <>
@@ -51,6 +55,19 @@ function App() {
         <Route
           path="/projects/enterprise-workspace"
           element={<EnterpriseWorkspace />}
+        />
+
+        <Route
+          path="/projects/microsoft"
+          element={<Microsoft />}
+        />
+        <Route
+          path="/projects/aws"
+          element={<AWS />}
+        />
+        <Route
+          path="/projects/gcp"
+          element={<GCP />}
         />
       </Routes>
     </BrowserRouter>

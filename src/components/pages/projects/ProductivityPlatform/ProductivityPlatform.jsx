@@ -70,11 +70,17 @@ function ProductivityPlatform() {
                 <div className="productivity-project-hero-inner">
 
                     <div className="productivity-project-meta">
+
                         <span>Full-Stack Engineering</span>
-                        <span>Productivity Platform</span>
+                        <span>MERN Architecture</span>
+                        <span>REST API Development</span>
+                        <span>Authentication & Security</span>
+                        <span>MongoDB & Mongoose</span>
+                        <span>Cloud Deployment</span>
                     </div>
 
                     <h1>
+                        Authenticated MERN
                         Productivity
                         <br />
                         Platform
@@ -83,10 +89,7 @@ function ProductivityPlatform() {
                     <div className="productivity-project-hero-bottom">
 
                         <p>
-                            A fully integrated productivity platform bringing
-                            tasks, projects, goals, reminders, notes, folders
-                            and calendar functionality together through a
-                            unified full-stack application.
+                            A full-stack software engineering project built around a React SPA, Node.js/Express REST API and MongoDB/Mongoose persistence, implementing authenticated resource access, JWT-based security, interconnected domain modelling, client/server state coordination, account lifecycle management and cloud deployment.
                         </p>
 
                         <div className="productivity-project-actions">
@@ -118,12 +121,12 @@ function ProductivityPlatform() {
             </section>
 
 
-            {/* Three-image showcase */}
+            {/* Two-image showcase */}
 
             <section className="productivity-project-gallery">
 
                 <div className="productivity-project-gallery-header">
-                    <span>(01)</span>
+                    <span></span>
                     <span>Application interface</span>
                 </div>
 
@@ -157,30 +160,34 @@ function ProductivityPlatform() {
             <section className="productivity-project-overview">
 
                 <div className="productivity-project-overview-number">
-                    (02)
+
                 </div>
 
                 <div className="productivity-project-overview-content">
 
                     <p className="productivity-project-overview-lead">
-                        One application. Multiple interconnected systems.
+                        Overview.
                     </p>
 
                     <div className="productivity-project-overview-columns">
 
                         <p>
-                            The Productivity Platform was built as a complete
-                            software system rather than a collection of
-                            isolated features. Tasks, projects, goals,
-                            reminders, notes and calendar functionality all
-                            operate within the same authenticated environment.
+                            The platform was engineered as a layered full-stack system in which a React client,
+                            REST service layer, authenticated Node.js/Express backend and MongoDB/Mongoose
+                            persistence operate as a coordinated application architecture.
+                            The implementation establishes clear boundaries between presentation,
+                            application state, API communication, server-side resource operations and persistent
+                            data.
                         </p>
 
                         <p>
-                            The project required consideration across the
-                            entire stack, from interface design and state
-                            management through REST APIs, authentication,
-                            database modelling, validation and deployment.
+                            The project demonstrates particular depth in authenticated multi-user
+                            architecture, user-scoped resource access, interconnected document modelling,
+                            JWT-based authentication, bcrypt credential security and client/server state
+                            reconciliation. It also incorporates concurrent multi-resource operations,
+                            account and workspace lifecycle management, multipart file processing,
+                            environment-aware configuration and cloud deployment, providing evidence of
+                            engineering capability across the complete application stack.
                         </p>
 
                     </div>
@@ -197,20 +204,21 @@ function ProductivityPlatform() {
                 <div className="productivity-project-video-heading">
 
                     <div>
-                        <span>(03)</span>
-                        <span>Frontend architecture</span>
+                        <span></span>
+                        <span>Data orchestration & state synchronisation</span>
                     </div>
 
                     <h2>
-                        A single interface for
-                        an interconnected workspace.
+                        Coordinating persistent application state.
                     </h2>
 
                     <p>
-                        The frontend brings multiple productivity workflows
-                        into a consistent application experience, with
-                        reusable components, protected routes, responsive
-                        layouts and state-driven interactions.
+                        The application coordinates multiple persistent resources
+                        through asynchronous service operations and centralized client-side state,
+                        with concurrent data retrieval, server-backed mutations and local state
+                        reconciliation maintaining consistency between the interface and the backend.
+                        This includes Promise.all-based orchestration for multi-resource operations, API response handling
+                        and deliberate separation between transient client state and persistent server state.
                     </p>
 
                 </div>
@@ -251,7 +259,7 @@ function ProductivityPlatform() {
                 <div className="productivity-project-video-heading">
 
                     <div>
-                        <span>(04)</span>
+                        <span></span>
                         <span>Backend &amp; data architecture</span>
                     </div>
 
@@ -261,10 +269,11 @@ function ProductivityPlatform() {
                     </h2>
 
                     <p>
-                        A Node.js and Express backend provides the application
-                        API, with MongoDB and Mongoose handling persistent
-                        application data. JWT authentication and protected
-                        routes connect the user's session to their workspace.
+                        The Node.js and Express backend exposes authenticated REST resources,
+                        while MongoDB and Mongoose provide schema-driven persistence across the
+                        application's domain model. User ownership, ObjectId references and cross-entity
+                        relationships establish a connected data architecture rather than isolated
+                        collections.
                     </p>
 
                 </div>
@@ -279,13 +288,13 @@ function ProductivityPlatform() {
                 <div className="productivity-project-engineering-header">
 
                     <div>
-                        <span>(05)</span>
-                        <span>Engineering</span>
+                        <span></span>
+                        <span>Engineering Capability</span>
                     </div>
 
                     <h2>
-                        Built across the
-                        full application stack.
+                        Engineering depth across
+                        the complete application stack.
                     </h2>
 
                 </div>
@@ -293,113 +302,94 @@ function ProductivityPlatform() {
                 <div className="productivity-project-engineering-grid">
 
                     <div className="productivity-project-engineering-card">
-                        <span>01</span>
+                        <span></span>
 
-                        <h3>Frontend</h3>
+                        <h3>Application Architecture</h3>
 
                         <p>
-                            React, Vite, React Router, responsive UI,
-                            component architecture and application state.
+                            Layered React application architecture separating routing,
+                            authentication state, reusable presentation components and
+                            service-layer communication from backend persistence.
                         </p>
                     </div>
 
                     <div className="productivity-project-engineering-card">
-                        <span>02</span>
+                        <span></span>
 
-                        <h3>Backend</h3>
+                        <h3>API &amp; Resource Engineering</h3>
 
                         <p>
-                            Node.js, Express, REST APIs, middleware,
-                            validation and protected server routes.
+                            Node.js and Express REST resources supporting authenticated
+                            operations, structured HTTP communication, request processing
+                            and server-side resource lifecycle management.
                         </p>
                     </div>
 
                     <div className="productivity-project-engineering-card">
-                        <span>03</span>
+                        <span></span>
 
-                        <h3>Database</h3>
+                        <h3>Data Architecture</h3>
 
                         <p>
-                            MongoDB, MongoDB Atlas and Mongoose schemas
-                            supporting interconnected application data.
+                            MongoDB and Mongoose document modelling with user ownership,
+                            ObjectId relationships and interconnected domain resources
+                            persisted through a structured application data layer.
                         </p>
                     </div>
 
                     <div className="productivity-project-engineering-card">
-                        <span>04</span>
+                        <span></span>
 
-                        <h3>Authentication</h3>
+                        <h3>Security Engineering</h3>
 
                         <p>
-                            JWT-based authentication, password hashing,
-                            protected routes and user-specific data.
+                            JWT authentication, Bearer-token authorization, bcrypt
+                            credential protection and authenticated user boundaries across
+                            client and server operations.
                         </p>
                     </div>
 
                     <div className="productivity-project-engineering-card">
-                        <span>05</span>
+                        <span></span>
 
-                        <h3>Deployment</h3>
+                        <h3>State &amp; Orchestration</h3>
 
                         <p>
-                            GitHub-based development with production
-                            deployment across modern cloud platforms.
+                            Asynchronous resource coordination, derived client state and
+                            server-response reconciliation maintain consistency across
+                            concurrent application workflows.
                         </p>
                     </div>
 
                     <div className="productivity-project-engineering-card">
-                        <span>06</span>
+                        <span></span>
 
-                        <h3>Product &amp; UX</h3>
+                        <h3>Cloud &amp; Delivery</h3>
 
                         <p>
-                            Information architecture, interaction design,
-                            responsive behaviour and cohesive product
-                            experience.
+                            Environment-aware configuration, Vite production builds,
+                            Git-based development and cloud deployment supporting
+                            separation between application code and runtime infrastructure.
                         </p>
                     </div>
 
                 </div>
+
 
             </section>
 
-            {/* Platform showcase */}
 
-            <section className="productivity-project-media-showcase">
+            <div className="productivity-project-support">
+                <a
+                    className="productivity-project-button productivity-project-button-primary"
+                    href="/documents/supporting-doc-project-1.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Technical Executive Summary
+                </a>
+            </div>
 
-                <div className="productivity-project-media-header">
-
-                    <div>
-                        <span>(05A)</span>
-                        <span>Platform in use</span>
-                    </div>
-
-                    <p>
-                        A closer look at the interface, interactions and
-                        workflows that bring the productivity platform together.
-                    </p>
-
-                </div>
-
-                <div className="productivity-project-media-grid">
-
-                    <div className="productivity-project-media-image">
-                        <img
-                            src={productivityImage3}
-                            alt="Productivity Platform application interface"
-                        />
-                    </div>
-
-                    <div className="productivity-project-media-image">
-                        <img
-                            src={productivityImage4}
-                            alt="Productivity Platform application interface"
-                        />
-                    </div>
-
-                </div>
-
-            </section>
 
             {/* Product experience */}
 
@@ -407,23 +397,20 @@ function ProductivityPlatform() {
 
                 <div className="productivity-project-media-feature-copy">
 
-                    <span>(05B)</span>
+                    <span></span>
 
                     <div>
 
                         <h2>
-                            Designed as a
-                            system, not just
-                            a collection of screens.
+                            Multi-layer application design and implementation.
                         </h2>
 
                         <p>
-                            The platform brings tasks, projects, goals, notes,
-                            reminders and other productivity workflows into a
-                            single connected environment. The interface is
-                            designed to make those relationships feel simple,
-                            while the underlying application handles the
-                            complexity.
+                            The project required implementation across frontend application state,
+                            API communication, server-side request handling, database persistence and
+                            authentication. It demonstrates experience working across application boundaries,
+                            defining data relationships, enforcing user access at the API layer and
+                            maintaining state between persistent resources and the client
                         </p>
 
                     </div>
@@ -450,67 +437,78 @@ function ProductivityPlatform() {
 
             <section className="productivity-project-stack">
 
+
                 <div className="productivity-project-stack-label">
                     <span>(06)</span>
-                    <span>Technology</span>
+                    <span>Technical Implementation</span>
                 </div>
 
                 <div className="productivity-project-stack-content">
 
                     <h2>
-                        The stack behind the platform.
+                        Full-stack implementation
+                        across application boundaries.
                     </h2>
 
                     <div className="productivity-project-stack-list">
 
                         <div>
-                            <span>Frontend</span>
+                            <span>Client</span>
 
                             <p>
-                                React · Vite · React Router · JavaScript ·
-                                HTML · CSS · Bootstrap · Lucide React
+                                Component-based React application with routed application
+                                modules, centralized authentication state, reusable
+                                interfaces and client-side data processing.
                             </p>
                         </div>
 
                         <div>
-                            <span>Backend</span>
+                            <span>Service Layer</span>
 
                             <p>
-                                Node.js · Express · REST APIs · JWT ·
-                                bcrypt
+                                Dedicated API service modules separating HTTP communication
+                                from presentation logic, with authenticated requests,
+                                structured payloads and environment-dependent endpoints.
                             </p>
                         </div>
 
                         <div>
-                            <span>Data</span>
+                            <span>Server</span>
 
                             <p>
-                                MongoDB · MongoDB Atlas · Mongoose
+                                Node.js / Express resource APIs with middleware-based
+                                authentication, asynchronous operations, HTTP method
+                                handling and account lifecycle endpoints.
                             </p>
                         </div>
 
                         <div>
-                            <span>Development</span>
+                            <span>Persistence</span>
 
                             <p>
-                                Git · GitHub · GitHub Actions · npm
+                                Mongoose-backed MongoDB persistence using schema-defined
+                                resources, ObjectId relationships and user ownership
+                                boundaries across the application data model.
                             </p>
                         </div>
 
                         <div>
-                            <span>Deployment</span>
+                            <span>Security</span>
 
                             <p>
-                                Vercel · Render
+                                JWT-based authentication, Bearer-token authorization,
+                                bcrypt credential hashing and verification, protected
+                                resource access and sensitive-operation reauthentication.
                             </p>
                         </div>
 
                         <div>
-                            <span>Engineering</span>
+                            <span>Delivery</span>
 
                             <p>
-                                Full-stack architecture · Authentication ·
-                                API design · Responsive development
+                                Vite production builds, environment configuration,
+                                Git-based source control and cloud deployment across
+                                separately configured application environments.
                             </p>
                         </div>
 
@@ -518,7 +516,9 @@ function ProductivityPlatform() {
 
                 </div>
 
+
             </section>
+
 
 
             {/* Closing */}
@@ -527,11 +527,12 @@ function ProductivityPlatform() {
 
                 <div className="productivity-project-closing-inner">
 
-                    <span>(07)</span>
+                    <span></span>
 
                     <p>
-                        A full-stack product built to bring an entire
-                        productivity workflow into one connected system.
+                        A substantial full-stack implementation demonstrating practical
+                        capability across application architecture, API development, persistent data modelling,
+                        authentication, security, state management and cloud delivery.
                     </p>
 
                     <div className="productivity-project-closing-actions">

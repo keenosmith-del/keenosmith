@@ -78,16 +78,21 @@ function EnterpriseWorkspace() {
 
 
             {/* Hero */}
-
             <section className="enterprise-project-hero">
 
                 <div className="enterprise-project-hero-inner">
 
                     <div className="enterprise-project-meta">
-                        <span>Enterprise Application</span>
-                        <span>SQL &amp; Data Architecture</span>
+                        <span>PostgreSQL</span>
+                        <span>SQL</span>
+                        <span>Prisma ORM</span>
+                        <span>Runtime DDL</span>
+                        <span>Relational Modelling</span>
+                        <span>Schema Management</span>
+                        <span>REST APIs</span>
                     </div>
 
+                    {/* TECHNICAL TITLE */}
                     <h1>
                         Enterprise
                         <br />
@@ -96,12 +101,12 @@ function EnterpriseWorkspace() {
 
                     <div className="enterprise-project-hero-bottom">
 
+                        {/* TECHNICAL DESCRIPTION */}
                         <p>
-                            A full-stack SQL workspace built around PostgreSQL,
-                            Prisma and relational data. The application brings
-                            database structure, schema design, table management,
-                            querying, CRUD operations and data exploration together
-                            inside one complete visual environment.
+                            A full-stack database management platform built with PostgreSQL,
+                            SQL and Prisma, supporting relational data management, Runtime Schema Management,
+                            database constraints,
+                            dynamic records and SQL query execution through a browser-based workspace.
                         </p>
 
                         <div className="enterprise-project-actions">
@@ -132,8 +137,6 @@ function EnterpriseWorkspace() {
 
             </section>
 
-
-
             {/* Introductory application overview */}
 
             <section className="enterprise-project-intro">
@@ -141,21 +144,24 @@ function EnterpriseWorkspace() {
                 <div className="enterprise-project-intro-inner">
 
                     <div className="enterprise-project-section-label">
-                        <span>(00)</span>
-                        <span>Application overview</span>
+                        <span></span>
+                        <span>Database architecture</span>
                     </div>
 
                     <div className="enterprise-project-intro-copy">
 
                         <h2>
-                            A visual workspace
-                            for working with data.
+                            PostgreSQL database
+                            management and runtime schema operations.
                         </h2>
 
                         <p>
-                            Enterprise Workspace transforms the normally hidden
-                            structure of a relational database into an interface
-                            that can be explored, understood and manipulated.
+                            The platform combines PostgreSQL, SQL and Prisma to manage
+                            relational data and database structures through application
+                            workflows. The backend operates across both application-data
+                            and database-definition levels, supporting Runtime DDL,
+                            relational constraints, dynamic records, and SQL query
+                            execution.
                         </p>
 
                     </div>
@@ -169,7 +175,7 @@ function EnterpriseWorkspace() {
                             loop
                             playsInline
                             preload="metadata"
-                            aria-label="Enterprise Workspace application overview"
+                            aria-label="Enterprise Workspace database management overview"
                         />
 
                     </div>
@@ -178,21 +184,19 @@ function EnterpriseWorkspace() {
 
             </section>
 
-
             {/* SQL focus */}
-
             <section className="enterprise-project-sql">
 
                 <div className="enterprise-project-sql-intro">
 
                     <div className="enterprise-project-section-label">
-                        <span>(01)</span>
-                        <span>SQL &amp; relational architecture</span>
+                        <span></span>
+                        <span>Runtime schema management</span>
                     </div>
 
                     <h2>
-                        The database is
-                        central to the system.
+                        Database structures
+                        can evolve at runtime.
                     </h2>
 
                 </div>
@@ -200,27 +204,26 @@ function EnterpriseWorkspace() {
                 <div className="enterprise-project-sql-content">
 
                     <p>
-                        Enterprise Workspace is built around the idea that a
-                        database should be something developers can understand,
-                        explore and actively work with rather than simply connect
-                        to in the background.
+                        Table and column definitions are represented as application-level
+                        schema models and validated before changes are applied to the
+                        underlying database structure.
                     </p>
 
                     <p>
-                        PostgreSQL provides the relational data layer while Prisma
-                        connects the database to the application architecture.
-                        Schemas, tables, fields, keys, relationships, queries and
-                        records all become part of one coherent workspace.
+                        The schema engine generates and executes DDL for table creation,
+                        column changes, constraints, defaults, relationships and data-type
+                        changes, with transactional operations maintaining consistency
+                        between physical structures and workspace metadata.
                     </p>
 
                     <div className="enterprise-project-sql-pills">
-                        <span>PostgreSQL</span>
-                        <span>SQL</span>
-                        <span>Prisma</span>
-                        <span>Relational data</span>
-                        <span>Data modelling</span>
-                        <span>Database queries</span>
-                        <span>ORM</span>
+                        <span>Runtime DDL</span>
+                        <span>Schema Evolution</span>
+                        <span>Constraint Engineering</span>
+                        <span>Foreign Keys</span>
+                        <span>Primary Keys</span>
+                        <span>Data Types</span>
+                        <span>Metadata Synchronisation</span>
                     </div>
 
                 </div>
@@ -228,8 +231,8 @@ function EnterpriseWorkspace() {
             </section>
 
 
-
             {/* Application walkthrough */}
+
 
             <section className="enterprise-project-feature enterprise-project-feature-light">
 
@@ -238,31 +241,24 @@ function EnterpriseWorkspace() {
                     <div className="enterprise-project-feature-copy">
 
                         <div className="enterprise-project-section-label">
-                            <span>(02)</span>
-                            <span>Application walkthrough</span>
+                            <span></span>
+                            <span>Data management</span>
                         </div>
 
                         <h2>
-                            A complete workspace
-                            for relational data.
+                            Dynamic record management.
                         </h2>
 
                         <p>
-                            Enterprise Workspace brings database structure,
-                            table management, querying and visual exploration
-                            together inside one application. Instead of treating
-                            each database operation as a separate workflow, the
-                            interface provides a connected environment for
-                            understanding the database, working with its tables
-                            and manipulating its data.
+                            Record operations are generated from each table's column definitions, supporting create, read, update and delete workflows with type-specific inputs. Data can be searched, filtered by column conditions, sorted, selected, edited and deleted directly within the workspace.
                         </p>
 
                         <div className="enterprise-project-video-pills">
-                            <span>Database workspace</span>
-                            <span>SQL</span>
-                            <span>CRUD</span>
-                            <span>Schema management</span>
-                            <span>Table management</span>
+                            <span>Dynamic Records</span>
+                            <span>CRUD Operations</span>
+                            <span>Data Filtering</span>
+                            <span>Data Sorting</span>
+                            <span>Schema-Driven Forms</span>
                         </div>
 
                     </div>
@@ -276,7 +272,7 @@ function EnterpriseWorkspace() {
                             loop
                             playsInline
                             preload="metadata"
-                            aria-label="Enterprise Workspace application walkthrough"
+                            aria-label="Enterprise Workspace data management"
                         />
 
                     </div>
@@ -293,52 +289,76 @@ function EnterpriseWorkspace() {
                 <div className="enterprise-project-stack-inner">
 
                     <div className="enterprise-project-section-label">
-                        <span>(03)</span>
-                        <span>Technology</span>
+                        <span></span>
+                        <span>Application engineering</span>
                     </div>
 
                     <div className="enterprise-project-stack-content">
 
                         <h2>
-                            A focused full-stack
-                            enterprise stack.
+                            Application architecture
+                            around the data layer.
                         </h2>
 
                         <div className="enterprise-project-stack-list">
 
                             <div>
-                                <span>Frontend</span>
+                                <span>API Architecture</span>
 
                                 <p>
-                                    React · Vite · JavaScript · HTML · CSS ·
-                                    React Router · Responsive development
+                                    Express Routers · Controllers · REST endpoints ·
+                                    Resource services · Centralised API client ·
+                                    Environment-based API configuration
                                 </p>
                             </div>
 
                             <div>
-                                <span>Backend</span>
+                                <span>Application State</span>
 
                                 <p>
-                                    Node.js · Express · REST APIs · Server-side
-                                    application architecture
+                                    Centralised resource state · Concurrent data loading ·
+                                    Failure-tolerant asynchronous operations · State
+                                    reconciliation · Persistent workspace navigation
                                 </p>
                             </div>
 
                             <div>
-                                <span>Database</span>
+                                <span>Database Interface</span>
 
                                 <p>
-                                    PostgreSQL · SQL · Prisma ORM · Relational
-                                    data modelling · Queries · Relationships
+                                    Table workspace · Query interface · Query Builder ·
+                                    Query History · Relationships · Schema editor ·
+                                    Dynamic record forms
                                 </p>
                             </div>
 
                             <div>
-                                <span>Engineering</span>
+                                <span>Workspace Interaction</span>
 
                                 <p>
-                                    Full-stack architecture · API integration ·
-                                    Data-driven application design · Git · GitHub
+                                    <code>@dnd-kit</code> · <code>react-rnd</code> ·
+                                    Drag-and-drop · Sortable tables · Resizable elements ·
+                                    Row selection · Expanded table views
+                                </p>
+                            </div>
+
+                            <div>
+                                <span>Session Management</span>
+
+                                <p>
+                                    <code>sessionStorage</code> · Inactivity detection ·
+                                    Session expiry warning · Countdown handling ·
+                                    Automatic logout · Activity event tracking
+                                </p>
+                            </div>
+
+                            <div>
+                                <span>Development</span>
+
+                                <p>
+                                    React 19 · Vite · JavaScript ES Modules · Oxlint ·
+                                    Production builds · Environment configuration ·
+                                    Git-based development
                                 </p>
                             </div>
 
@@ -350,6 +370,16 @@ function EnterpriseWorkspace() {
 
             </section>
 
+            <div className="enterprise-project-supporting-document">
+                <a
+                    className="enterprise-project-button enterprise-project-button-primary"
+                    href="/documents/supporting-doc-project-4.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Technical Executive Summary
+                </a>
+            </div>
 
 
             {/* SQL capabilities */}
@@ -361,13 +391,12 @@ function EnterpriseWorkspace() {
                     <div className="enterprise-project-capabilities-header">
 
                         <div className="enterprise-project-section-label">
-                            <span>(04)</span>
+                            <span></span>
                             <span>SQL capabilities</span>
                         </div>
 
                         <h2>
-                            More than a database
-                            viewer.
+                            Relational database operations.
                         </h2>
 
                     </div>
@@ -375,20 +404,11 @@ function EnterpriseWorkspace() {
                     <div className="enterprise-project-capabilities-intro">
 
                         <p>
-                            Enterprise Workspace was designed around the practical
-                            lifecycle of working with relational data. From
-                            understanding how tables connect to creating schemas,
-                            manipulating records and constructing queries, the
-                            application brings the major workflows of a SQL
-                            environment into one visual workspace.
+                            The platform implements database workflows across table definition, schema modification, relational constraints, record management, querying, and database metadata. These operations are exposed through dedicated workspace modules and API endpoints.
                         </p>
 
                         <p>
-                            The result is an application where database structure is
-                            visible, understandable and actionable. Users can move
-                            between schemas, tables, relationships, records,
-                            statistics and queries without losing the wider context
-                            of the database they are working with.
+                            Database structures can be defined and modified at runtime, while the resulting tables and records can be queried, filtered, sorted, edited, and inspected through the same application.
                         </p>
 
                     </div>
@@ -514,21 +534,21 @@ function EnterpriseWorkspace() {
                     <div className="enterprise-project-feature-copy">
 
                         <div className="enterprise-project-section-label">
-                            <span>(05)</span>
+                            <span></span>
                             <span>Schema &amp; relationships</span>
                         </div>
 
                         <h2>
-                            See the database
-                            as a system.
+                            Foreign key relationships
+                            and dependencies.
                         </h2>
 
                         <p>
-                            The workspace makes relational structure visible,
-                            allowing tables, schemas, keys and their relationships
-                            to be explored as part of one connected database rather
-                            than isolated records. This provides a visual way to
-                            understand how the data model fits together.
+                            The platform maps relationships between database entities,
+                            exposing primary keys, foreign keys and referenced columns
+                            within the workspace. Relationship data can be inspected
+                            alongside table definitions and records, making dependencies
+                            between related entities easier to trace and manage.
                         </p>
 
                     </div>
@@ -562,22 +582,21 @@ function EnterpriseWorkspace() {
                     <div className="enterprise-project-feature-copy">
 
                         <div className="enterprise-project-section-label">
-                            <span>(06)</span>
-                            <span>Query workflow</span>
+                            <span></span>
+                            <span>Workspace interaction</span>
                         </div>
 
                         <h2>
-                            Query data without
-                            losing the visual context.
+                            Drag, position and
+                            manage workspace tables.
                         </h2>
 
                         <p>
-                            A visual query workflow sits alongside SQL functionality,
-                            making it easier to construct, understand and work with
-                            database queries while keeping the underlying relational
-                            structure in view. The accompanying SQL cheatsheet also
-                            provides quick access to commonly used syntax and
-                            operations.
+                            The workspace uses draggable and sortable table components to
+                            organise database objects within the application. Tables can
+                            be activated, repositioned, expanded and removed, while
+                            dedicated edit and delete modes control destructive or
+                            structural actions within the workspace.
                         </p>
 
                     </div>
@@ -591,7 +610,7 @@ function EnterpriseWorkspace() {
                             loop
                             playsInline
                             preload="metadata"
-                            aria-label="Enterprise Workspace query workflow demonstration"
+                            aria-label="Enterprise Workspace interaction demonstration"
                         />
 
                     </div>
@@ -611,21 +630,21 @@ function EnterpriseWorkspace() {
                     <div className="enterprise-project-feature-copy">
 
                         <div className="enterprise-project-section-label">
-                            <span>(07)</span>
-                            <span>Data manipulation</span>
+                            <span></span>
+                            <span>Database health</span>
                         </div>
 
                         <h2>
-                            From schema design
-                            to working data.
+                            Monitor database
+                            connectivity.
                         </h2>
 
                         <p>
-                            The application supports the complete CRUD lifecycle,
-                            allowing users to create, read, update and delete records
-                            while working directly with the tables that contain them.
-                            This connects schema design and database structure with
-                            the practical work of manipulating persistent data.
+                            The backend exposes a health endpoint that verifies PostgreSQL
+                            connectivity through a live database query. Application startup
+                            is also dependent on successful database initialisation,
+                            providing an explicit runtime check for database availability
+                            rather than treating connectivity as an assumed dependency.
                         </p>
 
                     </div>
@@ -639,7 +658,7 @@ function EnterpriseWorkspace() {
                             loop
                             playsInline
                             preload="metadata"
-                            aria-label="Enterprise Workspace data manipulation demonstration"
+                            aria-label="Enterprise Workspace database health demonstration"
                         />
 
                     </div>
@@ -650,38 +669,43 @@ function EnterpriseWorkspace() {
 
             {/* Closing */}
 
-            <section className="enterprise-project-closing">
+            <section className="enterprise-project-feature enterprise-project-feature-light enterprise-project-feature-last">
 
-                <div className="enterprise-project-closing-inner">
+                <div className="enterprise-project-feature-inner">
 
-                    <span>(08)</span>
+                    <div className="enterprise-project-feature-copy">
 
-                    <p>
-                        A complete SQL workspace for understanding,
-                        designing, querying and working with relational data.
-                    </p>
+                        <div className="enterprise-project-section-label">
+                            <span></span>
+                            <span>Session management</span>
+                        </div>
 
-                    <div className="enterprise-project-closing-actions">
+                        <h2>
+                            Inactivity detection
+                            and session expiry.
+                        </h2>
 
-                        <a
-                            className="enterprise-project-closing-button"
-                            href="/"
-                        >
-                            Back to Portfolio
-                        </a>
+                        <p>
+                            The application tracks user activity across mouse, keyboard,
+                            scroll and touch events and maintains an inactivity timer for
+                            the active workspace session. A warning state is displayed
+                            before expiry, followed by an automatic logout when the
+                            inactivity threshold is reached.
+                        </p>
 
-                        <button
-                            className="enterprise-project-closing-top"
-                            type="button"
-                            onClick={scrollToTop}
-                            aria-label="Back to top"
-                        >
-                            <ArrowUp
-                                size={16}
-                                strokeWidth={1.7}
-                                aria-hidden="true"
-                            />
-                        </button>
+                    </div>
+
+                    <div className="enterprise-project-feature-video">
+
+                        <video
+                            src={enterpriseVideo4}
+                            autoPlay
+                            muted
+                            loop
+                            playsInline
+                            preload="metadata"
+                            aria-label="Enterprise Workspace session management demonstration"
+                        />
 
                     </div>
 

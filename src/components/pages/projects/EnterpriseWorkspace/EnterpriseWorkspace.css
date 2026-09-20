@@ -1366,3 +1366,11 @@
         transition: none;
     }
 }
+
+.enterprise-project-supporting-document {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 48px 0 16px;
+}

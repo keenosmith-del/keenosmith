@@ -8,36 +8,39 @@ import productivityCover from '../../../assets/projects/productivity/1.png'
 import musicCover from '../../../assets/projects/music/1.png'
 // import enterpriseCover from '../../../assets/projects/enterprise/1.png'
 
-import githubCover from '../../../assets/images/about/github.png'
-
-import postgresqlLogo from '../../../assets/svgs/skills/postgresql.svg';
-import prismaLogo from '../../../assets/svgs/skills/prisma.svg';
-import githubLogo from '../../../assets/svgs/about/github-icon.svg';
-import dbLogo from '../../../assets/svgs/about/database.svg';
+import awsProjects from '../../../assets/images/about/awsProjects.jpg';
+import microsoftProjects from '../../../assets/images/about/microsoftProjects.jpg';
 
 const projects = [
     {
         id: 'ai-assistant',
-        title: 'AI Model',
-        skill: 'Generative AI',
+        title: 'Retrieval-Augmented AI Model',
+        skill: 'RAG',
         description:
-            'A Generative AI application exploring LLM integration, prompt engineering, Retrieval-Augmented Generation and the architecture of intelligent, context-aware software systems.',
+            'A full-stack SaaS platform implementing LLM inference, semantic embeddings, vector similarity retrieval, document processing and configurable context workflows.',
         image: aiAssistantCover,
     },
     {
         id: 'productivity-platform',
-        title: 'Productivity Platform',
-        skill: 'Full-stack architecture',
+
+        title: 'Authenticated MERN Platform',
+
+        skill: 'Full-Stack Architecture',
+
         description:
-            'A full-stack productivity platform bringing tasks, projects, goals, reminders, notes and calendar functionality into one cohesive application.',
+            'A full-stack web application implementing authenticated resource management, REST APIs, interconnected data modelling and persistent client-server state.',
+
         image: productivityCover,
+
+
     },
+
     {
         id: 'music-api',
-        title: 'Music API Web App',
-        skill: 'API & backend development',
+        title: 'Music API-Driven Web App',
+        skill: 'API & Full-Stack Engineering',
         description:
-            'A full-stack music application combining discovery, playback, queue management and API-driven backend architecture.',
+            'Full-stack React, Node.js, Express and MongoDB application implementing REST APIs, external service integration, data persistence and browser-based audio playback.',
         image: musicCover,
     },
 ];
@@ -58,12 +61,6 @@ function Projects() {
                 >
                     All Projects
 
-                    <ArrowRight
-                        size={16}
-                        strokeWidth={1.7}
-                        aria-hidden="true"
-                    />
-
                 </a>
 
                 <h2>Selected projects</h2>
@@ -76,6 +73,11 @@ function Projects() {
             </div>
 
             <div className="projects-featured">
+
+                {/* =====================================================
+                   TOP ROW — FEATURED PROJECTS
+                   ===================================================== */}
+
                 {projects.map((project) => {
                     const isActive = activeProject === project.id;
 
@@ -89,6 +91,7 @@ function Projects() {
                             }
                         >
                             <div className="project-image">
+
                                 {project.image ? (
                                     <img
                                         src={project.image}
@@ -99,6 +102,7 @@ function Projects() {
                                         <span>Project image</span>
                                     </div>
                                 )}
+
                             </div>
 
                             <div className="project-overlay" />
@@ -108,9 +112,15 @@ function Projects() {
                             </div>
 
                             <div className="project-content">
-                                <h3>{project.title}</h3>
 
-                                <p>{project.description}</p>
+                                <h3>
+                                    {project.title}
+                                </h3>
+
+                                <p>
+                                    {project.description}
+                                </p>
+
                             </div>
 
                             <a
@@ -124,82 +134,126 @@ function Projects() {
                                     aria-hidden="true"
                                 />
                             </a>
+
                         </article>
                     );
                 })}
+
             </div>
 
-            <article className="project-tile project-tile-wide project-tile-enterprise is-active">
 
-                <div className="project-enterprise-badges">
 
-                    <span className="project-badge">
-                        SQL
-                    </span>
+            {/* =========================================================
+               SECOND PROJECT ROW
+               ========================================================= */}
 
-                    <span className="project-badge">
-                        Full-Stack
-                    </span>
+            {/*
+            <div className="projects-secondary">
 
-                    <span className="project-badge">
-                        Enterprise Architecture
-                    </span>
 
-                </div>
+                <article className="project-tile project-secondary-tile project-secondary-image">
 
-                <div className="project-enterprise-logos">
+                    <div className="project-secondary-visual">
 
-                    <img
-                        src={postgresqlLogo}
-                        alt="PostgreSQL"
-                    />
+                        <img
+                            src={microsoftProjects}
+                            alt="Microsoft AI"
+                        />
 
-                    <img
-                        src={prismaLogo}
-                        alt="Prisma"
-                    />
+                    </div>
 
-                    <img
-                        src={githubLogo}
-                        alt="git"
-                    />
+                    <a
+                        className="project-arrow"
+                        href="/projects/microsoft"
+                        aria-label="View Microsoft AI project"
+                    >
+                        <ArrowRight
+                            size={18}
+                            strokeWidth={1.7}
+                            aria-hidden="true"
+                        />
+                    </a>
 
-                    <img
-                        src={dbLogo}
-                        alt="db"
-                    />
+                </article>
 
-                </div>
+                <article className="project-tile project-secondary-tile project-secondary-image">
 
-                <div className="project-content">
+                    <div className="project-secondary-visual">
 
-                    <h3>
-                        Enterprise Workspace
-                    </h3>
+                        <img
+                            src={awsProjects}
+                            alt="AWS AI"
+                        />
 
-                    <p>
-                        A full-stack enterprise workspace built around structured
-                        application architecture, relational data modelling and
-                        scalable backend services. The project combines React,
-                        Node.js, PostgreSQL and Prisma to explore robust data-driven
-                        application design.
-                    </p>
+                    </div>
 
-                </div>
+                    <a
+                        className="project-arrow"
+                        href="/projects/aws"
+                        aria-label="View AWS AI project"
+                    >
+                        <ArrowRight
+                            size={18}
+                            strokeWidth={1.7}
+                            aria-hidden="true"
+                        />
+                    </a>
 
-                <a
-                    className="project-arrow"
-                    href="/projects/enterprise-workspace"
-                    aria-label="View Enterprise Workspace"
-                >
-                    <ArrowRight
-                        size={18}
-                        strokeWidth={1.7}
-                        aria-hidden="true"
-                    />
-                </a>
+                </article>
 
-            </article>
+                <article className="project-tile project-secondary-tile project-tile-enterprise is-active">
+
+                    <div className="project-enterprise-badges">
+
+                        <span className="project-badge">
+                            PostgreSQL
+                        </span>
+
+                        <span className="project-badge">
+                            Prisma ORM
+                        </span>
+
+                        <span className="project-badge">
+                            Runtime DDL
+                        </span>
+
+                    </div>
+
+                    <div className="project-content">
+
+                        <h3>
+                            Enterprise SQL Database
+                        </h3>
+
+                        <p>
+                            A full-stack enterprise workspace built around
+                            structured application architecture, relational
+                            data modelling and scalable backend services.
+                            The project combines React, Node.js, PostgreSQL
+                            and Prisma to explore robust data-driven
+                            application design.
+                        </p>
+
+                    </div>
+
+                    <a
+                        className="project-arrow"
+                        href="/projects/enterprise-workspace"
+                        aria-label="View Enterprise Workspace"
+                    >
+                        <ArrowRight
+                            size={18}
+                            strokeWidth={1.7}
+                            aria-hidden="true"
+                        />
+                    </a>
+
+                </article>
+
+            </div>
+            */}
+
+
         </section>
     );
 }

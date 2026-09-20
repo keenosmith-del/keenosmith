@@ -1,30 +1,39 @@
 import { useEffect, useRef } from 'react';
 import { ArrowRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 import './About.css';
 
 import awsLogo from '../../../assets/svgs/about/aws.svg';
-import githubLogo from '../../../assets/svgs/about/github-icon.svg';
-import githubCopilotLogo from '../../../assets/svgs/about/github-copilot.svg';
-import gitlabLogo from '../../../assets/svgs/about/gitlab-icon.svg';
-import githubActionsLogo from '../../../assets/svgs/about/gitactions.svg';
 import microsoftLogo from '../../../assets/svgs/about/microsoft-icon.svg';
-import udacityLogo from '../../../assets/svgs/about/udacity.svg';
 
-import awsSkillBuilderImage from '../../../assets/images/about/aws_skill_builder.jpg';
-import awsCloudQuestImage from '../../../assets/images/about/cloud_quest.png';
+import awsSkillBuilderImage from '../../../assets/images/about/aws_skill_builder.png';
+import pytorchImage from '../../../assets/images/about/pytorch.png';
 
 import foundersLogo from '../../../assets/images/about/founderz.png';
-import microsoftLearn from '../../../assets/images/about/microsoft-learn.png';
 import microsoftBadge1 from '../../../assets/images/about/microsoft-badge.png';
+import foundryBadge from '../../../assets/images/about/foundry.png';
+import ollamaCover from '../../../assets/images/about/ollama-cover.png';
+import liblabsPostman from '../../../assets/images/about/liblabs.png';
+import azureLogo from '../../../assets/images/about/azure.png';
 
 import copilotCover from '../../../assets/images/about/copilot-cover.jpg';
 
-import ibmLogo from '../../../assets/svgs/about/ibm.svg';
-import mckinseyBadge from '../../../assets/images/about/mckinsey-badge.png';
+
+import googleCloudLogo from '../../../assets/images/about/google.png';
+import huggingFace from '../../../assets/images/about/hugging-face.png';
+import kubernetesImage from '../../../assets/images/about/kubernetes.png';
+import dockerImage from '../../../assets/images/about/docker.png';
+import googleBadge from '../../../assets/images/about/googleLogo.png';
+import adkBadge from '../../../assets/images/about/adk.png';
+import gdpBadge from '../../../assets/images/about/gdp.png';
+
+import githubLogo from '../../../assets/svgs/about/github.svg';
+import githubImage from '../../../assets/images/about/github.png';
 
 function About() {
     const aboutRef = useRef(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const counters = aboutRef.current?.querySelectorAll(
@@ -113,12 +122,21 @@ function About() {
 
                 <div className="about-actions">
                     <a
+                        className="about-button about-button-primary"
+                        target="_blank"
+                        rel="noreferrer"
+                        href="https://skillsprofile.skillbuilder.aws/user/keenosmith"
+                    >
+                        AWS Profile
+                    </a>
+
+                    <a
                         className="about-button about-button-secondary"
                         target="_blank"
                         rel="noreferrer"
                         href="https://www.credly.com/users/keeno-smith"
                     >
-                        Credly
+                        Skills Wallet
                     </a>
                 </div>
             </div>
@@ -180,37 +198,27 @@ function About() {
                 </article>
 
 
-                {/* Tile 3 — AWS Badges */}
+                {/* Tile 3 — PyTorch */}
                 <article className="about-tile about-tile-small about-tile-three">
 
-                    <div className="about-tile-three-logo">
-                        <img
-                            src={awsLogo}
-                            alt="AWS"
-                        />
-                    </div>
+                    <img
+                        src={pytorchImage}
+                        alt="PyTorch"
+                        className="about-tile-three-image"
+                    />
+
+                    <div className="about-tile-three-overlay" />
 
                     <div className="about-tile-three-content">
-                        <strong data-target="30">
-                            30+
+
+                        <strong>
+                            PyTorch
                         </strong>
 
-                        <span>
-                            AWS Badges
-                        </span>
                     </div>
 
-                    <a
-                        className="about-tile-three-link"
-                        target="_blank"
-                        rel="noreferrer"
-                        href="https://skillsprofile.skillbuilder.aws/user/keenosmith"
-                        aria-label="View AWS Skill Builder profile"
-                    >
-                        <ArrowRight size={18} strokeWidth={1.7} />
-                    </a>
-
                 </article>
+
 
 
                 {/* Tile 4 — Generative AI & Agentic AI */}
@@ -262,12 +270,12 @@ function About() {
                     </div>
 
                     <div className="about-tile-five-content">
-                        <strong data-target="4">
-                            4+
+                        <strong data-target="16">
+                            0+
                         </strong>
 
                         <span>
-                            AWS Microcredentials
+                            AWS Credentials
                         </span>
                     </div>
 
@@ -288,10 +296,6 @@ function About() {
                 <article className="about-tile about-tile-small about-tile-six">
 
                     <div className="about-tile-six-logos">
-                        <img
-                            src={awsCloudQuestImage}
-                            alt="CloudQuest"
-                        />
                     </div>
 
                     <div className="about-tile-six-content">
@@ -348,12 +352,305 @@ function About() {
             </div>
 
             {/* =========================================================
-               MICROSOFT SECTION
+               GOOGLE CLOUD PLATFORM SECTION
                ========================================================= */}
+
+            <section className="gcp" id="gcp">
+
+                <div className="gcp-intro">
+
+                    <img
+                        src={googleCloudLogo} alt="Google Cloud"
+                        className="gcp-intro-logo"
+                    />
+
+                    <h2>
+                        Google Cloud,
+                        <br />
+                        AI &amp; Kubernetes.
+                    </h2>
+
+                    <p className="gcp-intro-description">
+                        Building practical capability across Google Cloud,
+                        cloud-native infrastructure, AI development, Kubernetes
+                        and the wider Google developer ecosystem through hands-on
+                        learning and applied projects.
+                    </p>
+
+                    <div className="about-actions">
+
+                        <a
+                            className="about-button about-button-primary"
+                            target="_blank"
+                            rel="noreferrer"
+                            href="https://www.skills.google/public_profiles/105079cb-27bf-46a4-9c48-9ce8fc594527"
+                        >
+                            Google Profile
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div className="gcp-grid">
+
+                    {/* =====================================================
+            ROW 1 — INFO
+        ===================================================== */}
+
+                    <article className="gcp-tile gcp-tile-info">
+
+                        <img
+                            className="gcp-info-badge"
+                            src={adkBadge}
+                            alt=""
+                        />
+
+                        <div className="gcp-tile-content">
+
+                            <div className="gcp-tile-pills">
+                                <span>Cloud</span>
+                                <span>AI</span>
+                                <span>DevSecOps</span>
+                            </div>
+
+                            <h3>
+                                Google Cloud
+                                <br />
+                                Engineering
+                            </h3>
+
+                            <p>
+                                Developing practical understanding of Google
+                                Cloud services, cloud architecture and AI
+                                application development through hands-on
+                                projects and continuous technical practice.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    {/* =====================================================
+            COUNTER
+        ===================================================== */}
+
+                    <article className="gcp-tile gcp-tile-counter">
+
+                        <img
+                            className="gcp-counter-badge"
+                            src={googleBadge}
+                            alt=""
+                        />
+
+                        <div className="gcp-counter-content">
+
+                            <strong data-target="35">
+                                0+
+                            </strong>
+
+                            <span>
+                                GCP Credentials
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    {/* =====================================================
+            GOOGLE CLOUD
+        ===================================================== */}
+
+                    <article className="gcp-tile gcp-tile-cloud">
+
+                        <div className="gcp-cloud-overlay" />
+
+                        <div className="gcp-tile-content">
+
+                            <h3>
+                                Google
+                                <br />
+                                Cloud
+                            </h3>
+
+                            <p>
+                                Cloud-native projects across Google Cloud,
+                                AI, Kubernetes, data and modern developer
+                                infrastructure.
+                            </p>
+
+                            <button
+                                className="gcp-arrow"
+                                type="button"
+                                aria-label="View Google Cloud projects"
+                                onClick={() => navigate('/projects/gcp')}
+                            >
+                                <ArrowRight size={14} strokeWidth={1.7} />
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                    {/* =====================================================
+            KUBERNETES
+        ===================================================== */}
+
+                    <article className="gcp-tile gcp-tile-kubernetes">
+
+                        {/*
+                        <div className="gcp-kubernetes-visual">
+                            <img
+                                src={kubernetesImage}
+                                alt=""
+                            />
+                        </div>
+                        */}
+
+                        <div className="gcp-kubernetes-overlay" />
+
+                        <span className="gcp-kubernetes-label">
+                            Kubernetes orchestration, GKE deployments
+                            and cloud-native workloads on Google Cloud.
+                        </span>
+
+                    </article>
+
+
+
+                    {/* =====================================================
+    ROW 2 — GOOGLE DEVELOPER PROGRAM
+===================================================== */}
+
+                    <article className="gcp-tile gcp-tile-developer">
+
+                        <img
+                            className="gcp-developer-badge"
+                            src={gdpBadge}
+                            alt=""
+                        />
+
+                        <div className="gcp-tile-content">
+
+                            <span className="gcp-tile-label">
+                                Google
+                            </span>
+
+                            <h3>
+                                Google Developer
+                                <br />
+                                Program
+                            </h3>
+
+                            <p>
+                                Accessing developer learning resources, technical tools,
+                                communities and events while building and showcasing
+                                practical skills across the Google ecosystem.
+                            </p>
+
+                            <a
+                                className="gcp-arrow"
+                                href="https://g.dev/keenosmith"
+                                target="_blank"
+                                rel="noreferrer"
+                                aria-label="View Google Developer profile"
+                            >
+                                <ArrowRight size={14} strokeWidth={1.7} />
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    {/* =====================================================
+            HUGGING FACE
+        ===================================================== */}
+
+                    <article className="gcp-tile gcp-tile-huggingface">
+
+                        <div className="gcp-huggingface-image">
+                            <img
+                                src={huggingFace}
+                                alt="Hugging Face"
+                            />
+                        </div>
+
+                        <div className="gcp-huggingface-overlay" />
+
+                        <div className="gcp-huggingface-content">
+
+                            <span className="gcp-tile-label">
+                                AI / ML
+                            </span>
+
+                            <h3>
+                                Hugging Face
+                            </h3>
+
+                        </div>
+
+                        <button
+                            className="gcp-arrow"
+                            type="button"
+                            disabled
+                            aria-label="Hugging Face projects unavailable"
+                        >
+                            <ArrowRight size={14} strokeWidth={1.7} />
+                        </button>
+
+                    </article>
+
+
+                    {/* =====================================================
+            SKILLS
+        ===================================================== */}
+
+                    <article className="gcp-tile gcp-tile-skills">
+
+                        <div className="gcp-docker-visual">
+                            <img
+                                src={dockerImage}
+                                alt=""
+                            />
+                        </div>
+
+                        <div className="gcp-docker-overlay" />
+
+                        <div className="gcp-tile-content">
+
+                            <p>
+                                Containerising cloud-native applications and development
+                                environments for consistent deployment across the stack.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            {/* =========================================================
+   MICROSOFT SECTION
+   ========================================================= */}
 
             <section className="about-microsoft" id="microsoft">
 
                 <div className="about-microsoft-intro">
+
+
+                    <img
+                        src={azureLogo}
+                        alt="Microsoft Azure"
+                        className="about-microsoft-logo"
+                    />
+
 
                     <span className="about-microsoft-eyebrow">
                         Microsoft Ecosystem
@@ -369,11 +666,36 @@ function About() {
                         cloud security and intelligent security operations.
                     </p>
 
+                    <div className="about-actions">
+
+                        <a
+                            className="about-button about-button-primary"
+                            target="_blank"
+                            rel="noreferrer"
+                            href="https://learn.microsoft.com/en-us/users/keenosmith/"
+                        >
+                            Credentials
+                        </a>
+
+                        <a
+                            className="about-button about-button-secondary"
+                            target="_blank"
+                            rel="noreferrer"
+                            href="https://learn.microsoft.com/en-us/users/keenosmith/"
+                        >
+                            Microsoft Profile
+                        </a>
+
+                    </div>
+
                 </div>
 
 
                 <div className="about-microsoft-grid">
-                    {/* Microsoft Tile 1 — Microsoft Security & AI */}
+
+                    {/* =====================================================
+           TILE 1 — MICROSOFT SECURITY & AI
+        ===================================================== */}
 
                     <article className="microsoft-tile microsoft-tile-learn">
 
@@ -411,23 +733,51 @@ function About() {
 
                         </div>
 
-                        <a
-                            className="microsoft-tile-arrow"
-                            target='_blank'
-                            href="https://learn.microsoft.com/en-us/users/keenosmith/"
-                            aria-label="Explore Microsoft security and AI"
+                    </article>
+
+
+                    {/* =====================================================
+   TILE 2 — POSTMAN / LIBLAB
+===================================================== */}
+
+                    <article className="microsoft-tile microsoft-tile-postman">
+
+                        <img
+                            src={liblabsPostman}
+                            alt="Postman LibLab"
+                            className="microsoft-postman-image"
+                        />
+
+                        <div className="microsoft-postman-overlay" />
+
+                        <div className="microsoft-postman-content">
+
+                            <h3>
+                                Postman liblabs
+                            </h3>
+
+                        </div>
+
+                        <button
+                            className="microsoft-tile-arrow microsoft-tile-arrow-disabled"
+                            type="button"
+                            aria-label="Postman LibLab"
+                            disabled
                         >
                             <ArrowRight
                                 size={18}
                                 strokeWidth={1.7}
                                 aria-hidden="true"
                             />
-                        </a>
+                        </button>
 
                     </article>
 
 
-                    {/* Microsoft Learn Badges */}
+                    {/* =====================================================
+           TILE 3 — MICROSOFT LEARN COUNTER
+        ===================================================== */}
+
                     <article className="microsoft-tile microsoft-tile-counter">
 
                         <div className="microsoft-counter-content">
@@ -437,7 +787,7 @@ function About() {
                             </strong>
 
                             <span>
-                                Microsoft Learn Badges
+                                Microsoft Credentials
                             </span>
 
                         </div>
@@ -445,36 +795,71 @@ function About() {
                     </article>
 
 
-                    {/* Microsoft Learn Trophies */}
-                    <article className="microsoft-tile microsoft-tile-counter">
+                    {/* =====================================================
+           TILE 4 — AZURE AI / FOUNDRY
+        ===================================================== */}
 
-                        <div className="microsoft-counter-content">
+                    <article className="microsoft-tile microsoft-tile-foundry">
 
-                            <strong data-target="6">
-                                0+
+                        <img
+                            src={foundryBadge}
+                            alt=""
+                            className="microsoft-foundry-badge"
+                        />
+
+                        <div className="microsoft-foundry-overlay" />
+
+                        <div className="microsoft-foundry-content">
+
+                            <strong>
+                                Microsoft Azure AI / Foundry
                             </strong>
 
                             <span>
-                                Microsoft Learn Trophies
+                                Building AI applications and multi-agent systems with
+                                Azure AI Foundry, model orchestration, tool calling,
+                                agent workflows, evaluation, and cloud-native AI engineering.
                             </span>
 
                         </div>
 
+                        <button
+                            className="microsoft-tile-arrow"
+                            type="button"
+                            onClick={() => navigate('/projects/microsoft')}
+                            aria-label="View Microsoft projects"
+                        >
+                            <ArrowRight
+                                size={18}
+                                strokeWidth={1.7}
+                                aria-hidden="true"
+                            />
+                        </button>
+
+
                     </article>
 
 
-                    {/* Agent Architect */}
+                    {/* =====================================================
+           TILE 5 — AGENT ARCHITECT
+        ===================================================== */}
+
                     <article className="microsoft-tile microsoft-tile-credential">
 
                         <div className="microsoft-credential-pills">
 
                             <span>Azure AI</span>
-                            <span>AI Agents</span>
+                            <span>Foundry</span>
                             <span>Agentic AI</span>
 
                         </div>
 
                         <div className="microsoft-credential-badge">
+
+                            <img
+                                src={microsoftBadge1}
+                                alt="Microsoft"
+                            />
 
                             <img
                                 src={foundersLogo}
@@ -500,97 +885,40 @@ function About() {
                     </article>
 
 
-                    {/* Defender XDR */}
-                    <article className="microsoft-tile microsoft-tile-credential">
+                    {/* =====================================================
+           TILE 6 — DEEPSEEK
+        ===================================================== */}
 
-                        <div className="microsoft-credential-badge">
-                            <img
-                                src={microsoftBadge1}
-                                alt="Microsoft Applied Skills"
-                            />
-                        </div>
+                    <article className="microsoft-tile microsoft-tile-deepseek">
 
-                        <div className="microsoft-tile-content">
+                        <img
+                            src={ollamaCover}
+                            alt=""
+                            className="microsoft-deepseek-image"
+                        />
 
-                            <h3>
-                                Defender XDR
-                            </h3>
+                        <div className="microsoft-deepseek-overlay" />
 
-                            <p>
-                                Threat detection, incident response and endpoint investigation
-                                using Microsoft Defender XDR, Defender for Endpoint and KQL.
-                            </p>
-
-                        </div>
-
-                    </article>
-
-
-                    {/* Cyber Genius */}
-                    <article className="microsoft-tile microsoft-tile-credential">
-
-                        <div className="microsoft-credential-pills">
-
-                            <span>Cybersecurity</span>
-                            <span>Threat Detection</span>
-                            <span>Security Operations</span>
-
-                        </div>
-
-                        <div className="microsoft-credential-badge">
-
-                            <img
-                                src={foundersLogo}
-                                alt="Founderz"
-                            />
-
-                        </div>
-
-                        <div className="microsoft-tile-content">
+                        <div className="microsoft-deepseek-content">
 
                             <h3>
-                                Cyber Genius - Inside the Breach
+                                Ollama
                             </h3>
 
-                            <p>
-                                Practical cybersecurity training focused on threat detection,
-                                incident response, security operations and understanding modern
-                                cyberattacks.
-                            </p>
-
                         </div>
 
-                    </article>
-
-
-                    {/* Future Microsoft credentials */}
-                    <article className="microsoft-tile microsoft-tile-credential microsoft-tile-placeholder">
-
-                        <div className="microsoft-placeholder-image">
-                            <img
-                                src={microsoftLearn}
-                                alt="Microsoft Learn"
-                            />
-                        </div>
-
-                        <div className="microsoft-placeholder-overlay" />
-
-                        <div className="microsoft-tile-content">
-                        </div>
-
-                        <a
-                            className="microsoft-tile-arrow microsoft-tile-arrow-light"
-                            target="_blank"
-                            rel="noreferrer"
-                            href="https://learn.microsoft.com/en-us/users/keenosmith/"
-                            aria-label="Explore Microsoft security and AI"
+                        <button
+                            className="microsoft-tile-arrow microsoft-tile-arrow-disabled"
+                            type="button"
+                            aria-label="Ollama"
+                            disabled
                         >
                             <ArrowRight
                                 size={18}
                                 strokeWidth={1.7}
                                 aria-hidden="true"
                             />
-                        </a>
+                        </button>
 
                     </article>
 
@@ -606,8 +934,14 @@ function About() {
 
                 <div className="about-intro">
 
+                    <img
+                        src={githubLogo}
+                        alt="GitHub"
+                        className="about-intro-logo"
+                    />
+
                     <h2>
-                        Engineering, CI/CD <br /> Product & UX.
+                        Engineering <br /> CI/CD
                     </h2>
 
                     <p className="about-intro-description">
@@ -655,7 +989,6 @@ function About() {
 
                     {/* =================================================
     TILE 4 — GITHUB COPILOT
-    VISUAL COVER THE FUCKING TILE GOES HERE!! SO THIS BECOMES TILE 2
     ================================================= */}
 
                     <article className="about-tile about-three-copilot">
@@ -673,7 +1006,7 @@ function About() {
 
 
                     {/* =================================================
-            TILE 2 — GENERATIVE AI THIS TILE STAYS WHERE IT IS BUT IS TILE 3
+            TILE 2 — GENERATIVE AI
             ================================================= */}
 
                     <article className="about-tile about-three-ai">
@@ -703,33 +1036,9 @@ function About() {
 
                     <article className="about-tile about-three-github">
 
-                        <div className="about-three-github-logo">
-
-                            <img
-                                src={githubLogo}
-                                alt="GitHub"
-                            />
-
-                            <img
-                                src={gitlabLogo}
-                                alt="GitLab"
-                            />
-
-                            <img
-                                src={githubCopilotLogo}
-                                alt="GitHub Copilot"
-                            />
-
-                            <img
-                                src={githubActionsLogo}
-                                alt="GitHub Actions"
-                            />
-
-                        </div>
-
                         <div className="about-three-counter">
-                            <strong data-target="100">
-                                100+
+                            <strong data-target="120">
+                                0+
                             </strong>
 
                             <span>
@@ -779,88 +1088,17 @@ function About() {
 
                     </article>
 
-
-                    {/* =================================================
-    TILE 5 — MCKINSEY
-    ================================================= */}
-
-                    <article className="about-tile about-three-mckinsey">
-
-                        <div className="about-three-badge">
-                            <img
-                                src={mckinseyBadge}
-                                alt="McKinsey Academy"
-                            />
-                        </div>
-
-                        <div className="about-three-content">
-
-                            <h3>
-                                McKinsey Academy Forward
-                            </h3>
-
-                            <p>
-                                Developing professional capabilities across problem-solving,
-                                collaboration, communication and personal effectiveness.
-                            </p>
-
-                        </div>
-
-                    </article>
-
-
-                    {/* =================================================
-    TILE 6 — IBM
-    ================================================= */}
-
-                    <article className="about-tile about-three-unisa">
-
-                        <div className="about-three-label">
-
-                            <span>ITExperience</span>
-                            <span>Umuzi</span>
-                            <span>ACN</span>
-
-                        </div>
-
-                        <div className="about-three-badge">
-                            <img
-                                src={ibmLogo}
-                                alt="IBM"
-                            />
-                        </div>
-
-                        <div className="about-three-content">
-
-                            <h3>
-                                Product &amp; UX
-                            </h3>
-
-                            <p>
-                                Building foundations in product thinking, user
-                                experience and human-centred digital
-                                solutions.
-                            </p>
-
-                        </div>
-
-                    </article>
-
                 </div>
 
                 <div className="about-linkedin-action">
 
                     <a
                         className="about-button about-button-primary"
-                        href="https://www.linkedin.com/in/keenosmith/"
+                        href="https://www.linkedin.com/in/keenotreysmith/"
                         target="_blank"
                         rel="noreferrer"
                     >
                         LinkedIn
-                        <ArrowRight
-                            size={15}
-                            strokeWidth={1.7}
-                        />
                     </a>
 
                 </div>

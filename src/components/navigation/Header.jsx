@@ -12,7 +12,7 @@ import homeIcon from '../../assets/svgs/header/home.svg';
 
 const skillGroups = [
     {
-        title: 'Frontend',
+        title: 'Frontend & UI',
         skills: [
             'React',
             'JavaScript',
@@ -21,7 +21,11 @@ const skillGroups = [
             'Vite',
             'React Router',
             'Tailwind CSS',
+            'Bootstrap',
             'Figma',
+            'Responsive Design',
+            'Component Architecture',
+            'Web Animation',
         ],
     },
     {
@@ -35,10 +39,14 @@ const skillGroups = [
             'GraphQL',
             'Postman',
             'Axios',
+            'API Integration',
+            'Asynchronous Programming',
+            'Middleware',
+            'Server-side Architecture',
         ],
     },
     {
-        title: 'Databases & data',
+        title: 'Databases & Data',
         skills: [
             'MongoDB',
             'Mongoose',
@@ -48,10 +56,13 @@ const skillGroups = [
             'Redis',
             'Elasticsearch',
             'Neo4j',
+            'Data Modelling',
+            'Query Design',
+            'Vector Search',
         ],
     },
     {
-        title: 'AI & machine learning',
+        title: 'AI & Machine Learning',
         skills: [
             'OpenAI',
             'Anthropic',
@@ -61,11 +72,51 @@ const skillGroups = [
             'PyTorch',
             'TensorFlow',
             'RAG',
+            'Embeddings',
+            'NLP',
+            'Prompt Engineering',
+            'LLM Integration',
             'Agentic AI',
+            'AI Evaluation',
         ],
     },
     {
-        title: 'Cloud, DevOps & infrastructure',
+        title: 'Microsoft & Azure',
+        skills: [
+            'Microsoft Foundry',
+            'Foundry Agent Service',
+            'Microsoft Agent Framework',
+            'Azure OpenAI',
+            'Foundry Models',
+            'Azure AI Search',
+            'Azure Functions',
+            'Azure Container Apps',
+            'Azure Logic Apps',
+            'Azure Service Bus',
+            'Azure Storage',
+            'Azure Key Vault',
+            'Microsoft Entra ID',
+            'Azure Monitor',
+            'Application Insights',
+            'Azure DevOps',
+            'Azure API Management',
+        ],
+    },
+    {
+        title: 'Google Cloud & AI',
+        skills: [
+            'Google Cloud',
+            'Google Gemini',
+            'Vertex AI',
+            'Google AI APIs',
+            'Firebase',
+            'Cloud Functions',
+            'Cloud Storage',
+            'Google Cloud APIs',
+        ],
+    },
+    {
+        title: 'Cloud, DevOps & Infrastructure',
         skills: [
             'AWS',
             'Docker',
@@ -77,45 +128,90 @@ const skillGroups = [
             'Nginx',
             'Render',
             'Vercel',
+            'Containerisation',
+            'Deployment Automation',
+            'Infrastructure as Code',
         ],
     },
     {
-        title: 'Languages & engineering',
+        title: 'Security & Authentication',
         skills: [
-            'Python',
-            'C++',
-            'JavaScript',
             'JWT',
             'Authentication',
-            'Software architecture',
-            'Responsive web development',
+            'Authorization',
+            'RBAC',
+            'bcrypt',
+            'Protected Routes',
+            'API Security',
+            'Microsoft Entra ID',
+            'Managed Identity',
+            'Secrets Management',
+            'OAuth',
+            'Security Architecture',
+        ],
+    },
+    {
+        title: 'Architecture & Engineering',
+        skills: [
+            'Software Architecture',
+            'System Design',
+            'RESTful Architecture',
+            'Microservices',
+            'Event-driven Architecture',
+            'Serverless Architecture',
+            'Distributed Systems',
+            'Asynchronous Workflows',
+            'Message Queues',
+            'API Design',
+            'Integration Patterns',
+            'Error Handling',
+            'Observability',
+        ],
+    },
+    {
+        title: 'Languages & Core Engineering',
+        skills: [
+            'JavaScript',
+            'Python',
+            'C++',
+            'SQL',
+            'Object-oriented Programming',
+            'Data Structures',
+            'Algorithms',
+            'Async Programming',
+            'Git',
+            'GitHub',
+            'JSON',
         ],
     },
 ];
 
 const projectGroups = [
     {
-        title: 'Productivity Platform',
+        title: 'Authenticated MERN Productivity Platform',
+
         description:
-            'A full-stack productivity platform combining tasks, projects, goals, reminders, notes and calendar management.',
+            'A full-stack web application implementing authenticated resource management, REST APIs, interconnected data modelling and persistent client-server state.',
+
         path: '/projects/productivity-platform',
+
     },
     {
-        title: 'AI Model',
+        title: 'Retrieval-Augmented AI Model',
         description:
-            'An AI-powered entity exploring LLM integration, prompt engineering, RAG and intelligent application workflows.',
+            'Full-stack SaaS platform implementing LLM inference, semantic embeddings, vector retrieval, knowledge engineering and configurable AI context workflows.',
         path: '/projects/ai-assistant',
     },
     {
-        title: 'Music API Web App',
+        title: 'API-Driven Full-Stack Web Application',
         description:
-            'A full-stack music application built around discovery, playback, queue management and API-driven experiences.',
+            'React, Node.js, Express and MongoDB application implementing REST APIs, external service integration, data persistence and browser-based playback.',
         path: '/projects/music-api',
     },
     {
-        title: 'Enterprise Workspace',
+        title: 'Enterprise SQL Database',
         description:
-            'A SQL-focused enterprise workspace built with modern frontend architecture, APIs, PostgreSQL and Prisma.',
+            'A full-stack database platform centred on PostgreSQL, SQL, relational modelling and Runtime Schema Management, with Prisma ORM, Runtime DDL, relational constraints, dynamic records and SQL query execution.',
         path: '/projects/enterprise-workspace',
     },
 ];
@@ -198,6 +294,10 @@ const linkGroups = [
                 name: 'Credly',
                 url: 'https://www.credly.com/users/keeno-smith',
             },
+            {
+                name: 'Google Skills',
+                url: 'https://www.skills.google/public_profiles/105079cb-27bf-46a4-9c48-9ce8fc594527',
+            },
         ],
     },
     {
@@ -233,11 +333,33 @@ const linkGroups = [
     },
 ];
 
+const cloudGroups = [
+    {
+        title: 'Microsoft',
+        description:
+            'Enterprise AI, Agentic Systems & Azure Engineering',
+        path: '/projects/microsoft',
+    },
+    {
+        title: 'AWS',
+        description:
+            'Cloud Infrastructure, Automation & Intelligent Operations',
+        path: '/projects/aws',
+    },
+    {
+        title: 'Google Cloud',
+        description:
+            'Data Intelligence, AI Systems & Distributed Engineering',
+        path: '/projects/gcp',
+    },
+];
+
 function Header() {
     const [isChatOpen, setIsChatOpen] = useState(false);
 
     const [isSkillsOpen, setIsSkillsOpen] = useState(false);
     const [isProjectsOpen, setIsProjectsOpen] = useState(false);
+    const [isCloudOpen, setIsCloudOpen] = useState(false);
     const [isLinksOpen, setIsLinksOpen] = useState(false);
 
     const navigationRef = useRef(null);
@@ -252,12 +374,14 @@ function Header() {
     const closeAllDropdowns = () => {
         setIsSkillsOpen(false);
         setIsProjectsOpen(false);
+        setIsCloudOpen(false);
         setIsLinksOpen(false);
     };
 
     const openDropdown = (dropdown) => {
         setIsSkillsOpen(dropdown === 'skills');
         setIsProjectsOpen(dropdown === 'projects');
+        setIsCloudOpen(dropdown === 'cloud');
         setIsLinksOpen(dropdown === 'links');
     };
 
@@ -413,7 +537,7 @@ function Header() {
     }, [isChatOpen]);
 
     useEffect(() => {
-        if (!isSkillsOpen && !isProjectsOpen && !isLinksOpen) {
+        if (!isSkillsOpen && !isProjectsOpen && !isCloudOpen && !isLinksOpen) {
             return undefined;
         }
 
@@ -431,7 +555,7 @@ function Header() {
         return () => {
             document.removeEventListener('mousedown', handleOutsideClick);
         };
-    }, [isSkillsOpen, isProjectsOpen, isLinksOpen]);
+    }, [isSkillsOpen, isProjectsOpen, isCloudOpen, isLinksOpen]);
 
     useEffect(() => {
         if (!isSkillsOpen && !isProjectsOpen && !isLinksOpen) {
@@ -473,9 +597,11 @@ function Header() {
                         ? 'is-skills-open'
                         : isProjectsOpen
                             ? 'is-projects-open'
-                            : isLinksOpen
-                                ? 'is-links-open'
-                                : ''
+                            : isCloudOpen
+                                ? 'is-cloud-open'
+                                : isLinksOpen
+                                    ? 'is-links-open'
+                                    : ''
                         }`}
                     aria-label="Main navigation"
                     ref={navigationRef}
@@ -547,6 +673,30 @@ function Header() {
                                 aria-controls="navigation-projects-panel"
                             >
                                 <span>Projects</span>
+
+                                <ChevronDown
+                                    size={14}
+                                    strokeWidth={1.8}
+                                    aria-hidden="true"
+                                />
+                            </button>
+
+                            {/* cloud */}
+                            <button
+                                className={`navigation-cloud-trigger ${isCloudOpen ? 'is-active' : ''
+                                    }`}
+                                type="button"
+                                onClick={() => {
+                                    if (isCloudOpen) {
+                                        closeAllDropdowns();
+                                    } else {
+                                        openDropdown('cloud');
+                                    }
+                                }}
+                                aria-expanded={isCloudOpen}
+                                aria-controls="navigation-cloud-panel"
+                            >
+                                <span>Cloud</span>
 
                                 <ChevronDown
                                     size={14}
@@ -671,6 +821,43 @@ function Header() {
                                     aria-hidden="true"
                                 />
                             </a>
+                        </div>
+                    </div>
+
+                    {/* drop down cloud */}
+                    <div
+                        className={`navigation-cloud-panel ${isCloudOpen ? 'is-open' : ''
+                            }`}
+                        id="navigation-cloud-panel"
+                        aria-hidden={!isCloudOpen}
+                    >
+                        <div className="navigation-cloud-grid">
+                            {cloudGroups.map((cloud) => (
+                                <div
+                                    className="navigation-cloud-card"
+                                    key={cloud.title}
+                                >
+                                    <div className="navigation-cloud-card-content">
+                                        <h3>{cloud.title}</h3>
+
+                                        <p>{cloud.description}</p>
+                                    </div>
+
+                                    <Link
+                                        to={cloud.path}
+                                        className="navigation-cloud-link"
+                                        onClick={closeAllDropdowns}
+                                    >
+                                        <span>View ecosystem</span>
+
+                                        <ArrowRight
+                                            size={14}
+                                            strokeWidth={1.8}
+                                            aria-hidden="true"
+                                        />
+                                    </Link>
+                                </div>
+                            ))}
                         </div>
                     </div>
 

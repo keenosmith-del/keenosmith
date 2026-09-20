@@ -13,6 +13,17 @@
     animation-range: entry 0% exit 100%;
 }
 
+.about-intro-logo {
+    display: block;
+
+    width: 52px;
+    height: 52px;
+
+    margin: 0 auto 16px;
+
+    object-fit: contain;
+}
+
 .about-eyebrow {
     margin: 0 0 10px;
     color: #a0a0a4;
@@ -341,103 +352,94 @@
 
 
 /* =========================================================
-   TILE 3 — AWS BADGES
+   TILE 3 — PYTORCH
    ========================================================= */
 
 .about-tile-three {
     grid-column: 3;
     grid-row: 1;
 
+    position: relative;
+
+    overflow: hidden;
+
     justify-content: flex-end;
 
     background: #eeede9;
 }
 
-.about-tile-three-logo {
+
+/* =========================================================
+   PYTORCH — IMAGE
+   ========================================================= */
+
+.about-tile-three-image {
     position: absolute;
 
-    top: 21px;
-    right: 21px;
-}
+    top: 50%;
+    left: 50%;
 
-.about-tile-three-logo img {
-    width: 23px;
-    height: 23px;
+    z-index: 0;
+
+    width: 110px;
+    height: 110px;
 
     object-fit: contain;
 
-    opacity: 0.72;
+    transform: translate(-50%, -50%);
+
+    pointer-events: none;
 }
 
+
+/* =========================================================
+   PYTORCH — OVERLAY
+   ========================================================= */
+
+.about-tile-three-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    background:
+        linear-gradient(to top,
+            rgba(25, 25, 27, 0.32) 0%,
+            rgba(25, 25, 27, 0.10) 45%,
+            rgba(25, 25, 27, 0) 75%);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   PYTORCH — CONTENT
+   ========================================================= */
+
 .about-tile-three-content {
+    position: relative;
+
+    z-index: 2;
+
     display: flex;
+
     flex-direction: column;
 
     width: 100%;
 }
+
 
 .about-tile-three-content strong {
     margin: 0;
 
     color: #555559;
 
-    font-size: clamp(35px, 3.2vw, 51px);
+    font-size: clamp(24px, 2.4vw, 35px);
     font-weight: 500;
+
     line-height: 0.9;
     letter-spacing: -0.04em;
-}
-
-.about-tile-three-content span {
-    margin-top: 7px;
-
-    color: #77777c;
-
-    font-size: 11px;
-    font-weight: 500;
-    line-height: 1.2;
-}
-
-
-/* =========================================================
-   TILE 3 — ARROW
-   ========================================================= */
-
-.about-tile-three-link {
-    position: absolute;
-
-    right: 21px;
-    bottom: 19px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 27px;
-    height: 27px;
-
-    border-radius: 999px;
-
-    background: rgba(60, 60, 62, 0.08);
-
-    color: #66666b;
-
-    opacity: 0;
-
-    transform: translateX(-4px);
-
-    transition:
-        opacity 180ms ease,
-        transform 220ms ease,
-        background-color 180ms ease;
-}
-
-.about-tile-three:hover .about-tile-three-link {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-.about-tile-three-link:hover {
-    background: rgba(60, 60, 62, 0.14);
 }
 
 
@@ -852,7 +854,7 @@
 
     padding: 0;
 
-    background: var(--surface);
+    background: #eb7e5d;
 }
 
 .about-tile-eight-image {
@@ -1200,6 +1202,7 @@
     }
 }
 
+
 /* =========================================================
    MICROSOFT SECTION
    ========================================================= */
@@ -1231,6 +1234,23 @@
 
     animation-range:
         entry 0% exit 100%;
+}
+
+/* =========================================================
+   MICROSOFT INTRO — AZURE LOGO
+   ========================================================= */
+
+.about-microsoft-logo {
+    display: block;
+
+    width: 30px;
+    height: 30px;
+
+    margin: 0 auto 14px;
+
+    object-fit: contain;
+
+    opacity: 0.78;
 }
 
 .about-microsoft-eyebrow {
@@ -1281,10 +1301,10 @@
     display: grid;
 
     grid-template-columns:
-        1.45fr 0.85fr 0.85fr;
+        repeat(12, minmax(0, 1fr));
 
     grid-template-rows:
-        248px 176px 176px;
+        248px 176px;
 
     gap: 13px;
 }
@@ -1322,14 +1342,16 @@
 
 
 /* =========================================================
-   MICROSOFT LEARN — STANDOUT TILE
+   TILE 1 — MICROSOFT SECURITY & AI
+   ROW 1 / WIDE
    ========================================================= */
 
 .microsoft-tile-learn {
-    grid-column: 1 / 3;
+    grid-column: 1 / 7;
     grid-row: 1;
 
     display: flex;
+
     flex-direction: column;
 
     justify-content: flex-end;
@@ -1372,13 +1394,23 @@
 
 .microsoft-tile-learn .microsoft-tile-content h3 {
     color: #e2e2e5;
+
+    font-weight: 500;
+
+    font-size: 40px;
+
+    letter-spacing: -0.04em;
 }
 
 .microsoft-tile-learn .microsoft-tile-content p {
     color: #b9b9bd;
 }
 
-/* top pills */
+
+/* =========================================================
+   MICROSOFT TILE TOP PILLS
+   ========================================================= */
+
 .microsoft-tile-top {
     position: absolute;
 
@@ -1391,6 +1423,7 @@
 
 .microsoft-tile-pills {
     display: flex;
+
     flex-wrap: wrap;
 
     gap: 6px;
@@ -1398,6 +1431,7 @@
 
 .microsoft-tile-pills span {
     display: inline-flex;
+
     align-items: center;
 
     min-height: 22px;
@@ -1417,6 +1451,7 @@
     letter-spacing: -0.005em;
 }
 
+
 /* =========================================================
    MICROSOFT BADGE
    ========================================================= */
@@ -1430,6 +1465,7 @@
     z-index: 3;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 }
@@ -1445,10 +1481,121 @@
 
 
 /* =========================================================
-   COUNTERS
+   TILE 2 — POSTMAN / LIBLAB
+   ROW 1 / NARROW VERTICAL
    ========================================================= */
 
-.microsoft-tile-counter {
+.microsoft-tile-postman {
+    grid-column: 7 / 9;
+    grid-row: 1;
+}
+
+/* =========================================================
+   TILE 2 — POSTMAN / LIBLAB
+   ROW 1 / NARROW VERTICAL
+   ========================================================= */
+
+.microsoft-tile-postman {
+    grid-column: 7 / 9;
+    grid-row: 1;
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 0;
+
+    background: #4a66b0;
+}
+
+
+/* =========================================================
+   POSTMAN / LIBLAB — IMAGE
+   ========================================================= */
+
+.microsoft-postman-image {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    z-index: 0;
+
+    width: 72px;
+    height: 72px;
+
+    object-fit: contain;
+
+    transform: translate(-50%, -50%);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   POSTMAN / LIBLAB — OVERLAY
+   ========================================================= */
+
+.microsoft-postman-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    background:
+        linear-gradient(to top,
+            rgba(25, 25, 27, 0.38) 0%,
+            rgba(25, 25, 27, 0.14) 45%,
+            rgba(25, 25, 27, 0) 100%);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   POSTMAN / LIBLAB — CONTENT
+   ========================================================= */
+
+.microsoft-postman-content {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 2;
+
+    display: flex;
+
+    align-items: flex-start;
+    justify-content: flex-end;
+
+    flex-direction: column;
+
+    padding: 22px;
+}
+
+
+.microsoft-postman-content h3 {
+    margin: 0;
+
+    color: #f4f5f8;
+
+    font-size: clamp(18px, 1.6vw, 23px);
+    font-weight: 500;
+
+    line-height: 1;
+    letter-spacing: -0.035em;
+}
+
+/* =========================================================
+   TILE 3 — MICROSOFT LEARN COUNTER
+   ROW 1 / SQUARE-ISH
+   ========================================================= */
+
+.about-microsoft-grid>.microsoft-tile-counter {
+    grid-column: 9 / 13 !important;
+    grid-row: 1 !important;
+
     display: flex;
 
     align-items: flex-end;
@@ -1465,7 +1612,7 @@
 .microsoft-counter-content strong {
     color: #555559;
 
-    font-size: clamp(35px, 3.2vw, 51px);
+    font-size: clamp(20px, 3.2vw, 51px);
     font-weight: 500;
 
     line-height: 0.9;
@@ -1485,10 +1632,118 @@
 
 
 /* =========================================================
-   CREDENTIAL TILES
+   TILE 4 — AZURE AI / FOUNDRY
+   ROW 2 / WIDE
+   ========================================================= */
+
+.about-microsoft-grid>.microsoft-tile-foundry {
+    grid-column: 1 / 6 !important;
+    grid-row: 2 !important;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: var(--surface);
+}
+
+
+/* =========================================================
+   FOUNDRY — BADGE
+   ========================================================= */
+
+.microsoft-foundry-badge {
+    position: absolute;
+
+    top: 2px;
+    right: 18px;
+
+    z-index: 3;
+
+    width: 60px;
+    height: 60px;
+
+    object-fit: contain;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   FOUNDRY — OVERLAY
+   ========================================================= */
+
+.microsoft-foundry-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    background:
+        linear-gradient(to top,
+            rgba(25, 25, 27, 0.28) 0%,
+            rgba(25, 25, 27, 0.08) 50%,
+            rgba(25, 25, 27, 0) 100%);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   FOUNDRY — CONTENT
+   ========================================================= */
+
+.microsoft-foundry-content {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 2;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    padding: 24px;
+}
+
+.microsoft-foundry-content strong {
+    color: var(--charcoal);
+
+    font-size: clamp(22px, 2.5vw, 24px) !important;
+    font-weight: 500;
+
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+}
+
+.microsoft-foundry-content span {
+    max-width: 430px;
+
+    margin-top: 11px;
+
+    color: var(--charcoal);
+
+    font-size: 10px;
+    font-weight: 400;
+
+    line-height: 1.5;
+    letter-spacing: -0.005em;
+}
+
+
+/* =========================================================
+   TILE 5 — AGENT ARCHITECT
+   ROW 2 / MEDIUM
    ========================================================= */
 
 .microsoft-tile-credential {
+    grid-column: 6 / 10;
+    grid-row: 2;
+
     display: flex;
 
     flex-direction: column;
@@ -1552,6 +1807,7 @@
     line-height: 1.5;
 }
 
+
 /* =========================================================
    CREDENTIAL PILLS
    ========================================================= */
@@ -1564,6 +1820,7 @@
     right: 70px;
 
     display: flex;
+
     flex-wrap: wrap;
 
     gap: 6px;
@@ -1593,7 +1850,7 @@
 
 
 /* =========================================================
-   FOUNDERZ BADGE
+   CREDENTIAL BADGES
    ========================================================= */
 
 .microsoft-credential-badge {
@@ -1605,7 +1862,9 @@
     display: flex;
 
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
+
+    gap: 7px;
 }
 
 .microsoft-credential-badge img {
@@ -1619,35 +1878,53 @@
 
 
 /* =========================================================
-   MORE TO COME — COVER IMAGE
+   TILE 6 — DEEPSEEK
+   ROW 2 / NARROWEST
    ========================================================= */
 
-.microsoft-tile-placeholder {
+.microsoft-tile-deepseek {
+    grid-column: 10 / 13;
+    grid-row: 2;
+
     position: relative;
 
     overflow: hidden;
 
-    background: #242426;
+    padding: 0;
+
+    background: #e9e8e4;
 }
 
-.microsoft-placeholder-image {
+
+/* =========================================================
+   DEEPSEEK — IMAGE
+   ========================================================= */
+
+.microsoft-deepseek-image {
     position: absolute;
 
-    inset: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 
     z-index: 0;
-}
 
-.microsoft-placeholder-image img {
     width: 100%;
     height: 100%;
 
-    display: block;
-
     object-fit: cover;
+
+    object-position: center bottom;
+
+    pointer-events: none;
 }
 
-.microsoft-placeholder-overlay {
+
+/* =========================================================
+   DEEPSEEK — OVERLAY
+   ========================================================= */
+
+.microsoft-deepseek-overlay {
     position: absolute;
 
     inset: 0;
@@ -1656,30 +1933,74 @@
 
     background:
         linear-gradient(to top,
-            rgba(20, 20, 22, 0.82) 0%,
-            rgba(20, 20, 22, 0.42) 55%,
-            rgba(20, 20, 22, 0.08) 100%);
+            rgba(25, 25, 27, 0.58) 0%,
+            rgba(25, 25, 27, 0.28) 38%,
+            rgba(25, 25, 27, 0.08) 68%,
+            rgba(25, 25, 27, 0) 100%);
+
+    pointer-events: none;
 }
 
-.microsoft-tile-placeholder .microsoft-tile-content {
-    position: relative;
+
+/* =========================================================
+   DEEPSEEK — CONTENT
+   ========================================================= */
+
+.microsoft-deepseek-content {
+    position: absolute;
+
+    inset: 0;
 
     z-index: 2;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    padding: 24px;
 }
 
-.microsoft-tile-placeholder .microsoft-tile-label {
-    background: rgba(255, 255, 255, 0.13);
+.microsoft-deepseek-content .microsoft-tile-label {
+    position: absolute;
 
-    color: #e6e6e8;
+    top: 21px;
+    left: 22px;
+
+    margin-bottom: 0;
+
+    background: rgba(255, 255, 255, 0.10);
+
+    color: #d1d1d4;
 }
 
-.microsoft-tile-placeholder .microsoft-tile-content h3 {
-    color: #eeeeef;
+.microsoft-deepseek-content h3 {
+    margin: 0;
+
+    color: #f0f0f2;
+
+    font-size: clamp(24px, 2vw, 31px);
+    font-weight: 500;
+
+    line-height: 1;
+    letter-spacing: -0.035em;
 }
 
-.microsoft-tile-placeholder .microsoft-tile-content p {
-    color: #bdbdc1;
+.microsoft-deepseek-content p {
+    max-width: 390px;
+
+    margin: 11px 0 0;
+
+    color: #d4d4d8;
+
+    font-size: 10px;
+    font-weight: 400;
+
+    line-height: 1.5;
+    letter-spacing: -0.005em;
 }
+
 
 /* =========================================================
    MICROSOFT — SHARED ARROW
@@ -1694,6 +2015,7 @@
     z-index: 5;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -1702,7 +2024,7 @@
 
     border-radius: 999px;
 
-    background: rgba(60, 60, 62, 0.08);
+    background: rgba(226, 226, 229, 0.677);
 
     color: #66666b;
 
@@ -1724,7 +2046,8 @@
 }
 
 .microsoft-tile-arrow:hover {
-    background: rgba(60, 60, 62, 0.14);
+    background: rgba(236, 236, 238, 0.891);
+    cursor: pointer;
 }
 
 
@@ -1742,6 +2065,7 @@
     background: #ffffff;
 }
 
+
 /* =========================================================
    MICROSOFT — STANDOUT TILE ARROW
    ========================================================= */
@@ -1754,6 +2078,246 @@
 
 .microsoft-tile-learn .microsoft-tile-arrow:hover {
     background: #ffffff;
+}
+
+/* =========================================================
+   MICROSOFT — DISABLED ARROWS
+   ========================================================= */
+
+.microsoft-tile-arrow-disabled {
+    cursor: default;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   MICROSOFT — DISABLED ARROW VISIBILITY
+   ========================================================= */
+
+.microsoft-tile:hover .microsoft-tile-arrow-disabled {
+    opacity: 1;
+
+    transform: translateX(0);
+}
+
+/* =========================================================
+   MICROSOFT — DISABLED TILE ARROWS
+   Always visible — no hover interaction
+   ========================================================= */
+
+.microsoft-tile-arrow.microsoft-tile-arrow-disabled {
+    opacity: 1;
+
+    transform: translateX(0);
+
+    cursor: default;
+
+    pointer-events: none;
+
+    background: rgba(214, 214, 218, 0.19);
+
+    color: #1e1e1e2c;
+}
+
+
+/* Prevent the enabled hover rule from affecting disabled arrows */
+
+.microsoft-tile:hover .microsoft-tile-arrow.microsoft-tile-arrow-disabled,
+.microsoft-tile:focus-within .microsoft-tile-arrow.microsoft-tile-arrow-disabled {
+    opacity: 1;
+
+    transform: translateX(0);
+
+
+}
+
+
+/* =========================================================
+   MICROSOFT SECTION ANIMATIONS
+   ========================================================= */
+
+@keyframes about-microsoft-intro-scroll {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(22px);
+    }
+
+    20% {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+    80% {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translateY(-22px);
+    }
+}
+
+
+@keyframes about-microsoft-tile-in {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(22px) scale(0.98);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateY(0) scale(1);
+    }
+}
+
+
+/* =========================================================
+   MICROSOFT — TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .about-microsoft {
+        width: 90vw;
+
+        margin-top: 96px;
+    }
+
+
+    .about-microsoft-grid {
+        grid-template-columns:
+            1.3fr 1fr;
+
+        grid-template-rows:
+            224px 176px 176px 176px;
+    }
+
+
+    /* Row 1 */
+    .microsoft-tile-learn {
+        grid-column: 1 / 3;
+        grid-row: 1;
+    }
+
+    .microsoft-tile-postman {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .microsoft-tile-foundry {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+
+    /* Row 2 */
+    .microsoft-tile-counter {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    .microsoft-tile-credential {
+        grid-column: 2;
+        grid-row: 3;
+    }
+
+    .microsoft-tile-deepseek {
+        grid-column: 1 / 3;
+        grid-row: 4;
+    }
+}
+
+
+/* =========================================================
+   MICROSOFT — MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .about-microsoft {
+        width: calc(100% - 32px);
+
+        margin-top: 80px;
+    }
+
+    .about-microsoft-intro {
+        margin-bottom: 48px;
+    }
+
+    .about-microsoft-intro h2 {
+        font-size: clamp(32px, 8.8vw, 46px);
+    }
+
+
+    .about-microsoft-grid {
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+
+    .microsoft-tile {
+        min-height: 176px;
+
+        padding: 21px;
+
+        border-radius: 19px;
+    }
+
+
+    .microsoft-tile-learn {
+        min-height: 320px;
+    }
+
+
+    .microsoft-tile-counter {
+        min-height: 136px;
+    }
+
+
+    .microsoft-tile-arrow {
+        right: 14px;
+        bottom: 14px;
+
+        opacity: 1;
+
+        transform: none;
+    }
+}
+
+
+/* =========================================================
+   MICROSOFT — REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .about-microsoft-intro,
+    .microsoft-tile {
+        animation: none;
+    }
+
+    .microsoft-tile-arrow {
+        transition: none;
+    }
 }
 
 
@@ -1947,6 +2511,17 @@
     padding-top: 112px;
 }
 
+.about-intro-logo {
+    display: block;
+
+    width: 25px;
+    height: 25px;
+
+    margin: 0 auto 16px;
+
+    object-fit: contain;
+}
+
 
 /* =========================================================
    SECTION 3 GRID
@@ -1960,7 +2535,7 @@
         1.15fr 0.72fr 0.72fr;
 
     grid-template-rows:
-        250px 180px 154px;
+        250px 180px 15px;
 
     gap: 13px;
 
@@ -2077,7 +2652,7 @@
 
 .about-three-github {
     grid-column: 1;
-    grid-row: 2 / 4;
+    grid-row: 2 / 3;
 
     justify-content: flex-end;
 
@@ -2333,7 +2908,7 @@
     display: flex;
     justify-content: center;
 
-    margin-top: 32px;
+    margin-top: 15px;
 }
 
 .about-linkedin-action .about-button {
@@ -2531,4 +3106,971 @@
         animation: none;
     }
 
+}
+
+/* =========================================================
+   GCP SECTION
+   ========================================================= */
+
+.gcp {
+    position: relative;
+
+    padding: 112px 0 96px;
+}
+
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+
+.gcp-intro {
+    width: min(608px, calc(100% - 48px));
+
+    margin: 0 auto 80px;
+
+    text-align: center;
+
+    animation: about-intro-scroll linear both;
+    animation-timeline: view();
+    animation-range: entry 0% exit 100%;
+}
+
+.gcp-intro-logo {
+    display: block;
+    width: 38px;
+    height: auto;
+    margin: 0 auto 21px;
+}
+
+.gcp-intro h2 {
+    margin: 0;
+
+    color: #555559;
+
+    font-size: clamp(35px, 4vw, 58px);
+    font-weight: 500;
+
+    line-height: 0.98;
+    letter-spacing: -0.035em;
+}
+
+.gcp-intro-description {
+    max-width: 544px;
+
+    margin: 21px auto 0;
+
+    color: #858589;
+
+    font-size: clamp(13px, 1vw, 15px);
+    font-weight: 400;
+
+    line-height: 1.6;
+    letter-spacing: -0.012em;
+}
+
+
+/* =========================================================
+   PUZZLE GRID
+   ========================================================= */
+
+.gcp-grid {
+    display: grid;
+
+    width: min(1120px, 88vw);
+
+    margin: 0 auto;
+
+    grid-template-columns:
+        1.75fr 0.62fr 0.78fr 0.72fr;
+
+    grid-template-rows:
+        190px 205px;
+
+    gap: 13px;
+}
+
+
+/* =========================================================
+   BASE TILE
+   ========================================================= */
+
+.gcp-tile {
+    position: relative;
+
+    overflow: hidden;
+
+    min-width: 0;
+
+    border-radius: 22px;
+
+    background: var(--surface);
+
+    box-shadow:
+        0 16px 44px rgba(45, 45, 45, 0.055),
+        0 4px 13px rgba(45, 45, 45, 0.025);
+
+    animation: about-tile-in linear both;
+    animation-timeline: view();
+    animation-range: entry 5% cover 25%;
+}
+
+
+
+/* =========================================================
+   GENERIC CONTENT
+   ========================================================= */
+
+.gcp-tile-content {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    padding: 24px;
+}
+
+
+.gcp-tile-label {
+    position: absolute;
+
+    top: 21px;
+    left: 21px;
+
+    display: inline-flex;
+    align-items: center;
+
+    min-height: 22px;
+
+    padding: 0 9px;
+
+    border-radius: 999px;
+
+    background: var(--surface-muted);
+
+    color: #77777c;
+
+    font-size: 8px;
+    font-weight: 500;
+
+    line-height: 1;
+    letter-spacing: -0.005em;
+}
+
+
+.gcp-tile-content h3 {
+    margin: 0;
+
+    color: #5b5b60;
+
+    font-size: clamp(19px, 1.65vw, 26px);
+    font-weight: 500;
+
+    line-height: 1;
+    letter-spacing: -0.03em;
+}
+
+
+.gcp-tile-content p {
+    max-width: 450px;
+
+    margin: 11px 0 0;
+
+    color: #858589;
+
+    font-size: 10px;
+    font-weight: 400;
+
+    line-height: 1.5;
+}
+
+
+
+/* =========================================================
+   INFO TILE
+   ROW 1 / LARGE HORIZONTAL
+   ========================================================= */
+
+.gcp-tile-info {
+    grid-column: 1;
+    grid-row: 1;
+
+    background: var(--charcoal);
+}
+
+
+.gcp-tile-info .gcp-tile-pills {
+    position: absolute;
+
+    top: 21px;
+    left: 21px;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 6px;
+}
+
+
+.gcp-tile-info .gcp-tile-pills span {
+    display: inline-flex;
+    align-items: center;
+
+    min-height: 22px;
+
+    padding: 0 9px;
+
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.10);
+
+    color: #d1d1d4;
+
+    font-size: 8px;
+    font-weight: 500;
+
+    line-height: 1;
+}
+
+
+.gcp-tile-info .gcp-tile-content h3 {
+    color: #e2e2e5;
+
+    font-size: clamp(22px, 2vw, 30px);
+}
+
+
+.gcp-tile-info .gcp-tile-content p {
+    color: #b9b9bd;
+}
+
+/* =========================================================
+   INFO TILE — ADK BADGE
+   ========================================================= */
+
+.gcp-info-badge {
+    position: absolute;
+
+    top: 17px;
+    right: 18px;
+
+    z-index: 2;
+
+    width: 22px;
+    height: 22px;
+
+    object-fit: contain;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   COUNTER
+   ========================================================= */
+
+.gcp-tile-counter {
+    grid-column: 2;
+    grid-row: 1;
+
+    background: #eeede9;
+}
+
+
+.gcp-counter-content {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    padding: 19px;
+}
+
+
+.gcp-counter-content strong {
+    color: #555559;
+
+    font-size: clamp(32px, 3vw, 46px);
+    font-weight: 500;
+
+    line-height: 0.9;
+    letter-spacing: -0.045em;
+}
+
+
+.gcp-counter-content span {
+    margin-top: 7px;
+
+    color: #77777c;
+
+    font-size: 9px;
+    font-weight: 500;
+
+    line-height: 1.2;
+}
+
+/* =========================================================
+   COUNTER — GOOGLE BADGE
+   ========================================================= */
+
+.gcp-counter-badge {
+    position: absolute;
+
+    top: 17px;
+    right: 18px;
+
+    z-index: 2;
+
+    width: 34px;
+    height: 34px;
+
+    object-fit: contain;
+
+    pointer-events: none;
+}
+
+/* =========================================================
+   GOOGLE CLOUD
+   SMALL SQUARE-ISH TILE
+   ========================================================= */
+
+.gcp-tile-cloud {
+    grid-column: 3;
+    grid-row: 1;
+
+    padding: 0;
+
+    background: var(--surface);
+}
+
+
+/* =========================================================
+   GOOGLE CLOUD OVERLAY
+   ========================================================= */
+
+.gcp-cloud-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 2;
+
+    background:
+        linear-gradient(to top,
+            rgba(25, 25, 27, 0.30) 0%,
+            rgba(25, 25, 27, 0.08) 52%,
+            rgba(25, 25, 27, 0) 100%);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   GOOGLE CLOUD CONTENT
+   ========================================================= */
+
+.gcp-tile-cloud .gcp-tile-content {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 3;
+
+    justify-content: flex-end;
+
+    padding: 23px;
+}
+
+
+.gcp-tile-cloud .gcp-tile-content h3 {
+    font-size: clamp(18px, 1.55vw, 24px);
+
+    color: var(--charcoal);
+}
+
+
+.gcp-tile-cloud .gcp-tile-content p {
+    max-width: 100%;
+
+    margin: 9px 0 0;
+
+    color: var(--charcoal);
+
+    font-size: 9px;
+
+    line-height: 1.45;
+}
+
+
+/* =========================================================
+   KUBERNETES
+   SMALL VISUAL TILE
+   ========================================================= */
+
+.gcp-tile-kubernetes {
+    grid-column: 4;
+    grid-row: 1;
+
+    background: var(--surface);
+}
+
+
+/* =========================================================
+   KUBERNETES — CENTER IMAGE
+   ========================================================= */
+
+.gcp-kubernetes-visual {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    z-index: 1;
+
+    width: 110px;
+    height: 110px;
+
+    transform: translate(-50%, -56%);
+}
+
+
+.gcp-kubernetes-visual img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   KUBERNETES — OVERLAY
+   ========================================================= */
+
+.gcp-kubernetes-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 2;
+
+    background:
+        linear-gradient(to top,
+            rgba(25, 25, 27, 0.22) 0%,
+            rgba(25, 25, 27, 0.07) 45%,
+            rgba(25, 25, 27, 0) 100%);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   KUBERNETES — LABEL
+   ========================================================= */
+
+.gcp-kubernetes-label {
+    position: absolute;
+
+    left: 18px;
+    bottom: 18px;
+
+    max-width: 80%;
+
+    z-index: 3;
+
+    color: var(--charcoal);
+
+    font-size: 9px;
+    font-weight: 400;
+    line-height: 1.45;
+}
+
+
+
+/* =========================================================
+   GOOGLE DEVELOPER PROGRAM
+   ROW 2 / SLIGHTLY WIDER
+   ========================================================= */
+
+.gcp-tile-developer {
+    grid-column: 1 / 2;
+    grid-row: 2;
+
+    background: #e9e8e4;
+}
+
+
+.gcp-tile-developer .gcp-tile-content h3 {
+    font-size: clamp(20px, 1.8vw, 28px);
+}
+
+/* =========================================================
+   GOOGLE DEVELOPER PROGRAM
+   ROW 2 / SLIGHTLY WIDER
+   ========================================================= */
+
+.gcp-tile-developer {
+    grid-column: 1 / 2;
+    grid-row: 2;
+
+    background: #e9e8e4;
+}
+
+
+.gcp-tile-developer .gcp-tile-content h3 {
+    font-size: clamp(20px, 1.8vw, 28px);
+}
+
+
+.gcp-tile-developer .gcp-tile-content p {
+    max-width: 300px;
+
+    margin: 10px 0 0;
+
+    color: #858589;
+
+    font-size: 10px;
+    font-weight: 400;
+
+    line-height: 1.5;
+    letter-spacing: -0.005em;
+}
+
+
+/* =========================================================
+   GOOGLE DEVELOPER PROGRAM — BADGE
+   ========================================================= */
+
+.gcp-developer-badge {
+    position: absolute;
+
+    top: 17px;
+    right: 18px;
+
+    z-index: 2;
+
+    width: 30px;
+    height: 30px;
+
+    object-fit: contain;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   HUGGING FACE
+   WIDE IMAGE TILE
+   ========================================================= */
+
+.gcp-tile-huggingface {
+    grid-column: 2 / 4;
+    grid-row: 2;
+
+    padding: 0;
+
+    background: #f4c13e;
+}
+
+
+.gcp-huggingface-image {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    z-index: 1;
+
+    pointer-events: none;
+}
+
+
+.gcp-huggingface-image img {
+    display: block;
+
+    width: 36%;
+    height: auto;
+
+    object-fit: contain;
+}
+
+
+.gcp-huggingface-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 2;
+
+    background:
+        linear-gradient(to top,
+            rgba(25, 25, 27, 0.45) 0%,
+            rgba(25, 25, 27, 0.12) 50%,
+            rgba(25, 25, 27, 0) 100%);
+
+    pointer-events: none;
+}
+
+
+.gcp-huggingface-content {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 3;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    padding: 23px;
+}
+
+
+.gcp-huggingface-content .gcp-tile-label {
+    top: 21px;
+    left: 21px;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    color: #e2e2e5;
+}
+
+
+.gcp-huggingface-content h3 {
+    margin: 0;
+
+    color: #f0f0f1;
+
+    font-size: clamp(24px, 2.2vw, 34px);
+    font-weight: 500;
+
+    line-height: 1;
+    letter-spacing: -0.035em;
+}
+
+/* =========================================================
+   DOCKER
+   ========================================================= */
+
+.gcp-tile-skills {
+    background: var(--charcoal);
+}
+
+
+/* =========================================================
+   DOCKER — CENTER IMAGE
+   ========================================================= */
+
+.gcp-docker-visual {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    z-index: 1;
+
+    width: 110px;
+    height: 110px;
+
+    transform: translate(-50%, -58%);
+}
+
+
+.gcp-docker-visual img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   DOCKER — OVERLAY
+   ========================================================= */
+
+.gcp-docker-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 2;
+
+    background:
+        linear-gradient(to top,
+            rgba(25, 25, 27, 0.22) 0%,
+            rgba(25, 25, 27, 0.07) 45%,
+            rgba(25, 25, 27, 0) 100%);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   DOCKER — CONTENT
+   ========================================================= */
+
+.gcp-tile-skills .gcp-tile-content {
+    z-index: 3;
+}
+
+
+.gcp-tile-skills .gcp-tile-content h3 {
+    margin: 0;
+
+    color: #5b5b60;
+
+    font-size: clamp(20px, 1.8vw, 28px);
+    font-weight: 500;
+
+    line-height: 1;
+    letter-spacing: -0.035em;
+}
+
+
+.gcp-tile-skills .gcp-tile-content p {
+    max-width: 280px;
+
+    margin: 10px 0 0;
+
+    color: #f0f0f1;
+
+    font-size: 9px;
+    font-weight: 500;
+
+    line-height: 1.1;
+    letter-spacing: -0.005em;
+}
+
+
+/* =========================================================
+   GCP TILE ARROWS
+   ========================================================= */
+
+.gcp-arrow {
+    position: absolute;
+
+    right: 21px;
+    bottom: 19px;
+
+    z-index: 5;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 27px;
+    height: 27px;
+
+    padding: 0;
+
+    border: 0;
+    border-radius: 999px;
+
+    background: rgba(243, 243, 245, 0.859);
+
+    color: #66666b;
+
+    opacity: 0;
+
+    transform: translateX(-4px);
+
+    transition:
+        opacity 180ms ease,
+        transform 220ms ease,
+        background-color 180ms ease;
+
+    cursor: pointer;
+}
+
+
+/* ---------------------------------------------------------
+   ENABLED ARROWS — TILE HOVER
+   --------------------------------------------------------- */
+
+.gcp-tile:hover .gcp-arrow:not(:disabled),
+.gcp-tile:focus-within .gcp-arrow:not(:disabled) {
+    opacity: 1;
+
+    transform: translateX(0);
+}
+
+
+/* ---------------------------------------------------------
+   ENABLED ARROW — HOVER
+   --------------------------------------------------------- */
+
+.gcp-arrow:hover:not(:disabled) {
+    background: #ffffff;
+}
+
+
+/* ---------------------------------------------------------
+   DISABLED ARROWS
+   --------------------------------------------------------- */
+
+.gcp-arrow:disabled {
+    opacity: 0.35;
+
+    cursor: default;
+
+    transform: translateX(0);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .gcp {
+        padding-top: 80px;
+    }
+
+
+    .gcp-grid {
+        width: 90vw;
+
+        grid-template-columns:
+            1.55fr 0.72fr 0.82fr;
+
+        grid-template-rows:
+            190px 205px 180px;
+    }
+
+
+    .gcp-tile-info {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+
+    .gcp-tile-counter {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+
+    .gcp-tile-cloud {
+        grid-column: 3;
+        grid-row: 1;
+    }
+
+
+    .gcp-tile-kubernetes {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+
+    .gcp-tile-developer {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+
+    .gcp-tile-huggingface {
+        grid-column: 1 / 3;
+        grid-row: 3;
+    }
+
+
+    .gcp-tile-skills {
+        grid-column: 3;
+        grid-row: 2 / 4;
+    }
+}
+
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .gcp {
+        padding: 64px 0 80px;
+    }
+
+
+    .gcp-intro {
+        margin-bottom: 48px;
+    }
+
+
+    .gcp-intro h2 {
+        font-size: clamp(32px, 8.8vw, 46px);
+    }
+
+
+    .gcp-grid {
+        display: flex;
+        flex-direction: column;
+
+        width: calc(100% - 32px);
+
+        gap: 10px;
+    }
+
+
+    .gcp-tile {
+        min-height: 175px;
+
+        border-radius: 19px;
+    }
+
+
+    .gcp-tile-info,
+    .gcp-tile-developer,
+    .gcp-tile-huggingface {
+        min-height: 200px;
+    }
+
+
+    .gcp-tile-counter {
+        min-height: 135px;
+    }
+
+
+    .gcp-tile-cloud,
+    .gcp-tile-kubernetes,
+    .gcp-tile-skills {
+        min-height: 155px;
+    }
+
+
+    .gcp-tile-content,
+    .gcp-huggingface-content {
+        padding: 21px;
+    }
+
+
+    .gcp-tile-label {
+        top: 17px;
+        left: 18px;
+    }
+
+
+    .gcp-tile-info .gcp-tile-pills {
+        top: 17px;
+        left: 18px;
+    }
 }

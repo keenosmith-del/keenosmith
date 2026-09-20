@@ -239,7 +239,7 @@
 /* Overview */
 
 .music-project-overview {
-    width: min(960px, calc(100% - 38px));
+    width: min(1100px, calc(100% - 38px));
 
     margin: 0 auto;
 
@@ -268,7 +268,7 @@
 }
 
 .music-project-overview-content h2 {
-    max-width: 680px;
+    max-width: 750px;
 
     margin: 0;
 
@@ -301,7 +301,7 @@
 /* Video sections */
 
 .music-project-video {
-    width: min(1120px, 70.4vw);
+    width: min(1220px, 80.4vw);
 
     margin: 0 auto 19px;
 
@@ -389,7 +389,7 @@
 }
 
 .music-project-video-copy>p {
-    max-width: 400px;
+    max-width: 500px;
 
     margin: 21px 0 0;
 
@@ -996,4 +996,43 @@
     .music-project-closing-button {
         transition: none;
     }
+}
+
+/* Technical Executive Summary */
+
+.music-project-executive-summary {
+    display: flex;
+    justify-content: center;
+
+    padding: 0 19px 20px;
+}
+
+.music-project-executive-summary-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    min-height: 38px;
+    padding: 0 16px;
+
+    border-radius: 999px;
+
+    background: var(--charcoal);
+    color: var(--surface);
+
+    font-size: 10px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        transform 180ms ease,
+        background-color 180ms ease,
+        color 180ms ease;
+}
+
+.music-project-executive-summary-button:hover {
+    background: #29292b;
+    transform: translateY(-2px);
 }

@@ -1,200 +1,557 @@
 import './Skills.css';
+import { useEffect, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-import claudeIcon from '../../../assets/svgs/skills/claude.svg';
-import dockerIcon from '../../../assets/svgs/skills/docker.svg';
-import expressIcon from '../../../assets/svgs/skills/express.svg';
-import huggingfaceIcon from '../../../assets/svgs/skills/huggingface.svg';
-import jsonwebtokensIcon from '../../../assets/svgs/skills/jsonwebtokens.svg';
-import kubernetesIcon from '../../../assets/svgs/skills/kubernetes.svg';
-import mongodbIcon from '../../../assets/svgs/skills/mongodb.svg';
-import nodedotjsIcon from '../../../assets/svgs/skills/nodedotjs.svg';
-import postgresqlIcon from '../../../assets/svgs/skills/postgresql.svg';
-import pythonIcon from '../../../assets/svgs/skills/python.svg';
-import pytorchIcon from '../../../assets/svgs/skills/pytorch.svg';
-import reactIcon from '../../../assets/svgs/skills/react.svg';
+import { ArrowRight } from 'lucide-react';
 
-const skills = [
+import claudeImage from '../../../assets/images/about/claude.png';
+import ollamaImage from '../../../assets/images/about/ollama.png';
+import n8nImage from '../../../assets/images/about/n8n.png';
+
+
+const skillGroups = [
     {
-        name: 'React',
-        icon: reactIcon,
-        order: 1,
+        title: 'Frontend & UI',
+        skills: [
+            'React',
+            'JavaScript',
+            'HTML',
+            'CSS',
+            'Vite',
+            'React Router',
+            'Tailwind CSS',
+            'Bootstrap',
+            'Figma',
+            'Responsive Design',
+            'Component Architecture',
+            'Web Animation',
+        ],
     },
     {
-        name: 'Node.js',
-        icon: nodedotjsIcon,
-        order: 9,
+        title: 'Backend & APIs',
+        skills: [
+            'Node.js',
+            'Express.js',
+            'Fastify',
+            'FastAPI',
+            'REST APIs',
+            'GraphQL',
+            'Postman',
+            'Axios',
+            'API Integration',
+            'Asynchronous Programming',
+            'Middleware',
+            'Server-side Architecture',
+        ],
     },
     {
-        name: 'Express',
-        icon: expressIcon,
-        order: 5,
+        title: 'Databases & Data',
+        skills: [
+            'MongoDB',
+            'Mongoose',
+            'PostgreSQL',
+            'MySQL',
+            'Prisma',
+            'Redis',
+            'Elasticsearch',
+            'Neo4j',
+            'Data Modelling',
+            'Query Design',
+            'Vector Search',
+        ],
     },
     {
-        name: 'MongoDB',
-        icon: mongodbIcon,
-        order: 7,
+        title: 'AI & Machine Learning',
+        skills: [
+            'OpenAI',
+            'Anthropic',
+            'Google Gemini',
+            'Hugging Face',
+            'LangChain',
+            'PyTorch',
+            'TensorFlow',
+            'RAG',
+            'Embeddings',
+            'NLP',
+            'Prompt Engineering',
+            'LLM Integration',
+            'Agentic AI',
+            'AI Evaluation',
+        ],
     },
     {
-        name: 'PostgreSQL',
-        icon: postgresqlIcon,
-        order: 11,
+        title: 'Microsoft & Azure',
+        skills: [
+            'Microsoft Foundry',
+            'Foundry Agent Service',
+            'Microsoft Agent Framework',
+            'Azure OpenAI',
+            'Foundry Models',
+            'Azure AI Search',
+            'Azure Functions',
+            'Azure Container Apps',
+            'Azure Logic Apps',
+            'Azure Service Bus',
+            'Azure Storage',
+            'Azure Key Vault',
+            'Microsoft Entra ID',
+            'Azure Monitor',
+            'Application Insights',
+            'Azure DevOps',
+            'Azure API Management',
+        ],
     },
     {
-        name: 'Python',
-        icon: pythonIcon,
-        order: 0,
+        title: 'Google Cloud & AI',
+        skills: [
+            'Google Cloud',
+            'Google Gemini',
+            'Vertex AI',
+            'Google AI APIs',
+            'Firebase',
+            'Cloud Functions',
+            'Cloud Storage',
+            'Google Cloud APIs',
+        ],
     },
     {
-        name: 'PyTorch',
-        icon: pytorchIcon,
-        order: 8,
+        title: 'Cloud, DevOps & Infrastructure',
+        skills: [
+            'AWS',
+            'Docker',
+            'Kubernetes',
+            'GitHub Actions',
+            'CI/CD',
+            'Terraform',
+            'Cloudflare',
+            'Nginx',
+            'Render',
+            'Vercel',
+            'Containerisation',
+            'Deployment Automation',
+            'Infrastructure as Code',
+        ],
     },
     {
-        name: 'Hugging Face',
-        icon: huggingfaceIcon,
-        order: 4,
+        title: 'Security & Authentication',
+        skills: [
+            'JWT',
+            'Authentication',
+            'Authorization',
+            'RBAC',
+            'bcrypt',
+            'Protected Routes',
+            'API Security',
+            'Microsoft Entra ID',
+            'Managed Identity',
+            'Secrets Management',
+            'OAuth',
+            'Security Architecture',
+        ],
     },
     {
-        name: 'Claude',
-        icon: claudeIcon,
-        order: 10,
+        title: 'Architecture & Engineering',
+        skills: [
+            'Software Architecture',
+            'System Design',
+            'RESTful Architecture',
+            'Microservices',
+            'Event-driven Architecture',
+            'Serverless Architecture',
+            'Distributed Systems',
+            'Asynchronous Workflows',
+            'Message Queues',
+            'API Design',
+            'Integration Patterns',
+            'Error Handling',
+            'Observability',
+        ],
     },
     {
-        name: 'Docker',
-        icon: dockerIcon,
-        order: 6,
-    },
-    {
-        name: 'Kubernetes',
-        icon: kubernetesIcon,
-        order: 2,
-    },
-    {
-        name: 'JSON Web Tokens',
-        icon: jsonwebtokensIcon,
-        order: 3,
+        title: 'Languages & Core Engineering',
+        skills: [
+            'JavaScript',
+            'Python',
+            'C++',
+            'SQL',
+            'Object-oriented Programming',
+            'Data Structures',
+            'Algorithms',
+            'Async Programming',
+            'Git',
+            'GitHub',
+            'JSON',
+        ],
     },
 ];
 
 function Skills() {
+    const aboutRef = useRef(null);
+    const navigate = useNavigate();
+
+    const [isSkillsModalOpen, setIsSkillsModalOpen] = useState(false);
+
+    const handleSkillsOpen = () => {
+        setIsSkillsModalOpen(true);
+    };
+
+    const handleSkillsClose = () => {
+        setIsSkillsModalOpen(false);
+    };
+
     return (
-        <section className="skills" id="skills">
+        <>
+            <section className="skills" id="skills">
 
-            {/* =========================================================
-                SKILLS INTRO
-                ========================================================= */}
+                <div className="skills-intro">
 
-            <div className="skills-intro">
+                    <h2>
+                        Engineering across
+                        <br />
+                        software, AI &amp; cloud.
+                    </h2>
 
-                <span className="skills-eyebrow">
-                    Technical capabilities
-                </span>
-
-                <h2>
-                    Engineering,
-                    <br />
-                    AI &amp; Infrastructure.
-                </h2>
-
-                <p>
-                    A practical engineering stack spanning full-stack
-                    development, databases, AI application development,
-                    cloud-native tooling and modern software infrastructure.
-                </p>
-
-            </div>
-
-
-            {/* =========================================================
-                SKILLS STAGE
-                ========================================================= */}
-
-            <div className="skills-stage">
-
-                <div className="skills-container">
-
-                    <div className="skills-content">
-
-                        <div className="skills-copy">
-
-                            <div className="skills-copy-label">
-                                <span>Core stack</span>
-                                <span>AI development</span>
-                                <span>DevOps</span>
-                            </div>
-
-                            <div className="skills-description">
-
-                                <p>
-                                    My engineering foundation is rooted in
-                                    JavaScript and modern full-stack development,
-                                    with hands-on experience across React, Node.js,
-                                    Express, APIs, databases, authentication and
-                                    responsive application architecture.
-                                </p>
-
-                                <p>
-                                    Alongside full-stack development, I work across
-                                    Python, SQL, MongoDB and PostgreSQL, while
-                                    continuing to develop cloud-native and DevOps
-                                    capabilities through Docker, Kubernetes and
-                                    modern deployment workflows.
-                                </p>
-
-                                <p>
-                                    My current focus increasingly sits at the
-                                    intersection of software engineering and
-                                    artificial intelligence, including LLM
-                                    integration, NLP, RAG, prompt engineering,
-                                    AI services and agentic application workflows.
-                                </p>
-
-                            </div>
-
-                        </div>
-
-
-                        <div className="skills-video">
-
-                            <div className="skills-video-placeholder">
-
-                                <div className="skills-mosaic-grid">
-
-                                    {skills.map((skill) => (
-                                        <div
-                                            className="skills-mosaic-tile"
-                                            key={skill.name}
-                                            style={{
-                                                '--tile-order': skill.order,
-                                            }}
-                                        >
-
-                                            <img
-                                                className="skills-mosaic-icon"
-                                                src={skill.icon}
-                                                alt=""
-                                            />
-
-                                            <span className="skills-mosaic-name">
-                                                {skill.name}
-                                            </span>
-
-                                        </div>
-                                    ))}
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
+                    <p className="skills-intro-description">
+                        Building across full-stack software engineering, AI
+                        application development, cloud platforms, automation
+                        and product-focused interface design.
+                    </p>
 
                 </div>
 
-            </div>
 
-        </section>
+                <div className="skills-grid">
+
+                    {/* =====================================================
+                    ROW 1
+                ===================================================== */}
+
+                    {/* =====================================================
+    ROW 1 — FULL-STACK SOFTWARE ENGINEERING
+===================================================== */}
+
+                    <article className="skills-tile skills-tile-fullstack">
+
+                        <div className="skills-tile-top">
+
+                            <div className="skills-tile-pills">
+                                <span>React</span>
+                                <span>JavaScript</span>
+                                <span>Node.js</span>
+                                <span>Express</span>
+                                <span>MongoDB</span>
+                                <span>PostgreSQL</span>
+                            </div>
+
+                        </div>
+
+                        <div className="skills-tile-content">
+
+                            <h3>
+                                Full-Stack
+                                <br />
+                                Software Engineering
+                            </h3>
+
+                            <p>
+                                Building end-to-end web applications with React, JavaScript, Node.js,
+                                Express, REST APIs, MongoDB, PostgreSQL, Mongoose, Prisma, JWT
+                                authentication, responsive UI, Git, CI/CD, and cloud deployment.
+                            </p>
+
+                        </div>
+
+                        <div className="skills-tile-actions">
+
+                            <a
+                                type="button"
+                                className="skills-button skills-button-secondary"
+                                onClick={handleSkillsOpen}
+                            >
+                                All Skills
+                            </a>
+
+                            <a
+                                href="#projects"
+                                className="skills-button skills-button-primary"
+                            >
+                                View Projects
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <article className="skills-tile skills-tile-claude">
+
+                        <div className="skills-tile-claude-image">
+                            <img
+                                src={claudeImage}
+                                alt="Claude"
+                            />
+                        </div>
+
+                        <div className="skills-tile-claude-overlay" />
+
+                        <div className="skills-tile-content">
+
+                            <span className="skills-tile-label">
+                                Anthropic
+                            </span>
+
+                            <h3>
+                                Claude
+                            </h3>
+
+                            <p>
+                                LLM application engineering, context
+                                engineering and AI-powered development.
+                            </p>
+
+                        </div>
+
+                        <button
+                            className="skills-arrow skills-arrow-light"
+                            type="button"
+                            disabled
+                            aria-label="Claude projects unavailable"
+                        >
+                            <ArrowRight
+                                size={16}
+                                strokeWidth={1.7}
+                                aria-hidden="true"
+                            />
+                        </button>
+
+                    </article>
+
+
+
+                    <article className="skills-tile skills-tile-microsoft">
+                        <div className="skills-tile-content">
+
+                            <span className="skills-tile-label">
+                                Microsoft
+                            </span>
+
+                            <h3>
+                                Azure
+                                <br />
+                                Foundry
+                            </h3>
+
+                            <p>
+                                Agentic AI, multi-agent architecture and
+                                intelligent application development.
+                            </p>
+
+                        </div>
+
+                        <button
+                            className="skills-arrow skills-arrow-light"
+                            type="button"
+                            aria-label="View Microsoft Foundry projects"
+                            onClick={(event) => {
+                                event.stopPropagation();
+                                navigate('/projects/microsoft');
+                            }}
+                        >
+                            <ArrowRight
+                                size={16}
+                                strokeWidth={1.7}
+                                aria-hidden="true"
+                            />
+                        </button>
+
+                    </article>
+
+
+                    {/* =====================================================
+                    ROW 2
+                ===================================================== */}
+
+                    <article className="skills-tile skills-tile-n8n">
+
+                        <div className="skills-n8n-image">
+                            <img
+                                src={n8nImage}
+                                alt="n8n"
+                            />
+                        </div>
+
+                        <div className="skills-n8n-overlay" />
+
+                        <div className="skills-tile-content">
+
+                            <span className="skills-tile-label">
+                                Automation
+                            </span>
+
+                            <h3>
+                                n8n
+                            </h3>
+
+                            <p>
+                                Workflow orchestration, API integration,
+                                automation and event-driven systems.
+                            </p>
+
+                            <button
+                                className="skills-arrow skills-arrow-light"
+                                type="button"
+                                disabled
+                                aria-label="n8n projects unavailable"
+                            >
+                                <ArrowRight
+                                    size={16}
+                                    strokeWidth={1.7}
+                                    aria-hidden="true"
+                                />
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <article className="skills-tile skills-tile-ux">
+                        <div className="skills-tile-content">
+
+                            <span className="skills-tile-label">
+                                Design
+                            </span>
+
+                            <h3>
+                                UX / UI
+                            </h3>
+
+                            <p>
+                                Product interfaces, interaction design
+                                and visual systems.
+                            </p>
+
+                            <button
+                                className="skills-arrow skills-arrow-light"
+                                type="button"
+                                disabled
+                                aria-label="UX/UI projects unavailable"
+                            >
+                                <ArrowRight
+                                    size={16}
+                                    strokeWidth={1.7}
+                                    aria-hidden="true"
+                                />
+                            </button>
+
+                        </div>
+                    </article>
+
+
+                    <article className="skills-tile skills-tile-ollama">
+
+                        <div className="skills-ollama-image">
+                            <img
+                                src={ollamaImage}
+                                alt="Ollama"
+                            />
+                        </div>
+
+                        <div className="skills-ollama-overlay" />
+
+                        <div className="skills-tile-content">
+
+                            <span className="skills-tile-label">
+                                Local AI
+                            </span>
+
+                            <h3>
+                                Ollama
+                            </h3>
+
+                            <p>
+                                Local LLM development, experimentation
+                                and AI application workflows.
+                            </p>
+
+                        </div>
+
+                        <button
+                            className="skills-arrow skills-arrow-light"
+                            type="button"
+                            disabled
+                            aria-label="Ollama projects unavailable"
+                        >
+                            <ArrowRight
+                                size={16}
+                                strokeWidth={1.7}
+                                aria-hidden="true"
+                            />
+                        </button>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            {isSkillsModalOpen && (
+                <div
+                    className="skills-modal-overlay"
+                    onMouseDown={handleSkillsClose}
+                >
+                    <div
+                        className="skills-modal"
+                        role="dialog"
+                        aria-modal="true"
+                        aria-labelledby="skills-modal-title"
+                        onMouseDown={(event) => event.stopPropagation()}
+                    >
+
+                        <button
+                            className="skills-modal-close"
+                            type="button"
+                            onClick={handleSkillsClose}
+                            aria-label="Close skills"
+                        >
+                            <span aria-hidden="true">×</span>
+                        </button>
+
+                        <div className="skills-modal-header">
+                            <h2 id="skills-modal-title">
+                                Technical Skills
+                            </h2>
+
+                            <p>
+                                Technologies, frameworks, platforms, and engineering
+                                practices across my development work.
+                            </p>
+                        </div>
+
+                        <div className="skills-modal-grid">
+                            {skillGroups.map((group) => (
+                                <div
+                                    className="skills-modal-group"
+                                    key={group.title}
+                                >
+                                    <h3>{group.title}</h3>
+
+                                    <div className="skills-modal-list">
+                                        {group.skills.map((skill) => (
+                                            <span key={skill}>
+                                                {skill}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+
+                    </div>
+                </div>
+            )}
+
+        </>
     );
 }
 

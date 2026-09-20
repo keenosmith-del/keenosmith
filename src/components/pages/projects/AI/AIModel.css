@@ -202,7 +202,7 @@
 /* Gallery */
 
 .ai-project-gallery {
-    width: min(1120px, 70.4vw);
+    width: min(1120px, 80.4vw);
 
     margin: 0 auto;
 
@@ -226,7 +226,7 @@
 }
 
 .ai-project-gallery-large {
-    height: min(560px, 46.4vw);
+    height: min(560px, 56.4vw);
 }
 
 .ai-project-gallery-item video {
@@ -311,7 +311,7 @@
 }
 
 .ai-project-section-content h2 {
-    max-width: 680px;
+    max-width: 750px;
 
     margin: 0;
 
@@ -344,7 +344,7 @@
 /* Feature sections */
 
 .ai-project-feature {
-    width: min(1120px, 70.4vw);
+    width: min(1120px, 80.4vw);
 
     margin: 0 auto 19px;
 
@@ -560,6 +560,17 @@
     font-size: 11px;
 
     line-height: 1.55;
+}
+
+/* Supporting documentation */
+
+.ai-project-supporting-document {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: 48px 0 16px;
 }
 
 /* Additional visual showcase */
