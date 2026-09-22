@@ -2900,6 +2900,7 @@
     background: rgba(60, 60, 62, 0.14);
 }
 
+
 /* =========================================================
    LINKEDIN ACTION
    ========================================================= */
@@ -2907,13 +2908,21 @@
 .about-linkedin-action {
     display: flex;
     justify-content: center;
+    align-items: center;
 
-    margin-top: 15px;
+    gap: 8px;
+
+    margin-top: 32px;
+
+    animation: about-linkedin-in linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 25%;
 }
 
 .about-linkedin-action .about-button {
     gap: 8px;
 }
+
 
 /* =========================================================
    LINKEDIN ACTION — FADE IN

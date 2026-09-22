@@ -333,6 +333,7 @@ const linkGroups = [
     },
 ];
 
+/*
 const cloudGroups = [
     {
         title: 'Microsoft',
@@ -353,13 +354,13 @@ const cloudGroups = [
         path: '/projects/gcp',
     },
 ];
+*/
 
 function Header() {
     const [isChatOpen, setIsChatOpen] = useState(false);
 
     const [isSkillsOpen, setIsSkillsOpen] = useState(false);
     const [isProjectsOpen, setIsProjectsOpen] = useState(false);
-    const [isCloudOpen, setIsCloudOpen] = useState(false);
     const [isLinksOpen, setIsLinksOpen] = useState(false);
 
     const navigationRef = useRef(null);
@@ -374,14 +375,12 @@ function Header() {
     const closeAllDropdowns = () => {
         setIsSkillsOpen(false);
         setIsProjectsOpen(false);
-        setIsCloudOpen(false);
         setIsLinksOpen(false);
     };
 
     const openDropdown = (dropdown) => {
         setIsSkillsOpen(dropdown === 'skills');
         setIsProjectsOpen(dropdown === 'projects');
-        setIsCloudOpen(dropdown === 'cloud');
         setIsLinksOpen(dropdown === 'links');
     };
 
@@ -537,7 +536,7 @@ function Header() {
     }, [isChatOpen]);
 
     useEffect(() => {
-        if (!isSkillsOpen && !isProjectsOpen && !isCloudOpen && !isLinksOpen) {
+        if (!isSkillsOpen && !isProjectsOpen && !isLinksOpen) {
             return undefined;
         }
 
@@ -555,7 +554,7 @@ function Header() {
         return () => {
             document.removeEventListener('mousedown', handleOutsideClick);
         };
-    }, [isSkillsOpen, isProjectsOpen, isCloudOpen, isLinksOpen]);
+    }, [isSkillsOpen, isProjectsOpen, isLinksOpen]);
 
     useEffect(() => {
         if (!isSkillsOpen && !isProjectsOpen && !isLinksOpen) {
@@ -597,11 +596,9 @@ function Header() {
                         ? 'is-skills-open'
                         : isProjectsOpen
                             ? 'is-projects-open'
-                            : isCloudOpen
-                                ? 'is-cloud-open'
-                                : isLinksOpen
-                                    ? 'is-links-open'
-                                    : ''
+                            : isLinksOpen
+                                ? 'is-links-open'
+                                : ''
                         }`}
                     aria-label="Main navigation"
                     ref={navigationRef}
@@ -681,29 +678,13 @@ function Header() {
                                 />
                             </button>
 
-                            {/* cloud */}
-                            <button
-                                className={`navigation-cloud-trigger ${isCloudOpen ? 'is-active' : ''
-                                    }`}
-                                type="button"
-                                onClick={() => {
-                                    if (isCloudOpen) {
-                                        closeAllDropdowns();
-                                    } else {
-                                        openDropdown('cloud');
-                                    }
-                                }}
-                                aria-expanded={isCloudOpen}
-                                aria-controls="navigation-cloud-panel"
+                            {/* certs */}
+                            <a
+                                className="navigation-cloud-trigger"
+                                href="/certifications"
                             >
-                                <span>Cloud</span>
-
-                                <ChevronDown
-                                    size={14}
-                                    strokeWidth={1.8}
-                                    aria-hidden="true"
-                                />
-                            </button>
+                                <span>Credentials</span>
+                            </a>
 
                             <button
                                 className={`navigation-links-trigger ${isLinksOpen ? 'is-active' : ''
@@ -799,13 +780,8 @@ function Header() {
                                 className="navigation-project-action navigation-project-action-secondary"
                                 onClick={closeAllDropdowns}
                             >
-                                <span>All Projects on GitHub</span>
+                                <span>Go to GitHub</span>
 
-                                <ArrowRight
-                                    size={15}
-                                    strokeWidth={1.8}
-                                    aria-hidden="true"
-                                />
                             </a>
 
                             <a
@@ -815,49 +791,7 @@ function Header() {
                             >
                                 <span>View Projects</span>
 
-                                <ArrowRight
-                                    size={15}
-                                    strokeWidth={1.8}
-                                    aria-hidden="true"
-                                />
                             </a>
-                        </div>
-                    </div>
-
-                    {/* drop down cloud */}
-                    <div
-                        className={`navigation-cloud-panel ${isCloudOpen ? 'is-open' : ''
-                            }`}
-                        id="navigation-cloud-panel"
-                        aria-hidden={!isCloudOpen}
-                    >
-                        <div className="navigation-cloud-grid">
-                            {cloudGroups.map((cloud) => (
-                                <div
-                                    className="navigation-cloud-card"
-                                    key={cloud.title}
-                                >
-                                    <div className="navigation-cloud-card-content">
-                                        <h3>{cloud.title}</h3>
-
-                                        <p>{cloud.description}</p>
-                                    </div>
-
-                                    <Link
-                                        to={cloud.path}
-                                        className="navigation-cloud-link"
-                                        onClick={closeAllDropdowns}
-                                    >
-                                        <span>View ecosystem</span>
-
-                                        <ArrowRight
-                                            size={14}
-                                            strokeWidth={1.8}
-                                            aria-hidden="true"
-                                        />
-                                    </Link>
-                                </div>
-                            ))}
                         </div>
                     </div>
 

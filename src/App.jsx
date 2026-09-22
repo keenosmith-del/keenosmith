@@ -18,6 +18,8 @@ import Microsoft from './components/pages/projects/Microsoft/Microsoft.jsx';
 import AWS from './components/pages/projects/AWS/AWS.jsx';
 import GCP from './components/pages/projects/GCP/GCP.jsx';
 
+import Certifications from './components/pages/certifications/Certifications.jsx';
+
 function Home() {
   return (
     <>
@@ -69,6 +71,12 @@ function App() {
           path="/projects/gcp"
           element={<GCP />}
         />
+
+        <Route
+          path="/certifications"
+          element={<Certifications />}
+        />
+
       </Routes>
     </BrowserRouter>
   );

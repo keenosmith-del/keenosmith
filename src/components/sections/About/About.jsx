@@ -670,9 +670,7 @@ function About() {
 
                         <a
                             className="about-button about-button-primary"
-                            target="_blank"
-                            rel="noreferrer"
-                            href="https://learn.microsoft.com/en-us/users/keenosmith/"
+                            href="/certifications"
                         >
                             Credentials
                         </a>
@@ -1099,6 +1097,13 @@ function About() {
                         rel="noreferrer"
                     >
                         LinkedIn
+                    </a>
+
+                    <a
+                        className="about-button about-button-secondary"
+                        href="/certifications"
+                    >
+                        Credentials
                     </a>
 
                 </div>

@@ -1,0 +1,840 @@
+/* =========================================================
+   CERTIFICATIONS PAGE
+   ========================================================= */
+
+.certifications-page {
+    position: relative;
+
+    min-height: 100vh;
+
+    overflow: visible;
+
+    background: var(--surface);
+    color: var(--charcoal);
+}
+
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.certifications-hero {
+    min-height: 94vh;
+
+    display: flex;
+    align-items: center;
+
+    padding: 150px 6vw 20px;
+}
+
+.certifications-hero-inner {
+    width: min(1180px, 100%);
+
+    margin: 0 auto;
+}
+
+.certifications-eyebrow {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 6px;
+
+    margin-bottom: 28px;
+}
+
+.certifications-eyebrow span {
+    padding: 6px 10px;
+
+    border-radius: 999px;
+
+    background: var(--surface-muted);
+    color: #77777c;
+
+    font-size: 9px;
+    font-weight: 500;
+}
+
+.certifications-hero h1 {
+    max-width: 980px;
+
+    margin: 0;
+
+    color: #555559;
+
+    font-size: clamp(70px, 11vw, 154px);
+    font-weight: 500;
+
+    line-height: 0.79;
+    letter-spacing: -0.075em;
+}
+
+.certifications-hero-bottom {
+    display: grid;
+    grid-template-columns: 0.9fr 1fr;
+
+    gap: 100px;
+
+    margin-top: 70px;
+}
+
+.certifications-hero-bottom>p {
+    max-width: 530px;
+
+    margin: 0;
+
+    color: #858589;
+
+    font-size: 14px;
+    line-height: 1.65;
+}
+
+.certifications-hero-stack {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+
+    gap: 7px;
+
+    max-width: 520px;
+}
+
+.certifications-hero-stack span {
+    padding: 7px 10px;
+
+    border-radius: 999px;
+
+    background: #e8e7e3;
+    color: #77777c;
+
+    font-size: 9px;
+}
+
+.certifications-wallet-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: fit-content;
+
+    margin-top: 28px;
+    padding: 11px 17px;
+
+    border-radius: 999px;
+
+    background: var(--charcoal);
+    color: #f3f2ef;
+
+    font-size: 10px;
+    font-weight: 500;
+
+    text-decoration: none;
+
+    transition:
+        transform 180ms ease,
+        background-color 180ms ease;
+}
+
+.certifications-wallet-button:hover {
+    transform: translateY(-2px);
+
+    background: #454549;
+}
+
+
+
+/* =========================================================
+   COLLECTION
+   ========================================================= */
+
+.certifications-collection {
+    width: min(1200px, calc(100% - 38px));
+
+    margin: 0 auto;
+
+    padding: 20px 0 180px;
+}
+
+.certifications-collection-intro {
+    width: min(700px, 100%);
+}
+
+.certifications-collection-intro>span,
+.certification-group-kicker {
+    color: #99999d;
+
+    font-size: 9px;
+    font-weight: 500;
+}
+
+.certifications-collection-intro h2 {
+    margin: 24px 0 0;
+
+    color: #5b5b5f;
+
+    font-size: clamp(43px, 5.5vw, 72px);
+    font-weight: 500;
+
+    line-height: 0.91;
+    letter-spacing: -0.055em;
+}
+
+.certifications-collection-intro p {
+    max-width: 590px;
+
+    margin: 32px 0 0;
+
+    color: #858589;
+
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+
+
+/* =========================================================
+   CERTIFICATION GROUP
+   ========================================================= */
+
+.certification-groups {
+    margin-top: 10px;
+}
+
+.certification-group {
+    margin-bottom: 125px;
+}
+
+.certification-group-heading {
+    width: min(850px, 100%);
+
+    margin-bottom: 42px;
+}
+
+.certification-group-heading h2 {
+    margin: 18px 0 0;
+
+    color: #5b5b5f;
+
+    font-size: clamp(30px, 4vw, 48px);
+    font-weight: 500;
+
+    line-height: 0.95;
+    letter-spacing: -0.05em;
+}
+
+.certification-group-heading p {
+    max-width: 1000px;
+
+    margin: 20px 0 0;
+
+    color: #858589;
+
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+
+
+/* =========================================================
+   CERTIFICATION ROW
+   ========================================================= */
+
+.certification-row {
+    display: flex;
+
+    gap: 18px;
+
+    width: 100%;
+
+    overflow-x: auto;
+
+    padding-bottom: 12px;
+
+    scroll-snap-type: x proximity;
+
+    scrollbar-width: none;
+}
+
+.certification-row::-webkit-scrollbar {
+    display: none;
+}
+
+.certification-item {
+    flex: 0 0 460px;
+
+    scroll-snap-align: start;
+}
+
+
+
+/* =========================================================
+   CERTIFICATION TILE
+   ========================================================= */
+
+.certification-tile {
+    position: relative;
+
+    height: 300px;
+
+    overflow: hidden;
+
+    border-radius: 24px;
+
+    background: var(--charcoal);
+
+    cursor: pointer;
+
+    isolation: isolate;
+}
+
+.certification-visual {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    transition:
+        opacity 300ms ease;
+}
+
+.certification-image {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    min-width: 100%;
+    min-height: 100%;
+
+    object-fit: fill;
+}
+
+.certification-visual-placeholder {
+    color: rgba(255, 255, 255, 0.28);
+
+    font-size: 9px;
+}
+
+.certification-tile-content {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 22px;
+}
+
+.certification-tile-main {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 80%;
+
+    text-align: center;
+}
+
+.certification-tile-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 15px;
+}
+
+.certification-tile-top>span {
+    color: rgba(255, 255, 255, 0.5);
+
+    font-size: 9px;
+    font-weight: 500;
+}
+
+.certification-icons {
+    display: flex;
+
+    gap: 6px;
+}
+
+.certification-icons img {
+    width: 24px;
+    height: 24px;
+
+    object-fit: contain;
+}
+
+.certification-tile-main h3 {
+    max-width: 400px;
+
+    margin: 0 auto;
+
+    color: #f3f2ef;
+
+    font-size: 34px;
+    font-weight: 600;
+
+    line-height: 0.95;
+    letter-spacing: -0.045em;
+}
+
+.certification-date {
+    display: block;
+
+    margin-top: 12px;
+
+    color: rgba(255, 255, 255, 0.45);
+
+    font-size: 9px;
+}
+
+.certification-tile.is-hovered .certification-visual {
+    opacity: 1;
+}
+
+.certification-tile.is-hovered .certification-tile-content {
+    opacity: 0;
+}
+
+
+
+/* =========================================================
+   CERTIFICATION DETAILS
+   ========================================================= */
+
+.certification-issuer {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.certification-issuer>span {
+    color: #66666b;
+}
+
+.certification-issuer small {
+    color: #99999d;
+    font-size: 8px;
+    font-weight: 400;
+}
+
+.certification-details {
+    padding: 22px 4px 0;
+}
+
+.certification-detail-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.certification-detail-heading h3 {
+    max-width: 340px;
+
+    margin: 0;
+
+    color: #5b5b5f;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+.certification-detail-heading span {
+    display: block;
+
+    margin-top: 6px;
+
+    color: #99999d;
+
+    font-size: 9px;
+}
+
+.certification-badges {
+    display: flex;
+
+    flex-shrink: 0;
+
+    gap: 6px;
+}
+
+.certification-badges img {
+    width: 30px;
+    height: 30px;
+
+    object-fit: contain;
+}
+
+.certification-detail-meta {
+    margin-top: 12px;
+}
+
+.certification-detail-meta span {
+    color: #99999d;
+
+    font-size: 9px;
+}
+
+.certification-details p {
+    display: -webkit-box;
+
+    max-width: 350px;
+
+    margin: 12px 0 0;
+
+    overflow: hidden;
+
+    color: #858589;
+
+    font-size: 10px;
+    line-height: 1.6;
+
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+
+
+
+/* =========================================================
+   CLOSING
+   ========================================================= */
+
+.certifications-closing {
+    padding: 170px 19px 135px;
+
+    text-align: center;
+}
+
+.certifications-closing-inner {
+    width: min(800px, 100%);
+
+    margin: 0 auto;
+}
+
+.certifications-closing-inner>span {
+    color: var(--charcoal);
+
+    font-size: 9px;
+    font-weight: 500;
+}
+
+.certifications-closing h2 {
+    margin: 27px 0 0;
+
+    color: var(--charcoal);
+
+    font-size: clamp(48px, 7vw, 88px);
+    font-weight: 500;
+
+    line-height: 0.87;
+    letter-spacing: -0.065em;
+}
+
+.certifications-closing p {
+    max-width: 570px;
+
+    margin: 35px auto 0;
+
+    color: var(--charcoal);
+
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .certifications-hero-bottom {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+    .certification-item {
+        flex-basis: 330px;
+    }
+}
+
+
+
+@media (max-width: 700px) {
+
+    .certifications-hero {
+        min-height: auto;
+
+        padding: 105px 19px 90px;
+    }
+
+    .certifications-hero h1 {
+        font-size: clamp(58px, 17vw, 90px);
+    }
+
+    .certifications-hero-bottom {
+        margin-top: 50px;
+    }
+
+    .certifications-collection {
+        width: calc(100% - 38px);
+
+        padding: 95px 0 110px;
+    }
+
+    .certifications-collection-intro h2 {
+        font-size: clamp(39px, 12vw, 61px);
+    }
+
+    .certification-groups {
+        margin-top: 75px;
+    }
+
+    .certification-group {
+        margin-bottom: 90px;
+    }
+
+    .certification-row {
+        gap: 12px;
+    }
+
+    .certification-item {
+        flex-basis: 290px;
+    }
+
+    .certification-tile {
+        height: 220px;
+
+        border-radius: 21px;
+    }
+
+    .certification-tile-content {
+        padding: 18px;
+    }
+
+    .certification-tile-main h3 {
+        font-size: 19px;
+    }
+
+    .certifications-closing {
+        padding: 110px 19px 90px;
+    }
+
+    .certifications-closing h2 {
+        font-size: clamp(48px, 13vw, 70px);
+    }
+}
+
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .certification-tile,
+    .certification-visual,
+    .certification-tile-content,
+    .certifications-wallet-button {
+        transition: none;
+    }
+}
+
+/* =========================================================
+   NAVIGATION CONTROLS
+   ========================================================= */
+
+.certifications-back {
+    position: fixed;
+    top: 22px;
+    left: 22px;
+    z-index: 30;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    min-height: 35px;
+    padding: 0 14px;
+
+    border-radius: 999px;
+
+    background: rgba(250, 249, 246, 0.78);
+    color: #66666b;
+
+    font-size: 10px;
+    font-weight: 500;
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    box-shadow:
+        0 8px 24px rgba(45, 45, 45, 0.06);
+
+    transition:
+        transform 180ms ease,
+        background-color 180ms ease,
+        color 180ms ease;
+}
+
+.certifications-back:hover {
+    transform: translateY(-2px);
+
+    background: #ffffff;
+    color: #444448;
+}
+
+
+.certifications-closing-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    margin-top: 38px;
+}
+
+
+.certifications-closing-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 38px;
+
+    padding: 0 17px;
+
+    border-radius: 999px;
+
+    background: var(--charcoal);
+    color: #f3f2ef;
+
+    font-size: 10px;
+    font-weight: 500;
+
+    text-decoration: none;
+
+    transition:
+        transform 180ms ease;
+}
+
+.certifications-closing-button:hover {
+    transform: translateY(-2px);
+}
+
+
+.certifications-closing-top {
+    width: 38px;
+    height: 38px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 0;
+    border-radius: 50%;
+
+    background: rgba(45, 45, 45, 0.1);
+    color: rgba(45, 45, 45, 0.65);
+
+    cursor: pointer;
+
+    transition:
+        transform 180ms ease,
+        background-color 180ms ease;
+}
+
+.certifications-closing-top:hover {
+    transform: translateY(-2px);
+
+    background: rgba(45, 45, 45, 0.16);
+}
+
+
+.certifications-top {
+    position: fixed;
+
+    right: 22px;
+    bottom: 22px;
+
+    z-index: 30;
+
+    width: 37px;
+    height: 37px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 0;
+    border-radius: 50%;
+
+    background: rgba(250, 249, 246, 0.8);
+    color: #66666b;
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    box-shadow:
+        0 8px 24px rgba(45, 45, 45, 0.08);
+
+    cursor: pointer;
+
+    transition:
+        transform 180ms ease,
+        background-color 180ms ease;
+}
+
+.certifications-top:hover {
+    transform: translateY(-2px);
+
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   CERTIFICATION OVERLAY
+   ========================================================= */
+
+.certification-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    background:
+        linear-gradient(to top,
+            rgba(25, 25, 27, 0.82) 0%,
+            rgba(25, 25, 27, 0.38) 42%,
+            rgba(25, 25, 27, 0.05) 72%);
+
+    opacity: 0.85;
+
+    transition:
+        opacity 280ms ease;
+}

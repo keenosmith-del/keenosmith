@@ -1,15 +1,26 @@
 import { useState } from 'react';
-import { ArrowRight } from 'lucide-react';
+import {
+    ArrowRight,
+    ChevronDown,
+    ChevronUp,
+} from 'lucide-react';
 
 import './Projects.css';
 
+// row 1 imports
 import aiAssistantCover from '../../../assets/projects/ai/1.png';
 import productivityCover from '../../../assets/projects/productivity/1.png'
-import musicCover from '../../../assets/projects/music/1.png'
-// import enterpriseCover from '../../../assets/projects/enterprise/1.png'
+import musicCover from '../../../assets/projects/music/1.png';
 
-import awsProjects from '../../../assets/images/about/awsProjects.jpg';
-import microsoftProjects from '../../../assets/images/about/microsoftProjects.jpg';
+// row 2 imports 
+import microsoftAzure from '../../../assets/images/custom-projects/microsoft-azure.png';
+import ollamaImage from '../../../assets/images/custom-projects/ollama.png';
+import claudeImage from '../../../assets/images/custom-projects/claude.png';
+
+// row 3 imports
+import huggingFace from '../../../assets/images/custom-projects/hugging-face.png';
+import googleCloud from '../../../assets/images/custom-projects/google-cloud.png';
+import awsImage from '../../../assets/images/custom-projects/aws.png';
 
 const projects = [
     {
@@ -43,12 +54,113 @@ const projects = [
             'Full-stack React, Node.js, Express and MongoDB application implementing REST APIs, external service integration, data persistence and browser-based audio playback.',
         image: musicCover,
     },
+    {
+        id: 'azure-ai',
+        title: 'Microsoft Azure AI Project',
+        skill: 'Azure AI Engineering',
+        description:
+            'Placeholder description for a Microsoft Azure AI project integrating cloud-based AI services, application architecture and intelligent workloads.',
+        image: microsoftAzure,
+        background: 'var(--charcoal)',
+        imageMode: 'centered',
+    },
+
+    {
+        id: 'ollama-agent',
+        title: 'Ollama AI Agent',
+        skill: 'Local AI Engineering',
+        description:
+            'Placeholder description for a local AI agent application using Ollama, model inference and application-level agent orchestration.',
+        image: ollamaImage,
+        background: 'var(--surface)',
+        imageMode: 'centered',
+    },
+
+    {
+        id: 'claude-engineering',
+        title: 'Claude AI Engineering',
+        skill: 'LLM Application Engineering',
+        description:
+            'Placeholder description for an AI engineering project using Claude, structured context, application logic and LLM-driven workflows.',
+        image: claudeImage,
+        background: '#eb7e5d',
+        imageMode: 'centered',
+    },
+
+    {
+        id: 'hugging-face',
+        title: 'Hugging Face AI Project',
+        skill: 'AI Model Engineering',
+        description:
+            'Placeholder description for an AI project integrating Hugging Face models, inference workflows and application-level AI engineering.',
+        image: huggingFace,
+        background: '#f4c13e',
+        imageMode: 'centered',
+    },
+
+    {
+        id: 'google-cloud',
+        title: 'Google Cloud AI Project',
+        skill: 'Google Cloud Engineering',
+        description:
+            'Placeholder description for a Google Cloud project integrating cloud infrastructure, AI services and application-level engineering.',
+        image: googleCloud,
+        background: 'var(--surface)',
+        imageMode: 'centered',
+    },
+
+    {
+        id: 'aws-project',
+        title: 'AWS AI Project',
+        skill: 'AWS Cloud Engineering',
+        description:
+            'Placeholder description for an AWS project integrating cloud services, AI workloads and scalable application infrastructure.',
+        image: awsImage,
+        background: 'var(--surface)',
+        imageMode: 'centered',
+    },
+    /*
+    {
+        id: 'n8n',
+        title: 'n8n Workflow Automation',
+        skill: 'Workflow Orchestration',
+        description:
+            'Placeholder description for an event-driven automation project integrating workflows, APIs, webhooks and service orchestration.',
+        image: null,
+        background: 'var(--charcoal)',
+        imageMode: 'centered',
+    },
+
+    {
+        id: 'liblab-postman',
+        title: 'Liblab API Engineering',
+        skill: 'API Development',
+        description:
+            'Placeholder description for an API engineering project combining SDK generation, API documentation, testing and developer tooling.',
+        image: null,
+        background: 'var(--surface)',
+        imageMode: 'centered',
+    },
+
+    {
+        id: 'typesafe-ai',
+        title: 'TypeSafe AI',
+        skill: 'AI Engineering',
+        description:
+            'Placeholder description for an AI engineering project exploring model evaluation, structured outputs and reliable AI-assisted development workflows.',
+        image: null,
+        background: 'var(--surface)',
+        imageMode: 'centered',
+    },
+    */
 ];
 
 function Projects() {
     const [activeProject, setActiveProject] = useState(
         'productivity-platform'
     );
+
+    const [showAllProjects, setShowAllProjects] = useState(false);
 
     return (
         <section className="projects" id="projects">
@@ -74,185 +186,120 @@ function Projects() {
 
             <div className="projects-featured">
 
-                {/* =====================================================
-                   TOP ROW — FEATURED PROJECTS
-                   ===================================================== */}
+                {Array.from(
+                    {
+                        length: showAllProjects
+                            ? Math.ceil(projects.length / 3)
+                            : Math.min(2, Math.ceil(projects.length / 3)),
+                    },
+                    (_, rowIndex) => (
+                        <div className="project-row" key={rowIndex}>
 
-                {projects.map((project) => {
-                    const isActive = activeProject === project.id;
+                            {projects
+                                .slice(rowIndex * 3, rowIndex * 3 + 3)
+                                .map((project) => {
+                                    const isActive = activeProject === project.id;
 
-                    return (
-                        <article
-                            key={project.id}
-                            className={`project-tile ${isActive ? 'is-active' : ''
-                                }`}
-                            onMouseEnter={() =>
-                                setActiveProject(project.id)
-                            }
-                        >
-                            <div className="project-image">
+                                    return (
+                                        <article
+                                            key={project.id}
+                                            className={`project-tile ${isActive ? 'is-active' : ''
+                                                } ${project.imageMode === 'centered'
+                                                    ? 'project-tile-centered'
+                                                    : ''
+                                                }`}
+                                            style={{
+                                                background:
+                                                    project.background || 'transparent',
+                                            }}
+                                            onMouseEnter={() =>
+                                                setActiveProject(project.id)
+                                            }
+                                        >
+                                            <div className="project-image">
 
-                                {project.image ? (
-                                    <img
-                                        src={project.image}
-                                        alt={`${project.title} project`}
-                                    />
-                                ) : (
-                                    <div className="project-image-placeholder">
-                                        <span>Project image</span>
-                                    </div>
-                                )}
+                                                {project.image ? (
+                                                    <img
+                                                        src={project.image}
+                                                        alt={`${project.title} project`}
+                                                        className={
+                                                            project.imageMode === 'centered'
+                                                                ? 'project-image-centered'
+                                                                : ''
+                                                        }
+                                                    />
+                                                ) : null}
 
-                            </div>
+                                            </div>
 
-                            <div className="project-overlay" />
+                                            <div className="project-overlay" />
 
-                            <div className="project-badge">
-                                {project.skill}
-                            </div>
+                                            <div className="project-badge">
+                                                {project.skill}
+                                            </div>
 
-                            <div className="project-content">
+                                            <div className="project-content">
 
-                                <h3>
-                                    {project.title}
-                                </h3>
+                                                <h3>
+                                                    {project.title}
+                                                </h3>
 
-                                <p>
-                                    {project.description}
-                                </p>
+                                                <p>
+                                                    {project.description}
+                                                </p>
 
-                            </div>
+                                            </div>
 
-                            <a
-                                className="project-arrow"
-                                href={`/projects/${project.id}`}
-                                aria-label={`View ${project.title}`}
-                            >
-                                <ArrowRight
-                                    size={18}
-                                    strokeWidth={1.7}
-                                    aria-hidden="true"
-                                />
-                            </a>
+                                            <a
+                                                className="project-arrow"
+                                                href={`/projects/${project.id}`}
+                                                aria-label={`View ${project.title}`}
+                                            >
+                                                <ArrowRight
+                                                    size={18}
+                                                    strokeWidth={1.7}
+                                                    aria-hidden="true"
+                                                />
+                                            </a>
 
-                        </article>
-                    );
-                })}
+                                        </article>
+                                    );
+                                })}
 
-            </div>
-
-
-
-            {/* =========================================================
-               SECOND PROJECT ROW
-               ========================================================= */}
-
-            {/*
-            <div className="projects-secondary">
-
-
-                <article className="project-tile project-secondary-tile project-secondary-image">
-
-                    <div className="project-secondary-visual">
-
-                        <img
-                            src={microsoftProjects}
-                            alt="Microsoft AI"
-                        />
-
-                    </div>
-
-                    <a
-                        className="project-arrow"
-                        href="/projects/microsoft"
-                        aria-label="View Microsoft AI project"
-                    >
-                        <ArrowRight
-                            size={18}
-                            strokeWidth={1.7}
-                            aria-hidden="true"
-                        />
-                    </a>
-
-                </article>
-
-                <article className="project-tile project-secondary-tile project-secondary-image">
-
-                    <div className="project-secondary-visual">
-
-                        <img
-                            src={awsProjects}
-                            alt="AWS AI"
-                        />
-
-                    </div>
-
-                    <a
-                        className="project-arrow"
-                        href="/projects/aws"
-                        aria-label="View AWS AI project"
-                    >
-                        <ArrowRight
-                            size={18}
-                            strokeWidth={1.7}
-                            aria-hidden="true"
-                        />
-                    </a>
-
-                </article>
-
-                <article className="project-tile project-secondary-tile project-tile-enterprise is-active">
-
-                    <div className="project-enterprise-badges">
-
-                        <span className="project-badge">
-                            PostgreSQL
-                        </span>
-
-                        <span className="project-badge">
-                            Prisma ORM
-                        </span>
-
-                        <span className="project-badge">
-                            Runtime DDL
-                        </span>
-
-                    </div>
-
-                    <div className="project-content">
-
-                        <h3>
-                            Enterprise SQL Database
-                        </h3>
-
-                        <p>
-                            A full-stack enterprise workspace built around
-                            structured application architecture, relational
-                            data modelling and scalable backend services.
-                            The project combines React, Node.js, PostgreSQL
-                            and Prisma to explore robust data-driven
-                            application design.
-                        </p>
-
-                    </div>
-
-                    <a
-                        className="project-arrow"
-                        href="/projects/enterprise-workspace"
-                        aria-label="View Enterprise Workspace"
-                    >
-                        <ArrowRight
-                            size={18}
-                            strokeWidth={1.7}
-                            aria-hidden="true"
-                        />
-                    </a>
-
-                </article>
+                        </div>
+                    )
+                )}
 
             </div>
-            */}
 
+            {projects.length > 6 && (
+                <button
+                    type="button"
+                    className="projects-expand"
+                    onClick={() =>
+                        setShowAllProjects((current) => !current)
+                    }
+                    aria-expanded={showAllProjects}
+                >
+                    <span>
+                        {showAllProjects ? 'Show Less' : 'Show More'}
+                    </span>
+
+                    {showAllProjects ? (
+                        <ChevronUp
+                            size={15}
+                            strokeWidth={1.7}
+                            aria-hidden="true"
+                        />
+                    ) : (
+                        <ChevronDown
+                            size={15}
+                            strokeWidth={1.7}
+                            aria-hidden="true"
+                        />
+                    )}
+                </button>
+            )}
 
         </section>
     );

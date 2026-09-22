@@ -26,6 +26,12 @@
     justify-content: space-between;
 }
 
+.cv-page-downloads {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
 .cv-page-control {
     display: inline-flex;
     align-items: center;

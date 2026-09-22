@@ -32,14 +32,27 @@ function CV() {
                     <span>Back to Portfolio</span>
                 </button>
 
-                <a
-                    href="/Keeno-Smith-CV.pdf"
-                    download="Keeno-Smith-CV.pdf"
-                    className="cv-page-control cv-download"
-                >
-                    <span>Download CV</span>
-                    <Download size={15} strokeWidth={1.8} />
-                </a>
+                <div className="cv-page-downloads">
+
+                    <a
+                        href="/Keeno-Smith-ATS-CV.pdf"
+                        download="Keeno-Smith-ATS-CV.pdf"
+                        className="cv-page-control cv-download"
+                    >
+                        <span>ATS Version</span>
+                        <Download size={15} strokeWidth={1.8} />
+                    </a>
+
+                    <a
+                        href="/Keeno-Smith-CV.pdf"
+                        download="Keeno-Smith-CV.pdf"
+                        className="cv-page-control cv-download"
+                    >
+                        <span>Download CV</span>
+                        <Download size={15} strokeWidth={1.8} />
+                    </a>
+
+                </div>
 
             </div>
 
@@ -349,12 +362,12 @@ function CV() {
                                 </div>
 
                                 <p>
-                                    Applied n8n workflow engineering across API integrations, 
-                                    HTTP requests, OAuth2 and API authentication, secure webhooks, 
-                                    pagination, data transformation, conditional and parallel execution, 
-                                    sub-workflows, custom JavaScript/Python, workflow state, and error handling. 
-                                    Extended into AI-powered workflows using AI Agents, tools and memory, with 
-                                    practical implementation of testing, debugging, modular workflow design, versioning, monitoring, 
+                                    Applied n8n workflow engineering across API integrations,
+                                    HTTP requests, OAuth2 and API authentication, secure webhooks,
+                                    pagination, data transformation, conditional and parallel execution,
+                                    sub-workflows, custom JavaScript/Python, workflow state, and error handling.
+                                    Extended into AI-powered workflows using AI Agents, tools and memory, with
+                                    practical implementation of testing, debugging, modular workflow design, versioning, monitoring,
                                     recovery, and production-readiness patterns.
                                 </p>
                             </div>
