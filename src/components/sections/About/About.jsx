@@ -24,6 +24,8 @@ import googleCloudLogo from '../../../assets/images/about/google.png';
 import huggingFace from '../../../assets/images/about/hugging-face.png';
 import kubernetesImage from '../../../assets/images/about/kubernetes.png';
 import dockerImage from '../../../assets/images/about/docker.png';
+import bananaImage from '../../../assets/images/about/nano-banana.png';
+
 import googleBadge from '../../../assets/images/about/googleLogo.png';
 import adkBadge from '../../../assets/images/about/adk.png';
 import gdpBadge from '../../../assets/images/about/gdp.png';
@@ -501,21 +503,20 @@ function About() {
 
                     <article className="gcp-tile gcp-tile-kubernetes">
 
-                        {/*
-                        <div className="gcp-kubernetes-visual">
-                            <img
-                                src={kubernetesImage}
-                                alt=""
-                            />
-                        </div>
-                        */}
-
                         <div className="gcp-kubernetes-overlay" />
 
-                        <span className="gcp-kubernetes-label">
-                            Kubernetes orchestration, GKE deployments
-                            and cloud-native workloads on Google Cloud.
-                        </span>
+                        <div className="gcp-tile-content">
+
+                            <h3>
+                                Kubernetes
+                            </h3>
+
+                            <p>
+                                Kubernetes orchestration, GKE deployments
+                                and cloud-native workloads on Google Cloud.
+                            </p>
+
+                        </div>
 
                     </article>
 
@@ -611,16 +612,13 @@ function About() {
 
                     <article className="gcp-tile gcp-tile-skills">
 
-                        <div className="gcp-docker-visual">
-                            <img
-                                src={dockerImage}
-                                alt=""
-                            />
-                        </div>
-
                         <div className="gcp-docker-overlay" />
 
                         <div className="gcp-tile-content">
+
+                            <h3>
+                                Docker
+                            </h3>
 
                             <p>
                                 Containerising cloud-native applications and development

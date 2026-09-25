@@ -20,7 +20,12 @@ import claudeImage from '../../../assets/images/custom-projects/claude.png';
 // row 3 imports
 import huggingFace from '../../../assets/images/custom-projects/hugging-face.png';
 import googleCloud from '../../../assets/images/custom-projects/google-cloud.png';
-import awsImage from '../../../assets/images/custom-projects/aws.png';
+import enterpriseCover from '../../../assets/images/custom-projects/1.png';
+
+// row 4 imports
+import liblabImage from '../../../assets/images/custom-projects/liblab-api.png';
+import octoImage from '../../../assets/images/custom-projects/octokit.png';
+import openAIImage from '../../../assets/images/custom-projects/openAI.png';
 
 const projects = [
     {
@@ -99,23 +104,21 @@ const projects = [
     },
 
     {
+        id: 'aws-project',
+        title: 'AWS AI Project',
+        skill: 'AWS Cloud Engineering',
+        description:
+            'Placeholder description for an AWS project integrating cloud services, AI workloads and scalable application infrastructure.',
+        image: enterpriseCover,
+    },
+
+    {
         id: 'google-cloud',
         title: 'Google Cloud AI Project',
         skill: 'Google Cloud Engineering',
         description:
             'Placeholder description for a Google Cloud project integrating cloud infrastructure, AI services and application-level engineering.',
         image: googleCloud,
-        background: 'var(--surface)',
-        imageMode: 'centered',
-    },
-
-    {
-        id: 'aws-project',
-        title: 'AWS AI Project',
-        skill: 'AWS Cloud Engineering',
-        description:
-            'Placeholder description for an AWS project integrating cloud services, AI workloads and scalable application infrastructure.',
-        image: awsImage,
         background: 'var(--surface)',
         imageMode: 'centered',
     },
@@ -126,7 +129,7 @@ const projects = [
         skill: 'Workflow Orchestration',
         description:
             'Placeholder description for an event-driven automation project integrating workflows, APIs, webhooks and service orchestration.',
-        image: null,
+        image: liblabImage,
         background: 'var(--charcoal)',
         imageMode: 'centered',
     },
@@ -137,8 +140,8 @@ const projects = [
         skill: 'API Development',
         description:
             'Placeholder description for an API engineering project combining SDK generation, API documentation, testing and developer tooling.',
-        image: null,
-        background: 'var(--surface)',
+        image: octoImage,
+        background: 'var(--charcoal)',
         imageMode: 'centered',
     },
 
@@ -148,11 +151,12 @@ const projects = [
         skill: 'AI Engineering',
         description:
             'Placeholder description for an AI engineering project exploring model evaluation, structured outputs and reliable AI-assisted development workflows.',
-        image: null,
-        background: 'var(--surface)',
+        image: openAIImage,
+        background: '#ed899d',
         imageMode: 'centered',
     },
     */
+    
 ];
 
 function Projects() {

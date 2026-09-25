@@ -1505,7 +1505,8 @@
 
     padding: 0;
 
-    background: #4a66b0;
+    /* background: #4a66b0; */
+    background: var(--charcoal);
 }
 
 
@@ -3776,7 +3777,7 @@
    ========================================================= */
 
 .gcp-tile-skills {
-    background: var(--charcoal);
+    background: var(--surface);
 }
 
 
@@ -3842,12 +3843,12 @@
 .gcp-tile-skills .gcp-tile-content h3 {
     margin: 0;
 
-    color: #5b5b60;
+    color: var(--charcoal);
 
-    font-size: clamp(20px, 1.8vw, 28px);
+    font-size: 22px;
     font-weight: 500;
 
-    line-height: 1;
+    line-height: 1.45;
     letter-spacing: -0.035em;
 }
 
@@ -3857,13 +3858,13 @@
 
     margin: 10px 0 0;
 
-    color: #f0f0f1;
+    color: var(--charcoal);
 
     font-size: 9px;
-    font-weight: 500;
+    font-weight: 400;
 
-    line-height: 1.1;
-    letter-spacing: -0.005em;
+    line-height: 1.45;
+    letter-spacing: -0.0045em;
 }
 
 

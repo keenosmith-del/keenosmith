@@ -520,7 +520,7 @@
    ========================================================= */
 
 .certifications-closing {
-    padding: 170px 19px 135px;
+    padding: 20px 19px 135px;
 
     text-align: center;
 }
@@ -556,6 +556,7 @@
     margin: 35px auto 0;
 
     color: var(--charcoal);
+    opacity: 0.6;
 
     font-size: 13px;
     line-height: 1.7;
