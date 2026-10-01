@@ -678,13 +678,27 @@ function Header() {
                                 />
                             </button>
 
-                            {/* certs */}
-                            <a
-                                className="navigation-cloud-trigger"
-                                href="/certifications"
+                            {/* SEARCH — COMING SOON */}
+                            <div
+                                className="navigation-cloud-trigger navigation-coming-soon"
+                                aria-label="Search — Coming soon"
+                            >
+                                <span>Explore</span>
+                                <span className="navigation-coming-soon-tooltip" aria-hidden="true">
+                                    In progress
+                                </span>
+                            </div>
+
+                            {/* CREDENTIALS — COMING SOON */}
+                            <div
+                                className="navigation-cloud-trigger navigation-coming-soon"
+                                aria-label="Credentials — Coming soon"
                             >
                                 <span>Credentials</span>
-                            </a>
+                                <span className="navigation-coming-soon-tooltip" aria-hidden="true">
+                                    In Progress
+                                </span>
+                            </div>
 
                             <button
                                 className={`navigation-links-trigger ${isLinksOpen ? 'is-active' : ''

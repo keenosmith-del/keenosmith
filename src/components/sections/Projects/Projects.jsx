@@ -13,14 +13,15 @@ import productivityCover from '../../../assets/projects/productivity/1.png'
 import musicCover from '../../../assets/projects/music/1.png';
 
 // row 2 imports 
-import microsoftAzure from '../../../assets/images/custom-projects/microsoft-azure.png';
+// import microsoftAzure from '../../../assets/images/custom-projects/microsoft-azure.png';
 import ollamaImage from '../../../assets/images/custom-projects/ollama.png';
 import claudeImage from '../../../assets/images/custom-projects/claude.png';
+import microsoftCover from '../../../assets/projects/microsoft/microsoft.png';
 
 // row 3 imports
 import huggingFace from '../../../assets/images/custom-projects/hugging-face.png';
-import googleCloud from '../../../assets/images/custom-projects/google-cloud.png';
-import enterpriseCover from '../../../assets/images/custom-projects/1.png';
+import duckDBImage from '../../../assets/images/custom-projects/duckDB.png';
+//import enterpriseCover from '../../../assets/images/custom-projects/1.png';
 
 // row 4 imports
 import liblabImage from '../../../assets/images/custom-projects/liblab-api.png';
@@ -65,9 +66,7 @@ const projects = [
         skill: 'Azure AI Engineering',
         description:
             'Placeholder description for a Microsoft Azure AI project integrating cloud-based AI services, application architecture and intelligent workloads.',
-        image: microsoftAzure,
-        background: 'var(--charcoal)',
-        imageMode: 'centered',
+        image: microsoftCover,
     },
 
     {
@@ -109,7 +108,7 @@ const projects = [
         skill: 'AWS Cloud Engineering',
         description:
             'Placeholder description for an AWS project integrating cloud services, AI workloads and scalable application infrastructure.',
-        image: enterpriseCover,
+        image: null,
     },
 
     {
@@ -118,44 +117,43 @@ const projects = [
         skill: 'Google Cloud Engineering',
         description:
             'Placeholder description for a Google Cloud project integrating cloud infrastructure, AI services and application-level engineering.',
-        image: googleCloud,
+        image: null,
         background: 'var(--surface)',
         imageMode: 'centered',
     },
-    /*
+    
     {
         id: 'n8n',
-        title: 'n8n Workflow Automation',
+        title: 'Jop-Specific Project',
         skill: 'Workflow Orchestration',
         description:
             'Placeholder description for an event-driven automation project integrating workflows, APIs, webhooks and service orchestration.',
-        image: liblabImage,
+        image: null,
         background: 'var(--charcoal)',
         imageMode: 'centered',
     },
 
     {
         id: 'liblab-postman',
-        title: 'Liblab API Engineering',
+        title: 'Job-Specific Project',
         skill: 'API Development',
         description:
             'Placeholder description for an API engineering project combining SDK generation, API documentation, testing and developer tooling.',
-        image: octoImage,
-        background: 'var(--charcoal)',
+        image: duckDBImage,
+        background: 'var(--surface)',
         imageMode: 'centered',
     },
 
     {
         id: 'typesafe-ai',
-        title: 'TypeSafe AI',
+        title: 'Job-Specific Project',
         skill: 'AI Engineering',
         description:
             'Placeholder description for an AI engineering project exploring model evaluation, structured outputs and reliable AI-assisted development workflows.',
-        image: openAIImage,
+        image: null,
         background: '#ed899d',
         imageMode: 'centered',
     },
-    */
     
 ];
 

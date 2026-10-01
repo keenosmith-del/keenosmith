@@ -9,6 +9,7 @@ import microsoftLogo from '../../../assets/svgs/about/microsoft-icon.svg';
 
 import awsSkillBuilderImage from '../../../assets/images/about/aws_skill_builder.png';
 import pytorchImage from '../../../assets/images/about/pytorch.png';
+import openTofu from '../../../assets/images/about/openTofu.png';
 
 import foundersLogo from '../../../assets/images/about/founderz.png';
 import microsoftBadge1 from '../../../assets/images/about/microsoft-badge.png';
@@ -16,6 +17,7 @@ import foundryBadge from '../../../assets/images/about/foundry.png';
 import ollamaCover from '../../../assets/images/about/ollama-cover.png';
 import liblabsPostman from '../../../assets/images/about/liblabs.png';
 import azureLogo from '../../../assets/images/about/azure.png';
+import openAIImage from '../../../assets/images/about/openai.svg';
 
 import copilotCover from '../../../assets/images/about/copilot-cover.jpg';
 
@@ -25,6 +27,8 @@ import huggingFace from '../../../assets/images/about/hugging-face.png';
 import kubernetesImage from '../../../assets/images/about/kubernetes.png';
 import dockerImage from '../../../assets/images/about/docker.png';
 import bananaImage from '../../../assets/images/about/nano-banana.png';
+import duckDB from '../../../assets/images/about/duckDB.png';
+import duckDBImage from '../../../assets/images/about/duckDBMascot.png';
 
 import googleBadge from '../../../assets/images/about/googleLogo.png';
 import adkBadge from '../../../assets/images/about/adk.png';
@@ -32,6 +36,8 @@ import gdpBadge from '../../../assets/images/about/gdp.png';
 
 import githubLogo from '../../../assets/svgs/about/github.svg';
 import githubImage from '../../../assets/images/about/github.png';
+import qwenTop from '../../../assets/images/about/qwenTop.png';
+import qwenBottom from '../../../assets/images/about/qwenBottom.png';
 
 function About() {
     const aboutRef = useRef(null);
@@ -204,7 +210,7 @@ function About() {
                 <article className="about-tile about-tile-small about-tile-three">
 
                     <img
-                        src={pytorchImage}
+                        src={openTofu}
                         alt="PyTorch"
                         className="about-tile-three-image"
                     />
@@ -212,10 +218,6 @@ function About() {
                     <div className="about-tile-three-overlay" />
 
                     <div className="about-tile-three-content">
-
-                        <strong>
-                            PyTorch
-                        </strong>
 
                     </div>
 
@@ -361,11 +363,6 @@ function About() {
 
                 <div className="gcp-intro">
 
-                    <img
-                        src={googleCloudLogo} alt="Google Cloud"
-                        className="gcp-intro-logo"
-                    />
-
                     <h2>
                         Google Cloud,
                         <br />
@@ -503,18 +500,16 @@ function About() {
 
                     <article className="gcp-tile gcp-tile-kubernetes">
 
+                        <div className="gcp-kubernetes-visual">
+                            <img
+                                src={duckDB}
+                                alt="DuckDB"
+                            />
+                        </div>
+
                         <div className="gcp-kubernetes-overlay" />
 
                         <div className="gcp-tile-content">
-
-                            <h3>
-                                Kubernetes
-                            </h3>
-
-                            <p>
-                                Kubernetes orchestration, GKE deployments
-                                and cloud-native workloads on Google Cloud.
-                            </p>
 
                         </div>
 
@@ -612,18 +607,20 @@ function About() {
 
                     <article className="gcp-tile gcp-tile-skills">
 
+                        <div className="gcp-docker-visual">
+                            <img
+                                src={duckDBImage}
+                                alt="DuckDB"
+                            />
+                        </div>
+
                         <div className="gcp-docker-overlay" />
 
                         <div className="gcp-tile-content">
 
                             <h3>
-                                Docker
+                                DuckDB
                             </h3>
-
-                            <p>
-                                Containerising cloud-native applications and development
-                                environments for consistent deployment across the stack.
-                            </p>
 
                         </div>
 
@@ -643,13 +640,6 @@ function About() {
                 <div className="about-microsoft-intro">
 
 
-                    <img
-                        src={azureLogo}
-                        alt="Microsoft Azure"
-                        className="about-microsoft-logo"
-                    />
-
-
                     <span className="about-microsoft-eyebrow">
                         Microsoft Ecosystem
                     </span>
@@ -666,15 +656,17 @@ function About() {
 
                     <div className="about-actions">
 
+                        {/*
                         <a
                             className="about-button about-button-primary"
                             href="/certifications"
                         >
                             Credentials
                         </a>
+                        */}
 
                         <a
-                            className="about-button about-button-secondary"
+                            className="about-button about-button-primary"
                             target="_blank"
                             rel="noreferrer"
                             href="https://learn.microsoft.com/en-us/users/keenosmith/"
@@ -739,7 +731,7 @@ function About() {
                     <article className="microsoft-tile microsoft-tile-postman">
 
                         <img
-                            src={liblabsPostman}
+                            src={openAIImage}
                             alt="Postman LibLab"
                             className="microsoft-postman-image"
                         />
@@ -749,7 +741,7 @@ function About() {
                         <div className="microsoft-postman-content">
 
                             <h3>
-                                Postman liblabs
+                                OpenAI
                             </h3>
 
                         </div>
@@ -952,7 +944,7 @@ function About() {
                 <div className="about-grid about-grid-three">
 
                     {/* =================================================
-            TILE 1 — FULL-STACK ENGINEERING THIS TILE GETS SLIGHTLY NARROWER IN WIDTH!!!!!!!! FUCK MAN 
+            TILE 1 — FULL-STACK ENGINEERING
             ================================================= */}
 
                     <article className="about-tile about-three-engineering">
@@ -1005,23 +997,30 @@ function About() {
             TILE 2 — GENERATIVE AI
             ================================================= */}
 
+                    {/* this tile needs image qwenTop resting flush on bottom right of container */}
+
                     <article className="about-tile about-three-ai">
 
                         <div className="about-three-label">
-                            <span>Stellenbosch University</span>
+                            <span>Qwen AI</span>
                         </div>
 
                         <div className="about-three-content">
+                            {/* content moved UP so image does not overlap*/}
                             <h3>
-                                Generative AI
+                                Qwen 3.8
                             </h3>
 
                             <p>
-                                Exploring large language models, natural language processing,
-                                retrieval-augmented generation and prompt engineering for
-                                practical generative AI application development.
+                                Some placeholder content until I figure out exactly what needs to go into this tile to tell a narrative story with portfolio
                             </p>
                         </div>
+
+                        <img
+                            src={qwenTop}
+                            alt=""
+                            className="about-three-qwen-top"
+                        />
 
                     </article>
 
@@ -1062,6 +1061,8 @@ function About() {
             TILE 4 — WETHINKCODE
             ================================================= */}
 
+                    {/* this tile needs image qwenBottom resting flush on top right of container */}
+
                     <article className="about-tile about-three-wethinkcode">
 
                         <div className="about-three-label">
@@ -1082,6 +1083,12 @@ function About() {
                             </p>
                         </div>
 
+                        <img
+                            src={qwenBottom}
+                            alt=""
+                            className="about-three-qwen-bottom"
+                        />
+
                     </article>
 
                 </div>
@@ -1097,12 +1104,14 @@ function About() {
                         LinkedIn
                     </a>
 
+                    {/*
                     <a
                         className="about-button about-button-secondary"
                         href="/certifications"
                     >
                         Credentials
                     </a>
+                    */}
 
                 </div>
 

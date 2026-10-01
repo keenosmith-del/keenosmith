@@ -1506,7 +1506,7 @@
     padding: 0;
 
     /* background: #4a66b0; */
-    background: var(--charcoal);
+    background: var(--surface);
 }
 
 
@@ -1579,13 +1579,13 @@
 .microsoft-postman-content h3 {
     margin: 0;
 
-    color: #f4f5f8;
+    color: #5b5b60;
 
-    font-size: clamp(18px, 1.6vw, 23px);
+    font-size: clamp(18px, 1.45vw, 24px);
     font-weight: 500;
 
     line-height: 1;
-    letter-spacing: -0.035em;
+    letter-spacing: -0.025em;
 }
 
 /* =========================================================
@@ -2625,13 +2625,17 @@
 
     inset: 0;
 
-    z-index: 1;
+    z-index: 2;
 
     background:
-        linear-gradient(to bottom,
-            rgba(20, 20, 22, 0.04) 0%,
-            rgba(20, 20, 22, 0.14) 100%);
+        linear-gradient(to top,
+            rgba(25, 25, 27, 0.30) 0%,
+            rgba(25, 25, 27, 0.08) 52%,
+            rgba(25, 25, 27, 0) 100%);
+
+    pointer-events: none;
 }
+
 
 
 /* =========================================================
@@ -2899,6 +2903,70 @@
 
 .about-three-arrow:hover {
     background: rgba(60, 60, 62, 0.14);
+}
+
+/* =========================================================
+   QWEN IMAGES — INDEPENDENT POSITIONING
+   ========================================================= */
+
+/* TOP TILE */
+
+.about-three-ai {
+    position: relative;
+}
+
+.about-three-qwen-top {
+    position: absolute;
+
+    bottom: 0px;
+    right: -20px;
+
+    width: 220px;
+    height: auto;
+
+    display: block;
+    object-fit: contain;
+
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* BOTTOM TILE */
+
+.about-three-wethinkcode {
+    position: relative;
+}
+
+.about-three-qwen-bottom {
+    position: absolute;
+
+    top: 0px;
+    right: -20px;
+
+    width: 220px;
+    height: auto;
+
+    display: block;
+    object-fit: contain;
+
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* =========================================================
+   GENERATIVE AI — CONTENT POSITIONING
+   ========================================================= */
+
+.about-three-ai .about-three-content {
+    position: relative;
+
+    transform: translateY(-60px);
+
+    max-width: 55%;
+}
+
+.about-three-ai .about-three-content p {
+    max-width: 100%;
 }
 
 
@@ -3284,6 +3352,7 @@
 }
 
 
+/* kubernetes p */
 .gcp-tile-content p {
     max-width: 450px;
 
@@ -3507,16 +3576,19 @@
 
 
 .gcp-tile-cloud .gcp-tile-content p {
-    max-width: 100%;
+    max-width: 450px;
 
-    margin: 9px 0 0;
+    margin: 11px 0 0;
 
-    color: var(--charcoal);
+    color: #858589;
 
-    font-size: 9px;
+    font-size: 10px;
+    font-weight: 400;
 
-    line-height: 1.45;
+    line-height: 1.3;
 }
+
+
 
 
 /* =========================================================
@@ -3528,7 +3600,7 @@
     grid-column: 4;
     grid-row: 1;
 
-    background: var(--surface);
+    background: #f4c13e;
 }
 
 
@@ -3854,17 +3926,16 @@
 
 
 .gcp-tile-skills .gcp-tile-content p {
-    max-width: 280px;
+    max-width: 450px;
 
-    margin: 10px 0 0;
+    margin: 11px 0 0;
 
-    color: var(--charcoal);
+    color: #858589;
 
-    font-size: 9px;
+    font-size: 10px;
     font-weight: 400;
 
-    line-height: 1.45;
-    letter-spacing: -0.0045em;
+    line-height: 1.5;
 }
 
 

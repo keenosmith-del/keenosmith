@@ -2037,3 +2037,90 @@
 .navigation-cloud-link:focus-visible svg {
     transform: translateX(2px);
 }
+
+/* =========================================================
+   NAVIGATION — COMING SOON / DISABLED
+   ========================================================= */
+
+.navigation-cloud-trigger.navigation-coming-soon {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0.45;
+
+    cursor: default;
+
+    background: transparent;
+
+    transform: none;
+
+    transition: none;
+}
+
+/* Disable existing hover and focus styling */
+
+.navigation-cloud-trigger.navigation-coming-soon:hover,
+.navigation-cloud-trigger.navigation-coming-soon:focus,
+.navigation-cloud-trigger.navigation-coming-soon:active {
+    opacity: 0.45;
+
+    color: #9a9a9e;
+    background: transparent;
+
+    transform: none;
+
+    box-shadow: none;
+
+    cursor: default;
+}
+
+/* =========================================================
+   COMING SOON — TOOLTIP
+   ========================================================= */
+
+.navigation-coming-soon-tooltip {
+    position: absolute;
+
+    top: calc(100% + 12px);
+    left: 50%;
+
+    transform: translate(-50%, 5px);
+
+    padding: 7px 11px;
+
+    border-radius: 16px;
+
+    background: var(--charcoal);
+    color: #f5f4f0;
+
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: -0.005em;
+
+    line-height: 1;
+    white-space: nowrap;
+
+    opacity: 0;
+    visibility: hidden;
+
+    pointer-events: none;
+
+    z-index: 100;
+
+    transition:
+        opacity 180ms ease,
+        transform 180ms ease,
+        visibility 180ms ease;
+}
+
+/* Tooltip appears on hover */
+
+.navigation-coming-soon:hover .navigation-coming-soon-tooltip {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translate(-50%, 0);
+}

@@ -42,7 +42,7 @@ function Footer() {
 
                 <div className="footer-outro-meta">
                     <span>
-                        Designed and built by Keeno Smith
+                        Designed and built by Keeno Smith Mar 2025 v.01 ©
                     </span>
                 </div>
             </section>

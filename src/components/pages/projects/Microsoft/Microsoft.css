@@ -152,6 +152,17 @@
     font-size: 9px;
 }
 
+.microsoft-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 37px;
+}
+
+.microsoft-hero-actions .microsoft-hero-button {
+    margin-top: 0;
+}
+
 
 
 /* Engineering statement */
@@ -492,7 +503,7 @@
 .microsoft-architecture-flow span {
     color: rgba(255, 255, 255, 0.7);
 
-    font-size: 11px;
+    font-size: 9px;
 }
 
 .microsoft-architecture-flow span:nth-child(even) {
@@ -1461,4 +1472,205 @@ PROJECT ONE — ACTION BUTTONS
 
     background: #deddd9;
     color: #555559;
+}
+
+/* Editorial media features */
+.microsoft-media-feature {
+    width: min(1100px, calc(100% - 38px));
+    margin: 30px auto 115px;
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(220px, 0.75fr);
+    gap: clamp(30px, 7vw, 100px);
+    align-items: center;
+}
+
+.microsoft-media-frame {
+    position: relative;
+    min-width: 0;
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 27px;
+    background: var(--surface-muted);
+    box-shadow: 0 30px 70px rgba(45, 45, 45, 0.06);
+}
+
+.microsoft-media-image {
+    background: linear-gradient(145deg, #e9e8e4, #deddd8);
+}
+
+.microsoft-media-video {
+    background: var(--charcoal);
+}
+
+.microsoft-media-placeholder-label {
+    color: #99999d;
+    font-size: 9px;
+    font-weight: 500;
+}
+
+.microsoft-media-video .microsoft-media-placeholder-label {
+    position: absolute;
+    left: 20px;
+    bottom: 18px;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.microsoft-media-play {
+    width: 46px;
+    height: 46px;
+    display: grid;
+    place-items: center;
+    padding-left: 3px;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    border-radius: 50%;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 13px;
+}
+
+.microsoft-media-copy>span {
+    color: #99999d;
+    font-size: 9px;
+    font-weight: 500;
+}
+
+.microsoft-media-copy h3 {
+    margin: 16px 0 0;
+    color: #5b5b5f;
+    font-size: clamp(25px, 3vw, 38px);
+    font-weight: 500;
+    line-height: 0.98;
+    letter-spacing: -0.045em;
+}
+
+.microsoft-media-copy p {
+    margin: 20px 0 0;
+    color: #858589;
+    font-size: 12px;
+    line-height: 1.75;
+}
+
+.microsoft-media-feature-one {
+    width: min(1080px, calc(100% - 38px));
+    margin-top: -15px;
+    grid-template-columns: minmax(0, 1.2fr) minmax(240px, 0.65fr);
+}
+
+.microsoft-media-feature-one .microsoft-media-frame {
+    min-height: 440px;
+}
+
+.microsoft-media-feature-two {
+    width: min(1160px, calc(100% - 38px));
+    margin-left: auto;
+    margin-right: 4vw;
+    grid-template-columns: minmax(0, 1.35fr) minmax(220px, 0.6fr);
+}
+
+.microsoft-media-feature-two .microsoft-media-frame {
+    min-height: 390px;
+}
+
+.microsoft-media-feature-three {
+    width: min(920px, calc(100% - 38px));
+    margin-left: 10vw;
+    grid-template-columns: minmax(0, 1.1fr) minmax(220px, 0.7fr);
+    gap: clamp(26px, 5vw, 70px);
+}
+
+.microsoft-media-feature-three .microsoft-media-frame {
+    min-height: 340px;
+}
+
+.microsoft-media-feature-four {
+    width: min(1080px, calc(100% - 38px));
+    margin-right: 7vw;
+    grid-template-columns: minmax(220px, 0.65fr) minmax(0, 1.35fr);
+}
+
+.microsoft-media-feature-four .microsoft-media-copy {
+    order: 1;
+}
+
+.microsoft-media-feature-four .microsoft-media-frame {
+    order: 2;
+    min-height: 400px;
+}
+
+.microsoft-media-feature-five {
+    width: min(1040px, calc(100% - 38px));
+    margin-left: auto;
+    margin-right: 8vw;
+    grid-template-columns: minmax(0, 1.15fr) minmax(220px, 0.7fr);
+}
+
+.microsoft-media-feature-five .microsoft-media-frame {
+    min-height: 360px;
+}
+
+@media (max-width: 1000px) {
+
+    .microsoft-media-feature,
+    .microsoft-media-feature-one,
+    .microsoft-media-feature-two,
+    .microsoft-media-feature-three,
+    .microsoft-media-feature-four,
+    .microsoft-media-feature-five {
+        width: min(860px, calc(100% - 38px));
+        margin: 20px auto 85px;
+        grid-template-columns: minmax(0, 1.1fr) minmax(200px, 0.8fr);
+    }
+
+    .microsoft-media-feature-four .microsoft-media-copy {
+        order: 0;
+    }
+
+    .microsoft-media-feature-four .microsoft-media-frame {
+        order: 0;
+    }
+
+    .microsoft-media-frame,
+    .microsoft-media-feature-one .microsoft-media-frame,
+    .microsoft-media-feature-two .microsoft-media-frame,
+    .microsoft-media-feature-three .microsoft-media-frame,
+    .microsoft-media-feature-four .microsoft-media-frame,
+    .microsoft-media-feature-five .microsoft-media-frame {
+        min-height: 300px;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .microsoft-media-feature,
+    .microsoft-media-feature-one,
+    .microsoft-media-feature-two,
+    .microsoft-media-feature-three,
+    .microsoft-media-feature-four,
+    .microsoft-media-feature-five {
+        width: calc(100% - 26px);
+        margin: 5px auto 75px;
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .microsoft-media-frame,
+    .microsoft-media-feature-one .microsoft-media-frame,
+    .microsoft-media-feature-two .microsoft-media-frame,
+    .microsoft-media-feature-three .microsoft-media-frame,
+    .microsoft-media-feature-four .microsoft-media-frame,
+    .microsoft-media-feature-five .microsoft-media-frame {
+        min-height: 230px;
+        border-radius: 21px;
+    }
+
+    .microsoft-media-copy {
+        width: min(470px, 92%);
+    }
+
+    .microsoft-media-feature-three .microsoft-media-copy,
+    .microsoft-media-feature-five .microsoft-media-copy {
+        margin-left: auto;
+    }
 }
