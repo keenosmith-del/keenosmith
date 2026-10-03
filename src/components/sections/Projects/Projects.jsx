@@ -139,7 +139,7 @@ const projects = [
         skill: 'API Development',
         description:
             'Placeholder description for an API engineering project combining SDK generation, API documentation, testing and developer tooling.',
-        image: duckDBImage,
+        image: null,
         background: 'var(--surface)',
         imageMode: 'centered',
     },
