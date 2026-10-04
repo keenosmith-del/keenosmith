@@ -3380,10 +3380,42 @@
    ========================================================= */
 
 .gcp-tile-info {
+    position: relative;
+
     grid-column: 1;
     grid-row: 1;
 
+    overflow: hidden;
+
     background: var(--charcoal);
+}
+
+/* PERSON IMAGE */
+
+.gcp-person-visual {
+    position: absolute;
+
+    top: 50%;
+    right: 0;
+
+    z-index: 1;
+
+    width: 250px;
+    height: 310px;
+
+    transform: translateY(-50%);
+
+    pointer-events: none;
+}
+
+.gcp-person-visual img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    object-position: right center;
 }
 
 
@@ -3430,26 +3462,6 @@
 
 .gcp-tile-info .gcp-tile-content p {
     color: #b9b9bd;
-}
-
-/* =========================================================
-   INFO TILE — ADK BADGE
-   ========================================================= */
-
-.gcp-info-badge {
-    position: absolute;
-
-    top: 17px;
-    right: 18px;
-
-    z-index: 2;
-
-    width: 22px;
-    height: 22px;
-
-    object-fit: contain;
-
-    pointer-events: none;
 }
 
 
@@ -3866,17 +3878,16 @@
 .gcp-docker-visual {
     position: absolute;
 
-    top: 50%;
-    left: 50%;
+    top: 58%;
+    left: 0;
 
     z-index: 1;
 
-    width: 110px;
-    height: 110px;
+    width: 200px;
+    height: 200px;
 
-    transform: translate(-50%, -58%);
+    transform: translateY(-50%);
 }
-
 
 .gcp-docker-visual img {
     display: block;
@@ -3885,6 +3896,7 @@
     height: 100%;
 
     object-fit: contain;
+    object-position: left center;
 }
 
 

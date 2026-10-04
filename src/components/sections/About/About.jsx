@@ -11,7 +11,7 @@ import awsSkillBuilderImage from '../../../assets/images/about/aws_skill_builder
 import pytorchImage from '../../../assets/images/about/pytorch.png';
 import jwtRedpandaImage from '../../../assets/images/about/jwt-redpanda.png';
 import openTofu from '../../../assets/images/about/openTofu.png';
-import kinesisImage from '../../../assets/images/about/kinesis.png';
+import awsFumi from '../../../assets/images/about/awsFumi.png';
 import kafkaRabbitmq from '../../../assets/images/about/kafka-rabbitmq.png';
 
 import foundersLogo from '../../../assets/images/about/founderz.png';
@@ -31,7 +31,8 @@ import kubernetesImage from '../../../assets/images/about/kubernetes.png';
 import dockerImage from '../../../assets/images/about/docker.png';
 import bananaImage from '../../../assets/images/about/nano-banana.png';
 import duckDB from '../../../assets/images/about/duckDB.png';
-import duckDBImage from '../../../assets/images/about/duckDBMascot.png';
+import gcpBear from '../../../assets/images/about/gcpBear.png';
+import gcpPerson from '../../../assets/images/about/gcpPerson.png';
 
 import googleBadge from '../../../assets/images/about/googleLogo.png';
 import adkBadge from '../../../assets/images/about/adk.png';
@@ -268,7 +269,7 @@ function About() {
 
                 {/* Tile 6 — Kinesis */}
                 <article className="about-tile about-tile-small about-tile-six about-kinesis">
-                    <img src={kinesisImage} alt="Amazon Kinesis" className="about-kinesis-image" />
+                    <img src={awsFumi} alt="Amazon Kinesis" className="about-kinesis-image" />
                     <div className="about-kinesis-overlay" />
                     <div className="about-kinesis-chips">
                         <span>Amazon Kinesis</span>
@@ -293,10 +294,6 @@ function About() {
                 <article className="about-tile about-tile-medium-2 about-tile-eight">
 
                     <div className="about-tile-eight-image">
-                        <img
-                            src={awsSkillBuilderImage}
-                            alt="AWS Skill Builder profile"
-                        />
                     </div>
 
                     <div className="about-tile-eight-overlay" />
@@ -361,6 +358,13 @@ function About() {
                     <article className="gcp-tile gcp-tile-info">
 
                         <div className="gcp-tile-content">
+
+                            <div className="gcp-person-visual">
+                                <img
+                                    src={gcpPerson}
+                                    alt="Google Cloud Character"
+                                />
+                            </div>
 
                             <div className="gcp-tile-pills">
                                 <span>Cloud</span>
@@ -563,8 +567,8 @@ function About() {
 
                         <div className="gcp-docker-visual">
                             <img
-                                src={duckDBImage}
-                                alt="DuckDB"
+                                src={gcpBear}
+                                alt="Polar Bear"
                             />
                         </div>
 

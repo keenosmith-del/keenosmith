@@ -403,10 +403,12 @@ function Skills() {
                     <article className="skills-tile skills-tile-n8n">
 
                         <div className="skills-n8n-image">
+                            {/*
                             <img
                                 src={n8nImage}
                                 alt="n8n"
                             />
+                            */}
                         </div>
 
                         <div className="skills-n8n-overlay" />
