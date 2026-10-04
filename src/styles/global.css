@@ -63,3 +63,10 @@ a {
     color: inherit;
     text-decoration: none;
 }
+/* Shared visual tile overlay, established by the OpenTofu card. */
+:root {
+    --tile-visual-overlay: linear-gradient(to top,
+        rgba(25, 25, 27, 0.32) 0%,
+        rgba(25, 25, 27, 0.10) 45%,
+        rgba(25, 25, 27, 0) 75%);
+}

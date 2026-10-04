@@ -1,8 +1,10 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Header from './components/navigation/Header.jsx';
+import PortfolioActions from './components/navigation/PortfolioActions.jsx';
 import Hero from './components/sections/Hero/Hero.jsx';
 import Skills from './components/sections/Skills/Skills.jsx';
+import SkillsProjectPreview from './components/sections/Skills/SkillsProjectPreview.jsx';
 import About from './components/sections/About/About.jsx';
 import Projects from './components/sections/Projects/Projects.jsx';
 import Footer from './components/sections/Footer/Footer.jsx';
@@ -32,6 +34,7 @@ function Home() {
         <Projects />
         <Footer />
       </main>
+      <PortfolioActions />
     </>
   );
 }
@@ -41,6 +44,9 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
+        {['claude', 'n8n', 'ollama', 'rabbitmq', 'kinesis', 'opentofu', 'vertex-ai-retail', 'duckdb', 'hugging-face', 'go-dotnet', 'openai', 'jwt-redpanda'].map((project) => (
+          <Route key={project} path={`/projects/${project}`} element={<SkillsProjectPreview project={project} />} />
+        ))}
         <Route path="/cv" element={<CV />} />
         <Route
           path="/projects/ai-assistant"

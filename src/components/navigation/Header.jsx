@@ -625,6 +625,13 @@ function Header() {
                                 Home
                             </a>
 
+                            <a
+                                href="#skills"
+                                onClick={closeAllDropdowns}
+                            >
+                                About
+                            </a>
+
                             <button
                                 className={`navigation-skills-trigger ${isSkillsOpen ? 'is-active' : ''
                                     }`}
@@ -647,13 +654,6 @@ function Header() {
                                     aria-hidden="true"
                                 />
                             </button>
-
-                            <a
-                                href="#about"
-                                onClick={closeAllDropdowns}
-                            >
-                                About
-                            </a>
 
                             <button
                                 className={`navigation-projects-trigger ${isProjectsOpen ? 'is-active' : ''

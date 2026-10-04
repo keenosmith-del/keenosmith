@@ -4,22 +4,25 @@ import { useNavigate } from 'react-router-dom';
 
 import './About.css';
 
-import awsLogo from '../../../assets/svgs/about/aws.svg';
+import awsLogo from '../../../assets/svgs/about/aws-2.png';
 import microsoftLogo from '../../../assets/svgs/about/microsoft-icon.svg';
 
 import awsSkillBuilderImage from '../../../assets/images/about/aws_skill_builder.png';
 import pytorchImage from '../../../assets/images/about/pytorch.png';
+import jwtRedpandaImage from '../../../assets/images/about/jwt-redpanda.png';
 import openTofu from '../../../assets/images/about/openTofu.png';
+import kinesisImage from '../../../assets/images/about/kinesis.png';
+import kafkaRabbitmq from '../../../assets/images/about/kafka-rabbitmq.png';
 
 import foundersLogo from '../../../assets/images/about/founderz.png';
 import microsoftBadge1 from '../../../assets/images/about/microsoft-badge.png';
 import foundryBadge from '../../../assets/images/about/foundry.png';
-import ollamaCover from '../../../assets/images/about/ollama-cover.png';
+import bearVisual from '../../../assets/images/about/bearVisual.png';
 import liblabsPostman from '../../../assets/images/about/liblabs.png';
 import azureLogo from '../../../assets/images/about/azure.png';
 import openAIImage from '../../../assets/images/about/openai.svg';
 
-import copilotCover from '../../../assets/images/about/copilot-cover.jpg';
+import copilotCover from '../../../assets/images/about/copilot-cover.png';
 
 
 import googleCloudLogo from '../../../assets/images/about/google.png';
@@ -36,8 +39,8 @@ import gdpBadge from '../../../assets/images/about/gdp.png';
 
 import githubLogo from '../../../assets/svgs/about/github.svg';
 import githubImage from '../../../assets/images/about/github.png';
-import qwenTop from '../../../assets/images/about/qwenTop.png';
-import qwenBottom from '../../../assets/images/about/qwenBottom.png';
+import qwenTop from '../../../assets/images/about/myCompanyImage-1.png';
+import qwenBottom from '../../../assets/images/about/myCompanyImage-2.png';
 
 function About() {
     const aboutRef = useRef(null);
@@ -118,14 +121,17 @@ function About() {
             <div className="about-intro">
 
                 <h2>
-                    AWS Cloud, AI &amp; DevOps.
+                    Putting my cloud and AI
+                    <br />
+                    work into practice.
                 </h2>
 
                 <p className="about-intro-description">
-                    Building deeper capability across AWS cloud, AI and machine
-                    learning, cloud infrastructure and DevOps through hands-on
-                    learning, applied projects, challenges and continuous practice
-                    across the AWS ecosystem.
+                    Full-stack development,
+                    machine learning, real-time processing and AWS infrastructure.
+                    This section shows that work alongside the tools I use and
+                    the hands-on learning I continue through CloudQuest,
+                    Skill Builder and my AWS credentials.
                 </p>
 
                 <div className="about-actions">
@@ -156,176 +162,130 @@ function About() {
 
                     <div className="about-tile-one-top">
                         <div className="about-tile-one-pills">
-                            <span>AWS</span>
-                            <span>Udacity</span>
-                            <span>AI / ML Scholars Programme</span>
+                            <span>Amazon Bedrock</span>
+                            <span>SageMaker</span>
+                            <span>S3</span>
+                            <span>DynamoDB</span>
+                            <span>IAM</span>
                         </div>
                     </div>
 
                     <div className="about-tile-one-content">
                         <h3>
-                            AWS AI Practitioner
+                            Getting hands-on
+                            <br />
+                            with AI.
                         </h3>
 
                         <p>
-                            Applied understanding of artificial intelligence,
-                            machine learning and generative AI within the AWS
-                            ecosystem, developed through the AWS AI / ML
-                            Scholars Programme.
+                            I’m interested in how models become part of an
+                            application. My work takes me from Python and PyTorch
+                            to Bedrock and SageMaker, then into data and
+                            permissions in S3, DynamoDB and IAM.
                         </p>
                     </div>
 
                 </article>
 
 
-                {/* Tile 2 — AWS AI */}
-                <article className="about-tile about-tile-medium about-tile-two">
-                    <div className="about-tile-two-top">
-
-                        <div className="about-tile-two-pills">
-                            <span>Python</span>
-                            <span>PyTorch</span>
-                            <span>Transformers</span>
-                            <span>NumPy</span>
-                            <span>Matplotlib</span>
-                        </div>
-
+                {/* Tile 2: credentials counter */}
+                <article className="about-tile about-tile-medium about-tile-two about-aws-credentials">
+                    <div className="about-tile-two-logo">
+                        <img src={awsLogo} alt="AWS" />
                     </div>
-
-                    <div className="about-tile-two-content">
-                        <h3>
-                            AWS AI Programmer
-                        </h3>
-
-                        <p>
-                            Practical AI programming capability across Python,
-                            machine learning and AI application development.
-                        </p>
+                    <div className="about-aws-counter">
+                        <strong data-target="16">0+</strong>
+                        <span>AWS Credentials</span>
                     </div>
-
                 </article>
 
 
-                {/* Tile 3 — PyTorch */}
+                {/* Tile 3 — OpenTofu visual tile */}
                 <article className="about-tile about-tile-small about-tile-three">
 
                     <img
                         src={openTofu}
-                        alt="PyTorch"
+                        alt="OpenTofu"
                         className="about-tile-three-image"
                     />
 
                     <div className="about-tile-three-overlay" />
 
-                    <div className="about-tile-three-content">
-
-                    </div>
+                    <button className="about-aws-project-link" type="button"
+                        aria-label="View OpenTofu infrastructure project"
+                        onClick={() => navigate('/projects/opentofu')}>
+                        <ArrowRight size={18} strokeWidth={1.7} aria-hidden="true" />
+                    </button>
 
                 </article>
 
 
 
-                {/* Tile 4 — Generative AI & Agentic AI */}
-                <article className="about-tile about-tile-medium-2 about-tile-four">
-
+                {/* Tile 4: AWS banking project */}
+                <article className="about-tile about-tile-medium-2 about-tile-four about-aws-project">
                     <div className="about-tile-four-header">
-
                         <div className="about-tile-four-pills">
-                            <span>
-                                Architecture
-                            </span>
-                            <span>
-                                Automation
-                            </span>
-                            <span>
-                                Deployment
-                            </span>
+                            <span>Lambda</span>
+                            <span>API Gateway</span>
+                            <span>EventBridge</span>
+                            <span>CloudWatch</span>
+                            <span>Kinesis</span>
                         </div>
-
                     </div>
-
                     <div className="about-tile-four-content">
-                        <h3>
-                            Cloud &amp; Infrastructure
-                            <br />
-                            DevOps &amp; Practice
-                        </h3>
-
-                        <p>
-                            Building practical understanding of AWS cloud
-                            services, architecture and infrastructure.
-                            <br />
-                            Continuing hands-on development through challenges,
-                            labs and practical cloud workflows.
-                        </p>
+                        <h3>Cloud &amp; Infrastructure</h3>
+                        <p>For my banking platform, I follow payment data through
+                            risk decisions and service responses, then trace
+                            what happened with CloudWatch. That work connects
+                            ML, Lambda and API Gateway.</p>
                     </div>
-
+                    <button className="about-aws-project-link" type="button"
+                        aria-label="View AWS Intelligent Banking and Payment Risk Platform"
+                        onClick={() => navigate('/projects/aws')}>
+                        <ArrowRight size={18} strokeWidth={1.7} aria-hidden="true" />
+                    </button>
                 </article>
 
 
-                {/* Tile 5 — AWS Microcredentials */}
-                <article className="about-tile about-tile-small-2 about-tile-five">
+                {/* Tile 5: event-driven systems */}
+                <article className="about-tile about-tile-small-2 about-tile-five about-aws-messaging">
+                    <img src={kafkaRabbitmq} alt="Kafka and RabbitMQ" className="about-aws-messaging-image" />
+                    <div className="about-aws-messaging-overlay" />
 
-                    <div className="about-tile-five-logo">
-                        <img
-                            src={awsLogo}
-                            alt="AWS"
-                        />
+                    <div className="about-aws-messaging-content">
+                        <h3>Kafka + RabbitMQ</h3>
+                        <p>As my applications involve more services, I use
+                            Kafka and RabbitMQ to coordinate events and
+                            background work.</p>
                     </div>
-
-                    <div className="about-tile-five-content">
-                        <strong data-target="16">
-                            0+
-                        </strong>
-
-                        <span>
-                            AWS Credentials
-                        </span>
-                    </div>
-
-                    <a
-                        className="about-tile-five-link"
-                        target="_blank"
-                        rel="noreferrer"
-                        href="https://skillsprofile.skillbuilder.aws/user/keenosmith"
-                        aria-label="View AWS Skill Builder profile"
-                    >
-                        <ArrowRight size={18} strokeWidth={1.7} />
-                    </a>
-
+                    <button className="about-tile-five-link" type="button"
+                        aria-label="View RabbitMQ event-driven project"
+                        onClick={() => navigate('/projects/rabbitmq')}>
+                        <ArrowRight size={18} strokeWidth={1.7} aria-hidden="true" />
+                    </button>
                 </article>
 
 
-                {/* Tile 6 — CloudQuest */}
-                <article className="about-tile about-tile-small about-tile-six">
-
-                    <div className="about-tile-six-logos">
+                {/* Tile 6 — Kinesis */}
+                <article className="about-tile about-tile-small about-tile-six about-kinesis">
+                    <img src={kinesisImage} alt="Amazon Kinesis" className="about-kinesis-image" />
+                    <div className="about-kinesis-overlay" />
+                    <div className="about-kinesis-chips">
+                        <span>Amazon Kinesis</span>
+                        <span>Real-time streaming</span>
+                        <span>Event processing</span>
                     </div>
-
                     <div className="about-tile-six-content">
-
-                        <h3>
-                            CloudQuest
-                        </h3>
-
-                        <p>
-                            An ongoing AWS cloud learning journey focused on building
-                            practical knowledge through interactive challenges and
-                            hands-on exploration.
-                        </p>
-
+                        <h3>Kinesis</h3>
+                        <p>I use Amazon Kinesis to stream payment data through
+                            my banking platform, connecting real-time events
+                            with processing and risk decisions.</p>
                     </div>
-
-                    <a
-                        className="about-tile-six-link"
-                        target="_blank"
-                        rel="noreferrer"
-                        href="https://skillsprofile.skillbuilder.aws/user/keenosmith/cloudquest"
-                        aria-label="Cloud Quest"
-                    >
-                        <ArrowRight size={18} strokeWidth={1.7} />
-                    </a>
-
+                    <button className="about-tile-six-link" type="button"
+                        aria-label="View Kinesis streaming project"
+                        onClick={() => navigate('/projects/kinesis')}>
+                        <ArrowRight size={18} strokeWidth={1.7} aria-hidden="true" />
+                    </button>
                 </article>
 
 
@@ -400,12 +360,6 @@ function About() {
 
                     <article className="gcp-tile gcp-tile-info">
 
-                        <img
-                            className="gcp-info-badge"
-                            src={adkBadge}
-                            alt=""
-                        />
-
                         <div className="gcp-tile-content">
 
                             <div className="gcp-tile-pills">
@@ -429,6 +383,12 @@ function About() {
 
                         </div>
 
+                        <button className="gcp-arrow" type="button"
+                            aria-label="View Google Cloud Vertex AI Intelligent Retail and Supply Chain project"
+                            onClick={() => navigate('/projects/vertex-ai-retail')}>
+                            <ArrowRight size={14} strokeWidth={1.7} aria-hidden="true" />
+                        </button>
+
                     </article>
 
 
@@ -437,12 +397,6 @@ function About() {
         ===================================================== */}
 
                     <article className="gcp-tile gcp-tile-counter">
-
-                        <img
-                            className="gcp-counter-badge"
-                            src={googleBadge}
-                            alt=""
-                        />
 
                         <div className="gcp-counter-content">
 
@@ -513,6 +467,12 @@ function About() {
 
                         </div>
 
+                        <button className="gcp-arrow" type="button"
+                            aria-label="View DuckDB project"
+                            onClick={() => navigate('/projects/duckdb')}>
+                            <ArrowRight size={14} strokeWidth={1.7} aria-hidden="true" />
+                        </button>
+
                     </article>
 
 
@@ -522,12 +482,6 @@ function About() {
 ===================================================== */}
 
                     <article className="gcp-tile gcp-tile-developer">
-
-                        <img
-                            className="gcp-developer-badge"
-                            src={gdpBadge}
-                            alt=""
-                        />
 
                         <div className="gcp-tile-content">
 
@@ -592,8 +546,8 @@ function About() {
                         <button
                             className="gcp-arrow"
                             type="button"
-                            disabled
-                            aria-label="Hugging Face projects unavailable"
+                            aria-label="View Hugging Face project"
+                            onClick={() => navigate('/projects/hugging-face')}
                         >
                             <ArrowRight size={14} strokeWidth={1.7} />
                         </button>
@@ -618,10 +572,6 @@ function About() {
 
                         <div className="gcp-tile-content">
 
-                            <h3>
-                                DuckDB
-                            </h3>
-
                         </div>
 
                     </article>
@@ -639,19 +589,15 @@ function About() {
 
                 <div className="about-microsoft-intro">
 
-
-                    <span className="about-microsoft-eyebrow">
-                        Microsoft Ecosystem
-                    </span>
-
                     <h2>
-                        Microsoft, AI &amp; Cybersecurity.
+                        Backend systems, AI &amp; observability.
                     </h2>
 
                     <p>
-                        Building deeper expertise across the Microsoft
-                        ecosystem, with a growing focus on AI, cybersecurity,
-                        cloud security and intelligent security operations.
+                        Building services with Go, C#, .NET, .NET MAUI and Spring Boot,
+                        connecting AI with OpenAI and Ollama, and working with Redis,
+                        OpenTelemetry and Toxiproxy to explore caching, observability
+                        and resilient distributed systems.
                     </p>
 
                     <div className="about-actions">
@@ -690,36 +636,46 @@ function About() {
                         <div className="microsoft-tile-top">
 
                             <div className="microsoft-tile-pills">
-                                <span>Azure</span>
-                                <span>Microsoft Entra ID</span>
-                                <span>Microsoft Defender XDR</span>
-                                <span>Microsoft Sentinel</span>
-                                <span>Azure AI</span>
-                                <span>Copilot</span>
+                                <span>Go</span>
+                                <span>.NET</span>
+                                <span>C#</span>
+                                <span>.NET MAUI</span>
+                                <span>Spring Boot</span>
+                                <span>Redis</span>
+                                <span>OpenTelemetry</span>
+                                <span>Toxiproxy</span>
                             </div>
 
                         </div>
 
                         <div className="microsoft-tile-badge">
+                            {/*
                             <img
                                 src={microsoftLogo}
                                 alt="Microsoft"
                             />
+                            */}
                         </div>
 
                         <div className="microsoft-tile-content">
 
                             <h3>
-                                Microsoft Security &amp; AI
+                                Go &amp; .NET Services
                             </h3>
 
                             <p>
-                                Developing practical capability across Microsoft cloud,
-                                artificial intelligence and cybersecurity through hands-on
-                                learning, applied labs and security-focused training.
+                                Building backend services with Go and .NET, using Redis
+                                for caching, OpenTelemetry for tracing and Toxiproxy
+                                to explore how services respond to network failures.
                             </p>
 
                         </div>
+
+                        <button className="microsoft-tile-arrow" type="button"
+                            aria-label="View Go and .NET project"
+                            onClick={() => navigate('/projects/go-dotnet')}>
+                            <ArrowRight size={18} strokeWidth={1.7} aria-hidden="true" />
+                        </button>
 
                     </article>
 
@@ -732,7 +688,7 @@ function About() {
 
                         <img
                             src={openAIImage}
-                            alt="Postman LibLab"
+                            alt="OpenAI"
                             className="microsoft-postman-image"
                         />
 
@@ -747,10 +703,10 @@ function About() {
                         </div>
 
                         <button
-                            className="microsoft-tile-arrow microsoft-tile-arrow-disabled"
+                            className="microsoft-tile-arrow"
                             type="button"
-                            aria-label="Postman LibLab"
-                            disabled
+                            aria-label="View OpenAI project"
+                            onClick={() => navigate('/projects/openai')}
                         >
                             <ArrowRight
                                 size={18}
@@ -767,6 +723,7 @@ function About() {
         ===================================================== */}
 
                     <article className="microsoft-tile microsoft-tile-counter">
+                        <img src={microsoftBadge1} alt="Microsoft" className="microsoft-counter-badge" />
 
                         <div className="microsoft-counter-content">
 
@@ -832,43 +789,25 @@ function About() {
            TILE 5 — AGENT ARCHITECT
         ===================================================== */}
 
-                    <article className="microsoft-tile microsoft-tile-credential">
-
+                    <article className="microsoft-tile microsoft-tile-credential microsoft-tile-jwt-redpanda">
+                        <img src={jwtRedpandaImage} alt="JWT and Redpanda" className="microsoft-jwt-redpanda-image" />
+                        <div className="microsoft-jwt-redpanda-overlay" />
                         <div className="microsoft-credential-pills">
-
-                            <span>Azure AI</span>
-                            <span>Foundry</span>
-                            <span>Agentic AI</span>
-
+                            <span>JWT</span>
+                            <span>Redpanda</span>
+                            <span>Event streaming</span>
                         </div>
-
-                        <div className="microsoft-credential-badge">
-
-                            <img
-                                src={microsoftBadge1}
-                                alt="Microsoft"
-                            />
-
-                            <img
-                                src={foundersLogo}
-                                alt="Founderz"
-                            />
-
-                        </div>
-
                         <div className="microsoft-tile-content">
-
-                            <h3>
-                                Agent Architect
-                            </h3>
-
-                            <p>
-                                AI agent architecture, agentic workflows,
-                                orchestration and practical AI application
-                                design.
-                            </p>
-
+                            <h3>JWT + RedPanda</h3>
+                            <p>Securing service access with JWT authentication and
+                                connecting distributed applications through Redpanda
+                                event streams.</p>
                         </div>
+                        <button className="microsoft-tile-arrow" type="button"
+                            aria-label="View JWT and Redpanda project"
+                            onClick={() => navigate('/projects/jwt-redpanda')}>
+                            <ArrowRight size={18} strokeWidth={1.7} aria-hidden="true" />
+                        </button>
 
                     </article>
 
@@ -880,7 +819,7 @@ function About() {
                     <article className="microsoft-tile microsoft-tile-deepseek">
 
                         <img
-                            src={ollamaCover}
+                            src={bearVisual}
                             alt=""
                             className="microsoft-deepseek-image"
                         />
@@ -890,16 +829,16 @@ function About() {
                         <div className="microsoft-deepseek-content">
 
                             <h3>
-                                Ollama
+                                Another Project Title
                             </h3>
 
                         </div>
 
                         <button
-                            className="microsoft-tile-arrow microsoft-tile-arrow-disabled"
+                            className="microsoft-tile-arrow"
                             type="button"
-                            aria-label="Ollama"
-                            disabled
+                            aria-label="View Ollama Private Personal and Business Intelligence project"
+                            onClick={() => navigate('/projects/ollama')}
                         >
                             <ArrowRight
                                 size={18}

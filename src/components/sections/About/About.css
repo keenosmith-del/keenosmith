@@ -404,10 +404,7 @@
     z-index: 1;
 
     background:
-        linear-gradient(to top,
-            rgba(25, 25, 27, 0.32) 0%,
-            rgba(25, 25, 27, 0.10) 45%,
-            rgba(25, 25, 27, 0) 75%);
+        var(--tile-visual-overlay);
 
     pointer-events: none;
 }
@@ -1506,7 +1503,7 @@
     padding: 0;
 
     /* background: #4a66b0; */
-    background: var(--surface);
+    background: #bbac99;
 }
 
 
@@ -2599,7 +2596,7 @@
 
     padding: 0;
 
-    background: var(--surface);
+    background: #bbac99;
 }
 
 .about-three-copilot-image {
@@ -2612,12 +2609,21 @@
 }
 
 .about-three-copilot-image img {
-    display: block;
+    position: absolute;
 
-    width: 100%;
-    height: 100%;
+    top: 50%;
+    left: 50%;
 
-    object-fit: cover;
+    z-index: 0;
+
+    width: 200px;
+    height: 200px;
+
+    object-fit: contain;
+
+    transform: translate(-50%, -50%);
+
+    pointer-events: none;
 }
 
 .about-three-copilot-overlay {
@@ -4153,5 +4159,344 @@
     .gcp-tile-info .gcp-tile-pills {
         top: 17px;
         left: 18px;
+    }
+}
+
+/* AWS narrative tiles. Keep the existing puzzle positions and motion. */
+.about-aws-counter {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-aws-counter strong {
+    margin: 0;
+    color: #555559;
+    font-size: clamp(35px, 3.2vw, 51px);
+    font-weight: 500;
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+}
+
+.about-aws-counter span {
+    margin-top: 7px;
+    color: #77777c;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.about-aws-project-link {
+    position: absolute;
+    right: 21px;
+    bottom: 19px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 27px;
+    height: 27px;
+    padding: 0;
+    border: 0;
+    border-radius: 999px;
+    background: rgba(60, 60, 62, 0.08);
+    color: #66666b;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateX(-4px);
+    transition: opacity 180ms ease, transform 220ms ease, background-color 180ms ease;
+}
+
+.about-aws-project:hover .about-aws-project-link,
+.about-aws-project:focus-within .about-aws-project-link,
+.about-aws-messaging:focus-within .about-tile-five-link,
+#about>.about-grid .about-tile-six:focus-within .about-tile-six-link,
+#about>.about-grid .about-tile-eight:focus-within .about-tile-eight-link {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.about-aws-project-link:hover {
+    background: rgba(60, 60, 62, 0.14);
+}
+
+.about-aws-project-link:focus-visible,
+.about-aws-messaging .about-tile-five-link:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+}
+
+.about-aws-messaging {
+    background: var(--surface);
+}
+
+.about-aws-messaging-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-aws-messaging-overlay {
+    position: absolute;
+    inset: 0;
+    background: var(--tile-visual-overlay);
+    pointer-events: none;
+}
+
+.about-aws-messaging-pills {
+    position: absolute;
+    top: 21px;
+    left: 22px;
+    right: 22px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.about-aws-messaging-pills span {
+    padding: 5px 8px;
+    border-radius: 999px;
+    background: var(--surface-muted);
+    color: #66666b;
+    font-size: 7px;
+    line-height: 1;
+}
+
+.about-aws-messaging-content {
+    position: relative;
+    padding-right: 20px;
+}
+
+.about-aws-messaging-content h3 {
+    margin: 0;
+    color: #5b5b60;
+    font-size: clamp(18px, 1.5vw, 24px);
+    font-weight: 500;
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+}
+
+.about-aws-messaging-content p {
+    margin: 10px 0 0;
+    color: #858589;
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+.about-aws-messaging .about-tile-five-link {
+    background: rgba(250, 249, 246, 0.92);
+    z-index: 2;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+@media (max-width: 700px) {
+    #about>.about-grid>.about-aws-credentials {
+        min-height: 136px;
+    }
+
+    .about-aws-messaging-pills {
+        top: 16px;
+        left: 18px;
+        right: 18px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .about-aws-project-link {
+        transition: none;
+    }
+}
+
+/* Give the AWS messaging image more room within the second row. */
+#about>.about-grid {
+    grid-template-rows: minmax(248px, auto) minmax(240px, auto);
+}
+
+@media (min-width: 701px) and (max-width: 1000px) {
+    #about>.about-grid {
+        grid-template-rows: minmax(248px, auto) minmax(200px, auto) minmax(240px, auto) minmax(176px, auto);
+    }
+}
+
+@media (max-width: 700px) {
+    #about>.about-grid>.about-aws-messaging {
+        min-height: 240px;
+    }
+}
+
+.about-aws-messaging-image {
+    object-position: center 65%;
+}
+
+.about-kinesis-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: auto;
+    padding-bottom: 24px;
+}
+
+.about-kinesis-chips span {
+    display: inline-flex;
+    align-items: center;
+    min-height: 22px;
+    padding: 0 8px;
+    border-radius: 999px;
+    background: var(--surface-muted);
+    color: #66666b;
+    font-size: 7px;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.about-kinesis-image {
+    position: absolute;
+    inset: 5%;
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+}
+
+.about-kinesis-overlay {
+    position: absolute;
+    inset: 0;
+    background: var(--tile-visual-overlay);
+    pointer-events: none;
+}
+
+.about-kinesis-chips,
+.about-kinesis .about-tile-six-content {
+    position: relative;
+    z-index: 2;
+}
+
+.about-kinesis .about-tile-six-content {
+    padding-right: 28px;
+}
+
+.about-kinesis .about-tile-six-content h3,
+.about-kinesis .about-tile-six-content p {
+    color: var(--charcoal);
+}
+
+.about-kinesis .about-tile-six-link {
+    z-index: 3;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    background: var(--surface-muted);
+}
+
+.about-tile-three .about-aws-project-link {
+    z-index: 3;
+    background: var(--surface-muted);
+}
+
+.about-tile-three:hover .about-aws-project-link,
+.about-tile-three:focus-within .about-aws-project-link {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.gcp-tile-info .gcp-tile-content p {
+    padding-right: 32px;
+}
+
+.gcp-arrow:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+}
+
+/* Taller rows across cloud and backend project cards. */
+.gcp-grid,
+.about-microsoft-grid {
+    grid-template-rows: minmax(285px, auto) minmax(240px, auto);
+}
+
+.microsoft-counter-badge {
+    position: absolute;
+    top: 20px;
+    right: 21px;
+    z-index: 2;
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    pointer-events: none;
+}
+
+.microsoft-tile-learn .microsoft-tile-content {
+    padding-top: 70px;
+    padding-right: 26px;
+}
+
+.microsoft-tile-learn .microsoft-tile-content h3 {
+    font-size: clamp(26px, 3vw, 40px);
+}
+
+.microsoft-jwt-redpanda-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+.microsoft-jwt-redpanda-overlay {
+    position: absolute;
+    inset: 0;
+    background: var(--tile-visual-overlay);
+    pointer-events: none;
+}
+
+.microsoft-tile-jwt-redpanda .microsoft-credential-pills {
+    z-index: 2;
+    right: 22px;
+}
+
+.microsoft-tile-jwt-redpanda .microsoft-tile-content {
+    position: relative;
+    z-index: 2;
+    padding-right: 26px;
+    padding-top: 70px;
+}
+
+.microsoft-tile-jwt-redpanda .microsoft-tile-content h3,
+.microsoft-tile-jwt-redpanda .microsoft-tile-content p {
+    color: var(--charcoal);
+}
+
+.microsoft-tile-arrow:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+}
+
+@media (min-width: 701px) and (max-width: 1000px) {
+    .gcp-grid {
+        grid-template-rows: minmax(285px, auto) minmax(240px, auto) minmax(240px, auto);
+    }
+
+    .about-microsoft-grid {
+        grid-template-rows: minmax(285px, auto) repeat(3, minmax(240px, auto));
+    }
+}
+
+@media (max-width: 700px) {
+
+    .gcp-grid>.gcp-tile,
+    .about-microsoft-grid>.microsoft-tile {
+        min-height: 240px;
+    }
+
+    .gcp-grid>.gcp-tile-info,
+    .about-microsoft-grid>.microsoft-tile-learn {
+        min-height: 285px;
+    }
+
+    .gcp-grid>.gcp-tile-counter,
+    .about-microsoft-grid>.microsoft-tile-counter {
+        min-height: 160px;
     }
 }

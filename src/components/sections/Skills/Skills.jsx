@@ -185,9 +185,51 @@ const skillGroups = [
     },
 ];
 
+// Add a destination to each entry when its frontend project page is ready.
+const frontendDesigns = [
+    { title: 'Frontend Design One', description: 'Interface layouts and visual design.', href: null },
+    { title: 'Frontend Design Two', description: 'Responsive pages and component design.', href: null },
+    { title: 'Frontend Design Three', description: 'Interaction flows and frontend development.', href: null },
+];
+
 function Skills() {
-    const aboutRef = useRef(null);
     const navigate = useNavigate();
+    const [isDesignModalOpen, setIsDesignModalOpen] = useState(false);
+    const designTriggerRef = useRef(null);
+    const designCloseRef = useRef(null);
+    const designDialogRef = useRef(null);
+    const [selectedDesign, setSelectedDesign] = useState(null);
+
+    useEffect(() => {
+        if (!isDesignModalOpen) return;
+        const trigger = designTriggerRef.current;
+        const openedWithKeyboard = trigger?.matches(':focus-visible');
+        const previousOverflow = document.body.style.overflow;
+        document.body.style.overflow = 'hidden';
+        designCloseRef.current?.focus();
+        const handleKeyDown = (event) => {
+            if (event.key === 'Escape') setIsDesignModalOpen(false);
+            if (event.key === 'Tab') {
+                const controls = [...designDialogRef.current.querySelectorAll('button, a[href]')];
+                const first = controls[0];
+                const last = controls[controls.length - 1];
+                if (event.shiftKey && document.activeElement === first) {
+                    event.preventDefault();
+                    last.focus();
+                } else if (!event.shiftKey && document.activeElement === last) {
+                    event.preventDefault();
+                    first.focus();
+                }
+            }
+        };
+        document.addEventListener('keydown', handleKeyDown);
+        return () => {
+            document.body.style.overflow = previousOverflow;
+            document.removeEventListener('keydown', handleKeyDown);
+            if (openedWithKeyboard) trigger?.focus();
+            else trigger?.blur();
+        };
+    }, [isDesignModalOpen]);
 
     const [isSkillsModalOpen, setIsSkillsModalOpen] = useState(false);
 
@@ -212,9 +254,10 @@ function Skills() {
                     </h2>
 
                     <p className="skills-intro-description">
-                        Building across full-stack software engineering, AI
-                        application development, cloud platforms, automation
-                        and product-focused interface design.
+                        I’ve built full-stack applications, AI procurement and contract
+                        tools, private intelligence platforms and workflow integrations.
+                        This section brings those projects together with the cloud
+                        ecosystems I work in and my UX/UI design work.
                     </p>
 
                 </div>
@@ -227,7 +270,7 @@ function Skills() {
                 ===================================================== */}
 
                     {/* =====================================================
-    ROW 1 — FULL-STACK SOFTWARE ENGINEERING
+    ROW 1 - FULL-STACK SOFTWARE ENGINEERING
 ===================================================== */}
 
                     <article className="skills-tile skills-tile-fullstack">
@@ -248,28 +291,28 @@ function Skills() {
                         <div className="skills-tile-content">
 
                             <h3>
-                                Full-Stack
+                                I build full-stack
                                 <br />
-                                Software Engineering
+                                applications.
                             </h3>
 
                             <p>
-                                Building end-to-end web applications with React, JavaScript, Node.js,
-                                Express, REST APIs, MongoDB, PostgreSQL, Mongoose, Prisma, JWT
-                                authentication, responsive UI, Git, CI/CD, and cloud deployment.
+                                I work on the frontend, backend, APIs and databases,
+                                along with authentication, integrations and deployment.
+                                Some projects also include AI models and automated workflows.
                             </p>
 
                         </div>
 
                         <div className="skills-tile-actions">
 
-                            <a
+                            <button
                                 type="button"
                                 className="skills-button skills-button-secondary"
                                 onClick={handleSkillsOpen}
                             >
                                 All Skills
-                            </a>
+                            </button>
 
                             <a
                                 href="#projects"
@@ -305,8 +348,9 @@ function Skills() {
                             </h3>
 
                             <p>
-                                LLM application engineering, context
-                                engineering and AI-powered development.
+                                My AI Procurement &amp; Contract Intelligence Platform:
+                                bringing Claude into the work of understanding
+                                contracts and procurement documents.
                             </p>
 
                         </div>
@@ -314,8 +358,8 @@ function Skills() {
                         <button
                             className="skills-arrow skills-arrow-light"
                             type="button"
-                            disabled
-                            aria-label="Claude projects unavailable"
+                            aria-label="View Claude AI Procurement and Contract Intelligence project"
+                            onClick={() => navigate('/projects/claude')}
                         >
                             <ArrowRight
                                 size={16}
@@ -332,37 +376,22 @@ function Skills() {
                         <div className="skills-tile-content">
 
                             <span className="skills-tile-label">
-                                Microsoft
+                                Cloud ecosystems
                             </span>
 
                             <h3>
-                                Azure
+                                AWS, GCP
                                 <br />
-                                Foundry
+                                &amp; Microsoft
                             </h3>
 
                             <p>
-                                Agentic AI, multi-agent architecture and
-                                intelligent application development.
+                                I work across AWS, Google Cloud and Microsoft,
+                                using their services for application hosting,
+                                data, integrations and AI development.
                             </p>
 
                         </div>
-
-                        <button
-                            className="skills-arrow skills-arrow-light"
-                            type="button"
-                            aria-label="View Microsoft Foundry projects"
-                            onClick={(event) => {
-                                event.stopPropagation();
-                                navigate('/projects/microsoft');
-                            }}
-                        >
-                            <ArrowRight
-                                size={16}
-                                strokeWidth={1.7}
-                                aria-hidden="true"
-                            />
-                        </button>
 
                     </article>
 
@@ -393,15 +422,16 @@ function Skills() {
                             </h3>
 
                             <p>
-                                Workflow orchestration, API integration,
-                                automation and event-driven systems.
+                                My Enterprise Workflow &amp; Integration OpsFlow Platform:
+                                connecting business systems and turning repeatable
+                                work into coordinated workflows.
                             </p>
 
                             <button
                                 className="skills-arrow skills-arrow-light"
                                 type="button"
-                                disabled
-                                aria-label="n8n projects unavailable"
+                                aria-label="View n8n Enterprise Workflow and Integration OpsFlow project"
+                                onClick={() => navigate('/projects/n8n')}
                             >
                                 <ArrowRight
                                     size={16}
@@ -427,15 +457,18 @@ function Skills() {
                             </h3>
 
                             <p>
-                                Product interfaces, interaction design
-                                and visual systems.
+                                I design interfaces, page layouts and interaction
+                                flows.
                             </p>
 
                             <button
                                 className="skills-arrow skills-arrow-light"
                                 type="button"
-                                disabled
-                                aria-label="UX/UI projects unavailable"
+                                ref={designTriggerRef}
+                                aria-label="Explore UX/UI designs"
+                                aria-haspopup="dialog"
+                                aria-expanded={isDesignModalOpen}
+                                onClick={() => { setSelectedDesign(null); setIsDesignModalOpen(true); }}
                             >
                                 <ArrowRight
                                     size={16}
@@ -470,8 +503,9 @@ function Skills() {
                             </h3>
 
                             <p>
-                                Local LLM development, experimentation
-                                and AI application workflows.
+                                My Private Personal/Business Intelligence Platform:
+                                exploring what local AI can do with the information
+                                people and businesses keep close.
                             </p>
 
                         </div>
@@ -479,8 +513,8 @@ function Skills() {
                         <button
                             className="skills-arrow skills-arrow-light"
                             type="button"
-                            disabled
-                            aria-label="Ollama projects unavailable"
+                            aria-label="View Ollama Private Personal and Business Intelligence project"
+                            onClick={() => navigate('/projects/ollama')}
                         >
                             <ArrowRight
                                 size={16}
@@ -494,6 +528,45 @@ function Skills() {
                 </div>
 
             </section>
+
+            {isDesignModalOpen && (
+                <div className="skills-modal-overlay" onMouseDown={() => setIsDesignModalOpen(false)}>
+                    <div ref={designDialogRef} className="skills-modal skills-design-modal" role="dialog"
+                        aria-modal="true" aria-labelledby="skills-design-title"
+                        onMouseDown={(event) => event.stopPropagation()}>
+                        <button ref={designCloseRef} className="skills-modal-close" type="button"
+                            aria-label="Close UX/UI designs" onClick={() => setIsDesignModalOpen(false)}>
+                            <span aria-hidden="true">×</span>
+                        </button>
+                        <div className="skills-modal-header">
+                            <h2 id="skills-design-title">UX/UI designs</h2>
+                            <p>Three frontend design projects covering layouts, components and interactions.</p>
+                        </div>
+                        <div className="skills-design-list">
+                            {frontendDesigns.map((project) => (
+                                <article className="skills-design-item" key={project.title}>
+                                    <h3>{project.title}</h3>
+                                    <p>{project.description}</p>
+                                    {project.href ? (
+                                        <a className="skills-design-link" href={project.href}>
+                                            View design <ArrowRight size={13} aria-hidden="true" />
+                                        </a>
+                                    ) : (
+                                        <button className="skills-design-link" type="button"
+                                            aria-label={`View ${project.title}`}
+                                            onClick={() => setSelectedDesign(project.title)}>
+                                            View design <ArrowRight size={13} aria-hidden="true" />
+                                        </button>
+                                    )}
+                                </article>
+                            ))}
+                        </div>
+                        <p className="skills-design-status" role="status">
+                            {selectedDesign ? `${selectedDesign} will be available once its project page is connected.` : ''}
+                        </p>
+                    </div>
+                </div>
+            )}
 
             {isSkillsModalOpen && (
                 <div
