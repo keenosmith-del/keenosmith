@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { projectConcepts } from '../../../data/projectConcepts.js';
 import {
     ArrowRight,
     ChevronDown,
@@ -11,22 +13,6 @@ import './Projects.css';
 import aiAssistantCover from '../../../assets/projects/ai/1.png';
 import productivityCover from '../../../assets/projects/productivity/1.png'
 import musicCover from '../../../assets/projects/music/1.png';
-
-// row 2 imports 
-// import microsoftAzure from '../../../assets/images/custom-projects/microsoft-azure.png';
-import ollamaImage from '../../../assets/images/custom-projects/ollama.png';
-import claudeImage from '../../../assets/images/custom-projects/claude.png';
-import microsoftCover from '../../../assets/projects/microsoft/microsoft.png';
-
-// row 3 imports
-import huggingFace from '../../../assets/images/custom-projects/hugging-face.png';
-import duckDBImage from '../../../assets/images/custom-projects/duckDB.png';
-//import enterpriseCover from '../../../assets/images/custom-projects/1.png';
-
-// row 4 imports
-import liblabImage from '../../../assets/images/custom-projects/liblab-api.png';
-import octoImage from '../../../assets/images/custom-projects/octokit.png';
-import openAIImage from '../../../assets/images/custom-projects/openAI.png';
 
 const projects = [
     {
@@ -60,101 +46,23 @@ const projects = [
             'Full-stack React, Node.js, Express and MongoDB application implementing REST APIs, external service integration, data persistence and browser-based audio playback.',
         image: musicCover,
     },
-    {
-        id: 'azure-ai',
-        title: 'Microsoft Azure AI Project',
-        skill: 'Azure AI Engineering',
-        description:
-            'Placeholder description for a Microsoft Azure AI project integrating cloud-based AI services, application architecture and intelligent workloads.',
-        image: microsoftCover,
-    },
-
-    {
-        id: 'ollama-agent',
-        title: 'Ollama AI Agent',
-        skill: 'Local AI Engineering',
-        description:
-            'Placeholder description for a local AI agent application using Ollama, model inference and application-level agent orchestration.',
-        image: ollamaImage,
-        background: 'var(--surface)',
-        imageMode: 'centered',
-    },
-
-    {
-        id: 'claude-engineering',
-        title: 'Claude AI Engineering',
-        skill: 'LLM Application Engineering',
-        description:
-            'Placeholder description for an AI engineering project using Claude, structured context, application logic and LLM-driven workflows.',
-        image: claudeImage,
-        background: '#eb7e5d',
-        imageMode: 'centered',
-    },
-
-    {
-        id: 'hugging-face',
-        title: 'Hugging Face AI Project',
-        skill: 'AI Model Engineering',
-        description:
-            'Placeholder description for an AI project integrating Hugging Face models, inference workflows and application-level AI engineering.',
-        image: huggingFace,
-        background: '#f4c13e',
-        imageMode: 'centered',
-    },
-
-    {
-        id: 'aws-project',
-        title: 'AWS AI Project',
-        skill: 'AWS Cloud Engineering',
-        description:
-            'Placeholder description for an AWS project integrating cloud services, AI workloads and scalable application infrastructure.',
-        image: null,
-    },
-
-    {
-        id: 'google-cloud',
-        title: 'Google Cloud AI Project',
-        skill: 'Google Cloud Engineering',
-        description:
-            'Placeholder description for a Google Cloud project integrating cloud infrastructure, AI services and application-level engineering.',
-        image: null,
-        background: 'var(--surface)',
-        imageMode: 'centered',
-    },
-    
-    {
-        id: 'n8n',
-        title: 'Jop-Specific Project',
-        skill: 'Workflow Orchestration',
-        description:
-            'Placeholder description for an event-driven automation project integrating workflows, APIs, webhooks and service orchestration.',
-        image: null,
-        background: 'var(--charcoal)',
-        imageMode: 'centered',
-    },
-
-    {
-        id: 'liblab-postman',
-        title: 'Job-Specific Project',
-        skill: 'API Development',
-        description:
-            'Placeholder description for an API engineering project combining SDK generation, API documentation, testing and developer tooling.',
-        image: null,
-        background: 'var(--surface)',
-        imageMode: 'centered',
-    },
-
-    {
-        id: 'typesafe-ai',
-        title: 'Job-Specific Project',
-        skill: 'AI Engineering',
-        description:
-            'Placeholder description for an AI engineering project exploring model evaluation, structured outputs and reliable AI-assisted development workflows.',
-        image: null,
-        background: '#ed899d',
-        imageMode: 'centered',
-    },
-    
+    ...[
+        ['microsoft-devops', 'Microsoft Azure AI', 'Azure AI Engineering', null, null],
+        ['ollama', 'Ollama BI', 'Local AI Engineering', 'var(--surface)', 'centered'],
+        ['claude', 'Claude-Operated AI Procurement', 'LLM Application Engineering', '#eb7e5d', 'centered'],
+        ['hugging-face', 'Hugging Face AI Insurance Claims', 'AI Model Engineering', '#f4c13e', 'centered'],
+        ['banking-risk', 'AWS Intelligent Banking & Payment Risk', 'AWS Cloud Engineering', null, null],
+        ['vertex-ai-retail', 'Google Cloud Intelligent Retail & Supply Chain', 'Google Cloud Engineering', 'var(--surface)', 'centered'],
+        ['distributed-reliability', 'Chaos Engineering & Disaster Recovery', 'SRE & Reliability Engineering', 'var(--charcoal)', 'centered'],
+        ['deepseek', 'HR Workforce Planning', 'AI & Talent Intelligence', 'var(--surface)', 'centered'],
+        ['telecom-billing', 'Telecommunications Billing & Subscriptions', 'Enterprise Billing Systems', '#ed899d', 'centered'],
+        ['fleet-operations', 'Real-Time Logistics', 'Real-Time Streaming & Logistics', null, null],
+        ['field-service', 'Field Service & Asset Maintenance', 'Mobile & Field Operations', null, null],
+        ['n8n', 'n8n OpsFlow', 'Workflow & Integration Engineering', null, null],
+    ].map(([id, title, skill, background, imageMode]) => ({
+        id, title, skill, background, imageMode, image: null,
+        description: projectConcepts.find(project => project.id === id).description,
+    })),
 ];
 
 function Projects() {
@@ -162,7 +70,10 @@ function Projects() {
         'productivity-platform'
     );
 
-    const [showAllProjects, setShowAllProjects] = useState(false);
+    const [showAllProjects, setShowAllProjects] = useState(() => {
+        try { return sessionStorage.getItem('portfolio.projectsExpanded') === 'true'; }
+        catch { return false; }
+    });
 
     return (
         <section className="projects" id="projects">
@@ -214,9 +125,7 @@ function Projects() {
                                                 background:
                                                     project.background || 'transparent',
                                             }}
-                                            onMouseEnter={() =>
-                                                setActiveProject(project.id)
-                                            }
+                                            onMouseEnter={() => setActiveProject(project.id)}
                                         >
                                             <div className="project-image">
 
@@ -252,9 +161,9 @@ function Projects() {
 
                                             </div>
 
-                                            <a
+                                            <Link
                                                 className="project-arrow"
-                                                href={`/projects/${project.id}`}
+                                                to={`/projects/${project.id}`}
                                                 aria-label={`View ${project.title}`}
                                             >
                                                 <ArrowRight
@@ -262,7 +171,7 @@ function Projects() {
                                                     strokeWidth={1.7}
                                                     aria-hidden="true"
                                                 />
-                                            </a>
+                                            </Link>
 
                                         </article>
                                     );
@@ -279,7 +188,12 @@ function Projects() {
                     type="button"
                     className="projects-expand"
                     onClick={() =>
-                        setShowAllProjects((current) => !current)
+                        setShowAllProjects((current) => {
+                            const expanded = !current;
+                            try { sessionStorage.setItem('portfolio.projectsExpanded', String(expanded)); }
+                            catch { /* Expansion still works without browser storage. */ }
+                            return expanded;
+                        })
                     }
                     aria-expanded={showAllProjects}
                 >

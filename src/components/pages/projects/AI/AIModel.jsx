@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, ExternalLink, ArrowUp } from 'lucide-react';
 
 import './AIModel.css';
@@ -43,9 +44,9 @@ function AIModel() {
 
             {/* Back to portfolio */}
 
-            <a
+            <Link
                 className="ai-project-back"
-                href="/"
+                to="/"
             >
                 <ArrowLeft
                     size={16}
@@ -54,7 +55,7 @@ function AIModel() {
                 />
 
                 <span>Back to Portfolio</span>
-            </a>
+            </Link>
 
 
             {/* Hero */}
@@ -404,12 +405,12 @@ function AIModel() {
 
                     <div className="ai-project-closing-actions">
 
-                        <a
+                        <Link
                             className="ai-project-closing-button"
-                            href="/"
+                            to="/"
                         >
                             Back to Portfolio
-                        </a>
+                        </Link>
 
                         <button
                             className="ai-project-closing-top"

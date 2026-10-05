@@ -3,6 +3,7 @@ import { ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 import './About.css';
+import LaunchCountdown from '../../shared/LaunchCountdown.jsx';
 
 import awsLogo from '../../../assets/svgs/about/aws-2.png';
 import microsoftLogo from '../../../assets/svgs/about/microsoft-icon.svg';
@@ -18,6 +19,7 @@ import foundersLogo from '../../../assets/images/about/founderz.png';
 import microsoftBadge1 from '../../../assets/images/about/microsoft-badge.png';
 import foundryBadge from '../../../assets/images/about/foundry.png';
 import bearVisual from '../../../assets/images/about/bearVisual.png';
+import bearPush from '../../../assets/images/about/bearPush.png';
 import liblabsPostman from '../../../assets/images/about/liblabs.png';
 import azureLogo from '../../../assets/images/about/azure.png';
 import openAIImage from '../../../assets/images/about/openai.svg';
@@ -42,6 +44,7 @@ import githubLogo from '../../../assets/svgs/about/github.svg';
 import githubImage from '../../../assets/images/about/github.png';
 import qwenTop from '../../../assets/images/about/myCompanyImage-1.png';
 import qwenBottom from '../../../assets/images/about/myCompanyImage-2.png';
+import myCompanyImage from '../../../assets/images/about/myCompanyImage.png';
 
 function About() {
     const aboutRef = useRef(null);
@@ -290,24 +293,25 @@ function About() {
                 </article>
 
 
-                {/* Tile 7 — AWS Skill Builder */}
-                <article className="about-tile about-tile-medium-2 about-tile-eight">
-
-                    <div className="about-tile-eight-image">
-                    </div>
-
+                {/* Tile 7 — Local AI / DeepSeek project concept */}
+                <article className="about-tile about-tile-medium-2 about-tile-eight about-tile-deepseek">
                     <div className="about-tile-eight-overlay" />
-
-                    <a
-                        className="about-tile-eight-link"
-                        target="_blank"
-                        rel="noreferrer"
-                        href="https://skillsprofile.skillbuilder.aws/user/keenosmith"
-                        aria-label="View AWS Skill Builder profile"
-                    >
-                        <ArrowRight size={18} strokeWidth={1.7} />
-                    </a>
-
+                    <div className="about-deepseek-pills">
+                        <span>DeepSeek</span>
+                        <span>Local AI</span>
+                        <span>Human review</span>
+                    </div>
+                    <div className="about-tile-eight-content">
+                        <h3>Talent intelligence.</h3>
+                        <p>Exploring local AI that turns CVs and role requirements
+                            into evidence-backed skills insights, with people
+                            guiding every hiring decision.</p>
+                    </div>
+                    <button className="about-tile-eight-link" type="button"
+                        aria-label="View DeepSeek workforce and talent intelligence project"
+                        onClick={() => navigate('/projects/deepseek')}>
+                        <ArrowRight size={18} strokeWidth={1.7} aria-hidden="true" />
+                    </button>
                 </article>
 
             </div>
@@ -652,13 +656,11 @@ function About() {
 
                         </div>
 
-                        <div className="microsoft-tile-badge">
-                            {/*
+                        <div className="microsoft-bear-visual">
                             <img
-                                src={microsoftLogo}
-                                alt="Microsoft"
+                                src={bearPush}
+                                alt="Bear"
                             />
-                            */}
                         </div>
 
                         <div className="microsoft-tile-content">
@@ -802,7 +804,7 @@ function About() {
                             <span>Event streaming</span>
                         </div>
                         <div className="microsoft-tile-content">
-                            <h3>JWT + RedPanda</h3>
+                            <h3></h3>
                             <p>Securing service access with JWT authentication and
                                 connecting distributed applications through Redpanda
                                 event streams.</p>
@@ -862,178 +864,93 @@ function About() {
     ========================================================= */}
 
             <section className="about about-section-three" id="engineering">
-
                 <div className="about-intro">
-
-                    <img
-                        src={githubLogo}
-                        alt="GitHub"
-                        className="about-intro-logo"
-                    />
-
-                    <h2>
-                        Engineering <br /> CI/CD
-                    </h2>
-
+                    <h2><br />Putting AI to work.</h2>
                     <p className="about-intro-description">
-                        Full-stack development, modern engineering workflows, AI-assisted
-                        development and the tools used to build, version, automate and
-                        continuously improve production-ready applications.
+                        Alongside my work and projects, I’ve created two sister companies:
+                        kailor, which uses AI to assess business needs, and kai,
+                        a hub for AI insights, research and articles. I’m building
+                        both websites as I prepare them for launch.
                     </p>
-
                 </div>
-
-
                 <div className="about-grid about-grid-three">
-
-                    {/* =================================================
-            TILE 1 — FULL-STACK ENGINEERING
-            ================================================= */}
-
                     <article className="about-tile about-three-engineering">
 
+                        <div className="about-company-visual">
+                            <img
+                                src={myCompanyImage}
+                                alt="Kailor"
+                            />
+                        </div>
+
                         <div className="about-three-label">
-                            <span>HyperionDev</span>
-                            <span>Helsinki Full-Stack Open</span>
-                            <span>UNISA</span>
-
+                            <span>Business needs</span><span>AI assessment</span>
                         </div>
-
                         <div className="about-three-content">
-
-                            <h3>
-                                Full-Stack Software
-                                <br />
-                                Engineering
-                            </h3>
-
-                            <p>
-                                Full-stack software engineering supported by a computer science foundation,
-                                with practical experience building frontend interfaces,
-                                backend services, database-driven applications,
-                                authentication systems and integrated full-stack solutions.
-                            </p>
-
+                            <h3>Start with the need</h3>
+                            <p>My AI company: understanding what a business needs
+                                and where AI can make a practical difference.
+                                The website is in progress.</p>
+                            <LaunchCountdown />
                         </div>
-
+                        <button className="about-three-arrow" type="button"
+                            aria-label="View Kailor website launch"
+                            onClick={() => navigate('/companies/kailor')}>
+                            <ArrowRight size={16} strokeWidth={1.7} aria-hidden="true" />
+                        </button>
                     </article>
-
-                    {/* =================================================
-    TILE 4 — GITHUB COPILOT
-    ================================================= */}
 
                     <article className="about-tile about-three-copilot">
-
                         <div className="about-three-copilot-image">
-                            <img
-                                src={copilotCover}
-                                alt="GitHub Copilot"
-                            />
+                            <img src={copilotCover} alt="GitHub Copilot" />
                         </div>
-
                         <div className="about-three-copilot-overlay" />
+                        <div className="about-three-label"><span>Web development</span><span>CI/CD</span></div>
+                        <div className="about-three-content">
+                            <h3></h3>
+                            <p></p>
+                        </div>
 
                     </article>
-
-
-                    {/* =================================================
-            TILE 2 — GENERATIVE AI
-            ================================================= */}
-
-                    {/* this tile needs image qwenTop resting flush on bottom right of container */}
-
                     <article className="about-tile about-three-ai">
-
-                        <div className="about-three-label">
-                            <span>Qwen AI</span>
-                        </div>
-
+                        <div className="about-three-label"><span>Applied AI</span></div>
                         <div className="about-three-content">
-                            {/* content moved UP so image does not overlap*/}
-                            <h3>
-                                Qwen 3.8
-                            </h3>
-
-                            <p>
-                                Some placeholder content until I figure out exactly what needs to go into this tile to tell a narrative story with portfolio
-                            </p>
+                            <h3>kai</h3>
+                            <p>Exploring AI-led assessments that connect business
+                                challenges with useful next steps.</p>
                         </div>
-
-                        <img
-                            src={qwenTop}
-                            alt=""
-                            className="about-three-qwen-top"
-                        />
-
+                        <img src={qwenTop} alt="" className="about-three-qwen-top" />
+                        <button className="about-three-arrow" type="button"
+                            aria-label="View Kailor AI business assessment project"
+                            onClick={() => navigate('/projects/kailor-ai')}>
+                            <ArrowRight size={16} strokeWidth={1.7} aria-hidden="true" />
+                        </button>
                     </article>
-
-
-                    {/* =================================================
-            TILE 3 — GITHUB COUNTER
-            ================================================= */}
-
                     <article className="about-tile about-three-github">
-
                         <div className="about-three-counter">
-                            <strong data-target="120">
-                                0+
-                            </strong>
-
-                            <span>
-                                GitHub Repositories
-                            </span>
+                            <strong data-target="120">0+</strong><span>GitHub Repositories</span>
                         </div>
-
-                        <a
-                            className="about-three-arrow"
-                            target="_blank"
-                            rel="noreferrer"
-                            href="https://github.com/keenosmith-del"
-                            aria-label="View GitHub repositories"
-                        >
-                            <ArrowRight
-                                size={18}
-                                strokeWidth={1.7}
-                            />
+                        <a className="about-three-arrow" target="_blank" rel="noreferrer"
+                            href="https://github.com/keenosmith-del" aria-label="View GitHub repositories">
+                            <ArrowRight size={16} strokeWidth={1.7} aria-hidden="true" />
                         </a>
-
                     </article>
-
-
-                    {/* =================================================
-            TILE 4 — WETHINKCODE
-            ================================================= */}
-
-                    {/* this tile needs image qwenBottom resting flush on top right of container */}
-
                     <article className="about-tile about-three-wethinkcode">
-
-                        <div className="about-three-label">
-                            <span>WeThinkCode_</span>
-                        </div>
-
+                        <div className="about-three-label"><span>AI insights</span><span>Research &amp; articles</span></div>
                         <div className="about-three-content">
-                            <h3>
-                                AI Course for Developers
-                                <br />
-                                GenAI for Software Developers
-                            </h3>
-
-                            <p>
-                                Applying AI-assisted development, modern programming
-                                practices and intelligent tooling to software
-                                engineering workflows.
-                            </p>
+                            <h3>From idea to launch.</h3>
+                            <p>Kailor’s sister company: an AI hub for insights,
+                                research and articles, bringing the wider AI
+                                conversation together.</p>
+                            <LaunchCountdown />
                         </div>
-
-                        <img
-                            src={qwenBottom}
-                            alt=""
-                            className="about-three-qwen-bottom"
-                        />
-
+                        <img src={qwenBottom} alt="" className="about-three-qwen-bottom" />
+                        <button className="about-three-arrow" type="button"
+                            aria-label="View Kai AI insights website launch"
+                            onClick={() => navigate('/companies/kai')}>
+                            <ArrowRight size={16} strokeWidth={1.7} aria-hidden="true" />
+                        </button>
                     </article>
-
                 </div>
 
                 <div className="about-linkedin-action">

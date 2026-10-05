@@ -4,189 +4,17 @@ import { ChevronDown, ArrowRight, Check } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 import './Header.css';
+import { skillGroups } from '../../data/skillGroups.js';
+import { projectConcepts } from '../../data/projectConcepts.js';
 
 import avatar from '../../assets/images/avatar/avatar.png';
 import githubIcon from '../../assets/svgs/header/github.svg';
 import linkedinIcon from '../../assets/svgs/header/linkedin.svg';
 import homeIcon from '../../assets/svgs/header/home.svg';
 
-const skillGroups = [
-    {
-        title: 'Frontend & UI',
-        skills: [
-            'React',
-            'JavaScript',
-            'HTML',
-            'CSS',
-            'Vite',
-            'React Router',
-            'Tailwind CSS',
-            'Bootstrap',
-            'Figma',
-            'Responsive Design',
-            'Component Architecture',
-            'Web Animation',
-        ],
-    },
-    {
-        title: 'Backend & APIs',
-        skills: [
-            'Node.js',
-            'Express.js',
-            'Fastify',
-            'FastAPI',
-            'REST APIs',
-            'GraphQL',
-            'Postman',
-            'Axios',
-            'API Integration',
-            'Asynchronous Programming',
-            'Middleware',
-            'Server-side Architecture',
-        ],
-    },
-    {
-        title: 'Databases & Data',
-        skills: [
-            'MongoDB',
-            'Mongoose',
-            'PostgreSQL',
-            'MySQL',
-            'Prisma',
-            'Redis',
-            'Elasticsearch',
-            'Neo4j',
-            'Data Modelling',
-            'Query Design',
-            'Vector Search',
-        ],
-    },
-    {
-        title: 'AI & Machine Learning',
-        skills: [
-            'OpenAI',
-            'Anthropic',
-            'Google Gemini',
-            'Hugging Face',
-            'LangChain',
-            'PyTorch',
-            'TensorFlow',
-            'RAG',
-            'Embeddings',
-            'NLP',
-            'Prompt Engineering',
-            'LLM Integration',
-            'Agentic AI',
-            'AI Evaluation',
-        ],
-    },
-    {
-        title: 'Microsoft & Azure',
-        skills: [
-            'Microsoft Foundry',
-            'Foundry Agent Service',
-            'Microsoft Agent Framework',
-            'Azure OpenAI',
-            'Foundry Models',
-            'Azure AI Search',
-            'Azure Functions',
-            'Azure Container Apps',
-            'Azure Logic Apps',
-            'Azure Service Bus',
-            'Azure Storage',
-            'Azure Key Vault',
-            'Microsoft Entra ID',
-            'Azure Monitor',
-            'Application Insights',
-            'Azure DevOps',
-            'Azure API Management',
-        ],
-    },
-    {
-        title: 'Google Cloud & AI',
-        skills: [
-            'Google Cloud',
-            'Google Gemini',
-            'Vertex AI',
-            'Google AI APIs',
-            'Firebase',
-            'Cloud Functions',
-            'Cloud Storage',
-            'Google Cloud APIs',
-        ],
-    },
-    {
-        title: 'Cloud, DevOps & Infrastructure',
-        skills: [
-            'AWS',
-            'Docker',
-            'Kubernetes',
-            'GitHub Actions',
-            'CI/CD',
-            'Terraform',
-            'Cloudflare',
-            'Nginx',
-            'Render',
-            'Vercel',
-            'Containerisation',
-            'Deployment Automation',
-            'Infrastructure as Code',
-        ],
-    },
-    {
-        title: 'Security & Authentication',
-        skills: [
-            'JWT',
-            'Authentication',
-            'Authorization',
-            'RBAC',
-            'bcrypt',
-            'Protected Routes',
-            'API Security',
-            'Microsoft Entra ID',
-            'Managed Identity',
-            'Secrets Management',
-            'OAuth',
-            'Security Architecture',
-        ],
-    },
-    {
-        title: 'Architecture & Engineering',
-        skills: [
-            'Software Architecture',
-            'System Design',
-            'RESTful Architecture',
-            'Microservices',
-            'Event-driven Architecture',
-            'Serverless Architecture',
-            'Distributed Systems',
-            'Asynchronous Workflows',
-            'Message Queues',
-            'API Design',
-            'Integration Patterns',
-            'Error Handling',
-            'Observability',
-        ],
-    },
-    {
-        title: 'Languages & Core Engineering',
-        skills: [
-            'JavaScript',
-            'Python',
-            'C++',
-            'SQL',
-            'Object-oriented Programming',
-            'Data Structures',
-            'Algorithms',
-            'Async Programming',
-            'Git',
-            'GitHub',
-            'JSON',
-        ],
-    },
-];
 
 const projectGroups = [
+    ...projectConcepts,
     {
         title: 'Authenticated MERN Productivity Platform',
 
@@ -362,6 +190,18 @@ function Header() {
     const [isSkillsOpen, setIsSkillsOpen] = useState(false);
     const [isProjectsOpen, setIsProjectsOpen] = useState(false);
     const [isLinksOpen, setIsLinksOpen] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [isCompactNavigation, setIsCompactNavigation] = useState(() => window.matchMedia('(max-width: 1100px)').matches);
+
+    useEffect(() => {
+        const media = window.matchMedia('(max-width: 1100px)');
+        const update = () => {
+            setIsCompactNavigation(media.matches);
+            if (!media.matches) setIsMobileMenuOpen(false);
+        };
+        media.addEventListener('change', update);
+        return () => media.removeEventListener('change', update);
+    }, []);
 
     const navigationRef = useRef(null);
 
@@ -407,6 +247,7 @@ function Header() {
 
     const handleChatOpen = () => {
         closeAllDropdowns();
+        setIsMobileMenuOpen(false);
         setIsChatOpen(true);
     };
 
@@ -518,6 +359,41 @@ function Header() {
     };
 
     useEffect(() => {
+        if (!isProjectsOpen && !isSkillsOpen && !(isCompactNavigation && isMobileMenuOpen)) return;
+        const previousBodyOverflow = document.body.style.overflow;
+        const previousHtmlOverflow = document.documentElement.style.overflow;
+        document.body.style.overflow = 'hidden';
+        document.documentElement.style.overflow = 'hidden';
+        const nav = navigationRef.current;
+        const trigger = nav.querySelector(isProjectsOpen ? '.navigation-projects-trigger' : isSkillsOpen ? '.navigation-skills-trigger' : '.navigation-menu-toggle');
+        const panel = nav.querySelector(isProjectsOpen ? '#navigation-projects-panel' : isSkillsOpen ? '#navigation-skills-panel' : '.navigation-links');
+        const blocked = [
+            ...document.querySelectorAll('#root > main, #root > .portfolio-actions-anchor'),
+        ];
+        const previousInert = blocked.map(el => el.inert);
+        blocked.forEach(el => { el.inert = true; });
+        panel.querySelector('a')?.focus({ preventScroll: true });
+        const trapFocus = (event) => {
+            if (event.key !== 'Tab') return;
+            const controls = [...nav.querySelectorAll('a[href], button:not(:disabled)')].filter(el => !el.closest('[aria-hidden="true"]') && el.getClientRects().length > 0);
+            const index = controls.indexOf(document.activeElement);
+            if (event.shiftKey && index <= 0) {
+                event.preventDefault(); controls.at(-1).focus();
+            } else if (!event.shiftKey && (index === controls.length - 1 || index < 0)) {
+                event.preventDefault(); trigger.focus();
+            }
+        };
+        document.addEventListener('keydown', trapFocus);
+        return () => {
+            document.body.style.overflow = previousBodyOverflow;
+            document.documentElement.style.overflow = previousHtmlOverflow;
+            blocked.forEach((el, i) => { el.inert = previousInert[i]; });
+            document.removeEventListener('keydown', trapFocus);
+            if (trigger.isConnected) trigger.focus({ preventScroll: true });
+        };
+    }, [isProjectsOpen, isSkillsOpen, isMobileMenuOpen, isCompactNavigation]);
+
+    useEffect(() => {
         if (!isChatOpen) {
             return undefined;
         }
@@ -536,7 +412,7 @@ function Header() {
     }, [isChatOpen]);
 
     useEffect(() => {
-        if (!isSkillsOpen && !isProjectsOpen && !isLinksOpen) {
+        if (!isSkillsOpen && !isProjectsOpen && !isLinksOpen && !isMobileMenuOpen) {
             return undefined;
         }
 
@@ -546,6 +422,7 @@ function Header() {
                 !navigationRef.current.contains(event.target)
             ) {
                 closeAllDropdowns();
+                setIsMobileMenuOpen(false);
             }
         };
 
@@ -554,16 +431,17 @@ function Header() {
         return () => {
             document.removeEventListener('mousedown', handleOutsideClick);
         };
-    }, [isSkillsOpen, isProjectsOpen, isLinksOpen]);
+    }, [isSkillsOpen, isProjectsOpen, isLinksOpen, isMobileMenuOpen]);
 
     useEffect(() => {
-        if (!isSkillsOpen && !isProjectsOpen && !isLinksOpen) {
+        if (!isSkillsOpen && !isProjectsOpen && !isLinksOpen && !isMobileMenuOpen) {
             return undefined;
         }
 
         const handleEscape = (event) => {
             if (event.key === 'Escape') {
                 closeAllDropdowns();
+                setIsMobileMenuOpen(false);
             }
         };
 
@@ -572,7 +450,7 @@ function Header() {
         return () => {
             document.removeEventListener('keydown', handleEscape);
         };
-    }, [isSkillsOpen, isProjectsOpen, isLinksOpen]);
+    }, [isSkillsOpen, isProjectsOpen, isLinksOpen, isMobileMenuOpen]);
 
     useEffect(() => {
         if (!Object.values(invalidFields).some(Boolean)) {
@@ -590,9 +468,10 @@ function Header() {
 
     return (
         <>
+            {(isProjectsOpen || isSkillsOpen || (isCompactNavigation && isMobileMenuOpen)) && <div className="navigation-projects-backdrop" aria-hidden="true" onClick={() => { closeAllDropdowns(); setIsMobileMenuOpen(false); }} />}
             <header className="site-header">
                 <nav
-                    className={`navigation-pill ${isSkillsOpen
+                    className={`navigation-pill ${isMobileMenuOpen ? 'is-mobile-menu-open' : ''} ${isSkillsOpen
                         ? 'is-skills-open'
                         : isProjectsOpen
                             ? 'is-projects-open'
@@ -602,7 +481,20 @@ function Header() {
                         }`}
                     aria-label="Main navigation"
                     ref={navigationRef}
+                    onClick={(event) => {
+                        if (event.target.closest('a')) {
+                            closeAllDropdowns();
+                            setIsMobileMenuOpen(false);
+                        }
+                    }}
                 >
+                    <button className="navigation-menu-toggle" type="button"
+                        aria-label={isMobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+                        aria-expanded={isMobileMenuOpen} aria-controls="navigation-headings"
+                        onClick={() => { closeAllDropdowns(); setIsMobileMenuOpen(current => !current); }}>
+                        <span>{isMobileMenuOpen ? 'Close' : 'Menu'}</span>
+                        <ChevronDown size={13} strokeWidth={1.7} aria-hidden="true" />
+                    </button>
 
                     <div className="navigation-left">
                         <a
@@ -617,7 +509,7 @@ function Header() {
                             />
                         </a>
 
-                        <div className="navigation-links">
+                        <div className="navigation-links" id="navigation-headings">
                             <a
                                 href="#top"
                                 onClick={closeAllDropdowns}
@@ -742,6 +634,7 @@ function Header() {
                             }`}
                         id="navigation-skills-panel"
                         aria-hidden={!isSkillsOpen}
+                        inert={!isSkillsOpen}
                     >
                         <div className="navigation-skills-grid">
                             {skillGroups.map((group) => (
@@ -761,6 +654,11 @@ function Header() {
                                 </div>
                             ))}
                         </div>
+                        <div className="navigation-project-actions">
+                            <Link to="/explore" className="navigation-project-action navigation-project-action-primary" onClick={closeAllDropdowns}>
+                                Search Skills <ArrowRight size={14} aria-hidden="true" />
+                            </Link>
+                        </div>
                     </div>
 
                     {/* drop down projects */}
@@ -769,6 +667,7 @@ function Header() {
                             }`}
                         id="navigation-projects-panel"
                         aria-hidden={!isProjectsOpen}
+                        inert={!isProjectsOpen}
                     >
                         <div className="navigation-projects-grid">
                             {projectGroups.map((project) => (
@@ -776,8 +675,8 @@ function Header() {
                                     className="navigation-project-card"
                                     key={project.title}
                                 >
+                                    {project.domain && <span className="navigation-project-domain">{project.domain} · Planned</span>}
                                     <h3>{project.title}</h3>
-
                                     <p>{project.description}</p>
 
                                     <Link

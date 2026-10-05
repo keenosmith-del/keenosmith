@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
     ArrowLeft,
     ArrowRight,
@@ -49,9 +50,9 @@ function ProductivityPlatform() {
 
             {/* Back to portfolio */}
 
-            <a
+            <Link
                 className="productivity-project-back"
-                href="/"
+                to="/"
             >
                 <ArrowLeft
                     size={16}
@@ -60,7 +61,7 @@ function ProductivityPlatform() {
                 />
 
                 <span>Back to Portfolio</span>
-            </a>
+            </Link>
 
 
             {/* Hero */}
@@ -537,12 +538,12 @@ function ProductivityPlatform() {
 
                     <div className="productivity-project-closing-actions">
 
-                        <a
+                        <Link
                             className="productivity-project-closing-button"
-                            href="/"
+                            to="/"
                         >
                             Back to Portfolio
-                        </a>
+                        </Link>
 
                         <button
                             className="productivity-project-closing-top"

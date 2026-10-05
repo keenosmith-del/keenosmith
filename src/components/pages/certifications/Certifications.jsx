@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
     ArrowLeft,
     ArrowUp,
@@ -896,9 +897,9 @@ function Certifications() {
     return (
         <main className="certifications-page">
 
-            <a
+            <Link
                 className="certifications-back"
-                href="/"
+                to="/"
             >
                 <ArrowLeft
                     size={16}
@@ -907,7 +908,7 @@ function Certifications() {
                 />
 
                 <span>Back to Portfolio</span>
-            </a>
+            </Link>
 
             {/* =================================================
                 HERO
@@ -995,12 +996,12 @@ function Certifications() {
 
                     <div className="certifications-closing-actions">
 
-                        <a
-                            href="/"
+                        <Link
+                            to="/"
                             className="certifications-closing-button"
                         >
                             Back to Portfolio
-                        </a>
+                        </Link>
 
                         <button
                             type="button"

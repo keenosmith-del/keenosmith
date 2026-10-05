@@ -1,0 +1,2 @@
+.company-launch-countdown { display: flex; flex-wrap: wrap; align-items: baseline; gap: 5px 9px; margin-top: 14px; color: inherit; font-size: 10px; line-height: 1.4; }
+.company-launch-countdown strong { font-size: 12px; font-weight: 500; font-variant-numeric: tabular-nums; white-space: nowrap; }

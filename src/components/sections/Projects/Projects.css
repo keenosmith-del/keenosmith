@@ -623,3 +623,22 @@
 
     margin-top: 2px;
 }
+/* Equal-size touch cards replace the desktop expanding rows. */
+@media (max-width: 1100px) {
+    .projects .projects-featured { display: grid; width: calc(100% - 32px); grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .projects .project-row { display: contents; }
+    .projects .projects-featured .project-tile,
+    .projects .projects-featured .project-tile:not(.is-active) { width: 100%; height: 360px; min-height: 360px; flex: none; transform: none; transition: none; }
+    .projects .project-content { left: 22px; right: 22px; bottom: 60px; }
+    .projects .project-content h3 { font-size: 25px; line-height: 1.1; }
+    .projects .project-content p { font-size: 12px; line-height: 1.5; opacity: 1; transform: none; transition: none; }
+    .projects .project-badge { max-width: calc(100% - 40px); white-space: normal; line-height: 1.4; }
+    .projects .project-arrow { opacity: 1; transform: none; right: 20px; bottom: 18px; width: 28px; height: 28px; }
+    .projects .project-arrow::before { content: ''; position: absolute; inset: -8px; }
+}
+@media (max-width: 600px) {
+    .projects .projects-featured { grid-template-columns: minmax(0, 1fr); }
+}
+@media (hover: none), (pointer: coarse) {
+    .projects .project-arrow, .projects .project-content p { opacity: 1; transform: none; }
+}

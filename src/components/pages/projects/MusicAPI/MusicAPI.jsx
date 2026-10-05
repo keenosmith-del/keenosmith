@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
     ArrowLeft,
     ArrowRight,
@@ -61,9 +62,9 @@ function MusicAPI() {
 
             {/* Back to portfolio */}
 
-            <a
+            <Link
                 className="music-project-back"
-                href="/"
+                to="/"
             >
                 <ArrowLeft
                     size={16}
@@ -72,7 +73,7 @@ function MusicAPI() {
                 />
 
                 <span>Back to Portfolio</span>
-            </a>
+            </Link>
 
 
             {/* Hero */}
@@ -697,12 +698,12 @@ function MusicAPI() {
 
                     <div className="music-project-closing-actions">
 
-                        <a
+                        <Link
                             className="music-project-closing-button"
-                            href="/"
+                            to="/"
                         >
                             Back to Portfolio
-                        </a>
+                        </Link>
 
                         <button
                             className="music-project-closing-top"

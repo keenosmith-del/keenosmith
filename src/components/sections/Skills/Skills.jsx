@@ -343,9 +343,7 @@ function Skills() {
                                 Anthropic
                             </span>
 
-                            <h3>
-                                Claude
-                            </h3>
+                            
 
                             <p>
                                 My AI Procurement &amp; Contract Intelligence Platform:
@@ -500,14 +498,13 @@ function Skills() {
                                 Local AI
                             </span>
 
+                            
                             <h3>
-                                Ollama
+                                
                             </h3>
 
                             <p>
-                                My Private Personal/Business Intelligence Platform:
-                                exploring what local AI can do with the information
-                                people and businesses keep close.
+                                
                             </p>
 
                         </div>

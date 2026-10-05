@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom';
 import './Skills.css';
+import { projectConcepts } from '../../../data/projectConcepts.js';
 
 const skillsProjects = {
+    'company-websites': { title: 'Kailor & Kai: Website Engineering', description: 'Building the company websites for AI business assessment and an AI insights and research hub.', planned: true },
+    'kailor-ai': { title: 'Kailor: AI Business Assessment', description: 'Exploring how AI can assess business needs and identify practical opportunities.', planned: true },
     'go-dotnet': { title: 'Go & .NET: Backend Services', description: 'A placeholder for a project using Go and .NET to build backend services.', section: 'microsoft' },
     openai: { title: 'OpenAI: AI Application Development', description: 'A placeholder for a project integrating OpenAI models into an application.', section: 'microsoft' },
     'jwt-redpanda': { title: 'JWT + RedPanda: Secure Event-driven Services', description: 'A placeholder for a project using JWT authentication and Redpanda event streaming.', section: 'microsoft' },
@@ -17,13 +20,15 @@ const skillsProjects = {
 };
 
 export default function SkillsProjectPreview({ project }) {
-    const { title, description, section = 'skills', planned = false } = skillsProjects[project];
+    const { title, description, planned = false, domain, technologies } = projectConcepts.find(item => item.id === project) ?? skillsProjects[project];
     return (
         <main className="skills-project-preview">
             <span>{planned ? 'Planned project · Not built yet' : 'Case study coming soon'}</span>
             <h1>{title}</h1>
+            {domain && <span>{domain}</span>}
             <p>{description} The full project page is being prepared.</p>
-            <Link className="skills-button" to={`/#${section}`}>Back to portfolio</Link>
+            {technologies && <div className="skills-project-technologies">{technologies.map(technology => <span key={technology}>{technology}</span>)}</div>}
+            <Link className="skills-button" to="/">Back to portfolio</Link>
         </main>
     );
 }

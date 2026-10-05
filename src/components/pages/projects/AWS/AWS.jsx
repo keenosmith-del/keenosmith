@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
     ArrowLeft,
     ArrowUp,
@@ -34,9 +35,9 @@ function AWS() {
 
             {/* Back to portfolio */}
 
-            <a
+            <Link
                 className="aws-project-back"
-                href="/"
+                to="/"
             >
                 <ArrowLeft
                     size={16}
@@ -45,7 +46,7 @@ function AWS() {
                 />
 
                 <span>Back to Portfolio</span>
-            </a>
+            </Link>
 
 
             {/* Hero */}
@@ -769,12 +770,12 @@ Rollback`}</code>
                         production-oriented reliability patterns.
                     </p>
 
-                    <a
+                    <Link
                         className="aws-project-closing-button"
-                        href="/"
+                        to="/"
                     >
                         Back to Portfolio
-                    </a>
+                    </Link>
 
                 </div>
 

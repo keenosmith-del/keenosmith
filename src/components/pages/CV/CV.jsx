@@ -1,9 +1,11 @@
+import { useNavigate } from 'react-router-dom';
 import './CV.css';
 
 import { ArrowLeft, Download, ArrowUp } from "lucide-react";
 import { useEffect, useState } from "react";
 
 function CV() {
+    const navigate = useNavigate();
     const [showScrollTop, setShowScrollTop] = useState(false);
 
     useEffect(() => {
@@ -26,7 +28,7 @@ function CV() {
                 <button
                     type="button"
                     className="cv-page-control cv-back"
-                    onClick={() => window.history.back()}
+                    onClick={() => navigate('/')}
                 >
                     <ArrowLeft size={15} strokeWidth={1.8} />
                     <span>Back to Portfolio</span>

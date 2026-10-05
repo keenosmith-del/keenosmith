@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
     ArrowLeft,
     ArrowUp,
@@ -62,9 +63,9 @@ function EnterpriseWorkspace() {
 
             {/* Back to portfolio */}
 
-            <a
+            <Link
                 className="enterprise-project-back"
-                href="/"
+                to="/"
             >
                 <ArrowLeft
                     size={16}
@@ -73,7 +74,7 @@ function EnterpriseWorkspace() {
                 />
 
                 <span>Back to Portfolio</span>
-            </a>
+            </Link>
 
 
 

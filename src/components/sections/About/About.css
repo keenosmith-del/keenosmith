@@ -1448,33 +1448,40 @@
     letter-spacing: -0.005em;
 }
 
-
 /* =========================================================
-   MICROSOFT BADGE
+   MICROSOFT BEAR IMAGE
    ========================================================= */
 
-.microsoft-tile-badge {
+.microsoft-tile-learn {
+    position: relative;
+
+    overflow: hidden;
+}
+
+.microsoft-bear-visual {
     position: absolute;
 
-    top: 22px;
-    right: 22px;
+    top: 55px;
+    right: 0;
 
-    z-index: 3;
+    z-index: 1;
 
-    display: flex;
+    width: 160px;
+    height: 160px;
 
-    align-items: center;
-    justify-content: center;
+    pointer-events: none;
 }
 
-.microsoft-tile-badge img {
-    width: 24px;
-    height: 24px;
+.microsoft-bear-visual img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
 
     object-fit: contain;
-
-    opacity: 0.72;
+    object-position: right top;
 }
+
 
 
 /* =========================================================
@@ -1576,9 +1583,9 @@
 .microsoft-postman-content h3 {
     margin: 0;
 
-    color: #5b5b60;
+    color: #e2e2e5;
 
-    font-size: clamp(18px, 1.45vw, 24px);
+    font-size: 30px;
     font-weight: 500;
 
     line-height: 1;
@@ -2583,6 +2590,39 @@
 
 .about-three-engineering .about-three-content p {
     color: #b9b9bd;
+}
+
+/* =========================================================
+   ABOUT COMPANY IMAGE
+   ========================================================= */
+
+.about-three-engineering {
+    position: relative;
+    overflow: hidden;
+}
+
+.about-company-visual {
+    position: absolute;
+
+    bottom: -5px;
+    right: 20px;
+
+    z-index: 1;
+
+    width: 80px;
+    height: 80px;
+
+    pointer-events: none;
+}
+
+.about-company-visual img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    object-position: right top;
 }
 
 /* =========================================================
@@ -4510,5 +4550,291 @@
     .gcp-grid>.gcp-tile-counter,
     .about-microsoft-grid>.microsoft-tile-counter {
         min-height: 160px;
+    }
+}
+
+.about-tile-deepseek {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 24px;
+}
+
+.about-tile-deepseek .about-tile-eight-overlay {
+    background: var(--tile-visual-overlay);
+    pointer-events: none;
+}
+
+.about-deepseek-pills {
+    position: absolute;
+    top: 21px;
+    left: 22px;
+    right: 22px;
+    z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.about-deepseek-pills span {
+    padding: 5px 8px;
+    border-radius: 999px;
+    background: var(--surface-muted);
+    color: #66666b;
+    font-size: 7px;
+    line-height: 1;
+}
+
+.about-tile-deepseek .about-tile-eight-content {
+    position: relative;
+    z-index: 2;
+    padding-top: 65px;
+    padding-right: 22px;
+}
+
+.about-tile-deepseek h3 {
+    margin: 0;
+    color: var(--charcoal);
+    font-size: clamp(18px, 1.5vw, 24px);
+    font-weight: 500;
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+}
+
+.about-tile-deepseek p {
+    margin: 10px 0 0;
+    color: var(--charcoal);
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+.about-tile-deepseek .about-tile-eight-link {
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+.about-tile-deepseek:focus-within .about-tile-eight-link {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+@media (max-width: 700px) {
+    .about-tile-deepseek {
+        min-height: 240px;
+        padding: 21px;
+    }
+}
+
+/* Regular grids below desktop; retain each tile's existing colours. */
+@media (max-width: 1100px) {
+
+    #about>.about-grid,
+    #gcp .gcp-grid,
+    #microsoft .about-microsoft-grid,
+    #engineering .about-grid-three {
+        display: grid;
+        width: calc(100% - 32px);
+        margin-inline: auto;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: none;
+        grid-auto-rows: minmax(280px, auto);
+        gap: 12px;
+    }
+
+    #microsoft .about-microsoft-grid {
+        width: 100%;
+    }
+
+    #about>.about-grid>.about-tile,
+    #gcp .gcp-grid>.gcp-tile,
+    #microsoft .about-microsoft-grid>.microsoft-tile,
+    #engineering .about-grid-three>.about-tile {
+        grid-column: auto;
+        grid-row: auto;
+        min-height: 280px;
+        height: auto;
+    }
+
+    #about .about-tile p,
+    #gcp .gcp-tile p,
+    #microsoft .microsoft-tile p,
+    #engineering .about-tile p {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    #about .about-tile-four-content,
+    #about .about-tile-one-content {
+        padding-top: 80px;
+    }
+
+    #about .about-tile-four-content p,
+    #about .about-aws-messaging-content p,
+    #gcp .gcp-tile-content p,
+    #microsoft .microsoft-tile-content p {
+        padding-right: 34px;
+    }
+
+    #about .about-tile-four-header {
+        right: 22px;
+    }
+
+    #about .about-tile-four-pills {
+        flex-wrap: wrap;
+    }
+
+    #microsoft .microsoft-tile-learn .microsoft-tile-content h3 {
+        font-size: 28px;
+    }
+
+    #microsoft .microsoft-foundry-content {
+        padding-right: 48px;
+    }
+
+    #microsoft .microsoft-foundry-content span {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    #about .about-aws-project-link,
+    #about .about-tile-five-link,
+    #about .about-tile-six-link,
+    #about .about-tile-eight-link,
+    #gcp .gcp-arrow,
+    #microsoft .microsoft-tile-arrow,
+    #engineering .about-three-arrow {
+        width: 28px;
+        height: 28px;
+        right: 20px;
+        bottom: 20px;
+        opacity: 1;
+        transform: none;
+    }
+
+    #about .about-aws-project-link::before,
+    #about .about-tile-five-link::before,
+    #about .about-tile-six-link::before,
+    #about .about-tile-eight-link::before,
+    #gcp .gcp-arrow::before,
+    #microsoft .microsoft-tile-arrow::before,
+    #engineering .about-three-arrow::before {
+        content: '';
+        position: absolute;
+        inset: -8px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    #about>.about-grid,
+    #gcp .gcp-grid,
+    #microsoft .about-microsoft-grid,
+    #engineering .about-grid-three {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (hover: none),
+(pointer: coarse) {
+
+    #about button:not(:disabled),
+    #about a[class*='link'],
+    #about a[class*='arrow'] {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 1100px) {
+
+    /* These two desktop positions were declared with !important above. */
+    #microsoft .about-microsoft-grid>.microsoft-tile-counter,
+    #microsoft .about-microsoft-grid>.microsoft-tile-foundry {
+        grid-column: auto !important;
+        grid-row: auto !important;
+    }
+
+    #gcp .gcp-person-visual {
+        height: 100%;
+        max-width: 65%;
+    }
+}
+
+/* Company narrative: keep the established tile colours and arrow treatment. */
+#engineering .about-three-arrow {
+    z-index: 5;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    background: rgba(243, 243, 245, 0.92);
+    color: #66666b;
+}
+
+#engineering .about-tile:hover .about-three-arrow,
+#engineering .about-tile:focus-within .about-three-arrow {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+#engineering .about-three-arrow:hover {
+    background: #fff;
+}
+
+#engineering .about-three-arrow:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+}
+
+#engineering .about-three-engineering .about-three-content {
+    padding-top: 56px;
+    padding-right: 22px;
+}
+
+#engineering .about-three-engineering .company-launch-countdown {
+    color: #d1d1d4;
+}
+
+#engineering .about-three-copilot .about-three-label {
+    z-index: 3;
+}
+
+#engineering .about-three-copilot .about-three-content {
+    position: relative;
+    z-index: 3;
+    margin-top: auto;
+    padding: 70px 48px 24px 24px;
+}
+
+#engineering .about-three-copilot .about-three-content h3,
+#engineering .about-three-copilot .about-three-content p {
+    color: var(--charcoal);
+}
+
+#engineering .about-three-wethinkcode .about-three-content {
+    position: relative;
+    z-index: 3;
+    padding-top: 44px;
+    padding-right: 150px;
+}
+
+#engineering .about-three-ai .about-three-content {
+    z-index: 3;
+}
+
+@media (max-width: 1100px) {
+    #engineering .about-three-ai .about-three-content {
+        transform: none;
+        max-width: 68%;
+        padding-top: 55px;
+    }
+
+    #engineering .about-three-qwen-top,
+    #engineering .about-three-qwen-bottom {
+        width: 150px;
+    }
+
+    #engineering .about-three-wethinkcode .about-three-content {
+        padding-top: 55px;
+        padding-right: 80px;
     }
 }

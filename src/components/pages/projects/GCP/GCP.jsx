@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
     ArrowLeft,
     ArrowUp,
@@ -44,9 +45,9 @@ function GCP() {
 
             {/* Back to portfolio */}
 
-            <a
+            <Link
                 className="gcp-project-back"
-                href="/"
+                to="/"
             >
 
                 <ArrowLeft
@@ -57,7 +58,7 @@ function GCP() {
 
                 <span>Back to Portfolio</span>
 
-            </a>
+            </Link>
 
 
 
@@ -800,12 +801,12 @@ Dataplex       Sensitive Data
 
                     <div className="gcp-project-closing-actions">
 
-                        <a
+                        <Link
                             className="gcp-project-closing-button"
-                            href="/"
+                            to="/"
                         >
                             Back to Portfolio
-                        </a>
+                        </Link>
 
 
                         <button

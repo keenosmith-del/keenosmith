@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
     ArrowLeft,
     ArrowRight,
@@ -41,10 +42,10 @@ function Microsoft() {
 
     return (
         <main className="microsoft-page">
-            <a className="microsoft-back" href="/">
+            <Link className="microsoft-back" to="/">
                 <ArrowLeft size={16} strokeWidth={1.7} aria-hidden="true" />
                 <span>Back to Portfolio</span>
-            </a>
+            </Link>
 
             <section className="microsoft-hero">
                 <div className="microsoft-hero-inner">

@@ -1,5 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
+import { projectConcepts } from './data/projectConcepts.js';
+
+import PageScroll from './components/navigation/PageScroll.jsx';
 import Header from './components/navigation/Header.jsx';
 import PortfolioActions from './components/navigation/PortfolioActions.jsx';
 import Hero from './components/sections/Hero/Hero.jsx';
@@ -9,6 +12,8 @@ import About from './components/sections/About/About.jsx';
 import Projects from './components/sections/Projects/Projects.jsx';
 import Footer from './components/sections/Footer/Footer.jsx';
 
+import Company from './components/pages/Company/Company.jsx';
+import Explore from './components/pages/Explore/Explore.jsx';
 import CV from './components/pages/CV/CV.jsx';
 
 import AIModel from './components/pages/projects/AI/AIModel.jsx';
@@ -42,11 +47,15 @@ function Home() {
 function App() {
   return (
     <BrowserRouter>
+      <PageScroll />
       <Routes>
         <Route path="/" element={<Home />} />
-        {['claude', 'n8n', 'ollama', 'rabbitmq', 'kinesis', 'opentofu', 'vertex-ai-retail', 'duckdb', 'hugging-face', 'go-dotnet', 'openai', 'jwt-redpanda'].map((project) => (
+        {[...new Set([...projectConcepts.map(project => project.id), 'rabbitmq', 'kinesis', 'opentofu', 'duckdb', 'go-dotnet', 'openai', 'jwt-redpanda', 'company-websites', 'kailor-ai'])].map((project) => (
           <Route key={project} path={`/projects/${project}`} element={<SkillsProjectPreview project={project} />} />
         ))}
+        <Route path="/companies/kailor" element={<Company company="kailor" />} />
+        <Route path="/companies/kai" element={<Company company="kai" />} />
+        <Route path="/explore" element={<Explore />} />
         <Route path="/cv" element={<CV />} />
         <Route
           path="/projects/ai-assistant"

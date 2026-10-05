@@ -1834,3 +1834,37 @@
         left: 18px;
     }
 }
+.skills-project-technologies { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 28px; }
+.skills-project-technologies span { padding: 7px 11px; border-radius: 999px; background: var(--surface-muted); color: #66666b; font-size: 11px; }
+
+.skills-explore { width: min(1000px, calc(100% - 40px)); margin: 0 auto; padding: 48px 0; color: #555559; }
+.skills-explore h1 { font-size: clamp(32px, 5vw, 48px); font-weight: 500; letter-spacing: -0.035em; }
+.skills-explore label { display: block; margin-bottom: 10px; font-size: 13px; }
+.skills-explore input { width: 100%; margin-bottom: 28px; padding: 14px 18px; border: 1px solid var(--surface-muted); border-radius: 18px; background: var(--surface); color: var(--charcoal); font: inherit; }
+.skills-explore > a { background: var(--charcoal); color: var(--surface); }
+
+/* Regular tablet and phone grids, with no desktop row spans. */
+@media (max-width: 1100px) {
+    .skills .skills-grid { display: grid; width: calc(100% - 32px); grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: none; grid-auto-rows: minmax(280px, auto); gap: 12px; }
+    .skills .skills-grid > .skills-tile { grid-column: auto; grid-row: auto; min-height: 280px; height: auto; }
+    .skills .skills-grid > .skills-tile-fullstack { padding: 22px; }
+    .skills .skills-tile-fullstack .skills-tile-content { padding: 24px 0 0; }
+    .skills .skills-tile-fullstack .skills-tile-actions { position: static; margin-top: 20px; flex-wrap: wrap; }
+    .skills .skills-tile-content { padding: 64px 22px 26px; }
+    .skills .skills-tile-label { top: 20px; left: 22px; }
+    .skills .skills-tile p { font-size: 12px; line-height: 1.5; }
+    .skills .skills-tile-claude .skills-tile-content,
+    .skills .skills-tile-n8n .skills-tile-content,
+    .skills .skills-tile-ux .skills-tile-content,
+    .skills .skills-tile-ollama .skills-tile-content { height: 100%; padding: 64px 22px 26px; }
+    .skills .skills-arrow:not(:disabled) { opacity: 1; transform: none; width: 28px; height: 28px; right: 20px; bottom: 20px; }
+    .skills .skills-arrow::before { content: ''; position: absolute; inset: -8px; }
+    .skills .skills-tile p { padding-right: 34px; }
+}
+@media (max-width: 600px) {
+    .skills .skills-grid { grid-template-columns: minmax(0, 1fr); }
+}
+@media (hover: none), (pointer: coarse) {
+    .skills .skills-arrow:not(:disabled) { opacity: 1; transform: none; width: 28px; height: 28px; }
+    .skills .skills-arrow::before { content: ''; position: absolute; inset: -8px; }
+}
