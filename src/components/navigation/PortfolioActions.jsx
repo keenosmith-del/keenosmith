@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
-import { ArrowUp, MessageCircle, X } from 'lucide-react';
+import { ArrowUp, MessageCircle } from 'lucide-react';
 import './PortfolioActions.css';
+import AssistantPanel from '../../assistant/AssistantPanel.jsx';
 
 export default function PortfolioActions() {
     const [showTop, setShowTop] = useState(false);
@@ -9,6 +10,25 @@ export default function PortfolioActions() {
     const closeRef = useRef(null);
     const panelRef = useRef(null);
     const actionsRef = useRef(null);
+
+    useEffect(() => {
+        const viewport = window.visualViewport;
+        if (!viewport) return;
+        const update = () => {
+            const covered = Math.max(0, window.innerHeight - viewport.height - viewport.offsetTop);
+            document.documentElement.style.setProperty('--assistant-keyboard-offset', `${covered}px`);
+            document.documentElement.style.setProperty('--assistant-viewport-height', `${viewport.height}px`);
+        };
+        update();
+        viewport.addEventListener('resize', update);
+        viewport.addEventListener('scroll', update);
+        return () => {
+            viewport.removeEventListener('resize', update);
+            viewport.removeEventListener('scroll', update);
+            document.documentElement.style.removeProperty('--assistant-keyboard-offset');
+            document.documentElement.style.removeProperty('--assistant-viewport-height');
+        };
+    }, []);
 
     useEffect(() => {
         const update = () => setShowTop(window.scrollY > 300);
@@ -42,31 +62,13 @@ export default function PortfolioActions() {
 
     return (
         <div className="portfolio-actions-anchor">
-            {isHelperOpen && (
-                <section ref={panelRef} className="portfolio-chat-panel" role="dialog"
-                    aria-labelledby="portfolio-chat-title" id="portfolio-chat-panel">
-                    <div className="portfolio-chat-header">
-                        <h2 id="portfolio-chat-title"><MessageCircle size={15} aria-hidden="true" />Ask about Keeno</h2>
-                        <button ref={closeRef} type="button" aria-label="Close chat"
-                            onClick={() => { setIsHelperOpen(false); triggerRef.current?.focus(); }}>
-                            <X size={14} aria-hidden="true" />
-                        </button>
-                    </div>
-                    <div className="portfolio-chat-body">
-                        <p>Questions about my skills, projects or experience?</p>
-                        <p className="portfolio-chat-message">The chat helper is being built. Soon you’ll be able to ask questions here.</p>
-                        <span>For example</span>
-                        <p className="portfolio-chat-example">Does Keeno know React?</p>
-                        <p className="portfolio-chat-example">How does Keeno’s experience fit this role?</p>
-                    </div>
-                    <div className="portfolio-chat-footer">Chat coming soon</div>
-                </section>
-            )}
+            <AssistantPanel open={isHelperOpen} panelRef={panelRef} closeRef={closeRef}
+                onClose={() => { setIsHelperOpen(false); triggerRef.current?.focus(); }} />
             <div ref={actionsRef} className="portfolio-actions" aria-label="Portfolio actions">
                 <button ref={triggerRef} className="portfolio-skills-helper" type="button"
                     aria-haspopup="dialog" aria-controls="portfolio-chat-panel" aria-expanded={isHelperOpen}
                     onClick={() => setIsHelperOpen((open) => !open)}>
-                    <MessageCircle size={13} strokeWidth={1.7} aria-hidden="true" />Ask about Keeno
+                    <MessageCircle size={13} strokeWidth={1.7} aria-hidden="true" />Ask my Assistant
                 </button>
                 {showTop && (
                     <button className="portfolio-back-top" type="button" aria-label="Back to top"
