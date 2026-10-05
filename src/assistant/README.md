@@ -9,3 +9,13 @@ Evidence bands are deterministic ordinal categories: 0 no direct/listed/learning
 Inputs are bounded to 16,000 characters. Aliases, technology entities, limited one-edit tolerance, domain intents and previous entities guide ranking. Direct project match (100) outranks exact stack evidence (12 per skill), description evidence (3); implemented evidence gets a small priority (5). Follow-up requests for other projects exclude the prior first three when alternatives exist. Role analysis reports recognised requirements and parser limits. This is lexical retrieval and factual composition, not generative AI.
 
 Verification: `node scripts/validate-assistant.js`; with dev server running, `node scripts/verify-assistant-browser.js`. Existing scripts: `npm run build`, `npm run lint`.
+
+## V2 presentation
+
+The engine, knowledge and ordinal evidence bands are unchanged. MessageText renders existing paragraph labels as sections and exposes education records through the CV. Evidence cards retain complete descriptions with an optional details disclosure. Long result lists can expand and collapse. Only the latest message offers follow-ups.
+
+TypedResponse owns its presentation timer and chunked updates; completed messages/cards are memoised. Responses complete in roughly 1.5 seconds, with immediate completion available. Timers survive panel hiding (which preserves the conversation) and are cleared on unmount. Reduced-motion replies skip typing. Scroll follows output only while the reader is near the bottom; a latest-message control restores that mode. Composer autosizes to 132px, then scrolls internally. Closing makes the panel inert immediately and finishes its brief visual transition before hiding. Mobile visualViewport metrics preserve composer access; browser tests simulate the keyboard metrics, rather than claiming a physical-device keyboard test.
+
+## Knowledge expansion (October 2026)
+
+The maintenance guide is [ASSISTANT_README.md](./ASSISTANT_README.md), with exact CSS selectors and tweak instructions. [EVIDENCE_AUDIT.md](./EVIDENCE_AUDIT.md) records the source audit. Existing records and engine behavior are retained; source-supported built status is now independent of portfolio publication. Evidence bands use implemented technologies and canonical project counts; broad categories no longer truncate to five skills. `answer().debug` exposes query expansion, scores and provenance.

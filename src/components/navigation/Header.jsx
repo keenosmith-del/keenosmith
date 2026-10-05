@@ -592,16 +592,9 @@ function Header() {
                                 </span>
                             </div>
 
-                            {/* RECRUITER VIEW — COMING SOON */}
-                            <div
-                                className="navigation-cloud-trigger navigation-coming-soon"
-                                aria-label="Credentials — Coming soon"
-                            >
+                            <Link to="/recruiter-view" className="navigation-cloud-trigger">
                                 <span>Recruiter View</span>
-                                <span className="navigation-coming-soon-tooltip" aria-hidden="true">
-                                    In Progress
-                                </span>
-                            </div>
+                            </Link>
 
                             <button
                                 className={`navigation-links-trigger ${isLinksOpen ? 'is-active' : ''

@@ -16,8 +16,9 @@ assert(answer('Would Keeno fit a Full-Stack AI Engineer role?').indicators.lengt
 assert(answer('Job requirements: React, Node.js, Docker, PostgreSQL, Rust. Responsibilities: build APIs.').text.includes('Rust'));
 assert(answer('What is the weather tomorrow?').interpretation.intent==='unknown');
 assert(answer('What education does he have?').text.includes('An awarded degree is not confirmed'));
-assert(!answer('Does he know TypeScript?').indicators.some(i=>i.band>1));
+assert(answer('Does he know TypeScript?').indicators.some(i=>i.band>=3)); // Source audit now verifies implemented TypeScript.
 const fs=await import('node:fs');
+const {projectConcepts}=await import('../src/data/projectConcepts.js');
 const app=fs.readFileSync('src/App.jsx','utf8');
-for (const p of react.projects) assert(p.path==='/cv'||app.includes(`path="${p.path}"`)||p.id==='microsoft-devops'||p.status.includes('Planned')||app.includes(`'${p.id}'`),`Missing route: ${p.path}`);
+for (const p of react.projects) assert(p.path==='/cv'||app.includes(`path="${p.path}"`)||projectConcepts.some(c=>c.id===p.id)||p.status.includes('Planned')||app.includes(`'${p.id}'`),`Missing route: ${p.path}`);
 console.log('Assistant engine: 12 targeted journeys and accuracy checks passed.');

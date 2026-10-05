@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { ArrowUp, MessageCircle } from 'lucide-react';
 import './PortfolioActions.css';
 import AssistantPanel from '../../assistant/AssistantPanel.jsx';
@@ -10,6 +10,17 @@ export default function PortfolioActions() {
     const closeRef = useRef(null);
     const panelRef = useRef(null);
     const actionsRef = useRef(null);
+
+    useEffect(() => {
+        const header = document.querySelector('.site-header');
+        if (!header) return;
+        const update = () => document.documentElement.style.setProperty('--assistant-header-bottom', `${header.getBoundingClientRect().bottom}px`);
+        const observer = new ResizeObserver(update);
+        observer.observe(header);
+        window.addEventListener('resize', update);
+        update();
+        return () => { observer.disconnect(); window.removeEventListener('resize', update); document.documentElement.style.removeProperty('--assistant-header-bottom'); };
+    }, []);
 
     useEffect(() => {
         const viewport = window.visualViewport;
@@ -40,7 +51,6 @@ export default function PortfolioActions() {
     useEffect(() => {
         if (!isHelperOpen) return;
         const trigger = triggerRef.current;
-        closeRef.current?.focus();
         const onKeyDown = (event) => {
             if (event.key === 'Escape') {
                 setIsHelperOpen(false);
@@ -60,10 +70,15 @@ export default function PortfolioActions() {
         };
     }, [isHelperOpen]);
 
+    const closeAssistant = useCallback(() => {
+        setIsHelperOpen(false);
+        triggerRef.current?.focus({ preventScroll: true });
+    }, []);
+
     return (
         <div className="portfolio-actions-anchor">
             <AssistantPanel open={isHelperOpen} panelRef={panelRef} closeRef={closeRef}
-                onClose={() => { setIsHelperOpen(false); triggerRef.current?.focus(); }} />
+                onClose={closeAssistant} />
             <div ref={actionsRef} className="portfolio-actions" aria-label="Portfolio actions">
                 <button ref={triggerRef} className="portfolio-skills-helper" type="button"
                     aria-haspopup="dialog" aria-controls="portfolio-chat-panel" aria-expanded={isHelperOpen}

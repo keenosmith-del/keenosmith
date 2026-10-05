@@ -15,6 +15,7 @@ import Footer from './components/sections/Footer/Footer.jsx';
 import Company from './components/pages/Company/Company.jsx';
 import Explore from './components/pages/Explore/Explore.jsx';
 import CV from './components/pages/CV/CV.jsx';
+import RecruiterView from './components/pages/RecruiterView/RecruiterView.jsx';
 
 import AIModel from './components/pages/projects/AI/AIModel.jsx';
 import ProductivityPlatform from './components/pages/projects/ProductivityPlatform/ProductivityPlatform.jsx';
@@ -57,6 +58,7 @@ function App() {
         <Route path="/companies/kai" element={<Company company="kai" />} />
         <Route path="/explore" element={<Explore />} />
         <Route path="/cv" element={<CV />} />
+        <Route path="/recruiter-view" element={<RecruiterView />} />
         <Route
           path="/projects/ai-assistant"
           element={<AIModel />}
