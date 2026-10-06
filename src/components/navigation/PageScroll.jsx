@@ -48,7 +48,7 @@ export default function PageScroll() {
             window.removeEventListener('pagehide', savePosition);
             document.removeEventListener('click', savePosition, true);
         };
-    }, [location.key, location.pathname]);
+    }, [location.pathname]);
 
     return null;
 }

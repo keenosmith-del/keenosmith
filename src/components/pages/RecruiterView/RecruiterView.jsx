@@ -85,7 +85,7 @@ export default function RecruiterView() {
     {busy ? <div className="recruiter-empty recruiter-processing"><img src={mascot} alt="" /><div className="recruiter-activity" aria-hidden="true"><i /><i /><i /></div><h3>{stages[stage]}</h3><p>Comparing projects, credentials and documented evidence.</p></div> : result ? <RecruiterAssessment result={result} /> : <div className="recruiter-empty"><img src={mascot} alt="Keeno’s Assistant mascot" /><h3>A role. Its requirements.<br />The evidence behind them.</h3><p>Paste a role to compare its requirements against Keeno's documented project, skill and credential evidence.</p><small>Direct implementation · Related capabilities · Evidence gaps</small></div>}
    </section>
   </div>
-  <aside className="recruiter-future recruiter-width"><div><h2>Looking for something specific?</h2><p>A unified search for projects, technical skills and credentials is planned.</p></div><button className="recruiter-button" type="button" disabled>Open Explore · Coming later</button></aside>
+  <aside className="recruiter-future recruiter-width"><div><h2>Looking for something specific?</h2><p>Browse the projects, technical skills and credentials behind the evidence.</p></div><Link className="recruiter-button" to="/explore">Open Explore<ArrowRight size={15} aria-hidden="true" /></Link></aside>
   <footer className="recruiter-footer recruiter-width"><RecruiterMetadata /></footer>
   {showTop && <button className="recruiter-top" type="button" aria-label="Back to top" onClick={() => window.scrollTo({ top: 0, behavior: reduced ? 'instant' : 'smooth' })}><ArrowUp size={15} aria-hidden="true" /></button>}
  </main>;

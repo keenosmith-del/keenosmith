@@ -59,7 +59,7 @@ export const experience = [
  'Contract Specialist / Technical Content & Documentation — 3Play Media, February 2021–September 2025; technical material quality assurance and documentation. This is not described as a software engineering employment role.',
 ];
 export const skills = [...new Set([...skillGroups.flatMap(g=>g.skills),...projects.flatMap(p=>p.technologies),...cvSkillEvidence.flatMap(r=>r.technologies)])];
-export const skillRegistry = skills.map(name=>({id:name.toLowerCase().replace(/[^a-z0-9]+/g,'-'),name,...relationships([name]),
+export const skillRegistry = skills.map(name=>({id:name.toLowerCase().replace(/\+/g,' plus ').replace(/#/g,' sharp ').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,''),name,...relationships([name]),
  evidence:[...cvSkillEvidence.filter(r=>r.technologies.includes(name)).map(r=>({type:'cv-listing',source:r.source,strength:'supporting'})),...skillGroups.filter(g=>g.skills.includes(name)).map(g=>({type:'portfolio-skill',source:g.title,strength:'supporting'})),
  ...projects.filter(p=>p.technologies.includes(name)).map(p=>({type:'project',source:p.id,strength:p.implementedTechnologies.includes(name)?'direct':'supporting',buildStatus:p.buildStatus})),
  ...credentials.filter(c=>scopeContains(`${c.name} ${c.description}`,name)).map(c=>({type:'training',source:c.id,strength:'supporting'}))]}));

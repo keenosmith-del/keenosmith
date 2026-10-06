@@ -21,9 +21,12 @@ export function retrieve(q,context={}) {
 // for higher bands. Planned work never increases the band. Education supports
 // a limited band only. No keyword-frequency or arbitrary percentage scoring.
 const evidenceIndex = new Map();
+export function implementedSkillProjects(skill) {
+ return [...new Map(projects.filter(p=>p.demonstrated&&p.implementedTechnologies.some(t=>contains(t,skill))).map(p=>[p.canonicalId,p])).values()];
+}
 export function evidence(skill) {
  if(evidenceIndex.has(skill))return evidenceIndex.get(skill);
- const used=[...new Map(projects.filter(p=>p.demonstrated&&p.implementedTechnologies.some(t=>contains(t,skill)||contains(skill,t))).map(p=>[p.canonicalId,p])).values()];
+ const used=implementedSkillProjects(skill);
  const learning=credentials.filter(c=>contains(`${c.name} ${c.description}`,skill));
  const listed=skillRegistry.some(s=>s.name===skill&&s.evidence.some(e=>['portfolio-skill','cv-listing'].includes(e.type)));
  const band=used.length>=4?4:used.length>=2?3:used.length===1?2:learning.length||listed?1:0;

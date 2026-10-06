@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 import { projectConcepts } from './data/projectConcepts.js';
 
@@ -26,7 +26,6 @@ import Microsoft from './components/pages/projects/Microsoft/Microsoft.jsx';
 import AWS from './components/pages/projects/AWS/AWS.jsx';
 import GCP from './components/pages/projects/GCP/GCP.jsx';
 
-import Certifications from './components/pages/certifications/Certifications.jsx';
 
 function Home() {
   return (
@@ -91,7 +90,7 @@ function App() {
 
         <Route
           path="/certifications"
-          element={<Certifications />}
+          element={<Navigate to="/explore?tab=credentials" replace />}
         />
 
       </Routes>
