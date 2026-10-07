@@ -14,6 +14,7 @@ import Footer from './components/sections/Footer/Footer.jsx';
 
 import Company from './components/pages/Company/Company.jsx';
 import Explore from './components/pages/Explore/Explore.jsx';
+import ExploreProjectPreview from './components/pages/Explore/ExploreProjectPreview.jsx';
 import CV from './components/pages/CV/CV.jsx';
 import RecruiterView from './components/pages/RecruiterView/RecruiterView.jsx';
 
@@ -56,6 +57,7 @@ function App() {
         <Route path="/companies/kailor" element={<Company company="kailor" />} />
         <Route path="/companies/kai" element={<Company company="kai" />} />
         <Route path="/explore" element={<Explore />} />
+        <Route path="/explore/projects/:projectId" element={<ExploreProjectPreview />} />
         <Route path="/cv" element={<CV />} />
         <Route path="/recruiter-view" element={<RecruiterView />} />
         <Route

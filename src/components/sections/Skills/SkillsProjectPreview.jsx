@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import './Skills.css';
 import { projectConcepts } from '../../../data/projectConcepts.js';
+import { canonicalProjects } from '../../../assistant/knowledge.js';
 
 const skillsProjects = {
     'company-websites': { title: 'Kailor & Kai: Website Engineering', description: 'Building the company websites for AI business assessment and an AI insights and research hub.', planned: true },
@@ -20,13 +21,13 @@ const skillsProjects = {
 };
 
 export default function SkillsProjectPreview({ project }) {
-    const { title, description, planned = false, domain, technologies } = projectConcepts.find(item => item.id === project) ?? skillsProjects[project];
+    const { title, description, domain, technologies } = canonicalProjects.find(item => item.id === project || item.aliases.includes(project)) ?? projectConcepts.find(item => item.id === project) ?? skillsProjects[project];
     return (
         <main className="skills-project-preview">
-            <span>{planned ? 'Planned project · Not built yet' : 'Case study coming soon'}</span>
+            <span>Built · Portfolio page coming soon</span>
             <h1>{title}</h1>
             {domain && <span>{domain}</span>}
-            <p>{description} The full project page is being prepared.</p>
+            <p>{description.replace(/^Planned /i, '').replace(/^Placeholder for /i, '')} The full project page is being prepared.</p>
             {technologies && <div className="skills-project-technologies">{technologies.map(technology => <span key={technology}>{technology}</span>)}</div>}
             <Link className="skills-button" to="/">Back to portfolio</Link>
         </main>

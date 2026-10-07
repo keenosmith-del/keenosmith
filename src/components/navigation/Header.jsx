@@ -570,27 +570,14 @@ function Header() {
                                 />
                             </button>
 
-                            {/* SEARCH — COMING SOON */}
-                            <div
-                                className="navigation-cloud-trigger navigation-coming-soon"
-                                aria-label="Search — Coming soon"
+                            <Link
+                                to="/explore"
+                                className="navigation-cloud-trigger"
+                                onClick={closeAllDropdowns}
                             >
-                                <span>Explore</span>
-                                <span className="navigation-coming-soon-tooltip" aria-hidden="true">
-                                    In progress
-                                </span>
-                            </div>
+                                <span>Explore</span>22
+                            </Link>
 
-                            {/* CREDENTIALS — COMING SOON */}
-                            <div
-                                className="navigation-cloud-trigger navigation-coming-soon"
-                                aria-label="Credentials — Coming soon"
-                            >
-                                <span>Credentials</span>
-                                <span className="navigation-coming-soon-tooltip" aria-hidden="true">
-                                    In Progress
-                                </span>
-                            </div>
 
                             <Link to="/recruiter-view" className="navigation-cloud-trigger">
                                 <span>Recruiter View</span>
@@ -648,7 +635,7 @@ function Header() {
                             ))}
                         </div>
                         <div className="navigation-project-actions">
-                            <Link to="/explore" className="navigation-project-action navigation-project-action-primary" onClick={closeAllDropdowns}>
+                            <Link to="/explore?tab=skills" className="navigation-project-action navigation-project-action-primary" onClick={closeAllDropdowns}>
                                 Search Skills <ArrowRight size={14} aria-hidden="true" />
                             </Link>
                         </div>
