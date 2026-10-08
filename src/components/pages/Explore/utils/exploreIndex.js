@@ -16,6 +16,28 @@ export const projectIndex = [...canonicalProjects].sort((a, b) => Number(b.demon
  const route = detailRoute || p.routes.find(r => r.startsWith('/projects/')) || `/explore/projects/${p.id}`;
  return indexed({ ...p, summary: p.description.replace(/^Planned /i, '').replace(/^Placeholder for /i, ''), domain: concept?.domain || p.categories.slice(0, 2).map(categoryName).join(' / ') || 'Software Engineering', route, hasDetailPage: !!detailRoute, tone: projectTone(i) });
 });
+// The visual catalogue is deliberately independent of the retrieval archive.
+export const curatedProjects = [
+ ...projectConcepts.map(concept => {
+  const source = projectIndex.find(p => p.id === concept.id || p.aliases.includes(concept.id));
+  return { ...source, ...concept, route: source?.route || concept.path,
+   categories: [...new Set([...(source?.categories || []), 'backend', 'frontend'])],
+   technologies: source?.technologies || concept.technologies,
+   summary: concept.description, domain: concept.domain };
+ }),
+ ...['productivity-platform', 'ai-assistant', 'enterprise-workspace', 'music-api'].map(id => projectIndex.find(p => p.id === id)),
+ ...['One', 'Two'].map((number, i) => ({
+  id: `ux-ui-visual-${i + 1}`, title: `UX/UI Visual Project ${number}`,
+  description: 'A frontend visual and interaction design showcase. Project details to follow.',
+  summary: 'A frontend visual and interaction design showcase. Project details to follow.',
+  domain: 'Frontend / UX/UI', categories: ['frontend'], technologies: ['UX/UI'],
+  ecosystems: [], buildStatus: 'planned', route: `/projects/ux-ui-visual-${i + 1}`,
+ })),
+].map((project, i) => indexed({ ...project,
+ tone: project.id === 'claude' ? 'orange' : project.id === 'hugging-face' ? 'yellow'
+  : ['telecom-billing', 'ux-ui-visual-1'].includes(project.id) ? 'pink'
+  : i % 2 === 0 ? 'charcoal' : 'surface',
+}));
 export const skillIndex = skillRegistry.map((s, i) => {
  const usedIds = new Set(implementedSkillProjects(s.name).map(p => p.canonicalId));
  const projects = projectIndex.filter(p => usedIds.has(p.id));

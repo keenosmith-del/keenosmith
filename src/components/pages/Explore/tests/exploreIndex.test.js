@@ -3,8 +3,18 @@ import assert from 'node:assert/strict';
 import { createServer } from 'vite';
 const server = await createServer({ server: { middlewareMode: true, hmr: false, ws: false }, appType: 'custom' });
 try {
- const { projectIndex, skillIndex, credentialIndex, matchesQuery, relatedSkills, relatedCredentials } = await server.ssrLoadModule('/src/components/pages/Explore/utils/exploreIndex.js');
+ const { curatedProjects, projectIndex, skillIndex, credentialIndex, matchesQuery, relatedSkills, relatedCredentials } = await server.ssrLoadModule('/src/components/pages/Explore/utils/exploreIndex.js');
  const { composeProjects } = await server.ssrLoadModule('/src/components/pages/Explore/utils/explorePresentation.js');
+ assert.equal(curatedProjects.length, 18);
+ assert.equal(new Set(curatedProjects.map(p => p.id)).size, 18);
+ assert.equal(curatedProjects.filter(p => p.categories.includes('backend')).length, 16);
+ assert.equal(curatedProjects.filter(p => !p.categories.includes('backend')).length, 2);
+ assert.equal(curatedProjects.filter(p => p.tone === 'pink').length, 2);
+ assert.equal(curatedProjects.find(p => p.id === 'claude').tone, 'orange');
+ assert.equal(curatedProjects.find(p => p.id === 'hugging-face').tone, 'yellow');
+ assert.ok(curatedProjects.every(p => p.route.startsWith('/projects/')));
+ assert.ok(curatedProjects.filter(p => matchesQuery(p, 'Azure')).some(p => p.id === 'microsoft-devops'));
+ assert.ok(curatedProjects.filter(p => !['claude', 'hugging-face', 'telecom-billing', 'ux-ui-visual-1'].includes(p.id)).every(p => ['charcoal', 'surface'].includes(p.tone)));
  // Every full or filtered tail is a rectangular, fully occupied puzzle.
  for (let count = 1; count <= 37; count++) {
   const groups = composeProjects(projectIndex.slice(0, count));

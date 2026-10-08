@@ -67,7 +67,7 @@
 .explore-advanced label { display: grid; gap: 8px; flex: 1; min-width: 180px; font-size: 10px; color: #77777c; }
 .explore-advanced select { border: 0; border-radius: 10px; padding: 9px; background: var(--background); color: var(--charcoal); max-width: 100%; width: 100%; font-size: 11px; }
 .explore-result-meta { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin: 21px 0 26px; font-size: 10px; color: #77777c; }
-.explore-result-meta button { padding: 4px 0; background: none; font-size: 10px; color: #77777c; text-decoration: underline; text-underline-offset: 4px; }
+.explore-result-meta button { padding: 4px 0; background: none; font-size: 10px; color: #77777c; text-decoration: none; }
 .explore-grid { display: grid; gap: 12px; animation: explore-entry .3s ease both; }
 /* A repeated, fully occupied grid template composes each rectangular puzzle. */
 .explore-grid-projects { gap: 12px; }
@@ -243,7 +243,7 @@
 @media (prefers-reduced-motion: reduce) {
     .explore-page *, .explore-detail, .explore-detail * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
     .explore-project:hover, .explore-skill:hover, .explore-credential:hover, .explore-close:hover { transform: none; }
-    .explore-project-arrow { opacity: 1; transform: none; }
+    .explore-project-arrow { transform: none; }
 }
 
 /* Monochrome capability and credential galleries; project colours stay intact. */
@@ -258,3 +258,194 @@
 .explore-tile-arrow:hover { transform: translateY(-1.6px) scale(1.03) !important; }
 .explore-blank { pointer-events: none; }
 @media (hover: none), (max-width: 600px), (prefers-reduced-motion: reduce) { .explore-tile-arrow { opacity: 1; transform: none; } }
+
+/* Curated gallery: Projects.jsx proportions and controlled row expansion. */
+.explore-project-panel .explore-grid-projects { display: flex; flex-direction: column; gap: 13px; }
+.explore-project-row { display: flex; gap: 13px; min-width: 0; }
+.explore-project-panel .explore-project {
+    flex: 1 1 0; min-width: 0; height: 448px; padding: 26px 26px 76px;
+    isolation: isolate; transform: none; box-shadow: none;
+    transition: flex-grow 360ms cubic-bezier(.22,1,.36,1);
+    --tile-secondary: var(--charcoal); --tile-pill: var(--surface);
+}
+.explore-project-panel .explore-tone-charcoal { --tile-ink: var(--surface); --tile-secondary: var(--surface-muted); }
+.explore-project-reveal { display: flex; flex-direction: column; gap: 20px; height: 100%; min-width: 0; }
+.explore-project-panel .explore-domain { white-space: normal; color: var(--charcoal); }
+.explore-project-panel .explore-project-text { margin-top: auto; padding: 0; }
+.explore-project-panel .explore-project h2 {
+    display: block; overflow: visible; margin: 0 0 14px;
+    font-size: clamp(23px, 2.1vw, 31px); line-height: 1.08; letter-spacing: -.035em;
+}
+.explore-project-panel .explore-description { display: block; overflow: visible; font-size: 12px; line-height: 1.55; }
+.explore-project-panel .explore-tags { color: var(--charcoal); }
+/* Keep the same arrow size, reveal and expanded hit target as Projects.jsx. */
+.explore-project-panel .explore-advanced select {
+    border: 0;
+    border-radius: 999px;
+    min-height: 40px;
+    padding: 10px 16px;
+    background: var(--background);
+    box-shadow: none;
+}
+.explore-project-panel .explore-search { min-height: 44px; }
+.explore-project-panel .explore-search:hover,
+.explore-project-panel .explore-search:focus-within { background: var(--surface-muted); }
+@media (min-width: 1101px) and (hover: hover) and (pointer: fine) {
+    .explore-project-reveal { opacity: 0; transform: translateY(10px); transition: opacity 240ms ease, transform 320ms cubic-bezier(.22,1,.36,1); }
+    .explore-project-panel .explore-project:hover,
+    .explore-project-panel .explore-project:focus-within { flex-grow: 1.15; }
+    .explore-project:hover .explore-project-reveal,
+    .explore-project:focus-within .explore-project-reveal { opacity: 1; transform: none; }
+}
+@media (max-width: 1100px) {
+    .explore-project-panel .explore-grid-projects { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .explore-project-row { display: contents; }
+    .explore-project-panel .explore-project { height: auto; min-height: 420px; padding: 24px 24px 80px; }
+    .explore-project-panel .explore-project h2 { font-size: 27px; }
+    .explore-project-panel .explore-project-reveal { min-height: 316px; }
+}
+@media (max-width: 600px) {
+    .explore-project-panel .explore-grid-projects { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+    .explore-project-panel .explore-project { min-height: 380px; border-radius: 24px; }
+    .explore-project-panel .explore-project-reveal { min-height: 276px; gap: 24px; }
+    .explore-project-panel .explore-project h2 { font-size: 28px; }
+    .explore-project-panel .explore-description { font-size: 13px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .explore-project-panel .explore-project:hover,
+    .explore-project-panel .explore-project:focus-within { flex-grow: 1; }
+}
+
+/* User-supplied project covers; preserve each complete image. */
+.explore-project-panel [data-explore-id="hugging-face"] { --tile-bg: #fedc6f; }
+.explore-project-panel [data-explore-id="microsoft-devops"] {
+    --tile-bg: #f86d04;
+    --tile-ink: var(--charcoal);
+    --tile-secondary: var(--charcoal);
+}
+.explore-project-panel [data-explore-id="banking-risk"] {
+    --tile-bg: #397b88;
+    --tile-ink: var(--surface);
+    --tile-secondary: var(--surface);
+}
+.explore-project-panel [data-explore-id="vertex-ai-retail"] {
+    --tile-bg: #d5e0ee;
+    --tile-ink: var(--charcoal);
+    --tile-secondary: var(--charcoal);
+}
+.explore-project-panel [data-explore-id="ollama"] {
+    --tile-bg: #5a5271;
+    --tile-ink: var(--surface);
+    --tile-secondary: var(--surface);
+}
+.explore-project-panel [data-explore-id="claude"] {
+    --tile-bg: #e4d1c5;
+    --tile-ink: var(--charcoal);
+    --tile-secondary: var(--charcoal);
+}
+.explore-project-panel [data-explore-id="n8n"] {
+    --tile-bg: #ebb013;
+    --tile-ink: var(--charcoal);
+    --tile-secondary: var(--charcoal);
+}
+.explore-project-panel [data-explore-id="deepseek"] {
+    --tile-bg: #1b1f20;
+    --tile-ink: var(--surface);
+    --tile-secondary: var(--surface);
+}
+.explore-project-panel [data-explore-id="distributed-reliability"] {
+    --tile-bg: #e8bda7;
+    --tile-ink: var(--charcoal);
+    --tile-secondary: var(--charcoal);
+}
+.explore-project-panel [data-explore-id="telecom-billing"] {
+    --tile-bg: #9a8573;
+    --tile-ink: var(--charcoal);
+    --tile-secondary: var(--charcoal);
+}
+.explore-project-panel [data-explore-id="field-service"] {
+    --tile-bg: #b3aca2;
+    --tile-ink: var(--charcoal);
+    --tile-secondary: var(--charcoal);
+}
+.explore-project-panel [data-explore-id="fleet-operations"] {
+    --tile-bg: #89c3c1;
+    --tile-ink: var(--charcoal);
+    --tile-secondary: var(--charcoal);
+}
+.explore-project-panel [data-explore-id="productivity-platform"] {
+    --tile-bg: #169f7d;
+    --tile-ink: var(--surface);
+    --tile-secondary: var(--surface);
+}
+.explore-project-panel [data-explore-id="ai-assistant"] {
+    --tile-bg: #d2ccc8;
+    --tile-ink: var(--charcoal);
+    --tile-secondary: var(--charcoal);
+}
+.explore-project-panel [data-explore-id="enterprise-workspace"] {
+    --tile-bg: #97b2c4;
+    --tile-ink: var(--charcoal);
+    --tile-secondary: var(--charcoal);
+}
+.explore-project-panel [data-explore-id="music-api"] {
+    --tile-bg: #d3a6a3;
+    --tile-ink: var(--charcoal);
+    --tile-secondary: var(--charcoal);
+}
+.explore-project-panel [data-explore-id="ux-ui-visual-1"] {
+    --tile-bg: #d97c83;
+    --tile-ink: var(--charcoal);
+    --tile-secondary: var(--charcoal);
+}
+.explore-project-panel [data-explore-id="ux-ui-visual-2"] {
+    --tile-bg: #9e3c46;
+    --tile-ink: var(--surface);
+    --tile-secondary: var(--surface);
+}
+.explore-project-cover {
+    width: 100%; height: 180px; object-fit: contain; flex-shrink: 0;
+    margin-bottom: 24px; pointer-events: none;
+}
+@media (min-width: 1101px) and (hover: hover) and (pointer: fine) {
+    .explore-project-cover {
+        position: absolute; inset: 0; width: 100%; height: 100%; margin: 0;
+        transition: opacity 240ms ease;
+    }
+}
+
+/* Keep characters behind a shared soft veil whenever metadata is visible. */
+@media (min-width: 1101px) and (hover: hover) and (pointer: fine) {
+    .explore-project::after {
+        content: ''; position: absolute; inset: 0; z-index: 1;
+        background: var(--tile-bg); opacity: 0; pointer-events: none;
+        transition: opacity 240ms ease;
+    }
+    .explore-project:hover::after,
+    .explore-project:focus-within::after,
+    .explore-project-always-visible::after { opacity: .6; }
+    .explore-project .explore-project-reveal { position: relative; z-index: 2; }
+    .explore-project-always-visible .explore-project-reveal { opacity: 1; transform: none; }
+}
+
+/* Selected tiles show a top pill and bottom title at rest, full details on interaction. */
+@media (min-width: 1101px) and (hover: hover) and (pointer: fine) {
+    .explore-project-title-visible .explore-project-reveal {
+        opacity: 1; transform: none;
+    }
+    .explore-project-title-visible .explore-domain,
+    .explore-project-title-visible .explore-description,
+    .explore-project-title-visible .explore-tags {
+        transition: opacity 240ms ease;
+    }
+    .explore-project-title-visible:not(:hover):not(:focus-within)::after { opacity: .25; }
+    .explore-project-title-visible:not(:hover):not(:focus-within) { padding-bottom: 27.2px; }
+    .explore-project-title-visible:not(:hover):not(:focus-within) .explore-description,
+    .explore-project-title-visible:not(:hover):not(:focus-within) .explore-tags { display: none; }
+    .explore-project-title-visible:not(:hover):not(:focus-within) h2 { margin-bottom: 0; }
+}
+
+/* Hugging Face keeps its title directly beneath the category pill. */
+.explore-project-panel [data-explore-id="hugging-face"] .explore-project-text {
+    margin-top: 0;
+}
