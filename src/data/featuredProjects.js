@@ -1,8 +1,11 @@
 import { projectConcepts } from './projectConcepts.js';
-// row 1 imports
-import aiAssistantCover from '../assets/projects/ai/1.png';
-import productivityCover from '../assets/projects/productivity/1.png'
-import musicCover from '../assets/projects/music/1.png';
+import { projectArtwork } from './projectArtwork.js';
+
+// Follow Explore's concept catalogue first, then its implemented-project sequence.
+const projectOrder = new Map([
+    ...projectConcepts.map(project => project.id),
+    'productivity-platform', 'ai-assistant', 'enterprise-workspace', 'music-api',
+].map((id, index) => [id, index]));
 
 export const featuredProjects = [
     {
@@ -11,7 +14,6 @@ export const featuredProjects = [
         skill: 'RAG',
         description:
             'A full-stack SaaS platform implementing LLM inference, semantic embeddings, vector similarity retrieval, document processing and configurable context workflows.',
-        image: aiAssistantCover,
     },
     {
         id: 'productivity-platform',
@@ -23,7 +25,6 @@ export const featuredProjects = [
         description:
             'A full-stack web application implementing authenticated resource management, REST APIs, interconnected data modelling and persistent client-server state.',
 
-        image: productivityCover,
 
 
     },
@@ -34,7 +35,6 @@ export const featuredProjects = [
         skill: 'API & Full-Stack Engineering',
         description:
             'Full-stack React, Node.js, Express and MongoDB application implementing REST APIs, external service integration, data persistence and browser-based audio playback.',
-        image: musicCover,
     },
     ...[
         ['microsoft-devops', 'Microsoft Azure AI', 'Azure AI Engineering', null, null],
@@ -53,4 +53,5 @@ export const featuredProjects = [
         id, title, skill, background, imageMode, image: null,
         description: projectConcepts.find(project => project.id === id).description,
     })),
-];
+].map(project => ({ ...project, ...projectArtwork[project.id], imageMode: 'centered' }))
+ .sort((a, b) => (projectOrder.get(a.id) ?? Infinity) - (projectOrder.get(b.id) ?? Infinity));

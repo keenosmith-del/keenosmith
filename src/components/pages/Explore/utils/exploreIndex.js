@@ -26,7 +26,7 @@ export const curatedProjects = [
    summary: concept.description, domain: concept.domain };
  }),
  ...['productivity-platform', 'ai-assistant', 'enterprise-workspace', 'music-api'].map(id => projectIndex.find(p => p.id === id)),
- ...['One', 'Two'].map((number, i) => ({
+ ...['One', 'Two', 'Three'].map((number, i) => ({
   id: `ux-ui-visual-${i + 1}`, title: `UX/UI Visual Project ${number}`,
   description: 'A frontend visual and interaction design showcase. Project details to follow.',
   summary: 'A frontend visual and interaction design showcase. Project details to follow.',

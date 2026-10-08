@@ -57,7 +57,7 @@ function App() {
         <Route path="/companies/kailor" element={<Company company="kailor" />} />
         <Route path="/companies/kai" element={<Company company="kai" />} />
         <Route path="/explore" element={<Explore />} />
-        {['ux-ui-visual-1', 'ux-ui-visual-2'].map(id => <Route key={id} path={`/projects/${id}`} element={<ExploreProjectPreview projectId={id} />} />)}
+        {['ux-ui-visual-1', 'ux-ui-visual-2', 'ux-ui-visual-3'].map(id => <Route key={id} path={`/projects/${id}`} element={<ExploreProjectPreview projectId={id} />} />)}
         <Route path="/explore/projects/:projectId" element={<ExploreProjectPreview />} />
         <Route path="/cv" element={<CV />} />
         <Route path="/recruiter-view" element={<RecruiterView />} />

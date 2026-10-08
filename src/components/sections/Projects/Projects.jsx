@@ -61,6 +61,7 @@ function Projects() {
                                     return (
                                         <article
                                             key={project.id}
+                                            data-project-id={project.id}
                                             className={`project-tile ${isActive ? 'is-active' : ''
                                                 } ${project.imageMode === 'centered'
                                                     ? 'project-tile-centered'

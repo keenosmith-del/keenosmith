@@ -642,3 +642,23 @@
 @media (hover: none), (pointer: coarse) {
     .projects .project-arrow, .projects .project-content p { opacity: 1; transform: none; }
 }
+
+/* Shared character covers preserve the complete transparent artwork. */
+.project-image img.project-image-centered { object-fit: contain; }
+
+/* Match Explore's viewport fade and gentle 22px travel in both directions. */
+@supports (animation-timeline: view()) {
+    .projects .project-tile {
+        animation: projects-tile-scroll linear both;
+        animation-timeline: view();
+        animation-range: entry 0% exit 100%;
+    }
+}
+@keyframes projects-tile-scroll {
+    0% { opacity: 0; translate: 0 22px; }
+    20%, 80% { opacity: 1; translate: 0 0; }
+    100% { opacity: 0; translate: 0 -22px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .projects .project-tile { animation: none; translate: none; }
+}
