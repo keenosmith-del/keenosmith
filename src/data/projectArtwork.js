@@ -17,10 +17,14 @@ import workspaceCover from '../assets/explore-projects/cozy-sheep.png';
 import musicCover from '../assets/explore-projects/pink-monster.png';
 import visualOneCover from '../assets/explore-projects/pink-sweater.png';
 import visualTwoCover from '../assets/explore-projects/red-stoic-man.png';
-import visualThreeCover from '../assets/explore-projects/reading.png';
+
+import eventOpsCover from '../assets/explore-projects/mascot-full-length.png';
+import visualThreeCover from '../assets/explore-projects/headphones-guy.png';
 
 // Shared by Explore and Selected projects; key by ID to keep artwork and colours aligned.
 export const projectArtwork = {
+    'eventops-intelligence': { image: eventOpsCover, background: '#dddee0', ink: 'var(--charcoal)' },
+    'ux-ui-visual-3': { image: visualThreeCover, background: '#90bbc2', ink: 'var(--charcoal)' },
     'hugging-face': { image: elephantCover, background: '#fedc6f', ink: 'var(--charcoal)' },
     'microsoft-devops': { image: azureCover, background: '#f86d04', ink: 'var(--charcoal)' },
     'banking-risk': { image: awsCover, background: '#397b88', ink: 'var(--surface)' },
@@ -39,5 +43,4 @@ export const projectArtwork = {
     'music-api': { image: musicCover, background: '#d3a6a3', ink: 'var(--charcoal)' },
     'ux-ui-visual-1': { image: visualOneCover, background: '#d97c83', ink: 'var(--charcoal)' },
     'ux-ui-visual-2': { image: visualTwoCover, background: '#9e3c46', ink: 'var(--surface)' },
-    'ux-ui-visual-3': { image: visualThreeCover, background: '#e3e9df', ink: 'var(--charcoal)' },
 };

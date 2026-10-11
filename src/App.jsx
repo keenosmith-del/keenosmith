@@ -25,6 +25,7 @@ import EnterpriseWorkspace from './components/pages/projects/EnterpriseWorkspace
 
 import Microsoft from './components/pages/projects/Microsoft/Microsoft.jsx';
 import AWS from './components/pages/projects/AWS/AWS.jsx';
+import EventOps from './components/pages/projects/EventOps/EventOps.jsx';
 import GCP from './components/pages/projects/GCP/GCP.jsx';
 
 
@@ -56,6 +57,7 @@ function App() {
         ))}
         <Route path="/companies/kailor" element={<Company company="kailor" />} />
         <Route path="/companies/kai" element={<Company company="kai" />} />
+        <Route path="/projects/eventops-intelligence" element={<EventOps />} />
         <Route path="/explore" element={<Explore />} />
         {['ux-ui-visual-1', 'ux-ui-visual-2', 'ux-ui-visual-3'].map(id => <Route key={id} path={`/projects/${id}`} element={<ExploreProjectPreview projectId={id} />} />)}
         <Route path="/explore/projects/:projectId" element={<ExploreProjectPreview />} />

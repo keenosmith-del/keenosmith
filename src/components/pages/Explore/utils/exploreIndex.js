@@ -3,6 +3,7 @@ import { contains } from '../../../../assistant/interpret.js';
 import { taxonomy, expandQuery } from '../../../../assistant/taxonomy.js';
 import { evidence, implementedSkillProjects } from '../../../../assistant/retrieve.js';
 import { projectTone, skillPresentation, credentialTone } from './explorePresentation.js';
+import { eventOps } from '../../../../data/eventOps.js';
 import { projectConcepts } from '../../../../data/projectConcepts.js';
 
 export const normalize = value => String(value || '').toLowerCase().replace(/[^a-z0-9+#]+/g, ' ').trim();
@@ -26,6 +27,7 @@ export const curatedProjects = [
    summary: concept.description, domain: concept.domain };
  }),
  ...['productivity-platform', 'ai-assistant', 'enterprise-workspace', 'music-api'].map(id => projectIndex.find(p => p.id === id)),
+ { ...eventOps, summary: eventOps.description, domain: 'AI / Event Operations', categories: ['ai', 'backend', 'frontend', 'databases'], ecosystems: [], buildStatus: 'built', route: '/projects/eventops-intelligence', hasDetailPage: true },
  ...['One', 'Two', 'Three'].map((number, i) => ({
   id: `ux-ui-visual-${i + 1}`, title: `UX/UI Visual Project ${number}`,
   description: 'A frontend visual and interaction design showcase. Project details to follow.',
