@@ -31,7 +31,7 @@ Updated:
 - `tests/exploreIndex.test.js`
 - `README.md`
 - `src/components/navigation/Header.jsx`
-- `src/components/sections/Skills/SkillsProjectPreview.jsx` (built preview labels and shared project descriptions)
+- `src/components/pages/ProjectPreview/ProjectPreview.jsx` (built preview labels and shared project descriptions)
 - `src/App.jsx` (fallback preview route)
 
 Added:

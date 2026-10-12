@@ -2,10 +2,14 @@ import { Link, useParams } from 'react-router-dom';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { curatedProjects } from './utils/exploreIndex.js';
 import './Explore.css';
+import { cloudProjects } from '../../../data/cloudProjects.js';
+import ProjectPlaceholder from '../ProjectPlaceholder/ProjectPlaceholder.jsx';
 
 export default function ExploreProjectPreview({ projectId: mappedId }) {
  const { projectId: routeId } = useParams();
  const projectId = mappedId || routeId;
+ const cloudProject = cloudProjects.find(item => item.id === projectId);
+ if (cloudProject) return <ProjectPlaceholder project={cloudProject} />;
  const project = curatedProjects.find(p => p.id === projectId);
  return <main className="explore-page explore-preview">
   <Link className="explore-back" to="/explore"><ArrowLeft size={12} aria-hidden="true" />Back to Explore</Link>

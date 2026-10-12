@@ -1,0 +1,13 @@
+.project-placeholder { min-height: 100svh; width: min(1200px, 86%); margin: auto; padding: 48px 0 80px; color: var(--charcoal); }
+.project-placeholder-back { display: inline-flex; align-items: center; gap: 10px; min-height: 42px; padding: 0 18px; border-radius: 999px; background: var(--surface-muted); font-size: 12px; }
+.project-placeholder-back:hover { background: var(--surface); }
+.project-placeholder-back:focus-visible { outline: 2px solid var(--charcoal); outline-offset: 4px; }
+.project-placeholder-content { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); align-items: center; gap: 64px; min-height: calc(100svh - 200px); }
+.project-placeholder h1 { max-width: 720px; margin: 48px 0 24px; font-size: clamp(40px, 5.5vw, 76px); font-weight: 500; line-height: 1.05; letter-spacing: -.055em; }
+.project-placeholder p { font-size: 18px; line-height: 1.65; }
+.project-placeholder-content img { width: 100%; height: 400px; object-fit: contain; }
+@media (max-width: 700px) {
+    .project-placeholder { width: calc(100% - 48px); padding-top: 32px; }
+    .project-placeholder-content { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+    .project-placeholder-content img { height: 280px; }
+}

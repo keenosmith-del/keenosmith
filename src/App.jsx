@@ -6,8 +6,10 @@ import PageScroll from './components/navigation/PageScroll.jsx';
 import Header from './components/navigation/Header.jsx';
 import PortfolioActions from './components/navigation/PortfolioActions.jsx';
 import Hero from './components/sections/Hero/Hero.jsx';
-import Skills from './components/sections/Skills/Skills.jsx';
-import SkillsProjectPreview from './components/sections/Skills/SkillsProjectPreview.jsx';
+import Cloud from './components/sections/Cloud/Cloud.jsx';
+import ProjectPreview from './components/pages/ProjectPreview/ProjectPreview.jsx';
+import ProjectPlaceholder from './components/pages/ProjectPlaceholder/ProjectPlaceholder.jsx';
+import { cloudProjects } from './data/cloudProjects.js';
 import About from './components/sections/About/About.jsx';
 import Projects from './components/sections/Projects/Projects.jsx';
 import Footer from './components/sections/Footer/Footer.jsx';
@@ -23,10 +25,7 @@ import ProductivityPlatform from './components/pages/projects/ProductivityPlatfo
 import MusicAPI from './components/pages/projects/MusicAPI/MusicAPI.jsx';
 import EnterpriseWorkspace from './components/pages/projects/EnterpriseWorkspace/EnterpriseWorkspace.jsx';
 
-import Microsoft from './components/pages/projects/Microsoft/Microsoft.jsx';
-import AWS from './components/pages/projects/AWS/AWS.jsx';
 import EventOps from './components/pages/projects/EventOps/EventOps.jsx';
-import GCP from './components/pages/projects/GCP/GCP.jsx';
 
 
 function Home() {
@@ -36,7 +35,7 @@ function Home() {
 
       <main>
         <Hero />
-        <Skills />
+        <Cloud />
         <About />
         <Projects />
         <Footer />
@@ -52,8 +51,11 @@ function App() {
       <PageScroll />
       <Routes>
         <Route path="/" element={<Home />} />
-        {[...new Set([...projectConcepts.map(project => project.id), 'rabbitmq', 'kinesis', 'opentofu', 'duckdb', 'go-dotnet', 'openai', 'jwt-redpanda', 'company-websites', 'kailor-ai'])].map((project) => (
-          <Route key={project} path={`/projects/${project}`} element={<SkillsProjectPreview project={project} />} />
+        {cloudProjects.flatMap(project => [project.route, `/projects/${project.id}`].map(path => (
+          <Route key={path} path={path} element={<ProjectPlaceholder project={project} />} />
+        )))}
+        {[...new Set([...projectConcepts.map(project => project.id), 'rabbitmq', 'kinesis', 'opentofu', 'duckdb', 'go-dotnet', 'openai', 'jwt-redpanda', 'company-websites', 'kailor-ai'])].filter(id => !cloudProjects.some(project => project.id === id)).map((project) => (
+          <Route key={project} path={`/projects/${project}`} element={<ProjectPreview project={project} />} />
         ))}
         <Route path="/companies/kailor" element={<Company company="kailor" />} />
         <Route path="/companies/kai" element={<Company company="kai" />} />
@@ -78,19 +80,6 @@ function App() {
         <Route
           path="/projects/enterprise-workspace"
           element={<EnterpriseWorkspace />}
-        />
-
-        <Route
-          path="/projects/microsoft"
-          element={<Microsoft />}
-        />
-        <Route
-          path="/projects/aws"
-          element={<AWS />}
-        />
-        <Route
-          path="/projects/gcp"
-          element={<GCP />}
         />
 
         <Route

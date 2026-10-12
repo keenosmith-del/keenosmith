@@ -76,11 +76,11 @@ function Hero() {
                     <h1 id="hero-name">keeno <span>smith</span></h1>
                     <div className="hero-copy-details">
                         <p className="hero-description">
-                            i build full-stack applications, engineer ai-powered systems, and develop cloud solutions that bring software from concept to production.
+                            I build full-stack applications, engineer AI-powered systems, and develop cloud solutions that bring software from concept to production.
                         </p>
                         <div className="hero-actions">
                             <a className="hero-button hero-button-primary" href="#projects">
-                                view my work
+                                View My Work
                             </a>
                             <a
                                 className="hero-button hero-button-secondary"
@@ -89,7 +89,7 @@ function Hero() {
                                 rel="noopener noreferrer"
                             >
                                 <img src={githubIcon} alt="" aria-hidden="true" width="18" height="18" />
-                                github
+                                GitHub
                             </a>
                         </div>
                     </div>

@@ -1,7 +1,7 @@
 import elephantCover from '../assets/explore-projects/elephant.png';
-import azureCover from '../assets/explore-projects/goofy-guy.png';
-import awsCover from '../assets/explore-projects/whimsical-guy.png';
-import googleCover from '../assets/explore-projects/furry-monkey.png';
+import azureCover from '../assets/images/cloud-section/ms-project.png';
+import awsCover from '../assets/images/cloud-section/aws-project.png';
+import googleCover from '../assets/images/cloud-section/gcp-project.png';
 import ollamaCover from '../assets/explore-projects/aloof-blonde.png';
 import claudeCover from '../assets/explore-projects/pink-monkey.png';
 import n8nCover from '../assets/explore-projects/curly-haired-guy.png';
@@ -26,9 +26,9 @@ export const projectArtwork = {
     'eventops-intelligence': { image: eventOpsCover, background: '#dddee0', ink: 'var(--charcoal)' },
     'ux-ui-visual-3': { image: visualThreeCover, background: '#90bbc2', ink: 'var(--charcoal)' },
     'hugging-face': { image: elephantCover, background: '#fedc6f', ink: 'var(--charcoal)' },
-    'microsoft-devops': { image: azureCover, background: '#f86d04', ink: 'var(--charcoal)' },
-    'banking-risk': { image: awsCover, background: '#397b88', ink: 'var(--surface)' },
-    'vertex-ai-retail': { image: googleCover, background: '#d5e0ee', ink: 'var(--charcoal)' },
+    'microsoft-devops': { image: azureCover, background: '#90bbc2', ink: 'var(--charcoal)' },
+    'banking-risk': { image: awsCover, background: '#807f7c', ink: 'var(--surface)' },
+    'vertex-ai-retail': { image: googleCover, background: '#dddee0', ink: 'var(--charcoal)' },
     'ollama': { image: ollamaCover, background: '#5a5271', ink: 'var(--surface)' },
     'claude': { image: claudeCover, background: '#e4d1c5', ink: 'var(--charcoal)' },
     'n8n': { image: n8nCover, background: '#ebb013', ink: 'var(--charcoal)' },

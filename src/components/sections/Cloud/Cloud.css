@@ -1,0 +1,62 @@
+.cloud { padding: 104px 7vw 120px; scroll-margin-top: 88px; }
+.cloud-inner { width: 100%; max-width: 1200px; margin: 0 auto; }
+.cloud-intro { margin-bottom: 64px; }
+.cloud-intro h2 { margin: 0; color: var(--charcoal); font-size: clamp(48px, 6.5vw, 88px); font-weight: 500; line-height: 1.02; letter-spacing: -.06em; }
+.cloud-intro > p { max-width: 570px; margin: 28px 0 0 clamp(12px, 1.6vw, 24px); color: var(--charcoal); font-size: clamp(16px, 1.35vw, 19px); line-height: 1.65; letter-spacing: -.02em; }
+.cloud-projects { display: flex; gap: 16px; align-items: stretch; }
+.cloud-tile { position: relative; isolation: isolate; overflow: hidden; flex: 1 1 0; min-width: 0; height: 548px; border-radius: 28px; background: var(--cloud-tile-bg); color: var(--cloud-tile-ink); transition: flex-grow 420ms cubic-bezier(.22, 1, .36, 1); }
+.cloud-tile.is-expanded { flex-grow: 1.45; }
+.cloud-projects.has-interaction .cloud-tile.is-expanded { flex-grow: 1.65; }
+.cloud-platform { position: absolute; top: 19.2px; left: 19.2px; z-index: 3; max-width: calc(100% - 38.4px); padding: 7.2px 10.4px; border-radius: 999px; background: rgba(250, 249, 246, .9); color: #68686d; font-size: 10px; font-weight: 500; line-height: 1.25; backdrop-filter: blur(9.6px); }
+.cloud-artwork { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.cloud-artwork img { width: 100%; height: 100%; object-fit: contain; object-position: center bottom; }
+/* Match the full-card tonal overlay in Projects.css; no separate caption panel. */
+.cloud-overlay { position: absolute; inset: 0; z-index: 1; background: linear-gradient(to top, rgba(25, 25, 27, .82) 0%, rgba(25, 25, 27, .38) 42%, rgba(25, 25, 27, .05) 72%); opacity: .85; transition: opacity 280ms ease; pointer-events: none; }
+.cloud-tile:hover .cloud-overlay, .cloud-tile:focus-visible .cloud-overlay { opacity: 1; }
+.cloud-tile-caption { position: absolute; bottom: 60px; left: 25.6px; right: 25.6px; z-index: 3; }
+.cloud-tile h3 { margin: 0; color: #f3f2ee; font-size: clamp(22.4px, 2.4vw, 36.8px); font-weight: 500; line-height: 1; letter-spacing: -.035em; }
+.cloud-tile-details { opacity: 0; transform: translateY(9.6px); transition: opacity 240ms ease 80ms, transform 320ms cubic-bezier(.22, 1, .36, 1) 80ms; }
+.cloud-tile-details p { max-width: 448px; margin: 12.8px 0 0; color: #c9c9cc; font-size: 12px; font-weight: 400; line-height: 1.55; letter-spacing: -.01em; }
+.cloud-arrow { position: absolute; z-index: 4; bottom: 19.2px; right: 20.8px; display: grid; place-items: center; width: 27px; height: 27px; border-radius: 50%; background: rgba(250, 249, 246, .94); color: #555559; opacity: 0; transform: translateY(9.6px) scale(.9); transition: opacity 200ms ease 96ms, transform 320ms cubic-bezier(.22, 1, .36, 1) 96ms, background-color 144ms ease; }
+.cloud-arrow::before { content: ''; position: absolute; inset: -8px; }
+.cloud-tile:hover .cloud-tile-details, .cloud-tile:focus-visible .cloud-tile-details { opacity: 1; transform: translateY(0); }
+.cloud-tile:hover .cloud-arrow, .cloud-tile:focus-visible .cloud-arrow { opacity: 1; transform: translateY(0) scale(1); }
+.cloud-tile:hover .cloud-arrow:hover { background: #fff; transform: translateY(-1.6px) scale(1.03); }
+.cloud-tile:focus-visible, .cloud-profile:focus-visible { outline: 2px solid var(--charcoal); outline-offset: 5px; }
+.cloud-profiles { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 10px; margin-top: 28px; }
+.cloud-profile { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 40px; padding: 0 18px; border-radius: 999px; background: var(--surface-muted); color: var(--charcoal); font-size: 12px; font-weight: 500; transition: background-color 180ms ease, transform 180ms ease; }
+.cloud-profile:hover { background: var(--surface); transform: translateY(-2px); }
+.cloud-profile.is-inactive { opacity: .5; }
+@media (max-width: 1100px) and (min-width: 901px) {
+    .cloud { padding-inline: 5vw; }
+    .cloud-projects { gap: 12px; }
+    .cloud-tile h3 { font-size: 25px; }
+    .cloud-tile-caption { left: 22px; right: 22px; }
+}
+@media (max-width: 900px) {
+    .cloud { padding: 80px 6vw; }
+    .cloud-intro { margin-bottom: 40px; }
+    .cloud-projects { display: grid; grid-template-columns: minmax(0, 1fr); gap: 18px; max-width: 600px; margin-inline: auto; }
+    .cloud-tile { height: 500px; }
+    .cloud-tile h3 { font-size: 30px; }
+    .cloud-tile-details, .cloud-arrow { opacity: 1; transform: none; }
+    .cloud-profiles { justify-content: center; }
+}
+@media (hover: none), (pointer: coarse) {
+    .cloud-tile { flex-grow: 1 !important; }
+    .cloud-tile-details, .cloud-arrow { opacity: 1; transform: none; }
+}
+@media (max-width: 600px) {
+    .cloud { padding: 64px 24px 80px; }
+    .cloud-intro h2 { font-size: clamp(44px, 10vw, 60px); }
+    .cloud-intro > p { margin: 24px 0 0; }
+    .cloud-tile { height: 540px; border-radius: 24px; }
+    .cloud-tile h3 { font-size: 29px; }
+    .cloud-tile-caption { left: 22px; right: 22px; }
+    .cloud-profiles { justify-content: flex-start; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .cloud-tile, .cloud-overlay, .cloud-tile-details, .cloud-arrow, .cloud-profile { transition: none; }
+    .cloud-tile-details, .cloud-arrow, .cloud-tile:hover .cloud-arrow:hover { transform: none; }
+    .cloud-profile:hover { transform: none; }
+}

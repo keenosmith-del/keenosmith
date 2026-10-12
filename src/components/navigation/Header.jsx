@@ -565,8 +565,8 @@ function Header() {
                 Home
               </a>
 
-              <a href="#skills" onClick={closeAllDropdowns}>
-                About
+              <a href="#cloud" onClick={closeAllDropdowns}>
+                Cloud
               </a>
 
               <button
