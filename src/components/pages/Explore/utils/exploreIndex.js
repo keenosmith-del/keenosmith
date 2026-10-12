@@ -27,7 +27,7 @@ export const curatedProjects = [
    summary: concept.description, domain: concept.domain };
  }),
  ...['productivity-platform', 'ai-assistant', 'enterprise-workspace', 'music-api'].map(id => projectIndex.find(p => p.id === id)),
- { ...eventOps, summary: eventOps.description, domain: 'AI / Event Operations', categories: ['ai', 'backend', 'frontend', 'databases'], ecosystems: [], buildStatus: 'built', route: '/projects/eventops-intelligence', hasDetailPage: true },
+ { ...eventOps, summary: eventOps.description, domain: 'AI / Event Operations', categories: ['ai', 'backend', 'frontend', 'databases'], ecosystems: [], route: '/projects/eventops-intelligence', hasDetailPage: true },
  ...['One', 'Two', 'Three'].map((number, i) => ({
   id: `ux-ui-visual-${i + 1}`, title: `UX/UI Visual Project ${number}`,
   description: 'A frontend visual and interaction design showcase. Project details to follow.',

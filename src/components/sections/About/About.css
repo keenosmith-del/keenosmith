@@ -13,25 +13,6 @@
     animation-range: entry 0% exit 100%;
 }
 
-.about-intro-logo {
-    display: block;
-
-    width: 52px;
-    height: 52px;
-
-    margin: 0 auto 16px;
-
-    object-fit: contain;
-}
-
-.about-eyebrow {
-    margin: 0 0 10px;
-    color: #a0a0a4;
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 0.02em;
-}
-
 .about-intro h2 {
     margin: 0;
     color: #555559;
@@ -154,785 +135,6 @@
 
 
 /* =========================================================
-   TILE 1
-   ========================================================= */
-
-.about-tile-one {
-    grid-column: 1;
-    grid-row: 1;
-
-    justify-content: flex-end;
-
-    background: var(--charcoal);
-}
-
-.about-tile-one-top {
-    position: absolute;
-
-    top: 21px;
-    left: 22px;
-    right: 22px;
-
-    display: flex;
-    align-items: flex-start;
-}
-
-.about-tile-one-pills {
-    display: flex;
-    flex-wrap: wrap;
-
-    gap: 6px;
-}
-
-.about-tile-one-pills span {
-    display: inline-flex;
-    align-items: center;
-
-    min-height: 22px;
-
-    padding: 0 9px;
-
-    border-radius: 999px;
-
-    background: rgba(255, 255, 255, 0.10);
-
-    color: #d1d1d4;
-
-    font-size: 8px;
-    font-weight: 500;
-    line-height: 1;
-    letter-spacing: -0.005em;
-}
-
-.about-tile-one-content {
-    width: 100%;
-}
-
-.about-tile-one-content h3 {
-    max-width: 544px;
-
-    margin: 0;
-
-    color: #e2e2e5;
-
-    font-size: clamp(19px, 1.7vw, 27px);
-    font-weight: 500;
-    line-height: 1.02;
-    letter-spacing: -0.03em;
-}
-
-.about-tile-one-content p {
-    max-width: 520px;
-
-    margin: 14px 0 0;
-
-    color: #b9b9bd;
-
-    font-size: 10px;
-    font-weight: 400;
-    line-height: 1.55;
-    letter-spacing: -0.005em;
-}
-
-
-/* =========================================================
-   TILE 2
-   ========================================================= */
-
-.about-tile-two {
-    grid-column: 2;
-    grid-row: 1;
-
-    justify-content: flex-end;
-}
-
-.about-tile-two-logo {
-    position: absolute;
-
-    top: 22px;
-    right: 22px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.about-tile-two-logo img {
-    width: 26px;
-    height: 26px;
-
-    object-fit: contain;
-
-    opacity: 0.72;
-}
-
-.about-tile-two-content {
-    width: 100%;
-}
-
-.about-tile-two-content h3 {
-    margin: 0;
-
-    color: #5b5b60;
-
-    font-size: clamp(19px, 1.6vw, 26px);
-    font-weight: 500;
-    line-height: 1;
-    letter-spacing: -0.03em;
-}
-
-.about-tile-two-credentials {
-    display: flex;
-    flex-direction: column;
-
-    gap: 4px;
-
-    margin-top: 10px;
-}
-
-.about-tile-two-credentials span {
-    color: #79797e;
-
-    font-size: 10px;
-    font-weight: 400;
-    line-height: 1.35;
-    letter-spacing: -0.005em;
-}
-
-.about-tile-two-content p {
-    max-width: 320px;
-
-    margin: 13px 0 0;
-
-    color: #858589;
-
-    font-size: 10px;
-    font-weight: 400;
-    line-height: 1.5;
-}
-
-.about-tile-two-top {
-    position: absolute;
-
-    top: 21px;
-    left: 22px;
-    right: 22px;
-
-    display: flex;
-    align-items: flex-start;
-}
-
-.about-tile-two-pills {
-    display: flex;
-    flex-wrap: wrap;
-
-    gap: 6px;
-}
-
-.about-tile-two-pills span {
-    display: inline-flex;
-    align-items: center;
-
-    min-height: 22px;
-
-    padding: 0 8px;
-
-    border-radius: 999px;
-
-    background: var(--surface-muted);
-
-    color: #77777c;
-
-    font-size: 7px;
-    font-weight: 500;
-
-    line-height: 1;
-    letter-spacing: -0.005em;
-}
-
-
-/* =========================================================
-   TILE 3 — PYTORCH
-   ========================================================= */
-
-.about-tile-three {
-    grid-column: 3;
-    grid-row: 1;
-
-    position: relative;
-
-    overflow: hidden;
-
-    justify-content: flex-end;
-
-    background: #eeede9;
-}
-
-
-/* =========================================================
-   PYTORCH — IMAGE
-   ========================================================= */
-
-.about-tile-three-image {
-    position: absolute;
-
-    top: 50%;
-    left: 50%;
-
-    z-index: 0;
-
-    width: 110px;
-    height: 110px;
-
-    object-fit: contain;
-
-    transform: translate(-50%, -50%);
-
-    pointer-events: none;
-}
-
-
-/* =========================================================
-   PYTORCH — OVERLAY
-   ========================================================= */
-
-.about-tile-three-overlay {
-    position: absolute;
-
-    inset: 0;
-
-    z-index: 1;
-
-    background:
-        var(--tile-visual-overlay);
-
-    pointer-events: none;
-}
-
-
-/* =========================================================
-   PYTORCH — CONTENT
-   ========================================================= */
-
-.about-tile-three-content {
-    position: relative;
-
-    z-index: 2;
-
-    display: flex;
-
-    flex-direction: column;
-
-    width: 100%;
-}
-
-
-.about-tile-three-content strong {
-    margin: 0;
-
-    color: #555559;
-
-    font-size: clamp(24px, 2.4vw, 35px);
-    font-weight: 500;
-
-    line-height: 0.9;
-    letter-spacing: -0.04em;
-}
-
-
-/* =========================================================
-   TILE 4 — GENERATIVE AI
-   ========================================================= */
-
-.about-tile-four {
-    grid-column: 4;
-    grid-row: 1;
-
-    justify-content: flex-end;
-}
-
-.about-tile-four-header {
-    position: absolute;
-
-    top: 21px;
-    left: 22px;
-    right: 22px;
-
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-
-    gap: 10px;
-}
-
-.about-tile-four-pills {
-    display: flex;
-    flex-wrap: wrap;
-
-    gap: 6px;
-
-    min-width: 0;
-}
-
-.about-tile-four-pills span {
-    display: inline-flex;
-    align-items: center;
-
-    min-height: 22px;
-
-    padding: 0 8px;
-
-    border-radius: 999px;
-
-    background: var(--surface-muted);
-
-    color: #77777c;
-
-    font-size: 7px;
-    font-weight: 500;
-    line-height: 1;
-    letter-spacing: -0.005em;
-}
-
-.about-tile-four-logo {
-    width: 23px;
-    height: 23px;
-
-    flex-shrink: 0;
-
-    object-fit: contain;
-
-    opacity: 0.72;
-}
-
-.about-tile-four-content {
-    width: 100%;
-}
-
-.about-tile-four-content h3 {
-    margin: 0;
-
-    color: #5b5b60;
-
-    font-size: clamp(17px, 1.35vw, 22px);
-    font-weight: 500;
-    line-height: 1.05;
-    letter-spacing: -0.025em;
-}
-
-.about-tile-four-content p {
-    max-width: 352px;
-
-    margin: 12px 0 0;
-
-    color: #858589;
-
-    font-size: 10px;
-    font-weight: 400;
-    line-height: 1.5;
-}
-
-
-/* =========================================================
-   TILE 5 — AWS MICRO CREDENTIALS
-   ========================================================= */
-
-.about-tile-five {
-    grid-column: 1;
-    grid-row: 2;
-
-    justify-content: flex-end;
-
-    background: #e9e8e4;
-}
-
-.about-tile-five-logo {
-    position: absolute;
-
-    top: 20px;
-    right: 21px;
-}
-
-.about-tile-five-logo img {
-    width: 22px;
-    height: 22px;
-
-    object-fit: contain;
-
-    opacity: 0.72;
-}
-
-.about-tile-five-content {
-    display: flex;
-    flex-direction: column;
-}
-
-.about-tile-five-content strong {
-    margin: 0;
-
-    color: #555559;
-
-    font-size: clamp(35px, 3.2vw, 51px);
-    font-weight: 500;
-    line-height: 0.9;
-    letter-spacing: -0.04em;
-}
-
-.about-tile-five-content span {
-    margin-top: 7px;
-
-    color: #77777c;
-
-    font-size: 11px;
-    font-weight: 500;
-    line-height: 1.2;
-}
-
-
-/* =========================================================
-   TILE 5 — ARROW
-   ========================================================= */
-
-.about-tile-five-link {
-    position: absolute;
-
-    right: 21px;
-    bottom: 19px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 27px;
-    height: 27px;
-
-    border-radius: 999px;
-
-    background: rgba(60, 60, 62, 0.08);
-
-    color: #66666b;
-
-    opacity: 0;
-
-    transform: translateX(-4px);
-
-    transition:
-        opacity 180ms ease,
-        transform 220ms ease,
-        background-color 180ms ease;
-}
-
-.about-tile-five:hover .about-tile-five-link {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-.about-tile-five-link:hover {
-    background: rgba(60, 60, 62, 0.14);
-}
-
-
-/* =========================================================
-   TILE 6 — CLOUDQUEST
-   ========================================================= */
-
-.about-tile-six {
-    grid-column: 2 / 4;
-    grid-row: 2;
-
-    justify-content: flex-end;
-}
-
-.about-tile-six-logos {
-    position: absolute;
-
-    top: 20px;
-    right: 21px;
-
-    display: flex;
-    align-items: center;
-
-    gap: 6px;
-}
-
-.about-tile-six-logos img {
-    width: 20px;
-    height: 20px;
-
-    object-fit: contain;
-
-    opacity: 0.68;
-}
-
-.about-tile-six-content {
-    display: flex;
-    flex-direction: column;
-
-    max-width: 420px;
-}
-
-.about-tile-six-content h3 {
-    margin: 0;
-
-    color: #5b5b60;
-
-    font-size: clamp(18px, 1.5vw, 24px);
-    font-weight: 500;
-
-    line-height: 1;
-    letter-spacing: -0.03em;
-}
-
-.about-tile-six-content p {
-    max-width: 390px;
-
-    margin: 10px 0 0;
-
-    color: #858589;
-
-    font-size: 10px;
-    font-weight: 400;
-
-    line-height: 1.5;
-}
-
-
-/* =========================================================
-   TILE 6 — ARROW
-   ========================================================= */
-
-.about-tile-six-link {
-    position: absolute;
-
-    right: 21px;
-    bottom: 19px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 27px;
-    height: 27px;
-
-    border-radius: 999px;
-
-    background: rgba(60, 60, 62, 0.08);
-
-    color: #66666b;
-
-    opacity: 0;
-
-    transform: translateX(-4px);
-
-    transition:
-        opacity 180ms ease,
-        transform 220ms ease,
-        background-color 180ms ease;
-}
-
-.about-tile-six:hover .about-tile-six-link {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-.about-tile-six-link:hover {
-    background: rgba(60, 60, 62, 0.14);
-}
-
-
-/* =========================================================
-   TILE 7 — PRODUCT & UX
-   ========================================================= */
-
-.about-tile-seven {
-    grid-column: 3;
-    grid-row: 2;
-
-    justify-content: flex-end;
-}
-
-.about-tile-seven-logo {
-    position: absolute;
-
-    top: 20px;
-    right: 21px;
-}
-
-.about-tile-seven-logo img {
-    width: 22px;
-    height: 22px;
-
-    object-fit: contain;
-
-    opacity: 0.72;
-}
-
-.about-tile-seven-content {
-    display: flex;
-    flex-direction: column;
-
-    width: 100%;
-}
-
-.about-tile-seven-content h3 {
-    margin: 0;
-
-    color: #5b5b60;
-
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 1;
-    letter-spacing: -0.025em;
-}
-
-.about-tile-seven-content span {
-    max-width: 152px;
-
-    margin-top: 8px;
-
-    color: #808085;
-
-    font-size: 9px;
-    font-weight: 400;
-    line-height: 1.4;
-}
-
-
-/* =========================================================
-   TILE 7 — ARROW
-   ========================================================= */
-
-.about-tile-seven-link {
-    position: absolute;
-
-    right: 18px;
-    bottom: 16px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 26px;
-    height: 26px;
-
-    border-radius: 999px;
-
-    background: rgba(60, 60, 62, 0.08);
-
-    color: #66666b;
-
-    opacity: 0;
-
-    transform: translateX(-4px);
-
-    transition:
-        opacity 180ms ease,
-        transform 220ms ease,
-        background-color 180ms ease;
-}
-
-.about-tile-seven:hover .about-tile-seven-link {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-.about-tile-seven-link:hover {
-    background: rgba(60, 60, 62, 0.14);
-}
-
-
-/* =========================================================
-   TILE 8 — AWS SKILL BUILDER
-   ========================================================= */
-
-.about-tile-eight {
-    grid-column: 4;
-    grid-row: 2;
-
-    padding: 0;
-
-    background: #eb7e5d;
-}
-
-.about-tile-eight-image {
-    position: absolute;
-
-    inset: 0;
-
-    width: 100%;
-    height: 100%;
-}
-
-.about-tile-eight-image img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-    display: block;
-}
-
-.about-tile-eight-overlay {
-    position: absolute;
-
-    inset: 0;
-
-    z-index: 1;
-
-    background:
-        linear-gradient(to top,
-            rgba(25, 25, 27, 0.38) 0%,
-            rgba(25, 25, 27, 0.08) 45%,
-            rgba(25, 25, 27, 0) 70%);
-
-    opacity: 0.7;
-
-    transition: opacity 180ms ease;
-}
-
-.about-tile-eight-link {
-    position: absolute;
-
-    right: 18px;
-    bottom: 16px;
-
-    z-index: 3;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 27px;
-    height: 27px;
-
-    border-radius: 999px;
-
-    background: rgba(250, 249, 246, 0.92);
-
-    color: #66666b;
-
-    opacity: 0;
-
-    transform: translateX(-4px);
-
-    transition:
-        opacity 180ms ease,
-        transform 220ms ease,
-        background-color 180ms ease;
-}
-
-.about-tile-eight:hover .about-tile-eight-link {
-    opacity: 1;
-
-    transform: translateX(0);
-}
-
-.about-tile-eight-link:hover {
-    background: #ffffff;
-}
-
-
-/* =========================================================
    TILE ENTRANCE ANIMATION
    ========================================================= */
 
@@ -992,55 +194,8 @@
             224px 176px 176px;
     }
 
-    .about-tile-one {
-        grid-column: 1 / 3;
-        grid-row: 1;
-    }
-
-    .about-tile-two {
-        grid-column: 3;
-        grid-row: 1;
-    }
-
-    .about-tile-three {
-        grid-column: 1;
-        grid-row: 2;
-    }
-
-    .about-tile-four {
-        grid-column: 2 / 4;
-        grid-row: 2;
-    }
-
-    .about-tile-five {
-        grid-column: 1;
-        grid-row: 3;
-    }
-
-    .about-tile-six {
-        grid-column: 2;
-        grid-row: 3;
-    }
-
-    .about-tile-seven {
-        grid-column: 3;
-        grid-row: 3;
-    }
-
-    .about-tile-eight {
-        grid-column: 2 / 4;
-        grid-row: 4;
-    }
-
     .about-tile {
         padding: 22px;
-    }
-
-    .about-tile-one-top,
-    .about-tile-four-header,
-    .about-tile-eight-header {
-        left: 19px;
-        right: 19px;
     }
 }
 
@@ -1088,94 +243,6 @@
 
         border-radius: 19px;
     }
-
-    .about-tile-three,
-    .about-tile-five,
-    .about-tile-six,
-    .about-tile-seven {
-        min-height: 136px;
-    }
-
-    .about-tile-four,
-    .about-tile-eight {
-        min-height: 192px;
-    }
-
-    .about-tile-one-top,
-    .about-tile-four-header,
-    .about-tile-eight-header {
-        top: 16px;
-        left: 18px;
-        right: 18px;
-    }
-
-    .about-tile-one-pills,
-    .about-tile-four-pills {
-        gap: 4px;
-    }
-
-    .about-tile-one-pills span,
-    .about-tile-four-pills span,
-    .about-tile-eight-pill {
-        min-height: 20px;
-
-        padding: 0 7px;
-
-        font-size: 7px;
-    }
-
-    .about-tile-one-content h3 {
-        font-size: clamp(19px, 5.6vw, 26px);
-    }
-
-    .about-tile-one-content p {
-        font-size: 10px;
-    }
-
-    .about-tile-two-logo {
-        top: 18px;
-        right: 18px;
-    }
-
-    .about-tile-two-logo img,
-    .about-tile-four-logo,
-    .about-tile-eight-logo {
-        width: 21px;
-        height: 21px;
-    }
-
-    .about-tile-four-content h3 {
-        font-size: 19px;
-    }
-
-    .about-tile-four-content p,
-    .about-tile-eight-content p {
-        font-size: 10px;
-    }
-
-    .about-tile-three-logo,
-    .about-tile-five-logo,
-    .about-tile-seven-logo {
-        top: 18px;
-        right: 18px;
-    }
-
-    .about-tile-three-link,
-    .about-tile-five-link,
-    .about-tile-six-link,
-    .about-tile-seven-link {
-        opacity: 1;
-
-        transform: none;
-
-        pointer-events: auto;
-    }
-
-    .about-tile-three-content strong,
-    .about-tile-five-content strong,
-    .about-tile-six-content strong {
-        font-size: 38px;
-    }
 }
 
 
@@ -1190,11 +257,7 @@
         animation: none;
     }
 
-    .about-button,
-    .about-tile-three-link,
-    .about-tile-five-link,
-    .about-tile-six-link,
-    .about-tile-seven-link {
+    .about-button {
         transition: none;
     }
 }
@@ -1231,36 +294,6 @@
 
     animation-range:
         entry 0% exit 100%;
-}
-
-/* =========================================================
-   MICROSOFT INTRO — AZURE LOGO
-   ========================================================= */
-
-.about-microsoft-logo {
-    display: block;
-
-    width: 30px;
-    height: 30px;
-
-    margin: 0 auto 14px;
-
-    object-fit: contain;
-
-    opacity: 0.78;
-}
-
-.about-microsoft-eyebrow {
-    display: inline-block;
-
-    margin-bottom: 12px;
-
-    color: #a0a0a4;
-
-    font-size: 10px;
-    font-weight: 500;
-
-    letter-spacing: 0.02em;
 }
 
 .about-microsoft-intro h2 {
@@ -1354,31 +387,6 @@
     justify-content: flex-end;
 
     background: var(--charcoal);
-}
-
-.microsoft-tile-visual {
-    position: absolute;
-
-    inset: 0;
-
-    z-index: 0;
-
-    overflow: hidden;
-}
-
-.microsoft-image-placeholder {
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    width: 100%;
-    height: 100%;
-
-    color: rgba(255, 255, 255, 0.28);
-
-    font-size: 11px;
-    font-weight: 500;
 }
 
 .microsoft-tile-learn .microsoft-tile-content {
@@ -1762,31 +770,6 @@
     z-index: 2;
 }
 
-.microsoft-tile-label {
-    display: inline-flex;
-
-    align-items: center;
-
-    width: fit-content;
-
-    min-height: 22px;
-
-    padding: 0 9px;
-
-    margin-bottom: 12px;
-
-    border-radius: 999px;
-
-    background: var(--surface-muted);
-
-    color: #77777c;
-
-    font-size: 8px;
-    font-weight: 500;
-
-    line-height: 1;
-}
-
 .microsoft-tile-content h3 {
     margin: 0;
 
@@ -1851,34 +834,6 @@
 
     line-height: 1;
     letter-spacing: -0.005em;
-}
-
-
-/* =========================================================
-   CREDENTIAL BADGES
-   ========================================================= */
-
-.microsoft-credential-badge {
-    position: absolute;
-
-    top: 20px;
-    right: 21px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: flex-end;
-
-    gap: 7px;
-}
-
-.microsoft-credential-badge img {
-    width: 24px;
-    height: 24px;
-
-    object-fit: contain;
-
-    opacity: 0.72;
 }
 
 
@@ -1967,19 +922,6 @@
     padding: 24px;
 }
 
-.microsoft-deepseek-content .microsoft-tile-label {
-    position: absolute;
-
-    top: 21px;
-    left: 22px;
-
-    margin-bottom: 0;
-
-    background: rgba(255, 255, 255, 0.10);
-
-    color: #d1d1d4;
-}
-
 .microsoft-deepseek-content h3 {
     margin: 0;
 
@@ -2057,21 +999,6 @@
 
 
 /* =========================================================
-   LIGHT IMAGE TILE ARROW
-   ========================================================= */
-
-.microsoft-tile-arrow-light {
-    background: rgba(250, 249, 246, 0.92);
-
-    color: #66666b;
-}
-
-.microsoft-tile-arrow-light:hover {
-    background: #ffffff;
-}
-
-
-/* =========================================================
    MICROSOFT — STANDOUT TILE ARROW
    ========================================================= */
 
@@ -2083,58 +1010,6 @@
 
 .microsoft-tile-learn .microsoft-tile-arrow:hover {
     background: #ffffff;
-}
-
-/* =========================================================
-   MICROSOFT — DISABLED ARROWS
-   ========================================================= */
-
-.microsoft-tile-arrow-disabled {
-    cursor: default;
-
-    pointer-events: none;
-}
-
-
-/* =========================================================
-   MICROSOFT — DISABLED ARROW VISIBILITY
-   ========================================================= */
-
-.microsoft-tile:hover .microsoft-tile-arrow-disabled {
-    opacity: 1;
-
-    transform: translateX(0);
-}
-
-/* =========================================================
-   MICROSOFT — DISABLED TILE ARROWS
-   Always visible — no hover interaction
-   ========================================================= */
-
-.microsoft-tile-arrow.microsoft-tile-arrow-disabled {
-    opacity: 1;
-
-    transform: translateX(0);
-
-    cursor: default;
-
-    pointer-events: none;
-
-    background: rgba(214, 214, 218, 0.19);
-
-    color: #1e1e1e2c;
-}
-
-
-/* Prevent the enabled hover rule from affecting disabled arrows */
-
-.microsoft-tile:hover .microsoft-tile-arrow.microsoft-tile-arrow-disabled,
-.microsoft-tile:focus-within .microsoft-tile-arrow.microsoft-tile-arrow-disabled {
-    opacity: 1;
-
-    transform: translateX(0);
-
-
 }
 
 
@@ -2429,11 +1304,6 @@
         grid-column: 1;
         grid-row: 4;
     }
-
-    .microsoft-tile-placeholder {
-        grid-column: 2;
-        grid-row: 4;
-    }
 }
 
 
@@ -2514,17 +1384,6 @@
 
 .about-section-three {
     padding-top: 112px;
-}
-
-.about-intro-logo {
-    display: block;
-
-    width: 25px;
-    height: 25px;
-
-    margin: 0 auto 16px;
-
-    object-fit: contain;
 }
 
 
@@ -2710,27 +1569,6 @@
     background: #eeede9;
 }
 
-.about-three-github-logo {
-    position: absolute;
-
-    top: 21px;
-    right: 21px;
-
-    display: flex;
-    align-items: center;
-
-    gap: 7px;
-}
-
-.about-three-github-logo img {
-    width: 22px;
-    height: 22px;
-
-    object-fit: contain;
-
-    opacity: 0.68;
-}
-
 .about-three-counter {
     display: flex;
     flex-direction: column;
@@ -2772,32 +1610,6 @@
 
 .about-three-wethinkcode .about-three-content {
     max-width: 520px;
-}
-
-
-/* =========================================================
-   TILE 5 — MCKINSEY
-   ========================================================= */
-
-.about-three-mckinsey {
-    grid-column: 2;
-    grid-row: 3;
-
-    justify-content: flex-end;
-
-    background: #e9e8e4;
-}
-
-
-/* =========================================================
-   TILE 6 — UNISA
-   ========================================================= */
-
-.about-three-unisa {
-    grid-column: 3;
-    grid-row: 3;
-
-    justify-content: flex-end;
 }
 
 
@@ -2873,37 +1685,6 @@
 
     line-height: 1.5;
     letter-spacing: -0.005em;
-}
-
-/* =========================================================
-   BADGES
-   ========================================================= */
-
-.about-three-badge {
-    position: absolute;
-
-    top: 20px;
-    right: 21px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    z-index: 3;
-}
-
-.about-three-badge img {
-    width: 24px;
-    height: 24px;
-
-    object-fit: contain;
-
-    opacity: 0.72;
-}
-
-.about-three-mckinsey .about-three-badge img {
-    width: 30px;
-    height: 30px;
 }
 
 
@@ -3106,16 +1887,6 @@
         grid-row: 3;
     }
 
-    .about-three-mckinsey {
-        grid-column: 1;
-        grid-row: 4;
-    }
-
-    .about-three-unisa {
-        grid-column: 2;
-        grid-row: 4;
-    }
-
     .about-three-label {
         left: 19px;
         right: 19px;
@@ -3150,9 +1921,7 @@
         border-radius: 19px;
     }
 
-    .about-grid-three .about-three-github,
-    .about-grid-three .about-three-mckinsey,
-    .about-grid-three .about-three-unisa {
+    .about-grid-three .about-three-github {
         min-height: 136px;
     }
 
@@ -3187,18 +1956,6 @@
 
     .about-three-counter strong {
         font-size: 38px;
-    }
-
-    .about-three-github-logo {
-        top: 18px;
-        right: 18px;
-
-        gap: 6px;
-    }
-
-    .about-three-github-logo img {
-        width: 20px;
-        height: 20px;
     }
 
     .about-three-arrow {
@@ -3257,13 +2014,6 @@
     animation: about-intro-scroll linear both;
     animation-timeline: view();
     animation-range: entry 0% exit 100%;
-}
-
-.gcp-intro-logo {
-    display: block;
-    width: 38px;
-    height: auto;
-    margin: 0 auto 21px;
 }
 
 .gcp-intro h2 {
@@ -3554,26 +2304,6 @@
 }
 
 /* =========================================================
-   COUNTER — GOOGLE BADGE
-   ========================================================= */
-
-.gcp-counter-badge {
-    position: absolute;
-
-    top: 17px;
-    right: 18px;
-
-    z-index: 2;
-
-    width: 34px;
-    height: 34px;
-
-    object-fit: contain;
-
-    pointer-events: none;
-}
-
-/* =========================================================
    GOOGLE CLOUD
    SMALL SQUARE-ISH TILE
    ========================================================= */
@@ -3712,28 +2442,6 @@
 }
 
 
-/* =========================================================
-   KUBERNETES — LABEL
-   ========================================================= */
-
-.gcp-kubernetes-label {
-    position: absolute;
-
-    left: 18px;
-    bottom: 18px;
-
-    max-width: 80%;
-
-    z-index: 3;
-
-    color: var(--charcoal);
-
-    font-size: 9px;
-    font-weight: 400;
-    line-height: 1.45;
-}
-
-
 
 /* =========================================================
    GOOGLE DEVELOPER PROGRAM
@@ -3782,27 +2490,6 @@
 
     line-height: 1.5;
     letter-spacing: -0.005em;
-}
-
-
-/* =========================================================
-   GOOGLE DEVELOPER PROGRAM — BADGE
-   ========================================================= */
-
-.gcp-developer-badge {
-    position: absolute;
-
-    top: 17px;
-    right: 18px;
-
-    z-index: 2;
-
-    width: 30px;
-    height: 30px;
-
-    object-fit: contain;
-
-    pointer-events: none;
 }
 
 
@@ -4214,153 +2901,6 @@
     }
 }
 
-/* AWS narrative tiles. Keep the existing puzzle positions and motion. */
-.about-aws-counter {
-    display: flex;
-    flex-direction: column;
-}
-
-.about-aws-counter strong {
-    margin: 0;
-    color: #555559;
-    font-size: clamp(35px, 3.2vw, 51px);
-    font-weight: 500;
-    line-height: 0.9;
-    letter-spacing: -0.04em;
-}
-
-.about-aws-counter span {
-    margin-top: 7px;
-    color: #77777c;
-    font-size: 11px;
-    font-weight: 500;
-    line-height: 1.2;
-}
-
-.about-aws-project-link {
-    position: absolute;
-    right: 21px;
-    bottom: 19px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 27px;
-    height: 27px;
-    padding: 0;
-    border: 0;
-    border-radius: 999px;
-    background: rgba(60, 60, 62, 0.08);
-    color: #66666b;
-    cursor: pointer;
-    opacity: 0;
-    transform: translateX(-4px);
-    transition: opacity 180ms ease, transform 220ms ease, background-color 180ms ease;
-}
-
-.about-aws-project:hover .about-aws-project-link,
-.about-aws-project:focus-within .about-aws-project-link,
-.about-aws-messaging:focus-within .about-tile-five-link,
-#about>.about-grid .about-tile-six:focus-within .about-tile-six-link,
-#about>.about-grid .about-tile-eight:focus-within .about-tile-eight-link {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-.about-aws-project-link:hover {
-    background: rgba(60, 60, 62, 0.14);
-}
-
-.about-aws-project-link:focus-visible,
-.about-aws-messaging .about-tile-five-link:focus-visible {
-    outline: 2px solid currentColor;
-    outline-offset: 3px;
-}
-
-.about-aws-messaging {
-    background: var(--surface);
-}
-
-.about-aws-messaging-image {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.about-aws-messaging-overlay {
-    position: absolute;
-    inset: 0;
-    background: var(--tile-visual-overlay);
-    pointer-events: none;
-}
-
-.about-aws-messaging-pills {
-    position: absolute;
-    top: 21px;
-    left: 22px;
-    right: 22px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-}
-
-.about-aws-messaging-pills span {
-    padding: 5px 8px;
-    border-radius: 999px;
-    background: var(--surface-muted);
-    color: #66666b;
-    font-size: 7px;
-    line-height: 1;
-}
-
-.about-aws-messaging-content {
-    position: relative;
-    padding-right: 20px;
-}
-
-.about-aws-messaging-content h3 {
-    margin: 0;
-    color: #5b5b60;
-    font-size: clamp(18px, 1.5vw, 24px);
-    font-weight: 500;
-    line-height: 1.05;
-    letter-spacing: -0.025em;
-}
-
-.about-aws-messaging-content p {
-    margin: 10px 0 0;
-    color: #858589;
-    font-size: 10px;
-    line-height: 1.5;
-}
-
-.about-aws-messaging .about-tile-five-link {
-    background: rgba(250, 249, 246, 0.92);
-    z-index: 2;
-    border: 0;
-    padding: 0;
-    cursor: pointer;
-}
-
-@media (max-width: 700px) {
-    #about>.about-grid>.about-aws-credentials {
-        min-height: 136px;
-    }
-
-    .about-aws-messaging-pills {
-        top: 16px;
-        left: 18px;
-        right: 18px;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .about-aws-project-link {
-        transition: none;
-    }
-}
-
 /* Give the AWS messaging image more room within the second row. */
 #about>.about-grid {
     grid-template-rows: minmax(248px, auto) minmax(240px, auto);
@@ -4370,86 +2910,6 @@
     #about>.about-grid {
         grid-template-rows: minmax(248px, auto) minmax(200px, auto) minmax(240px, auto) minmax(176px, auto);
     }
-}
-
-@media (max-width: 700px) {
-    #about>.about-grid>.about-aws-messaging {
-        min-height: 240px;
-    }
-}
-
-.about-aws-messaging-image {
-    object-position: center 65%;
-}
-
-.about-kinesis-chips {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-    margin-bottom: auto;
-    padding-bottom: 24px;
-}
-
-.about-kinesis-chips span {
-    display: inline-flex;
-    align-items: center;
-    min-height: 22px;
-    padding: 0 8px;
-    border-radius: 999px;
-    background: var(--surface-muted);
-    color: #66666b;
-    font-size: 7px;
-    font-weight: 500;
-    line-height: 1;
-}
-
-.about-kinesis-image {
-    position: absolute;
-    inset: 5%;
-    width: 90%;
-    height: 90%;
-    object-fit: contain;
-}
-
-.about-kinesis-overlay {
-    position: absolute;
-    inset: 0;
-    background: var(--tile-visual-overlay);
-    pointer-events: none;
-}
-
-.about-kinesis-chips,
-.about-kinesis .about-tile-six-content {
-    position: relative;
-    z-index: 2;
-}
-
-.about-kinesis .about-tile-six-content {
-    padding-right: 28px;
-}
-
-.about-kinesis .about-tile-six-content h3,
-.about-kinesis .about-tile-six-content p {
-    color: var(--charcoal);
-}
-
-.about-kinesis .about-tile-six-link {
-    z-index: 3;
-    border: 0;
-    padding: 0;
-    cursor: pointer;
-    background: var(--surface-muted);
-}
-
-.about-tile-three .about-aws-project-link {
-    z-index: 3;
-    background: var(--surface-muted);
-}
-
-.about-tile-three:hover .about-aws-project-link,
-.about-tile-three:focus-within .about-aws-project-link {
-    opacity: 1;
-    transform: translateX(0);
 }
 
 .gcp-tile-info .gcp-tile-content p {
@@ -4553,79 +3013,6 @@
     }
 }
 
-.about-tile-deepseek {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 24px;
-}
-
-.about-tile-deepseek .about-tile-eight-overlay {
-    background: var(--tile-visual-overlay);
-    pointer-events: none;
-}
-
-.about-deepseek-pills {
-    position: absolute;
-    top: 21px;
-    left: 22px;
-    right: 22px;
-    z-index: 2;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-}
-
-.about-deepseek-pills span {
-    padding: 5px 8px;
-    border-radius: 999px;
-    background: var(--surface-muted);
-    color: #66666b;
-    font-size: 7px;
-    line-height: 1;
-}
-
-.about-tile-deepseek .about-tile-eight-content {
-    position: relative;
-    z-index: 2;
-    padding-top: 65px;
-    padding-right: 22px;
-}
-
-.about-tile-deepseek h3 {
-    margin: 0;
-    color: var(--charcoal);
-    font-size: clamp(18px, 1.5vw, 24px);
-    font-weight: 500;
-    line-height: 1.05;
-    letter-spacing: -0.025em;
-}
-
-.about-tile-deepseek p {
-    margin: 10px 0 0;
-    color: var(--charcoal);
-    font-size: 10px;
-    line-height: 1.5;
-}
-
-.about-tile-deepseek .about-tile-eight-link {
-    border: 0;
-    padding: 0;
-    cursor: pointer;
-}
-
-.about-tile-deepseek:focus-within .about-tile-eight-link {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-@media (max-width: 700px) {
-    .about-tile-deepseek {
-        min-height: 240px;
-        padding: 21px;
-    }
-}
-
 /* Regular grids below desktop; retain each tile's existing colours. */
 @media (max-width: 1100px) {
 
@@ -4664,24 +3051,9 @@
         line-height: 1.5;
     }
 
-    #about .about-tile-four-content,
-    #about .about-tile-one-content {
-        padding-top: 80px;
-    }
-
-    #about .about-tile-four-content p,
-    #about .about-aws-messaging-content p,
     #gcp .gcp-tile-content p,
     #microsoft .microsoft-tile-content p {
         padding-right: 34px;
-    }
-
-    #about .about-tile-four-header {
-        right: 22px;
-    }
-
-    #about .about-tile-four-pills {
-        flex-wrap: wrap;
     }
 
     #microsoft .microsoft-tile-learn .microsoft-tile-content h3 {
@@ -4697,10 +3069,6 @@
         line-height: 1.5;
     }
 
-    #about .about-aws-project-link,
-    #about .about-tile-five-link,
-    #about .about-tile-six-link,
-    #about .about-tile-eight-link,
     #gcp .gcp-arrow,
     #microsoft .microsoft-tile-arrow,
     #engineering .about-three-arrow {
@@ -4712,10 +3080,6 @@
         transform: none;
     }
 
-    #about .about-aws-project-link::before,
-    #about .about-tile-five-link::before,
-    #about .about-tile-six-link::before,
-    #about .about-tile-eight-link::before,
     #gcp .gcp-arrow::before,
     #microsoft .microsoft-tile-arrow::before,
     #engineering .about-three-arrow::before {

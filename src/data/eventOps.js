@@ -1,5 +1,6 @@
 export const eventOps = {
  id: 'eventops-intelligence',
+ buildStatus: 'built',
  title: 'EventOps Intelligence',
  description: 'A full-stack event operations workspace combining structured RAG, cited answers and bounded LangGraph verification workflows with a React interface, FastAPI and PostgreSQL/pgvector.',
  repositoryUrl: 'https://github.com/keenosmith-del/eventops-intelligence-v.01',

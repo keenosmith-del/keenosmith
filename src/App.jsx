@@ -10,6 +10,8 @@ import Cloud from './components/sections/Cloud/Cloud.jsx';
 import ProjectPreview from './components/pages/ProjectPreview/ProjectPreview.jsx';
 import ProjectPlaceholder from './components/pages/ProjectPlaceholder/ProjectPlaceholder.jsx';
 import { cloudProjects } from './data/cloudProjects.js';
+import AI from './components/sections/AI/AI.jsx';
+import { aiProjects } from './data/aiProjects.js';
 import About from './components/sections/About/About.jsx';
 import Projects from './components/sections/Projects/Projects.jsx';
 import Footer from './components/sections/Footer/Footer.jsx';
@@ -25,8 +27,9 @@ import ProductivityPlatform from './components/pages/projects/ProductivityPlatfo
 import MusicAPI from './components/pages/projects/MusicAPI/MusicAPI.jsx';
 import EnterpriseWorkspace from './components/pages/projects/EnterpriseWorkspace/EnterpriseWorkspace.jsx';
 
-import EventOps from './components/pages/projects/EventOps/EventOps.jsx';
 
+
+const placeholderProjects = [...cloudProjects, ...aiProjects];
 
 function Home() {
   return (
@@ -36,6 +39,7 @@ function Home() {
       <main>
         <Hero />
         <Cloud />
+        <AI />
         <About />
         <Projects />
         <Footer />
@@ -51,15 +55,14 @@ function App() {
       <PageScroll />
       <Routes>
         <Route path="/" element={<Home />} />
-        {cloudProjects.flatMap(project => [project.route, `/projects/${project.id}`].map(path => (
+        {placeholderProjects.flatMap(project => [...new Set([project.route, `/projects/${project.id}`])].map(path => (
           <Route key={path} path={path} element={<ProjectPlaceholder project={project} />} />
         )))}
-        {[...new Set([...projectConcepts.map(project => project.id), 'rabbitmq', 'kinesis', 'opentofu', 'duckdb', 'go-dotnet', 'openai', 'jwt-redpanda', 'company-websites', 'kailor-ai'])].filter(id => !cloudProjects.some(project => project.id === id)).map((project) => (
+        {[...new Set([...projectConcepts.map(project => project.id), 'rabbitmq', 'kinesis', 'opentofu', 'duckdb', 'go-dotnet', 'openai', 'jwt-redpanda', 'company-websites', 'kailor-ai'])].filter(id => !placeholderProjects.some(project => project.id === id)).map((project) => (
           <Route key={project} path={`/projects/${project}`} element={<ProjectPreview project={project} />} />
         ))}
         <Route path="/companies/kailor" element={<Company company="kailor" />} />
         <Route path="/companies/kai" element={<Company company="kai" />} />
-        <Route path="/projects/eventops-intelligence" element={<EventOps />} />
         <Route path="/explore" element={<Explore />} />
         {['ux-ui-visual-1', 'ux-ui-visual-2', 'ux-ui-visual-3'].map(id => <Route key={id} path={`/projects/${id}`} element={<ExploreProjectPreview projectId={id} />} />)}
         <Route path="/explore/projects/:projectId" element={<ExploreProjectPreview />} />

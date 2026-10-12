@@ -5,43 +5,24 @@ import { useNavigate } from 'react-router-dom';
 import './About.css';
 import LaunchCountdown from '../../shared/LaunchCountdown.jsx';
 
-import awsLogo from '../../../assets/svgs/about/aws-2.png';
-import microsoftLogo from '../../../assets/svgs/about/microsoft-icon.svg';
 
-import awsSkillBuilderImage from '../../../assets/images/about/aws_skill_builder.png';
-import pytorchImage from '../../../assets/images/about/pytorch.png';
 import jwtRedpandaImage from '../../../assets/images/about/jwt-redpanda.png';
-import openTofu from '../../../assets/images/about/openTofu.png';
-import awsFumi from '../../../assets/images/about/awsFumi.png';
-import kafkaRabbitmq from '../../../assets/images/about/kafka-rabbitmq.png';
 
-import foundersLogo from '../../../assets/images/about/founderz.png';
 import microsoftBadge1 from '../../../assets/images/about/microsoft-badge.png';
 import foundryBadge from '../../../assets/images/about/foundry.png';
 import bearVisual from '../../../assets/images/about/bearVisual.png';
 import bearPush from '../../../assets/images/about/bearPush.png';
-import liblabsPostman from '../../../assets/images/about/liblabs.png';
-import azureLogo from '../../../assets/images/about/azure.png';
 import openAIImage from '../../../assets/images/about/openai.svg';
 
 import copilotCover from '../../../assets/images/about/copilot-cover.png';
 
 
-import googleCloudLogo from '../../../assets/images/about/google.png';
 import huggingFace from '../../../assets/images/about/hugging-face.png';
-import kubernetesImage from '../../../assets/images/about/kubernetes.png';
-import dockerImage from '../../../assets/images/about/docker.png';
-import bananaImage from '../../../assets/images/about/nano-banana.png';
 import duckDB from '../../../assets/images/about/duckDB.png';
 import gcpBear from '../../../assets/images/about/gcpBear.png';
 import gcpPerson from '../../../assets/images/about/gcpPerson.png';
 
-import googleBadge from '../../../assets/images/about/googleLogo.png';
-import adkBadge from '../../../assets/images/about/adk.png';
-import gdpBadge from '../../../assets/images/about/gdp.png';
 
-import githubLogo from '../../../assets/svgs/about/github.svg';
-import githubImage from '../../../assets/images/about/github.png';
 import qwenTop from '../../../assets/images/about/myCompanyImage-1.png';
 import qwenBottom from '../../../assets/images/about/myCompanyImage-2.png';
 import myCompanyImage from '../../../assets/images/about/myCompanyImage.png';
@@ -121,201 +102,7 @@ function About() {
     }, []);
 
     return (
-        <section className="about" id="about" ref={aboutRef}>
-            <div className="about-intro">
-
-                <h2>
-                    Putting my cloud and AI
-                    <br />
-                    work into practice.
-                </h2>
-
-                <p className="about-intro-description">
-                    Full-stack development,
-                    machine learning, real-time processing and AWS infrastructure.
-                    This section shows that work alongside the tools I use and
-                    the hands-on learning I continue through CloudQuest,
-                    Skill Builder and my AWS credentials.
-                </p>
-
-                <div className="about-actions">
-                    <a
-                        className="about-button about-button-primary"
-                        target="_blank"
-                        rel="noreferrer"
-                        href="https://skillsprofile.skillbuilder.aws/user/keenosmith"
-                    >
-                        AWS Profile
-                    </a>
-
-                    <a
-                        className="about-button about-button-secondary"
-                        target="_blank"
-                        rel="noreferrer"
-                        href="https://www.credly.com/users/keeno-smith"
-                    >
-                        Skills Wallet
-                    </a>
-                </div>
-            </div>
-
-            <div className="about-grid">
-
-                {/* Tile 1 — Full-Stack Software Engineering */}
-                <article className="about-tile about-tile-large about-tile-one">
-
-                    <div className="about-tile-one-top">
-                        <div className="about-tile-one-pills">
-                            <span>Amazon Bedrock</span>
-                            <span>SageMaker</span>
-                            <span>S3</span>
-                            <span>DynamoDB</span>
-                            <span>IAM</span>
-                        </div>
-                    </div>
-
-                    <div className="about-tile-one-content">
-                        <h3>
-                            Getting hands-on
-                            <br />
-                            with AI.
-                        </h3>
-
-                        <p>
-                            I’m interested in how models become part of an
-                            application. My work takes me from Python and PyTorch
-                            to Bedrock and SageMaker, then into data and
-                            permissions in S3, DynamoDB and IAM.
-                        </p>
-                    </div>
-
-                </article>
-
-
-                {/* Tile 2: credentials counter */}
-                <article className="about-tile about-tile-medium about-tile-two about-aws-credentials">
-                    <div className="about-tile-two-logo">
-                        <img src={awsLogo} alt="AWS" />
-                    </div>
-                    <div className="about-aws-counter">
-                        <strong data-target="16">0+</strong>
-                        <span>AWS Credentials</span>
-                    </div>
-                </article>
-
-
-                {/* Tile 3 — OpenTofu visual tile */}
-                <article className="about-tile about-tile-small about-tile-three">
-
-                    <img
-                        src={openTofu}
-                        alt="OpenTofu"
-                        className="about-tile-three-image"
-                    />
-
-                    <div className="about-tile-three-overlay" />
-
-                    <button className="about-aws-project-link" type="button"
-                        aria-label="View OpenTofu infrastructure project"
-                        onClick={() => navigate('/projects/opentofu')}>
-                        <ArrowRight size={18} strokeWidth={1.7} aria-hidden="true" />
-                    </button>
-
-                </article>
-
-
-
-                {/* Tile 4: AWS banking project */}
-                <article className="about-tile about-tile-medium-2 about-tile-four about-aws-project">
-                    <div className="about-tile-four-header">
-                        <div className="about-tile-four-pills">
-                            <span>Lambda</span>
-                            <span>API Gateway</span>
-                            <span>EventBridge</span>
-                            <span>CloudWatch</span>
-                            <span>Kinesis</span>
-                        </div>
-                    </div>
-                    <div className="about-tile-four-content">
-                        <h3>Cloud &amp; Infrastructure</h3>
-                        <p>For my banking platform, I follow payment data through
-                            risk decisions and service responses, then trace
-                            what happened with CloudWatch. That work connects
-                            ML, Lambda and API Gateway.</p>
-                    </div>
-                    <button className="about-aws-project-link" type="button"
-                        aria-label="View AWS Intelligent Banking and Payment Risk Platform"
-                        onClick={() => navigate('/projects/aws')}>
-                        <ArrowRight size={18} strokeWidth={1.7} aria-hidden="true" />
-                    </button>
-                </article>
-
-
-                {/* Tile 5: event-driven systems */}
-                <article className="about-tile about-tile-small-2 about-tile-five about-aws-messaging">
-                    <img src={kafkaRabbitmq} alt="Kafka and RabbitMQ" className="about-aws-messaging-image" />
-                    <div className="about-aws-messaging-overlay" />
-
-                    <div className="about-aws-messaging-content">
-                        <h3>Kafka + RabbitMQ</h3>
-                        <p>As my applications involve more services, I use
-                            Kafka and RabbitMQ to coordinate events and
-                            background work.</p>
-                    </div>
-                    <button className="about-tile-five-link" type="button"
-                        aria-label="View RabbitMQ event-driven project"
-                        onClick={() => navigate('/projects/rabbitmq')}>
-                        <ArrowRight size={18} strokeWidth={1.7} aria-hidden="true" />
-                    </button>
-                </article>
-
-
-                {/* Tile 6 — Kinesis */}
-                <article className="about-tile about-tile-small about-tile-six about-kinesis">
-                    <img src={awsFumi} alt="Amazon Kinesis" className="about-kinesis-image" />
-                    <div className="about-kinesis-overlay" />
-                    <div className="about-kinesis-chips">
-                        <span>Amazon Kinesis</span>
-                        <span>Real-time streaming</span>
-                        <span>Event processing</span>
-                    </div>
-                    <div className="about-tile-six-content">
-                        <h3>Kinesis</h3>
-                        <p>I use Amazon Kinesis to stream payment data through
-                            my banking platform, connecting real-time events
-                            with processing and risk decisions.</p>
-                    </div>
-                    <button className="about-tile-six-link" type="button"
-                        aria-label="View Kinesis streaming project"
-                        onClick={() => navigate('/projects/kinesis')}>
-                        <ArrowRight size={18} strokeWidth={1.7} aria-hidden="true" />
-                    </button>
-                </article>
-
-
-                {/* Tile 7 — Local AI / DeepSeek project concept */}
-                <article className="about-tile about-tile-medium-2 about-tile-eight about-tile-deepseek">
-                    <div className="about-tile-eight-overlay" />
-                    <div className="about-deepseek-pills">
-                        <span>DeepSeek</span>
-                        <span>Local AI</span>
-                        <span>Human review</span>
-                    </div>
-                    <div className="about-tile-eight-content">
-                        <h3>Talent intelligence.</h3>
-                        <p>Exploring local AI that turns CVs and role requirements
-                            into evidence-backed skills insights, with people
-                            guiding every hiring decision.</p>
-                    </div>
-                    <button className="about-tile-eight-link" type="button"
-                        aria-label="View DeepSeek workforce and talent intelligence project"
-                        onClick={() => navigate('/projects/deepseek')}>
-                        <ArrowRight size={18} strokeWidth={1.7} aria-hidden="true" />
-                    </button>
-                </article>
-
-            </div>
-
+        <div className="about" ref={aboutRef}>
             {/* =========================================================
                GOOGLE CLOUD PLATFORM SECTION
                ========================================================= */}
@@ -977,7 +764,7 @@ function About() {
 
             </section>
 
-        </section>
+        </div>
     );
 }
 

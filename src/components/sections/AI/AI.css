@@ -1,0 +1,33 @@
+.ai { padding: 104px 7vw 120px; scroll-margin-top: 88px; }
+.ai-inner { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.3fr); gap: 56px; align-items: center; width: 100%; max-width: 1440px; margin: 0 auto; }
+.ai-counter { display: flex; align-items: baseline; gap: 14px; color: var(--charcoal); }
+.ai-counter strong { display: flex; flex-shrink: 0; font-variant-numeric: tabular-nums; font-size: clamp(88px, 8vw, 116px); font-weight: 500; line-height: 1; letter-spacing: -.065em; }
+.ai-counter-plus { opacity: 0; }
+.ai-counter > span { font-size: 14px; line-height: 1.4; letter-spacing: -.02em; }
+.ai-summary > p { max-width: 570px; margin: 28px 0 0 clamp(12px, 1.6vw, 24px); color: var(--charcoal); font-size: clamp(16px, 1.35vw, 19px); line-height: 1.65; letter-spacing: -.02em; }
+.ai-heading { margin-top: 36px; }
+.ai-heading h2 { margin: 0; color: var(--charcoal); font-size: clamp(48px, 6.5vw, 88px); font-weight: 500; line-height: 1.02; letter-spacing: -.06em; }
+.ai-explore { display: inline-flex; align-items: center; justify-content: center; gap: 12px; min-height: 46px; margin-top: 28px; padding: 0 22px; border-radius: 999px; background: var(--charcoal); color: var(--surface); font-size: 13px; font-weight: 500; transition: background-color 180ms ease, transform 180ms ease; }
+.ai-explore:hover { background: var(--black); transform: translateY(-2px); }
+.ai-explore:focus-visible { outline: 2px solid var(--charcoal); outline-offset: 5px; }
+/* Cards reuse Cloud.css verbatim. Only multiple-pill positioning belongs to AI. */
+.ai-projects { min-width: 0; width: 100%; }
+.ai-project-pills { position: absolute; top: 19.2px; left: 19.2px; right: 19.2px; z-index: 3; display: flex; flex-wrap: wrap; gap: 6px; }
+.ai-project-pills .cloud-platform { position: static; max-width: 100%; }
+@media (max-width: 1320px) {
+    .ai { padding: 80px 6vw; }
+    .ai-inner { grid-template-columns: minmax(0, 1fr); gap: 48px; }
+    .ai-intro { max-width: 760px; }
+    .ai-summary > p { max-width: 670px; }
+}
+@media (max-width: 600px) {
+    .ai { padding: 64px 24px 80px; }
+    .ai-summary > p { margin: 24px 0 0; }
+    .ai-heading { margin-top: 32px; }
+    .ai-heading h2 { font-size: clamp(44px, 10vw, 60px); }
+    .ai-counter strong { font-size: 88px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .ai-explore { transition: none; }
+    .ai-explore:hover { transform: none; }
+}

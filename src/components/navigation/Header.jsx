@@ -569,6 +569,10 @@ function Header() {
                 Cloud
               </a>
 
+              <a href="#ai" onClick={closeAllDropdowns}>
+                AI
+              </a>
+
               <button
                 className={`navigation-skills-trigger ${
                   isSkillsOpen ? "is-active" : ""

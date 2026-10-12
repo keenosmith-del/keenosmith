@@ -11,8 +11,15 @@ export default function ProjectPlaceholder({ project }) {
             <div>
                 <h1>{project.name}</h1>
                 <p>Project page coming soon.</p>
+                {(project.repositoryUrl || project.summaryUrl) && <div className="project-placeholder-resources">
+                    {project.repositoryUrl && <a href={project.repositoryUrl} target="_blank" rel="noopener noreferrer">GitHub Repository</a>}
+                    {project.summaryUrl && <a href={project.summaryUrl} target="_blank" rel="noopener noreferrer">Technical Executive Summary</a>}
+                </div>}
             </div>
-            <img src={artwork.image} alt="" />
+            <div className="project-placeholder-visual" style={project.showCoverBackground ? { background: artwork.background } : undefined}>
+                <img src={artwork.image} alt={`${project.name} project artwork`} />
+            </div>
+
         </div>
     </main>;
 }
