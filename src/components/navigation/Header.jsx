@@ -7,7 +7,7 @@ import "./Header.css";
 import { skillGroups } from "../../data/skillGroups.js";
 import { projectConcepts } from "../../data/projectConcepts.js";
 
-import avatar from "../../assets/images/avatar/avatar.png";
+import avatar from "../../assets/images/avatar/url-icon.png";
 import githubIcon from "../../assets/svgs/header/github.svg";
 import linkedinIcon from "../../assets/svgs/header/linkedin.svg";
 import homeIcon from "../../assets/svgs/header/home.svg";
