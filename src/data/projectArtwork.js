@@ -4,7 +4,7 @@ import awsCover from '../assets/images/cloud-section/aws-project.png';
 import googleCover from '../assets/images/cloud-section/gcp-project.png';
 import ollamaCover from '../assets/images/ai-section/ollama-project.png';
 import claudeCover from '../assets/explore-projects/pink-monkey.png';
-import n8nCover from '../assets/explore-projects/curly-haired-guy.png';
+import n8nCover from '../assets/images/full-stack-section/n8n-project.png';
 import workforceCover from '../assets/explore-projects/grumpy-old-man.png';
 import reliabilityCover from '../assets/explore-projects/smyle.png';
 import telecomCover from '../assets/explore-projects/elderly-traveller.png';
@@ -31,7 +31,7 @@ export const projectArtwork = {
     'vertex-ai-retail': { image: googleCover, background: '#dddee0', ink: 'var(--charcoal)' },
     'ollama': { image: ollamaCover, background: '#b9b3a4', ink: 'var(--charcoal)' },
     'claude': { image: claudeCover, background: '#e4d1c5', ink: 'var(--charcoal)' },
-    'n8n': { image: n8nCover, background: '#ebb013', ink: 'var(--charcoal)' },
+    'n8n': { image: n8nCover, background: '#a8a9aa', ink: 'var(--charcoal)' },
     'deepseek': { image: workforceCover, background: '#1b1f20', ink: 'var(--surface)' },
     'distributed-reliability': { image: reliabilityCover, background: '#e8bda7', ink: 'var(--charcoal)' },
     'telecom-billing': { image: telecomCover, background: '#9a8573', ink: 'var(--charcoal)' },
