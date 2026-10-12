@@ -3,7 +3,7 @@ import { ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 import './About.css';
-import LaunchCountdown from '../../shared/LaunchCountdown.jsx';
+
 
 
 import jwtRedpandaImage from '../../../assets/images/about/jwt-redpanda.png';
@@ -14,18 +14,14 @@ import bearVisual from '../../../assets/images/about/bearVisual.png';
 import bearPush from '../../../assets/images/about/bearPush.png';
 import openAIImage from '../../../assets/images/about/openai.svg';
 
-import copilotCover from '../../../assets/images/about/copilot-cover.png';
 
 
-import huggingFace from '../../../assets/images/about/hugging-face.png';
+import { projectArtwork } from '../../../data/projectArtwork.js';
 import duckDB from '../../../assets/images/about/duckDB.png';
 import gcpBear from '../../../assets/images/about/gcpBear.png';
 import gcpPerson from '../../../assets/images/about/gcpPerson.png';
 
 
-import qwenTop from '../../../assets/images/about/myCompanyImage-1.png';
-import qwenBottom from '../../../assets/images/about/myCompanyImage-2.png';
-import myCompanyImage from '../../../assets/images/about/myCompanyImage.png';
 
 function About() {
     const aboutRef = useRef(null);
@@ -315,11 +311,11 @@ function About() {
             HUGGING FACE
         ===================================================== */}
 
-                    <article className="gcp-tile gcp-tile-huggingface">
+                    <article className="gcp-tile gcp-tile-huggingface" style={{ background: projectArtwork['hugging-face'].background }}>
 
                         <div className="gcp-huggingface-image">
                             <img
-                                src={huggingFace}
+                                src={projectArtwork['hugging-face'].image}
                                 alt="Hugging Face"
                             />
                         </div>
@@ -646,123 +642,6 @@ function About() {
 
             </section>
 
-            {/* =========================================================
-    SECTION 3 — ENGINEERING, AI & PRODUCT
-    ========================================================= */}
-
-            <section className="about about-section-three" id="engineering">
-                <div className="about-intro">
-                    <h2><br />Putting AI to work.</h2>
-                    <p className="about-intro-description">
-                        Alongside my work and projects, I’ve created two sister companies:
-                        kailor, which uses AI to assess business needs, and kai,
-                        a hub for AI insights, research and articles. I’m building
-                        both websites as I prepare them for launch.
-                    </p>
-                </div>
-                <div className="about-grid about-grid-three">
-                    <article className="about-tile about-three-engineering">
-
-                        <div className="about-company-visual">
-                            <img
-                                src={myCompanyImage}
-                                alt="Kailor"
-                            />
-                        </div>
-
-                        <div className="about-three-label">
-                            <span>Business needs</span><span>AI assessment</span>
-                        </div>
-                        <div className="about-three-content">
-                            <h3>Start with the need</h3>
-                            <p>My AI company: understanding what a business needs
-                                and where AI can make a practical difference.
-                                The website is in progress.</p>
-                            <LaunchCountdown />
-                        </div>
-                        <button className="about-three-arrow" type="button"
-                            aria-label="View Kailor website launch"
-                            onClick={() => navigate('/companies/kailor')}>
-                            <ArrowRight size={16} strokeWidth={1.7} aria-hidden="true" />
-                        </button>
-                    </article>
-
-                    <article className="about-tile about-three-copilot">
-                        <div className="about-three-copilot-image">
-                            <img src={copilotCover} alt="GitHub Copilot" />
-                        </div>
-                        <div className="about-three-copilot-overlay" />
-                        <div className="about-three-label"><span>Web development</span><span>CI/CD</span></div>
-                        <div className="about-three-content">
-                            <h3></h3>
-                            <p></p>
-                        </div>
-
-                    </article>
-                    <article className="about-tile about-three-ai">
-                        <div className="about-three-label"><span>Applied AI</span></div>
-                        <div className="about-three-content">
-                            <h3>kai</h3>
-                            <p>Exploring AI-led assessments that connect business
-                                challenges with useful next steps.</p>
-                        </div>
-                        <img src={qwenTop} alt="" className="about-three-qwen-top" />
-                        <button className="about-three-arrow" type="button"
-                            aria-label="View Kailor AI business assessment project"
-                            onClick={() => navigate('/projects/kailor-ai')}>
-                            <ArrowRight size={16} strokeWidth={1.7} aria-hidden="true" />
-                        </button>
-                    </article>
-                    <article className="about-tile about-three-github">
-                        <div className="about-three-counter">
-                            <strong data-target="120">0+</strong><span>GitHub Repositories</span>
-                        </div>
-                        <a className="about-three-arrow" target="_blank" rel="noreferrer"
-                            href="https://github.com/keenosmith-del" aria-label="View GitHub repositories">
-                            <ArrowRight size={16} strokeWidth={1.7} aria-hidden="true" />
-                        </a>
-                    </article>
-                    <article className="about-tile about-three-wethinkcode">
-                        <div className="about-three-label"><span>AI insights</span><span>Research &amp; articles</span></div>
-                        <div className="about-three-content">
-                            <h3>From idea to launch.</h3>
-                            <p>Kailor’s sister company: an AI hub for insights,
-                                research and articles, bringing the wider AI
-                                conversation together.</p>
-                            <LaunchCountdown />
-                        </div>
-                        <img src={qwenBottom} alt="" className="about-three-qwen-bottom" />
-                        <button className="about-three-arrow" type="button"
-                            aria-label="View Kai AI insights website launch"
-                            onClick={() => navigate('/companies/kai')}>
-                            <ArrowRight size={16} strokeWidth={1.7} aria-hidden="true" />
-                        </button>
-                    </article>
-                </div>
-
-                <div className="about-linkedin-action">
-
-                    <a
-                        className="about-button about-button-primary"
-                        href="https://www.linkedin.com/in/keenotreysmith/"
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        LinkedIn
-                    </a>
-
-                    {/*
-                    <a
-                        className="about-button about-button-secondary"
-                        href="/certifications"
-                    >
-                        Credentials
-                    </a>
-                    */}
-
-                </div>
-
-            </section>
 
         </div>
     );

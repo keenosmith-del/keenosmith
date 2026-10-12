@@ -572,6 +572,7 @@ function Header() {
               <a href="#ai" onClick={closeAllDropdowns}>
                 AI
               </a>
+              <a href="#kailor" onClick={closeAllDropdowns}>Kailor</a>
 
               <button
                 className={`navigation-skills-trigger ${

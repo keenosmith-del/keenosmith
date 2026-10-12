@@ -1,4 +1,4 @@
-import elephantCover from '../assets/explore-projects/elephant.png';
+import huggingFaceCover from '../assets/images/ai-section/hugging-face-project.png';
 import azureCover from '../assets/images/cloud-section/ms-project.png';
 import awsCover from '../assets/images/cloud-section/aws-project.png';
 import googleCover from '../assets/images/cloud-section/gcp-project.png';
@@ -25,7 +25,7 @@ import visualThreeCover from '../assets/explore-projects/headphones-guy.png';
 export const projectArtwork = {
     'eventops-intelligence': { image: eventOpsCover, background: '#d5d7d4', ink: 'var(--charcoal)' },
     'ux-ui-visual-3': { image: visualThreeCover, background: '#90bbc2', ink: 'var(--charcoal)' },
-    'hugging-face': { image: elephantCover, background: '#fedc6f', ink: 'var(--charcoal)' },
+    'hugging-face': { image: huggingFaceCover, background: '#f2dbc2', ink: 'var(--charcoal)' },
     'microsoft-devops': { image: azureCover, background: '#90bbc2', ink: 'var(--charcoal)' },
     'banking-risk': { image: awsCover, background: '#807f7c', ink: 'var(--surface)' },
     'vertex-ai-retail': { image: googleCover, background: '#dddee0', ink: 'var(--charcoal)' },

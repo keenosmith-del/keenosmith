@@ -40,7 +40,7 @@ export const featuredProjects = [
         ['microsoft-devops', 'Microsoft Azure AI', 'Azure AI Engineering', null, null],
         ['ollama', 'Ollama BI', 'Local AI Engineering', 'var(--surface)', 'centered'],
         ['claude', 'Claude-Operated AI Procurement', 'LLM Application Engineering', '#eb7e5d', 'centered'],
-        ['hugging-face', 'Hugging Face AI Insurance Claims', 'AI Model Engineering', '#f4c13e', 'centered'],
+        ['hugging-face', 'Hugging Face AI Insurance Claims', 'AI Model Engineering', null, 'centered'],
         ['banking-risk', 'AWS Intelligent Banking & Payment Risk', 'AWS Cloud Engineering', null, null],
         ['vertex-ai-retail', 'Google Cloud Intelligent Retail & Supply Chain', 'Google Cloud Engineering', 'var(--surface)', 'centered'],
         ['distributed-reliability', 'Chaos Engineering & Disaster Recovery', 'SRE & Reliability Engineering', 'var(--charcoal)', 'centered'],

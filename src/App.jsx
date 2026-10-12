@@ -12,6 +12,8 @@ import ProjectPlaceholder from './components/pages/ProjectPlaceholder/ProjectPla
 import { cloudProjects } from './data/cloudProjects.js';
 import AI from './components/sections/AI/AI.jsx';
 import { aiProjects } from './data/aiProjects.js';
+import Kailor from './components/sections/Kailor/Kailor.jsx';
+import { kailorProject } from './data/kailorProject.js';
 import About from './components/sections/About/About.jsx';
 import Projects from './components/sections/Projects/Projects.jsx';
 import Footer from './components/sections/Footer/Footer.jsx';
@@ -29,7 +31,7 @@ import EnterpriseWorkspace from './components/pages/projects/EnterpriseWorkspace
 
 
 
-const placeholderProjects = [...cloudProjects, ...aiProjects];
+const placeholderProjects = [...cloudProjects, ...aiProjects, kailorProject];
 
 function Home() {
   return (
@@ -40,6 +42,7 @@ function Home() {
         <Hero />
         <Cloud />
         <AI />
+        <Kailor />
         <About />
         <Projects />
         <Footer />
