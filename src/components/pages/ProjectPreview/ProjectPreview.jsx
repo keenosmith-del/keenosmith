@@ -1,3 +1,4 @@
+import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import './ProjectPreview.css';
 import { projectConcepts } from '../../../data/projectConcepts.js';
@@ -26,7 +27,7 @@ export default function ProjectPreview({ project }) {
             {domain && <span>{domain}</span>}
             <p>{description.replace(/^Planned /i, '').replace(/^Placeholder for /i, '')} The full project page is being prepared.</p>
             {technologies && <div className="project-preview-technologies">{technologies.map(technology => <span key={technology}>{technology}</span>)}</div>}
-            <Link className="project-preview-button" to="/">Back to portfolio</Link>
+            <Link className="project-preview-button portfolio-back-link" to="/"><ArrowLeft size={14} strokeWidth={1.7} aria-hidden="true" />Back to Portfolio</Link>
         </main>
     );
 }

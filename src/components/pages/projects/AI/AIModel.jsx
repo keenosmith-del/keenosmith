@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowLeft, ArrowRight, ExternalLink, ArrowUp } from 'lucide-react';
+import { ArrowLeft, ArrowUp } from 'lucide-react';
 
 import './AIModel.css';
 
@@ -45,7 +45,7 @@ function AIModel() {
             {/* Back to portfolio */}
 
             <Link
-                className="ai-project-back"
+                className="ai-project-back portfolio-back-link"
                 to="/"
             >
                 <ArrowLeft
@@ -406,9 +406,9 @@ function AIModel() {
                     <div className="ai-project-closing-actions">
 
                         <Link
-                            className="ai-project-closing-button"
+                            className="ai-project-closing-button portfolio-back-link"
                             to="/"
-                        >
+                        ><ArrowLeft size={14} strokeWidth={1.7} aria-hidden="true" />
                             Back to Portfolio
                         </Link>
 

@@ -1,4 +1,4 @@
-.projects { padding: 104px 7vw 120px; scroll-margin-top: 88px; }
+.projects { padding: 48px 7vw 120px; scroll-margin-top: 88px; }
 .projects-inner { max-width: 1200px; margin-inline: auto; }
 .projects-intro { display: flex; align-items: flex-start; justify-content: space-between; gap: 32px; margin-bottom: 64px; }
 .projects-intro h2 { margin: 0; color: var(--charcoal); font-size: clamp(48px, 6.5vw, 88px); font-weight: 500; line-height: 1.02; letter-spacing: -.06em; }
@@ -19,13 +19,13 @@
     .projects { padding-inline: 5vw; }
 }
 @media (max-width: 900px) {
-    .projects { padding: 80px 6vw; }
+    .projects { padding: 40px 6vw 80px; }
     .projects-intro { flex-direction: column; margin-bottom: 40px; gap: 24px; }
     .projects-intro > a { margin-top: 0; }
     .projects-more-inner > .cloud-projects { padding-top: 18px; }
 }
 @media (max-width: 600px) {
-    .projects { padding: 64px 24px 80px; }
+    .projects { padding: 32px 24px 80px; }
     .projects-intro h2 { font-size: clamp(44px, 10vw, 60px); }
     .projects-intro p { margin: 24px 0 0; }
     .projects-contact { flex-direction: column; align-items: flex-start; gap: 24px; margin-top: 56px; }

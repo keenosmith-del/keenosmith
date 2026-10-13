@@ -41,8 +41,8 @@ export default function Cloud() {
                 })}
             </div>
             <div className="cloud-profiles" data-scroll-fade aria-label="Cloud platform profiles">
-                {cloudProfiles.map(profile => profile.url
-                    ? <a key={profile.label} className="cloud-profile" href={profile.url} target="_blank" rel="noopener noreferrer">{profile.label}<ArrowRight size={13} strokeWidth={1.7} aria-hidden="true" /></a>
+                {cloudProfiles.map((profile, index) => profile.url
+                    ? <a key={profile.label} className={`cloud-profile${index === 0 ? ' is-primary' : ''}`} href={profile.url} target="_blank" rel="noopener noreferrer">{profile.label}</a>
                     : <span key={profile.label} className="cloud-profile is-inactive" aria-disabled="true">{profile.label}</span>)}
             </div>
         </div>

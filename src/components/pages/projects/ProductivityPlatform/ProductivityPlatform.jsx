@@ -1,8 +1,6 @@
 import { Link } from 'react-router-dom';
 import {
     ArrowLeft,
-    ArrowRight,
-    ExternalLink,
     ArrowUp,
 } from 'lucide-react';
 
@@ -18,8 +16,6 @@ import productivityVideo3 from '../../../../assets/projects/productivity/videos/
 
 import productivityVideo4 from '../../../../assets/projects/productivity/videos/preview_productivity_4.mp4';
 
-import productivityImage3 from '../../../../assets/projects/productivity/5.png';
-import productivityImage4 from '../../../../assets/projects/productivity/7.png';
 
 function ProductivityPlatform() {
     const [showBackToTop, setShowBackToTop] = useState(false);
@@ -51,7 +47,7 @@ function ProductivityPlatform() {
             {/* Back to portfolio */}
 
             <Link
-                className="productivity-project-back"
+                className="productivity-project-back portfolio-back-link"
                 to="/"
             >
                 <ArrowLeft
@@ -539,9 +535,9 @@ function ProductivityPlatform() {
                     <div className="productivity-project-closing-actions">
 
                         <Link
-                            className="productivity-project-closing-button"
+                            className="productivity-project-closing-button portfolio-back-link"
                             to="/"
-                        >
+                        ><ArrowLeft size={14} strokeWidth={1.7} aria-hidden="true" />
                             Back to Portfolio
                         </Link>
 

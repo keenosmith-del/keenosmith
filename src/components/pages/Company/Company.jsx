@@ -1,3 +1,4 @@
+import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import LaunchCountdown from '../../shared/LaunchCountdown.jsx';
 import { companyLaunchLabel } from '../../../data/companyLaunch.js';
@@ -16,6 +17,6 @@ export default function Company({ company }) {
         <p>{description}</p>
         <LaunchCountdown />
         <p style={{ marginTop: 20 }}>Planned launch: {companyLaunchLabel}. The website is being prepared.</p>
-        <Link className="project-preview-button" to="/">Back to portfolio</Link>
+        <Link className="project-preview-button portfolio-back-link" to="/"><ArrowLeft size={14} strokeWidth={1.7} aria-hidden="true" />Back to Portfolio</Link>
     </main>;
 }

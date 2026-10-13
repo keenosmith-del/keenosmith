@@ -1,8 +1,6 @@
 import { Link } from 'react-router-dom';
 import {
     ArrowLeft,
-    ArrowRight,
-    ExternalLink,
     ArrowUp,
 } from 'lucide-react';
 
@@ -63,7 +61,7 @@ function MusicAPI() {
             {/* Back to portfolio */}
 
             <Link
-                className="music-project-back"
+                className="music-project-back portfolio-back-link"
                 to="/"
             >
                 <ArrowLeft
@@ -699,9 +697,9 @@ function MusicAPI() {
                     <div className="music-project-closing-actions">
 
                         <Link
-                            className="music-project-closing-button"
+                            className="music-project-closing-button portfolio-back-link"
                             to="/"
-                        >
+                        ><ArrowLeft size={14} strokeWidth={1.7} aria-hidden="true" />
                             Back to Portfolio
                         </Link>
 

@@ -1,6 +1,5 @@
 import { useLayoutEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
 import { timelineChapters } from '../../../data/timelineChapters.js';
 import useScrollFade from '../../../hooks/useScrollFade.js';
 import './Timeline.css';
@@ -127,7 +126,7 @@ export default function Timeline() {
                 <h2 id="timeline-heading" data-scroll-fade>the work behind the work.</h2>
                 <p data-scroll-fade>A progression through Computer Science, software engineering and intelligent systems, shaped by continuous learning, independent development and increasingly complex technical work.</p>
                 <span className="timeline-range" data-scroll-fade>2015 to Present</span>
-                <div className="timeline-discovery" data-scroll-fade><Link className="hero-button hero-button-secondary" to="/explore?tab=credentials">Explore credentials<ArrowRight size={13} aria-hidden="true" /></Link><Link className="hero-button hero-button-secondary" to="/cv">View CV<ArrowRight size={13} aria-hidden="true" /></Link></div>
+                <div className="timeline-discovery" data-scroll-fade><Link className="hero-button hero-button-primary" to="/recruiter-view">Assess My Fit</Link><Link className="hero-button hero-button-secondary" to="/cv">View CV</Link></div>
             </div>
             <div className="timeline-runway" ref={runwayRef} style={{ '--chapter-count': timelineChapters.length }}>
                 <div className="timeline-stage" ref={stageRef}>

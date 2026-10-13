@@ -58,7 +58,7 @@ export default function RecruiterView() {
  };
  const change = e => setInput(v => ({ ...v, [e.target.name]: e.target.value }));
  return <main className="recruiter-page" id="top">
-  <Link to="/" className="recruiter-back"><ArrowLeft size={12} aria-hidden="true" />Back to portfolio</Link>
+  <Link to="/" className="recruiter-back portfolio-back-link"><ArrowLeft size={12} aria-hidden="true" />Back to Portfolio</Link>
   <section className="recruiter-hero"><div className="recruiter-width">
    <div className="recruiter-meta"><span>Portfolio intelligence</span><span>Evidence-led assessment</span></div>
    <h1>Recruiter View</h1>
@@ -80,7 +80,6 @@ export default function RecruiterView() {
    </section>
    <section className="recruiter-panel recruiter-output" ref={resultRef} tabIndex={-1} aria-labelledby="assessment-title" aria-busy={busy}>
     <header className="recruiter-identity"><img src={mascot2} alt="" /><div><span className="recruiter-eyebrow">Portfolio intelligence</span><h2 id="assessment-title">Role Fit Assessment</h2></div></header>
-    <RecruiterMetadata />
     <div className="recruiter-sr" role="status" aria-live="polite">{busy ? 'Reviewing role requirements and matching portfolio evidence.' : result ? 'Assessment complete.' : ''}</div>
     {busy ? <div className="recruiter-empty recruiter-processing"><img src={mascot} alt="" /><div className="recruiter-activity" aria-hidden="true"><i /><i /><i /></div><h3>{stages[stage]}</h3><p>Comparing projects, credentials and documented evidence.</p></div> : result ? <RecruiterAssessment result={result} /> : <div className="recruiter-empty"><img src={mascot} alt="Keeno’s Assistant mascot" /><h3>A role. Its requirements.<br />The evidence behind them.</h3><p>Paste a role to compare its requirements against Keeno's documented project, skill and credential evidence.</p><small>Direct implementation · Related capabilities · Evidence gaps</small></div>}
    </section>

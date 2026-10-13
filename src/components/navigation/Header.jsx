@@ -207,6 +207,20 @@ function Header() {
     return () => media.removeEventListener("change", update);
   }, []);
 
+  const [currentSection, setCurrentSection] = useState(null);
+
+  useEffect(() => {
+    // Track the section passing beneath the header, including sections absent from the menu.
+    const sections = [...document.querySelectorAll("main > section[id]")];
+    const observer = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) setCurrentSection(entry.target.id);
+      }
+    }, { rootMargin: "-15% 0px -84% 0px", threshold: 0 });
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, []);
+
   const navigationRef = useRef(null);
 
   const formRef = useRef(null);
@@ -239,14 +253,6 @@ function Header() {
   const [sending, setSending] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
   const [toastExiting, setToastExiting] = useState(false);
-
-  const isFormComplete =
-    formData.name.trim() !== "" &&
-    formData.email.trim() !== "" &&
-    formData.subject.trim() !== "" &&
-    formData.message.trim() !== "";
-
-  const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim());
 
   const handleChatOpen = useCallback(() => {
     closeAllDropdowns();
@@ -471,7 +477,7 @@ function Header() {
     return () => {
       document.removeEventListener("mousedown", handleOutsideClick);
     };
-  }, [isSkillsOpen, isProjectsOpen, isLinksOpen, isMobileMenuOpen]);
+  }, [isSkillsOpen, isProjectsOpen, isLinksOpen, isMobileMenuOpen, closeAllDropdowns]);
 
   useEffect(() => {
     if (!isSkillsOpen && !isProjectsOpen && !isLinksOpen && !isMobileMenuOpen) {
@@ -490,7 +496,7 @@ function Header() {
     return () => {
       document.removeEventListener("keydown", handleEscape);
     };
-  }, [isSkillsOpen, isProjectsOpen, isLinksOpen, isMobileMenuOpen]);
+  }, [isSkillsOpen, isProjectsOpen, isLinksOpen, isMobileMenuOpen, closeAllDropdowns]);
 
   useEffect(() => {
     if (!Object.values(invalidFields).some(Boolean)) {
@@ -570,15 +576,15 @@ function Header() {
             </a>
 
             <div className="navigation-links" id="navigation-headings">
-              <a href="#top" onClick={closeAllDropdowns}>
+              <a href="#top" aria-current={currentSection === "top" ? "location" : undefined} onClick={closeAllDropdowns}>
                 Home
               </a>
 
-              <a href="#cloud" onClick={closeAllDropdowns}>
+              <a href="#cloud" aria-current={currentSection === "cloud" ? "location" : undefined} onClick={closeAllDropdowns}>
                 Cloud
               </a>
 
-              <a href="#ai" onClick={closeAllDropdowns}>
+              <a href="#ai" aria-current={currentSection === "ai" ? "location" : undefined} onClick={closeAllDropdowns}>
                 AI
               </a>
 
@@ -734,7 +740,8 @@ function Header() {
                 className="navigation-project-action navigation-project-action-secondary"
                 onClick={closeAllDropdowns}
               >
-                <span>Go to GitHub</span>
+                <img src={githubIcon} alt="" aria-hidden="true" />
+                <span>GitHub</span>
               </a>
 
               <a
@@ -862,7 +869,7 @@ function Header() {
             </button>
 
             <div className="chat-modal-header">
-              <p>Have a project, idea, or opportunity in mind?</p>
+              <p id="chat-modal-title">Have a project, idea, or opportunity in mind?</p>
             </div>
 
             <form

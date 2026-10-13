@@ -44,7 +44,7 @@ export default function Explore() {
  }, [results, tab]);
  const clear = () => update({ q: '', category: '', technology: '', status: '', ecosystem: '' });
  return <main className="explore-page">
-  <Link className="explore-back" to="/"><ArrowLeft size={12} aria-hidden="true" />Back to portfolio</Link>
+  <Link className="explore-back portfolio-back-link" to="/"><ArrowLeft size={12} aria-hidden="true" />Back to Portfolio</Link>
   <section className="explore-hero explore-width"><div className="explore-pills explore-meta"><span>Portfolio intelligence</span><span>Manual discovery</span></div><h1>Explore</h1><p>Search my projects, technical skills and credentials in one place.</p><small>{curatedProjects.length} projects · {skillIndex.length} skills · {credentialIndex.length} credentials & education records</small></section>
   <div className="explore-width explore-workspace">
    <div className="explore-tabs" role="tablist" aria-label="Explore portfolio">{tabs.map((name, i) => <button key={name} id={`tab-${name}`} role="tab" aria-selected={tab === name} aria-controls={`panel-${name}`} tabIndex={tab === name ? 0 : -1} onClick={() => switchTab(name)} onKeyDown={e => { if (['ArrowRight', 'ArrowLeft', 'Home', 'End'].includes(e.key)) { e.preventDefault(); const next = e.key === 'Home' ? 0 : e.key === 'End' ? 2 : (i + (e.key === 'ArrowRight' ? 1 : 2)) % 3; switchTab(tabs[next]); document.getElementById(`tab-${tabs[next]}`)?.focus(); } }}>{name}</button>)}</div>

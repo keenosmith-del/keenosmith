@@ -6,7 +6,7 @@ import './ProjectPlaceholder.css';
 export default function ProjectPlaceholder({ project }) {
     const artwork = projectArtwork[project.id];
     return <main className="project-placeholder">
-        <Link className="project-placeholder-back" to="/"><ArrowLeft size={14} strokeWidth={1.7} aria-hidden="true" />Back to Portfolio</Link>
+        <Link className="project-placeholder-back portfolio-back-link" to="/"><ArrowLeft size={14} strokeWidth={1.7} aria-hidden="true" />Back to Portfolio</Link>
         <div className="project-placeholder-content">
             <div>
                 <h1>{project.name}</h1>

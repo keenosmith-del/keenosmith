@@ -11,16 +11,8 @@ import './EnterpriseWorkspace.css';
 // Introductory video
 import enterpriseVideo6 from '../../../../assets/projects/enterprise/videos/preview_enterprise_6.mp4';
 
-// First two images
-import enterpriseImage1 from '../../../../assets/projects/enterprise/2.png';
-import enterpriseImage2 from '../../../../assets/projects/enterprise/3.png';
-
 // First video
 import enterpriseVideo1 from '../../../../assets/projects/enterprise/videos/preview_enterprise_1.mp4';
-
-// Second two images
-import enterpriseImage3 from '../../../../assets/projects/enterprise/4.png';
-import enterpriseImage4 from '../../../../assets/projects/enterprise/5.png';
 
 // Second video
 import enterpriseVideo2 from '../../../../assets/projects/enterprise/videos/preview_enterprise_2.mp4';
@@ -30,10 +22,6 @@ import enterpriseVideo3 from '../../../../assets/projects/enterprise/videos/prev
 
 // Fourth video
 import enterpriseVideo4 from '../../../../assets/projects/enterprise/videos/preview_enterprise_4.mp4';
-
-// Last two images
-import enterpriseImage5 from '../../../../assets/projects/enterprise/6.png';
-import enterpriseImage6 from '../../../../assets/projects/enterprise/7.png';
 
 
 function EnterpriseWorkspace() {
@@ -64,7 +52,7 @@ function EnterpriseWorkspace() {
             {/* Back to portfolio */}
 
             <Link
-                className="enterprise-project-back"
+                className="enterprise-project-back portfolio-back-link"
                 to="/"
             >
                 <ArrowLeft
