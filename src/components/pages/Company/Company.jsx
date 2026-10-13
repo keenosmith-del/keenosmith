@@ -6,7 +6,7 @@ import "../ProjectPreview/ProjectPreview.css";
 
 const companies = {
   kailor: {
-    name: "Kailor",
+    name: "kailor",
     description:
       "An AI company focused on assessing business needs and identifying where AI can help. I’m building the company and its website alongside my software engineering work.",
   },

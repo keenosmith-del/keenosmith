@@ -134,7 +134,6 @@ export default function SelectedProjects() {
             }
           >
             Let's chat
-            <ArrowRight size={13} aria-hidden="true" />
           </button>
         </div>
       </div>

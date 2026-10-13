@@ -4,13 +4,12 @@ export default function RecruiterMetadata() {
   return (
     <div className="recruiter-system-metadata">
       <div className="recruiter-system-line">
-        <Zap size={10} aria-hidden="true" />
         <span>
-          Powered by my own Hybrid Intelligence system · <strong>KAILOR</strong>
+          Built by my own Hybrid Intelligence system · <strong>kailor</strong>
         </span>
       </div>
       <div className="recruiter-system-secondary">
-        Built and designed by Keeno Smith © September 2026
+        Keeno Smith © September 2026
       </div>
     </div>
   );

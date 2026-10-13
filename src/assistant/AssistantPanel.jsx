@@ -301,14 +301,12 @@ export default function AssistantPanel({ open, onClose, panelRef, closeRef }) {
           </button>
         </form>
         <div className="portfolio-chat-footer">
-          <Zap className="assistant-footer-zap" size={10} aria-hidden="true" />
           <span>
-            Powered by my own Hybrid Intelligence system ·{" "}
-            <strong>KAILOR</strong>
+            Built by my own Hybrid Intelligence system · <strong>kailor</strong>
           </span>
         </div>
         <div className="assistant-footer-secondary">
-          Built and designed by Keeno Smith © September 2026
+          Keeno Smith © September 2026
         </div>
       </div>
     </section>

@@ -28,7 +28,7 @@
   width: calc(100% + 24px);
 }
 .kailor-feature .cloud-artwork {
-  inset: 16px;
+  inset: 16px 16px 0;
 }
 .kailor-project-pills {
   position: absolute;
