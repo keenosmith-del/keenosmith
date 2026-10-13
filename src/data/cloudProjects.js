@@ -1,3 +1,4 @@
+import { canonicalProjects } from "../assistant/knowledge.js";
 import { featuredProjects } from "./featuredProjects.js";
 import { projectConcepts } from "./projectConcepts.js";
 
@@ -13,6 +14,9 @@ export const cloudProjects = [
   const featured = featuredProjects.find((item) => item.id === project.id);
   return {
     ...project,
+    repositoryUrl: canonicalProjects.find(
+      (item) => item.id === project.id || item.aliases.includes(project.id),
+    ).repositoryUrl,
     title: featured.title,
     skill: featured.skill,
     description: featured.description,

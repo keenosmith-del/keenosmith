@@ -1,3 +1,4 @@
+import githubIcon from "../../../assets/svgs/header/github.svg";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import "./ProjectPreview.css";
@@ -73,7 +74,7 @@ const fallbackProjects = {
 };
 
 export default function ProjectPreview({ project }) {
-  const { title, description, domain, technologies } =
+  const { title, description, domain, technologies, repositoryUrl } =
     canonicalProjects.find(
       (item) => item.id === project || item.aliases.includes(project),
     ) ??
@@ -96,6 +97,12 @@ export default function ProjectPreview({ project }) {
             <span key={technology}>{technology}</span>
           ))}
         </div>
+      )}
+      {repositoryUrl && (
+        <a className="hero-button hero-button-primary project-repository-button"
+          href={repositoryUrl} target="_blank" rel="noopener noreferrer">
+          <img src={githubIcon} alt="" aria-hidden="true" />GitHub
+        </a>
       )}
       <Link className="project-preview-button portfolio-back-link" to="/">
         <ArrowLeft size={14} strokeWidth={1.7} aria-hidden="true" />

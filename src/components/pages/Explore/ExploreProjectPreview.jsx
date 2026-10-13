@@ -1,5 +1,6 @@
+import githubIcon from "../../../assets/svgs/header/github.svg";
 import { Link, useParams } from "react-router-dom";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { curatedProjects } from "./utils/exploreIndex.js";
 import "./Explore.css";
 import { selectedProjects } from "../../../data/selectedProjects.js";
@@ -46,12 +47,12 @@ export default function ExploreProjectPreview({ projectId: mappedId }) {
         )}
         {project?.repositoryUrl && (
           <a
-            className="explore-text-link"
+            className="hero-button hero-button-primary project-repository-button"
             href={project.repositoryUrl}
             target="_blank"
             rel="noopener noreferrer"
           >
-            View repository <ArrowRight size={14} aria-hidden="true" />
+            <img src={githubIcon} alt="" aria-hidden="true" />GitHub
           </a>
         )}
       </section>

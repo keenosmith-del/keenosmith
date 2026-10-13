@@ -1,3 +1,4 @@
+import { canonicalProjects } from "../assistant/knowledge.js";
 import { projectConcepts } from "./projectConcepts.js";
 
 const project = projectConcepts.find((item) => item.id === "hugging-face");
@@ -7,6 +8,8 @@ export const kailorProject = {
   title: project.title,
   name: project.title,
   route: project.path,
+  repositoryUrl: canonicalProjects.find((item) => item.id === project.id)
+    .repositoryUrl,
   description: project.description,
   // Verified against the implemented OCR and Hugging Face NER pipelines.
   skills: ["Hugging Face", "OCR", "NER"],

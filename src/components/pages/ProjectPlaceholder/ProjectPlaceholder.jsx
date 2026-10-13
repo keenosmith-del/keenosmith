@@ -1,3 +1,4 @@
+import githubIcon from "../../../assets/svgs/header/github.svg";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { projectArtwork } from "../../../data/projectArtwork.js";
@@ -19,11 +20,13 @@ export default function ProjectPlaceholder({ project }) {
             <div className="project-placeholder-resources">
               {project.repositoryUrl && (
                 <a
+                  className="hero-button hero-button-primary project-repository-button"
                   href={project.repositoryUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  GitHub Repository
+                  <img src={githubIcon} alt="" aria-hidden="true" />
+                  GitHub
                 </a>
               )}
               {project.summaryUrl && (

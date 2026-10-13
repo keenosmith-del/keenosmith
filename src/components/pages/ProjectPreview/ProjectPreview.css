@@ -77,3 +77,5 @@
   outline: 2px solid currentColor;
   outline-offset: 4px;
 }
+
+.project-preview > .project-repository-button { margin-bottom: 14px; }

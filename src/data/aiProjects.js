@@ -15,6 +15,8 @@ export const aiProjects = [
     id: "ollama",
     name: "Ollama Private Business Intelligence",
     title: "Ollama Private Business Intelligence",
+    repositoryUrl: canonicalProjects.find((project) => project.id === "ollama")
+      .repositoryUrl,
     route: canonicalProjects
       .find((project) => project.id === "ollama")
       .routes.find((route) => route.startsWith("/projects/")),

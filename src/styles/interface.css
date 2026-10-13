@@ -335,6 +335,13 @@
     width: 21px;
     height: 21px;
   }
+  .project-repository-button img {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+  }
   .navigation-project-action img {
     width: 15px;
     height: 15px;
