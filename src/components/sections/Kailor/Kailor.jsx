@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Globe } from "lucide-react";
 import { kailorProject as project } from "../../../data/kailorProject.js";
 import { projectArtwork } from "../../../data/projectArtwork.js";
 import useScrollFade from "../../../hooks/useScrollFade.js";
@@ -78,6 +78,7 @@ export default function Kailor() {
                   className="hero-button hero-button-primary"
                   disabled
                 >
+                  <Globe size={14} strokeWidth={1.7} aria-hidden="true" />
                   Visit Kailor
                 </button>
                 <button
@@ -85,6 +86,7 @@ export default function Kailor() {
                   className="hero-button hero-button-secondary"
                   disabled
                 >
+                  <Globe size={14} strokeWidth={1.7} aria-hidden="true" />
                   Visit Kai
                 </button>
               </div>
