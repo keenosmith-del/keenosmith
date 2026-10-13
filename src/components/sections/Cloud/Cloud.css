@@ -10,7 +10,7 @@
 .cloud-platform { position: absolute; top: 19.2px; left: 19.2px; z-index: 3; max-width: calc(100% - 38.4px); padding: 7.2px 10.4px; border-radius: 999px; background: rgba(250, 249, 246, .9); color: #68686d; font-size: 10px; font-weight: 500; line-height: 1.25; backdrop-filter: blur(9.6px); }
 .cloud-artwork { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
 .cloud-artwork img { width: 100%; height: 100%; object-fit: contain; object-position: center bottom; }
-/* Match the full-card tonal overlay in Projects.css; no separate caption panel. */
+/* Shared full-card tonal overlay; no separate caption panel. */
 .cloud-overlay { position: absolute; inset: 0; z-index: 1; background: linear-gradient(to top, rgba(25, 25, 27, .82) 0%, rgba(25, 25, 27, .38) 42%, rgba(25, 25, 27, .05) 72%); opacity: .85; transition: opacity 280ms ease; pointer-events: none; }
 .cloud-tile:hover .cloud-overlay, .cloud-tile:focus-visible .cloud-overlay { opacity: 1; }
 .cloud-tile-caption { position: absolute; bottom: 60px; left: 25.6px; right: 25.6px; z-index: 3; }

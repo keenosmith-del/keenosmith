@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { ChevronDown, ArrowRight, Check } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -104,6 +104,10 @@ const linkGroups = [
   {
     title: "Professional",
     links: [
+      {
+        name: "Career timeline",
+        url: "#timeline",
+      },
       {
         name: "LinkedIn",
         url: "https://www.linkedin.com/in/keenotreysmith/",
@@ -212,11 +216,11 @@ function Header() {
   const subjectRef = useRef(null);
   const messageRef = useRef(null);
 
-  const closeAllDropdowns = () => {
+  const closeAllDropdowns = useCallback(() => {
     setIsSkillsOpen(false);
     setIsProjectsOpen(false);
     setIsLinksOpen(false);
-  };
+  }, []);
 
   const openDropdown = (dropdown) => {
     setIsSkillsOpen(dropdown === "skills");
@@ -244,11 +248,16 @@ function Header() {
 
   const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim());
 
-  const handleChatOpen = () => {
+  const handleChatOpen = useCallback(() => {
     closeAllDropdowns();
     setIsMobileMenuOpen(false);
     setIsChatOpen(true);
-  };
+  }, [closeAllDropdowns]);
+
+  useEffect(() => {
+    window.addEventListener("portfolio:open-contact", handleChatOpen);
+    return () => window.removeEventListener("portfolio:open-contact", handleChatOpen);
+  }, [handleChatOpen]);
 
   const handleChatClose = () => {
     setIsChatOpen(false);
@@ -572,7 +581,6 @@ function Header() {
               <a href="#ai" onClick={closeAllDropdowns}>
                 AI
               </a>
-              <a href="#kailor" onClick={closeAllDropdowns}>Kailor</a>
 
               <button
                 className={`navigation-skills-trigger ${

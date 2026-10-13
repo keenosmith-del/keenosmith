@@ -2,6 +2,7 @@ import { Link, useParams } from 'react-router-dom';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { curatedProjects } from './utils/exploreIndex.js';
 import './Explore.css';
+import { selectedProjects } from '../../../data/selectedProjects.js';
 import { fullStackProject } from '../../../data/fullStackProject.js';
 import { kailorProject } from '../../../data/kailorProject.js';
 import { aiProjects } from '../../../data/aiProjects.js';
@@ -11,7 +12,7 @@ import ProjectPlaceholder from '../ProjectPlaceholder/ProjectPlaceholder.jsx';
 export default function ExploreProjectPreview({ projectId: mappedId }) {
  const { projectId: routeId } = useParams();
  const projectId = mappedId || routeId;
- const placeholderProject = [...cloudProjects, ...aiProjects, kailorProject, fullStackProject].find(item => item.id === projectId);
+ const placeholderProject = [...cloudProjects, ...aiProjects, kailorProject, fullStackProject, ...selectedProjects].find(item => item.id === projectId);
  if (placeholderProject) return <ProjectPlaceholder project={placeholderProject} />;
  const project = curatedProjects.find(p => p.id === projectId);
  return <main className="explore-page explore-preview">

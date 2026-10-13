@@ -50,7 +50,7 @@ try {
  for (const s of skillIndex) assert.ok(s.assessment.detail.startsWith(`${s.projects.length} implemented project`), `Evidence count differs for ${s.name}`);
  assert.equal(credentialIndex.filter(c => matchesQuery(c, 'Microsoft')).length, 4);
  assert.equal(credentialIndex.filter(c => c.type === 'Education').length, 2);
- assert.ok(credentialIndex.find(c => c.id === 'education-0').status.includes('not confirmed'));
+ assert.equal(credentialIndex.find(c => c.id === 'education-0').status, 'Computer Science studies');
  assert.ok(projectIndex.every(p => p.route?.startsWith('/projects/') || p.route?.startsWith('/explore/projects/')));
  assert.equal(projectIndex.find(p => p.id === 'banking-risk').route, '/projects/aws');
  assert.equal(projectIndex.find(p => p.id === 'vertex-ai-retail').route, '/projects/gcp');

@@ -16,8 +16,9 @@ import Kailor from './components/sections/Kailor/Kailor.jsx';
 import { kailorProject } from './data/kailorProject.js';
 import FullStack from './components/sections/FullStack/FullStack.jsx';
 import { fullStackProject } from './data/fullStackProject.js';
-import About from './components/sections/About/About.jsx';
-import Projects from './components/sections/Projects/Projects.jsx';
+import Timeline from './components/sections/Timeline/Timeline.jsx';
+import { selectedProjects } from './data/selectedProjects.js';
+import SelectedProjects from './components/sections/SelectedProjects/SelectedProjects.jsx';
 import Footer from './components/sections/Footer/Footer.jsx';
 
 import Company from './components/pages/Company/Company.jsx';
@@ -33,7 +34,7 @@ import EnterpriseWorkspace from './components/pages/projects/EnterpriseWorkspace
 
 
 
-const placeholderProjects = [...cloudProjects, ...aiProjects, kailorProject, fullStackProject];
+const placeholderProjects = [...cloudProjects, ...aiProjects, kailorProject, fullStackProject, ...selectedProjects];
 
 function Home() {
   return (
@@ -46,8 +47,8 @@ function Home() {
         <AI />
         <Kailor />
         <FullStack />
-        <About />
-        <Projects />
+        <Timeline />
+        <SelectedProjects />
         <Footer />
       </main>
       <PortfolioActions />

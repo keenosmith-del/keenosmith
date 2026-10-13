@@ -34,15 +34,15 @@ export default function CredentialGallery({ items, badgeMode, showArtwork }) {
  return <div className="credential-collection">{items.map((credential, index) => <Fragment key={credential.id}>
   <CredentialCard credential={credential} badgeMode={badgeMode} />
   {showArtwork && index === 2 && <div className="credential-artwork credential-artwork-a" aria-hidden="true">
-   {/* EDITORIAL ARTWORK SLOT A — vertical, spans two rows. */}
+   {/* EDITORIAL ARTWORK SLOT A: vertical, spans two rows. */}
    <img src={verticalArtwork} alt="" loading="lazy" />
   </div>}
   {showArtwork && index === 10 && <div className="credential-artwork credential-artwork-b" aria-hidden="true">
-   {/* EDITORIAL ARTWORK SLOT B — horizontal, spans two columns. */}
+   {/* EDITORIAL ARTWORK SLOT B: horizontal, spans two columns. */}
    <img src={horizontalArtwork} alt="" loading="lazy" />
   </div>}
   {showArtwork && index === 18 && <div className="credential-artwork credential-artwork-c" aria-hidden="true">
-   {/* EDITORIAL ARTWORK SLOT C — square-ish, one standard cell. */}
+   {/* EDITORIAL ARTWORK SLOT C: square-ish, one standard cell. */}
    <img src={squareArtwork} alt="" loading="lazy" />
   </div>}
  </Fragment>)}</div>;

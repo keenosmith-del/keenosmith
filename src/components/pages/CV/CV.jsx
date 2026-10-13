@@ -213,7 +213,7 @@ function CV() {
                             <div className="cv-education-details">
                                 <h3>BSc Computer Science</h3>
                                 <div className="cv-education-meta">
-                                    <span>2017 - 2022 (Coursework Completed)</span>
+                                    <span>2017 - 2022</span>
                                     <span>University of South Africa</span>
                                 </div>
                                 <p>
@@ -706,7 +706,7 @@ function CV() {
                                 <h3>Technical & Digital Operations Lead | Co-Founder</h3>
 
                                 <div className="cv-experience-meta">
-                                    <span>Jan 2020 – June 2026</span>
+                                    <span>Jan 2020  to  June 2026</span>
                                     <span>Firstdaes Entertainment</span>
                                 </div>
 
@@ -784,7 +784,7 @@ function CV() {
                                 <h3>Contract Specialist | Technical Content & Documentation</h3>
 
                                 <div className="cv-experience-meta">
-                                    <span>Feb 2021 – Sep 2025</span>
+                                    <span>Feb 2021  to  Sep 2025</span>
                                     <span>3Play Media</span>
                                 </div>
 

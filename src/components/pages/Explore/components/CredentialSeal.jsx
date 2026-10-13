@@ -13,7 +13,7 @@ const issuerMarks = [
 export default function CredentialSeal({ issuer = '', date = '', wreathVariant = 0 }) {
  const monogram = issuerMarks.find(([pattern]) => pattern.test(issuer))?.[1]
   || issuer.split(/\s+/).filter(Boolean).map(word => word[0]).slice(0, 4).join('').toUpperCase();
- const year = date.match(/\b(?:19|20)\d{2}\b/g)?.join('–') || date;
+ const year = date.match(/\b(?:19|20)\d{2}\b/g)?.join(' to ') || date;
  return <svg className="credential-seal" viewBox="0 0 240 240" aria-hidden="true" focusable="false">
   <circle className="credential-seal-ring" cx="120" cy="120" r="108" />
   <circle className="credential-seal-ring credential-seal-inner" cx="120" cy="120" r="99" />

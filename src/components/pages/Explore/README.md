@@ -1,4 +1,4 @@
-# Explore — tile refinement
+# Explore: tile refinement
 
 Explore remains one standalone route with Projects, Skills and Credentials tabs. All 37 canonical projects, 228 skills and 25 credential/education records remain indexed. Shared evidence records and ordinal proficiency calculations are unchanged by this refinement.
 

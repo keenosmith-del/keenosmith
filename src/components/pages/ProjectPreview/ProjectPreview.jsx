@@ -14,7 +14,6 @@ const fallbackProjects = {
     rabbitmq: { title: 'RabbitMQ: Event-driven Applications', description: 'A project using RabbitMQ to coordinate events and background work.', section: 'about' },
     kinesis: { title: 'Kinesis: Real-time Payment Streaming', description: 'A banking platform project using Amazon Kinesis for streaming payment events.', section: 'about' },
     opentofu: { title: 'OpenTofu: Infrastructure as Code', description: 'A project using OpenTofu to provision and manage infrastructure.', section: 'about' },
-    claude: { title: 'Claude-powered AI Procurement & Contract Intelligence Platform', description: 'AI applied to procurement and contract intelligence.' },
     ollama: { title: 'Ollama: Private Personal/Business Intelligence Platform', description: 'Local AI for personal and business information.' },
 };
 

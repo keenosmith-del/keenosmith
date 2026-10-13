@@ -56,7 +56,7 @@ function credentialType(c) {
 const credentialRecords = [
  ...credentials.map(c => indexed({ ...c, categories: [...new Set([...c.categories, ...(credentialType(c) === 'Bootcamps' ? ['frontend', 'backend', 'databases'] : [])])], type: credentialType(c), technologies: skillRegistry.filter(s => contains(`${c.name} ${c.description}`, s.name)).map(s => s.name) })),
  // Programme certificates already represent these two shared education entries.
- ...education.slice(2).map((description, i) => indexed({ id: `education-${i}`, name: description.split(' — ')[0], issuer: description.split(' — ')[1]?.split(',')[0], description, type: 'Education', status: i === 0 ? 'Coursework completed · Awarded degree not confirmed' : 'Listed education', date: i === 0 ? '2017–2022' : '2010–2015', categories: ['languages'], technologies: ['Computer Science', 'Software Engineering'] }))
+ ...education.slice(2).map((description, i) => indexed({ id: `education-${i}`, name: description.split(': ')[0], issuer: description.split(': ')[1]?.split(',')[0], description, type: 'Education', status: i === 0 ? 'Computer Science studies' : 'Listed education', date: i === 0 ? '2017 to 2022' : '2010 to 2015', categories: ['languages'], technologies: ['Computer Science', 'Software Engineering'] }))
 ];
 export const credentialIndex = credentialRecords.map((c, i) => ({ ...c, tone: credentialTone(c, i) }));
 export function createQueryMatcher(query) {

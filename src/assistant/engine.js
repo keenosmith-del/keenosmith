@@ -34,7 +34,7 @@ export function answer(question, context={}) {
    if(creds.length)text+=`\n\nSupporting education and credentials: ${creds.map(c=>c.name).join('; ')}. Credential records describe training or earned records, not live production deployment.`;
   }
   if(q.comparison)text+='\n\nCompare the individual evidence bands below; they reflect documented implementation rather than a claim that one technology is objectively his strongest.';
-  if(names.includes('React'))text+='\n\nThe CV also documents full-stack training at HyperionDev in January–June 2026. Project-based engineering is listed from 2022; that does not establish a React-specific start date.';
+  if(names.includes('React'))text+='\n\nThe CV also documents full-stack training at HyperionDev in January to June 2026. Project-based engineering is listed from 2022; that does not establish a React-specific start date.';
  }
  if(q.intent==='role') {
   indicators=names.slice(0,8).map(evidence);creds=found.credentials.slice(0,4);

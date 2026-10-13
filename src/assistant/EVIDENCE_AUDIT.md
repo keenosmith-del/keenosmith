@@ -1,4 +1,4 @@
-# Evidence audit — 5 October 2026
+# Evidence audit: 5 October 2026
 
 27 relevant GitHub snapshot requests: 22 accessible repositories, 5 unavailable/empty snapshots (HTTP 404 from tarball endpoint). Forked upstream libraries were not treated as Keeno’s implementation evidence. Six accessible cloud repositories contain only early-development documentation. Sixteen implemented repositories have curated source/configuration links in `repositoryEvidence.js`.
 
@@ -29,7 +29,7 @@
 
 Unavailable snapshot endpoints: `aws-distributed-developer-deployment`, `claude-reg-change-impact`, `claude-architecture-analysis`, `n8n-opsflow-business-orch`, `n8n-webhooks-api-orch`. Their existing CV descriptions remain indexed; lack of a downloadable snapshot did not remove evidence. Existing `gcp-supply-chain-risk` CV scope was additionally checked against the local `Google/Project 1/gcp-ai-supply-chain-risk-dependency-intelligence/README.md`: early development with no implementation files.
 
-Local READMEs/source inventories also checked under `Google/Project 1–3`, `AWS/Project 1–3`, `Microsoft/Project 2–3` and revised project locations. Early-development status agrees with accessible GitHub snapshots. Original portfolio detail pages, shared credential data, skill data, CV education/experience and CV-listed technology scope were retained. CV-listed services are supporting evidence; they do not establish deployed cloud expertise.
+Local READMEs/source inventories also checked under `Google/Project 1 to 3`, `AWS/Project 1 to 3`, `Microsoft/Project 2 to 3` and revised project locations. Early-development status agrees with accessible GitHub snapshots. Original portfolio detail pages, shared credential data, skill data, CV education/experience and CV-listed technology scope were retained. CV-listed services are supporting evidence; they do not establish deployed cloud expertise.
 
 Eleven built projects still have unpublished portfolio detail pages: banking risk, Vertex AI retail, Ollama BI, Claude procurement, Hugging Face claims, distributed reliability, n8n OpsFlow, DeepSeek workforce, telecom billing, field service and fleet operations. Microsoft DevOps, AWS banking and Google retail aliases share canonical IDs; their routes and previous scope remain in provenance. There are 40 legacy-compatible records and 37 distinct projects, 228 skills, 23 credential records and four education descriptions. Original 37 project records and all original skills/credentials remain available.
 

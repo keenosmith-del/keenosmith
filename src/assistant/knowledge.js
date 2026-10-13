@@ -48,15 +48,15 @@ export const projects = existingProjects.map(p => {
 });
 export const credentials = certificationGroups.flatMap(g=>g.certifications.map(c=>({...c,group:g.name,credentialTypes:c.id==='microsoft-defender-xdr'?['Applied Skills',...(c.badges.length?['Badge']:[])]:[g.id==='google-cloud'?'Lab / training':g.id==='hyperion-stellenbosch'?'Education / bootcamp':['aws-ai/ml','wethinkcode'].includes(g.id)||['agent-architect','cybersecurity'].includes(c.id)?'Programme':'Course / technical credential',...(c.badges.length?['Badge']:[])],category:c.id==='microsoft-defender-xdr'?'Applied Skills':g.id==='hyperion-stellenbosch'||g.id==='aws-ai/ml'||g.id==='wethinkcode'||['agent-architect','cybersecurity'].includes(c.id)?'Programme / training':'Technical learning credential',evidence:[{type:'portfolio-credential',source:'src/data/credentials.js',strength:'supporting'}], ...relationships([c.name,...taxonomy.flatMap(t=>t.skills).filter(t=>scopeContains(`${c.name} ${c.description}`,t))]),status:'Listed with certificate in portfolio',path:'/certifications',verification:c.issuer.includes('AWS')||g.id==='aws'?'https://www.credly.com/users/keeno-smith':g.id==='google-cloud'?'https://www.skills.google/public_profiles/105079cb-27bf-46a4-9c48-9ce8fc594527':null})));
 export const education = [
- 'Generative AI — Stellenbosch University, June–August 2026; training programme.',
- 'Full-Stack Software Engineering & Web Development — HyperionDev, January–June 2026; training programme.',
- 'BSc Computer Science studies — University of South Africa, 2017–2022; coursework completed. An awarded degree is not confirmed.',
- 'National Senior Certificate — Greenside High School, 2010–2015.',
+ 'Generative AI: Stellenbosch University, June to August 2026; training programme.',
+ 'Full-Stack Software Engineering & Web Development: HyperionDev, January to June 2026; training programme.',
+ 'BSc Computer Science studies: University of South Africa, 2017 to 2022; Programming, software development and related technical disciplines.',
+ 'National Senior Certificate: Greenside High School, 2010 to 2015.',
 ];
 export const experience = [
- 'Software Engineering & Application Development — 2022–present, project-based independent engineering across frontend, backend, APIs, databases and AI integration. The source gives a start year, not a precise start date.',
- 'Technical & Digital Operations Lead / Co-Founder — Firstdaes Entertainment, January 2020–June 2026; digital products, customer experience, business systems, workflows and operational delivery.',
- 'Contract Specialist / Technical Content & Documentation — 3Play Media, February 2021–September 2025; technical material quality assurance and documentation. This is not described as a software engineering employment role.',
+ 'Software Engineering & Application Development: 2022 to present, project-based independent engineering across frontend, backend, APIs, databases and AI integration. The source gives a start year, not a precise start date.',
+ 'Technical & Digital Operations Lead / Co-Founder: Firstdaes Entertainment, January 2020 to June 2026; digital products, customer experience, business systems, workflows and operational delivery.',
+ 'Contract Specialist / Technical Content & Documentation: 3Play Media, February 2021 to September 2025; technical material quality assurance and documentation. This is not described as a software engineering employment role.',
 ];
 export const skills = [...new Set([...skillGroups.flatMap(g=>g.skills),...projects.flatMap(p=>p.technologies),...cvSkillEvidence.flatMap(r=>r.technologies)])];
 export const skillRegistry = skills.map(name=>({id:name.toLowerCase().replace(/\+/g,' plus ').replace(/#/g,' sharp ').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,''),name,...relationships([name]),

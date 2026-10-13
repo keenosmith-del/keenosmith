@@ -14,9 +14,9 @@ export default function MessageText({ text, projects = [], education = false, on
                 {strengths?.length > 1 ? <ul className="assistant-alignment-list">{strengths.map((item, n) => <li key={n}>{item.trim()}</li>)}</ul> : <p>{body}</p>}
             </div>;
         }
-        if (education && paragraph.includes(' — ')) {
-            const [title, ...body] = paragraph.split(' — ');
-            return <div className="assistant-education-record" key={index}><h3>{title}</h3><p>{body.join(' — ')}</p><Link to="/cv" onClick={onNavigate}>View education record</Link></div>;
+        if (education && paragraph.includes(': ')) {
+            const [title, ...body] = paragraph.split(': ');
+            return <div className="assistant-education-record" key={index}><h3>{title}</h3><p>{body.join(': ')}</p><Link to="/cv" onClick={onNavigate}>View education record</Link></div>;
         }
         return <p key={index}>{paragraph}</p>;
     })}</div>;

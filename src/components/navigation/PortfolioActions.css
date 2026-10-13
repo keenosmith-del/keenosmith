@@ -1,4 +1,4 @@
-/* Shared floating actions — warm glass, editorial type, quiet surfaces. */
+/* Shared floating actions: warm glass, editorial type, quiet surfaces. */
 .portfolio-actions-anchor {
     position: fixed;
     right: max(20px, env(safe-area-inset-right));

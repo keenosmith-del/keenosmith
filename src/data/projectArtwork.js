@@ -3,13 +3,13 @@ import azureCover from '../assets/images/cloud-section/ms-project.png';
 import awsCover from '../assets/images/cloud-section/aws-project.png';
 import googleCover from '../assets/images/cloud-section/gcp-project.png';
 import ollamaCover from '../assets/images/ai-section/ollama-project.png';
-import claudeCover from '../assets/explore-projects/pink-monkey.png';
+import claudeCover from '../assets/images/custom-projects/claude-project.png';
 import n8nCover from '../assets/images/full-stack-section/n8n-project.png';
-import workforceCover from '../assets/explore-projects/grumpy-old-man.png';
-import reliabilityCover from '../assets/explore-projects/smyle.png';
-import telecomCover from '../assets/explore-projects/elderly-traveller.png';
-import fieldServiceCover from '../assets/explore-projects/duck.png';
-import fleetCover from '../assets/explore-projects/boy.png';
+import workforceCover from '../assets/images/custom-projects/hr-project.png';
+import reliabilityCover from '../assets/images/custom-projects/chaos-project.png';
+import telecomCover from '../assets/images/custom-projects/telecom-project.png';
+import fieldServiceCover from '../assets/images/custom-projects/field-service-project.png';
+import fleetCover from '../assets/images/custom-projects/logistics-project.png';
 
 import mernCover from '../assets/explore-projects/furry-green.png';
 import ragCover from '../assets/explore-projects/elderly-man-sage.png';
@@ -30,13 +30,13 @@ export const projectArtwork = {
     'banking-risk': { image: awsCover, background: '#807f7c', ink: 'var(--surface)' },
     'vertex-ai-retail': { image: googleCover, background: '#dddee0', ink: 'var(--charcoal)' },
     'ollama': { image: ollamaCover, background: '#b9b3a4', ink: 'var(--charcoal)' },
-    'claude': { image: claudeCover, background: '#e4d1c5', ink: 'var(--charcoal)' },
+    'claude': { image: claudeCover, background: '#55504a', ink: 'var(--surface)' },
     'n8n': { image: n8nCover, background: '#a8a9aa', ink: 'var(--charcoal)' },
-    'deepseek': { image: workforceCover, background: '#1b1f20', ink: 'var(--surface)' },
-    'distributed-reliability': { image: reliabilityCover, background: '#e8bda7', ink: 'var(--charcoal)' },
-    'telecom-billing': { image: telecomCover, background: '#9a8573', ink: 'var(--charcoal)' },
-    'field-service': { image: fieldServiceCover, background: '#b3aca2', ink: 'var(--charcoal)' },
-    'fleet-operations': { image: fleetCover, background: '#89c3c1', ink: 'var(--charcoal)' },
+    'deepseek': { image: workforceCover, background: '#fdfdfd', ink: 'var(--charcoal)' },
+    'distributed-reliability': { image: reliabilityCover, background: '#5a5271', ink: 'var(--surface)' },
+    'telecom-billing': { image: telecomCover, background: '#f2dbc2', ink: 'var(--charcoal)' },
+    'field-service': { image: fieldServiceCover, background: '#cbcbcb', ink: 'var(--charcoal)' },
+    'fleet-operations': { image: fleetCover, background: '#3a3a3c', ink: 'var(--surface)' },
     'productivity-platform': { image: mernCover, background: '#169f7d', ink: 'var(--surface)' },
     'ai-assistant': { image: ragCover, background: '#d2ccc8', ink: 'var(--charcoal)' },
     'enterprise-workspace': { image: workspaceCover, background: '#97b2c4', ink: 'var(--charcoal)' },
