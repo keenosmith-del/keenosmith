@@ -9,21 +9,20 @@ const browser = await puppeteer.launch();
 const page = await browser.newPage();
 
 await page.setViewport({
-    width: 1100,
-    height: 900,
-    deviceScaleFactor: 1,
+  width: 1100,
+  height: 900,
+  deviceScaleFactor: 1,
 });
 
 await page.goto("http://localhost:5173/cv", {
-    waitUntil: "networkidle0",
+  waitUntil: "networkidle0",
 });
 
 await page.emulateMediaType("screen");
 
 await page.evaluate(async () => {
-    await document.fonts.ready;
+  await document.fonts.ready;
 });
-
 
 /* =========================================================
    PDF-ONLY STYLING
@@ -31,7 +30,7 @@ await page.evaluate(async () => {
    ========================================================= */
 
 await page.addStyleTag({
-    content: `
+  content: `
         html,
         body {
             margin: 0 !important;
@@ -87,23 +86,19 @@ await page.addStyleTag({
     `,
 });
 
-
 /* =========================================================
    PDF-SPECIFIC VISUAL ADJUSTMENTS
    ========================================================= */
 
 await page.evaluate(() => {
+  document.querySelectorAll(".cv-intro-divider").forEach((element) => {
+    element.style.background = "rgba(58, 58, 60, 0.12)";
+  });
 
-    document.querySelectorAll(".cv-intro-divider").forEach((element) => {
-        element.style.background = "rgba(58, 58, 60, 0.12)";
-    });
-
-    document.querySelectorAll(".cv-section").forEach((section) => {
-        section.style.borderTopColor = "rgba(58, 58, 60, 0.12)";
-    });
-
+  document.querySelectorAll(".cv-section").forEach((section) => {
+    section.style.borderTopColor = "rgba(58, 58, 60, 0.12)";
+  });
 });
-
 
 /* =========================================================
    FIND CV
@@ -112,75 +107,67 @@ await page.evaluate(() => {
 const cvPage = await page.$(".cv-page");
 
 if (!cvPage) {
-    throw new Error("Could not find .cv-page");
+  throw new Error("Could not find .cv-page");
 }
-
 
 /* =========================================================
    CALCULATE ACTUAL CONTENT HEIGHT
    ========================================================= */
 
 const cvHeight = await page.evaluate(() => {
+  const cv = document.querySelector(".cv-page");
 
-    const cv = document.querySelector(".cv-page");
+  if (!cv) {
+    throw new Error("Could not find .cv-page");
+  }
 
-    if (!cv) {
-        throw new Error("Could not find .cv-page");
+  const cvRect = cv.getBoundingClientRect();
+
+  let top = cvRect.top;
+  let bottom = cvRect.bottom;
+
+  /*
+   * Account for all descendants.
+   *
+   * This is important because the CV uses:
+   * - relative positioning
+   * - negative margins
+   * - absolutely positioned elements
+   * - shifted content
+   */
+
+  cv.querySelectorAll("*").forEach((element) => {
+    const rect = element.getBoundingClientRect();
+
+    if (rect.top < top) {
+      top = rect.top;
     }
 
-    const cvRect = cv.getBoundingClientRect();
+    if (rect.bottom > bottom) {
+      bottom = rect.bottom;
+    }
+  });
 
-    let top = cvRect.top;
-    let bottom = cvRect.bottom;
-
-    /*
-     * Account for all descendants.
-     *
-     * This is important because the CV uses:
-     * - relative positioning
-     * - negative margins
-     * - absolutely positioned elements
-     * - shifted content
-     */
-
-    cv.querySelectorAll("*").forEach((element) => {
-
-        const rect = element.getBoundingClientRect();
-
-        if (rect.top < top) {
-            top = rect.top;
-        }
-
-        if (rect.bottom > bottom) {
-            bottom = rect.bottom;
-        }
-    });
-
-    return Math.ceil(bottom - top);
+  return Math.ceil(bottom - top);
 });
 
-
 if (!cvHeight || cvHeight <= 0) {
-    throw new Error("Could not determine CV height");
+  throw new Error("Could not determine CV height");
 }
-
 
 /* =========================================================
    SET CV HEIGHT
    ========================================================= */
 
 await page.evaluate((height) => {
+  const cv = document.querySelector(".cv-page");
 
-    const cv = document.querySelector(".cv-page");
+  if (!cv) {
+    throw new Error("Could not find .cv-page");
+  }
 
-    if (!cv) {
-        throw new Error("Could not find .cv-page");
-    }
-
-    cv.style.minHeight = `${height}px`;
-
+  cv.style.minHeight = `${height}px`;
 }, cvHeight);
-
 
 /* =========================================================
    FINAL PDF HEIGHT
@@ -193,27 +180,25 @@ await page.evaluate((height) => {
 
 const pdfHeight = cvHeight + 20;
 
-
 /* =========================================================
    GENERATE PDF
    ========================================================= */
 
 await page.pdf({
-    path: "Keeno-Smith-CV.pdf",
+  path: "Keeno-Smith-CV.pdf",
 
-    width: "1100px",
-    height: `${pdfHeight}px`,
+  width: "1100px",
+  height: `${pdfHeight}px`,
 
-    printBackground: true,
+  printBackground: true,
 
-    margin: {
-        top: "0px",
-        right: "0px",
-        bottom: "0px",
-        left: "0px",
-    },
+  margin: {
+    top: "0px",
+    right: "0px",
+    bottom: "0px",
+    left: "0px",
+  },
 });
-
 
 await browser.close();
 

@@ -1,46 +1,114 @@
-import huggingFaceCover from '../assets/images/ai-section/hugging-face-project.png';
-import azureCover from '../assets/images/cloud-section/ms-project.png';
-import awsCover from '../assets/images/cloud-section/aws-project.png';
-import googleCover from '../assets/images/cloud-section/gcp-project.png';
-import ollamaCover from '../assets/images/ai-section/ollama-project.png';
-import claudeCover from '../assets/images/custom-projects/claude-project.png';
-import n8nCover from '../assets/images/full-stack-section/n8n-project.png';
-import workforceCover from '../assets/images/custom-projects/hr-project.png';
-import reliabilityCover from '../assets/images/custom-projects/chaos-project.png';
-import telecomCover from '../assets/images/custom-projects/telecom-project.png';
-import fieldServiceCover from '../assets/images/custom-projects/field-service-project.png';
-import fleetCover from '../assets/images/custom-projects/logistics-project.png';
+import huggingFaceCover from "../assets/images/ai-section/hugging-face-project.png";
+import azureCover from "../assets/images/cloud-section/ms-project.png";
+import awsCover from "../assets/images/cloud-section/aws-project.png";
+import googleCover from "../assets/images/cloud-section/gcp-project.png";
+import ollamaCover from "../assets/images/ai-section/ollama-project.png";
+import claudeCover from "../assets/images/custom-projects/claude-project.png";
+import n8nCover from "../assets/images/full-stack-section/n8n-project.png";
+import workforceCover from "../assets/images/custom-projects/hr-project.png";
+import reliabilityCover from "../assets/images/custom-projects/chaos-project.png";
+import telecomCover from "../assets/images/custom-projects/telecom-project.png";
+import fieldServiceCover from "../assets/images/custom-projects/field-service-project.png";
+import fleetCover from "../assets/images/custom-projects/logistics-project.png";
 
-import mernCover from '../assets/explore-projects/furry-green.png';
-import ragCover from '../assets/explore-projects/elderly-man-sage.png';
-import workspaceCover from '../assets/explore-projects/cozy-sheep.png';
-import musicCover from '../assets/explore-projects/pink-monster.png';
-import visualOneCover from '../assets/explore-projects/pink-sweater.png';
-import visualTwoCover from '../assets/explore-projects/red-stoic-man.png';
+import mernCover from "../assets/explore-projects/furry-green.png";
+import ragCover from "../assets/explore-projects/elderly-man-sage.png";
+import workspaceCover from "../assets/explore-projects/cozy-sheep.png";
+import musicCover from "../assets/explore-projects/pink-monster.png";
+import visualOneCover from "../assets/explore-projects/pink-sweater.png";
+import visualTwoCover from "../assets/explore-projects/red-stoic-man.png";
 
-import eventOpsCover from '../assets/images/ai-section/eventops-project.png';
-import visualThreeCover from '../assets/explore-projects/headphones-guy.png';
+import eventOpsCover from "../assets/images/ai-section/eventops-project.png";
+import visualThreeCover from "../assets/explore-projects/headphones-guy.png";
 
 // Shared by Explore and Selected projects; key by ID to keep artwork and colours aligned.
 export const projectArtwork = {
-    'eventops-intelligence': { image: eventOpsCover, background: '#d5d7d4', ink: 'var(--charcoal)' },
-    'ux-ui-visual-3': { image: visualThreeCover, background: '#90bbc2', ink: 'var(--charcoal)' },
-    'hugging-face': { image: huggingFaceCover, background: '#f2dbc2', ink: 'var(--charcoal)' },
-    'microsoft-devops': { image: azureCover, background: '#90bbc2', ink: 'var(--charcoal)' },
-    'banking-risk': { image: awsCover, background: '#807f7c', ink: 'var(--surface)' },
-    'vertex-ai-retail': { image: googleCover, background: '#dddee0', ink: 'var(--charcoal)' },
-    'ollama': { image: ollamaCover, background: '#b9b3a4', ink: 'var(--charcoal)' },
-    'claude': { image: claudeCover, background: '#55504a', ink: 'var(--surface)' },
-    'n8n': { image: n8nCover, background: '#a8a9aa', ink: 'var(--charcoal)' },
-    'deepseek': { image: workforceCover, background: '#fdfdfd', ink: 'var(--charcoal)' },
-    'distributed-reliability': { image: reliabilityCover, background: '#5a5271', ink: 'var(--surface)' },
-    'telecom-billing': { image: telecomCover, background: '#f2dbc2', ink: 'var(--charcoal)' },
-    'field-service': { image: fieldServiceCover, background: '#cbcbcb', ink: 'var(--charcoal)' },
-    'fleet-operations': { image: fleetCover, background: '#3a3a3c', ink: 'var(--surface)' },
-    'productivity-platform': { image: mernCover, background: '#169f7d', ink: 'var(--surface)' },
-    'ai-assistant': { image: ragCover, background: '#d2ccc8', ink: 'var(--charcoal)' },
-    'enterprise-workspace': { image: workspaceCover, background: '#97b2c4', ink: 'var(--charcoal)' },
-    'music-api': { image: musicCover, background: '#d3a6a3', ink: 'var(--charcoal)' },
-    'ux-ui-visual-1': { image: visualOneCover, background: '#d97c83', ink: 'var(--charcoal)' },
-    'ux-ui-visual-2': { image: visualTwoCover, background: '#9e3c46', ink: 'var(--surface)' },
+  "eventops-intelligence": {
+    image: eventOpsCover,
+    background: "#d5d7d4",
+    ink: "var(--charcoal)",
+  },
+  "ux-ui-visual-3": {
+    image: visualThreeCover,
+    background: "#90bbc2",
+    ink: "var(--charcoal)",
+  },
+  "hugging-face": {
+    image: huggingFaceCover,
+    background: "#f2dbc2",
+    ink: "var(--charcoal)",
+  },
+  "microsoft-devops": {
+    image: azureCover,
+    background: "#90bbc2",
+    ink: "var(--charcoal)",
+  },
+  "banking-risk": {
+    image: awsCover,
+    background: "#807f7c",
+    ink: "var(--surface)",
+  },
+  "vertex-ai-retail": {
+    image: googleCover,
+    background: "#dddee0",
+    ink: "var(--charcoal)",
+  },
+  ollama: { image: ollamaCover, background: "#b9b3a4", ink: "var(--charcoal)" },
+  claude: { image: claudeCover, background: "#55504a", ink: "var(--surface)" },
+  n8n: { image: n8nCover, background: "#a8a9aa", ink: "var(--charcoal)" },
+  deepseek: {
+    image: workforceCover,
+    background: "#fdfdfd",
+    ink: "var(--charcoal)",
+  },
+  "distributed-reliability": {
+    image: reliabilityCover,
+    background: "#5a5271",
+    ink: "var(--surface)",
+  },
+  "telecom-billing": {
+    image: telecomCover,
+    background: "#f2dbc2",
+    ink: "var(--charcoal)",
+  },
+  "field-service": {
+    image: fieldServiceCover,
+    background: "#cbcbcb",
+    ink: "var(--charcoal)",
+  },
+  "fleet-operations": {
+    image: fleetCover,
+    background: "#3a3a3c",
+    ink: "var(--surface)",
+  },
+  "productivity-platform": {
+    image: mernCover,
+    background: "#169f7d",
+    ink: "var(--surface)",
+  },
+  "ai-assistant": {
+    image: ragCover,
+    background: "#d2ccc8",
+    ink: "var(--charcoal)",
+  },
+  "enterprise-workspace": {
+    image: workspaceCover,
+    background: "#97b2c4",
+    ink: "var(--charcoal)",
+  },
+  "music-api": {
+    image: musicCover,
+    background: "#d3a6a3",
+    ink: "var(--charcoal)",
+  },
+  "ux-ui-visual-1": {
+    image: visualOneCover,
+    background: "#d97c83",
+    ink: "var(--charcoal)",
+  },
+  "ux-ui-visual-2": {
+    image: visualTwoCover,
+    background: "#9e3c46",
+    ink: "var(--surface)",
+  },
 };

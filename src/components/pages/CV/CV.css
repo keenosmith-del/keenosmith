@@ -1,1408 +1,1364 @@
 .cv {
-    min-height: 100vh;
-    padding: 88px 19px 64px;
+  min-height: 100vh;
+  padding: 88px 19px 64px;
 
-    background: #f6f5f1;
-    color: #3a3a3c;
+  background: #f6f5f1;
+  color: #3a3a3c;
 
-    font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "SF Pro Display",
-        "SF Pro Text",
-        "Helvetica Neue",
-        Arial,
-        sans-serif;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
+    "Helvetica Neue", Arial, sans-serif;
 }
 
 /* CV page controls */
 
 .cv-page-controls {
-    width: min(100%, 880px);
-    margin: 0 auto 14px;
+  width: min(100%, 880px);
+  margin: 0 auto 14px;
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .cv-page-downloads {
-    display: flex;
-    align-items: center;
-    gap: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .cv-page-control {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 
-    padding: 7px 10px;
+  padding: 7px 10px;
 
-    border: 0;
-    border-radius: 999px;
+  border: 0;
+  border-radius: 999px;
 
-    background: rgba(250, 249, 246, 0.72);
-    color: #858589;
+  background: rgba(250, 249, 246, 0.72);
+  color: #858589;
 
-    font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "SF Pro Display",
-        "SF Pro Text",
-        "Helvetica Neue",
-        Arial,
-        sans-serif;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
+    "Helvetica Neue", Arial, sans-serif;
 
-    font-size: 9px;
-    font-weight: 400;
-    line-height: 1;
+  font-size: 9px;
+  font-weight: 400;
+  line-height: 1;
 
-    cursor: pointer;
+  cursor: pointer;
 
-    backdrop-filter: blur(13px);
-    -webkit-backdrop-filter: blur(13px);
+  backdrop-filter: blur(13px);
+  -webkit-backdrop-filter: blur(13px);
 
-    transition:
-        background 180ms ease,
-        color 180ms ease,
-        transform 180ms ease;
+  transition:
+    background 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
 }
 
 .cv-page-control:hover {
-    background: rgba(250, 249, 246, 0.92);
-    color: #4a4a4e;
+  background: rgba(250, 249, 246, 0.92);
+  color: #4a4a4e;
 }
 
 .cv-back:hover {
-    transform: translateX(-2px);
+  transform: translateX(-2px);
 }
 
 .cv-download:hover {
-    transform: translateY(-1px);
+  transform: translateY(-1px);
 }
 
 /* page */
 
 .cv-page {
-    width: min(100%, 880px);
-    margin: 0 auto;
+  width: min(100%, 880px);
+  margin: 0 auto;
 
-    background: #faf9f6;
+  background: #faf9f6;
 
-    border-radius: 26px;
+  border-radius: 26px;
 
-    box-shadow:
-        0 19px 64px rgba(35, 35, 37, 0.07);
+  box-shadow: 0 19px 64px rgba(35, 35, 37, 0.07);
 
-    overflow: hidden;
+  overflow: hidden;
 }
-
 
 /* ========================================
    INTRO
 ======================================== */
 
 .cv-intro {
-    position: relative;
+  position: relative;
 
-    height: 608px;
+  height: 608px;
 }
-
 
 /* ========================================
    DIVIDER
 ======================================== */
 
 .cv-intro-divider {
-    position: absolute;
+  position: absolute;
 
-    top: 80px;
-    left: 0px;
-    right: 64px;
+  top: 80px;
+  left: 0px;
+  right: 64px;
 
-    height: 1px;
+  height: 1px;
 
-    background: rgba(58, 58, 60, 0.07);
+  background: rgba(58, 58, 60, 0.07);
 }
-
 
 /* ========================================
    LINKS
 ======================================== */
 
 .cv-intro-links {
-    position: absolute;
+  position: absolute;
 
-    top: 96px;
-    left: 64px;
+  top: 96px;
+  left: 64px;
 
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
 .cv-intro-links span {
-    color: #858589;
+  color: #858589;
 
-    font-size: 9px;
-    font-weight: 400;
-    line-height: 1.35;
-    letter-spacing: -0.01em;
+  font-size: 9px;
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
 }
 
 .cv-intro-links a {
-    color: #858589;
+  color: #858589;
 
-    font-size: 9px;
-    font-weight: 400;
-    line-height: 1.35;
-    letter-spacing: -0.01em;
+  font-size: 9px;
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
 
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .cv-intro-links a:hover {
-    color: #4a4a4e;
+  color: #4a4a4e;
 }
-
 
 /* ========================================
    CONTACT
 ======================================== */
 
 .cv-intro-contact {
-    position: absolute;
+  position: absolute;
 
-    top: 96px;
-    right: 364px;
+  top: 96px;
+  right: 364px;
 
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 
-    text-align: right;
+  text-align: right;
 }
 
 .cv-intro-contact a {
-    color: #858589;
+  color: #858589;
 
-    font-size: 9px;
-    font-weight: 400;
-    line-height: 1.35;
-    letter-spacing: -0.01em;
+  font-size: 9px;
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
 
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .cv-intro-contact a:hover {
-    color: #4a4a4e;
+  color: #4a4a4e;
 }
 
 .cv-intro-contact span {
-    color: #858589;
+  color: #858589;
 
-    font-size: 9px;
-    font-weight: 400;
-    line-height: 1.35;
-    letter-spacing: -0.01em;
+  font-size: 9px;
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
 }
-
 
 /* ========================================
    NAME / TITLE / POSITIONING
 ======================================== */
 
 .cv-intro-content {
-    position: absolute;
+  position: absolute;
 
-    top: 288px;
-    left: 64px;
+  top: 288px;
+  left: 64px;
 }
 
 .cv-intro h1 {
-    margin: 0;
+  margin: 0;
 
-    color: #3a3a3c;
+  color: #3a3a3c;
 
-    font-size: clamp(45px, 7vw, 74px);
-    font-weight: 500;
-    line-height: 0.92;
-    letter-spacing: -0.055em;
+  font-size: clamp(45px, 7vw, 74px);
+  font-weight: 500;
+  line-height: 0.92;
+  letter-spacing: -0.055em;
 }
 
 .cv-title {
-    margin: 14px 0 0;
+  margin: 14px 0 0;
 
-    color: #69696e;
+  color: #69696e;
 
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 1.15;
-    letter-spacing: -0.025em;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
 }
 
 .cv-positioning {
-    max-width: 450px;
+  max-width: 450px;
 
-    margin: 3px 0 0;
+  margin: 3px 0 0;
 
-    color: #9a9a9f;
+  color: #9a9a9f;
 
-    font-size: 9px;
-    font-weight: 500;
-    line-height: 1.3;
+  font-size: 9px;
+  font-weight: 500;
+  line-height: 1.3;
 }
-
 
 /* ========================================
    BIO
 ======================================== */
 
 .cv-bio {
-    position: absolute;
+  position: absolute;
 
-    top: 456px;
-    left: 64px;
-    right: 64px;
+  top: 456px;
+  left: 64px;
+  right: 64px;
 
-    margin: 0;
+  margin: 0;
 }
 
 .cv-bio p {
-    margin: 0;
+  margin: 0;
 
-    color: #77777c;
+  color: #77777c;
 
-    font-size: 11px;
-    font-weight: 450;
-    line-height: 1.3;
+  font-size: 11px;
+  font-weight: 450;
+  line-height: 1.3;
 }
 
-.cv-bio p+p {
-    margin-top: 14px;
+.cv-bio p + p {
+  margin-top: 14px;
 }
-
 
 /* ========================================
    HEADSHOT
 ======================================== */
 
 .cv-headshot {
-    position: absolute;
+  position: absolute;
 
-    top: 80px;
-    right: 64px;
+  top: 80px;
+  right: 64px;
 
-    width: 288px;
-    aspect-ratio: 4 / 5;
+  width: 288px;
+  aspect-ratio: 4 / 5;
 
-    overflow: hidden;
+  overflow: hidden;
 
-    background: #e9e8e4;
+  background: #e9e8e4;
 }
 
 .cv-headshot img {
-    display: block;
+  display: block;
 
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 
-    object-fit: cover;
+  object-fit: cover;
 }
-
 
 /* ========================================
    SIGNATURE
 ======================================== */
 
 .cv-signature {
-    position: absolute;
+  position: absolute;
 
-    top: 152px;
-    right: 264px;
+  top: 152px;
+  right: 264px;
 
-    z-index: 5;
+  z-index: 5;
 
-    pointer-events: none;
+  pointer-events: none;
 }
 
 .cv-signature img {
-    display: block;
+  display: block;
 
-    width: 112px;
-    height: auto;
+  width: 112px;
+  height: auto;
 
-    opacity: 0.65;
+  opacity: 0.65;
 }
-
 
 /* ========================================
    SECTIONS
 ======================================== */
 
 .cv-section {
-    padding: 28px 64px 58px;
+  padding: 28px 64px 58px;
 
-    border-top: 1px solid rgba(58, 58, 60, 0.07);
+  border-top: 1px solid rgba(58, 58, 60, 0.07);
 }
 
 .cv-section-heading {
-    display: flex;
-    align-items: baseline;
-    gap: 14px;
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
 
-    margin-bottom: 34px;
+  margin-bottom: 34px;
 }
 
 .cv-section-heading span {
-    color: #aaaab0;
+  color: #aaaab0;
 
-    font-size: 9px;
-    font-weight: 500;
+  font-size: 9px;
+  font-weight: 500;
 }
 
 .cv-section-heading h2 {
-    margin: 0;
+  margin: 0;
 
-    color: #4a4a4e;
+  color: #4a4a4e;
 
-    font-size: 27px;
-    font-weight: 500;
-    letter-spacing: -0.035em;
+  font-size: 27px;
+  font-weight: 500;
+  letter-spacing: -0.035em;
 }
 
 .cv-section-content {
-    color: #858589;
+  color: #858589;
 }
-
 
 /* Education items */
 
 .cv-education {
-    margin-top: 85px;
+  margin-top: 85px;
 }
 
 .cv-education-content {
-    position: relative;
-    top: -68px;
+  position: relative;
+  top: -68px;
 }
 
 .cv-education-item {
-    display: grid;
-    grid-template-columns: 14px minmax(0, 1fr);
+  display: grid;
+  grid-template-columns: 14px minmax(0, 1fr);
 
-    column-gap: 14px;
+  column-gap: 14px;
 
-    margin-left: 288px;
-    margin-bottom: 30px;
+  margin-left: 288px;
+  margin-bottom: 30px;
 }
 
 .cv-education-item:last-child {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .cv-education-marker {
-    padding-top: 6px;
+  padding-top: 6px;
 }
 
 .cv-education-marker span {
-    display: block;
+  display: block;
 
-    width: 6px;
-    height: 6px;
+  width: 6px;
+  height: 6px;
 
-    border-radius: 50%;
+  border-radius: 50%;
 
-    background: #858589;
+  background: #858589;
 }
 
 .cv-education-details h3 {
-    margin: 0;
+  margin: 0;
 
-    color: #4a4a4e;
+  color: #4a4a4e;
 
-    font-size: 15px;
-    font-weight: 500;
-    line-height: 1.1;
-    letter-spacing: -0.025em;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
 }
 
 .cv-education-meta {
-    display: flex;
-    gap: 14px;
+  display: flex;
+  gap: 14px;
 
-    margin-top: 4px;
+  margin-top: 4px;
 }
 
 .cv-education-meta span {
-    color: #aaaab0;
+  color: #aaaab0;
 
-    font-size: 9px;
-    font-weight: 500;
-    line-height: 1.2;
+  font-size: 9px;
+  font-weight: 500;
+  line-height: 1.2;
 }
 
 .cv-education-details p {
-    max-width: 496px;
+  max-width: 496px;
 
-    margin: 10px 0 0;
+  margin: 10px 0 0;
 
-    color: #858589;
+  color: #858589;
 
-    font-size: 10px;
-    font-weight: 400;
-    line-height: 1.2;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 1.2;
 }
 
 /* certs */
 
 .cv-certifications {
-    margin-top: -90px;
+  margin-top: -90px;
 }
 
 .cv-certifications-content {
-    position: relative;
-    top: -105px;
-    z-index: 1;
+  position: relative;
+  top: -105px;
+  z-index: 1;
 }
 
 .cv-certification-item {
-    display: grid;
-    grid-template-columns: 14px minmax(0, 1fr);
+  display: grid;
+  grid-template-columns: 14px minmax(0, 1fr);
 
-    column-gap: 14px;
+  column-gap: 14px;
 
-    margin-left: 288px;
-    margin-bottom: 34px;
+  margin-left: 288px;
+  margin-bottom: 34px;
 }
 
 .cv-certification-item:last-of-type {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .cv-certification-marker {
-    padding-top: 6px;
+  padding-top: 6px;
 }
 
 .cv-certification-marker span {
-    display: block;
+  display: block;
 
-    width: 6px;
-    height: 6px;
+  width: 6px;
+  height: 6px;
 
-    border-radius: 50%;
+  border-radius: 50%;
 
-    background: #858589;
+  background: #858589;
 }
 
 /* grouped */
 .cv-certification-marker--grouped {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 7px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 7px;
 }
 
 .cv-certification-details h3 {
-    margin: 0;
+  margin: 0;
 
-    color: #4a4a4e;
+  color: #4a4a4e;
 
-    font-size: 15px;
-    font-weight: 500;
-    line-height: 1.1;
-    letter-spacing: -0.025em;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
 }
 
 .cv-certification-meta {
-    display: flex;
-    gap: 14px;
+  display: flex;
+  gap: 14px;
 
-    margin-top: 4px;
+  margin-top: 4px;
 }
 
 .cv-certification-details p {
-    max-width: 496px;
+  max-width: 496px;
 
-    margin: 10px 0 0;
+  margin: 10px 0 0;
 
-    color: #858589;
+  color: #858589;
 
-    font-size: 10px;
+  font-size: 10px;
 
-    font-weight: 400;
+  font-weight: 400;
 
-    line-height: 1.2;
+  line-height: 1.2;
 }
 
 .cv-certification-meta span {
-    color: #aaaab0;
+  color: #aaaab0;
 
-    font-size: 9px;
+  font-size: 9px;
 
-    font-weight: 500;
+  font-weight: 500;
 
-    line-height: 1.2;
+  line-height: 1.2;
 }
 
 .cv-certification-links {
-    position: relative;
-    z-index: 10;
+  position: relative;
+  z-index: 10;
 
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 
-    margin-top: -26px;
-    margin-bottom: 34px;
+  margin-top: -26px;
+  margin-bottom: 34px;
 
-    pointer-events: auto;
+  pointer-events: auto;
 }
 
 .cv-certification-links a {
-    position: relative;
-    z-index: 11;
+  position: relative;
+  z-index: 11;
 
-    display: block;
+  display: block;
 
-    width: max-content;
-    max-width: 100%;
+  width: max-content;
+  max-width: 100%;
 
-    color: #858589;
+  color: #858589;
 
-    font-size: 8px;
-    font-weight: 400;
-    line-height: 1.2;
+  font-size: 8px;
+  font-weight: 400;
+  line-height: 1.2;
 
-    text-decoration: none;
+  text-decoration: none;
 
-    cursor: pointer;
-    pointer-events: auto;
+  cursor: pointer;
+  pointer-events: auto;
 }
 
 .cv-certification-links a:hover {
-    color: #4a4a4e;
+  color: #4a4a4e;
 }
-
 
 /* exp */
 
 .cv-experience {
-    margin-top: -120px;
+  margin-top: -120px;
 }
 
 .cv-experience-content {
-    position: relative;
+  position: relative;
 
-    top: -60px;
+  top: -60px;
 }
 
 .cv-experience-item {
-    display: grid;
+  display: grid;
 
-    grid-template-columns: 14px minmax(0, 1fr);
+  grid-template-columns: 14px minmax(0, 1fr);
 
-    column-gap: 14px;
+  column-gap: 14px;
 
-    margin-left: 288px;
+  margin-left: 288px;
 
-    margin-bottom: 34px;
+  margin-bottom: 34px;
 }
 
 .cv-experience-item:last-child {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .cv-experience-marker {
-    padding-top: 6px;
+  padding-top: 6px;
 }
 
 .cv-experience-marker span {
-    display: block;
+  display: block;
 
-    width: 6px;
+  width: 6px;
 
-    height: 6px;
+  height: 6px;
 
-    border-radius: 50%;
+  border-radius: 50%;
 
-    background: #858589;
+  background: #858589;
 }
 
 .cv-experience-details h3 {
-    margin: 0;
+  margin: 0;
 
-    color: #4a4a4e;
+  color: #4a4a4e;
 
-    font-size: 15px;
+  font-size: 15px;
 
-    font-weight: 500;
+  font-weight: 500;
 
-    line-height: 1.1;
+  line-height: 1.1;
 
-    letter-spacing: -0.025em;
+  letter-spacing: -0.025em;
 }
 
 .cv-experience-meta {
-    display: flex;
+  display: flex;
 
-    gap: 14px;
+  gap: 14px;
 
-    margin-top: 4px;
+  margin-top: 4px;
 }
 
 .cv-experience-meta span {
-    color: #aaaab0;
+  color: #aaaab0;
 
-    font-size: 9px;
+  font-size: 9px;
 
-    font-weight: 500;
+  font-weight: 500;
 
-    line-height: 1.2;
+  line-height: 1.2;
 }
 
 .cv-experience-details p {
-    max-width: 496px;
+  max-width: 496px;
 
-    margin: 10px 0 0;
+  margin: 10px 0 0;
 
-    color: #858589;
+  color: #858589;
 
-    font-size: 10px;
+  font-size: 10px;
 
-    font-weight: 400;
+  font-weight: 400;
 
-    line-height: 1.2;
+  line-height: 1.2;
 }
 
 /* projects */
 
 .cv-projects {
-    margin-top: -64px;
+  margin-top: -64px;
 }
 
 .cv-projects-content {
-    position: relative;
-    top: -570px;
-    z-index: 1;
+  position: relative;
+  top: -570px;
+  z-index: 1;
 }
-
 
 /* project links */
 
 .cv-project-links {
-    display: flex;
+  display: flex;
 
-    flex-direction: column;
+  flex-direction: column;
 
-    gap: 2px;
+  gap: 2px;
 
-    margin-top: -26px;
-    margin-bottom: 34px;
+  margin-top: -26px;
+  margin-bottom: 34px;
 }
 
 .cv-project-links a {
-    color: #858589;
+  color: #858589;
 
-    font-size: 8px;
-    font-weight: 400;
-    line-height: 1.2;
+  font-size: 8px;
+  font-weight: 400;
+  line-height: 1.2;
 
-    text-decoration: none;
-    z-index: 2000;
+  text-decoration: none;
+  z-index: 2000;
 }
 
 .cv-project-links a:hover {
-    color: #4a4a4e;
-    cursor: pointer;
+  color: #4a4a4e;
+  cursor: pointer;
 }
-
 
 /* project skills */
 
 .cv-project-skills {
-    width: 184px;
+  width: 184px;
 
-    margin-top: 25px;
+  margin-top: 25px;
 }
 
 .cv-project-skills-group {
-    display: flex;
+  display: flex;
 
-    flex-direction: column;
+  flex-direction: column;
 
-    gap: 2px;
+  gap: 2px;
 
-    margin-bottom: 22px;
+  margin-bottom: 22px;
 }
 
 .cv-project-skills-group:last-child {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .cv-project-skills-group h4 {
-    margin: 0 0 5px;
+  margin: 0 0 5px;
 
-    color: #4a4a4e;
+  color: #4a4a4e;
 
-    font-size: 9px;
-    font-weight: 500;
-    line-height: 1.1;
+  font-size: 9px;
+  font-weight: 500;
+  line-height: 1.1;
 }
 
 .cv-project-skills-group span {
-    color: #858589;
+  color: #858589;
 
-    font-size: 8px;
-    font-weight: 400;
-    line-height: 1.2;
+  font-size: 8px;
+  font-weight: 400;
+  line-height: 1.2;
 }
-
 
 /* project groups */
 
 .cv-project-group {
-    margin-left: 288px;
-    margin-bottom: 38px;
+  margin-left: 288px;
+  margin-bottom: 38px;
 }
 
 .cv-project-group:last-child {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .cv-project-group-heading {
-    display: grid;
+  display: grid;
 
-    grid-template-columns: 14px minmax(0, 1fr);
+  grid-template-columns: 14px minmax(0, 1fr);
 
-    column-gap: 14px;
+  column-gap: 14px;
 }
 
 .cv-project-group-heading .cv-project-marker {
-    padding-top: 6px;
+  padding-top: 6px;
 }
 
 .cv-project-group-heading .cv-project-marker span {
-    display: block;
+  display: block;
 
-    width: 6px;
-    height: 6px;
+  width: 6px;
+  height: 6px;
 
-    border-radius: 50%;
+  border-radius: 50%;
 
-    background: #858589;
+  background: #858589;
 }
-
 
 /* project headings */
 
 .cv-project-details h3 {
-    margin: 0;
+  margin: 0;
 
-    color: #4a4a4e;
+  color: #4a4a4e;
 
-    font-size: 15px;
-    font-weight: 500;
-    line-height: 1.1;
-    letter-spacing: -0.025em;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
 }
 
 .cv-project-details h4 {
-    margin: 0;
+  margin: 0;
 
-    color: #4a4a4e;
+  color: #4a4a4e;
 
-    font-size: 11px;
-    font-weight: 500;
-    line-height: 1.15;
-    letter-spacing: -0.015em;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
 }
-
 
 /* project metadata */
 
 .cv-project-meta {
-    display: flex;
+  display: flex;
 
-    flex-direction: column;
+  flex-direction: column;
 
-    gap: 2px;
+  gap: 2px;
 
-    margin-top: 6px;
+  margin-top: 6px;
 }
 
 .cv-project-meta span {
-    color: #858589;
+  color: #858589;
 
-    font-size: 8px;
-    font-weight: 400;
-    line-height: 1.2;
+  font-size: 8px;
+  font-weight: 400;
+  line-height: 1.2;
 }
-
 
 /* project descriptions */
 
-.cv-project-details>p {
-    max-width: 496px;
+.cv-project-details > p {
+  max-width: 496px;
 
-    margin: 10px 0 0;
+  margin: 10px 0 0;
 
-    color: #858589;
+  color: #858589;
 
-    font-size: 9px;
-    font-weight: 400;
-    line-height: 1.3;
+  font-size: 9px;
+  font-weight: 400;
+  line-height: 1.3;
 }
-
 
 /* nested AI projects */
 
 .cv-project-subitem {
-    display: grid;
+  display: grid;
 
-    grid-template-columns: 14px minmax(0, 1fr);
+  grid-template-columns: 14px minmax(0, 1fr);
 
-    column-gap: 14px;
+  column-gap: 14px;
 
-    margin-top: 22px;
-    margin-left: 28px;
+  margin-top: 22px;
+  margin-left: 28px;
 }
 
-.cv-project-subitem+.cv-project-subitem {
-    margin-top: 26px;
+.cv-project-subitem + .cv-project-subitem {
+  margin-top: 26px;
 }
 
 .cv-project-submarker {
-    padding-top: 5px;
+  padding-top: 5px;
 }
 
 .cv-project-submarker span {
-    display: block;
+  display: block;
 
-    width: 4px;
-    height: 4px;
+  width: 4px;
+  height: 4px;
 
-    border-radius: 50%;
+  border-radius: 50%;
 
-    background: #858589;
+  background: #858589;
 }
-
 
 /* direct project links */
 
 .cv-project-direct-links {
-    display: flex;
+  display: flex;
 
-    flex-direction: column;
+  flex-direction: column;
 
-    gap: 2px;
+  gap: 2px;
 
-    margin-top: 9px;
+  margin-top: 9px;
 }
 
 .cv-project-direct-links a {
-    color: #858589;
+  color: #858589;
 
-    font-size: 8px;
-    font-weight: 400;
-    line-height: 1.2;
+  font-size: 8px;
+  font-weight: 400;
+  line-height: 1.2;
 
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .cv-project-direct-links a:hover {
-    color: #4a4a4e;
+  color: #4a4a4e;
 }
-
 
 /* all skills */
 
 .cv-skills {
-    margin-top: -595px;
+  margin-top: -595px;
 }
 
 .cv-skills-links {
-    display: flex;
+  display: flex;
 
-    flex-direction: column;
+  flex-direction: column;
 
-    gap: 2px;
+  gap: 2px;
 
-    margin-top: -26px;
+  margin-top: -26px;
 
-    margin-bottom: 45px;
+  margin-bottom: 45px;
 }
 
 .cv-skills-links a {
-    color: #858589;
+  color: #858589;
 
-    font-size: 8px;
+  font-size: 8px;
 
-    font-weight: 400;
+  font-weight: 400;
 
-    line-height: 1.2;
+  line-height: 1.2;
 
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .cv-skills-links a:hover {
-    color: #4a4a4e;
+  color: #4a4a4e;
 }
 
 .cv-skills-content {
-    position: relative;
+  position: relative;
 
-    top: -260px;
+  top: -260px;
 
-    margin-left: 312px;
+  margin-left: 312px;
 }
 
 .cv-skill-group {
-    margin-bottom: 22px;
+  margin-bottom: 22px;
 }
 
 .cv-skill-group:last-child {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .cv-skill-group h3 {
-    margin: 0;
+  margin: 0;
 
-    color: #4a4a4e;
+  color: #4a4a4e;
 
-    font-size: 15px;
+  font-size: 15px;
 
-    font-weight: 500;
+  font-weight: 500;
 
-    line-height: 1.1;
+  line-height: 1.1;
 
-    letter-spacing: -0.025em;
+  letter-spacing: -0.025em;
 }
 
 .cv-skill-group p {
-    max-width: 496px;
+  max-width: 496px;
 
-    margin: 6px 0 0;
+  margin: 6px 0 0;
 
-    color: #858589;
+  color: #858589;
 
-    font-size: 10px;
+  font-size: 10px;
 
-    font-weight: 400;
+  font-weight: 400;
 
-    line-height: 1.35;
+  line-height: 1.35;
 }
-
 
 /* back to top btn */
 /* scroll to top */
 
 .cv-scroll-top {
-    position: fixed;
+  position: fixed;
 
-    right: 22px;
+  right: 22px;
 
-    bottom: 22px;
+  bottom: 22px;
 
-    width: 27px;
+  width: 27px;
 
-    height: 27px;
+  height: 27px;
 
-    display: flex;
+  display: flex;
 
-    align-items: center;
+  align-items: center;
 
-    justify-content: center;
+  justify-content: center;
 
-    border: 0;
+  border: 0;
 
-    border-radius: 50%;
+  border-radius: 50%;
 
-    background: rgba(250, 249, 246, 0.82);
+  background: rgba(250, 249, 246, 0.82);
 
-    color: #858589;
+  color: #858589;
 
-    cursor: pointer;
+  cursor: pointer;
 
-    backdrop-filter: blur(13px);
+  backdrop-filter: blur(13px);
 
-    -webkit-backdrop-filter: blur(13px);
+  -webkit-backdrop-filter: blur(13px);
 
-    box-shadow:
-        0 6px 19px rgba(35, 35, 37, 0.08);
+  box-shadow: 0 6px 19px rgba(35, 35, 37, 0.08);
 
-    transition:
-        background 180ms ease,
-        color 180ms ease,
-        transform 180ms ease;
+  transition:
+    background 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
 
-    z-index: 20;
+  z-index: 20;
 }
 
 .cv-scroll-top:hover {
-    background: rgba(250, 249, 246, 0.96);
+  background: rgba(250, 249, 246, 0.96);
 
-    color: #4a4a4e;
+  color: #4a4a4e;
 
-    transform: translateY(-2px);
+  transform: translateY(-2px);
 }
-
 
 /* ========================================
    RESPONSIVE
 ======================================== */
 
 @media (max-width: 800px) {
+  .cv {
+    padding: 77px 13px 38px;
+  }
 
-    .cv {
-        padding: 77px 13px 38px;
-    }
+  .cv-intro {
+    height: auto;
 
-    .cv-intro {
-        height: auto;
+    min-height: 840px;
+  }
 
-        min-height: 840px;
-    }
+  .cv-intro-divider {
+    left: 26px;
 
-    .cv-intro-divider {
-        left: 26px;
+    right: 0;
+  }
 
-        right: 0;
-    }
+  .cv-intro-links {
+    left: 26px;
+  }
 
-    .cv-intro-links {
-        left: 26px;
-    }
+  .cv-intro-contact {
+    right: 26px;
+  }
 
-    .cv-intro-contact {
-        right: 26px;
-    }
+  .cv-intro-content {
+    top: 168px;
 
-    .cv-intro-content {
-        top: 168px;
+    left: 26px;
 
-        left: 26px;
+    right: 26px;
+  }
 
-        right: 26px;
-    }
+  .cv-bio {
+    top: 408px;
 
-    .cv-bio {
-        top: 408px;
+    left: 26px;
 
-        left: 26px;
+    right: 26px;
+  }
 
-        right: 26px;
-    }
+  .cv-headshot {
+    top: 560px;
 
-    .cv-headshot {
-        top: 560px;
+    left: 26px;
 
-        left: 26px;
+    right: auto;
 
-        right: auto;
+    width: min(100%, 256px);
+  }
 
-        width: min(100%, 256px);
-    }
+  .cv-signature {
+    top: 752px;
 
-    .cv-signature {
-        top: 752px;
+    left: 64px;
 
-        left: 64px;
+    right: auto;
+  }
 
-        right: auto;
-    }
-
-    .cv-section {
-        padding: 42px 26px;
-    }
+  .cv-section {
+    padding: 42px 26px;
+  }
 }
-
 
 @media (max-width: 520px) {
+  .cv {
+    padding: 70px 8px 26px;
+  }
 
-    .cv {
-        padding: 70px 8px 26px;
-    }
+  .cv-page {
+    border-radius: 19px;
+  }
 
-    .cv-page {
-        border-radius: 19px;
-    }
+  .cv-intro {
+    min-height: 800px;
+  }
 
-    .cv-intro {
-        min-height: 800px;
-    }
+  .cv-intro-divider {
+    left: 19px;
+  }
 
-    .cv-intro-divider {
-        left: 19px;
-    }
+  .cv-intro-links {
+    top: 92px;
 
-    .cv-intro-links {
-        top: 92px;
+    left: 19px;
+  }
 
-        left: 19px;
-    }
+  .cv-intro-contact {
+    top: 92px;
 
-    .cv-intro-contact {
-        top: 92px;
+    right: 19px;
+  }
 
-        right: 19px;
-    }
+  .cv-intro-content {
+    top: 160px;
 
+    left: 19px;
 
-    .cv-intro-content {
-        top: 160px;
+    right: 19px;
+  }
 
-        left: 19px;
+  .cv-intro h1 {
+    font-size: 42px;
+  }
 
-        right: 19px;
-    }
+  .cv-title {
+    font-size: 17px;
+  }
 
-    .cv-intro h1 {
-        font-size: 42px;
-    }
+  .cv-bio {
+    top: 392px;
 
-    .cv-title {
-        font-size: 17px;
-    }
+    left: 19px;
 
-    .cv-bio {
-        top: 392px;
+    right: 19px;
+  }
 
-        left: 19px;
+  .cv-headshot {
+    top: 552px;
 
-        right: 19px;
-    }
+    left: 19px;
 
-    .cv-headshot {
-        top: 552px;
+    width: min(100%, 240px);
+  }
 
-        left: 19px;
+  .cv-signature {
+    top: 728px;
 
-        width: min(100%, 240px);
-    }
+    left: 48px;
+  }
 
-    .cv-signature {
-        top: 728px;
-
-        left: 48px;
-    }
-
-    .cv-section {
-        padding: 35px 19px;
-    }
+  .cv-section {
+    padding: 35px 19px;
+  }
 }
-
 
 /* ========================================
    PRINT
 ======================================== */
 
 @media print {
-    .cv {
-        padding: 0;
+  .cv {
+    padding: 0;
 
-        background: #faf9f6;
-    }
+    background: #faf9f6;
+  }
 
-    .cv-page {
-        width: 100%;
+  .cv-page {
+    width: 100%;
 
-        margin: 0;
+    margin: 0;
 
-        border-radius: 0;
+    border-radius: 0;
 
-        box-shadow: none;
-    }
+    box-shadow: none;
+  }
 
-    .cv-page-controls {
-        display: none;
-    }
+  .cv-page-controls {
+    display: none;
+  }
 }
 
 /* project experience entry */
 
 .cv-project-entry {
-    margin-top: 18px;
-    padding-top: 14px;
+  margin-top: 18px;
+  padding-top: 14px;
 
-    border-top: 1px solid rgba(58, 58, 60, 0.06);
+  border-top: 1px solid rgba(58, 58, 60, 0.06);
 }
 
 .cv-project-entry h4 {
-    margin: 0;
+  margin: 0;
 
-    color: #4a4a4e;
+  color: #4a4a4e;
 
-    font-size: 12px;
-    font-weight: 500;
-    line-height: 1.15;
-    letter-spacing: -0.02em;
-
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
 }
 
 .cv-project-role {
-    margin-top: 3px;
+  margin-top: 3px;
 
-    color: #aaaab0;
+  color: #aaaab0;
 
-    font-size: 9px;
-    font-weight: 500;
-    line-height: 1.2;
-
+  font-size: 9px;
+  font-weight: 500;
+  line-height: 1.2;
 }
 
 .cv-project-role strong {
-    color: #858589;
-    font-weight: 500;
+  color: #858589;
+  font-weight: 500;
 }
 
-.cv-project-entry>p {
-    max-width: 496px;
+.cv-project-entry > p {
+  max-width: 496px;
 
-    margin: 7px 0 0;
+  margin: 7px 0 0;
 
-    color: #858589;
+  color: #858589;
 
-    font-size: 9px;
-    font-weight: 400;
-    line-height: 1.3;
-
+  font-size: 9px;
+  font-weight: 400;
+  line-height: 1.3;
 }
 
 .cv-project-subsection {
-    max-width: 496px;
+  max-width: 496px;
 
-    margin-top: 9px;
+  margin-top: 9px;
 }
 
 .cv-project-subsection h5 {
-    margin: 0 0 3px;
+  margin: 0 0 3px;
 
-    color: #4a4a4e;
+  color: #4a4a4e;
 
-    font-size: 9px;
-    font-weight: 500;
-    line-height: 1.2;
-    letter-spacing: -0.01em;
+  font-size: 9px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
 }
 
 .cv-project-subsection p {
-    margin: 0;
+  margin: 0;
 
-    color: #858589;
+  color: #858589;
 
-    font-size: 9px;
-    font-weight: 400;
-    line-height: 1.3;
-
+  font-size: 9px;
+  font-weight: 400;
+  line-height: 1.3;
 }
 
 .cv-project-subsection ul {
-    margin: 3px 0 0;
-    padding-left: 13px;
+  margin: 3px 0 0;
+  padding-left: 13px;
 }
 
 .cv-project-subsection li {
-    margin: 0 0 3px;
+  margin: 0 0 3px;
 
-    color: #858589;
+  color: #858589;
 
-    font-size: 9px;
-    font-weight: 400;
-    line-height: 1.3;
-
+  font-size: 9px;
+  font-weight: 400;
+  line-height: 1.3;
 }
 
 .cv-project-subsection li:last-child {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 /* cloud devops */
 .cv-cloud {
-    margin-top: -84px;
-    margin-bottom: -110px;
+  margin-top: -84px;
+  margin-bottom: -110px;
 }
 
 .cv-cloud-content {
-    position: relative;
-    top: -90px;
+  position: relative;
+  top: -90px;
 }
 
 .cv-cloud-item {
-    display: grid;
+  display: grid;
 
-    grid-template-columns: 14px minmax(0, 1fr);
+  grid-template-columns: 14px minmax(0, 1fr);
 
-    column-gap: 14px;
+  column-gap: 14px;
 
-    margin-left: 288px;
+  margin-left: 288px;
 
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .cv-cloud-item:last-child {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .cv-cloud-marker {
-    padding-top: 6px;
+  padding-top: 6px;
 }
 
 .cv-cloud-marker span {
-    display: block;
+  display: block;
 
-    width: 6px;
-    height: 6px;
+  width: 6px;
+  height: 6px;
 
-    border-radius: 50%;
+  border-radius: 50%;
 
-    background: #858589;
+  background: #858589;
 }
 
 .cv-cloud-details h3 {
-    margin: 0;
+  margin: 0;
 
-    color: #4a4a4e;
+  color: #4a4a4e;
 
-    font-size: 15px;
-    font-weight: 500;
-    line-height: 1.1;
-    letter-spacing: -0.025em;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
 }
 
 .cv-cloud-details p {
-    max-width: 496px;
+  max-width: 496px;
 
-    margin: 10px 0 0;
+  margin: 10px 0 0;
 
-    color: #858589;
+  color: #858589;
 
-    font-size: 10px;
-    font-weight: 400;
-    line-height: 1.3;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 1.3;
 }
 
 .cv-cloud-links {
-    display: flex;
+  display: flex;
 
-    flex-direction: column;
+  flex-direction: column;
 
-    gap: 2px;
+  gap: 2px;
 
-    margin-top: 9px;
+  margin-top: 9px;
 }
 
 .cv-cloud-links a {
-    color: #858589;
+  color: #858589;
 
-    font-size: 8px;
-    font-weight: 400;
-    line-height: 1.2;
+  font-size: 8px;
+  font-weight: 400;
+  line-height: 1.2;
 
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .cv-cloud-links a:hover {
-    color: #4a4a4e;
+  color: #4a4a4e;
 }

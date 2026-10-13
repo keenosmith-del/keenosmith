@@ -1,68 +1,79 @@
 .project-preview-button {
-    display: inline-flex;
+  display: inline-flex;
 
-    align-items: center;
+  align-items: center;
 
-    justify-content: center;
+  justify-content: center;
 
-    min-height: 36px;
+  min-height: 36px;
 
-    padding: 0 16px;
+  padding: 0 16px;
 
-    border-radius: 999px;
+  border-radius: 999px;
 
-    font-size: 10px;
+  font-size: 10px;
 
-    font-weight: 500;
+  font-weight: 500;
 
-    letter-spacing: -0.01em;
+  letter-spacing: -0.01em;
 
-    text-decoration: none;
+  text-decoration: none;
 
-    transition:
-        transform 180ms ease,
-        background-color 180ms ease,
-        color 180ms ease;
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease;
 }
-
-
 
 .project-preview {
-    min-height: 100dvh;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    width: min(720px, calc(100% - 48px));
-    margin: auto;
-    padding: 64px 0;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: min(720px, calc(100% - 48px));
+  margin: auto;
+  padding: 64px 0;
 }
 
-.project-preview>span {
-    color: #858589;
-    font-size: 12px;
+.project-preview > span {
+  color: #858589;
+  font-size: 12px;
 }
 
 .project-preview h1 {
-    color: #555559;
-    font-size: clamp(32px, 5vw, 56px);
-    font-weight: 500;
-    letter-spacing: -0.035em;
-    line-height: 1.05;
+  color: #555559;
+  font-size: clamp(32px, 5vw, 56px);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
 }
 
 .project-preview p {
-    color: #858589;
-    line-height: 1.6;
-    margin: 0 0 28px;
+  color: #858589;
+  line-height: 1.6;
+  margin: 0 0 28px;
 }
 
 .project-preview a {
-    background: var(--charcoal);
-    color: var(--surface);
+  background: var(--charcoal);
+  color: var(--surface);
 }
 
-
-.project-preview-technologies { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 28px; }
-.project-preview-technologies span { padding: 7px 11px; border-radius: 999px; background: var(--surface-muted); color: #66666b; font-size: 11px; }
-.project-preview-button:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+.project-preview-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-bottom: 28px;
+}
+.project-preview-technologies span {
+  padding: 7px 11px;
+  border-radius: 999px;
+  background: var(--surface-muted);
+  color: #66666b;
+  font-size: 11px;
+}
+.project-preview-button:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}

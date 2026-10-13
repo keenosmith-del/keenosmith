@@ -1,141 +1,739 @@
 /* Shared controls and typography. Explore project-card geometry and motion stay local. */
 :root {
-    --control-height: 36px;
-    --control-radius: 999px;
-    --control-font-size: 12px;
-    --panel-radius: 28px;
-    --editorial-tracking: -.045em;
+  --control-height: 36px;
+  --control-radius: 999px;
+  --control-font-size: 12px;
+  --panel-radius: 28px;
+  --editorial-tracking: -0.045em;
 }
-:is(button, a[href], summary, select, input[type="button"], input[type="submit"], [role="button"]):not(:where(.cv *)):not(:disabled):not([aria-disabled="true"]) { cursor: pointer; }
-:is(button:disabled, [aria-disabled="true"]):not(:where(.cv *)) { cursor: default; }
-:is(button, a[href], summary, select):not(:where(.cv *)):focus-visible { outline: 2px solid var(--charcoal); outline-offset: 4px; }
+:is(
+    button,
+    a[href],
+    summary,
+    select,
+    input[type="button"],
+    input[type="submit"],
+    [role="button"]
+  ):not(:where(.cv *)):not(:disabled):not([aria-disabled="true"]) {
+  cursor: pointer;
+}
+:is(button:disabled, [aria-disabled="true"]):not(:where(.cv *)) {
+  cursor: default;
+}
+:is(button, a[href], summary, select):not(:where(.cv *)):focus-visible {
+  outline: 2px solid var(--charcoal);
+  outline-offset: 4px;
+}
 
 @media screen {
-    :is(.hero-button, .ai-explore, .chat-button, .navigation-chat, .navigation-cv, .navigation-project-action, .portfolio-skills-helper,
-        .assistant-suggestions button, .assistant-card-actions a, .assistant-expand, .assistant-complete,
-        .recruiter-button, .recruiter-reset, .recruiter-links a, .recruiter-page .recruiter-back, .explore-back, .explore-empty button,
-        .project-preview-button, .project-placeholder-back, .project-placeholder-resources a,
-        .certifications-wallet-button, .certifications-closing-button, .certifications-back,
-        .ai-project-button, .ai-project-back, .ai-project-closing-button,
-        .music-project-button, .music-project-back, .music-project-closing-button, .music-project-executive-summary-button,
-        .enterprise-project-button, .enterprise-project-back, .enterprise-project-closing-button,
-        .productivity-project-button, .productivity-project-back, .productivity-project-closing-button, .cloud-profile) {
-        display: inline-flex; align-items: center; justify-content: center; gap: 7px;
-        min-height: var(--control-height); padding: 0 16px; border: 0; border-radius: var(--control-radius);
-        font-family: inherit; font-size: var(--control-font-size); font-weight: 400; line-height: 1.3; letter-spacing: -.01em;
-        text-decoration: none; background: var(--surface-muted); background-image: none; color: var(--charcoal);
-        transition: transform 180ms ease, background-color 180ms ease, color 180ms ease;
-    }
-    :is(.hero-button-primary, .ai-explore, .chat-button-send, .navigation-chat, .navigation-project-action-primary, .recruiter-button,
-        .ai-project-button-primary, .music-project-button-primary, .enterprise-project-button-primary,
-        .productivity-project-button-primary, .project-preview-button, .cloud-profile.is-primary) {
-        background: var(--charcoal); color: var(--surface);
-    }
-    :is(.chat-button-send, .navigation-chat, .recruiter-button, .project-preview-button, .cloud-profile.is-primary):hover:not(:disabled) { background: var(--black); color: var(--surface); }
-    :is(.site-header .navigation-links > a, .site-header .navigation-skills-trigger, .site-header .navigation-projects-trigger,
-        .site-header .navigation-links-trigger, .site-header .navigation-link-list a) {
-        font-size: 12px; font-weight: 400; letter-spacing: -.01em; line-height: 1.4; color: #929297;
-    }
-    :is(.navigation-skills-panel, .navigation-projects-panel, .navigation-links-panel) { background: rgba(250, 249, 246, .96); }
-    :is(.navigation-skill-group h3, .navigation-project-card h3, .navigation-link-group h3) { color: #77777c; font-size: 12px; line-height: 1.3; font-weight: 400; letter-spacing: -.025em; }
-    :is(.navigation-skills-panel.is-open, .navigation-projects-panel.is-open, .navigation-links-panel.is-open) { max-height: calc(100dvh - 40px); overflow-y: auto; }
-    :is(.navigation-project-card p, .navigation-skill-group p) { font-size: 11px; line-height: 1.65; color: #85858a; }
-    :is(.explore-detail, .recruiter-panel, .portfolio-chat-panel) { border-radius: var(--panel-radius); background: var(--surface); }
-    :is(.chat-modal h2, .explore-detail h2, .recruiter-panel h2) {
-        font-size: clamp(28px, 3vw, 40px); line-height: 1.08; letter-spacing: var(--editorial-tracking); font-weight: 500; color: var(--charcoal);
-    }
-    :is(.explore-detail > p, .assistant-message-content p, .recruiter-panel p) { font-size: 14px; line-height: 1.65; color: #68686d; letter-spacing: -.015em; }
-    :is(.chat-modal-close, .explore-close, .portfolio-chat-header button) {
-        display: grid; place-items: center; width: 40px; height: 40px; padding: 0; border: 0; border-radius: 0; background: transparent; color: #929297; box-shadow: none;
-    }
-    .portfolio-chat-header h2 { font-size: 28px; font-weight: 500; line-height: 1.1; letter-spacing: -.04em; color: var(--charcoal); }
-    .portfolio-chat-panel .assistant-suggestions button { min-height: 30px; padding: 6px 11px; font-size: 11px; font-weight: 400; text-align: left; justify-content: flex-start; white-space: normal; }
-    .portfolio-chat-panel .assistant-jump { min-height: 30px; padding: 6px 11px; font-size: 11px; font-weight: 400; }
-    .assistant-composer { border-radius: 24px; background: var(--surface-muted); }
-    .assistant-composer textarea { font-family: inherit; font-size: 14px; line-height: 1.65; color: var(--charcoal); }
-    .assistant-composer button { border-radius: 999px; background: var(--charcoal); color: var(--surface); }
-    :is(.assistant-sender, .assistant-section-label) { font-size: 11px; letter-spacing: -.01em; font-weight: 500; }
-    :is(.assistant-message-content h3, .explore-detail h3) { font-weight: 500; font-size: 20px; letter-spacing: -.035em; line-height: 1.2; }
-    :is(.explore-hero h1, .recruiter-hero h1) { font-size: clamp(48px, 6.5vw, 88px); font-weight: 500; line-height: 1.02; letter-spacing: -.06em; color: var(--charcoal); }
-    :is(.explore-hero p, .recruiter-hero p) { font-size: clamp(16px, 1.35vw, 19px); line-height: 1.65; letter-spacing: -.02em; color: var(--charcoal); }
-    :is(.explore-tabs button, .recruiter-view-switch button, .recruiter-starters button) {
-        min-height: 32px; padding: 6px 13px; border-radius: 999px; background: var(--surface-muted); color: var(--charcoal); font-size: 11px; font-weight: 400; letter-spacing: -.01em;
-    }
-    :is(.explore-tabs button[aria-selected="true"], .recruiter-view-switch button[aria-pressed="true"], .recruiter-starters button[aria-pressed="true"]) { background: var(--charcoal); color: var(--surface); }
-    .navigation-skill-list span { min-height: 23px; padding: 4px 8px; font-size: 9px; font-weight: 400; line-height: 1.25; color: #68686d; background: var(--surface-muted); }
-    .navigation-project-link { font-size: 11px; font-weight: 400; color: #85858a; }
-    .explore-detail-row { border-radius: 18px; font-size: 13px; line-height: 1.6; }
-    .explore-detail .explore-pills button { padding: 5px 9px; border-radius: 999px; background: var(--surface-muted); font-size: 10px; color: var(--charcoal); }
-    :is(.project-preview h1, .ai-project h1, .music-project h1, .enterprise-project h1, .productivity-project h1, .certifications h1) { font-weight: 500; line-height: 1.02; letter-spacing: -.055em; color: var(--charcoal); }
-    :is(.chat-button:disabled, .recruiter-button:disabled, .assistant-composer button:disabled) { opacity: .5; transform: none; }
-    /* Soft resting states, with emphasis reserved for interaction. */
-    .site-header :is(.navigation-links > a, .navigation-skills-trigger, .navigation-projects-trigger, .navigation-links-trigger, .navigation-link-list a):is(:hover, :focus-visible, .is-active, [aria-current]) { color: var(--charcoal); }
-    .navigation-project-link:is(:hover, :focus-visible) { color: var(--charcoal); }
-    .navigation-socials a img { width: 21px; height: 21px; }
-    .navigation-project-action img { width: 15px; height: 15px; object-fit: contain; opacity: .75; }
-    :is(.chat-modal-close, .explore-close, .portfolio-chat-header button):is(:hover, :focus-visible) { background: transparent; border: 0; box-shadow: none; color: var(--charcoal); transform: none; }
-    :is(.chat-modal-close, .explore-close, .portfolio-chat-header button):focus-visible { outline: 1px solid #a0a0a4; outline-offset: -5px; }
-    :is(.cloud-platform, .assistant-tags span, .recruiter-meta span, .recruiter-tags span, .explore-meta > span,
-        .explore-domain, .explore-tags span, .explore-pills > span,
-        .ai-project-hero-meta span, .music-project-meta span, .enterprise-project-meta span, .productivity-project-meta span,
-        .music-project-pill-list span, .music-project-api-pills span, .music-project-stack-pills span,
-        .enterprise-project-sql-pills span, .enterprise-project-video-pills span,
-        .project-preview-technologies span) { min-height: 0; padding: 4px 8px; font-size: 9px; font-weight: 400; line-height: 1.35; }
-    .explore-pills button:not(:where(.explore-project-panel *)) { min-height: 28px; padding: 5px 9px; font-size: 10px; font-weight: 400; }
-    .explore-skill-pill { min-height: 42px; padding: 10px 20px; font-size: 14px; font-weight: 400; }
-    :is(.hero-button, .ai-explore, .chat-button, .navigation-chat, .navigation-cv, .navigation-project-action, .portfolio-skills-helper, .assistant-suggestions button, .assistant-card-actions a, .assistant-expand, .assistant-complete, .recruiter-page .recruiter-button, .recruiter-reset, .recruiter-links a, .recruiter-page .recruiter-back, .explore-back, .explore-empty button, .project-preview-button, .project-placeholder-back, .project-placeholder-resources a, .certifications-wallet-button, .certifications-closing-button, .certifications-back, .ai-project-button, .ai-project-back, .ai-project-closing-button, .music-project-button, .music-project-back, .music-project-closing-button, .music-project-executive-summary-button, .enterprise-project-button, .enterprise-project-back, .enterprise-project-closing-button, .productivity-project-button, .productivity-project-back, .productivity-project-closing-button, .cloud-profile):hover:not(:disabled) { transform: translateY(-1px); box-shadow: none; }
-    :is(.hero-button, .ai-explore, .chat-button, .navigation-chat, .navigation-cv, .navigation-project-action, .portfolio-skills-helper, .assistant-suggestions button, .assistant-card-actions a, .assistant-expand, .assistant-complete, .recruiter-page .recruiter-button, .recruiter-reset, .recruiter-links a, .recruiter-page .recruiter-back, .explore-back, .explore-empty button, .project-preview-button, .project-placeholder-back, .project-placeholder-resources a, .certifications-wallet-button, .certifications-closing-button, .certifications-back, .ai-project-button, .ai-project-back, .ai-project-closing-button, .music-project-button, .music-project-back, .music-project-closing-button, .music-project-executive-summary-button, .enterprise-project-button, .enterprise-project-back, .enterprise-project-closing-button, .productivity-project-button, .productivity-project-back, .productivity-project-closing-button, .cloud-profile):disabled { transform: none; }
-    :is(a, button, summary):not(:where(.cv *, .cloud-tile, .explore-project)) :is(.lucide-arrow-right, .lucide-arrow-left, .lucide-arrow-up-right, .lucide-arrow-up) { transition: transform 180ms ease; }
-    :is(a, button, summary):not(:where(.cv *, .cloud-tile, .explore-project)):is(:hover, :focus-visible):not(:disabled) .lucide-arrow-right { transform: translateX(2px); }
-    :is(a, button, summary):not(:where(.cv *, .cloud-tile, .explore-project)):is(:hover, :focus-visible):not(:disabled) .lucide-arrow-left { transform: translateX(-2px); }
-    :is(a, button, summary):not(:where(.cv *, .cloud-tile, .explore-project)):is(:hover, :focus-visible):not(:disabled) .lucide-arrow-up-right { transform: translate(2px, -2px); }
-    :is(a, button, summary):not(:where(.cv *, .cloud-tile, .explore-project)):is(:hover, :focus-visible):not(:disabled) .lucide-arrow-up { transform: translateY(-2px); }
+  :is(
+    .hero-button,
+    .ai-explore,
+    .chat-button,
+    .navigation-chat,
+    .navigation-cv,
+    .navigation-project-action,
+    .portfolio-skills-helper,
+    .assistant-suggestions button,
+    .assistant-card-actions a,
+    .assistant-expand,
+    .assistant-complete,
+    .recruiter-button,
+    .recruiter-reset,
+    .recruiter-links a,
+    .recruiter-page .recruiter-back,
+    .explore-back,
+    .explore-empty button,
+    .project-preview-button,
+    .project-placeholder-back,
+    .project-placeholder-resources a,
+    .certifications-wallet-button,
+    .certifications-closing-button,
+    .certifications-back,
+    .ai-project-button,
+    .ai-project-back,
+    .ai-project-closing-button,
+    .music-project-button,
+    .music-project-back,
+    .music-project-closing-button,
+    .music-project-executive-summary-button,
+    .enterprise-project-button,
+    .enterprise-project-back,
+    .enterprise-project-closing-button,
+    .productivity-project-button,
+    .productivity-project-back,
+    .productivity-project-closing-button,
+    .cloud-profile
+  ) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    min-height: var(--control-height);
+    padding: 0 16px;
+    border: 0;
+    border-radius: var(--control-radius);
+    font-family: inherit;
+    font-size: var(--control-font-size);
+    font-weight: 400;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+    background: var(--surface-muted);
+    background-image: none;
+    color: var(--charcoal);
+    transition:
+      transform 180ms ease,
+      background-color 180ms ease,
+      color 180ms ease;
+  }
+  :is(
+    .hero-button-primary,
+    .ai-explore,
+    .chat-button-send,
+    .navigation-chat,
+    .navigation-project-action-primary,
+    .recruiter-button,
+    .ai-project-button-primary,
+    .music-project-button-primary,
+    .enterprise-project-button-primary,
+    .productivity-project-button-primary,
+    .project-preview-button,
+    .cloud-profile.is-primary
+  ) {
+    background: var(--charcoal);
+    color: var(--surface);
+  }
+  :is(
+      .chat-button-send,
+      .navigation-chat,
+      .recruiter-button,
+      .project-preview-button,
+      .cloud-profile.is-primary
+    ):hover:not(:disabled) {
+    background: var(--black);
+    color: var(--surface);
+  }
+  :is(
+    .site-header .navigation-links > a,
+    .site-header .navigation-skills-trigger,
+    .site-header .navigation-projects-trigger,
+    .site-header .navigation-links-trigger,
+    .site-header .navigation-link-list a
+  ) {
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    line-height: 1.4;
+    color: #929297;
+  }
+  :is(
+    .navigation-skills-panel,
+    .navigation-projects-panel,
+    .navigation-links-panel
+  ) {
+    background: rgba(250, 249, 246, 0.96);
+  }
+  :is(
+    .navigation-skill-group h3,
+    .navigation-project-card h3,
+    .navigation-link-group h3
+  ) {
+    color: #77777c;
+    font-size: 12px;
+    line-height: 1.3;
+    font-weight: 400;
+    letter-spacing: -0.025em;
+  }
+  :is(
+    .navigation-skills-panel.is-open,
+    .navigation-projects-panel.is-open,
+    .navigation-links-panel.is-open
+  ) {
+    max-height: calc(100dvh - 40px);
+    overflow-y: auto;
+  }
+  :is(.navigation-project-card p, .navigation-skill-group p) {
+    font-size: 11px;
+    line-height: 1.65;
+    color: #85858a;
+  }
+  :is(.explore-detail, .recruiter-panel, .portfolio-chat-panel) {
+    border-radius: var(--panel-radius);
+    background: var(--surface);
+  }
+  :is(.chat-modal h2, .explore-detail h2, .recruiter-panel h2) {
+    font-size: clamp(28px, 3vw, 40px);
+    line-height: 1.08;
+    letter-spacing: var(--editorial-tracking);
+    font-weight: 500;
+    color: var(--charcoal);
+  }
+  :is(.explore-detail > p, .assistant-message-content p, .recruiter-panel p) {
+    font-size: 14px;
+    line-height: 1.65;
+    color: #68686d;
+    letter-spacing: -0.015em;
+  }
+  :is(.chat-modal-close, .explore-close, .portfolio-chat-header button) {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: #929297;
+    box-shadow: none;
+  }
+  .portfolio-chat-header h2 {
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+    color: var(--charcoal);
+  }
+  .portfolio-chat-panel .assistant-suggestions button {
+    min-height: 30px;
+    padding: 6px 11px;
+    font-size: 11px;
+    font-weight: 400;
+    text-align: left;
+    justify-content: flex-start;
+    white-space: normal;
+  }
+  .portfolio-chat-panel .assistant-jump {
+    min-height: 30px;
+    padding: 6px 11px;
+    font-size: 11px;
+    font-weight: 400;
+  }
+  .assistant-composer {
+    border-radius: 24px;
+    background: var(--surface-muted);
+  }
+  .assistant-composer textarea {
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--charcoal);
+  }
+  .assistant-composer button {
+    border-radius: 999px;
+    background: var(--charcoal);
+    color: var(--surface);
+  }
+  :is(.assistant-sender, .assistant-section-label) {
+    font-size: 11px;
+    letter-spacing: -0.01em;
+    font-weight: 500;
+  }
+  :is(.assistant-message-content h3, .explore-detail h3) {
+    font-weight: 500;
+    font-size: 20px;
+    letter-spacing: -0.035em;
+    line-height: 1.2;
+  }
+  :is(.explore-hero h1, .recruiter-hero h1) {
+    font-size: clamp(48px, 6.5vw, 88px);
+    font-weight: 500;
+    line-height: 1.02;
+    letter-spacing: -0.06em;
+    color: var(--charcoal);
+  }
+  :is(.explore-hero p, .recruiter-hero p) {
+    font-size: clamp(16px, 1.35vw, 19px);
+    line-height: 1.65;
+    letter-spacing: -0.02em;
+    color: var(--charcoal);
+  }
+  :is(
+    .explore-tabs button,
+    .recruiter-view-switch button,
+    .recruiter-starters button
+  ) {
+    min-height: 32px;
+    padding: 6px 13px;
+    border-radius: 999px;
+    background: var(--surface-muted);
+    color: var(--charcoal);
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+  :is(
+    .explore-tabs button[aria-selected="true"],
+    .recruiter-view-switch button[aria-pressed="true"],
+    .recruiter-starters button[aria-pressed="true"]
+  ) {
+    background: var(--charcoal);
+    color: var(--surface);
+  }
+  .navigation-skill-list span {
+    min-height: 23px;
+    padding: 4px 8px;
+    font-size: 9px;
+    font-weight: 400;
+    line-height: 1.25;
+    color: #68686d;
+    background: var(--surface-muted);
+  }
+  .navigation-project-link {
+    font-size: 11px;
+    font-weight: 400;
+    color: #85858a;
+  }
+  .explore-detail-row {
+    border-radius: 18px;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  .explore-detail .explore-pills button {
+    padding: 5px 9px;
+    border-radius: 999px;
+    background: var(--surface-muted);
+    font-size: 10px;
+    color: var(--charcoal);
+  }
+  :is(
+    .project-preview h1,
+    .ai-project h1,
+    .music-project h1,
+    .enterprise-project h1,
+    .productivity-project h1,
+    .certifications h1
+  ) {
+    font-weight: 500;
+    line-height: 1.02;
+    letter-spacing: -0.055em;
+    color: var(--charcoal);
+  }
+  :is(
+    .chat-button:disabled,
+    .recruiter-button:disabled,
+    .assistant-composer button:disabled
+  ) {
+    opacity: 0.5;
+    transform: none;
+  }
+  /* Soft resting states, with emphasis reserved for interaction. */
+  .site-header
+    :is(
+      .navigation-links > a,
+      .navigation-skills-trigger,
+      .navigation-projects-trigger,
+      .navigation-links-trigger,
+      .navigation-link-list a
+    ):is(:hover, :focus-visible, .is-active, [aria-current]) {
+    color: var(--charcoal);
+  }
+  .navigation-project-link:is(:hover, :focus-visible) {
+    color: var(--charcoal);
+  }
+  .navigation-socials a img {
+    width: 21px;
+    height: 21px;
+  }
+  .navigation-project-action img {
+    width: 15px;
+    height: 15px;
+    object-fit: contain;
+    opacity: 0.75;
+  }
+  :is(.chat-modal-close, .explore-close, .portfolio-chat-header button):is(
+    :hover,
+    :focus-visible
+  ) {
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    color: var(--charcoal);
+    transform: none;
+  }
+  :is(
+    .chat-modal-close,
+    .explore-close,
+    .portfolio-chat-header button
+  ):focus-visible {
+    outline: 1px solid #a0a0a4;
+    outline-offset: -5px;
+  }
+  :is(
+    .cloud-platform,
+    .assistant-tags span,
+    .recruiter-meta span,
+    .recruiter-tags span,
+    .explore-meta > span,
+    .explore-domain,
+    .explore-tags span,
+    .explore-pills > span,
+    .ai-project-hero-meta span,
+    .music-project-meta span,
+    .enterprise-project-meta span,
+    .productivity-project-meta span,
+    .music-project-pill-list span,
+    .music-project-api-pills span,
+    .music-project-stack-pills span,
+    .enterprise-project-sql-pills span,
+    .enterprise-project-video-pills span,
+    .project-preview-technologies span
+  ) {
+    min-height: 0;
+    padding: 4px 8px;
+    font-size: 9px;
+    font-weight: 400;
+    line-height: 1.35;
+  }
+  .explore-pills button:not(:where(.explore-project-panel *)) {
+    min-height: 28px;
+    padding: 5px 9px;
+    font-size: 10px;
+    font-weight: 400;
+  }
+  .explore-skill-pill {
+    min-height: 42px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 400;
+  }
+  :is(
+      .hero-button,
+      .ai-explore,
+      .chat-button,
+      .navigation-chat,
+      .navigation-cv,
+      .navigation-project-action,
+      .portfolio-skills-helper,
+      .assistant-suggestions button,
+      .assistant-card-actions a,
+      .assistant-expand,
+      .assistant-complete,
+      .recruiter-page .recruiter-button,
+      .recruiter-reset,
+      .recruiter-links a,
+      .recruiter-page .recruiter-back,
+      .explore-back,
+      .explore-empty button,
+      .project-preview-button,
+      .project-placeholder-back,
+      .project-placeholder-resources a,
+      .certifications-wallet-button,
+      .certifications-closing-button,
+      .certifications-back,
+      .ai-project-button,
+      .ai-project-back,
+      .ai-project-closing-button,
+      .music-project-button,
+      .music-project-back,
+      .music-project-closing-button,
+      .music-project-executive-summary-button,
+      .enterprise-project-button,
+      .enterprise-project-back,
+      .enterprise-project-closing-button,
+      .productivity-project-button,
+      .productivity-project-back,
+      .productivity-project-closing-button,
+      .cloud-profile
+    ):hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: none;
+  }
+  :is(
+    .hero-button,
+    .ai-explore,
+    .chat-button,
+    .navigation-chat,
+    .navigation-cv,
+    .navigation-project-action,
+    .portfolio-skills-helper,
+    .assistant-suggestions button,
+    .assistant-card-actions a,
+    .assistant-expand,
+    .assistant-complete,
+    .recruiter-page .recruiter-button,
+    .recruiter-reset,
+    .recruiter-links a,
+    .recruiter-page .recruiter-back,
+    .explore-back,
+    .explore-empty button,
+    .project-preview-button,
+    .project-placeholder-back,
+    .project-placeholder-resources a,
+    .certifications-wallet-button,
+    .certifications-closing-button,
+    .certifications-back,
+    .ai-project-button,
+    .ai-project-back,
+    .ai-project-closing-button,
+    .music-project-button,
+    .music-project-back,
+    .music-project-closing-button,
+    .music-project-executive-summary-button,
+    .enterprise-project-button,
+    .enterprise-project-back,
+    .enterprise-project-closing-button,
+    .productivity-project-button,
+    .productivity-project-back,
+    .productivity-project-closing-button,
+    .cloud-profile
+  ):disabled {
+    transform: none;
+  }
+  :is(a, button, summary):not(:where(.cv *, .cloud-tile, .explore-project))
+    :is(
+      .lucide-arrow-right,
+      .lucide-arrow-left,
+      .lucide-arrow-up-right,
+      .lucide-arrow-up
+    ) {
+    transition: transform 180ms ease;
+  }
+  :is(a, button, summary):not(:where(.cv *, .cloud-tile, .explore-project)):is(
+      :hover,
+      :focus-visible
+    ):not(:disabled)
+    .lucide-arrow-right {
+    transform: translateX(2px);
+  }
+  :is(a, button, summary):not(:where(.cv *, .cloud-tile, .explore-project)):is(
+      :hover,
+      :focus-visible
+    ):not(:disabled)
+    .lucide-arrow-left {
+    transform: translateX(-2px);
+  }
+  :is(a, button, summary):not(:where(.cv *, .cloud-tile, .explore-project)):is(
+      :hover,
+      :focus-visible
+    ):not(:disabled)
+    .lucide-arrow-up-right {
+    transform: translate(2px, -2px);
+  }
+  :is(a, button, summary):not(:where(.cv *, .cloud-tile, .explore-project)):is(
+      :hover,
+      :focus-visible
+    ):not(:disabled)
+    .lucide-arrow-up {
+    transform: translateY(-2px);
+  }
 
-    /* Frosted surfaces blur only the rounded control, never its surrounding region. */
-    .navigation-pill {
-        background: rgba(250, 249, 246, .72);
-        backdrop-filter: blur(20px) saturate(160%);
-        -webkit-backdrop-filter: blur(20px) saturate(160%);
-    }
-    .portfolio-back-link[href] {
-        display: inline-flex; align-items: center; justify-content: center; gap: 7px;
-        min-height: 36px; padding: 0 16px; border: 0; border-radius: 999px;
-        background: rgba(250, 249, 246, .78); color: #66666b;
-        font-size: 12px; font-weight: 400; line-height: 1.3; letter-spacing: -.01em;
-        backdrop-filter: blur(20px) saturate(160%);
-        -webkit-backdrop-filter: blur(20px) saturate(160%);
-        box-shadow: 0 8px 24px rgba(45, 45, 45, .06);
-    }
-    .portfolio-back-link[href]:is(:hover, :focus-visible) { background: rgba(250, 249, 246, .94); color: var(--charcoal); }
-    .portfolio-back-link > svg { width: 14px; height: 14px; flex-shrink: 0; }
-    .portfolio-actions .portfolio-back-top {
-        position: relative; width: 32px; height: 32px; min-height: 32px; padding: 0;
-    }
-    .portfolio-actions .portfolio-back-top::before { content: ""; position: absolute; inset: -6px; }
-    .portfolio-actions :is(.portfolio-skills-helper, .portfolio-back-top) {
-        background: rgba(250, 249, 246, .78); color: #66666b;
-        backdrop-filter: blur(20px) saturate(160%);
-        -webkit-backdrop-filter: blur(20px) saturate(160%);
-        box-shadow: 0 4px 18px rgba(35, 35, 37, .07);
-    }
-    .portfolio-actions :is(.portfolio-skills-helper, .portfolio-back-top):is(:hover, :focus-visible, [aria-expanded="true"]) { background: rgba(250, 249, 246, .94); color: var(--charcoal); }
-
+  /* Frosted surfaces blur only the rounded control, never its surrounding region. */
+  .navigation-pill {
+    background: rgba(250, 249, 246, 0.72);
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+  }
+  .portfolio-back-link[href] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    min-height: 36px;
+    padding: 0 16px;
+    border: 0;
+    border-radius: 999px;
+    background: rgba(250, 249, 246, 0.78);
+    color: #66666b;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    box-shadow: 0 8px 24px rgba(45, 45, 45, 0.06);
+  }
+  .portfolio-back-link[href]:is(:hover, :focus-visible) {
+    background: rgba(250, 249, 246, 0.94);
+    color: var(--charcoal);
+  }
+  .portfolio-back-link > svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+  }
+  .portfolio-actions .portfolio-back-top {
+    position: relative;
+    width: 32px;
+    height: 32px;
+    min-height: 32px;
+    padding: 0;
+  }
+  .portfolio-actions .portfolio-back-top::before {
+    content: "";
+    position: absolute;
+    inset: -6px;
+  }
+  .portfolio-actions :is(.portfolio-skills-helper, .portfolio-back-top) {
+    background: rgba(250, 249, 246, 0.78);
+    color: #66666b;
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    box-shadow: 0 4px 18px rgba(35, 35, 37, 0.07);
+  }
+  .portfolio-actions
+    :is(.portfolio-skills-helper, .portfolio-back-top):is(
+      :hover,
+      :focus-visible,
+      [aria-expanded="true"]
+    ) {
+    background: rgba(250, 249, 246, 0.94);
+    color: var(--charcoal);
+  }
 }
 @media screen and (max-width: 1100px) {
-    .site-header :is(.navigation-skills-panel.is-open, .navigation-projects-panel.is-open, .navigation-links-panel.is-open) { max-height: none; overflow: visible; }
+  .site-header
+    :is(
+      .navigation-skills-panel.is-open,
+      .navigation-projects-panel.is-open,
+      .navigation-links-panel.is-open
+    ) {
+    max-height: none;
+    overflow: visible;
+  }
 }
 @media screen and (max-width: 600px) {
-    :is(.chat-modal h2, .explore-detail h2) { font-size: 28px; }
-    .portfolio-chat-header h2 { font-size: 24px; }
-    :is(.ai-project-hero-meta, .music-project-meta, .music-project-hero-meta, .enterprise-project-meta, .enterprise-project-hero-meta, .productivity-project-meta, .productivity-project-hero-meta) { display: flex; flex-wrap: wrap; max-width: 100%; }
-    :is(.ai-project-actions, .music-project-actions, .enterprise-project-actions, .productivity-project-actions) { flex-wrap: wrap; }
-    .productivity-project-overview, .productivity-project-media-feature-copy { grid-template-columns: minmax(0, 1fr); gap: 24px; }
-    .productivity-project .productivity-project-overview-columns p { width: auto; max-width: 100%; min-width: 0; }
-    .productivity-project-overview-content, .productivity-project-media-feature-copy > div { min-width: 0; }
-    .productivity-project :is(h1, h2, p) { overflow-wrap: anywhere; }
-    :is(.explore-tabs button, .recruiter-starters button) { padding-inline: 13px; }
+  :is(.chat-modal h2, .explore-detail h2) {
+    font-size: 28px;
+  }
+  .portfolio-chat-header h2 {
+    font-size: 24px;
+  }
+  :is(
+    .ai-project-hero-meta,
+    .music-project-meta,
+    .music-project-hero-meta,
+    .enterprise-project-meta,
+    .enterprise-project-hero-meta,
+    .productivity-project-meta,
+    .productivity-project-hero-meta
+  ) {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+  }
+  :is(
+    .ai-project-actions,
+    .music-project-actions,
+    .enterprise-project-actions,
+    .productivity-project-actions
+  ) {
+    flex-wrap: wrap;
+  }
+  .productivity-project-overview,
+  .productivity-project-media-feature-copy {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+  .productivity-project .productivity-project-overview-columns p {
+    width: auto;
+    max-width: 100%;
+    min-width: 0;
+  }
+  .productivity-project-overview-content,
+  .productivity-project-media-feature-copy > div {
+    min-width: 0;
+  }
+  .productivity-project :is(h1, h2, p) {
+    overflow-wrap: anywhere;
+  }
+  :is(.explore-tabs button, .recruiter-starters button) {
+    padding-inline: 13px;
+  }
 }
 @media (prefers-reduced-motion: reduce) {
-    :is(.hero-button, .ai-explore, .chat-button, .navigation-chat, .navigation-cv, .navigation-project-action, .portfolio-skills-helper, .assistant-suggestions button, .assistant-card-actions a, .assistant-expand, .assistant-complete, .recruiter-page .recruiter-button, .recruiter-reset, .recruiter-links a, .recruiter-page .recruiter-back, .explore-back, .explore-empty button, .project-preview-button, .project-placeholder-back, .project-placeholder-resources a, .certifications-wallet-button, .certifications-closing-button, .certifications-back, .ai-project-button, .ai-project-back, .ai-project-closing-button, .music-project-button, .music-project-back, .music-project-closing-button, .music-project-executive-summary-button, .enterprise-project-button, .enterprise-project-back, .enterprise-project-closing-button, .productivity-project-button, .productivity-project-back, .productivity-project-closing-button, .cloud-profile), :is(.hero-button, .ai-explore, .chat-button, .navigation-chat, .navigation-cv, .navigation-project-action, .portfolio-skills-helper, .assistant-suggestions button, .assistant-card-actions a, .assistant-expand, .assistant-complete, .recruiter-page .recruiter-button, .recruiter-reset, .recruiter-links a, .recruiter-page .recruiter-back, .explore-back, .explore-empty button, .project-preview-button, .project-placeholder-back, .project-placeholder-resources a, .certifications-wallet-button, .certifications-closing-button, .certifications-back, .ai-project-button, .ai-project-back, .ai-project-closing-button, .music-project-button, .music-project-back, .music-project-closing-button, .music-project-executive-summary-button, .enterprise-project-button, .enterprise-project-back, .enterprise-project-closing-button, .productivity-project-button, .productivity-project-back, .productivity-project-closing-button, .cloud-profile):hover:not(:disabled) { transition: none; transform: none; }
-    :is(a, button, summary):not(:where(.cv *, .cloud-tile, .explore-project)):is(:hover, :focus-visible):not(:disabled) :is(.lucide-arrow-right, .lucide-arrow-left, .lucide-arrow-up-right, .lucide-arrow-up) { transition: none; transform: none; }
+  :is(
+    .hero-button,
+    .ai-explore,
+    .chat-button,
+    .navigation-chat,
+    .navigation-cv,
+    .navigation-project-action,
+    .portfolio-skills-helper,
+    .assistant-suggestions button,
+    .assistant-card-actions a,
+    .assistant-expand,
+    .assistant-complete,
+    .recruiter-page .recruiter-button,
+    .recruiter-reset,
+    .recruiter-links a,
+    .recruiter-page .recruiter-back,
+    .explore-back,
+    .explore-empty button,
+    .project-preview-button,
+    .project-placeholder-back,
+    .project-placeholder-resources a,
+    .certifications-wallet-button,
+    .certifications-closing-button,
+    .certifications-back,
+    .ai-project-button,
+    .ai-project-back,
+    .ai-project-closing-button,
+    .music-project-button,
+    .music-project-back,
+    .music-project-closing-button,
+    .music-project-executive-summary-button,
+    .enterprise-project-button,
+    .enterprise-project-back,
+    .enterprise-project-closing-button,
+    .productivity-project-button,
+    .productivity-project-back,
+    .productivity-project-closing-button,
+    .cloud-profile
+  ),
+  :is(
+      .hero-button,
+      .ai-explore,
+      .chat-button,
+      .navigation-chat,
+      .navigation-cv,
+      .navigation-project-action,
+      .portfolio-skills-helper,
+      .assistant-suggestions button,
+      .assistant-card-actions a,
+      .assistant-expand,
+      .assistant-complete,
+      .recruiter-page .recruiter-button,
+      .recruiter-reset,
+      .recruiter-links a,
+      .recruiter-page .recruiter-back,
+      .explore-back,
+      .explore-empty button,
+      .project-preview-button,
+      .project-placeholder-back,
+      .project-placeholder-resources a,
+      .certifications-wallet-button,
+      .certifications-closing-button,
+      .certifications-back,
+      .ai-project-button,
+      .ai-project-back,
+      .ai-project-closing-button,
+      .music-project-button,
+      .music-project-back,
+      .music-project-closing-button,
+      .music-project-executive-summary-button,
+      .enterprise-project-button,
+      .enterprise-project-back,
+      .enterprise-project-closing-button,
+      .productivity-project-button,
+      .productivity-project-back,
+      .productivity-project-closing-button,
+      .cloud-profile
+    ):hover:not(:disabled) {
+    transition: none;
+    transform: none;
+  }
+  :is(a, button, summary):not(:where(.cv *, .cloud-tile, .explore-project)):is(
+      :hover,
+      :focus-visible
+    ):not(:disabled)
+    :is(
+      .lucide-arrow-right,
+      .lucide-arrow-left,
+      .lucide-arrow-up-right,
+      .lucide-arrow-up
+    ) {
+    transition: none;
+    transform: none;
+  }
 }

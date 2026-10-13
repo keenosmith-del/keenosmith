@@ -1,8 +1,11 @@
 [data-scroll-fade] {
-    opacity: calc(var(--scroll-fade-opacity, 1) * var(--scroll-load-opacity, 0));
-    transition: opacity 320ms ease;
+  opacity: calc(var(--scroll-fade-opacity, 1) * var(--scroll-load-opacity, 0));
+  transition: opacity 320ms ease;
 }
 
 @media (prefers-reduced-motion: reduce) {
-    [data-scroll-fade] { opacity: 1; transition: none; }
+  [data-scroll-fade] {
+    opacity: 1;
+    transition: none;
+  }
 }

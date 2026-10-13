@@ -1,53 +1,149 @@
-import assert from 'node:assert/strict';
-import { build } from 'esbuild';
-await build({ entryPoints: ['src/components/pages/RecruiterView/utils/recruiterScoring.js'], bundle: true, platform: 'node', format: 'esm', outfile: '/tmp/portfolio-recruiter-scoring.mjs', loader: { '.png': 'dataurl' } });
-const { assessRole } = await import('/tmp/portfolio-recruiter-scoring.mjs');
-const run = description => assessRole({ title: 'Engineer', description });
-const full = run('Requirements: React, Node.js, REST APIs, SQL and cloud engineering. Build full-stack applications.');
-for (const name of ['React','Node.js','REST APIs','SQL','Cloud']) assert(full.rows.some(r => r.name === name), name);
-assert(full.rows.find(r => r.name === 'React').score >= 80);
-assert(full.projects.some(p => p.id === 'productivity-platform'));
-assert.equal(full.score, Math.round(full.rows.reduce((n,r) => n+r.score*r.weight,0)/full.rows.reduce((n,r) => n+r.weight,0)));
-assert.deepEqual(run('Requirements: React, Node.js, REST APIs, SQL and cloud engineering. Build full-stack applications.'),full);
-const ai = run('Required Python, RAG, LLMs, agents, vector search and cloud AI. Develop intelligent applications.');
-for (const name of ['Python','RAG','LLM Integration','Agentic AI','Vector Search']) assert(ai.rows.some(r => r.name === name),name);
-assert(ai.projects.some(p => p.id === 'ai-assistant')); assert(ai.credentials.length);
-const google = run('Google Cloud role requires GCP, Vertex AI, BigQuery, Cloud Run and Pub/Sub for data systems.');
-for (const name of ['Google Cloud','Vertex AI','BigQuery','Cloud Run','Pub/Sub']) assert(google.rows.some(r => r.name === name),name);
-assert(google.expansion.groups.includes('google'));
-assert(google.projects.some(p => p.portfolioPublicationStatus === 'not-yet-published'));
-const gap = run('We require Salesforce and SAP implementation for enterprise business systems.');
-assert(gap.gaps.some(r => r.name === 'Salesforce'));assert(gap.gaps.some(r => r.name === 'SAP'));assert.equal(gap.score,0);
+import assert from "node:assert/strict";
+import { build } from "esbuild";
+await build({
+  entryPoints: ["src/components/pages/RecruiterView/utils/recruiterScoring.js"],
+  bundle: true,
+  platform: "node",
+  format: "esm",
+  outfile: "/tmp/portfolio-recruiter-scoring.mjs",
+  loader: { ".png": "dataurl" },
+});
+const { assessRole } = await import("/tmp/portfolio-recruiter-scoring.mjs");
+const run = (description) => assessRole({ title: "Engineer", description });
+const full = run(
+  "Requirements: React, Node.js, REST APIs, SQL and cloud engineering. Build full-stack applications.",
+);
+for (const name of ["React", "Node.js", "REST APIs", "SQL", "Cloud"])
+  assert(
+    full.rows.some((r) => r.name === name),
+    name,
+  );
+assert(full.rows.find((r) => r.name === "React").score >= 80);
+assert(full.projects.some((p) => p.id === "productivity-platform"));
+assert.equal(
+  full.score,
+  Math.round(
+    full.rows.reduce((n, r) => n + r.score * r.weight, 0) /
+      full.rows.reduce((n, r) => n + r.weight, 0),
+  ),
+);
+assert.deepEqual(
+  run(
+    "Requirements: React, Node.js, REST APIs, SQL and cloud engineering. Build full-stack applications.",
+  ),
+  full,
+);
+const ai = run(
+  "Required Python, RAG, LLMs, agents, vector search and cloud AI. Develop intelligent applications.",
+);
+for (const name of [
+  "Python",
+  "RAG",
+  "LLM Integration",
+  "Agentic AI",
+  "Vector Search",
+])
+  assert(
+    ai.rows.some((r) => r.name === name),
+    name,
+  );
+assert(ai.projects.some((p) => p.id === "ai-assistant"));
+assert(ai.credentials.length);
+const google = run(
+  "Google Cloud role requires GCP, Vertex AI, BigQuery, Cloud Run and Pub/Sub for data systems.",
+);
+for (const name of [
+  "Google Cloud",
+  "Vertex AI",
+  "BigQuery",
+  "Cloud Run",
+  "Pub/Sub",
+])
+  assert(
+    google.rows.some((r) => r.name === name),
+    name,
+  );
+assert(google.expansion.groups.includes("google"));
+assert(
+  google.projects.some(
+    (p) => p.portfolioPublicationStatus === "not-yet-published",
+  ),
+);
+const gap = run(
+  "We require Salesforce and SAP implementation for enterprise business systems.",
+);
+assert(gap.gaps.some((r) => r.name === "Salesforce"));
+assert(gap.gaps.some((r) => r.name === "SAP"));
+assert.equal(gap.score, 0);
 assert(gap.projects.length === 0);
-const tenure = run('Requires React, a computer science degree and 8+ years of professional engineering experience.');
-assert(tenure.rows.some(r => r.type === 'experience' && r.score === 0));
-assert(tenure.rows.some(r => r.type === 'education' && r.detail.includes('not confirmed')));
-assert.throws(() => run(''),/fuller/); assert.throws(() => run('React'),/fuller/);
-assert.throws(() => run('This is a role about general duties and other unspecified work.'),/No assessable/);
-assert.throws(() => run('React '.repeat(3000)),/16,000/);
-assert.equal(new Set(full.projects.map(p => p.id)).size,full.projects.length);
-assert(full.projects.every(p => p.demonstrated));
-console.log('Recruiter scoring: full-stack, AI, Google expansion, unpublished evidence, gaps, context, determinism and input checks passed.');
+const tenure = run(
+  "Requires React, a computer science degree and 8+ years of professional engineering experience.",
+);
+assert(tenure.rows.some((r) => r.type === "experience" && r.score === 0));
+assert(
+  tenure.rows.some(
+    (r) => r.type === "education" && r.detail.includes("not confirmed"),
+  ),
+);
+assert.throws(() => run(""), /fuller/);
+assert.throws(() => run("React"), /fuller/);
+assert.throws(
+  () => run("This is a role about general duties and other unspecified work."),
+  /No assessable/,
+);
+assert.throws(() => run("React ".repeat(3000)), /16,000/);
+assert.equal(
+  new Set(full.projects.map((p) => p.id)).size,
+  full.projects.length,
+);
+assert(full.projects.every((p) => p.demonstrated));
+console.log(
+  "Recruiter scoring: full-stack, AI, Google expansion, unpublished evidence, gaps, context, determinism and input checks passed.",
+);
 
-const requiredGap = run('React is required; SAP is essential for this position. Build engineering systems.');
-const preferredGap = run('React is required; SAP is nice to have for this position. Build engineering systems.');
+const requiredGap = run(
+  "React is required; SAP is essential for this position. Build engineering systems.",
+);
+const preferredGap = run(
+  "React is required; SAP is nice to have for this position. Build engineering systems.",
+);
 assert(requiredGap.score < preferredGap.score);
-assert.equal(requiredGap.rows.find(r => r.name === 'SAP').importance, 'Essential');
-assert.equal(preferredGap.rows.find(r => r.name === 'SAP').importance, 'Preferred');
-assert(requiredGap.importantGaps.some(r => r.name === 'SAP'));
-assert(!preferredGap.importantGaps.some(r => r.name === 'SAP'));
-const headings = run('Required skills:\nReact\nNode.js\nPreferred skills:\nSAP\nSalesforce');
-assert.equal(headings.rows.find(r => r.name === 'SAP').importance, 'Preferred');
-assert.equal(headings.rows.find(r => r.name === 'React').importance, 'Essential');
-const hard = run('React is required. Mandatory security clearance and professional licence. Minimum 5 years software development.');
-assert(hard.importantGaps.some(r => r.name === 'Security clearance'));
-assert(hard.importantGaps.some(r => r.type === 'experience'));
-assert(hard.rows.find(r => r.name === 'Professional licence').score === 0);
-const sparse = run('React applications are the main responsibility of this engineering role.');
-assert.equal(sparse.evidenceCoverage, 'Limited');
-assert(full.categoryAlignment.some(c => c.name === 'Frontend & UI'));
-assert(full.categoryAlignment.every(c => c.score >= 0 && c.score <= 100));
-assert(full.projects.every(p => p.demonstratedMatches.length));
-assert(google.credentials.every(c => c.matches.length));
-assert(full.summary.includes('React'));
-console.log('Refinement: importance, preference weighting, hard gaps, evidence coverage, category bars and relevance checks passed.');
+assert.equal(
+  requiredGap.rows.find((r) => r.name === "SAP").importance,
+  "Essential",
+);
+assert.equal(
+  preferredGap.rows.find((r) => r.name === "SAP").importance,
+  "Preferred",
+);
+assert(requiredGap.importantGaps.some((r) => r.name === "SAP"));
+assert(!preferredGap.importantGaps.some((r) => r.name === "SAP"));
+const headings = run(
+  "Required skills:\nReact\nNode.js\nPreferred skills:\nSAP\nSalesforce",
+);
+assert.equal(
+  headings.rows.find((r) => r.name === "SAP").importance,
+  "Preferred",
+);
+assert.equal(
+  headings.rows.find((r) => r.name === "React").importance,
+  "Essential",
+);
+const hard = run(
+  "React is required. Mandatory security clearance and professional licence. Minimum 5 years software development.",
+);
+assert(hard.importantGaps.some((r) => r.name === "Security clearance"));
+assert(hard.importantGaps.some((r) => r.type === "experience"));
+assert(hard.rows.find((r) => r.name === "Professional licence").score === 0);
+const sparse = run(
+  "React applications are the main responsibility of this engineering role.",
+);
+assert.equal(sparse.evidenceCoverage, "Limited");
+assert(full.categoryAlignment.some((c) => c.name === "Frontend & UI"));
+assert(full.categoryAlignment.every((c) => c.score >= 0 && c.score <= 100));
+assert(full.projects.every((p) => p.demonstratedMatches.length));
+assert(google.credentials.every((c) => c.matches.length));
+assert(full.summary.includes("React"));
+console.log(
+  "Refinement: importance, preference weighting, hard gaps, evidence coverage, category bars and relevance checks passed.",
+);

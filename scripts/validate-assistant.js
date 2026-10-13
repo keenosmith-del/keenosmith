@@ -1,24 +1,73 @@
-import assert from 'node:assert/strict';
-import { build } from 'esbuild';
-import { pathToFileURL } from 'node:url';
-await build({entryPoints:['src/assistant/engine.js'],bundle:true,platform:'node',format:'esm',outfile:'/tmp/portfolio-assistant-engine.mjs',loader:{'.png':'dataurl'}});
-const { answer }=await import(pathToFileURL('/tmp/portfolio-assistant-engine.mjs'));
-const react=answer('Does Keeno know React?');
-assert(react.projects.some(p=>p.id==='ai-assistant'));assert(react.indicators.some(i=>i.skill==='React'&&i.band>=3));
-const follow=answer('Which other projects?',react.context);assert(follow.interpretation.entities.includes('React'));assert(follow.projects.some(p=>!react.context.projectIds.includes(p.id)));
-assert(answer('Does he know ReactJS?').indicators[0].skill==='React');
-assert(answer('Does he know Pythn?').interpretation.entities.includes('Python'));
-assert(answer('What certifications does Keeno have?').credentials.length>15);
-assert(answer('Does he have Microsoft certifications?').credentials.every(c=>c.issuer==='Microsoft'));
-assert(answer('Has Keeno built AI-powered applications?').projects.some(p=>p.id==='ai-assistant'));
-assert(answer('What has he built with AI agents?').projects.some(p=>p.id==='microsoft'));
-assert(answer('Would Keeno fit a Full-Stack AI Engineer role?').indicators.length>0);
-assert(answer('Job requirements: React, Node.js, Docker, PostgreSQL, Rust. Responsibilities: build APIs.').text.includes('Rust'));
-assert(answer('What is the weather tomorrow?').interpretation.intent==='unknown');
-assert(answer('What education does he have?').text.includes('An awarded degree is not confirmed'));
-assert(answer('Does he know TypeScript?').indicators.some(i=>i.band>=3)); // Source audit now verifies implemented TypeScript.
-const fs=await import('node:fs');
-const {projectConcepts}=await import('../src/data/projectConcepts.js');
-const app=fs.readFileSync('src/App.jsx','utf8');
-for (const p of react.projects) assert(p.path==='/cv'||app.includes(`path="${p.path}"`)||projectConcepts.some(c=>c.id===p.id)||p.status.includes('Planned')||app.includes(`'${p.id}'`),`Missing route: ${p.path}`);
-console.log('Assistant engine: 12 targeted journeys and accuracy checks passed.');
+import assert from "node:assert/strict";
+import { build } from "esbuild";
+import { pathToFileURL } from "node:url";
+await build({
+  entryPoints: ["src/assistant/engine.js"],
+  bundle: true,
+  platform: "node",
+  format: "esm",
+  outfile: "/tmp/portfolio-assistant-engine.mjs",
+  loader: { ".png": "dataurl" },
+});
+const { answer } = await import(
+  pathToFileURL("/tmp/portfolio-assistant-engine.mjs")
+);
+const react = answer("Does Keeno know React?");
+assert(react.projects.some((p) => p.id === "ai-assistant"));
+assert(react.indicators.some((i) => i.skill === "React" && i.band >= 3));
+const follow = answer("Which other projects?", react.context);
+assert(follow.interpretation.entities.includes("React"));
+assert(follow.projects.some((p) => !react.context.projectIds.includes(p.id)));
+assert(answer("Does he know ReactJS?").indicators[0].skill === "React");
+assert(
+  answer("Does he know Pythn?").interpretation.entities.includes("Python"),
+);
+assert(answer("What certifications does Keeno have?").credentials.length > 15);
+assert(
+  answer("Does he have Microsoft certifications?").credentials.every(
+    (c) => c.issuer === "Microsoft",
+  ),
+);
+assert(
+  answer("Has Keeno built AI-powered applications?").projects.some(
+    (p) => p.id === "ai-assistant",
+  ),
+);
+assert(
+  answer("What has he built with AI agents?").projects.some(
+    (p) => p.id === "microsoft",
+  ),
+);
+assert(
+  answer("Would Keeno fit a Full-Stack AI Engineer role?").indicators.length >
+    0,
+);
+assert(
+  answer(
+    "Job requirements: React, Node.js, Docker, PostgreSQL, Rust. Responsibilities: build APIs.",
+  ).text.includes("Rust"),
+);
+assert(
+  answer("What is the weather tomorrow?").interpretation.intent === "unknown",
+);
+assert(
+  answer("What education does he have?").text.includes(
+    "An awarded degree is not confirmed",
+  ),
+);
+assert(answer("Does he know TypeScript?").indicators.some((i) => i.band >= 3)); // Source audit now verifies implemented TypeScript.
+const fs = await import("node:fs");
+const { projectConcepts } = await import("../src/data/projectConcepts.js");
+const app = fs.readFileSync("src/App.jsx", "utf8");
+for (const p of react.projects)
+  assert(
+    p.path === "/cv" ||
+      app.includes(`path="${p.path}"`) ||
+      projectConcepts.some((c) => c.id === p.id) ||
+      p.status.includes("Planned") ||
+      app.includes(`'${p.id}'`),
+    `Missing route: ${p.path}`,
+  );
+console.log(
+  "Assistant engine: 12 targeted journeys and accuracy checks passed.",
+);

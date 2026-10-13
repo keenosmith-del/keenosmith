@@ -212,11 +212,14 @@ function Header() {
   useEffect(() => {
     // Track the section passing beneath the header, including sections absent from the menu.
     const sections = [...document.querySelectorAll("main > section[id]")];
-    const observer = new IntersectionObserver((entries) => {
-      for (const entry of entries) {
-        if (entry.isIntersecting) setCurrentSection(entry.target.id);
-      }
-    }, { rootMargin: "-15% 0px -84% 0px", threshold: 0 });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) setCurrentSection(entry.target.id);
+        }
+      },
+      { rootMargin: "-15% 0px -84% 0px", threshold: 0 },
+    );
     sections.forEach((section) => observer.observe(section));
     return () => observer.disconnect();
   }, []);
@@ -262,7 +265,8 @@ function Header() {
 
   useEffect(() => {
     window.addEventListener("portfolio:open-contact", handleChatOpen);
-    return () => window.removeEventListener("portfolio:open-contact", handleChatOpen);
+    return () =>
+      window.removeEventListener("portfolio:open-contact", handleChatOpen);
   }, [handleChatOpen]);
 
   const handleChatClose = () => {
@@ -477,7 +481,13 @@ function Header() {
     return () => {
       document.removeEventListener("mousedown", handleOutsideClick);
     };
-  }, [isSkillsOpen, isProjectsOpen, isLinksOpen, isMobileMenuOpen, closeAllDropdowns]);
+  }, [
+    isSkillsOpen,
+    isProjectsOpen,
+    isLinksOpen,
+    isMobileMenuOpen,
+    closeAllDropdowns,
+  ]);
 
   useEffect(() => {
     if (!isSkillsOpen && !isProjectsOpen && !isLinksOpen && !isMobileMenuOpen) {
@@ -496,7 +506,13 @@ function Header() {
     return () => {
       document.removeEventListener("keydown", handleEscape);
     };
-  }, [isSkillsOpen, isProjectsOpen, isLinksOpen, isMobileMenuOpen, closeAllDropdowns]);
+  }, [
+    isSkillsOpen,
+    isProjectsOpen,
+    isLinksOpen,
+    isMobileMenuOpen,
+    closeAllDropdowns,
+  ]);
 
   useEffect(() => {
     if (!Object.values(invalidFields).some(Boolean)) {
@@ -576,15 +592,29 @@ function Header() {
             </a>
 
             <div className="navigation-links" id="navigation-headings">
-              <a href="#top" aria-current={currentSection === "top" ? "location" : undefined} onClick={closeAllDropdowns}>
+              <a
+                href="#top"
+                aria-current={currentSection === "top" ? "location" : undefined}
+                onClick={closeAllDropdowns}
+              >
                 Home
               </a>
 
-              <a href="#cloud" aria-current={currentSection === "cloud" ? "location" : undefined} onClick={closeAllDropdowns}>
+              <a
+                href="#cloud"
+                aria-current={
+                  currentSection === "cloud" ? "location" : undefined
+                }
+                onClick={closeAllDropdowns}
+              >
                 Cloud
               </a>
 
-              <a href="#ai" aria-current={currentSection === "ai" ? "location" : undefined} onClick={closeAllDropdowns}>
+              <a
+                href="#ai"
+                aria-current={currentSection === "ai" ? "location" : undefined}
+                onClick={closeAllDropdowns}
+              >
                 AI
               </a>
 
@@ -869,7 +899,9 @@ function Header() {
             </button>
 
             <div className="chat-modal-header">
-              <p id="chat-modal-title">Have a project, idea, or opportunity in mind?</p>
+              <p id="chat-modal-title">
+                Have a project, idea, or opportunity in mind?
+              </p>
             </div>
 
             <form
