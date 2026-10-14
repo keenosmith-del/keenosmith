@@ -1,7 +1,10 @@
 import { interpret } from "./interpret.js";
 import { retrieve, evidence } from "./retrieve.js";
 import { education, experience } from "./knowledge.js";
+import { socialAnswer } from './social.js';
 export function answer(question, context = {}) {
+  const social = socialAnswer(question, context);
+  if (social) return social;
   const q = interpret(question, context),
     found = retrieve(q, context);
   let cards = found.projects,
@@ -19,7 +22,7 @@ export function answer(question, context = {}) {
   }
   if (q.intent === "education") {
     cards = [];
-    text = education.join("\n\n");
+    text = education.join("\n\n") + "\n\nAn awarded degree is not confirmed in the portfolio.";
   }
   if (q.intent === "experience") {
     cards = [];
@@ -131,6 +134,7 @@ export function answer(question, context = {}) {
     suggestions: prompts,
     context: {
       entities: q.entities.length ? q.entities : names,
+      groups: q.expansion.groups,
       projectIds: cards.slice(0, 3).map((p) => p.id),
       intent: q.intent,
       roles:

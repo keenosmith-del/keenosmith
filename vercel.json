@@ -1,8 +1,17 @@
 {
-    "rewrites": [
-        {
-            "source": "/(.*)",
-            "destination": "/index.html"
-        }
-    ]
+  "functions": {
+    "api/assistant.js": {
+      "maxDuration": 20
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/api/assistant",
+      "destination": "/api/assistant"
+    },
+    {
+      "source": "/((?!api/).*)",
+      "destination": "/index.html"
+    }
+  ]
 }

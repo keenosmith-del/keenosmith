@@ -22,3 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Server catalogue is regenerated from the verified portfolio before dev/build.
+server/catalogue.generated.js
+# Server-only secrets
+.env
+.env.*
+!.env.example

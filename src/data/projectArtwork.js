@@ -11,26 +11,21 @@ import telecomCover from "../assets/images/custom-projects/telecom-project.png";
 import fieldServiceCover from "../assets/images/custom-projects/field-service-project.png";
 import fleetCover from "../assets/images/custom-projects/logistics-project.png";
 
-import mernCover from "../assets/explore-projects/furry-green.png";
-import ragCover from "../assets/explore-projects/elderly-man-sage.png";
-import workspaceCover from "../assets/explore-projects/cozy-sheep.png";
-import musicCover from "../assets/explore-projects/pink-monster.png";
-import visualOneCover from "../assets/explore-projects/pink-sweater.png";
-import visualTwoCover from "../assets/explore-projects/red-stoic-man.png";
-
+import mernCover from "../assets/images/custom-projects/mern-project.png";
+import ragCover from "../assets/images/custom-projects/ai-model-project.png";
+import workspaceCover from "../assets/images/custom-projects/enterprise-workspace-project.png";
+import musicCover from "../assets/images/custom-projects/music-api-project.png";
+import manufacturingCover from "../assets/images/custom-projects/intelligence-manufacturing-project.png";
+import mlopsCover from "../assets/images/custom-projects/enterprise-ai-mlops.png";
 import eventOpsCover from "../assets/images/ai-section/eventops-project.png";
-import visualThreeCover from "../assets/explore-projects/headphones-guy.png";
 
 // Shared by Explore and Selected projects; key by ID to keep artwork and colours aligned.
 export const projectArtwork = {
+  "intelligence-manufacturing-llmops": { image: manufacturingCover, background: "#fff7ed", ink: "var(--charcoal)" },
+  "enterprise-ai-mlops": { image: mlopsCover, background: "#78b8be", ink: "var(--charcoal)" },
   "eventops-intelligence": {
     image: eventOpsCover,
     background: "#d5d7d4",
-    ink: "var(--charcoal)",
-  },
-  "ux-ui-visual-3": {
-    image: visualThreeCover,
-    background: "#90bbc2",
     ink: "var(--charcoal)",
   },
   "hugging-face": {
@@ -83,12 +78,12 @@ export const projectArtwork = {
   },
   "productivity-platform": {
     image: mernCover,
-    background: "#169f7d",
-    ink: "var(--surface)",
+    background: "#d5d7d4",
+    ink: "var(--charcoal)",
   },
   "ai-assistant": {
     image: ragCover,
-    background: "#d2ccc8",
+    background: "#e4ceb5",
     ink: "var(--charcoal)",
   },
   "enterprise-workspace": {
@@ -100,15 +95,5 @@ export const projectArtwork = {
     image: musicCover,
     background: "#d3a6a3",
     ink: "var(--charcoal)",
-  },
-  "ux-ui-visual-1": {
-    image: visualOneCover,
-    background: "#d97c83",
-    ink: "var(--charcoal)",
-  },
-  "ux-ui-visual-2": {
-    image: visualTwoCover,
-    background: "#9e3c46",
-    ink: "var(--surface)",
   },
 };

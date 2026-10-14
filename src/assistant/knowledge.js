@@ -1,3 +1,4 @@
+import { rebuildingProjects } from "../data/rebuildingProjects.js";
 import {
   additionalProjects,
   cvSkillEvidence,
@@ -95,6 +96,7 @@ const implemented = [
   ],
 ];
 const existingProjects = [
+  ...rebuildingProjects.filter((p) => p.planned).map((p) => ({ ...p, status: "Planned · Not built yet", demonstrated: false })),
   ...cvProjects,
   ...additionalProjects,
   ...implemented.map(([id, title, description, technologies, repository]) => ({
@@ -209,8 +211,9 @@ export const projects = existingProjects.map((p) => {
   ];
   const built = p.demonstrated || !!extra;
   const original = existingProjects.find((r) => r.id === canonicalId) || p;
+  const rebuilding = rebuildingProjects.some((r) => r.id === canonicalId && !r.planned);
   const publication =
-    extra && !original.demonstrated
+    rebuilding ? "not-yet-published" : extra && !original.demonstrated
       ? "not-yet-published"
       : original.demonstrated
         ? "published"
@@ -239,7 +242,7 @@ export const projects = existingProjects.map((p) => {
         : "needs-review",
     demonstrated: built,
     planned: !built && !!p.planned,
-    status: extra
+    status: rebuilding ? "Rebuilding · Previous implementation documented" : extra
       ? publication === "not-yet-published"
         ? "Built · Portfolio page coming soon"
         : "Built · Source inspected"

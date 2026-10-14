@@ -26,7 +26,9 @@ export const Evidence = memo(function Evidence({ response, onNavigate }) {
   const list = response.projects || [],
     credentials = response.credentials || [];
   const entities = response.interpretation?.entities || [];
-  const expandable = list.length > 3 || credentials.length > 3;
+  const preview = response.compact ? 2 : 3;
+  const expandable = list.length > preview || credentials.length > preview;
+  if (!list.length && !credentials.length && !response.indicators?.length) return null;
   return (
     <div className="assistant-evidence">
       {response.indicators?.length > 0 && (
@@ -61,7 +63,7 @@ export const Evidence = memo(function Evidence({ response, onNavigate }) {
             <h3 className="assistant-section-label">
               Supporting projects <span>{list.length}</span>
             </h3>
-            {(expanded ? list : list.slice(0, 3)).map((p) => {
+            {(expanded ? list : list.slice(0, preview)).map((p) => {
               const technologies = [...p.technologies]
                 .sort(
                   (a, b) =>
@@ -118,7 +120,7 @@ export const Evidence = memo(function Evidence({ response, onNavigate }) {
             <h3 className="assistant-section-label">
               Credentials <span>{credentials.length}</span>
             </h3>
-            {(expanded ? credentials : credentials.slice(0, 3)).map((c) => (
+            {(expanded ? credentials : credentials.slice(0, preview)).map((c) => (
               <article
                 className="assistant-card assistant-credential"
                 key={c.id}

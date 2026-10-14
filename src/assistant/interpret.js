@@ -12,7 +12,10 @@ export const normalize = (s) =>
     .replace(/\s+/g, " ");
 const aliases = {
   React: ["reactjs", "react.js", "raect"],
+  JavaScript: ["js", "ecmascript"],
+  Python: ["py"],
   Azure: ["microsoft azure"],
+  "Distributed Systems": ["distributed architecture", "distributed computing"],
   "Node.js": ["node", "nodejs"],
   "Express.js": ["express"],
   "Google Cloud": ["gcp"],
@@ -47,15 +50,20 @@ export function interpret(raw, context = {}) {
         );
         if (match) entities.push(match);
       }
-  const expansion = expandQuery(text, skills);
-  const projectIds = projects
+  let expansion = expandQuery(text, skills);
+  const refersBack = /^(which ones|which is|what has he built with them|explain further|explain the architecture|how does this compare|show relevant projects)/.test(text);
+  if (refersBack && !entities.length && !expansion.groups.length && context.groups?.length)
+    expansion = expandQuery(context.groups.join(" "), skills);
+  let projectIds = projects
     .filter(
       (p) =>
         contains(text, p.id.replaceAll("-", " ")) || contains(text, p.title),
     )
     .map((p) => p.id);
+  if (/^(explain further|explain the architecture|tell me more|how does this compare)/.test(text) && !projectIds.length)
+    projectIds = context.projectIds || [];
   const followup =
-    /^(which|what about|show|tell me more|would that|and |those)/.test(text);
+    /^(which|what about|what has he built with|show|tell me more|explain|how does|would that|and |those)/.test(text);
   if (
     !entities.length &&
     followup &&
@@ -97,7 +105,8 @@ export function interpret(raw, context = {}) {
   if (/cloud|devops/.test(text)) domains.push("Cloud, DevOps & Infrastructure");
   if (!entities.length && intent === "projects" && followup)
     entities = context.entities || [];
-  if (expansion.groups.length && ["experience", "unknown"].includes(intent))
+  if (refersBack && intent === "unknown" && context.intent) intent = context.intent;
+  if ((expansion.groups.length || entities.length) && ["experience", "unknown"].includes(intent))
     intent = "skills";
   return {
     expansion,

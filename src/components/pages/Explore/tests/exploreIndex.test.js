@@ -20,17 +20,28 @@ try {
   const { composeProjects } = await server.ssrLoadModule(
     "/src/components/pages/Explore/utils/explorePresentation.js",
   );
-  assert.equal(curatedProjects.length, 20);
-  assert.equal(new Set(curatedProjects.map((p) => p.id)).size, 20);
+  assert.equal(curatedProjects.length, 19);
+  assert(curatedProjects.every((p) => !p.id.startsWith('ux-ui-')));
+  for (const id of ['intelligence-manufacturing-llmops', 'enterprise-ai-mlops']) {
+    const project = projectIndex.find((p) => p.id === id);
+    assert(project.planned && !project.demonstrated && !project.implementedTechnologies.length);
+    assert(!project.repositoryUrl);
+    assert(curatedProjects.some((p) => p.id === id));
+  }
+  for (const id of ['productivity-platform', 'music-api', 'enterprise-workspace', 'ai-assistant']) {
+    assert(!curatedProjects.find((p) => p.id === id).hasDetailPage);
+    assert(projectIndex.find((p) => p.id === id).status.includes('Rebuilding'));
+  }
+  assert.equal(new Set(curatedProjects.map((p) => p.id)).size, 19);
   assert.equal(
     curatedProjects.filter((p) => p.categories.includes("backend")).length,
-    17,
+    19,
   );
   assert.equal(
     curatedProjects.filter((p) => !p.categories.includes("backend")).length,
-    3,
+    0,
   );
-  assert.equal(curatedProjects.filter((p) => p.tone === "pink").length, 2);
+  assert.equal(curatedProjects.filter((p) => p.tone === "pink").length, 1);
   assert.equal(curatedProjects.find((p) => p.id === "claude").tone, "orange");
   assert.equal(
     curatedProjects.find((p) => p.id === "hugging-face").tone,
@@ -50,7 +61,6 @@ try {
             "claude",
             "hugging-face",
             "telecom-billing",
-            "ux-ui-visual-1",
           ].includes(p.id),
       )
       .every((p) => ["charcoal", "surface"].includes(p.tone)),

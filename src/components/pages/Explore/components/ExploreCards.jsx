@@ -15,7 +15,6 @@ const alwaysVisibleProjects = new Set([
   "claude",
   "field-service",
   "enterprise-workspace",
-  "ux-ui-visual-1",
 ]);
 
 const titleVisibleProjects = new Set([

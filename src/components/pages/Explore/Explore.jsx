@@ -27,7 +27,6 @@ const projectCategories = [
   ["backend", "Full-Stack"],
   ["cloud", "Cloud"],
   ["infrastructure", "Infrastructure"],
-  ["frontend", "UX/UI"],
 ];
 const credentialCategories = [
   "",
@@ -330,9 +329,6 @@ export default function Explore() {
                 <CredentialGallery
                   items={results}
                   badgeMode={category === "Badges"}
-                  showArtwork={
-                    !query && !category && !technology && !status && !ecosystem
-                  }
                 />
               ) : (
                 <TileGallery

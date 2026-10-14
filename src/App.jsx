@@ -27,12 +27,13 @@ import ExploreProjectPreview from "./components/pages/Explore/ExploreProjectPrev
 import CV from "./components/pages/CV/CV.jsx";
 import RecruiterView from "./components/pages/RecruiterView/RecruiterView.jsx";
 
-import AIModel from "./components/pages/projects/AI/AIModel.jsx";
-import ProductivityPlatform from "./components/pages/projects/ProductivityPlatform/ProductivityPlatform.jsx";
-import MusicAPI from "./components/pages/projects/MusicAPI/MusicAPI.jsx";
-import EnterpriseWorkspace from "./components/pages/projects/EnterpriseWorkspace/EnterpriseWorkspace.jsx";
+import { rebuildingProjects } from "./data/rebuildingProjects.js";
+import { canonicalProjects } from "./assistant/knowledge.js";
 
 const placeholderProjects = [
+  ...rebuildingProjects.map((project) => ({ ...project,
+    repositoryUrl: canonicalProjects.find((p) => p.id === project.id)?.repositoryUrl,
+  })),
   ...cloudProjects,
   ...aiProjects,
   kailorProject,
@@ -107,30 +108,12 @@ function App() {
         />
         <Route path="/companies/kai" element={<Company company="kai" />} />
         <Route path="/explore" element={<Explore />} />
-        {["ux-ui-visual-1", "ux-ui-visual-2", "ux-ui-visual-3"].map((id) => (
-          <Route
-            key={id}
-            path={`/projects/${id}`}
-            element={<ExploreProjectPreview projectId={id} />}
-          />
-        ))}
         <Route
           path="/explore/projects/:projectId"
           element={<ExploreProjectPreview />}
         />
         <Route path="/cv" element={<CV />} />
         <Route path="/recruiter-view" element={<RecruiterView />} />
-        <Route path="/projects/ai-assistant" element={<AIModel />} />
-        <Route
-          path="/projects/productivity-platform"
-          element={<ProductivityPlatform />}
-        />
-        <Route path="/projects/music-api" element={<MusicAPI />} />
-        <Route
-          path="/projects/enterprise-workspace"
-          element={<EnterpriseWorkspace />}
-        />
-
         <Route
           path="/certifications"
           element={<Navigate to="/explore?tab=credentials" replace />}

@@ -152,6 +152,8 @@
   display: flex;
 }
 .portfolio-chat-body {
+  display: flex;
+  flex-direction: column;
   position: relative;
   overflow-anchor: none;
   flex: 1;
@@ -437,8 +439,7 @@
   color: #747479;
 }
 .assistant-card-actions a:hover {
-  text-decoration: underline;
-  text-underline-offset: 4px;
+  text-decoration: none;
 }
 .assistant-card-details summary {
   display: inline-flex;
@@ -782,4 +783,15 @@
   .portfolio-chat-panel {
     width: min(420px, calc(100vw - 40px));
   }
+}
+
+/* Real conversation content sits against the composer when it is short. */
+.assistant-thread {
+  flex-shrink: 0;
+  margin-top: auto;
+}
+
+/* Keep the reset and close icons together without enlarging either control. */
+.portfolio-chat-header .assistant-clear {
+  margin-right: -8px;
 }

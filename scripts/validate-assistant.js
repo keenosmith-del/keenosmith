@@ -12,6 +12,8 @@ await build({
 const { answer } = await import(
   pathToFileURL("/tmp/portfolio-assistant-engine.mjs")
 );
+assert(answer('Hi').text.startsWith('Hey there!'));
+assert(answer('Hello there').text.startsWith('Hey there!'));
 const react = answer("Does Keeno know React?");
 assert(react.projects.some((p) => p.id === "ai-assistant"));
 assert(react.indicators.some((i) => i.skill === "React" && i.band >= 3));
@@ -59,13 +61,23 @@ assert(answer("Does he know TypeScript?").indicators.some((i) => i.band >= 3)); 
 const fs = await import("node:fs");
 const { projectConcepts } = await import("../src/data/projectConcepts.js");
 const app = fs.readFileSync("src/App.jsx", "utf8");
+await build({ stdin: { contents: `export { cloudProjects } from './src/data/cloudProjects.js';
+export { aiProjects } from './src/data/aiProjects.js';
+export { selectedProjects } from './src/data/selectedProjects.js';
+export { kailorProject } from './src/data/kailorProject.js';
+export { fullStackProject } from './src/data/fullStackProject.js';
+export { rebuildingProjects } from './src/data/rebuildingProjects.js';`, resolveDir: process.cwd() },
+ bundle: true, platform: 'node', format: 'esm', outfile: '/tmp/portfolio-assistant-routes.mjs', loader: { '.png': 'empty' } });
+const { cloudProjects, aiProjects, selectedProjects, kailorProject, fullStackProject, rebuildingProjects } = await import('/tmp/portfolio-assistant-routes.mjs');
+const dynamicPaths = [...cloudProjects, ...aiProjects, ...selectedProjects, kailorProject, fullStackProject, ...rebuildingProjects]
+  .flatMap((p) => [p.route, `/projects/${p.id}`]);
 for (const p of react.projects)
   assert(
-    p.path === "/cv" ||
+    p.path === "/cv" || dynamicPaths.includes(p.path) ||
       app.includes(`path="${p.path}"`) ||
       projectConcepts.some((c) => c.id === p.id) ||
       p.status.includes("Planned") ||
-      app.includes(`'${p.id}'`),
+      app.includes(`'${p.id}'`) || app.includes(`"${p.id}"`),
     `Missing route: ${p.path}`,
   );
 console.log(

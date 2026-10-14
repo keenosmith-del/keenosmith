@@ -1,3 +1,4 @@
+import { rebuildingProjects } from "./rebuildingProjects.js";
 import { projectConcepts } from "./projectConcepts.js";
 import { projectArtwork } from "./projectArtwork.js";
 
@@ -9,35 +10,13 @@ const projectOrder = new Map(
     "ai-assistant",
     "enterprise-workspace",
     "music-api",
+    "intelligence-manufacturing-llmops",
+    "enterprise-ai-mlops",
   ].map((id, index) => [id, index]),
 );
 
 export const featuredProjects = [
-  {
-    id: "ai-assistant",
-    title: "Retrieval-Augmented AI Model",
-    skill: "RAG",
-    description:
-      "A full-stack SaaS platform implementing LLM inference, semantic embeddings, vector similarity retrieval, document processing and configurable context workflows.",
-  },
-  {
-    id: "productivity-platform",
-
-    title: "Authenticated MERN Platform",
-
-    skill: "Full-Stack Architecture",
-
-    description:
-      "A full-stack web application implementing authenticated resource management, REST APIs, interconnected data modelling and persistent client-server state.",
-  },
-
-  {
-    id: "music-api",
-    title: "Music API-Driven Web App",
-    skill: "API & Full-Stack Engineering",
-    description:
-      "Full-stack React, Node.js, Express and MongoDB application implementing REST APIs, external service integration, data persistence and browser-based audio playback.",
-  },
+  ...rebuildingProjects.map((project) => ({ ...project, skill: project.domain })),
   ...[
     [
       "microsoft-devops",

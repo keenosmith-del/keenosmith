@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import mascot from "../assets/images/mascot/mascot.png";
 import MessageText from "./MessageText.jsx";
 
@@ -7,13 +7,11 @@ import MessageText from "./MessageText.jsx";
 export default function TypedResponse({
   result,
   onComplete,
-  onStart,
   reduced,
 }) {
   const [visible, setVisible] = useState(0);
   const [active, setActive] = useState(true);
   const done = useRef(false);
-  const started = useRef(false);
   const complete = useCallback(() => {
     if (done.current) return;
     done.current = true;
@@ -40,15 +38,9 @@ export default function TypedResponse({
     timer = setTimeout(() => {
       setActive(false);
       tick();
-    }, 240);
+    }, 80);
     return () => clearTimeout(timer);
   }, [result, reduced, complete]);
-  useLayoutEffect(() => {
-    if (visible > 0 && !started.current) {
-      started.current = true;
-      onStart();
-    }
-  }, [visible, onStart]);
   return (
     <div
       className="assistant-message assistant assistant-pending"

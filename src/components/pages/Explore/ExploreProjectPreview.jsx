@@ -1,3 +1,5 @@
+import { rebuildingProjects } from "../../../data/rebuildingProjects.js";
+import { canonicalProjects } from "../../../assistant/knowledge.js";
 import githubIcon from "../../../assets/svgs/header/github.svg";
 import { Link, useParams } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
@@ -14,6 +16,7 @@ export default function ExploreProjectPreview({ projectId: mappedId }) {
   const { projectId: routeId } = useParams();
   const projectId = mappedId || routeId;
   const placeholderProject = [
+    ...rebuildingProjects.map((p) => ({ ...p, repositoryUrl: canonicalProjects.find((record) => record.id === p.id)?.repositoryUrl })),
     ...cloudProjects,
     ...aiProjects,
     kailorProject,

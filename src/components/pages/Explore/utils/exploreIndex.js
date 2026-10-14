@@ -1,3 +1,4 @@
+import { rebuildingProjects } from "../../../../data/rebuildingProjects.js";
 import {
   canonicalProjects,
   skillRegistry,
@@ -53,10 +54,6 @@ const indexed = (item) => ({
   ),
 });
 const detailRoutes = [
-  "/projects/ai-assistant",
-  "/projects/productivity-platform",
-  "/projects/music-api",
-  "/projects/enterprise-workspace",
   "/projects/microsoft",
   "/projects/aws",
   "/projects/gcp",
@@ -104,12 +101,12 @@ export const curatedProjects = [
       domain: concept.domain,
     };
   }),
-  ...[
-    "productivity-platform",
-    "ai-assistant",
-    "enterprise-workspace",
-    "music-api",
-  ].map((id) => projectIndex.find((p) => p.id === id)),
+  ...rebuildingProjects.map((project) => ({
+    ...projectIndex.find((p) => p.id === project.id),
+    ...project,
+    summary: project.description,
+    hasDetailPage: false,
+  })),
   {
     ...eventOps,
     summary: eventOps.description,
@@ -119,20 +116,7 @@ export const curatedProjects = [
     route: "/projects/eventops-intelligence",
     hasDetailPage: true,
   },
-  ...["One", "Two", "Three"].map((number, i) => ({
-    id: `ux-ui-visual-${i + 1}`,
-    title: `UX/UI Visual Project ${number}`,
-    description:
-      "A frontend visual and interaction design showcase. Project details to follow.",
-    summary:
-      "A frontend visual and interaction design showcase. Project details to follow.",
-    domain: "Frontend / UX/UI",
-    categories: ["frontend"],
-    technologies: ["UX/UI"],
-    ecosystems: [],
-    buildStatus: "planned",
-    route: `/projects/ux-ui-visual-${i + 1}`,
-  })),
+
 ].map((project, i) =>
   indexed({
     ...project,
@@ -141,7 +125,7 @@ export const curatedProjects = [
         ? "orange"
         : project.id === "hugging-face"
           ? "yellow"
-          : ["telecom-billing", "ux-ui-visual-1"].includes(project.id)
+          : project.id === "telecom-billing"
             ? "pink"
             : i % 2 === 0
               ? "charcoal"
