@@ -152,6 +152,8 @@
   display: flex;
 }
 .portfolio-chat-body {
+  position: relative;
+  overflow-anchor: none;
   flex: 1;
   min-width: 0;
   overflow-y: auto;

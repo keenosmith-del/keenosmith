@@ -6,7 +6,7 @@ import {
   useRef,
   useState,
 } from "react";
-import { ArrowDown, ArrowRight, X, Zap } from "lucide-react";
+import { ArrowDown, ArrowRight, X } from "lucide-react";
 import mascot from "../assets/images/mascot/mascot.png";
 import { answer } from "./engine.js";
 import { Evidence, Suggestions } from "./Evidence.jsx";
@@ -82,6 +82,9 @@ export default function AssistantPanel({ open, onClose, panelRef, closeRef }) {
   );
   const [mounted, setMounted] = useState(open);
   const [away, setAway] = useState(false);
+  const [newestResponseId, setNewestResponseId] = useState(null);
+  const [responseHeight, setResponseHeight] = useState(0);
+  const responseRef = useRef(null), responseId = useRef(null), anchoredId = useRef(null);
   const context = useRef({}),
     sequence = useRef(0),
     busy = useRef(false);
@@ -114,7 +117,27 @@ export default function AssistantPanel({ open, onClose, panelRef, closeRef }) {
     if (pinned.current && scrollRef.current)
       scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
   }, []);
-  useLayoutEffect(followScroll, [messages, pending, mounted, followScroll]);
+  const anchorResponse = useCallback(() => {
+    const container = scrollRef.current, response = responseRef.current;
+    if (!open || !mounted || !container || !response || anchoredId.current === responseId.current) return;
+    const styles = getComputedStyle(container);
+    const padding = parseFloat(styles.paddingTop) || 0;
+    const height = container.clientHeight - padding - (parseFloat(styles.paddingBottom) || 0);
+    // The composer may shrink after submission; reserve the current viewport,
+    // so even the first short typing fragment can reach the response start.
+    response.style.minHeight = `${height}px`;
+    setResponseHeight(height);
+    // Offset geometry ignores message entrance transforms. Only this container moves.
+    let top = 0, node = response;
+    while (node && node !== container) { top += node.offsetTop; node = node.offsetParent; }
+    container.scrollTop = Math.max(0, top - padding);
+    anchoredId.current = responseId.current;
+  }, [open, mounted]);
+  useLayoutEffect(() => {
+    if (pending?.processing) followScroll(); // Submission/loading only.
+    else if (responseRef.current?.querySelector('[data-response-started="true"]') ||
+      (!pending && messages.at(-1)?.id === responseId.current)) anchorResponse();
+  }, [messages, pending, open, mounted, followScroll, anchorResponse]);
   useLayoutEffect(() => {
     const input = inputRef.current;
     if (!input) return;
@@ -127,7 +150,7 @@ export default function AssistantPanel({ open, onClose, panelRef, closeRef }) {
     context.current = result.context;
     setMessages((m) => [
       ...m,
-      { ...result, id: `a-${++sequence.current}`, role: "assistant" },
+      { ...result, id: responseId.current, role: "assistant" },
     ]);
     setPending(null);
     busy.current = false;
@@ -146,6 +169,10 @@ export default function AssistantPanel({ open, onClose, panelRef, closeRef }) {
         ...m,
         { id: `u-${++sequence.current}`, role: "user", text: question },
       ]);
+      responseId.current = `a-${++sequence.current}`;
+      setNewestResponseId(responseId.current);
+      const container = scrollRef.current;
+      setResponseHeight(container ? container.clientHeight - parseFloat(getComputedStyle(container).paddingTop) - parseFloat(getComputedStyle(container).paddingBottom) : 0);
       setPending({ processing: true });
       timer.current = setTimeout(() => {
         try {
@@ -205,7 +232,11 @@ export default function AssistantPanel({ open, onClose, panelRef, closeRef }) {
           }}
         >
           {messages.map((m) => (
-            <ConversationMessage key={m.id} message={m} onNavigate={onClose} />
+            <div key={m.id} data-message-id={m.id}
+              ref={m.id === newestResponseId ? responseRef : undefined}
+              style={m.id === newestResponseId ? { minHeight: responseHeight } : undefined}>
+              <ConversationMessage message={m} onNavigate={onClose} />
+            </div>
           ))}
           {pending?.processing && (
             <div className="assistant-message assistant assistant-pending">
@@ -222,12 +253,14 @@ export default function AssistantPanel({ open, onClose, panelRef, closeRef }) {
             </div>
           )}
           {pending?.result && (
-            <TypedResponse
-              result={pending.result}
-              reduced={reduced}
-              onComplete={finish}
-              onProgress={followScroll}
-            />
+            <div ref={responseRef} data-message-id={newestResponseId} style={{ minHeight: responseHeight }}>
+              <TypedResponse
+                result={pending.result}
+                reduced={reduced}
+                onComplete={finish}
+                onStart={anchorResponse}
+              />
+            </div>
           )}
           {!pending && latest.role === "assistant" && (
             <div

@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 import mascot from "../assets/images/mascot/mascot.png";
 import MessageText from "./MessageText.jsx";
 
@@ -7,12 +7,13 @@ import MessageText from "./MessageText.jsx";
 export default function TypedResponse({
   result,
   onComplete,
-  onProgress,
+  onStart,
   reduced,
 }) {
   const [visible, setVisible] = useState(0);
   const [active, setActive] = useState(true);
   const done = useRef(false);
+  const started = useRef(false);
   const complete = useCallback(() => {
     if (done.current) return;
     done.current = true;
@@ -42,13 +43,17 @@ export default function TypedResponse({
     }, 240);
     return () => clearTimeout(timer);
   }, [result, reduced, complete]);
-  useEffect(() => {
-    onProgress();
-  }, [visible, active, onProgress]);
+  useLayoutEffect(() => {
+    if (visible > 0 && !started.current) {
+      started.current = true;
+      onStart();
+    }
+  }, [visible, onStart]);
   return (
     <div
       className="assistant-message assistant assistant-pending"
       aria-busy="true"
+      data-response-started={visible > 0}
     >
       <img className="assistant-avatar" src={mascot} alt="" />
       <div className="assistant-message-content">
