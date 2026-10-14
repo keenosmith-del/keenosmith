@@ -181,9 +181,6 @@ export default function Timeline() {
             >
               Assess My Fit
             </Link>
-            <Link className="hero-button hero-button-secondary" to="/cv">
-              View CV
-            </Link>
           </div>
         </div>
         <div

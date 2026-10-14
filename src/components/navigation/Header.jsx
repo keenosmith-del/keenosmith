@@ -919,6 +919,7 @@ function Header() {
                     id="chat-name"
                     name="name"
                     type="text"
+                    placeholder="Your name"
                     value={formData.name}
                     onChange={handleInputChange}
                     autoComplete="name"
@@ -935,6 +936,7 @@ function Header() {
                     id="chat-email"
                     name="email"
                     type="email"
+                    placeholder="you@example.com"
                     value={formData.email}
                     onChange={handleInputChange}
                     autoComplete="email"
@@ -952,6 +954,7 @@ function Header() {
                   id="chat-subject"
                   name="subject"
                   type="text"
+                  placeholder="What would you like to discuss?"
                   value={formData.subject}
                   onChange={handleInputChange}
                   className={invalidFields.subject ? "is-invalid" : ""}
@@ -966,6 +969,7 @@ function Header() {
                   ref={messageRef}
                   id="chat-message"
                   name="message"
+                  placeholder="Tell me about your project, idea, or opportunity..."
                   value={formData.message}
                   onChange={handleInputChange}
                   rows="6"
