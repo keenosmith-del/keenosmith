@@ -30,10 +30,13 @@ import RecruiterView from "./components/pages/RecruiterView/RecruiterView.jsx";
 import { rebuildingProjects } from "./data/rebuildingProjects.js";
 import { canonicalProjects } from "./assistant/knowledge.js";
 
+import AWSBankingRisk from "./components/pages/projects/AWSBankingRisk/AWSBankingRisk.jsx";
+
 const placeholderProjects = [
   ...rebuildingProjects.map((project) => ({
     ...project,
-    repositoryUrl: canonicalProjects.find((p) => p.id === project.id)?.repositoryUrl,
+    repositoryUrl: canonicalProjects.find((p) => p.id === project.id)
+      ?.repositoryUrl,
   })),
   ...cloudProjects,
   ...aiProjects,
@@ -68,17 +71,20 @@ function App() {
       <PageScroll />
       <Routes>
         <Route path="/" element={<Home />} />
-        {placeholderProjects.flatMap((project) =>
-          [...new Set([project.route, `/projects/${project.id}`])].map(
-            (path) => (
-              <Route
-                key={path}
-                path={path}
-                element={<ProjectPlaceholder project={project} />}
-              />
+        {placeholderProjects
+          .filter((project) => project.id !== "banking-risk")
+          .flatMap((project) =>
+            [...new Set([project.route, `/projects/${project.id}`])].map(
+              (path) => (
+                <Route
+                  key={path}
+                  path={path}
+                  element={<ProjectPlaceholder project={project} />}
+                />
+              ),
             ),
-          ),
-        )}
+          )}
+
         {[
           ...new Set([
             ...projectConcepts.map((project) => project.id),
@@ -94,7 +100,9 @@ function App() {
           ]),
         ]
           .filter(
-            (id) => !placeholderProjects.some((project) => project.id === id),
+            (id) =>
+              id !== "banking-risk" &&
+              !placeholderProjects.some((project) => project.id === id),
           )
           .map((project) => (
             <Route
@@ -103,6 +111,8 @@ function App() {
               element={<ProjectPreview project={project} />}
             />
           ))}
+
+        <Route path="/projects/banking-risk" element={<AWSBankingRisk />} />
         <Route
           path="/companies/kailor"
           element={<Company company="kailor" />}

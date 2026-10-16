@@ -3,7 +3,7 @@ import { featuredProjects } from "./featuredProjects.js";
 import { projectConcepts } from "./projectConcepts.js";
 
 export const cloudProjects = [
-  { id: "banking-risk", platform: "AWS", route: "/projects/aws" },
+  { id: "banking-risk", platform: "AWS", route: "/projects/banking-risk" },
   {
     id: "microsoft-devops",
     platform: "Microsoft Azure",

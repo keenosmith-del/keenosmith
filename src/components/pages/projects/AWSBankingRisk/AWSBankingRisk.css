@@ -1,0 +1,1056 @@
+.aws-banking-project {
+  position: relative;
+  min-height: 100vh;
+  overflow: visible;
+  background: var(--surface, #faf9f6);
+  color: var(--charcoal, #151517);
+}
+
+.aws-banking-project *,
+.aws-banking-project *::before,
+.aws-banking-project *::after {
+  box-sizing: border-box;
+}
+
+.aws-banking-project a {
+  color: inherit;
+  text-decoration: none;
+}
+.aws-banking-project button {
+  font: inherit;
+}
+.aws-banking-project button:focus-visible,
+.aws-banking-project a:focus-visible {
+  outline: 2px solid var(--charcoal, #151517);
+  outline-offset: 4px;
+}
+
+.aws-banking-back {
+  position: fixed;
+  top: 22px;
+  left: 22px;
+  z-index: 30;
+  min-height: 35px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 14px;
+  border-radius: 999px;
+  background: rgba(250, 249, 246, 0.82);
+  color: #66666b !important;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 8px 24px rgba(45, 45, 45, 0.06);
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease;
+}
+.aws-banking-back:hover {
+  transform: translateY(-2px);
+  background: white;
+  color: #444448 !important;
+}
+
+.aws-banking-hero {
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  padding: 136px 5.6vw 108px;
+}
+.aws-banking-hero-inner {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+  animation: aws-banking-hero-in 800ms both;
+}
+.aws-banking-hero-topline {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 25px;
+  margin-bottom: 30px;
+}
+.aws-banking-hero-topline time {
+  flex-shrink: 0;
+  padding-top: 5px;
+  color: #99999d;
+  font-size: 10px;
+  font-weight: 500;
+}
+.aws-banking-pill-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.aws-banking-pill-list span {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--surface-muted, #efeee9);
+  color: #77777c;
+  font-size: 9px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+.aws-banking-hero h1 {
+  max-width: 1100px;
+  margin: 0;
+  color: var(--charcoal, #151517);
+  font-size: clamp(58px, 8.65vw, 119px);
+  font-weight: 500;
+  line-height: 0.88;
+  letter-spacing: -0.059em;
+}
+
+.aws-banking-hero h1 span {
+  display: block;
+}
+.aws-banking-hero-bottom {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.78fr);
+  gap: clamp(35px, 5vw, 84px);
+  align-items: start;
+  margin-top: 48px;
+}
+.aws-banking-hero-description {
+  max-width: 850px;
+  margin: 0;
+  color: #555559;
+  font-size: clamp(14px, 1.22vw, 18px);
+  font-weight: 400;
+  line-height: 1.57;
+  letter-spacing: -0.02em;
+}
+
+.aws-banking-hero-note {
+  margin: 17px 0 0;
+  color: #a0a0a4;
+  font-size: 10px;
+  line-height: 1.6;
+}
+.aws-banking-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 7px;
+}
+.aws-banking-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 38px;
+  padding: 0 15px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--surface-muted, #efeee9);
+  color: #77777c !important;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1.25;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+.aws-banking-hero-actions a.aws-banking-button {
+  background: var(--charcoal, #151517);
+  color: #fffefc !important;
+}
+
+.aws-banking-hero-actions a.aws-banking-button:hover {
+  background: #29292b;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+}
+
+.aws-banking-button img {
+  display: block;
+  width: 15px;
+  height: 15px;
+  object-fit: contain;
+}
+.aws-banking-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  background: #dfded9;
+  color: #555559 !important;
+}
+.aws-banking-button-primary {
+  background: var(--charcoal, #151517);
+  color: var(--surface, #faf9f6) !important;
+}
+.aws-banking-button-primary:hover:not(:disabled) {
+  background: #29292b;
+  color: var(--surface, #faf9f6) !important;
+}
+.aws-banking-button:disabled {
+  opacity: 0.43;
+  cursor: not-allowed;
+}
+.aws-banking-platform-note {
+  width: 100%;
+  display: flex;
+  gap: 11px;
+  align-items: center;
+  margin-top: 7px;
+}
+.aws-banking-platform-note p {
+  max-width: 280px;
+  margin: 0;
+  color: #9a9a9e;
+  font-size: 10px;
+  line-height: 1.55;
+}
+.aws-banking-platform-note a {
+  color: #66666b;
+  text-underline-offset: 3px;
+}
+
+.aws-banking-section {
+  width: min(960px, calc(100% - 38px));
+  margin: 0 auto;
+  padding: 112px 0;
+  display: grid;
+  grid-template-columns: 168px minmax(0, 1fr);
+  gap: 60px;
+}
+.aws-banking-section-label,
+.aws-banking-eyebrow {
+  color: #99999d;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+.aws-banking-section-label {
+  padding-top: 9px;
+}
+.aws-banking-section-copy {
+  min-width: 0;
+}
+.aws-banking-section-copy h2,
+.aws-banking-process h2 {
+  max-width: 710px;
+  margin: 0;
+  color: #5b5b5f;
+  font-size: clamp(32px, 4.3vw, 56px);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.045em;
+}
+.aws-banking-two-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 34px;
+  margin-top: 43px;
+}
+.aws-banking-section p,
+.aws-banking-process p {
+  color: #858589;
+  font-size: 13px;
+  line-height: 1.7;
+  letter-spacing: -0.007em;
+}
+.aws-banking-two-columns p {
+  margin: 0;
+}
+
+.aws-banking-process {
+  width: min(1120px, calc(100% - 38px));
+  margin: 22px auto;
+  padding: clamp(37px, 5.5vw, 70px);
+  border-radius: 29px;
+  background: var(--surface-muted, #efeee9);
+}
+.aws-banking-process-intro {
+  max-width: 750px;
+}
+.aws-banking-process-intro h2 {
+  margin-top: 21px;
+}
+.aws-banking-process-intro p {
+  max-width: 485px;
+  margin: 19px 0 0;
+}
+.aws-banking-process-flow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 19px minmax(0, 1fr) 19px minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(10px, 2.2vw, 28px);
+  margin-top: 73px;
+}
+.aws-banking-process-flow > svg {
+  margin-top: 57px;
+  color: #99999d;
+}
+.aws-banking-process-flow > div {
+  min-width: 0;
+}
+.aws-banking-process-flow span,
+.aws-banking-architecture-grid span {
+  display: block;
+  margin-bottom: 20px;
+  color: #99999d;
+  font-size: 10px;
+  font-weight: 500;
+}
+.aws-banking-process-flow strong {
+  display: block;
+  max-width: 210px;
+  color: #66666b;
+  font-size: clamp(21px, 2.25vw, 29px);
+  font-weight: 500;
+  line-height: 1.06;
+  letter-spacing: -0.035em;
+}
+.aws-banking-process-flow p {
+  margin: 14px 0 0;
+  font-size: 11px;
+  max-width: 190px;
+}
+
+.aws-banking-intro-copy {
+  margin: 27px 0 0;
+  max-width: 580px;
+}
+.aws-banking-architecture-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+  margin-top: 65px;
+}
+.aws-banking-architecture-grid span {
+  margin-bottom: 14px;
+}
+.aws-banking-architecture-grid h3,
+.aws-banking-decisions h3 {
+  margin: 0;
+  color: #66666b;
+  font-size: 19px;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+.aws-banking-architecture-grid p {
+  margin: 13px 0 0;
+  font-size: 11px;
+}
+
+.aws-banking-decisions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 51px 39px;
+  margin-top: 59px;
+}
+.aws-banking-decisions p {
+  margin: 12px 0 0;
+  font-size: 12px;
+}
+.aws-banking-technology p {
+  max-width: 630px;
+  margin: 30px 0 0;
+  font-size: 14px;
+}
+.aws-banking-tech-trigger {
+  margin-top: 27px;
+}
+
+.aws-banking-closing {
+  padding: 125px 19px 68px;
+}
+.aws-banking-closing > div {
+  width: min(770px, 100%);
+  margin: 0 auto;
+  text-align: center;
+}
+.aws-banking-closing h2 {
+  margin: 24px 0 0;
+  color: #66666b;
+  font-size: clamp(29px, 4.15vw, 52px);
+  line-height: 1.04;
+  font-weight: 500;
+  letter-spacing: -0.044em;
+}
+.aws-banking-closing p:not(.aws-banking-eyebrow) {
+  width: min(700px, 100%);
+  margin: 27px auto 0;
+  color: #858589;
+  font-size: 13px;
+  line-height: 1.7;
+}
+.aws-banking-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  padding: 28px 19px 116px;
+}
+.aws-banking-footer-back,
+.aws-banking-footer-top {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 40px;
+  padding: 0 15px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--surface-muted, #efeee9);
+  color: #77777c !important;
+  font-size: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease;
+}
+.aws-banking-footer-top {
+  width: 40px;
+  padding: 0;
+}
+.aws-banking-footer-back:hover,
+.aws-banking-footer-top:hover {
+  transform: translateY(-2px);
+  background: #dfded9;
+  color: #555559 !important;
+}
+.aws-banking-floating-top {
+  position: fixed;
+  z-index: 30;
+  right: 22px;
+  bottom: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 38px;
+  height: 38px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(250, 249, 246, 0.82);
+  color: #66666b;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 8px 24px rgba(45, 45, 45, 0.08);
+  cursor: pointer;
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease;
+}
+.aws-banking-floating-top:hover {
+  transform: translateY(-2px);
+  background: white;
+}
+
+/* Tech stack modal */
+
+.aws-banking-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 19px;
+
+  background: rgba(35, 35, 37, 0.28);
+
+  backdrop-filter: blur(11px);
+  -webkit-backdrop-filter: blur(11px);
+
+  animation: aws-banking-overlay-in 220ms ease both;
+}
+
+.aws-banking-modal {
+  position: relative;
+
+  width: min(100%, 600px);
+  max-height: calc(100dvh - 38px);
+  overflow-y: auto;
+
+  padding: 40px 34px 34px;
+
+  background: rgba(250, 249, 246, 0.96);
+  border-radius: 24px;
+
+  box-shadow:
+    0 24px 72px rgba(35, 35, 37, 0.14),
+    0 8px 24px rgba(35, 35, 37, 0.07);
+
+  animation: aws-banking-modal-in 320ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Plain close icon — no background */
+
+.aws-banking-modal-close {
+  position: absolute;
+  top: 17px;
+  right: 23px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 26px;
+  height: 30px;
+
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+
+  background: transparent !important;
+  box-shadow: none !important;
+
+  color: #99999d;
+
+  font-size: 27px;
+  font-weight: 300;
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.aws-banking-modal-close:hover {
+  background: transparent !important;
+  color: #151517;
+  transform: translateY(-1px);
+}
+
+/* Categories */
+
+.aws-banking-modal-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+
+  padding-right: 8px;
+}
+
+.aws-banking-modal-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.aws-banking-modal-category {
+  color: #66666b;
+
+  font-size: 11px;
+  font-weight: 500;
+
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+.aws-banking-modal-note {
+  margin: 6px 0 0;
+
+  color: #99999d;
+
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* Technology pills */
+
+.aws-banking-modal-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+
+  margin-top: 12px;
+}
+
+.aws-banking-modal-pills span {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 7px 11px;
+
+  border-radius: 999px;
+  background: #f0efeb;
+  color: #77777c;
+
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+/* Entrance animations */
+
+@keyframes aws-banking-overlay-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes aws-banking-modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.985);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 700px) {
+  .aws-banking-modal {
+    padding: 42px 22px 26px;
+    border-radius: 21px;
+  }
+
+  .aws-banking-modal-close {
+    top: 11px;
+    right: 16px;
+  }
+
+  .aws-banking-modal-groups {
+    gap: 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aws-banking-modal-overlay,
+  .aws-banking-modal {
+    animation: none;
+  }
+}
+
+.aws-banking-hero-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 22px;
+  margin-top: 48px;
+}
+
+.aws-banking-hero-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: min(540px, 100%);
+}
+
+.aws-banking-hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.aws-banking-hero-actions .aws-banking-button {
+  min-height: 37px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 999px;
+  background: #fffefc;
+  color: #66666b !important;
+  font-size: 11px;
+  font-weight: 500;
+  box-shadow: none;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.aws-banking-hero-actions .aws-banking-button:hover:not(:disabled) {
+  background: #ffffff;
+  color: #444448 !important;
+  transform: translateY(-2px);
+}
+
+.aws-banking-hero-actions .aws-banking-button-disabled:disabled {
+  background: var(--surface-muted);
+  color: #99999d !important;
+  opacity: 1;
+  cursor: not-allowed;
+}
+
+.aws-banking-github-icon {
+  display: block;
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  filter: brightness(0) invert(1);
+}
+
+.aws-banking-platform-note {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  margin: 16px 0 0 30px;
+
+  color: #99999d;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.7;
+  letter-spacing: -0.01em;
+  white-space: normal;
+}
+
+.aws-banking-platform-note a {
+  color: #66666b;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+
+.aws-banking-platform-note a:hover {
+  color: #444448;
+}
+
+@media (max-width: 700px) {
+  .aws-banking-platform-note {
+    max-width: 300px;
+    margin-left: 0;
+  }
+}
+
+@keyframes aws-banking-hero-in {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 950px) {
+  .aws-banking-hero-bottom {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  .aws-banking-hero-actions {
+    max-width: 650px;
+  }
+  .aws-banking-section {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .aws-banking-architecture-grid {
+    gap: 25px;
+  }
+}
+
+@media (max-width: 700px) {
+  .aws-banking-back {
+    top: 14px;
+    left: 14px;
+  }
+  .aws-banking-hero {
+    min-height: auto;
+    padding: 108px 19px 67px;
+  }
+  .aws-banking-hero-topline {
+    flex-direction: column-reverse;
+    gap: 14px;
+    margin-bottom: 25px;
+  }
+  .aws-banking-hero h1 {
+    font-size: clamp(49px, 12.7vw, 80px);
+    line-height: 0.92;
+  }
+  .aws-banking-hero-bottom {
+    margin-top: 30px;
+  }
+  .aws-banking-platform-note {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .aws-banking-section {
+    padding: 78px 0;
+    width: calc(100% - 38px);
+  }
+  .aws-banking-two-columns,
+  .aws-banking-decisions {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .aws-banking-two-columns {
+    margin-top: 25px;
+  }
+  .aws-banking-process {
+    width: calc(100% - 26px);
+    padding: 35px 22px;
+    border-radius: 22px;
+  }
+  .aws-banking-process-flow {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin-top: 37px;
+  }
+  .aws-banking-process-flow > svg {
+    margin: 0;
+    transform: rotate(90deg);
+  }
+  .aws-banking-process-flow strong,
+  .aws-banking-process-flow p {
+    max-width: none;
+  }
+  .aws-banking-process-flow span {
+    margin-bottom: 8px;
+  }
+  .aws-banking-architecture-grid {
+    grid-template-columns: 1fr;
+    gap: 26px;
+    margin-top: 36px;
+  }
+  .aws-banking-architecture-grid h3 {
+    font-size: 20px;
+  }
+  .aws-banking-decisions {
+    margin-top: 35px;
+  }
+  .aws-banking-closing {
+    padding: 90px 19px 45px;
+  }
+  .aws-banking-footer {
+    padding-bottom: 95px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aws-banking-project *,
+  .aws-banking-project *::before,
+  .aws-banking-project *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.aws-banking-hero-actions a.aws-banking-button:hover:not(:disabled) {
+  background: #0b0b0dda;
+  color: #fffefc !important;
+  transform: translateY(-2px);
+}
+
+.aws-banking-hero-actions a.aws-banking-button {
+  transition:
+    background-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+/* Project summary action */
+
+.aws-banking-summary-action {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 28px;
+}
+
+.aws-banking-summary-action .aws-banking-summary-button {
+  background: #fffefc;
+  color: #151517 !important;
+  border: none;
+  border-radius: 999px;
+  padding: 0 18px;
+  min-height: 38px;
+
+  font-size: 11px;
+  font-weight: 500;
+
+  transition:
+    background-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.aws-banking-summary-action .aws-banking-summary-button:hover {
+  background: #ffffff;
+  color: #151517 !important;
+  transform: translateY(-2px);
+}
+
+/* Technology section */
+
+.aws-banking-technology-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 52px 42px;
+  margin-top: 58px;
+}
+
+.aws-banking-technology-group {
+  min-width: 0;
+}
+
+.aws-banking-technology-group h3 {
+  margin: 0;
+
+  color: var(--charcoal, #151517);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+}
+
+.aws-banking-technology .aws-banking-technology-group p {
+  max-width: 360px;
+  margin: 16px 0 0;
+
+  color: #858589;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+.aws-banking-tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 22px;
+}
+
+.aws-banking-tech-tags span {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 7px 11px;
+  border-radius: 999px;
+
+  background: var(--surface-muted, #efeee9);
+  color: #66666b;
+
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+/* Tech stack button */
+
+.aws-banking-technology .aws-banking-tech-trigger {
+  margin-top: 45px;
+
+  background: var(--charcoal, #151517);
+  color: #fffefc !important;
+
+  transition:
+    background-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.aws-banking-technology .aws-banking-tech-trigger:hover:not(:disabled) {
+  background: #0b0b0d;
+  color: #fffefc !important;
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+
+@media (max-width: 700px) {
+  .aws-banking-technology-grid {
+    grid-template-columns: 1fr;
+    gap: 38px;
+    margin-top: 40px;
+  }
+
+  .aws-banking-technology .aws-banking-tech-trigger {
+    margin-top: 36px;
+  }
+}
+
+.aws-banking-summary-action .aws-banking-summary-button,
+.aws-banking-technology .aws-banking-tech-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  min-height: 37px;
+  padding: 0 16px;
+
+  border: 0;
+  border-radius: 999px;
+
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: normal;
+
+  cursor: pointer;
+
+  transition:
+    background-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.aws-banking-summary-action .aws-banking-summary-button {
+  background: #fffefc;
+  color: #151517 !important;
+}
+
+.aws-banking-summary-action .aws-banking-summary-button:hover {
+  background: #ffffff;
+  color: #151517 !important;
+  transform: translateY(-2px);
+}
+
+.aws-banking-technology .aws-banking-tech-trigger {
+  margin-top: 45px;
+
+  background: var(--charcoal, #151517);
+  color: #fffefc !important;
+}
+
+.aws-banking-technology .aws-banking-tech-trigger:hover:not(:disabled) {
+  background: #0b0b0dda;
+  color: #fffefc !important;
+  transform: translateY(-2px);
+}
+
+.aws-banking-summary-action .aws-banking-summary-button {
+  min-height: 37px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 999px;
+
+  background: rgba(250, 249, 246, 0.82);
+  color: #66666b !important;
+
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  box-shadow: 0 8px 24px rgba(45, 45, 45, 0.06);
+
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+.aws-banking-summary-action .aws-banking-summary-button:hover {
+  background: #ffffff;
+  color: #444448 !important;
+  transform: translateY(-2px);
+}
