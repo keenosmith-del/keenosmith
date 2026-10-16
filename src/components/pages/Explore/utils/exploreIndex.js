@@ -116,7 +116,6 @@ export const curatedProjects = [
     route: "/projects/eventops-intelligence",
     hasDetailPage: true,
   },
-
 ].map((project, i) =>
   indexed({
     ...project,

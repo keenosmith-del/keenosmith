@@ -31,7 +31,8 @@ import { rebuildingProjects } from "./data/rebuildingProjects.js";
 import { canonicalProjects } from "./assistant/knowledge.js";
 
 const placeholderProjects = [
-  ...rebuildingProjects.map((project) => ({ ...project,
+  ...rebuildingProjects.map((project) => ({
+    ...project,
     repositoryUrl: canonicalProjects.find((p) => p.id === project.id)?.repositoryUrl,
   })),
   ...cloudProjects,

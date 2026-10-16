@@ -27,7 +27,7 @@ try {
       assert.equal(await page.$eval(`${tile} a`, (e) => e.getAttribute('href')), `/projects/${id}`);
     }
     assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `Explore overflow at ${width}`);
-    await page.$eval('[data-explore-id="productivity-platform"]', (e) => e.scrollIntoView());
+    await page.$eval('[data-explore-id="productivity-platform"]', (e) => e.scrollIntoView({ behavior: "instant", block: "center" }));
     await page.screenshot({ path: `/tmp/portfolio-project-reset-${width}.png` });
     for (const [id, name, file, color] of covers) {
       await page.goto(`${base}/projects/${id}`, { waitUntil: 'networkidle0' });

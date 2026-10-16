@@ -16,7 +16,10 @@ export default function ExploreProjectPreview({ projectId: mappedId }) {
   const { projectId: routeId } = useParams();
   const projectId = mappedId || routeId;
   const placeholderProject = [
-    ...rebuildingProjects.map((p) => ({ ...p, repositoryUrl: canonicalProjects.find((record) => record.id === p.id)?.repositoryUrl })),
+    ...rebuildingProjects.map((project) => ({
+      ...project,
+      repositoryUrl: canonicalProjects.find((record) => record.id === project.id)?.repositoryUrl,
+    })),
     ...cloudProjects,
     ...aiProjects,
     kailorProject,

@@ -2,6 +2,7 @@
 import assert from "node:assert/strict";
 import { createServer } from "vite";
 const server = await createServer({
+  cacheDir: "/tmp/portfolio-explore-index-vite-cache",
   server: { middlewareMode: true, hmr: false, ws: false },
   appType: "custom",
 });
@@ -66,7 +67,7 @@ try {
       .every((p) => ["charcoal", "surface"].includes(p.tone)),
   );
   // Every full or filtered tail is a rectangular, fully occupied puzzle.
-  for (let count = 1; count <= 37; count++) {
+  for (let count = 1; count <= projectIndex.length; count++) {
     const groups = composeProjects(projectIndex.slice(0, count));
     assert.equal(groups.flatMap((g) => g.items).length, count);
     for (const group of groups) {

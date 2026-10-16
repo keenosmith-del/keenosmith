@@ -15,6 +15,11 @@ const alwaysVisibleProjects = new Set([
   "claude",
   "field-service",
   "enterprise-workspace",
+  "productivity-platform",
+  "music-api",
+  "ai-assistant",
+  "intelligence-manufacturing-llmops",
+  "enterprise-ai-mlops",
 ]);
 
 const titleVisibleProjects = new Set([
