@@ -352,9 +352,7 @@ export default function GCPRetail() {
               </div>
               <time dateTime="2026">Built April 2026</time>
             </div>
-            <h1>
-              Retail intelligence. <span>Supply chain decisions.</span>
-            </h1>
+            <h1>Google Cloud <span>Intelligent Retail &amp; Supply Chain</span></h1>
             <div className="gcp-retail-hero-bottom">
               <div>
                 <p className="gcp-retail-hero-description">

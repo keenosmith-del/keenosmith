@@ -162,7 +162,7 @@ export default function EventOpsIntelligence() {
               </div>
               <time dateTime="2026-10">Built October 2026</time>
             </div>
-            <h1>EventOps <span>Intelligence.</span></h1>
+            <h1>EventOps <span>Intelligence</span></h1>
             <div className="eventops-hero-bottom">
               <p className="eventops-hero-description">
                 A full-stack event operations workspace where cited knowledge retrieval

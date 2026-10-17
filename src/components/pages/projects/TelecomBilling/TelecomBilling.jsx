@@ -264,10 +264,7 @@ export default function TelecomBilling() {
               </div>
               <time dateTime="2026-10">Built May 2026</time>
             </div>
-            <h1>
-              Telecomunications
-              <br /> Billing & Subscriptions
-            </h1>
+            <h1>Telecommunications <span>Billing &amp; Subscription Management</span></h1>
             <div className="telecom-hero-bottom">
               <p className="telecom-hero-description">
                 A telecommunications subscription and billing platform built

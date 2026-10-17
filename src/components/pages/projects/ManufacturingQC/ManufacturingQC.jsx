@@ -132,7 +132,7 @@ export default function ManufacturingQC() {
               </div>
               <span className="mq-hero-context">Local engineering project</span>
             </div>
-            <h1>Intelligent Manufacturing <span>Quality Control.</span></h1>
+            <h1>Intelligent Manufacturing <span>Quality Control</span></h1>
             <div className="mq-hero-bottom">
               <div>
                 <p className="mq-hero-description">

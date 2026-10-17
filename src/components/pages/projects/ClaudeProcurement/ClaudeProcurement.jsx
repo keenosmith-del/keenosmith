@@ -283,9 +283,7 @@ export default function ClaudeProcurement() {
               </div>
               <time dateTime="2026">Built June 2026</time>
             </div>
-            <h1>
-              Commercial clarity. <span>Before the signature.</span>
-            </h1>
+            <h1>Claude AI Procurement <span>&amp; Contract Intelligence Platform</span></h1>
             <div className="claude-hero-bottom">
               <div>
                 <p className="claude-hero-description">

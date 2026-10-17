@@ -217,9 +217,7 @@ export default function OpsFlow() {
               </div>
               <time dateTime="2026-10">Built May 2026</time>
             </div>
-            <h1>
-              Procurement, <span>without the gaps.</span>
-            </h1>
+            <h1>n8n Enterprise Workflow <span>&amp; Integration OpsFlow Platform</span></h1>
             <div className="opsflow-hero-bottom">
               <p className="opsflow-hero-description">
                 OpsFlow is an enterprise procurement and integration platform I

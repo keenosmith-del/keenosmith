@@ -305,9 +305,7 @@ export default function SREChaosEngineering() {
               </div>
               <time dateTime="2026-10">Built July 2026</time>
             </div>
-            <h1>
-              Failure is a test.<span>Recovery is the proof.</span>
-            </h1>
+            <h1>Distributed Systems Reliability, <span>Chaos Engineering &amp; Disaster Recovery Platform</span></h1>
             <div className="sre-hero-bottom">
               <div>
                 <p className="sre-hero-description">

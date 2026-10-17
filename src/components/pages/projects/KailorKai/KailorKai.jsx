@@ -293,9 +293,7 @@ export default function KailorKai() {
             </div>
             <div className="kk-hero-grid">
               <div className="kk-hero-copy">
-                <h1>
-                  Two products.<span>One point of view.</span>
-                </h1>
+                <h1>kailor <span>&amp; kai</span></h1>
                 <p className="kk-hero-description">
                   I am developing kailor and kai as independent but
                   complementary products: one makes technology consultancy more

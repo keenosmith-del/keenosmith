@@ -199,9 +199,7 @@ export default function AWSBankingRisk() {
               <time dateTime="2026-10">Built March 2026</time>
             </div>
 
-            <h1>
-              AWS banking <span>&amp; payment risk.</span>
-            </h1>
+            <h1>AWS Banking <span>&amp; Payment Risk Platform</span></h1>
 
             <div className="aws-banking-hero-bottom">
               <div>

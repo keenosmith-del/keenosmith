@@ -267,9 +267,7 @@ export default function DeepSeekWorkforce() {
               </div>
               <time dateTime="2026-10">Built August 2026</time>
             </div>
-            <h1>
-              People are more <span>than a score.</span>
-            </h1>
+            <h1>AI Workforce Planning, Recruitment <span>&amp; Talent Intelligence Platform</span></h1>
             <div className="deepseek-hero-bottom">
               <div>
                 <p className="deepseek-hero-description">

@@ -222,9 +222,7 @@ export default function MicrosoftDevOps() {
               </div>
               <time dateTime="2026-10">Built March 2026</time>
             </div>
-            <h1>
-              Azure AI for <span>engineering operations.</span>
-            </h1>
+            <h1>Microsoft Azure <span>DevOps Software Engineering Platform</span></h1>
             <div className="mdo-hero-bottom">
               <div>
                 <p className="mdo-hero-description">

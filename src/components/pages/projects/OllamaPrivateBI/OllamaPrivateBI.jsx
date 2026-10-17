@@ -187,7 +187,7 @@ export default function OllamaPrivateBI() {
               <time dateTime="2026">Built 2026</time>
             </div>
 
-            <h1>Private intelligence.<span>Business evidence.</span></h1>
+            <h1>Ollama <span>Private Personal/Business Intelligence Platform</span></h1>
 
             <div className="ollama-hero-bottom">
               <div className="ollama-hero-copy">

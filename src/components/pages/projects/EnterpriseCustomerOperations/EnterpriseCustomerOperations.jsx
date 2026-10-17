@@ -113,7 +113,7 @@ export default function EnterpriseCustomerOperations() {
               <div className="eco-pills" aria-label="Technologies used">{heroTechnologies.map((name) => <span key={name}>{name}</span>)}</div>
               <span className="eco-hero-context">Local engineering project</span>
             </div>
-            <h1>Enterprise AI <span>Customer Operations.</span></h1>
+            <h1>Enterprise AI <span>Customer Operations</span></h1>
             <div className="eco-hero-bottom">
               <div>
                 <p className="eco-hero-description">I built a customer case-management application with asynchronous AI recommendations, prompt versioning, evaluations and human review. The system separates intake and operator decisions from a background worker, retaining the records needed to inspect how each recommendation was produced.</p>
@@ -123,7 +123,6 @@ export default function EnterpriseCustomerOperations() {
                 <div className="eco-actions">
                   <a className="eco-button eco-source" href={repositoryUrl} target="_blank" rel="noopener noreferrer"><img src={githubSvg} alt="" aria-hidden="true" />Source</a>
                   <button className="eco-button eco-disabled" type="button" disabled>Visit platform</button>
-                  <a className="eco-button eco-brief" href={briefUrl} target="_blank" rel="noopener noreferrer">Technical brief</a>
                 </div>
                 <p className="eco-platform-note">This project is available in source rather than as a maintained public deployment. You can <a href="mailto:keenosmith@kailor.co.za">contact me</a> for a walkthrough.</p>
               </div>
@@ -138,6 +137,9 @@ export default function EnterpriseCustomerOperations() {
             <div className="eco-two-columns">
               <p>The workspace has case lists and details, Prompt Studio, Evaluations and Operations. Operators can create cases, inspect classifications, edit proposed responses, approve a draft and resolve a case.</p>
               <p>The API and worker are independent Node processes. PostgreSQL holds the case timeline, exact prompt versions, review records and delivery state; RabbitMQ carries processing work between services.</p>
+            </div>
+            <div className="eco-overview-actions">
+              <a className="eco-button eco-brief" href={briefUrl} target="_blank" rel="noopener noreferrer">Technical brief</a>
             </div>
           </div>
         </section>
