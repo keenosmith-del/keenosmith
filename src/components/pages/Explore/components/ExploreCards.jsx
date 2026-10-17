@@ -12,6 +12,10 @@ export function ProjectLink({ project, children, className, ...props }) {
 }
 // Pin the original catalogue selections, even when filters change their positions.
 const alwaysVisibleProjects = new Set([
+  "banking-risk",
+  "ollama",
+  "hugging-face",
+  "eventops-intelligence",
   "claude",
   "field-service",
   "enterprise-workspace",
@@ -23,10 +27,13 @@ const alwaysVisibleProjects = new Set([
 ]);
 
 const titleVisibleProjects = new Set([
+  "distributed-reliability",
+  "n8n",
   "microsoft-devops",
   "vertex-ai-retail",
-  "hugging-face",
   "deepseek",
+  "telecom-billing",
+  "fleet-operations",
 ]);
 
 export function ProjectTile({ project }) {

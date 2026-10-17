@@ -124,7 +124,7 @@ export const projectConcepts = [
       "React",
     ],
     path: "/projects/hugging-face",
-    planned: true,
+    planned: false,
     section: "projects",
   },
   {

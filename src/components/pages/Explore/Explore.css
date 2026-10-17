@@ -1264,9 +1264,11 @@
   }
 }
 
-/* Hugging Face keeps its title directly beneath the category pill. */
-.explore-project-panel [data-explore-id="hugging-face"] .explore-project-text {
-  margin-top: 0;
+/* Anchor the reliability artwork to the tile edge when it fills the card. */
+@media (min-width: 1101px) and (hover: hover) and (pointer: fine) {
+  .explore-project-panel [data-explore-id="distributed-reliability"] .explore-project-cover {
+    object-position: center bottom;
+  }
 }
 
 /* Skills first visual pass: the names compose the gallery without card chrome. */

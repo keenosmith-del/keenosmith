@@ -18,6 +18,7 @@ import {
 } from "./explorePresentation.js";
 import { eventOps } from "../../../../data/eventOps.js";
 import { projectConcepts } from "../../../../data/projectConcepts.js";
+import { exploreProjectDetails } from "./exploreProjectDetails.js";
 
 export const normalize = (value) =>
   String(value || "")
@@ -119,6 +120,10 @@ export const curatedProjects = [
 ].map((project, i) =>
   indexed({
     ...project,
+    ...exploreProjectDetails[project.id],
+    summary: exploreProjectDetails[project.id]?.description || project.summary,
+    planned: false,
+    buildStatus: "built",
     tone:
       project.id === "claude"
         ? "orange"

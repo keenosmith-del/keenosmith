@@ -49,6 +49,24 @@ import DeepSeekWorkforce from "./components/pages/projects/DeepSeekWorkforce/Dee
 
 import TelecomBilling from "./components/pages/projects/TelecomBilling/TelecomBilling.jsx";
 
+import FieldServiceMaintenance from "./components/pages/projects/FieldServiceMaintenance/FieldServiceMaintenance.jsx";
+
+import FleetOperations from "./components/pages/projects/FleetOperations/FleetOperations.jsx";
+
+import HuggingFaceInsurance from "./components/pages/projects/HuggingFaceInsurance/HuggingFaceInsurance.jsx";
+
+import ProductivityPlatform from "./components/pages/projects/ProductivityPlatform/ProductivityPlatform.jsx";
+
+import MusicAPI from "./components/pages/projects/MusicAPI/MusicAPI.jsx";
+
+import EnterpriseWorkspace from "./components/pages/projects/EnterpriseWorkspace/EnterpriseWorkspace.jsx";
+
+import AIEntity from "./components/pages/projects/AIEntity/AIEntity.jsx";
+
+import ManufacturingQC from "./components/pages/projects/ManufacturingQC/ManufacturingQC.jsx";
+
+import EnterpriseCustomerOperations from "./components/pages/projects/EnterpriseCustomerOperations/EnterpriseCustomerOperations.jsx";
+
 const placeholderProjects = [
   ...rebuildingProjects.map((project) => ({
     ...project,
@@ -110,8 +128,26 @@ function App() {
               project.route !== "/projects/distributed-reliability" &&
               project.id !== "deepseek" &&
               project.route !== "/projects/deepseek" &&
-              project.id != "telecom-billing" &&
-              project.route != "telecom-billing",
+              project.id !== "telecom-billing" &&
+              project.route !== "telecom-billing" &&
+              project.id !== "field-service" &&
+              project.route !== "field-service" &&
+              project.id !== "fleet-operations" &&
+              project.route !== "fleet-operations" &&
+              project.id !== "hugging-face" &&
+              project.route !== "/projects/hugging-face" &&
+              project.id !== "productivity-platform" &&
+              project.route !== "productivity-platform" &&
+              project.id !== "music-api" &&
+              project.route !== "music-api" &&
+              project.id !== "enterprise-workspace" &&
+              project.route !== "enterprise-workspace" &&
+              project.id !== "ai-assistant" &&
+              project.route !== "ai-assistant" &&
+              project.id !== "intelligence-manufacturing-llmops" &&
+              project.route !== "intelligence-manufacturing-llmops" &&
+              project.id !== "enterprise-ai-mlops" &&
+              project.route !== "enterprise-ai-mlops",
           )
           .flatMap((project) =>
             [...new Set([project.route, `/projects/${project.id}`])].map(
@@ -148,8 +184,17 @@ function App() {
               id !== "ollama" &&
               id !== "n8n" &&
               id !== "claude" &&
-              id != "distributed-reliability" &&
-              id != "deepseek" &&
+              id !== "distributed-reliability" &&
+              id !== "deepseek" &&
+              id !== "field-service" &&
+              id !== "fleet-operations" &&
+              id !== "hugging-face" &&
+              id != "productivity-platform" &&
+              id !== "music-api" &&
+              id !== "enterprise-workspace" &&
+              id !== "ai-entity" &&
+              id != "intelligence-manufacturing-llmops" &&
+              id !== "enterprise-ai-mlops" &&
               !placeholderProjects.some((project) => project.id === id),
           )
           .map((project) => (
@@ -192,6 +237,45 @@ function App() {
         <Route path="/projects/deepseek" element={<DeepSeekWorkforce />} />
 
         <Route path="/projects/telecom-billing" element={<TelecomBilling />} />
+
+        <Route
+          path="/projects/field-service"
+          element={<FieldServiceMaintenance />}
+        />
+
+        <Route
+          path="/projects/fleet-operations"
+          element={<FleetOperations />}
+        />
+
+        <Route
+          path="/projects/hugging-face"
+          element={<HuggingFaceInsurance />}
+        />
+
+        <Route
+          path="/projects/productivity-platform"
+          element={<ProductivityPlatform />}
+        />
+
+        <Route path="/projects/music-api" element={<MusicAPI />} />
+
+        <Route
+          path="/projects/enterprise-workspace"
+          element={<EnterpriseWorkspace />}
+        />
+
+        <Route path="/projects/ai-assistant" element={<AIEntity />} />
+
+        <Route
+          path="/projects/intelligence-manufacturing-llmops"
+          element={<ManufacturingQC />}
+        />
+
+        <Route
+          path="/projects/enterprise-ai-mlops"
+          element={<EnterpriseCustomerOperations />}
+        />
 
         <Route path="/explore" element={<Explore />} />
 
