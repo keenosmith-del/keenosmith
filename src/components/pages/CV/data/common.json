@@ -1,0 +1,149 @@
+{
+  "name": "Keeno Smith",
+  "location": "Cape Town · Johannesburg",
+  "phone": "+27 82 415 8441",
+  "phoneHref": "tel:+27824158441",
+  "email": "keenosmith@kailor.co.za",
+  "profiles": [
+    {
+      "label": "Portfolio",
+      "text": "keenosmith.vercel.app",
+      "href": "https://keenosmith.vercel.app"
+    },
+    {
+      "label": "LinkedIn",
+      "text": "linkedin.com/in/keenotreysmith",
+      "href": "https://www.linkedin.com/in/keenotreysmith/"
+    },
+    {
+      "label": "GitHub",
+      "text": "github.com/keenosmith-del",
+      "href": "https://github.com/keenosmith-del"
+    }
+  ],
+  "skills": [
+    {
+      "label": "AI engineering",
+      "text": "AI agents, multi-agent orchestration, tool calling, RAG, embeddings, vector search, prompt and context engineering, structured outputs, LLM integration, evaluation, human review"
+    },
+    {
+      "label": "Programming and services",
+      "text": "Python, JavaScript, TypeScript, SQL, FastAPI, Node.js, Express, REST APIs, OpenAPI, React"
+    },
+    {
+      "label": "Automation and integration",
+      "text": "n8n, webhooks, API integration, workflow orchestration, asynchronous processing, event-driven architecture, MCP"
+    },
+    {
+      "label": "AI platforms",
+      "text": "Microsoft Foundry, Azure OpenAI, Anthropic Claude, Amazon Bedrock, Gemini, Vertex AI, Ollama, Hugging Face"
+    },
+    {
+      "label": "Reliability and delivery",
+      "text": "Exception handling, retries and backoff, logging, monitoring, OpenTelemetry, Prometheus, Grafana, Docker, Git, GitHub Actions, CI/CD"
+    },
+    {
+      "label": "Data and security",
+      "text": "PostgreSQL, MongoDB, Prisma, Mongoose, Redis, IAM, RBAC, least privilege, authentication and authorisation, Azure, AWS, Google Cloud"
+    }
+  ],
+  "experience": [
+    {
+      "title": "Python and Full Stack Engineer in AI Training and Evaluation",
+      "employer": "Turing / OpenTrain AI",
+      "dates": "February 2026 – Present",
+      "paragraphs": [
+        "Contribute Python and JavaScript/TypeScript engineering to AI training and evaluation workflows focused on coding ability, reasoning, technical accuracy and response quality."
+      ],
+      "bullets": [
+        "Develop, review and evaluate programming solutions for benchmarking and model improvement; assess correctness, maintainability, edge cases and reproducibility.",
+        "Conduct model evaluations and rank responses against defined criteria, documenting technical rationales, reasoning gaps and implementation defects.",
+        "Create and refine task-specific examples for Supervised Fine-Tuning (SFT); provide structured feedback for Reinforcement Learning with Human Feedback (RLHF) workflows.",
+        "Review code and documentation for readability, modularity, testing, security and stability across Python, JavaScript/TypeScript and Docker environments."
+      ]
+    },
+    {
+      "title": "Founder | AI Solutions Engineer and Technology Consultant",
+      "employer": "KAILOR",
+      "dates": "June 2026 – Present",
+      "paragraphs": [
+        "Developed an AI-enabled technology consultancy using AI-assisted assessment to identify business needs and scope software, automation and integration solutions. Combine hands-on engineering, specialist partners and third-party platforms according to client requirements."
+      ],
+      "bullets": [
+        "Map business processes, manual tasks and integration gaps; translate findings into technical recommendations, solution architectures and implementation scopes.",
+        "Design discovery and assessment workflows that distinguish opportunities for AI from needs better addressed through conventional software or workflow automation.",
+        "Define application and integration approaches using LLMs, APIs, webhooks, structured business rules, workflow orchestration and human review.",
+        "Plan permissions, exception handling, reliability controls and operational safeguards; explain technical limitations and delivery priorities in business terms."
+      ],
+      "clientWork": {
+        "heading": "Selected Confidential Client Work",
+        "entries": [
+          {
+            "label": "AI and automation engagement",
+            "text": "Designed an AI-assisted approach to repetitive administration, customer enquiries and follow-up activities. Mapped the workflow and combined LLM processing, business rules, APIs and orchestration, retaining review for exceptions and higher-risk actions. Client details withheld."
+          },
+          {
+            "label": "AI application engineering engagement",
+            "text": "Designed and developed an AI-enabled application for business information and recurring operational tasks. Engineered structured model interactions, APIs, data processing, application state and controlled outputs within an end-to-end workflow. Client details withheld."
+          },
+          {
+            "label": "Business process and AI assessment",
+            "text": "Assessed manual activities, digital tools and integration gaps. Produced implementation recommendations covering AI, conventional software and third-party automation, with priorities for architecture, human oversight and operational risk. Client details withheld."
+          }
+        ]
+      }
+    },
+    {
+      "title": "Technical and Digital Operations Lead and Co Founder",
+      "employer": "Firstdaes Entertainment",
+      "dates": "January 2020 – June 2026",
+      "paragraphs": [
+        "Co-founded an events and entertainment business, owning digital platforms, business systems, workflow design and technology-enabled operational improvements."
+      ],
+      "bullets": [
+        "Translated business objectives into requirements, digital solutions and practical process improvements; managed implementation, testing and troubleshooting.",
+        "Evaluated and integrated services for communications, marketing and analytics; coordinated external providers, resources and delivery dependencies.",
+        "Used operational feedback and performance data to improve digital initiatives and maintain the company’s technical environment."
+      ]
+    },
+    {
+      "title": "Contract Specialist in Technical Content and Documentation",
+      "employer": "3Play Media",
+      "dates": "February 2021 – September 2025",
+      "paragraphs": [],
+      "bullets": [
+        "Reviewed, transcribed and edited complex technical material covering software, cloud infrastructure, networking and cybersecurity, preserving terminology and contextual accuracy.",
+        "Resolved ambiguity and inconsistencies; independently managed quality and deadlines across specialist assignments.",
+        "Worked with material associated with enterprise technology organisations including Cisco, Oracle, Palo Alto Networks, Salesforce, NVIDIA and Apple."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "label": "Stellenbosch University",
+      "text": "Generative AI Mini Bootcamp | June - September 2026"
+    },
+    {
+      "label": "HyperionDev",
+      "text": "Full-Stack Software Engineering and Web Development | January - June 2026"
+    },
+    {
+      "label": "University of South Africa",
+      "text": "BSc Computer Science studies | 2017 – 2022 GPA 3.75"
+    }
+  ],
+  "credentials": [
+    {
+      "label": "Microsoft AI-103",
+      "text": "Azure AI Apps and Agents Developer Associate certification preparation - In progress"
+    },
+    {
+      "label": "Automation and cloud",
+      "text": "n8n Workflow Automation and AI; Google Cloud Manage Kubernetes in Google Cloud; Microsoft Applied Skills in Defender XDR"
+    },
+    {
+      "label": "AI development",
+      "text": "Microsoft × Founderz Agent Architect and Cybersecurity training; AWS × Udacity AI/ML Scholars AI Practitioner; AI Programmer Nanodegree; WeThinkCode_ Generative AI for Software Engineers and AI Course for Developers"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "key": "cloud",
+  "label": "Cloud Engineer",
+  "pdf": "/Keeno_Smith_Cloud_Engineering_CV.pdf",
+  "downloadFilename": "Keeno-Smith-Cloud-Engineer-CV.pdf",
+  "sourceSha256": "f1b994f6a7bfc3ab6c95d43be7bd5e0def77be188612857278db30e6695e6f60",
+  "headline": "Cloud Software Engineer | Cloud-Native Applications and Reliability",
+  "emphasis": "Azure · AWS · Google Cloud · DevOps · Distributed Systems · Observability",
+  "summary": [
+    "Cloud Software Engineer specialising in cloud-native application development, platform integration and dependable distributed systems. Combine Python, JavaScript/TypeScript and Go engineering with Azure, AWS and Google Cloud services, containerised applications, REST APIs, asynchronous processing and CI/CD to build maintainable software across cloud and local environments.",
+    "Experience spans independent software delivery, AI training and evaluation, and business technology consulting. Design the services around cloud applications: persistent data, authentication, messaging, webhooks, monitoring and recovery. Apply structured error handling, retries, access controls, reproducible tests and operational visibility, with attention to dependable service integration, clear technical boundaries and operational readiness."
+  ],
+  "projectsIntro": "Independent portfolio projects demonstrating cloud-native applications, service reliability and operational engineering.",
+  "projects": [
+    {
+      "title": "Microsoft Azure DevOps Software Engineering Platform",
+      "technologies": "Azure · Microsoft Foundry · React / TypeScript · Express · FastAPI · MongoDB · Docker",
+      "description": "Developed a full-stack engineering operations system connecting GitHub evidence with Azure activity, metrics and incident workflows. Separates React, Express and FastAPI services, persists investigations and audit history, and supports authenticated signals, scoped diagnostics, approvals and recovery verification. Demonstrates cloud-service integration and controlled operational workflows; production deployment was not claimed.",
+      "repository": "https://github.com/keenosmith-del/microsoft-ai-powered-software-engineering-devops"
+    },
+    {
+      "title": "Distributed Systems Reliability Chaos Engineering and Disaster Recovery Platform",
+      "technologies": "Go · React / TypeScript · Docker · Kubernetes · k6 · Toxiproxy · OpenTelemetry",
+      "description": "Built a reliability-focused operations platform for testing service behaviour under controlled failure. Combines load generation, fault injection, telemetry and recovery validation across distributed components. Demonstrates retries, idempotency, data-consistency checks and observable operational behaviour relevant to cloud-native and container-based applications.",
+      "repository": "https://github.com/keenosmith-del/sre-chaos-engineering"
+    },
+    {
+      "title": "n8n Enterprise Workflow and Integration OpsFlow Platform",
+      "technologies": "n8n · React / TypeScript · NestJS · PostgreSQL · RabbitMQ · Redis · Docker",
+      "description": "Engineered event-driven procurement workflows covering budget checks, supplier quotations, approval and purchase orders. Integrates an application-owned data and permission model with external orchestration, webhooks, messaging and operational audit trails. Addresses asynchronous delivery, retry behaviour, approval pauses and failure handling across service boundaries.",
+      "repository": "https://github.com/keenosmith-del/n8n-workflow-integration-opsflow"
+    },
+    {
+      "title": "Intelligent Manufacturing Quality Control Platform",
+      "technologies": "Google Cloud-ready · Firestore · Cloud Storage · Rust / Axum · ONNX Runtime · CI/CD",
+      "description": "Developed a React and Rust inspection application with Firestore-backed evidence, versioned model releases and storage adapters for local and Google Cloud environments. Includes model activation, rollback, monitoring and a manual cloud deployment workflow. Google Cloud deployment was prepared but not exercised; the implemented inspection and review workflows were verified locally.",
+      "repository": "https://github.com/keenosmith-del/intelligent-manufacturing-qc"
+    },
+    {
+      "title": "Enterprise AI Customer Operations Platform",
+      "technologies": "React · Express · PostgreSQL · RabbitMQ · Azure Service Bus SDK · Docker · CI/CD",
+      "description": "Built a full-stack case operations system with an independent worker, transactional outbox and durable asynchronous jobs. Implements acknowledgement, retries, dead-letter handling, lease recovery, idempotent outcomes and operational health views. Local RabbitMQ processing was verified; Azure Service Bus remained an optional contract-tested integration rather than a claimed live deployment.",
+      "repository": "https://github.com/keenosmith-del/enterprise-ai-customer-operations"
+    }
+  ]
+}

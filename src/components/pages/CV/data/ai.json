@@ -1,0 +1,46 @@
+{
+  "key": "ai",
+  "label": "AI Engineer",
+  "pdf": "/Keeno_Smith_AI_Engineering_CV.pdf",
+  "downloadFilename": "Keeno-Smith-AI-Engineer-CV.pdf",
+  "sourceSha256": "d6e48e107f04646964475b93d8aaedf821c2ce6fbd94bf6a8aa8d9f3182a5725",
+  "headline": "AI Software Engineer | Agentic AI and Intelligent Automation",
+  "emphasis": "Python · AI Agents · API Integration · Workflow Automation · Reliable AI Systems",
+  "summary": [
+    "AI Software Engineer specialising in agentic systems, intelligent automation and API-integrated applications. Combine Python and JavaScript/TypeScript engineering with multi-agent orchestration, tool calling, retrieval-augmented generation, document processing, structured outputs and human-in-the-loop workflows to connect AI capabilities with practical business processes.",
+    "Experience includes AI model training and evaluation, independent software delivery and business technology consulting. Design the services surrounding AI: APIs, webhooks, persistent state, authentication, asynchronous processing, evaluation and observability. Focus on dependable execution through exception handling, retries, bounded permissions and human review, while translating operational requirements into technical solutions and explaining limitations clearly."
+  ],
+  "projectsIntro": "Independent portfolio projects demonstrating AI engineering, business integration and automation reliability.",
+  "projects": [
+    {
+      "title": "Microsoft Azure DevOps Software Engineering Platform",
+      "technologies": "Microsoft Foundry · Azure · JavaScript · APIs · Docker · MongoDB · Multi-agent orchestration",
+      "description": "Designed a multi-agent engineering platform for repository analysis, application diagnostics and incident investigation. Connects GitHub, source code, documentation and operational evidence to support structured findings and remediation planning. Demonstrates tool-augmented reasoning, API integration, evidence grounding, bounded permissions and human-in-the-loop execution.",
+      "repository": "https://github.com/keenosmith-del/microsoft-ai-powered-software-engineering-devops"
+    },
+    {
+      "title": "n8n Enterprise Workflow and Integration OpsFlow Platform",
+      "technologies": "n8n · React / TypeScript · Node.js · PostgreSQL · REST APIs · Webhooks · Docker",
+      "description": "Designed procurement workflows spanning request submission, budget validation, supplier quotations, manager approval and purchase-order generation. Uses n8n for orchestration while the application owns business state, permissions and audit history. Covers asynchronous integration, approval pauses, safe retries, exception handling and operational visibility.",
+      "repository": "https://github.com/keenosmith-del/n8n-workflow-integration-opsflow"
+    },
+    {
+      "title": "Claude AI Procurement and Contract Intelligence Platform",
+      "technologies": "Anthropic Claude · Document processing · Structured outputs · RAG · React · Node.js / Python",
+      "description": "Designed an AI-assisted procurement system for extracting contract terms, comparing suppliers and identifying negotiation opportunities. Brings pricing, SLAs, renewal clauses, liability and payment terms into evidence-grounded comparisons and structured decision support, with human review of commercial recommendations.",
+      "repository": "https://github.com/keenosmith-del/claude-powered-legal-procurement-intelligence"
+    },
+    {
+      "title": "Ollama Private Business Intelligence Platform",
+      "technologies": "Ollama · Python · FastAPI · RAG · Embeddings · PostgreSQL / pgvector · React · Docker",
+      "description": "Designed a private business-information application using local inference and retrieval over sensitive reports, policies and internal documents. Connects ingestion, document processing, embeddings and grounded question answering through integrated application services, supporting analysis without sending source documents to an external LLM provider.",
+      "repository": "https://github.com/keenosmith-del/ollama-private-business-intelligence"
+    },
+    {
+      "title": "Distributed Systems Reliability Chaos Engineering and Disaster Recovery Platform",
+      "technologies": "Go · React / TypeScript · PostgreSQL · Redis · Docker · k6 · Toxiproxy · OpenTelemetry",
+      "description": "Designed a distributed operations platform for observing service health, injecting controlled failures and validating recovery. Covers load generation, telemetry, retries, idempotency, queue behaviour and data-consistency checks. Demonstrates failure handling and recovery verification applicable to dependable automation services.",
+      "repository": "https://github.com/keenosmith-del/sre-chaos-engineering"
+    }
+  ]
+}

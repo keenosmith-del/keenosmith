@@ -1,0 +1,46 @@
+{
+  "key": "full-stack",
+  "label": "Full-Stack Engineer",
+  "pdf": "/Keeno_Smith_Full_Stack_Engineering_CV.pdf",
+  "downloadFilename": "Keeno-Smith-Full-Stack-Engineer-CV.pdf",
+  "sourceSha256": "94c4acb47782bfec5832c9e38cab86d8b86d4eaec915859af6103455092e434c",
+  "headline": "Full-Stack Software Engineer | Web Applications and API Engineering",
+  "emphasis": "JavaScript · TypeScript · Python · React · Node.js · REST APIs · SQL and NoSQL",
+  "summary": [
+    "Full-Stack Software Engineer developing business applications across frontend interfaces, backend services and data layers. Combine JavaScript/TypeScript and Python with React, Node.js, Express, FastAPI, REST APIs and SQL/NoSQL databases to turn functional requirements into maintainable, integrated software. Work across authentication, application state, data modelling, third-party APIs and responsive user experiences.",
+    "Experience includes independent end-to-end software delivery, AI training and evaluation, and business technology consulting. Build application workflows with testing, validation, permissions, asynchronous jobs, integration boundaries and operational visibility. Focus on readable code, practical user journeys and reliable behaviour from browser to database, while communicating technical choices and limitations clearly."
+  ],
+  "projectsIntro": "Independent portfolio projects demonstrating frontend, backend, API integration and maintainable business applications.",
+  "projects": [
+    {
+      "title": "Enterprise AI Customer Operations Platform",
+      "technologies": "React / TypeScript · Express · PostgreSQL · Prisma · RabbitMQ · Docker · Vitest",
+      "description": "Built a complete case-management workspace with filtering, review queues, saved operator decisions and audit trails. Developed REST APIs, relational data models and a separate worker for asynchronous recommendations and evaluations. Includes end-to-end case state transitions, retry controls, test coverage and responsive frontend views; AI output remains subject to human approval.",
+      "repository": "https://github.com/keenosmith-del/enterprise-ai-customer-operations"
+    },
+    {
+      "title": "kailor Business Discovery and Technology Consultancy Platform",
+      "technologies": "React · Node.js / TypeScript · PostgreSQL · Prisma · REST APIs · Docker",
+      "description": "Developed a full-stack consultancy application for guided business discovery, conversation and structured technical assessments. Supports account and guest journeys, independent projects, persistent conversations, versioned context and report generation. Integrates application state, authentication and workflow orchestration into an end-to-end user experience.",
+      "repository": "https://github.com/keenosmith-del/kailor"
+    },
+    {
+      "title": "n8n Enterprise Workflow and Integration OpsFlow Platform",
+      "technologies": "React / TypeScript · NestJS · PostgreSQL · n8n · REST APIs · RabbitMQ · Docker",
+      "description": "Designed a procurement application spanning request submission, budget validation, supplier quotations, approvals and purchase-order creation. The frontend and backend own user workflows, business state, permissions and audit history; n8n handles integration orchestration. Demonstrates service boundaries, API contracts, asynchronous messaging, retries and operational visibility.",
+      "repository": "https://github.com/keenosmith-del/n8n-workflow-integration-opsflow"
+    },
+    {
+      "title": "MERN Productivity Management Platform",
+      "technologies": "MongoDB · Express · React · Node.js · JWT · REST APIs · Mongoose",
+      "description": "Built a full-stack productivity application bringing together tasks, projects, goals, reminders, notes, folders and calendar functions. Implemented user accounts, protected routes, JWT authentication, CRUD workflows, MongoDB persistence, search and filtering. Demonstrates component-driven frontend design and modular API and data-layer engineering.",
+      "repository": "https://github.com/keenosmith-del/personal-productivity-desktop"
+    },
+    {
+      "title": "Music Streaming and API Platform",
+      "technologies": "React · JavaScript · REST APIs · External API Integration · State Management",
+      "description": "Developed a music discovery and playback experience integrating external artist, album and track data. Includes search, artist and album navigation, shared playback state, dynamic queue handling and autoplay behaviour. Emphasises asynchronous API integration, reusable UI components and coordinated frontend and backend application state.",
+      "repository": "https://github.com/keenosmith-del/music-api"
+    }
+  ]
+}
