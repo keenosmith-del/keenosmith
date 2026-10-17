@@ -565,30 +565,40 @@
   position: absolute;
   top: 17px;
   right: 23px;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   width: 26px;
   height: 30px;
+
   padding: 0;
   border: 0;
   border-radius: 0;
+
   background: transparent !important;
   box-shadow: none !important;
+
   color: #99999d;
-  font-size: 27px;
+
+  font-size: 16px;
   font-weight: 300;
   line-height: 1;
+
   cursor: pointer;
+
   transition:
     color 180ms ease,
     transform 180ms ease;
 }
+
 .mdo-modal-close:hover {
   background: transparent !important;
   color: #151517;
   transform: translateY(-1px);
 }
+
 .mdo-modal-groups {
   display: flex;
   flex-direction: column;

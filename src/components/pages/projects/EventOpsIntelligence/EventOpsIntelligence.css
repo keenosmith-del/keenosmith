@@ -135,26 +135,81 @@
 }
 
 /* Uniform action geometry: colour variants only */
+/* Base button */
+
 .eventops-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 6px;
+
   min-height: 37px;
   padding: 0 16px;
+
   border: 0;
   border-radius: 999px;
+
+  font-family: inherit;
   font-size: 11px;
   font-weight: 500;
   line-height: 1.25;
-  letter-spacing: -0.01em;
+  letter-spacing: normal;
+
   white-space: nowrap;
   cursor: pointer;
+
   transition:
     background-color 180ms ease,
     color 180ms ease,
     transform 180ms ease;
 }
+
+/* Tech stack button — matches AWS */
+
+button.eventops-button.eventops-button-dark.eventops-tech-trigger {
+  margin-top: 45px;
+
+  min-height: 37px;
+  padding: 0 16px;
+
+  background: #151517;
+  color: #fffefc !important;
+
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: normal;
+
+  border: 0;
+  border-radius: 999px;
+  box-shadow: none;
+}
+
+/* Icon */
+
+.eventops-tech-trigger svg {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+}
+
+/* Hover */
+
+button.eventops-button.eventops-button-dark.eventops-tech-trigger:hover {
+  background: #0b0b0dda;
+  color: #fffefc !important;
+  transform: translateY(-2px);
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+  .eventops-tech-trigger {
+    margin-top: 36px;
+  }
+}
+
 .eventops-button:hover:not(:disabled) {
   transform: translateY(-2px);
 }
@@ -337,7 +392,7 @@
   width: min(1120px, calc(100% - 38px));
   margin: 24px auto;
   padding: clamp(38px, 5.5vw, 68px);
-  /* background: var(--surface-muted, #efeee9);*/ 
+  /* background: var(--surface-muted, #efeee9);*/
   border-radius: 29px;
 }
 .eventops-flow-inner {
@@ -573,10 +628,11 @@
     color 180ms ease,
     transform 180ms ease;
 }
+
 .eventops-modal-close span {
   display: block;
   color: inherit;
-  font-size: 27px;
+  font-size: 16px;
   font-weight: 300;
   line-height: 1;
   transform: translateY(-1px);

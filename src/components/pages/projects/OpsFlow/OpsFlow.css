@@ -1,0 +1,864 @@
+/* OpsFlow / self-contained portfolio case study. AWSBankingRisk is the controls reference. */
+.opsflow-project {
+  position: relative;
+  min-height: 100vh;
+  overflow: visible;
+  background: var(--surface, #faf9f6);
+  color: #151517;
+}
+.opsflow-project *,
+.opsflow-project *::before,
+.opsflow-project *::after {
+  box-sizing: border-box;
+}
+.opsflow-project a {
+  color: inherit;
+  text-decoration: none;
+}
+.opsflow-project button {
+  font-family: inherit;
+}
+.opsflow-project :is(a, button):focus-visible {
+  outline: 2px solid #151517;
+  outline-offset: 4px;
+}
+
+/* Portfolio navigation (AWS dimensions). */
+.opsflow-back {
+  position: fixed;
+  top: 22px;
+  left: 22px;
+  z-index: 30;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 35px;
+  padding: 0 14px;
+  border-radius: 999px;
+  background: rgba(250, 249, 246, 0.82);
+  color: #66666b !important;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 8px 24px rgba(45, 45, 45, 0.06);
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease;
+}
+.opsflow-back:hover {
+  transform: translateY(-2px);
+  background: #fff;
+  color: #444448 !important;
+}
+
+/* All self-contained pill buttons use the same dimensions and interaction. */
+.opsflow-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 37px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: normal;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+.opsflow-button-dark {
+  background: #151517;
+  color: #fffefc !important;
+}
+.opsflow-button-dark:hover:not(:disabled) {
+  background: #0b0b0dda;
+  color: #fffefc !important;
+  transform: translateY(-2px);
+}
+.opsflow-button-soft {
+  background: rgba(250, 249, 246, 0.82);
+  color: #66666b !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 8px 24px rgba(45, 45, 45, 0.06);
+}
+.opsflow-button-soft:hover:not(:disabled) {
+  background: #fff;
+  color: #444448 !important;
+  transform: translateY(-2px);
+}
+.opsflow-button-disabled:disabled {
+  background: var(--surface-muted, #efeee9);
+  color: #99999d !important;
+  opacity: 1;
+  cursor: not-allowed;
+}
+
+/* Hero follows portfolio scale, but with OpsFlow-specific composition. */
+.opsflow-hero {
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  padding: 136px 5.6vw 108px;
+}
+.opsflow-hero-inner {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+  animation: opsflow-reveal 800ms both;
+}
+.opsflow-hero-topline {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 25px;
+  margin-bottom: 30px;
+}
+.opsflow-hero-topline time {
+  flex-shrink: 0;
+  padding-top: 5px;
+  color: #99999d;
+  font-size: 10px;
+  font-weight: 500;
+}
+.opsflow-pill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+.opsflow-pill-list span {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--surface-muted, #efeee9);
+  color: #77777c;
+  font-size: 9px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+.opsflow-hero h1 {
+  max-width: 1120px;
+  margin: 0;
+  color: #151517;
+  font-size: clamp(58px, 8.45vw, 116px);
+  font-weight: 500;
+  line-height: 0.89;
+  letter-spacing: -0.059em;
+}
+.opsflow-hero h1 span {
+  display: block;
+}
+.opsflow-hero-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 22px;
+  margin-top: 48px;
+}
+.opsflow-hero-description {
+  max-width: 850px;
+  margin: 0;
+  color: #555559;
+  font-size: clamp(14px, 1.22vw, 18px);
+  font-weight: 400;
+  line-height: 1.57;
+  letter-spacing: -0.02em;
+}
+.opsflow-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.opsflow-github-icon {
+  display: block;
+  width: 15px;
+  height: 15px;
+  object-fit: contain;
+  flex-shrink: 0;
+  filter: brightness(0) invert(1);
+}
+.opsflow-hero-note {
+  max-width: 525px;
+  margin: -3px 0 0;
+  color: #99999d;
+  font-size: 11px;
+  line-height: 1.65;
+  letter-spacing: -0.01em;
+}
+.opsflow-hero-note a {
+  color: #66666b;
+  font-weight: 500;
+}
+.opsflow-hero-note a:hover {
+  color: #444448;
+}
+
+/* Editorial two-column content; no recurring card frames or decorative rules. */
+.opsflow-section {
+  width: min(960px, calc(100% - 38px));
+  margin: 0 auto;
+  padding: 112px 0;
+  display: grid;
+  grid-template-columns: 168px minmax(0, 1fr);
+  gap: 60px;
+}
+.opsflow-section-label,
+.opsflow-eyebrow {
+  color: #99999d;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+.opsflow-section-label {
+  padding-top: 9px;
+}
+.opsflow-section-copy {
+  min-width: 0;
+}
+.opsflow-section h2,
+.opsflow-journey h2,
+.opsflow-proof h2 {
+  margin: 0;
+  color: #5b5b5f;
+  font-size: clamp(32px, 4.3vw, 56px);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.045em;
+}
+.opsflow-section p {
+  color: #858589;
+  font-size: 13px;
+  line-height: 1.7;
+  letter-spacing: -0.007em;
+}
+.opsflow-two-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 34px;
+  margin-top: 43px;
+}
+.opsflow-two-columns p {
+  margin: 0;
+}
+.opsflow-section-intro {
+  max-width: 680px;
+  margin: 28px 0 0;
+}
+.opsflow-summary-action {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 28px;
+}
+
+/* The workflow map is distinct from AWS's decision grid. */
+.opsflow-journey {
+  padding: 25px 19px 60px;
+}
+.opsflow-journey-inner {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+  padding: clamp(36px, 5.5vw, 70px);
+  border-radius: 29px;
+  /* background: var(--surface-muted, #efeee9); */
+}
+.opsflow-journey h2 {
+  max-width: 760px;
+  margin-top: 22px;
+}
+.opsflow-journey-intro {
+  max-width: 650px;
+  margin: 21px 0 0;
+  color: #858589;
+  font-size: 13px;
+  line-height: 1.7;
+}
+.opsflow-stage-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(17px, 2.2vw, 30px);
+  margin-top: 72px;
+}
+.opsflow-stage-index {
+  color: #9a9a9d;
+  font-size: 10px;
+  font-weight: 500;
+}
+.opsflow-stage h3 {
+  margin: 21px 0 0;
+  color: #555559;
+  font-size: clamp(21px, 2.1vw, 28px);
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+}
+.opsflow-stage p {
+  max-width: 220px;
+  margin: 13px 0 0;
+  color: #858589;
+  font-size: 11px;
+  line-height: 1.65;
+}
+
+.opsflow-phase-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 53px;
+}
+.opsflow-phase {
+  display: grid;
+  grid-template-columns: 145px minmax(0, 1fr);
+  gap: 26px;
+}
+.opsflow-phase-id {
+  padding-top: 5px;
+  color: #99999d;
+  font-size: 10px;
+  font-weight: 500;
+}
+.opsflow-phase h3 {
+  max-width: 510px;
+  margin: 0;
+  color: #555559;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.13;
+  letter-spacing: -0.035em;
+}
+.opsflow-phase p {
+  margin: 17px 0 0;
+  font-size: 12px;
+}
+.opsflow-phase p strong {
+  color: #66666b;
+  font-weight: 500;
+}
+.opsflow-inline-flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 7px;
+  margin-top: 25px;
+}
+.opsflow-inline-flow span {
+  color: #77777c;
+  font-size: 10px;
+  font-weight: 500;
+}
+.opsflow-inline-flow svg {
+  color: #b4b3b0;
+}
+.opsflow-wait-state {
+  margin: 36px 0 37px 171px;
+  padding: 16px 20px;
+  border-radius: 14px;
+  background: #efeee9;
+  color: #77777c;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.opsflow-engineering-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 51px 39px;
+  margin-top: 56px;
+}
+.opsflow-engineering-grid h3 {
+  margin: 0;
+  color: #66666b;
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+.opsflow-engineering-grid p {
+  margin: 13px 0 0;
+  font-size: 12px;
+}
+.opsflow-outcomes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 35px 43px;
+  margin-top: 49px;
+}
+.opsflow-outcomes span {
+  color: #555559;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+}
+.opsflow-outcomes p {
+  margin: 12px 0 0;
+  font-size: 12px;
+}
+.opsflow-business .opsflow-section-intro {
+  margin-top: 41px;
+}
+
+.opsflow-proof {
+  padding: 84px 19px 92px;
+}
+.opsflow-proof-inner {
+  width: min(1020px, 100%);
+  margin: 0 auto;
+}
+.opsflow-proof h2 {
+  max-width: 840px;
+  margin-top: 22px;
+}
+.opsflow-proof-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 25px;
+  margin-top: 65px;
+}
+.opsflow-proof-grid div {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.opsflow-proof-grid strong {
+  color: #65656a;
+  font-size: clamp(42px, 5vw, 70px);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.055em;
+  font-variant-numeric: tabular-nums;
+}
+.opsflow-proof-grid span {
+  max-width: 170px;
+  color: #99999d;
+  font-size: 11px;
+  line-height: 1.55;
+}
+.opsflow-proof-inner > p {
+  max-width: 760px;
+  margin: 45px 0 0;
+  color: #858589;
+  font-size: 12px;
+  line-height: 1.75;
+}
+
+.opsflow-technology-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 52px 42px;
+  margin-top: 58px;
+}
+.opsflow-technology-grid h3 {
+  margin: 0;
+  color: #151517;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+}
+.opsflow-technology-grid p {
+  max-width: 360px;
+  margin: 16px 0 0;
+  font-size: 12px;
+}
+.opsflow-tech-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 22px;
+}
+.opsflow-tech-tags span {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 11px;
+  border-radius: 999px;
+  background: var(--surface-muted, #efeee9);
+  color: #66666b;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+/* AWS button contract, anchored to the technical section for specificity. */
+.opsflow-technology .opsflow-tech-trigger {
+  margin-top: 45px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 37px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 999px;
+  background: #151517;
+  color: #fffefc !important;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: normal;
+  box-shadow: none;
+}
+.opsflow-technology .opsflow-tech-trigger svg {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+}
+.opsflow-technology .opsflow-tech-trigger:hover:not(:disabled) {
+  background: #0b0b0dda;
+  color: #fffefc !important;
+  transform: translateY(-2px);
+}
+
+.opsflow-closing {
+  padding: 125px 19px 68px;
+}
+.opsflow-closing > div {
+  width: min(770px, 100%);
+  margin: 0 auto;
+  text-align: center;
+}
+.opsflow-closing h2 {
+  margin: 24px 0 0;
+  color: #66666b;
+  font-size: clamp(29px, 4.15vw, 52px);
+  font-weight: 500;
+  line-height: 1.04;
+  letter-spacing: -0.044em;
+}
+.opsflow-closing p {
+  width: min(700px, 100%);
+  margin: 27px auto 0;
+  color: #858589;
+  font-size: 13px;
+  line-height: 1.7;
+}
+.opsflow-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  padding: 28px 19px 116px;
+}
+.opsflow-footer-back,
+.opsflow-footer-top {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 40px;
+  padding: 0 15px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--surface-muted, #efeee9);
+  color: #77777c !important;
+  font-size: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease;
+}
+.opsflow-footer-top {
+  width: 40px;
+  padding: 0;
+}
+.opsflow-footer-back:hover,
+.opsflow-footer-top:hover {
+  transform: translateY(-2px);
+  background: #dfded9;
+  color: #555559 !important;
+}
+.opsflow-floating-top {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(250, 249, 246, 0.82);
+  color: #66666b;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 8px 24px rgba(45, 45, 45, 0.08);
+  cursor: pointer;
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease;
+}
+.opsflow-floating-top:hover {
+  transform: translateY(-2px);
+  background: white;
+}
+
+/* AWS-sized 600px modal, quiet labels and pills. No heading. */
+.opsflow-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 19px;
+  background: rgba(35, 35, 37, 0.28);
+  backdrop-filter: blur(11px);
+  -webkit-backdrop-filter: blur(11px);
+  animation: opsflow-overlay-in 220ms ease both;
+}
+.opsflow-modal {
+  position: relative;
+  width: min(100%, 600px);
+  max-height: calc(100dvh - 38px);
+  overflow-y: auto;
+  padding: 40px 34px 34px;
+  background: rgba(250, 249, 246, 0.96);
+  border-radius: 24px;
+  box-shadow:
+    0 24px 72px rgba(35, 35, 37, 0.14),
+    0 8px 24px rgba(35, 35, 37, 0.07);
+  animation: opsflow-modal-in 320ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+/* Rendered small x, not the misleading 27px declaration from AWS. */
+.opsflow-project button.opsflow-modal-close {
+  position: absolute;
+  top: 17px;
+  right: 23px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 30px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent !important;
+  box-shadow: none !important;
+  color: #99999d;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    color 180ms ease,
+    transform 180ms ease;
+}
+.opsflow-project button.opsflow-modal-close:hover {
+  background: transparent !important;
+  color: #151517;
+  transform: translateY(-1px);
+}
+.opsflow-modal-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+  padding-right: 8px;
+}
+.opsflow-modal-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.opsflow-modal-category {
+  color: #66666b;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+.opsflow-modal-note {
+  margin: 6px 0 0;
+  color: #99999d;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.opsflow-modal-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 12px;
+}
+.opsflow-modal-pills span {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 11px;
+  border-radius: 999px;
+  background: #f0efeb;
+  color: #77777c;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+@keyframes opsflow-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes opsflow-overlay-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes opsflow-modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 950px) {
+  .opsflow-section {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .opsflow-stage-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px 29px;
+    margin-top: 48px;
+  }
+}
+@media (max-width: 700px) {
+  .opsflow-back {
+    top: 14px;
+    left: 14px;
+  }
+  .opsflow-hero {
+    min-height: auto;
+    padding: 108px 19px 67px;
+  }
+  .opsflow-hero-topline {
+    flex-direction: column-reverse;
+    gap: 14px;
+    margin-bottom: 25px;
+  }
+  .opsflow-hero h1 {
+    font-size: clamp(45px, 12vw, 76px);
+    line-height: 0.92;
+  }
+  .opsflow-hero-bottom {
+    margin-top: 30px;
+  }
+  .opsflow-section {
+    width: calc(100% - 38px);
+    padding: 78px 0;
+  }
+  .opsflow-two-columns,
+  .opsflow-engineering-grid,
+  .opsflow-outcomes,
+  .opsflow-technology-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .opsflow-two-columns {
+    margin-top: 25px;
+  }
+  .opsflow-engineering-grid,
+  .opsflow-outcomes,
+  .opsflow-technology-grid {
+    margin-top: 37px;
+  }
+  .opsflow-journey {
+    padding: 5px 13px 42px;
+  }
+  .opsflow-journey-inner {
+    padding: 35px 22px;
+    border-radius: 22px;
+  }
+  .opsflow-stage-grid {
+    gap: 30px 22px;
+    margin-top: 37px;
+  }
+  .opsflow-stage h3 {
+    margin-top: 12px;
+    font-size: 22px;
+  }
+  .opsflow-phase-stack {
+    margin-top: 38px;
+  }
+  .opsflow-phase {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .opsflow-phase h3 {
+    font-size: 22px;
+  }
+  .opsflow-wait-state {
+    margin: 24px 0;
+  }
+  .opsflow-technology .opsflow-tech-trigger {
+    margin-top: 36px;
+  }
+  .opsflow-proof {
+    padding: 70px 19px;
+  }
+  .opsflow-proof-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 34px 22px;
+    margin-top: 38px;
+  }
+  .opsflow-proof-inner > p {
+    margin-top: 32px;
+  }
+  .opsflow-closing {
+    padding: 90px 19px 45px;
+  }
+  .opsflow-footer {
+    padding-bottom: 95px;
+  }
+  .opsflow-modal {
+    padding: 42px 22px 26px;
+    border-radius: 21px;
+  }
+  .opsflow-project button.opsflow-modal-close {
+    top: 11px;
+    right: 16px;
+  }
+  .opsflow-modal-groups {
+    gap: 24px;
+  }
+}
+@media (max-width: 380px) {
+  .opsflow-stage-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .opsflow-inline-flow {
+    gap: 5px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .opsflow-project *,
+  .opsflow-project *::before,
+  .opsflow-project *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -33,7 +33,13 @@ import { canonicalProjects } from "./assistant/knowledge.js";
 import AWSBankingRisk from "./components/pages/projects/AWSBankingRisk/AWSBankingRisk.jsx";
 import MicrosoftDevOps from "./components/pages/projects/MicrosoftDevOps/MicrosoftDevOps.jsx";
 import GCPRetail from "./components/pages/projects/GCPRetail/GCPRetail.jsx";
+
 import EventOpsIntelligence from "./components/pages/projects/EventOpsIntelligence/EventOpsIntelligence.jsx";
+import OllamaPrivateBI from "./components/pages/projects/OllamaPrivateBI/OllamaPrivateBI.jsx";
+
+import KailorKai from "./components/pages/projects/KailorKai/KailorKai.jsx";
+
+import OpsFlow from "./components/pages/projects/OpsFlow/OpsFlow.jsx";
 
 const placeholderProjects = [
   ...rebuildingProjects.map((project) => ({
@@ -85,7 +91,11 @@ function App() {
               project.id !== "gcp-retail" &&
               project.route !== "/projects/gcp-retail" &&
               project.id !== "eventops-intelligence" &&
-              project.route !== "/projects/eventops-intelligence",
+              project.route !== "/projects/eventops-intelligence" &&
+              project.id !== "ollama" &&
+              project.route !== "/projects/ollama" &&
+              project.id !== "n8n" &&
+              project.route !== "/projects/n8n",
           )
           .flatMap((project) =>
             [...new Set([project.route, `/projects/${project.id}`])].map(
@@ -119,6 +129,8 @@ function App() {
               id !== "microsoft-devops" &&
               id !== "gcp-retail" &&
               id !== "eventops-intelligence" &&
+              id !== "ollama" &&
+              id !== "n8n" &&
               !placeholderProjects.some((project) => project.id === id),
           )
           .map((project) => (
@@ -143,12 +155,13 @@ function App() {
           element={<EventOpsIntelligence />}
         />
 
-        <Route
-          path="/companies/kailor"
-          element={<Company company="kailor" />}
-        />
+        <Route path="/projects/ollama" element={<OllamaPrivateBI />} />
 
-        <Route path="/companies/kai" element={<Company company="kai" />} />
+        <Route path="/projects/n8n" element={<OpsFlow />} />
+
+        <Route path="/companies/kailor" element={<KailorKai />} />
+
+        <Route path="/companies/kai" element={<KailorKai />} />
 
         <Route path="/explore" element={<Explore />} />
 
