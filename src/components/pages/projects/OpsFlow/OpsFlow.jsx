@@ -445,7 +445,7 @@ export default function OpsFlow() {
           <div className="opsflow-section-label">Business integrity</div>
           <div className="opsflow-section-copy">
             <h2>
-              Budget reservations must survive the happy path—and every other
+              Budget reservations must survive the happy path; and every other
               path.
             </h2>
             <div className="opsflow-outcomes">
@@ -665,7 +665,7 @@ export default function OpsFlow() {
 
       <footer ref={footerRef} className="opsflow-footer">
         <Link to="/" className="opsflow-footer-back">
-          
+
           Back to portfolio
         </Link>
         <button

@@ -54,9 +54,9 @@ const indexed = (item) => ({
   ),
 });
 const detailRoutes = [
-  "/projects/microsoft",
-  "/projects/aws",
-  "/projects/gcp",
+  "/projects/microsoft-devops",
+  "/projects/banking-risk",
+  "/projects/gcp-retail",
 ];
 export const projectIndex = [...canonicalProjects]
   .sort((a, b) => Number(b.demonstrated) - Number(a.demonstrated))

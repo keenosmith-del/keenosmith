@@ -9,7 +9,11 @@ export const cloudProjects = [
     platform: "Microsoft Azure",
     route: "/projects/microsoft-devops",
   },
-  { id: "vertex-ai-retail", platform: "Google Cloud", route: "/projects/gcp-retail" },
+  {
+    id: "vertex-ai-retail",
+    platform: "Google Cloud",
+    route: "/projects/gcp-retail",
+  },
 ].map((project) => {
   const featured = featuredProjects.find((item) => item.id === project.id);
   return {

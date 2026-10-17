@@ -21,8 +21,16 @@ import eventOpsCover from "../assets/images/ai-section/eventops-project.png";
 
 // Shared by Explore and Selected projects; key by ID to keep artwork and colours aligned.
 export const projectArtwork = {
-  "intelligence-manufacturing-llmops": { image: manufacturingCover, background: "#fff7ed", ink: "var(--charcoal)" },
-  "enterprise-ai-mlops": { image: mlopsCover, background: "#78b8be", ink: "var(--charcoal)" },
+  "intelligence-manufacturing-llmops": {
+    image: manufacturingCover,
+    background: "#a8a9aa",
+    ink: "var(--charcoal)",
+  },
+  "enterprise-ai-mlops": {
+    image: mlopsCover,
+    background: "#3a3a3c",
+    ink: "var(--surface)",
+  },
   "eventops-intelligence": {
     image: eventOpsCover,
     background: "#d5d7d4",
@@ -83,17 +91,17 @@ export const projectArtwork = {
   },
   "ai-assistant": {
     image: ragCover,
-    background: "#e4ceb5",
+    background: "#d3a6a3",
     ink: "var(--charcoal)",
   },
   "enterprise-workspace": {
     image: workspaceCover,
-    background: "#97b2c4",
+    background: "#d5d7d4",
     ink: "var(--charcoal)",
   },
   "music-api": {
     image: musicCover,
-    background: "#d3a6a3",
+    background: "#e4ceb5",
     ink: "var(--charcoal)",
   },
 };

@@ -41,6 +41,14 @@ import KailorKai from "./components/pages/projects/KailorKai/KailorKai.jsx";
 
 import OpsFlow from "./components/pages/projects/OpsFlow/OpsFlow.jsx";
 
+import ClaudeProcurement from "./components/pages/projects/ClaudeProcurement/ClaudeProcurement.jsx";
+
+import SREChaosEngineering from "./components/pages/projects/SREChaosEngineering/SREChaosEngineering.jsx";
+
+import DeepSeekWorkforce from "./components/pages/projects/DeepSeekWorkforce/DeepSeekWorkforce.jsx";
+
+import TelecomBilling from "./components/pages/projects/TelecomBilling/TelecomBilling.jsx";
+
 const placeholderProjects = [
   ...rebuildingProjects.map((project) => ({
     ...project,
@@ -95,7 +103,15 @@ function App() {
               project.id !== "ollama" &&
               project.route !== "/projects/ollama" &&
               project.id !== "n8n" &&
-              project.route !== "/projects/n8n",
+              project.route !== "/projects/n8n" &&
+              project.id !== "claude" &&
+              project.route !== "/projects/claude" &&
+              project.id !== "distributed-reliability" &&
+              project.route !== "/projects/distributed-reliability" &&
+              project.id !== "deepseek" &&
+              project.route !== "/projects/deepseek" &&
+              project.id != "telecom-billing" &&
+              project.route != "telecom-billing",
           )
           .flatMap((project) =>
             [...new Set([project.route, `/projects/${project.id}`])].map(
@@ -131,6 +147,9 @@ function App() {
               id !== "eventops-intelligence" &&
               id !== "ollama" &&
               id !== "n8n" &&
+              id !== "claude" &&
+              id != "distributed-reliability" &&
+              id != "deepseek" &&
               !placeholderProjects.some((project) => project.id === id),
           )
           .map((project) => (
@@ -162,6 +181,17 @@ function App() {
         <Route path="/companies/kailor" element={<KailorKai />} />
 
         <Route path="/companies/kai" element={<KailorKai />} />
+
+        <Route path="/projects/claude" element={<ClaudeProcurement />} />
+
+        <Route
+          path="/projects/distributed-reliability"
+          element={<SREChaosEngineering />}
+        />
+
+        <Route path="/projects/deepseek" element={<DeepSeekWorkforce />} />
+
+        <Route path="/projects/telecom-billing" element={<TelecomBilling />} />
 
         <Route path="/explore" element={<Explore />} />
 
