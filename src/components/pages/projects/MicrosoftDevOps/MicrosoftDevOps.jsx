@@ -1,6 +1,9 @@
+import ProjectNavigation from "../shared/ProjectNavigation.jsx";
+import useProjectPage from "../shared/useProjectPage.js";
+import ProjectModal from "../shared/ProjectModal.jsx";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft, ArrowUp, Layers3 } from "lucide-react";
+import { ArrowUp, Layers3 } from "lucide-react";
 import githubSvg from "../../../../assets/svgs/header/github.svg";
 import "./MicrosoftDevOps.css";
 
@@ -111,73 +114,11 @@ const technicalChoices = [
 ];
 
 function TechStackModal({ onClose }) {
-  const closeRef = useRef(null);
-
-  useEffect(() => {
-    const previousFocus = document.activeElement;
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    closeRef.current?.focus();
-
-    function handleKeyDown(event) {
-      if (event.key === "Escape") onClose();
-      if (event.key === "Tab") {
-        // The close control is the only interactive element in this dialog.
-        event.preventDefault();
-        closeRef.current?.focus();
-      }
-    }
-
-    document.addEventListener("keydown", handleKeyDown);
-    return () => {
-      document.removeEventListener("keydown", handleKeyDown);
-      document.body.style.overflow = previousOverflow;
-      previousFocus?.focus?.();
-    };
-  }, [onClose]);
-
-  return (
-    <div
-      className="mdo-modal-overlay"
-      onMouseDown={(event) => {
-        if (event.target === event.currentTarget) onClose();
-      }}
-    >
-      <div
-        className="mdo-modal"
-        role="dialog"
-        aria-modal="true"
-        aria-label="Project technology stack"
-        onMouseDown={(event) => event.stopPropagation()}
-      >
-        <button
-          ref={closeRef}
-          className="mdo-modal-close"
-          type="button"
-          onClick={onClose}
-          aria-label="Close tech stack"
-        >
-          <span aria-hidden="true">×</span>
-        </button>
-        <div className="mdo-modal-groups">
-          {technologyGroups.map((group) => (
-            <div className="mdo-modal-group" key={group.heading}>
-              <span className="mdo-modal-category">{group.heading}</span>
-              {group.note && <p className="mdo-modal-note">{group.note}</p>}
-              <div className="mdo-modal-pills">
-                {group.skills.map((skill) => (
-                  <span key={skill}>{skill}</span>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
+  return <ProjectModal onClose={onClose} groups={technologyGroups} />;
 }
 
 export default function MicrosoftDevOps() {
+  const pageRef = useProjectPage();
   const [showTop, setShowTop] = useState(false);
   const [showStack, setShowStack] = useState(false);
   const [footerVisible, setFooterVisible] = useState(false);
@@ -205,11 +146,8 @@ export default function MicrosoftDevOps() {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
-    <main className="mdo-project">
-      <Link className="mdo-back" to="/">
-        <ArrowLeft size={16} strokeWidth={1.7} aria-hidden="true" />
-        <span>Back to portfolio</span>
-      </Link>
+    <main ref={pageRef} className="project-case-study mdo-project">
+      <ProjectNavigation className="mdo-back" />
 
       <article>
         <header className="mdo-hero">
@@ -220,7 +158,7 @@ export default function MicrosoftDevOps() {
                   <span key={technology}>{technology}</span>
                 ))}
               </div>
-              <time dateTime="2026-10">Built March 2026</time>
+              <time dateTime="2026-03" >March 2026</time>
             </div>
             <h1>Microsoft Azure <span>DevOps Software Engineering Platform</span></h1>
             <div className="mdo-hero-bottom">

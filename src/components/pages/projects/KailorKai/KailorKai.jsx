@@ -1,17 +1,10 @@
+import ProjectNavigation from "../shared/ProjectNavigation.jsx";
+import useProjectPage from "../shared/useProjectPage.js";
+import ProjectModal from "../shared/ProjectModal.jsx";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import {
-  ArrowLeft,
-  ArrowRight,
-  ArrowUp,
-  BookOpen,
-  Compass,
-  Globe2,
-  Layers3,
-  MessageCircle,
-} from "lucide-react";
+import { ArrowRight, ArrowUp, BookOpen, Compass, Globe2, Layers3, MessageCircle } from "lucide-react";
 import githubSvg from "../../../../assets/svgs/header/github.svg";
-import mascot from "../../../../assets/images/kailor/kailor-unamused.png";
 import LaunchCountdown from "../../../shared/LaunchCountdown.jsx";
 import { companyLaunchLabel } from "../../../../data/companyLaunch.js";
 import "./KailorKai.css";
@@ -104,22 +97,18 @@ const stackGroups = [
 
 const kailorStages = [
   {
-    number: "01",
     title: "Understand before recommending",
     body: "Adaptive discovery and a conversational alternative gather the situation, goals, operating constraints and what the user has already tried. Unknown answers stay unknown.",
   },
   {
-    number: "02",
     title: "Ground the interpretation",
     body: "Confirmed evidence, attributed requirements and revision-aware project memory inform a consulting assessment. An industry label alone cannot justify a product recommendation.",
   },
   {
-    number: "03",
     title: "Compare credible paths",
     body: "The system distinguishes improving a manual process, evaluating an established tool and commissioning custom software; it keeps assumptions and deferred requirements explicit.",
   },
   {
-    number: "04",
     title: "Keep decisions connected",
     body: "Analysis, a live solution canvas, sources and project Chat share context. Reports are immutable snapshots; later corrections create updated assessments rather than rewriting history.",
   },
@@ -186,68 +175,11 @@ function WebsiteButton({ href, label }) {
 }
 
 function StackModal({ onClose }) {
-  const closeRef = useRef(null);
-
-  useEffect(() => {
-    const previous = document.activeElement;
-    const originalOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    closeRef.current?.focus();
-    const handleKeyDown = (event) => {
-      if (event.key === "Escape") onClose();
-      if (event.key === "Tab") {
-        event.preventDefault();
-        closeRef.current?.focus();
-      }
-    };
-    document.addEventListener("keydown", handleKeyDown);
-    return () => {
-      document.removeEventListener("keydown", handleKeyDown);
-      document.body.style.overflow = originalOverflow;
-      previous?.focus?.();
-    };
-  }, [onClose]);
-
-  return (
-    <div
-      className="kk-modal-overlay"
-      onMouseDown={(event) => event.target === event.currentTarget && onClose()}
-    >
-      <div
-        className="kk-modal"
-        role="dialog"
-        aria-modal="true"
-        aria-label="Technology stack for kailor and kai"
-        onMouseDown={(event) => event.stopPropagation()}
-      >
-        <button
-          ref={closeRef}
-          className="kk-modal-close"
-          type="button"
-          aria-label="Close tech stack"
-          onClick={onClose}
-        >
-          <span aria-hidden="true">×</span>
-        </button>
-        <div className="kk-modal-groups">
-          {stackGroups.map((group) => (
-            <div className="kk-modal-group" key={group.heading}>
-              <span className="kk-modal-category">{group.heading}</span>
-              {group.note && <p className="kk-modal-note">{group.note}</p>}
-              <div className="kk-modal-pills">
-                {group.skills.map((skill) => (
-                  <span key={skill}>{skill}</span>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
+  return <ProjectModal onClose={onClose} groups={stackGroups} />;
 }
 
 export default function KailorKai() {
+  const pageRef = useProjectPage();
   const [showStack, setShowStack] = useState(false);
   const [showTop, setShowTop] = useState(false);
   const [footerVisible, setFooterVisible] = useState(false);
@@ -273,11 +205,8 @@ export default function KailorKai() {
   }, []);
 
   return (
-    <main className="kk-project">
-      <Link className="kk-back" to="/">
-        <ArrowLeft size={16} strokeWidth={1.7} aria-hidden="true" />
-        Back to portfolio
-      </Link>
+    <main ref={pageRef} className="project-case-study kk-project">
+      <ProjectNavigation className="kk-back" />
 
       <article>
         <header className="kk-hero">
@@ -289,16 +218,18 @@ export default function KailorKai() {
                 <span>Artificial intelligence</span>
                 <span>Publishing</span>
               </div>
-              <time dateTime="2026">2026</time>
+              <time dateTime="2026-02">February 2026</time>
             </div>
             <div className="kk-hero-grid">
               <div className="kk-hero-copy">
-                <h1>kailor <span>&amp; kai</span></h1>
+                <h1>AI Consultancy <span>&amp; Knowledge Publishing</span></h1>
                 <p className="kk-hero-description">
-                  I am developing kailor and kai as independent but
-                  complementary products: one makes technology consultancy more
-                  accessible and evidence-led; the other builds a space for
-                  publishing, discovering and discussing AI knowledge.
+                  I run kailor, a technology consultancy that helps businesses
+                  identify useful AI opportunities, improve processes and develop
+                  tailored software. Alongside it, I run kai, an AI publication
+                  and knowledge hub covering emerging technologies, tools and
+                  practical applications. Together, they connect business advice,
+                  software engineering and AI education.
                 </p>
                 <div className="kk-hero-actions">
                   <a className="kk-button kk-button-main" href="#kailor">
@@ -356,8 +287,8 @@ export default function KailorKai() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Download engineering brief{" "}
-              <ArrowRight size={14} strokeWidth={1.7} aria-hidden="true" />
+              Download engineering brief
+
             </a>
           </div>
         </section>
@@ -386,7 +317,7 @@ export default function KailorKai() {
             </div>
             <div className="kk-step-grid">
               {kailorStages.map((stage) => (
-                <div className="kk-step" key={stage.number}>
+                <div className="kk-step" key={stage.title || stage.label}>
 
                   <h3>{stage.title}</h3>
                   <p>{stage.body}</p>

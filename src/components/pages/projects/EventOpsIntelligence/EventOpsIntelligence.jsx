@@ -1,6 +1,9 @@
+import ProjectNavigation from "../shared/ProjectNavigation.jsx";
+import useProjectPage from "../shared/useProjectPage.js";
+import ProjectModal from "../shared/ProjectModal.jsx";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft, ArrowUp, Layers3 } from "lucide-react";
+import { ArrowUp, Layers3 } from "lucide-react";
 import githubSvg from "../../../../assets/svgs/header/github.svg";
 import "./EventOpsIntelligence.css";
 
@@ -57,69 +60,11 @@ const workflowStages = [
 ];
 
 function TechStackModal({ close }) {
-  const closeButton = useRef(null);
-
-  useEffect(() => {
-    const previousFocus = document.activeElement;
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    closeButton.current?.focus();
-
-    function onKeyDown(event) {
-      if (event.key === "Escape") close();
-      if (event.key === "Tab") {
-        event.preventDefault();
-        closeButton.current?.focus();
-      }
-    }
-    document.addEventListener("keydown", onKeyDown);
-    return () => {
-      document.removeEventListener("keydown", onKeyDown);
-      document.body.style.overflow = previousOverflow;
-      previousFocus?.focus?.();
-    };
-  }, [close]);
-
-  return (
-    <div
-      className="eventops-modal-overlay"
-      onMouseDown={(event) => {
-        if (event.target === event.currentTarget) close();
-      }}
-    >
-      <div
-        className="eventops-modal"
-        role="dialog"
-        aria-modal="true"
-        aria-label="EventOps technology stack"
-        onMouseDown={(event) => event.stopPropagation()}
-      >
-        <button
-          ref={closeButton}
-          type="button"
-          className="eventops-modal-close"
-          onClick={close}
-          aria-label="Close technology stack"
-        >
-          <span aria-hidden="true">×</span>
-        </button>
-        <div className="eventops-modal-groups">
-          {technologyGroups.map((group) => (
-            <div className="eventops-modal-group" key={group.heading}>
-              <span className="eventops-modal-category">{group.heading}</span>
-              {group.note && <p className="eventops-modal-note">{group.note}</p>}
-              <div className="eventops-modal-pills">
-                {group.skills.map((skill) => <span key={skill}>{skill}</span>)}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
+  return <ProjectModal onClose={close} groups={technologyGroups} />;
 }
 
 export default function EventOpsIntelligence() {
+  const pageRef = useProjectPage();
   const [showTop, setShowTop] = useState(false);
   const [showStack, setShowStack] = useState(false);
   const [footerVisible, setFooterVisible] = useState(false);
@@ -147,11 +92,8 @@ export default function EventOpsIntelligence() {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
-    <main className="eventops-project">
-      <Link className="eventops-back" to="/">
-        <ArrowLeft size={16} strokeWidth={1.7} aria-hidden="true" />
-        <span>Back to portfolio</span>
-      </Link>
+    <main ref={pageRef} className="project-case-study eventops-project">
+      <ProjectNavigation className="eventops-back" />
 
       <article>
         <header className="eventops-hero">
@@ -160,7 +102,7 @@ export default function EventOpsIntelligence() {
               <div className="eventops-pill-list" aria-label="Core technologies">
                 {heroTechnologies.map((technology) => <span key={technology}>{technology}</span>)}
               </div>
-              <time dateTime="2026-10">Built October 2026</time>
+              <time dateTime="2026-10" >October 2026</time>
             </div>
             <h1>EventOps <span>Intelligence</span></h1>
             <div className="eventops-hero-bottom">

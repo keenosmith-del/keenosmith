@@ -1,6 +1,9 @@
+import ProjectNavigation from "../shared/ProjectNavigation.jsx";
+import useProjectPage from "../shared/useProjectPage.js";
+import ProjectModal from "../shared/ProjectModal.jsx";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft, ArrowUp, Layers3 } from "lucide-react";
+import { ArrowUp, Layers3 } from "lucide-react";
 import githubSvg from "../../../../assets/svgs/header/github.svg";
 import "./EnterpriseWorkspace.css";
 
@@ -17,54 +20,7 @@ const technologyGroups = [
 ];
 
 function TechStackModal({ onClose }) {
-  const closeRef = useRef(null);
-
-  useEffect(() => {
-    const previousFocus = document.activeElement;
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    closeRef.current?.focus();
-
-    const onKeyDown = (event) => {
-      if (event.key === "Escape") onClose();
-      if (event.key === "Tab") {
-        event.preventDefault();
-        closeRef.current?.focus();
-      }
-    };
-    document.addEventListener("keydown", onKeyDown);
-    return () => {
-      document.removeEventListener("keydown", onKeyDown);
-      document.body.style.overflow = previousOverflow;
-      previousFocus?.focus?.();
-    };
-  }, [onClose]);
-
-  return (
-    <div
-      className="ew-modal-overlay"
-      onMouseDown={(event) => {
-        if (event.target === event.currentTarget) onClose();
-      }}
-    >
-      <div className="ew-modal" role="dialog" aria-modal="true" aria-label="Project technology stack">
-        <button ref={closeRef} className="ew-modal-close" type="button" onClick={onClose} aria-label="Close tech stack">
-          <span aria-hidden="true">×</span>
-        </button>
-        <div className="ew-modal-groups">
-          {technologyGroups.map((group) => (
-            <section key={group.heading} className="ew-modal-group">
-              <h2>{group.heading}</h2>
-              {group.note && <p>{group.note}</p>}
-              <div className="ew-modal-pills">
-                {group.skills.map((skill) => <span key={skill}>{skill}</span>)}
-              </div>
-            </section>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
+  return <ProjectModal onClose={onClose} groups={technologyGroups} />;
 }
 
 function Section({ label, children, className = "" }) {
@@ -110,6 +66,7 @@ const workflowItems = [
 ];
 
 export default function EnterpriseWorkspace() {
+  const pageRef = useProjectPage();
   const [showStack, setShowStack] = useState(false);
   const [showTop, setShowTop] = useState(false);
   const [footerVisible, setFooterVisible] = useState(false);
@@ -136,11 +93,8 @@ export default function EnterpriseWorkspace() {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
-    <main className="ew-project">
-      <Link to="/" className="ew-back">
-        <ArrowLeft size={16} strokeWidth={1.7} aria-hidden="true" />
-        Back to portfolio
-      </Link>
+    <main ref={pageRef} className="project-case-study ew-project">
+      <ProjectNavigation className="ew-back" />
 
       <article>
         <header className="ew-hero">
@@ -149,7 +103,7 @@ export default function EnterpriseWorkspace() {
               <div className="ew-pills" aria-label="Core technologies">
                 {heroTechnologies.map((tech) => <span key={tech}>{tech}</span>)}
               </div>
-              <span className="ew-hero-context">Full-stack / Database engineering</span>
+              <time dateTime="2026-06">June 2026</time>
             </div>
             <h1>Enterprise<br />Workspace</h1>
             <div className="ew-hero-bottom">

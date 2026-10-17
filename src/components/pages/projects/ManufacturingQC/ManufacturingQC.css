@@ -89,15 +89,6 @@
 .mq-footer-back:hover,.mq-footer-top:hover { background: #dfded9; color: #555559 !important; transform: translateY(-2px); }
 .mq-floating-top { position: fixed; z-index: 30; bottom: 22px; right: 22px; display: flex; align-items: center; justify-content: center; width: 38px; height: 38px; border: 0; border-radius: 50%; background: rgba(250,249,246,.82); color: #66666b; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); box-shadow: 0 8px 24px rgba(45,45,45,.08); cursor: pointer; transition: background-color 180ms ease,transform 180ms ease; }
 .mq-floating-top:hover { background: white; transform: translateY(-2px); }
-.mq-modal-overlay { position: fixed; inset: 0; z-index: 2000; display: flex; align-items: center; justify-content: center; padding: 19px; background: rgba(35,35,37,.28); backdrop-filter: blur(11px); -webkit-backdrop-filter: blur(11px); animation: mq-fade 220ms ease both; }
-.mq-modal { position: relative; width: min(100%,600px); max-height: calc(100dvh - 38px); overflow-y: auto; padding: 42px 34px 34px; border-radius: 24px; background: rgba(250,249,246,.96); box-shadow: 0 24px 72px rgba(35,35,37,.14),0 8px 24px rgba(35,35,37,.07); animation: mq-dialog 320ms cubic-bezier(.22,1,.36,1) both; }
-.mq-modal-close { position: absolute; top: 17px; right: 22px; display: flex; align-items: center; justify-content: center; height: 30px; width: 26px; padding: 0; border: 0; border-radius: 0; background: transparent !important; color: #99999d; font-size: 18px !important; font-weight: 400; line-height: 1; box-shadow: none !important; cursor: pointer; transition: color 180ms ease,transform 180ms ease; }
-.mq-modal-close:hover { background: transparent !important; color: #151517; transform: translateY(-1px); }
-.mq-modal-groups { display: flex; flex-direction: column; gap: 26px; padding-right: 8px; }
-.mq-modal-group h2 { margin: 0; font-size: 11px; font-weight: 500; letter-spacing: -.01em; line-height: 1.3; color: #66666b; }
-.mq-modal-group p { color: #99999d; font-size: 10px; line-height: 1.5; margin: 7px 0 0; }
-.mq-modal-pills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
-.mq-modal-pills span { padding: 7px 11px; background: #f0efeb; color: #77777c; border-radius: 999px; font-size: 10px; font-weight: 500; line-height: 1.2; }
 @keyframes mq-fade { from {opacity:0;} to {opacity:1;} }
 @keyframes mq-dialog { from {opacity:0;transform:translateY(16px) scale(.985);} to {opacity:1;transform:none;} }
 @keyframes mq-rise { from {opacity:0;transform:translateY(24px);} to {opacity:1;transform:none;} }
@@ -121,8 +112,6 @@
   .mq-sql-example { margin-top: 41px; }
   .mq-closing { padding: 91px 19px 45px; }
   .mq-footer { padding-bottom: 95px; }
-  .mq-modal { padding: 42px 22px 26px; border-radius: 21px; }
-  .mq-modal-close { top: 11px; right: 16px; }
 }
 @media (prefers-reduced-motion:reduce) {
   .mq-project *, .mq-project *::before, .mq-project *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
@@ -139,7 +128,7 @@
 .mq-evaluation-heading > span { color: #99999d; font-size: 10px; }
 .mq-evaluation-header, .mq-evaluation-row { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(70px, .6fr) minmax(70px, .6fr); gap: 18px; align-items: center; }
 .mq-evaluation-header { padding: 0 0 15px; color: #aaa9ad; font-size: 10px; font-weight: 500; }
-.mq-evaluation-row { border-top: 1px solid rgba(55, 55, 57, .1); padding: 20px 0; font-size: 12px; color: #66666b; }
+.mq-evaluation-row { border-top: 0; padding: 20px 0; font-size: 12px; color: #66666b; }
 .mq-evaluation-row strong { display: block; font-size: 12px; font-weight: 500; color: #555559; }
 .mq-evaluation-row small { display: block; color: #99999d; font-size: 10px; line-height: 1.5; margin-top: 6px; }
 .mq-evaluation-row > span { font-size: 13px; font-variant-numeric: tabular-nums; }
@@ -160,8 +149,6 @@
 .mq-hero-actions .mq-source:hover { background: #29292b; color: white !important; }
 .mq-brief { background: rgba(250,249,246,.82); color: #66666b !important; box-shadow: 0 8px 24px rgba(45,45,45,.06); }
 .mq-brief:hover { background: #fff !important; color: #444448 !important; transform: translateY(-2px); }
-.mq-modal-close { font-size: 18px !important; font-weight: 400 !important; background: transparent !important; }
-.mq-modal-close span { font-size: 18px !important; line-height: 1; }
 @media (max-width: 700px) {
   .mq-hero h1 { font-size: clamp(43px, 11.1vw, 76px); letter-spacing: -.054em; }
   .mq-evaluation { margin-top: 45px; }

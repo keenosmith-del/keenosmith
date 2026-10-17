@@ -1,16 +1,9 @@
+import ProjectNavigation from "../shared/ProjectNavigation.jsx";
+import useProjectPage from "../shared/useProjectPage.js";
+import ProjectModal from "../shared/ProjectModal.jsx";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import {
-  ArrowLeft,
-  ArrowRight,
-  ArrowUp,
-  Layers3,
-  FileText,
-  Calculator,
-  ShieldCheck,
-  Scale,
-  GitBranch,
-} from "lucide-react";
+import { ArrowRight, ArrowUp, Layers3, FileText, Calculator, ShieldCheck, Scale, GitBranch } from "lucide-react";
 import githubSvg from "../../../../assets/svgs/header/github.svg";
 import "./ClaudeProcurement.css";
 
@@ -106,25 +99,21 @@ const technologyGroups = [
 
 const phases = [
   {
-    number: "01",
     title: "Collect",
     description:
       "Create a procurement event, define requirements and add supplier documents.",
   },
   {
-    number: "02",
     title: "Verify",
     description:
       "Extract terms, inspect original excerpts and keep unknown or conflicting clauses visible.",
   },
   {
-    number: "03",
     title: "Compare",
     description:
       "Compute projected costs, weighted evaluations and deviations using fixed TypeScript rules.",
   },
   {
-    number: "04",
     title: "Decide",
     description:
       "Review proposed risks and negotiation positions, model changes and record a human decision.",
@@ -168,65 +157,7 @@ const supplierProfiles = [
 ];
 
 function TechStackModal({ onClose }) {
-  const closeRef = useRef(null);
-  useEffect(() => {
-    const previousFocus = document.activeElement;
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    closeRef.current?.focus();
-    const onKeyDown = (event) => {
-      if (event.key === "Escape") onClose();
-      if (event.key === "Tab") {
-        event.preventDefault();
-        closeRef.current?.focus();
-      }
-    };
-    document.addEventListener("keydown", onKeyDown);
-    return () => {
-      document.removeEventListener("keydown", onKeyDown);
-      document.body.style.overflow = previousOverflow;
-      previousFocus?.focus?.();
-    };
-  }, [onClose]);
-  return (
-    <div
-      className="claude-modal-overlay"
-      onMouseDown={(event) => {
-        if (event.target === event.currentTarget) onClose();
-      }}
-    >
-      <div
-        className="claude-modal"
-        role="dialog"
-        aria-modal="true"
-        aria-label="Project technology stack"
-        onMouseDown={(event) => event.stopPropagation()}
-      >
-        <button
-          ref={closeRef}
-          className="claude-modal-close"
-          type="button"
-          onClick={onClose}
-          aria-label="Close technology stack"
-        >
-          <span aria-hidden="true">×</span>
-        </button>
-        <div className="claude-modal-groups">
-          {technologyGroups.map((group) => (
-            <div className="claude-modal-group" key={group.heading}>
-              <span className="claude-modal-category">{group.heading}</span>
-              {group.note && <p className="claude-modal-note">{group.note}</p>}
-              <div className="claude-modal-pills">
-                {group.skills.map((skill) => (
-                  <span key={skill}>{skill}</span>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
+  return <ProjectModal onClose={onClose} groups={technologyGroups} />;
 }
 
 function Section({ className = "", title, label, children, id }) {
@@ -242,6 +173,7 @@ function Section({ className = "", title, label, children, id }) {
 }
 
 export default function ClaudeProcurement() {
+  const pageRef = useProjectPage();
   const [showStack, setShowStack] = useState(false);
   const [showTop, setShowTop] = useState(false);
   const [footerVisible, setFooterVisible] = useState(false);
@@ -266,11 +198,8 @@ export default function ClaudeProcurement() {
   const scrollTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
-    <main className="claude-project">
-      <Link className="claude-back" to="/">
-        <ArrowLeft size={16} strokeWidth={1.7} aria-hidden="true" />
-        <span>Back to portfolio</span>
-      </Link>
+    <main ref={pageRef} className="project-case-study claude-project">
+      <ProjectNavigation className="claude-back" />
 
       <article>
         <header className="claude-hero">
@@ -281,7 +210,7 @@ export default function ClaudeProcurement() {
                   <span key={item}>{item}</span>
                 ))}
               </div>
-              <time dateTime="2026">Built June 2026</time>
+              <time dateTime="2026-06" >June 2026</time>
             </div>
             <h1>Claude AI Procurement <span>&amp; Contract Intelligence Platform</span></h1>
             <div className="claude-hero-bottom">
@@ -356,8 +285,8 @@ export default function ClaudeProcurement() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Technical brief{" "}
-              <ArrowRight size={14} strokeWidth={1.7} aria-hidden="true" />
+              Technical brief
+
             </a>
           </div>
         </Section>
@@ -373,7 +302,7 @@ export default function ClaudeProcurement() {
             </h2>
             <div className="claude-process-grid">
               {phases.map((stage) => (
-                <div className="claude-process-step" key={stage.number}>
+                <div className="claude-process-step" key={stage.title || stage.label}>
                   <h3>{stage.title}</h3>
                   <p>{stage.description}</p>
                 </div>
@@ -394,7 +323,7 @@ export default function ClaudeProcurement() {
             AI-generated recommendation.
           </p>
           <div className="claude-supplier-grid">
-            {supplierProfiles.map((supplier, index) => (
+            {supplierProfiles.map((supplier) => (
               <div className="claude-supplier-card" key={supplier.name}>
                 <div className="claude-supplier-top">
                   <span>{supplier.name}</span>
@@ -700,9 +629,8 @@ export default function ClaudeProcurement() {
         <Link className="claude-footer-back" to="/">
           Back to portfolio
         </Link>
-        <button className="claude-footer-top" type="button" onClick={scrollTop}>
-          <ArrowUp size={15} strokeWidth={1.7} /> Back to top
-        </button>
+        <button className="claude-footer-top" type="button" onClick={scrollTop} aria-label="Back to top">
+          <ArrowUp size={15} strokeWidth={1.7} /></button>
       </footer>
       {showTop && !footerVisible && (
         <button

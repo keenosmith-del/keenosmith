@@ -1,15 +1,9 @@
+import ProjectNavigation from "../shared/ProjectNavigation.jsx";
+import useProjectPage from "../shared/useProjectPage.js";
+import ProjectModal from "../shared/ProjectModal.jsx";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import {
-  ArrowLeft,
-  ArrowRight,
-  ArrowUp,
-  Layers3,
-  ShieldCheck,
-  FileText,
-  GitBranch,
-  Database,
-} from "lucide-react";
+import { ArrowRight, ArrowUp, Layers3, ShieldCheck, FileText, GitBranch, Database } from "lucide-react";
 import githubSvg from "../../../../assets/svgs/header/github.svg";
 import "./DeepSeekWorkforce.css";
 
@@ -99,135 +93,34 @@ const technologyGroups = [
 
 const workflow = [
   {
-    index: "01",
     label: "Capture",
     sub: "Private PDF/DOCX upload; retain exact source sections and original file.",
   },
   {
-    index: "02",
     label: "Extract",
     sub: "Conservative skills and experience facts begin as Unverified.",
   },
   {
-    index: "03",
     label: "Review",
     sub: "Recruiter confirms, corrects or rejects claims with recorded reasons.",
   },
   {
-    index: "04",
     label: "Explain",
     sub: "DeepSeek maps checked evidence to vacancy requirements; never ranks people.",
   },
 ];
 
-const evidenceStates = [
-  {
-    key: "documented",
-    title: "Documented",
-    summary:
-      "The reviewer has accepted relevant source evidence for a requirement.",
-    detail:
-      "A precise resume excerpt remains attached to its page or paragraph, and the verification action is recorded. Documented describes the evidence record, not an independently verified employment history.",
-    badge: "Human-reviewed",
-  },
-  {
-    key: "unverified",
-    title: "Unverified",
-    summary: "The resume contains a claim, but no reviewer has confirmed it.",
-    detail:
-      "Extracted facts start here. The model may reference the state, but cannot silently promote an unverified claim or infer a proficiency level.",
-    badge: "Awaiting review",
-  },
-  {
-    key: "ambiguous",
-    title: "Ambiguous",
-    summary: "The source or taxonomy mapping is not definitive.",
-    detail:
-      "Real pgvector matches can help a recruiter explore skill aliases. A similarity score is a taxonomy lookup signal only and requires a person to confirm the mapping.",
-    badge: "Needs clarification",
-  },
-  {
-    key: "missing",
-    title: "Missing",
-    summary: "The required skill is not documented in the available evidence.",
-    detail:
-      "Missing is reported as undocumented—not a declaration that the applicant lacks the skill. The interface leaves uncertainty visible for human follow-up.",
-    badge: "Not established",
-  },
-];
-
 function TechStackModal({ onClose }) {
-  const closeRef = useRef(null);
-  useEffect(() => {
-    const previousFocus = document.activeElement;
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    closeRef.current?.focus();
-    const onKeyDown = (event) => {
-      if (event.key === "Escape") onClose();
-      if (event.key === "Tab") {
-        event.preventDefault();
-        closeRef.current?.focus();
-      }
-    };
-    document.addEventListener("keydown", onKeyDown);
-    return () => {
-      document.removeEventListener("keydown", onKeyDown);
-      document.body.style.overflow = previousOverflow;
-      previousFocus?.focus?.();
-    };
-  }, [onClose]);
-  return (
-    <div
-      className="deepseek-modal-overlay"
-      onMouseDown={(event) => {
-        if (event.target === event.currentTarget) onClose();
-      }}
-    >
-      <div
-        className="deepseek-modal"
-        role="dialog"
-        aria-modal="true"
-        aria-label="Project technology stack"
-        onMouseDown={(event) => event.stopPropagation()}
-      >
-        <button
-          ref={closeRef}
-          type="button"
-          className="deepseek-modal-close"
-          onClick={onClose}
-          aria-label="Close technology stack"
-        >
-          <span aria-hidden="true">×</span>
-        </button>
-        <div className="deepseek-modal-groups">
-          {technologyGroups.map(({ heading, note, skills }) => (
-            <div className="deepseek-modal-group" key={heading}>
-              <span className="deepseek-modal-category">{heading}</span>
-              {note && <p className="deepseek-modal-note">{note}</p>}
-              <div className="deepseek-modal-pills">
-                {skills.map((skill) => (
-                  <span key={skill}>{skill}</span>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
+  return <ProjectModal onClose={onClose} groups={technologyGroups} />;
 }
 
 export default function DeepSeekWorkforce() {
+  const pageRef = useProjectPage();
   const [stackOpen, setStackOpen] = useState(false);
-  const [selectedState, setSelectedState] = useState("documented");
   const [showTop, setShowTop] = useState(false);
   const [footerVisible, setFooterVisible] = useState(false);
   const footerRef = useRef(null);
   const closeStack = useCallback(() => setStackOpen(false), []);
-  const activeState =
-    evidenceStates.find((state) => state.key === selectedState) ??
-    evidenceStates[0];
 
   useEffect(() => {
     const updateScroll = () => setShowTop(window.scrollY > 300);
@@ -248,11 +141,8 @@ export default function DeepSeekWorkforce() {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
-    <main className="deepseek-project">
-      <Link className="deepseek-back" to="/">
-        <ArrowLeft size={16} strokeWidth={1.7} aria-hidden="true" />
-        Back to portfolio
-      </Link>
+    <main ref={pageRef} className="project-case-study deepseek-project">
+      <ProjectNavigation className="deepseek-back" />
       <article>
         <header className="deepseek-hero">
           <div className="deepseek-hero-inner">
@@ -265,7 +155,7 @@ export default function DeepSeekWorkforce() {
                   <span key={name}>{name}</span>
                 ))}
               </div>
-              <time dateTime="2026-10">Built August 2026</time>
+              <time dateTime="2026-08" >August 2026</time>
             </div>
             <h1>AI Workforce Planning, Recruitment <span>&amp; Talent Intelligence Platform</span></h1>
             <div className="deepseek-hero-bottom">
@@ -350,8 +240,8 @@ export default function DeepSeekWorkforce() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Technical brief{" "}
-                <ArrowRight size={13} strokeWidth={1.6} aria-hidden="true" />
+                Technical brief
+
               </a>
             </div>
           </div>
@@ -373,7 +263,7 @@ export default function DeepSeekWorkforce() {
             </p>
             <div className="deepseek-flow-cards">
               {workflow.map((step) => (
-                <div key={step.index} className="deepseek-flow-card">
+                <div key={step.label} className="deepseek-flow-card">
                   <h3>{step.label}</h3>
                   <p>{step.sub}</p>
                 </div>
@@ -701,11 +591,11 @@ export default function DeepSeekWorkforce() {
       </article>
       <footer ref={footerRef} className="deepseek-footer">
         <Link to="/" className="deepseek-footer-link">
-          Back to Portfolio
+          Back to portfolio
         </Link>
         <button
           type="button"
-          className="deepseek-footer-link"
+          className="deepseek-footer-top" aria-label="Back to top"
           onClick={scrollToTop}
         >
           <ArrowUp size={14} strokeWidth={1.7} aria-hidden="true" />

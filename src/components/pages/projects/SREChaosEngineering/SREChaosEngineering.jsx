@@ -1,14 +1,9 @@
+import ProjectNavigation from "../shared/ProjectNavigation.jsx";
+import useProjectPage from "../shared/useProjectPage.js";
+import ProjectModal from "../shared/ProjectModal.jsx";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import {
-  ArrowLeft,
-  ArrowRight,
-  ArrowUp,
-  Layers3,
-  Activity,
-  ShieldCheck,
-  GitBranch,
-} from "lucide-react";
+import { ArrowRight, ArrowUp, Layers3, Activity, ShieldCheck, GitBranch } from "lucide-react";
 import githubSvg from "../../../../assets/svgs/header/github.svg";
 import "./SREChaosEngineering.css";
 
@@ -199,68 +194,11 @@ const phases = [
 ];
 
 function TechStackModal({ onClose }) {
-  const closeRef = useRef(null);
-  useEffect(() => {
-    const prior = document.activeElement;
-    const priorOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    closeRef.current?.focus();
-    const onKey = (event) => {
-      if (event.key === "Escape") onClose();
-      if (event.key === "Tab") {
-        event.preventDefault();
-        closeRef.current?.focus();
-      }
-    };
-    document.addEventListener("keydown", onKey);
-    return () => {
-      document.removeEventListener("keydown", onKey);
-      document.body.style.overflow = priorOverflow;
-      prior?.focus?.();
-    };
-  }, [onClose]);
-  return (
-    <div
-      className="sre-modal-overlay"
-      onMouseDown={(event) => {
-        if (event.target === event.currentTarget) onClose();
-      }}
-    >
-      <div
-        className="sre-modal"
-        role="dialog"
-        aria-modal="true"
-        aria-label="Project technology stack"
-        onMouseDown={(event) => event.stopPropagation()}
-      >
-        <button
-          ref={closeRef}
-          className="sre-modal-close"
-          aria-label="Close technology stack"
-          type="button"
-          onClick={onClose}
-        >
-          <span aria-hidden="true">×</span>
-        </button>
-        <div className="sre-modal-groups">
-          {technologyGroups.map((group) => (
-            <div className="sre-modal-group" key={group.heading}>
-              <span className="sre-modal-category">{group.heading}</span>
-              {group.note && <p className="sre-modal-note">{group.note}</p>}
-              <div className="sre-modal-pills">
-                {group.skills.map((skill) => (
-                  <span key={skill}>{skill}</span>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
+  return <ProjectModal onClose={onClose} groups={technologyGroups} />;
 }
 
 export default function SREChaosEngineering() {
+  const pageRef = useProjectPage();
   const [selectedFault, setSelectedFault] = useState("inventory");
   const [stackOpen, setStackOpen] = useState(false);
   const [showTop, setShowTop] = useState(false);
@@ -289,11 +227,8 @@ export default function SREChaosEngineering() {
   const toTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
-    <main className="sre-project">
-      <Link className="sre-back" to="/">
-        <ArrowLeft size={16} strokeWidth={1.7} aria-hidden="true" /> Back to
-        portfolio
-      </Link>
+    <main ref={pageRef} className="project-case-study sre-project">
+      <ProjectNavigation className="sre-back" />
       <article>
         <header className="sre-hero">
           <div className="sre-hero-inner">
@@ -303,7 +238,7 @@ export default function SREChaosEngineering() {
                   <span key={item}>{item}</span>
                 ))}
               </div>
-              <time dateTime="2026-10">Built July 2026</time>
+              <time dateTime="2026-07" >July 2026</time>
             </div>
             <h1>Distributed Systems Reliability, <span>Chaos Engineering &amp; Disaster Recovery Platform</span></h1>
             <div className="sre-hero-bottom">
@@ -381,8 +316,8 @@ export default function SREChaosEngineering() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Technical brief{" "}
-                <ArrowRight size={14} strokeWidth={1.6} aria-hidden="true" />
+                Technical brief
+
               </a>
             </div>
           </div>
@@ -414,7 +349,7 @@ export default function SREChaosEngineering() {
                   className={`sre-phase-card ${index === 1 ? "is-fault" : ""}`}
                 >
                   <span className="sre-phase-num">
-                    0{index + 1} / {phase.label}
+                    {phase.label}
                   </span>
                   <div className="sre-phase-metric">
                     <strong>{phase.errors}</strong>
@@ -461,7 +396,7 @@ export default function SREChaosEngineering() {
                     "Worker projection",
                   ].map((name, i) => (
                     <div key={name}>
-                      <span>{String(i + 1).padStart(2, "0")}</span>
+
                       <strong>{name}</strong>
                       {i < 4 && (
                         <ArrowRight
@@ -532,7 +467,7 @@ export default function SREChaosEngineering() {
                 role="group"
                 aria-label="Choose a fault experiment"
               >
-                {faults.map((fault, i) => (
+                {faults.map((fault) => (
                   <button
                     type="button"
                     key={fault.id}
@@ -540,7 +475,7 @@ export default function SREChaosEngineering() {
                     className={`sre-fault-option ${selectedFault === fault.id ? "is-selected" : ""}`}
                     onClick={() => setSelectedFault(fault.id)}
                   >
-                    <span>{String(i + 1).padStart(2, "0")}</span>
+
                     {fault.name}
                     <ArrowRight
                       size={15}
@@ -795,13 +730,9 @@ export default function SREChaosEngineering() {
         </section>
       </article>
       <footer ref={footerRef} className="sre-footer">
-        <Link to="/" className="sre-footer-link">
-          <ArrowLeft size={14} strokeWidth={1.7} aria-hidden="true" /> Back to
-          portfolio
-        </Link>
-        <button type="button" className="sre-footer-link" onClick={toTop}>
-          <ArrowUp size={14} strokeWidth={1.7} aria-hidden="true" /> Back to top
-        </button>
+        <Link to="/" className="sre-footer-link">Back to portfolio</Link>
+        <button type="button" className="sre-footer-top" onClick={toTop} aria-label="Back to top">
+          <ArrowUp size={14} strokeWidth={1.7} aria-hidden="true" /></button>
       </footer>
       {showTop && !footerVisible && (
         <button

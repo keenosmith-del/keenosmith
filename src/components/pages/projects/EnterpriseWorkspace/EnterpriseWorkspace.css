@@ -88,15 +88,6 @@
 .ew-footer-back:hover,.ew-footer-top:hover { background: #dfded9; color: #555559 !important; transform: translateY(-2px); }
 .ew-floating-top { position: fixed; z-index: 30; bottom: 22px; right: 22px; display: flex; align-items: center; justify-content: center; width: 38px; height: 38px; border: 0; border-radius: 50%; background: rgba(250,249,246,.82); color: #66666b; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); box-shadow: 0 8px 24px rgba(45,45,45,.08); cursor: pointer; transition: background-color 180ms ease,transform 180ms ease; }
 .ew-floating-top:hover { background: white; transform: translateY(-2px); }
-.ew-modal-overlay { position: fixed; inset: 0; z-index: 2000; display: flex; align-items: center; justify-content: center; padding: 19px; background: rgba(35,35,37,.28); backdrop-filter: blur(11px); -webkit-backdrop-filter: blur(11px); animation: ew-fade 220ms ease both; }
-.ew-modal { position: relative; width: min(100%,600px); max-height: calc(100dvh - 38px); overflow-y: auto; padding: 42px 34px 34px; border-radius: 24px; background: rgba(250,249,246,.96); box-shadow: 0 24px 72px rgba(35,35,37,.14),0 8px 24px rgba(35,35,37,.07); animation: ew-dialog 320ms cubic-bezier(.22,1,.36,1) both; }
-.ew-modal-close { position: absolute; top: 17px; right: 22px; display: flex; align-items: center; justify-content: center; height: 30px; width: 26px; padding: 0; border: 0; border-radius: 0; background: transparent !important; color: #99999d; font-size: 18px !important; font-weight: 400; line-height: 1; box-shadow: none !important; cursor: pointer; transition: color 180ms ease,transform 180ms ease; }
-.ew-modal-close:hover { background: transparent !important; color: #151517; transform: translateY(-1px); }
-.ew-modal-groups { display: flex; flex-direction: column; gap: 26px; padding-right: 8px; }
-.ew-modal-group h2 { margin: 0; font-size: 11px; font-weight: 500; letter-spacing: -.01em; line-height: 1.3; color: #66666b; }
-.ew-modal-group p { color: #99999d; font-size: 10px; line-height: 1.5; margin: 7px 0 0; }
-.ew-modal-pills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
-.ew-modal-pills span { padding: 7px 11px; background: #f0efeb; color: #77777c; border-radius: 999px; font-size: 10px; font-weight: 500; line-height: 1.2; }
 @keyframes ew-fade { from {opacity:0;} to {opacity:1;} }
 @keyframes ew-dialog { from {opacity:0;transform:translateY(16px) scale(.985);} to {opacity:1;transform:none;} }
 @keyframes ew-rise { from {opacity:0;transform:translateY(24px);} to {opacity:1;transform:none;} }
@@ -120,8 +111,6 @@
   .ew-sql-example { margin-top: 41px; }
   .ew-closing { padding: 91px 19px 45px; }
   .ew-footer { padding-bottom: 95px; }
-  .ew-modal { padding: 42px 22px 26px; border-radius: 21px; }
-  .ew-modal-close { top: 11px; right: 16px; }
 }
 @media (prefers-reduced-motion:reduce) {
   .ew-project *, .ew-project *::before, .ew-project *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }

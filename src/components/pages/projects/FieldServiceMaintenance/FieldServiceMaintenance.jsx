@@ -1,6 +1,9 @@
+import ProjectNavigation from "../shared/ProjectNavigation.jsx";
+import useProjectPage from "../shared/useProjectPage.js";
+import ProjectModal from "../shared/ProjectModal.jsx";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft, ArrowUp, Layers3 } from "lucide-react";
+import { ArrowUp, Layers3 } from "lucide-react";
 import githubSvg from "../../../../assets/svgs/header/github.svg";
 import "./FieldServiceMaintenance.css";
 
@@ -46,11 +49,11 @@ const technologyGroups = [
 ];
 
 const steps = [
-  { number: "01", title: "Schedule", detail: "A supervisor creates an asset, maintenance schedule and required checklist." },
-  { number: "02", title: "Dispatch", detail: "A work order is assigned to a technician with a versioned job snapshot." },
-  { number: "03", title: "Inspect", detail: "The technician records checklist answers, notes, faults, parts and photos in SQLite." },
-  { number: "04", title: "Synchronize", detail: "The outbox sends photos and frozen mutations, retaining anything not acknowledged." },
-  { number: "05", title: "Review", detail: "A supervisor checks the submitted record, completes the job and updates asset history." },
+  { title: "Schedule", detail: "A supervisor creates an asset, maintenance schedule and required checklist." },
+  { title: "Dispatch", detail: "A work order is assigned to a technician with a versioned job snapshot." },
+  { title: "Inspect", detail: "The technician records checklist answers, notes, faults, parts and photos in SQLite." },
+  { title: "Synchronize", detail: "The outbox sends photos and frozen mutations, retaining anything not acknowledged." },
+  { title: "Review", detail: "A supervisor checks the submitted record, completes the job and updates asset history." },
 ];
 
 const deliveryStates = [
@@ -81,69 +84,11 @@ const deliveryStates = [
 ];
 
 function TechStackModal({ onClose }) {
-  const closeRef = useRef(null);
-
-  useEffect(() => {
-    const previousFocus = document.activeElement;
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    closeRef.current?.focus();
-
-    const onKeyDown = (event) => {
-      if (event.key === "Escape") onClose();
-      if (event.key === "Tab") {
-        event.preventDefault();
-        closeRef.current?.focus();
-      }
-    };
-    document.addEventListener("keydown", onKeyDown);
-    return () => {
-      document.removeEventListener("keydown", onKeyDown);
-      document.body.style.overflow = previousOverflow;
-      previousFocus?.focus?.();
-    };
-  }, [onClose]);
-
-  return (
-    <div
-      className="fsm-modal-overlay"
-      onMouseDown={(event) => {
-        if (event.target === event.currentTarget) onClose();
-      }}
-    >
-      <div
-        className="fsm-modal"
-        role="dialog"
-        aria-modal="true"
-        aria-label="Field service technology stack"
-        onMouseDown={(event) => event.stopPropagation()}
-      >
-        <button
-          ref={closeRef}
-          className="fsm-modal-close"
-          type="button"
-          aria-label="Close tech stack"
-          onClick={onClose}
-        >
-          <span aria-hidden="true">×</span>
-        </button>
-        <div className="fsm-modal-groups">
-          {technologyGroups.map((group) => (
-            <div className="fsm-modal-group" key={group.heading}>
-              <span className="fsm-modal-category">{group.heading}</span>
-              {group.note && <p className="fsm-modal-note">{group.note}</p>}
-              <div className="fsm-modal-pills">
-                {group.skills.map((skill) => <span key={skill}>{skill}</span>)}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
+  return <ProjectModal onClose={onClose} groups={technologyGroups} />;
 }
 
 export default function FieldServiceMaintenance() {
+  const pageRef = useProjectPage();
   const [showStack, setShowStack] = useState(false);
   const [showTop, setShowTop] = useState(false);
   const [footerVisible, setFooterVisible] = useState(false);
@@ -173,11 +118,8 @@ export default function FieldServiceMaintenance() {
   const currentState = deliveryStates[selectedState];
 
   return (
-    <main className="fsm-project">
-      <Link className="fsm-back" to="/">
-        <ArrowLeft size={16} strokeWidth={1.7} aria-hidden="true" />
-        <span>Back to portfolio</span>
-      </Link>
+    <main ref={pageRef} className="project-case-study fsm-project">
+      <ProjectNavigation className="fsm-back" />
 
       <article>
         <header className="fsm-hero">
@@ -186,7 +128,7 @@ export default function FieldServiceMaintenance() {
               <div className="fsm-pill-list" aria-label="Core technologies">
                 {featuredTechnologies.map((technology) => <span key={technology}>{technology}</span>)}
               </div>
-              <time dateTime="2026">Built 2026</time>
+              <time dateTime="2026-08">August 2026</time>
             </div>
             <h1>
               Field Service <span>&amp; Asset Maintenance Management</span>
@@ -257,8 +199,8 @@ export default function FieldServiceMaintenance() {
             <h2 id="fsm-flow-title">From a scheduled inspection to asset history.</h2>
             <div className="fsm-flow-grid">
               {steps.map((step) => (
-                <div className="fsm-flow-step" key={step.number}>
-                  <span className="fsm-flow-number">{step.number}</span>
+                <div className="fsm-flow-step" key={step.title}>
+
                   <h3>{step.title}</h3>
                   <p>{step.detail}</p>
                 </div>
@@ -408,6 +350,10 @@ export default function FieldServiceMaintenance() {
               Tech stack
             </button>
           </div>
+        </section>
+        <section className="project-closing" aria-labelledby="project-closing-title">
+          <h2 id="project-closing-title">Offline inspections, synchronized records and supervisor review.</h2>
+          <p>I built the mobile and supervisor workflows around one maintenance record. SQLite preserves inspections and photos offline, while the API protects retries, stock deductions and review history. The local verification covers the synchronization engine and database; native device acceptance remains separate.</p>
         </section>
       </article>
 

@@ -604,106 +604,6 @@
   background: white;
 }
 
-/* AWS-sized 600px modal, quiet labels and pills. No heading. */
-.opsflow-modal-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 2000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 19px;
-  background: rgba(35, 35, 37, 0.28);
-  backdrop-filter: blur(11px);
-  -webkit-backdrop-filter: blur(11px);
-  animation: opsflow-overlay-in 220ms ease both;
-}
-.opsflow-modal {
-  position: relative;
-  width: min(100%, 600px);
-  max-height: calc(100dvh - 38px);
-  overflow-y: auto;
-  padding: 40px 34px 34px;
-  background: rgba(250, 249, 246, 0.96);
-  border-radius: 24px;
-  box-shadow:
-    0 24px 72px rgba(35, 35, 37, 0.14),
-    0 8px 24px rgba(35, 35, 37, 0.07);
-  animation: opsflow-modal-in 320ms cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-/* Rendered small x, not the misleading 27px declaration from AWS. */
-.opsflow-project button.opsflow-modal-close {
-  position: absolute;
-  top: 17px;
-  right: 23px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 26px;
-  height: 30px;
-  padding: 0;
-  border: 0;
-  border-radius: 0;
-  background: transparent !important;
-  box-shadow: none !important;
-  color: #99999d;
-  font-family: inherit;
-  font-size: 16px;
-  font-weight: 300;
-  line-height: 1;
-  cursor: pointer;
-  transition:
-    color 180ms ease,
-    transform 180ms ease;
-}
-.opsflow-project button.opsflow-modal-close:hover {
-  background: transparent !important;
-  color: #151517;
-  transform: translateY(-1px);
-}
-.opsflow-modal-groups {
-  display: flex;
-  flex-direction: column;
-  gap: 27px;
-  padding-right: 8px;
-}
-.opsflow-modal-group {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-.opsflow-modal-category {
-  color: #66666b;
-  font-size: 11px;
-  font-weight: 500;
-  line-height: 1.3;
-  letter-spacing: -0.01em;
-}
-.opsflow-modal-note {
-  margin: 6px 0 0;
-  color: #99999d;
-  font-size: 10px;
-  font-weight: 400;
-  line-height: 1.5;
-}
-.opsflow-modal-pills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 12px;
-}
-.opsflow-modal-pills span {
-  display: inline-flex;
-  align-items: center;
-  padding: 7px 11px;
-  border-radius: 999px;
-  background: #f0efeb;
-  color: #77777c;
-  font-size: 10px;
-  font-weight: 500;
-  line-height: 1.2;
-}
-
 @keyframes opsflow-reveal {
   from {
     opacity: 0;
@@ -831,17 +731,6 @@
   }
   .opsflow-footer {
     padding-bottom: 95px;
-  }
-  .opsflow-modal {
-    padding: 42px 22px 26px;
-    border-radius: 21px;
-  }
-  .opsflow-project button.opsflow-modal-close {
-    top: 11px;
-    right: 16px;
-  }
-  .opsflow-modal-groups {
-    gap: 24px;
   }
 }
 @media (max-width: 380px) {

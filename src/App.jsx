@@ -67,6 +67,8 @@ import ManufacturingQC from "./components/pages/projects/ManufacturingQC/Manufac
 
 import EnterpriseCustomerOperations from "./components/pages/projects/EnterpriseCustomerOperations/EnterpriseCustomerOperations.jsx";
 
+import "./components/pages/projects/shared/ProjectPage.css";
+
 const placeholderProjects = [
   ...rebuildingProjects.map((project) => ({
     ...project,

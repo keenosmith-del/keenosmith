@@ -1,6 +1,9 @@
+import ProjectNavigation from "../shared/ProjectNavigation.jsx";
+import useProjectPage from "../shared/useProjectPage.js";
+import ProjectModal from "../shared/ProjectModal.jsx";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft, ArrowUp, Layers3 } from "lucide-react";
+import { ArrowUp, Layers3 } from "lucide-react";
 import githubSvg from "../../../../assets/svgs/header/github.svg";
 import "./AIEntity.css";
 
@@ -31,54 +34,7 @@ const engineeringNotes = [
 ];
 
 function TechStackModal({ onClose }) {
-  const closeRef = useRef(null);
-
-  useEffect(() => {
-    const previousFocus = document.activeElement;
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    closeRef.current?.focus();
-
-    const handleKeyDown = (event) => {
-      if (event.key === "Escape") onClose();
-      if (event.key === "Tab") {
-        event.preventDefault();
-        closeRef.current?.focus();
-      }
-    };
-    document.addEventListener("keydown", handleKeyDown);
-    return () => {
-      document.removeEventListener("keydown", handleKeyDown);
-      document.body.style.overflow = previousOverflow;
-      previousFocus?.focus?.();
-    };
-  }, [onClose]);
-
-  return (
-    <div
-      className="ae-modal-overlay"
-      onMouseDown={(event) => {
-        if (event.target === event.currentTarget) onClose();
-      }}
-    >
-      <div className="ae-modal" role="dialog" aria-modal="true" aria-label="Project technology stack">
-        <button ref={closeRef} className="ae-modal-close" type="button" onClick={onClose} aria-label="Close tech stack">
-          <span aria-hidden="true">×</span>
-        </button>
-        <div className="ae-modal-groups">
-          {technologyGroups.map((group) => (
-            <div className="ae-modal-group" key={group.heading}>
-              <span className="ae-modal-category">{group.heading}</span>
-              {group.note && <p className="ae-modal-note">{group.note}</p>}
-              <div className="ae-modal-pills">
-                {group.skills.map((skill) => <span key={skill}>{skill}</span>)}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
+  return <ProjectModal onClose={onClose} groups={technologyGroups} />;
 }
 
 function Section({ label, children, className = "" }) {
@@ -91,6 +47,7 @@ function Section({ label, children, className = "" }) {
 }
 
 export default function AIEntity() {
+  const pageRef = useProjectPage();
   const [showStack, setShowStack] = useState(false);
   const [showTop, setShowTop] = useState(false);
   const [footerVisible, setFooterVisible] = useState(false);
@@ -117,11 +74,8 @@ export default function AIEntity() {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
-    <main className="ae-project">
-      <Link className="ae-back" to="/">
-        <ArrowLeft size={16} strokeWidth={1.7} aria-hidden="true" />
-        <span>Back to portfolio</span>
-      </Link>
+    <main ref={pageRef} className="project-case-study ae-project">
+      <ProjectNavigation className="ae-back" />
 
       <article>
         <header className="ae-hero">
@@ -130,7 +84,7 @@ export default function AIEntity() {
               <div className="ae-pills" aria-label="Technologies used">
                 {heroTechnologies.map((technology) => <span key={technology}>{technology}</span>)}
               </div>
-              <span className="ae-hero-context">Full-stack / Applied AI engineering</span>
+              <time dateTime="2026-01">January 2026</time>
             </div>
             <h1>AI Entity</h1>
             <div className="ae-hero-bottom">

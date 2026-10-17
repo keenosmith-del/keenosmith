@@ -1,6 +1,9 @@
+import ProjectNavigation from "../shared/ProjectNavigation.jsx";
+import useProjectPage from "../shared/useProjectPage.js";
+import ProjectModal from "../shared/ProjectModal.jsx";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft, ArrowRight, ArrowUp, Layers3 } from "lucide-react";
+import { ArrowRight, ArrowUp, Layers3 } from "lucide-react";
 import githubSvg from "../../../../assets/svgs/header/github.svg";
 import "./FleetOperations.css";
 
@@ -84,27 +87,22 @@ const technologyGroups = [
 
 const journey = [
   {
-    number: "01",
     heading: "Plan",
     description: "Create deliveries, choose a depot and order route stops.",
   },
   {
-    number: "02",
     heading: "Assign",
     description: "Allocate an available driver and vehicle, then dispatch.",
   },
   {
-    number: "03",
     heading: "Observe",
     description: "Receive vehicle positions and inspect operational alerts.",
   },
   {
-    number: "04",
     heading: "Intervene",
     description: "Acknowledge an exception and reassign unfinished work.",
   },
   {
-    number: "05",
     heading: "Review",
     description: "Inspect delivery outcomes and replay stored GPS history.",
   },
@@ -172,70 +170,11 @@ const verification = [
 ];
 
 function TechStackModal({ onClose }) {
-  const closeRef = useRef(null);
-
-  useEffect(() => {
-    const previous = document.activeElement;
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    closeRef.current?.focus();
-    const handleKeyDown = (event) => {
-      if (event.key === "Escape") onClose();
-      if (event.key === "Tab") {
-        event.preventDefault();
-        closeRef.current?.focus();
-      }
-    };
-    document.addEventListener("keydown", handleKeyDown);
-    return () => {
-      document.removeEventListener("keydown", handleKeyDown);
-      document.body.style.overflow = previousOverflow;
-      previous?.focus?.();
-    };
-  }, [onClose]);
-
-  return (
-    <div
-      className="fleet-modal-overlay"
-      onMouseDown={(event) => {
-        if (event.currentTarget === event.target) onClose();
-      }}
-    >
-      <div
-        className="fleet-modal"
-        role="dialog"
-        aria-modal="true"
-        aria-label="Fleet operations technology stack"
-        onMouseDown={(event) => event.stopPropagation()}
-      >
-        <button
-          ref={closeRef}
-          className="fleet-modal-close"
-          type="button"
-          aria-label="Close tech stack"
-          onClick={onClose}
-        >
-          <span aria-hidden="true">×</span>
-        </button>
-        <div className="fleet-modal-groups">
-          {technologyGroups.map((group) => (
-            <div className="fleet-modal-group" key={group.heading}>
-              <span className="fleet-modal-category">{group.heading}</span>
-              {group.note && <p className="fleet-modal-note">{group.note}</p>}
-              <div className="fleet-modal-pills">
-                {group.skills.map((skill) => (
-                  <span key={skill}>{skill}</span>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
+  return <ProjectModal onClose={onClose} groups={technologyGroups} />;
 }
 
 export default function FleetOperations() {
+  const pageRef = useProjectPage();
   const [showStack, setShowStack] = useState(false);
   const [showTop, setShowTop] = useState(false);
   const [footerVisible, setFooterVisible] = useState(false);
@@ -266,11 +205,8 @@ export default function FleetOperations() {
     scenarios.find((item) => item.id === scenario) || scenarios[0];
 
   return (
-    <main className="fleet-project">
-      <Link className="fleet-back" to="/">
-        <ArrowLeft size={16} strokeWidth={1.7} aria-hidden="true" />
-        <span>Back to portfolio</span>
-      </Link>
+    <main ref={pageRef} className="project-case-study fleet-project">
+      <ProjectNavigation className="fleet-back" />
 
       <article>
         <header className="fleet-hero">
@@ -281,7 +217,7 @@ export default function FleetOperations() {
                   <span key={name}>{name}</span>
                 ))}
               </div>
-              <time dateTime="2026-10">Built September 2026</time>
+              <time dateTime="2026-09" >September 2026</time>
             </div>
             <h1>
               Real-Time Logistics{" "}
@@ -384,7 +320,7 @@ export default function FleetOperations() {
             </div>
             <div className="fleet-workflow-steps">
               {journey.map((step) => (
-                <div className="fleet-workflow-step" key={step.number}>
+                <div className="fleet-workflow-step" key={step.heading}>
                   <h3>{step.heading}</h3>
                   <p>{step.description}</p>
                 </div>
@@ -621,6 +557,10 @@ export default function FleetOperations() {
               stack
             </button>
           </div>
+        </section>
+        <section className="project-closing" aria-labelledby="project-closing-title">
+          <h2 id="project-closing-title">From vehicle events to an operational fleet view.</h2>
+          <p>I connected simulated vehicle telemetry to a streaming pipeline, persistent trip records and a live operations interface. The project brings together event ingestion, exception handling and delivery history, with replayable local evidence rather than claims of a deployed commercial fleet.</p>
         </section>
       </article>
 

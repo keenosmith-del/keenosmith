@@ -1,6 +1,9 @@
+import ProjectNavigation from "../shared/ProjectNavigation.jsx";
+import useProjectPage from "../shared/useProjectPage.js";
+import ProjectModal from "../shared/ProjectModal.jsx";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft, ArrowUp, Layers3 } from "lucide-react";
+import { ArrowUp, Layers3 } from "lucide-react";
 import githubSvg from "../../../../assets/svgs/header/github.svg";
 import "./OllamaPrivateBI.css";
 
@@ -72,78 +75,19 @@ const technologyGroups = [
 ];
 
 const pathSteps = [
-  { label: "01", name: "Classify", text: "Choose fixed business metrics, document retrieval or a hybrid response." },
-  { label: "02", name: "Calculate", text: "Run organisation-scoped SQL for periods, revenue, recorded cost and profit." },
-  { label: "03", name: "Retrieve", text: "Search permission-filtered pgvector chunks from indexed local files." },
-  { label: "04", name: "Constrain", text: "Let local Qwen select evidence identifiers, never invent new financial totals." },
-  { label: "05", name: "Present", text: "Return exact metrics, cited excerpts, limitations and a saved analysis record." },
+  { name: "Classify", text: "Choose fixed business metrics, document retrieval or a hybrid response." },
+  { name: "Calculate", text: "Run organisation-scoped SQL for periods, revenue, recorded cost and profit." },
+  { name: "Retrieve", text: "Search permission-filtered pgvector chunks from indexed local files." },
+  { name: "Constrain", text: "Let local Qwen select evidence identifiers, never invent new financial totals." },
+  { name: "Present", text: "Return exact metrics, cited excerpts, limitations and a saved analysis record." },
 ];
 
 function TechStackModal({ close }) {
-  const closeButton = useRef(null);
-
-  useEffect(() => {
-    const previousFocus = document.activeElement;
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    closeButton.current?.focus();
-
-    function onKeyDown(event) {
-      if (event.key === "Escape") close();
-      if (event.key === "Tab") {
-        event.preventDefault();
-        closeButton.current?.focus();
-      }
-    }
-
-    document.addEventListener("keydown", onKeyDown);
-    return () => {
-      document.removeEventListener("keydown", onKeyDown);
-      document.body.style.overflow = previousOverflow;
-      previousFocus?.focus?.();
-    };
-  }, [close]);
-
-  return (
-    <div
-      className="ollama-modal-overlay"
-      onMouseDown={(event) => {
-        if (event.target === event.currentTarget) close();
-      }}
-    >
-      <div
-        className="ollama-modal"
-        role="dialog"
-        aria-modal="true"
-        aria-label="Project technology stack"
-        onMouseDown={(event) => event.stopPropagation()}
-      >
-        <button
-          className="ollama-modal-close"
-          ref={closeButton}
-          type="button"
-          onClick={close}
-          aria-label="Close tech stack"
-        >
-          <span aria-hidden="true">×</span>
-        </button>
-        <div className="ollama-modal-groups">
-          {technologyGroups.map((group) => (
-            <div className="ollama-modal-group" key={group.heading}>
-              <span className="ollama-modal-category">{group.heading}</span>
-              {group.note && <p className="ollama-modal-note">{group.note}</p>}
-              <div className="ollama-modal-pills">
-                {group.skills.map((skill) => <span key={skill}>{skill}</span>)}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
+  return <ProjectModal onClose={close} groups={technologyGroups} />;
 }
 
 export default function OllamaPrivateBI() {
+  const pageRef = useProjectPage();
   const [showStack, setShowStack] = useState(false);
   const [showTop, setShowTop] = useState(false);
   const [footerVisible, setFooterVisible] = useState(false);
@@ -171,11 +115,8 @@ export default function OllamaPrivateBI() {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
-    <main className="ollama-project">
-      <Link className="ollama-back" to="/">
-        <ArrowLeft size={16} strokeWidth={1.7} aria-hidden="true" />
-        Back to portfolio
-      </Link>
+    <main ref={pageRef} className="project-case-study ollama-project">
+      <ProjectNavigation className="ollama-back" />
 
       <article>
         <header className="ollama-hero">
@@ -184,7 +125,7 @@ export default function OllamaPrivateBI() {
               <div className="ollama-pills" aria-label="Core technology">
                 {technologies.map((name) => <span key={name}>{name}</span>)}
               </div>
-              <time dateTime="2026">Built 2026</time>
+              <time dateTime="2026-06">June 2026</time>
             </div>
 
             <h1>Ollama <span>Private Personal/Business Intelligence Platform</span></h1>
@@ -277,8 +218,8 @@ export default function OllamaPrivateBI() {
             </p>
             <div className="ollama-steps">
               {pathSteps.map((step) => (
-                <div className="ollama-step" key={step.label}>
-                  <span>{step.label}</span>
+                <div className="ollama-step" key={step.name}>
+
                   <div>
                     <h3>{step.name}</h3>
                     <p>{step.text}</p>

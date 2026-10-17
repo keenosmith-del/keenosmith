@@ -94,7 +94,7 @@
 .music-api-page a.music-api-source-button:hover { background: #29292b; color: #fffefc !important; }
 .music-api-source-button img { width: 15px; height: 15px; display: block; object-fit: contain; }
 .music-api-walkthrough-note { max-width: 290px; color: #99999d; font-size: 10px; line-height: 1.6; margin: 14px 0 0; }
-.music-api-walkthrough-note a { color: #66666b; text-decoration: underline; text-underline-offset: 3px; }
+.music-api-walkthrough-note a { color: #66666b; text-decoration: none; text-underline-offset: 3px; }
 
 /* Editorial sections stay on the same page surface, without coloured panels. */
 .music-api-section {
@@ -136,7 +136,7 @@
   border: 0;
   padding: 0 0 8px;
   background: transparent;
-  border-bottom: 1px solid transparent;
+  border-bottom: 0;
   color: #9a9a9e;
   font-size: 11px;
   cursor: pointer;
@@ -178,16 +178,6 @@
 .music-api-footer-top:hover { transform: translateY(-2px); background: #dfded9; color: #555559 !important; }
 .music-api-floating-top { position: fixed; z-index: 30; right: 22px; bottom: 22px; display: flex; align-items: center; justify-content: center; width: 38px; height: 38px; padding: 0; border: 0; border-radius: 50%; color: #66666b; background: rgba(250,249,246,.82); box-shadow: 0 8px 24px rgba(45,45,45,.08); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); cursor: pointer; transition: background-color 180ms ease, transform 180ms ease; }
 .music-api-floating-top:hover { background: #fff; transform: translateY(-2px); }
-
-.music-api-modal-overlay { position: fixed; inset: 0; z-index: 2000; display: flex; align-items: center; justify-content: center; padding: 19px; background: rgba(35,35,37,.28); backdrop-filter: blur(11px); -webkit-backdrop-filter: blur(11px); animation: music-api-overlay-in 220ms ease both; }
-.music-api-modal { position: relative; width: min(100%,600px); max-height: calc(100dvh - 38px); overflow-y: auto; padding: 40px 34px 34px; background: rgba(250,249,246,.96); border-radius: 24px; box-shadow: 0 24px 72px rgba(35,35,37,.14), 0 8px 24px rgba(35,35,37,.07); animation: music-api-modal-in 320ms cubic-bezier(.22,1,.36,1) both; }
-.music-api-page .music-api-modal-close { position: absolute; top: 14px; right: 19px; display: flex; align-items: center; justify-content: center; width: 26px; height: 30px; padding: 0; border: 0; border-radius: 0; background: transparent !important; box-shadow: none !important; color: #99999d; font-size: 18px; font-weight: 400; line-height: 1; cursor: pointer; transition: color 180ms ease, transform 180ms ease; }
-.music-api-page .music-api-modal-close:hover { background: transparent !important; color: #151517; transform: translateY(-1px); }
-.music-api-modal-groups { display: flex; flex-direction: column; gap: 27px; padding-right: 8px; }
-.music-api-modal-group h3 { margin: 0; color: #66666b; font-size: 11px; font-weight: 500; letter-spacing: -.01em; }
-.music-api-modal-group p { margin: 7px 0 0; color: #99999d; font-size: 10px; line-height: 1.5; }
-.music-api-modal-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 12px; }
-.music-api-modal-tags span { padding: 7px 11px; border-radius: 999px; background: #f0efeb; color: #77777c; font-size: 10px; font-weight: 500; line-height: 1.25; }
 @keyframes music-api-overlay-in { from { opacity: 0; } to { opacity: 1; } }
 @keyframes music-api-modal-in { from { opacity: 0; transform: translateY(16px) scale(.985); } to { opacity: 1; transform: translateY(0) scale(1); } }
 
@@ -217,10 +207,8 @@
   .music-api-page .music-api-stack-button { margin-top: 35px; }
   .music-api-closing { padding: 95px 19px 48px; }
   .music-api-closing h2 { font-size: 31px; }
-  .music-api-modal { padding: 41px 22px 27px; border-radius: 21px; }
   .music-api-footer { padding-bottom: 95px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .music-api-modal-overlay, .music-api-modal { animation: none; }
   .music-api-page *, .music-api-page *::before, .music-api-page *::after { transition-duration: .01ms !important; scroll-behavior: auto !important; }
 }

@@ -76,7 +76,7 @@
 .fsm-hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
 .fsm-github-icon { display: block; width: 15px; height: 15px; object-fit: contain; filter: brightness(0) invert(1); }
 .fsm-hero-disclaimer { max-width: 320px; margin: 0; color: #99999d; font-size: 11px; line-height: 1.7; }
-.fsm-hero-disclaimer a { color: #66666b; font-weight: 600; text-underline-offset: 3px; text-decoration: underline; }
+.fsm-hero-disclaimer a { color: #66666b; font-weight: 600; text-underline-offset: 3px; text-decoration: none; }
 .fsm-hero-disclaimer a:hover { color: #151517; }
 
 /* AWS-style editorial body: understated labels and clear working prose. */
@@ -154,36 +154,6 @@
   transition: transform 180ms ease, background-color 180ms ease;
 }
 .fsm-floating-top:hover { transform: translateY(-2px); background: #fff; }
-
-/* AWS-size, heading-free technology modal, with a genuinely small unboxed x. */
-.fsm-modal-overlay {
-  position: fixed; inset: 0; z-index: 2000;
-  display: flex; align-items: center; justify-content: center; padding: 19px;
-  background: rgba(35, 35, 37, .28); backdrop-filter: blur(11px);
-  -webkit-backdrop-filter: blur(11px); animation: fsm-overlay-in 220ms ease both;
-}
-.fsm-modal {
-  position: relative; width: min(100%, 600px); max-height: calc(100dvh - 38px);
-  overflow-y: auto; padding: 40px 34px 34px;
-  background: rgba(250, 249, 246, .96); border-radius: 24px;
-  box-shadow: 0 24px 72px rgba(35,35,37,.14), 0 8px 24px rgba(35,35,37,.07);
-  animation: fsm-modal-in 320ms cubic-bezier(.22,1,.36,1) both;
-}
-.fsm-project button.fsm-modal-close {
-  position: absolute; top: 17px; right: 23px; display: flex;
-  justify-content: center; align-items: center; width: 26px; height: 30px;
-  padding: 0; border: 0; border-radius: 0; background: transparent !important;
-  box-shadow: none !important; color: #99999d; font-family: inherit;
-  font-size: 16px; font-weight: 300; line-height: 1; cursor: pointer;
-  transition: transform 180ms ease, color 180ms ease;
-}
-.fsm-project button.fsm-modal-close:hover { background: transparent !important; color: #151517; transform: translateY(-1px); }
-.fsm-modal-groups { display: flex; flex-direction: column; gap: 27px; padding-right: 8px; }
-.fsm-modal-group { display: flex; flex-direction: column; align-items: flex-start; }
-.fsm-modal-category { color: #66666b; font-size: 11px; font-weight: 500; line-height: 1.3; letter-spacing: -.01em; }
-.fsm-modal-note { margin: 6px 0 0 !important; color: #99999d; font-size: 10px; line-height: 1.5; }
-.fsm-modal-pills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
-.fsm-modal-pills span { display: inline-flex; align-items: center; padding: 7px 11px; border-radius: 999px; background: #f0efeb; color: #77777c; font-size: 10px; font-weight: 500; line-height: 1.2; }
 @keyframes fsm-reveal { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes fsm-overlay-in { from { opacity: 0; } to { opacity: 1; } }
 @keyframes fsm-modal-in { from { opacity: 0; transform: translateY(12px) scale(.985); } to { opacity: 1; transform: translateY(0) scale(1); } }
@@ -218,9 +188,6 @@
   .fsm-results strong { font-size: 42px; }
   .fsm-results span { font-size: 9px; }
   .fsm-footer { padding-bottom: 95px; }
-  .fsm-modal { padding: 42px 22px 26px; border-radius: 21px; }
-  .fsm-project button.fsm-modal-close { top: 11px; right: 16px; }
-  .fsm-modal-groups { gap: 24px; }
 }
 @media (max-width: 400px) {
   .fsm-flow-grid { grid-template-columns: 1fr; }

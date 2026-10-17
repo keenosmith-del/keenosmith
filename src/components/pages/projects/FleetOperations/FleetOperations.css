@@ -631,102 +631,6 @@
   background: #fff;
 }
 
-/* AWS-sized title-free technology modal and plain x */
-.fleet-modal-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 2000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 19px;
-  background: rgba(35, 35, 37, 0.28);
-  backdrop-filter: blur(11px);
-  -webkit-backdrop-filter: blur(11px);
-  animation: fleet-fade 220ms both;
-}
-.fleet-modal {
-  position: relative;
-  width: min(100%, 600px);
-  max-height: calc(100dvh - 38px);
-  overflow-y: auto;
-  padding: 40px 34px 34px;
-  border-radius: 24px;
-  background: rgba(250, 249, 246, 0.96);
-  box-shadow:
-    0 24px 72px rgba(35, 35, 37, 0.14),
-    0 8px 24px rgba(35, 35, 37, 0.07);
-  animation: fleet-modal-in 320ms cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-.fleet-project button.fleet-modal-close {
-  position: absolute;
-  top: 17px;
-  right: 23px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 26px;
-  height: 30px;
-  padding: 0;
-  border: 0;
-  border-radius: 0;
-  background: transparent !important;
-  box-shadow: none !important;
-  color: #99999d;
-  font-size: 16px;
-  font-weight: 300;
-  line-height: 1;
-  cursor: pointer;
-  transition:
-    color 180ms ease,
-    transform 180ms ease;
-}
-.fleet-project button.fleet-modal-close:hover {
-  color: #151517;
-  transform: translateY(-1px);
-  background: transparent !important;
-}
-.fleet-modal-groups {
-  display: flex;
-  flex-direction: column;
-  gap: 27px;
-  padding-right: 8px;
-}
-.fleet-modal-group {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-.fleet-modal-category {
-  color: #66666b;
-  font-size: 11px;
-  line-height: 1.35;
-  font-weight: 500;
-}
-.fleet-modal-note {
-  margin: 8px 0 0;
-  color: #99999d;
-  font-size: 10px;
-  line-height: 1.6;
-}
-.fleet-modal-pills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 13px;
-}
-.fleet-modal-pills span {
-  display: inline-flex;
-  align-items: center;
-  border-radius: 999px;
-  padding: 7px 11px;
-  background: #f0efeb;
-  color: #77777c;
-  font-size: 10px;
-  font-weight: 500;
-  line-height: 1.2;
-}
-
 @keyframes fleet-appear {
   from {
     opacity: 0;
@@ -927,14 +831,6 @@
   .fleet-floating-top {
     right: 16px;
     bottom: 16px;
-  }
-  .fleet-modal {
-    padding: 42px 22px 26px;
-    border-radius: 21px;
-  }
-  .fleet-project button.fleet-modal-close {
-    top: 11px;
-    right: 16px;
   }
 }
 @media (max-width: 390px) {

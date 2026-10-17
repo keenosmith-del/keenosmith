@@ -31,18 +31,17 @@ export default function Kailor() {
               }}
             >
               <div className="kailor-project-pills">
-                <span className="cloud-platform">Technology consultancy</span>
+                {["React", "Node.js", "PostgreSQL"].map(technology => <span className="cloud-platform" key={technology}>{technology}</span>)}
               </div>
               <div className="cloud-artwork">
-                <img src={kailorMascot} alt="Kailor mascot" loading="lazy" />
+                <img src={kailorMascot} alt="kailor mascot" loading="lazy" />
               </div>
               <div className="cloud-overlay" aria-hidden="true" />
               <div className="cloud-tile-caption">
-                <h3>kailor</h3>
+                <h3>AI Consultancy &amp; Software Solutions</h3>
                 <div className="cloud-tile-details">
                   <p>
-                    Helping businesses identify practical AI opportunities and
-                    build tailored software solutions.
+                    My technology consultancy helps businesses identify useful AI opportunities, improve workflows and plan tailored software. The consulting workspace supports discovery, evidence review, recommendations and reports, connecting business needs to practical technology decisions.
                   </p>
                 </div>
               </div>

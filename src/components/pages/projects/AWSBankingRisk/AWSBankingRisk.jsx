@@ -1,15 +1,11 @@
+import ProjectNavigation from "../shared/ProjectNavigation.jsx";
+import useProjectPage from "../shared/useProjectPage.js";
+import ProjectModal from "../shared/ProjectModal.jsx";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import githubSvg from "../../../../assets/svgs/header/github.svg";
 
-import {
-  ArrowDown,
-  ArrowLeft,
-  ArrowRight,
-  ArrowUp,
-  Layers3,
-  X,
-} from "lucide-react";
+import { ArrowUp, Layers3 } from "lucide-react";
 import "./AWSBankingRisk.css";
 
 const sourceRepository =
@@ -76,81 +72,11 @@ const technologyGroups = [
 ];
 
 function TechStackModal({ close }) {
-  const closeButton = useRef(null);
-
-  useEffect(() => {
-    const previousFocus = document.activeElement;
-    const previousOverflow = document.body.style.overflow;
-
-    document.body.style.overflow = "hidden";
-    closeButton.current?.focus();
-
-    function onKeyDown(event) {
-      if (event.key === "Escape") close();
-      // The close button is the only focusable element in this dialog.
-      if (event.key === "Tab") {
-        event.preventDefault();
-        closeButton.current?.focus();
-      }
-    }
-
-    document.addEventListener("keydown", onKeyDown);
-    return () => {
-      document.removeEventListener("keydown", onKeyDown);
-      document.body.style.overflow = previousOverflow;
-      previousFocus?.focus?.();
-    };
-  }, [close]);
-
-  return (
-    <div
-      className="aws-banking-modal-overlay"
-      onMouseDown={(event) => {
-        if (event.target === event.currentTarget) close();
-      }}
-    >
-      <div
-        className="aws-banking-modal"
-        role="dialog"
-        aria-modal="true"
-        aria-label="Project technology stack"
-        onMouseDown={(event) => event.stopPropagation()}
-      >
-        <button
-          ref={closeButton}
-          className="aws-banking-modal-close"
-          type="button"
-          onClick={close}
-          aria-label="Close tech stack"
-        >
-          <span aria-hidden="true">×</span>
-        </button>
-
-        <div className="aws-banking-modal-groups">
-          {technologyGroups.map((group) => (
-            <div key={group.heading} className="aws-banking-modal-group">
-              <span className="aws-banking-modal-category">
-                {group.heading}
-              </span>
-
-              {group.note && (
-                <p className="aws-banking-modal-note">{group.note}</p>
-              )}
-
-              <div className="aws-banking-modal-pills">
-                {group.skills.map((skill) => (
-                  <span key={skill}>{skill}</span>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
+  return <ProjectModal onClose={close} groups={technologyGroups} />;
 }
 
 export default function AWSBankingRisk() {
+  const pageRef = useProjectPage();
   const [showTop, setShowTop] = useState(false);
   const [showStack, setShowStack] = useState(false);
   const [footerVisible, setFooterVisible] = useState(false);
@@ -178,11 +104,8 @@ export default function AWSBankingRisk() {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
-    <main className="aws-banking-project">
-      <Link className="aws-banking-back" to="/">
-        <ArrowLeft size={16} strokeWidth={1.7} aria-hidden="true" />
-        <span>Back to portfolio</span>
-      </Link>
+    <main ref={pageRef} className="project-case-study aws-banking-project">
+      <ProjectNavigation className="aws-banking-back" />
 
       <article>
         <header className="aws-banking-hero">
@@ -196,7 +119,7 @@ export default function AWSBankingRisk() {
                   <span key={technology}>{technology}</span>
                 ))}
               </div>
-              <time dateTime="2026-10">Built March 2026</time>
+              <time dateTime="2026-03" >March 2026</time>
             </div>
 
             <h1>AWS Banking <span>&amp; Payment Risk Platform</span></h1>

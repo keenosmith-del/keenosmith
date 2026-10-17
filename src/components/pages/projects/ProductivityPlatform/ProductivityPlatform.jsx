@@ -1,6 +1,9 @@
+import ProjectNavigation from "../shared/ProjectNavigation.jsx";
+import useProjectPage from "../shared/useProjectPage.js";
+import ProjectModal from "../shared/ProjectModal.jsx";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft, ArrowRight, ArrowUp, Layers3 } from "lucide-react";
+import { ArrowRight, ArrowUp, Layers3 } from "lucide-react";
 import githubSvg from "../../../../assets/svgs/header/github.svg";
 import "./ProductivityPlatform.css";
 
@@ -79,104 +82,15 @@ const technologyGroups = [
   },
 ];
 
-const workspaceSections = [
-  {
-    number: "01",
-    name: "Tasks and projects",
-    description:
-      "Task and project records can be created, edited, completed and removed. The dashboard draws the same records as their individual pages.",
-  },
-  {
-    number: "02",
-    name: "Notes and folders",
-    description:
-      "Notes have dedicated CRUD routes, folder membership and archive actions. A user can organise notes without leaving the wider workspace.",
-  },
-  {
-    number: "03",
-    name: "Goals and planning",
-    description:
-      "Goals, reminders and due dates contribute to the dashboard and calendar. Calendar events are assembled from existing application records.",
-  },
-  {
-    number: "04",
-    name: "Alarms and notifications",
-    description:
-      "Alarm checks run in the browser while the app is open. Backend mutations create notification records that the frontend can display.",
-  },
-];
-
 function TechStackModal({ close }) {
-  const closeRef = useRef(null);
-  useEffect(() => {
-    const previousFocus = document.activeElement;
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    closeRef.current?.focus();
-    const onKeyDown = (event) => {
-      if (event.key === "Escape") close();
-      if (event.key === "Tab") {
-        event.preventDefault();
-        closeRef.current?.focus();
-      }
-    };
-    document.addEventListener("keydown", onKeyDown);
-    return () => {
-      document.body.style.overflow = previousOverflow;
-      document.removeEventListener("keydown", onKeyDown);
-      previousFocus?.focus?.();
-    };
-  }, [close]);
-  return (
-    <div
-      className="productivity-modal-overlay"
-      onMouseDown={(e) => {
-        if (e.target === e.currentTarget) close();
-      }}
-    >
-      <div
-        className="productivity-modal"
-        role="dialog"
-        aria-modal="true"
-        aria-label="Project technology stack"
-        onMouseDown={(e) => e.stopPropagation()}
-      >
-        <button
-          className="productivity-modal-close"
-          ref={closeRef}
-          type="button"
-          aria-label="Close tech stack"
-          onClick={close}
-        >
-          <span aria-hidden="true">×</span>
-        </button>
-        <div className="productivity-modal-groups">
-          {technologyGroups.map((group) => (
-            <div className="productivity-modal-group" key={group.heading}>
-              <span className="productivity-modal-category">
-                {group.heading}
-              </span>
-              {group.note && (
-                <p className="productivity-modal-note">{group.note}</p>
-              )}
-              <div className="productivity-modal-pills">
-                {group.skills.map((skill) => (
-                  <span key={skill}>{skill}</span>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
+  return <ProjectModal onClose={close} groups={technologyGroups} />;
 }
 
 export default function ProductivityPlatform() {
+  const pageRef = useProjectPage();
   const [showTop, setShowTop] = useState(false);
   const [footerVisible, setFooterVisible] = useState(false);
   const [showStack, setShowStack] = useState(false);
-  const [activeModule, setActiveModule] = useState(0);
   const footerRef = useRef(null);
   const closeStack = useCallback(() => setShowStack(false), []);
 
@@ -199,11 +113,8 @@ export default function ProductivityPlatform() {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
-    <main className="productivity-project">
-      <Link className="productivity-back" to="/">
-        <ArrowLeft size={16} strokeWidth={1.7} aria-hidden="true" />
-        <span>Back to portfolio</span>
-      </Link>
+    <main ref={pageRef} className="project-case-study productivity-project">
+      <ProjectNavigation className="productivity-back" />
 
       <article>
         <header className="productivity-hero">
@@ -217,9 +128,7 @@ export default function ProductivityPlatform() {
                   <span key={technology}>{technology}</span>
                 ))}
               </div>
-              <span className="productivity-hero-type">
-                Full-stack engineering
-              </span>
+              <time dateTime="2026-08">August 2026</time>
             </div>
             <h1>
               Full-Stack <span>Productivity Platform</span>
@@ -470,6 +379,10 @@ export default function ProductivityPlatform() {
               Tech stack
             </button>
           </div>
+        </section>
+        <section className="project-closing" aria-labelledby="project-closing-title">
+          <h2 id="project-closing-title">Authenticated workspaces with persistent tasks and notes.</h2>
+          <p>I connected a React workspace to an Express API and MongoDB so accounts, tasks and notes persist beyond the interface. The project demonstrates authentication, protected application routes and user-owned records in a full-stack application, with its current local scope documented in source.</p>
         </section>
       </article>
 

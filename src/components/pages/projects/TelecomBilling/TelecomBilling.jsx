@@ -1,6 +1,9 @@
+import ProjectNavigation from "../shared/ProjectNavigation.jsx";
+import useProjectPage from "../shared/useProjectPage.js";
+import ProjectModal from "../shared/ProjectModal.jsx";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft, ArrowRight, ArrowUp, Layers3 } from "lucide-react";
+import { ArrowUp, Layers3 } from "lucide-react";
 import githubSvg from "../../../../assets/svgs/header/github.svg";
 import "./TelecomBilling.css";
 
@@ -99,22 +102,18 @@ const stack = [
 
 const stages = [
   {
-    number: "01",
     label: "Subscribe",
     text: "Activate a plan and persist its effective-dated commercial terms.",
   },
   {
-    number: "02",
     label: "Meter",
     text: "Publish durable usage deliveries; commit unique business events once.",
   },
   {
-    number: "03",
     label: "Rate",
     text: "Apply UTC period segments, pooled allowance and BigDecimal charges.",
   },
   {
-    number: "04",
     label: "Settle",
     text: "Finalise an immutable invoice and record an idempotent payment.",
   },
@@ -140,86 +139,11 @@ const protections = [
 ];
 
 function TechStackModal({ onClose }) {
-  const closeRef = useRef(null);
-  const containerRef = useRef(null);
-  useEffect(() => {
-    const previouslyFocused = document.activeElement;
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    closeRef.current?.focus();
-    const keydown = (event) => {
-      if (event.key === "Escape") onClose();
-      if (event.key === "Tab") {
-        const elements = Array.from(
-          containerRef.current?.querySelectorAll(
-            "button:not([disabled]), a[href]",
-          ) || [],
-        );
-        if (elements.length === 0) {
-          event.preventDefault();
-          return;
-        }
-        const first = elements[0];
-        const last = elements[elements.length - 1];
-        if (event.shiftKey && document.activeElement === first) {
-          event.preventDefault();
-          last.focus();
-        } else if (!event.shiftKey && document.activeElement === last) {
-          event.preventDefault();
-          first.focus();
-        }
-      }
-    };
-    document.addEventListener("keydown", keydown);
-    return () => {
-      document.removeEventListener("keydown", keydown);
-      document.body.style.overflow = previousOverflow;
-      previouslyFocused?.focus?.();
-    };
-  }, [onClose]);
-
-  return (
-    <div
-      className="telecom-modal-overlay"
-      onMouseDown={(event) => {
-        if (event.currentTarget === event.target) onClose();
-      }}
-    >
-      <div
-        className="telecom-modal"
-        ref={containerRef}
-        role="dialog"
-        aria-modal="true"
-        aria-label="Telecommunications billing technology stack"
-      >
-        <button
-          className="telecom-modal-close"
-          ref={closeRef}
-          type="button"
-          onClick={onClose}
-          aria-label="Close technology stack"
-        >
-          <span aria-hidden="true">×</span>
-        </button>
-        <div className="telecom-modal-groups">
-          {stack.map(({ heading, note, skills }) => (
-            <div className="telecom-modal-group" key={heading}>
-              <span className="telecom-modal-category">{heading}</span>
-              {note && <p className="telecom-modal-note">{note}</p>}
-              <div className="telecom-modal-pills">
-                {skills.map((skill) => (
-                  <span key={skill}>{skill}</span>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
+  return <ProjectModal onClose={onClose} groups={stack} />;
 }
 
 export default function TelecomBilling() {
+  const pageRef = useProjectPage();
   const [showStack, setShowStack] = useState(false);
   const [showTop, setShowTop] = useState(false);
   const [footerVisible, setFooterVisible] = useState(false);
@@ -245,11 +169,8 @@ export default function TelecomBilling() {
   const scrollTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
-    <main className="telecom-project">
-      <Link className="telecom-back" to="/">
-        <ArrowLeft size={16} strokeWidth={1.7} aria-hidden="true" />
-        Back to portfolio
-      </Link>
+    <main ref={pageRef} className="project-case-study telecom-project">
+      <ProjectNavigation className="telecom-back" />
       <article>
         <header className="telecom-hero">
           <div className="telecom-hero-inner">
@@ -262,7 +183,7 @@ export default function TelecomBilling() {
                   <span key={name}>{name}</span>
                 ))}
               </div>
-              <time dateTime="2026-10">Built May 2026</time>
+              <time dateTime="2026-05" >May 2026</time>
             </div>
             <h1>Telecommunications <span>Billing &amp; Subscription Management</span></h1>
             <div className="telecom-hero-bottom">
@@ -331,8 +252,8 @@ export default function TelecomBilling() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Technical brief{" "}
-                <ArrowRight size={14} strokeWidth={1.6} aria-hidden="true" />
+                Technical brief
+
               </a>
             </div>
           </div>
@@ -439,8 +360,8 @@ export default function TelecomBilling() {
             </h2>
             <div className="telecom-stage-list">
               {stages.map((stage) => (
-                <div className="telecom-stage" key={stage.number}>
-                  <span className="telecom-stage-number"></span>
+                <div className="telecom-stage" key={stage.title || stage.label}>
+
                   <h3>{stage.label}</h3>
                   <p>{stage.text}</p>
                 </div>
@@ -726,10 +647,10 @@ export default function TelecomBilling() {
       </article>
       <footer className="telecom-footer" ref={footerRef}>
         <Link className="telecom-footer-back" to="/">
-          Back to Portfolio
+          Back to portfolio
         </Link>
         <button
-          className="telecom-footer-top"
+          className="telecom-footer-top" aria-label="Back to top"
           type="button"
           onClick={scrollTop}
         >

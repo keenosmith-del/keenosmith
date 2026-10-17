@@ -1,11 +1,13 @@
-import { Link } from "react-router-dom";
+import { projectOrigin } from "../../projects/shared/projectOrigin.js";
+import { Link, useLocation } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { projectArtwork } from "../../../../data/projectArtwork.js";
 import { skillIndex } from "../utils/exploreIndex.js";
 
 export function ProjectLink({ project, children, className, ...props }) {
+  const location = useLocation();
   return (
-    <Link className={className} to={project.route} {...props}>
+    <Link className={className} to={project.route} state={{ projectOrigin: projectOrigin(location) }} {...props}>
       {children}
     </Link>
   );

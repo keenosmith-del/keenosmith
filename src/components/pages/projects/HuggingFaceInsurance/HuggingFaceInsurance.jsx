@@ -1,6 +1,9 @@
+import ProjectNavigation from "../shared/ProjectNavigation.jsx";
+import useProjectPage from "../shared/useProjectPage.js";
+import ProjectModal from "../shared/ProjectModal.jsx";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft, ArrowUp, Layers3 } from "lucide-react";
+import { ArrowUp, Layers3 } from "lucide-react";
 import githubSvg from "../../../../assets/svgs/header/github.svg";
 import "./HuggingFaceInsurance.css";
 
@@ -19,25 +22,21 @@ const heroTechnologies = [
 
 const stages = [
   {
-    number: "01",
     title: "Collect evidence",
     description:
       "Create a claim and upload reports, policy documents, repair estimates and photographs. Originals remain available through authenticated downloads.",
   },
   {
-    number: "02",
     title: "Run analysis",
     description:
       "Extract text from documents and images, execute the relevant Hugging Face models and retain pipeline failures alongside successful outputs.",
   },
   {
-    number: "03",
     title: "Compare sources",
     description:
       "Compare explicitly labelled dates, registrations, policy references, names and locations. Present missing or inconsistent information for review.",
   },
   {
-    number: "04",
     title: "Record a decision",
     description:
       "An assessor reviews the originals and findings, adds notes and records an outcome. Changes to evidence invalidate the current analysis.",
@@ -148,73 +147,11 @@ const techGroups = [
 ];
 
 function TechStackModal({ onClose }) {
-  const closeRef = useRef(null);
-  useEffect(() => {
-    const previousFocus = document.activeElement;
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    closeRef.current?.focus();
-    const handleKeyDown = (event) => {
-      if (event.key === "Escape") onClose();
-      if (event.key === "Tab") {
-        event.preventDefault();
-        closeRef.current?.focus();
-      }
-    };
-    document.addEventListener("keydown", handleKeyDown);
-    return () => {
-      document.removeEventListener("keydown", handleKeyDown);
-      document.body.style.overflow = previousOverflow;
-      previousFocus?.focus?.();
-    };
-  }, [onClose]);
-
-  return (
-    <div
-      className="hf-insurance-modal-overlay"
-      onMouseDown={(event) => {
-        if (event.target === event.currentTarget) onClose();
-      }}
-    >
-      <div
-        className="hf-insurance-modal"
-        role="dialog"
-        aria-modal="true"
-        aria-label="Hugging Face insurance claims technology stack"
-        onMouseDown={(event) => event.stopPropagation()}
-      >
-        <button
-          ref={closeRef}
-          type="button"
-          className="hf-insurance-modal-close"
-          aria-label="Close tech stack"
-          onClick={onClose}
-        >
-          <span aria-hidden="true">×</span>
-        </button>
-        <div className="hf-insurance-modal-groups">
-          {techGroups.map((group) => (
-            <div className="hf-insurance-modal-group" key={group.heading}>
-              <span className="hf-insurance-modal-category">
-                {group.heading}
-              </span>
-              {group.note && (
-                <p className="hf-insurance-modal-note">{group.note}</p>
-              )}
-              <div className="hf-insurance-modal-pills">
-                {group.skills.map((skill) => (
-                  <span key={skill}>{skill}</span>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
+  return <ProjectModal onClose={onClose} groups={techGroups} />;
 }
 
 export default function HuggingFaceInsurance() {
+  const pageRef = useProjectPage();
   const [showStack, setShowStack] = useState(false);
   const [showTop, setShowTop] = useState(false);
   const [footerVisible, setFooterVisible] = useState(false);
@@ -242,11 +179,8 @@ export default function HuggingFaceInsurance() {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
-    <main className="hf-insurance-project">
-      <Link className="hf-insurance-back" to="/">
-        <ArrowLeft size={16} strokeWidth={1.7} aria-hidden="true" />
-        <span>Back to portfolio</span>
-      </Link>
+    <main ref={pageRef} className="project-case-study hf-insurance-project">
+      <ProjectNavigation className="hf-insurance-back" />
 
       <article>
         <header className="hf-insurance-hero">
@@ -260,7 +194,7 @@ export default function HuggingFaceInsurance() {
                   <span key={technology}>{technology}</span>
                 ))}
               </div>
-              <time dateTime="2026-10">Built October 2026</time>
+              <time dateTime="2026-10" >October 2026</time>
             </div>
             <h1>
               Hugging Face <span>AI Insurance Claims Platform</span>
@@ -367,8 +301,8 @@ export default function HuggingFaceInsurance() {
             </p>
             <div className="hf-insurance-steps">
               {stages.map((step) => (
-                <div className="hf-insurance-step" key={step.number}>
-                  <span className="hf-insurance-step-number"></span>
+                <div className="hf-insurance-step" key={step.title}>
+
                   <div>
                     <h3>{step.title}</h3>
                     <p>{step.description}</p>
@@ -605,6 +539,10 @@ export default function HuggingFaceInsurance() {
               Tech stack
             </button>
           </div>
+        </section>
+        <section className="project-closing" aria-labelledby="project-closing-title">
+          <h2 id="project-closing-title">Document extraction with a reviewable claims workflow.</h2>
+          <p>I built a claims application that keeps uploaded documents, OCR results and extracted entities connected to the reviewer’s decision. Hugging Face models support the extraction workflow; human review and the recorded local tests define what the implementation demonstrates.</p>
         </section>
       </article>
 

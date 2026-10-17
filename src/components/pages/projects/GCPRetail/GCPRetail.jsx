@@ -1,6 +1,9 @@
+import ProjectNavigation from "../shared/ProjectNavigation.jsx";
+import useProjectPage from "../shared/useProjectPage.js";
+import ProjectModal from "../shared/ProjectModal.jsx";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft, ArrowUp, Layers3 } from "lucide-react";
+import { ArrowUp, Layers3 } from "lucide-react";
 import githubSvg from "../../../../assets/svgs/header/github.svg";
 import "./GCPRetail.css";
 
@@ -242,72 +245,11 @@ const techSections = [
 ];
 
 function TechStackModal({ onClose }) {
-  const closeRef = useRef(null);
-
-  useEffect(() => {
-    const previousFocus = document.activeElement;
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    closeRef.current?.focus();
-    function onKeyDown(event) {
-      if (event.key === "Escape") onClose();
-      if (event.key === "Tab") {
-        event.preventDefault();
-        closeRef.current?.focus();
-      }
-    }
-    document.addEventListener("keydown", onKeyDown);
-    return () => {
-      document.removeEventListener("keydown", onKeyDown);
-      document.body.style.overflow = previousOverflow;
-      previousFocus?.focus?.();
-    };
-  }, [onClose]);
-
-  return (
-    <div
-      className="gcp-retail-modal-overlay"
-      onMouseDown={(event) => {
-        if (event.target === event.currentTarget) onClose();
-      }}
-    >
-      <div
-        className="gcp-retail-modal"
-        role="dialog"
-        aria-modal="true"
-        aria-label="Project technology stack"
-        onMouseDown={(event) => event.stopPropagation()}
-      >
-        <button
-          ref={closeRef}
-          className="gcp-retail-modal-close"
-          type="button"
-          aria-label="Close technology stack"
-          onClick={onClose}
-        >
-          <span aria-hidden="true">×</span>
-        </button>
-        <div className="gcp-retail-modal-groups">
-          {technologyGroups.map((group) => (
-            <div className="gcp-retail-modal-group" key={group.heading}>
-              <span className="gcp-retail-modal-category">{group.heading}</span>
-              {group.note && (
-                <p className="gcp-retail-modal-note">{group.note}</p>
-              )}
-              <div className="gcp-retail-modal-pills">
-                {group.skills.map((skill) => (
-                  <span key={skill}>{skill}</span>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
+  return <ProjectModal onClose={onClose} groups={technologyGroups} />;
 }
 
 export default function GCPRetail() {
+  const pageRef = useProjectPage();
   const [showTop, setShowTop] = useState(false);
   const [showStack, setShowStack] = useState(false);
   const [footerVisible, setFooterVisible] = useState(false);
@@ -333,11 +275,8 @@ export default function GCPRetail() {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
-    <main className="gcp-retail-project">
-      <Link className="gcp-retail-back" to="/">
-        <ArrowLeft size={16} strokeWidth={1.7} aria-hidden="true" />
-        <span>Back to portfolio</span>
-      </Link>
+    <main ref={pageRef} className="project-case-study gcp-retail-project">
+      <ProjectNavigation className="gcp-retail-back" />
       <article>
         <header className="gcp-retail-hero">
           <div className="gcp-retail-hero-inner">
@@ -350,7 +289,7 @@ export default function GCPRetail() {
                   <span key={tech}>{tech}</span>
                 ))}
               </div>
-              <time dateTime="2026">Built April 2026</time>
+              <time dateTime="2026-04" >April 2026</time>
             </div>
             <h1>Google Cloud <span>Intelligent Retail &amp; Supply Chain</span></h1>
             <div className="gcp-retail-hero-bottom">

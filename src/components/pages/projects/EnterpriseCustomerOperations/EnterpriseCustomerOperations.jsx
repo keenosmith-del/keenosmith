@@ -1,6 +1,9 @@
+import ProjectNavigation from "../shared/ProjectNavigation.jsx";
+import useProjectPage from "../shared/useProjectPage.js";
+import ProjectModal from "../shared/ProjectModal.jsx";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft, ArrowUp, Layers3 } from "lucide-react";
+import { ArrowUp, Layers3 } from "lucide-react";
 import githubSvg from "../../../../assets/svgs/header/github.svg";
 import "./EnterpriseCustomerOperations.css";
 
@@ -43,47 +46,11 @@ const techSummary = [
 ];
 
 function TechStackModal({ close }) {
-  const closeRef = useRef(null);
-  useEffect(() => {
-    const previousFocus = document.activeElement;
-    const priorOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    closeRef.current?.focus();
-    function onKeyDown(event) {
-      if (event.key === "Escape") close();
-      if (event.key === "Tab") {
-        event.preventDefault();
-        closeRef.current?.focus();
-      }
-    }
-    document.addEventListener("keydown", onKeyDown);
-    return () => {
-      document.removeEventListener("keydown", onKeyDown);
-      document.body.style.overflow = priorOverflow;
-      previousFocus?.focus?.();
-    };
-  }, [close]);
-  return (
-    <div className="eco-modal-overlay" onMouseDown={(event) => {
-      if (event.currentTarget === event.target) close();
-    }}>
-      <div className="eco-modal" role="dialog" aria-modal="true" aria-label="Project technology stack" onMouseDown={(event) => event.stopPropagation()}>
-        <button ref={closeRef} className="eco-modal-close" type="button" aria-label="Close tech stack" onClick={close}><span aria-hidden="true">×</span></button>
-        <div className="eco-modal-groups">
-          {technologyGroups.map(({ heading, note, skills }) => (
-            <section className="eco-modal-group" key={heading}>
-              <h2>{heading}</h2>
-              {note && <p>{note}</p>}
-              <div className="eco-modal-pills">{skills.map((skill) => <span key={skill}>{skill}</span>)}</div>
-            </section>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
+  return <ProjectModal onClose={close} groups={technologyGroups} />;
 }
 
 export default function EnterpriseCustomerOperations() {
+  const pageRef = useProjectPage();
   const [showStack, setShowStack] = useState(false);
   const [showTop, setShowTop] = useState(false);
   const [footerVisible, setFooterVisible] = useState(false);
@@ -104,14 +71,14 @@ export default function EnterpriseCustomerOperations() {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
-    <main className="eco-project">
-      <Link className="eco-back" to="/"><ArrowLeft size={16} strokeWidth={1.7} aria-hidden="true" /><span>Back to portfolio</span></Link>
+    <main ref={pageRef} className="project-case-study eco-project">
+      <ProjectNavigation className="eco-back" />
       <article>
         <header className="eco-hero">
           <div className="eco-hero-inner">
             <div className="eco-hero-topline">
               <div className="eco-pills" aria-label="Technologies used">{heroTechnologies.map((name) => <span key={name}>{name}</span>)}</div>
-              <span className="eco-hero-context">Local engineering project</span>
+              <time dateTime="2026-05">May 2026</time>
             </div>
             <h1>Enterprise AI <span>Customer Operations</span></h1>
             <div className="eco-hero-bottom">

@@ -1,6 +1,9 @@
+import ProjectNavigation from "../shared/ProjectNavigation.jsx";
+import useProjectPage from "../shared/useProjectPage.js";
+import ProjectModal from "../shared/ProjectModal.jsx";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft, ArrowUp, Layers3 } from "lucide-react";
+import { ArrowUp, Layers3 } from "lucide-react";
 import githubSvg from "../../../../assets/svgs/header/github.svg";
 import "./ManufacturingQC.css";
 
@@ -49,51 +52,11 @@ const technologySummary = [
 ];
 
 function TechStackModal({ onClose }) {
-  const buttonRef = useRef(null);
-  useEffect(() => {
-    const prior = document.activeElement;
-    const overflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    buttonRef.current?.focus();
-    function keyDown(event) {
-      if (event.key === "Escape") onClose();
-      if (event.key === "Tab") {
-        event.preventDefault();
-        buttonRef.current?.focus();
-      }
-    }
-    document.addEventListener("keydown", keyDown);
-    return () => {
-      document.removeEventListener("keydown", keyDown);
-      document.body.style.overflow = overflow;
-      prior?.focus?.();
-    };
-  }, [onClose]);
-  return (
-    <div className="mq-modal-overlay" onMouseDown={(event) => {
-      if (event.target === event.currentTarget) onClose();
-    }}>
-      <div className="mq-modal" role="dialog" aria-modal="true" aria-label="Project technology stack">
-        <button ref={buttonRef} type="button" className="mq-modal-close" onClick={onClose} aria-label="Close tech stack">
-          <span aria-hidden="true">×</span>
-        </button>
-        <div className="mq-modal-groups">
-          {technologies.map((group) => (
-            <section className="mq-modal-group" key={group.heading}>
-              <h2>{group.heading}</h2>
-              {group.note && <p>{group.note}</p>}
-              <div className="mq-modal-pills">
-                {group.skills.map((skill) => <span key={skill}>{skill}</span>)}
-              </div>
-            </section>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
+  return <ProjectModal onClose={onClose} groups={technologies} />;
 }
 
 export default function ManufacturingQC() {
+  const pageRef = useProjectPage();
   const [showTop, setShowTop] = useState(false);
   const [footerVisible, setFooterVisible] = useState(false);
   const [showStack, setShowStack] = useState(false);
@@ -117,11 +80,8 @@ export default function ManufacturingQC() {
   const scrollTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
-    <main className="mq-project">
-      <Link className="mq-back" to="/">
-        <ArrowLeft size={16} strokeWidth={1.7} aria-hidden="true" />
-        <span>Back to portfolio</span>
-      </Link>
+    <main ref={pageRef} className="project-case-study mq-project">
+      <ProjectNavigation className="mq-back" />
 
       <article>
         <header className="mq-hero">
@@ -130,7 +90,7 @@ export default function ManufacturingQC() {
               <div className="mq-pills" aria-label="Technologies used">
                 {heroTechnologies.map((item) => <span key={item}>{item}</span>)}
               </div>
-              <span className="mq-hero-context">Local engineering project</span>
+              <time dateTime="2026-03">March 2026</time>
             </div>
             <h1>Intelligent Manufacturing <span>Quality Control</span></h1>
             <div className="mq-hero-bottom">

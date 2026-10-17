@@ -365,71 +365,6 @@
   transition: transform 180ms ease, background-color 180ms ease;
 }
 .ollama-floating-top:hover { transform: translateY(-2px); background: white; }
-
-/* Identical AWS modal surface; intentionally no heading and no close-button backdrop. */
-.ollama-modal-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 2000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 19px;
-  background: rgba(35,35,37,.28);
-  backdrop-filter: blur(11px);
-  -webkit-backdrop-filter: blur(11px);
-  animation: ollama-overlay-in 220ms ease both;
-}
-.ollama-modal {
-  position: relative;
-  width: min(100%,600px);
-  max-height: calc(100dvh - 38px);
-  overflow-y: auto;
-  padding: 40px 34px 34px;
-  background: rgba(250,249,246,.96);
-  border-radius: 24px;
-  box-shadow: 0 24px 72px rgba(35,35,37,.14), 0 8px 24px rgba(35,35,37,.07);
-  animation: ollama-modal-in 320ms cubic-bezier(.22,1,.36,1) both;
-}
-/* AWS computed behaviour: the inherited button font reduces the rendered ×, not 27px. */
-.ollama-modal-close {
-  position: absolute;
-  top: 17px;
-  right: 23px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 26px;
-  height: 30px;
-  padding: 0;
-  border: 0;
-  border-radius: 0;
-  background: transparent !important;
-  box-shadow: none !important;
-  color: #99999d;
-  font-size: 27px;
-  font-weight: 300;
-  line-height: 1;
-  cursor: pointer;
-  transition: color 180ms ease, transform 180ms ease;
-}
-.ollama-modal-close:hover { background: transparent !important; color: #151517; transform: translateY(-1px); }
-.ollama-modal-groups { display: flex; flex-direction: column; gap: 27px; padding-right: 8px; }
-.ollama-modal-group { display: flex; flex-direction: column; align-items: flex-start; }
-.ollama-modal-category { color: #66666b; font-size: 11px; font-weight: 500; line-height: 1.3; letter-spacing: -0.01em; }
-.ollama-modal-note { margin: 6px 0 0; color: #99999d; font-size: 10px; font-weight: 400; line-height: 1.5; }
-.ollama-modal-pills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
-.ollama-modal-pills span {
-  display: inline-flex;
-  align-items: center;
-  padding: 7px 11px;
-  border-radius: 999px;
-  background: #f0efeb;
-  color: #77777c;
-  font-size: 10px;
-  font-weight: 500;
-  line-height: 1.2;
-}
 @keyframes ollama-hero-in { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes ollama-overlay-in { from { opacity: 0; } to { opacity: 1; } }
 @keyframes ollama-modal-in {
@@ -467,9 +402,6 @@
   .ollama-project .ollama-technology button.ollama-tech-trigger { margin-top: 36px; }
   .ollama-closing { padding: 90px 19px 45px; }
   .ollama-footer { padding-bottom: 95px; }
-  .ollama-modal { padding: 42px 22px 26px; border-radius: 21px; }
-  .ollama-modal-close { top: 11px; right: 16px; }
-  .ollama-modal-groups { gap: 24px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .ollama-project *,

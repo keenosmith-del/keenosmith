@@ -1,6 +1,9 @@
+import ProjectNavigation from "../shared/ProjectNavigation.jsx";
+import useProjectPage from "../shared/useProjectPage.js";
+import ProjectModal from "../shared/ProjectModal.jsx";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft, ArrowRight, ArrowUp, Layers3 } from "lucide-react";
+import { ArrowRight, ArrowUp, Layers3 } from "lucide-react";
 import githubSvg from "../../../../assets/svgs/header/github.svg";
 import "./OpsFlow.css";
 
@@ -86,93 +89,29 @@ const technologyGroups = [
 
 const stages = [
   {
-    number: "01",
     name: "Request",
     note: "An employee submits a justified purchase with a maximum amount.",
   },
   {
-    number: "02",
     name: "Collect",
     note: "n8n requests finance clearance and supplier quotations.",
   },
   {
-    number: "03",
     name: "Approve",
     note: "PostgreSQL holds the reservation and waits for an assigned manager.",
   },
   {
-    number: "04",
     name: "Finalise",
     note: "An approved request produces one order and moves funds to spend.",
   },
 ];
 
 function TechStackModal({ onClose }) {
-  const closeRef = useRef(null);
-
-  useEffect(() => {
-    const previousFocus = document.activeElement;
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    closeRef.current?.focus();
-
-    const onKeyDown = (event) => {
-      if (event.key === "Escape") onClose();
-      if (event.key === "Tab") {
-        event.preventDefault();
-        closeRef.current?.focus();
-      }
-    };
-    document.addEventListener("keydown", onKeyDown);
-    return () => {
-      document.removeEventListener("keydown", onKeyDown);
-      document.body.style.overflow = previousOverflow;
-      previousFocus?.focus?.();
-    };
-  }, [onClose]);
-
-  return (
-    <div
-      className="opsflow-modal-overlay"
-      onMouseDown={(event) => {
-        if (event.target === event.currentTarget) onClose();
-      }}
-    >
-      <div
-        className="opsflow-modal"
-        role="dialog"
-        aria-modal="true"
-        aria-label="OpsFlow technology stack"
-        onMouseDown={(event) => event.stopPropagation()}
-      >
-        <button
-          ref={closeRef}
-          type="button"
-          className="opsflow-modal-close"
-          aria-label="Close tech stack"
-          onClick={onClose}
-        >
-          <span aria-hidden="true">×</span>
-        </button>
-        <div className="opsflow-modal-groups">
-          {technologyGroups.map(({ heading, note, skills }) => (
-            <div className="opsflow-modal-group" key={heading}>
-              <span className="opsflow-modal-category">{heading}</span>
-              {note && <p className="opsflow-modal-note">{note}</p>}
-              <div className="opsflow-modal-pills">
-                {skills.map((skill) => (
-                  <span key={skill}>{skill}</span>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
+  return <ProjectModal onClose={onClose} groups={technologyGroups} />;
 }
 
 export default function OpsFlow() {
+  const pageRef = useProjectPage();
   const [showStack, setShowStack] = useState(false);
   const [showTop, setShowTop] = useState(false);
   const [footerVisible, setFooterVisible] = useState(false);
@@ -200,11 +139,8 @@ export default function OpsFlow() {
   const scrollTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
-    <main className="opsflow-project">
-      <Link className="opsflow-back" to="/">
-        <ArrowLeft size={16} strokeWidth={1.7} aria-hidden="true" />
-        <span>Back to portfolio</span>
-      </Link>
+    <main ref={pageRef} className="project-case-study opsflow-project">
+      <ProjectNavigation className="opsflow-back" />
 
       <article>
         <header className="opsflow-hero">
@@ -215,7 +151,7 @@ export default function OpsFlow() {
                   <span key={name}>{name}</span>
                 ))}
               </div>
-              <time dateTime="2026-10">Built May 2026</time>
+              <time dateTime="2026-05" >May 2026</time>
             </div>
             <h1>n8n Enterprise Workflow <span>&amp; Integration OpsFlow Platform</span></h1>
             <div className="opsflow-hero-bottom">
@@ -312,7 +248,7 @@ export default function OpsFlow() {
             </p>
             <div className="opsflow-stage-grid">
               {stages.map((stage) => (
-                <div className="opsflow-stage" key={stage.number}>
+                <div className="opsflow-stage" key={stage.name}>
                   <h3>{stage.name}</h3>
                   <p>{stage.note}</p>
                 </div>
@@ -544,15 +480,15 @@ export default function OpsFlow() {
             </h2>
             <div className="opsflow-proof-grid">
               <div>
-                <strong>02</strong>
+                <strong>2</strong>
                 <span>Versioned n8n workflow templates</span>
               </div>
               <div>
-                <strong>04</strong>
+                <strong>4</strong>
                 <span>End-to-end business scenarios</span>
               </div>
               <div>
-                <strong>09</strong>
+                <strong>9</strong>
                 <span>Local Compose services started</span>
               </div>
               <div>

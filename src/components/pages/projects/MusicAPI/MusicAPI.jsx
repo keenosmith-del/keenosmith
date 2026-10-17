@@ -1,6 +1,9 @@
+import ProjectNavigation from "../shared/ProjectNavigation.jsx";
+import useProjectPage from "../shared/useProjectPage.js";
+import ProjectModal from "../shared/ProjectModal.jsx";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft, ArrowUp, Layers3 } from "lucide-react";
+import { ArrowUp, Layers3 } from "lucide-react";
 import githubSvg from "../../../../assets/svgs/header/github.svg";
 import "./MusicAPI.css";
 
@@ -45,6 +48,7 @@ const sourceViews = [
 const technologyGroups = [
   {
     heading: "Frontend",
+    note: "React Router pages share a persistent player, queue and application context for navigation and playback.",
     skills: [
       "React",
       "JavaScript",
@@ -57,6 +61,7 @@ const technologyGroups = [
   },
   {
     heading: "API and services",
+    note: "Express maps external catalogue responses into application data and caches selected requests in memory for ten minutes.",
     skills: [
       "Node.js",
       "Express",
@@ -68,10 +73,12 @@ const technologyGroups = [
   },
   {
     heading: "Media integrations",
+    note: "Deezer supplies preview audio. Podcast episodes come from publisher RSS enclosures, while radio streams remain hosted by third parties.",
     skills: ["Deezer API", "iTunes Search API", "Podcast RSS", "Radio Browser"],
   },
   {
     heading: "Application data",
+    note: "MongoDB models retain library references and playlists. Authentication and user isolation still require further work before public deployment.",
     skills: [
       "MongoDB",
       "Mongoose",
@@ -88,69 +95,11 @@ const technologyGroups = [
 ];
 
 function TechnologyModal({ onClose }) {
-  const closeRef = useRef(null);
-  useEffect(() => {
-    const focusedBefore = document.activeElement;
-    const overflowBefore = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    closeRef.current?.focus();
-    const onKeyDown = (event) => {
-      if (event.key === "Escape") onClose();
-      if (event.key === "Tab") {
-        event.preventDefault();
-        closeRef.current?.focus();
-      }
-    };
-    document.addEventListener("keydown", onKeyDown);
-    return () => {
-      document.removeEventListener("keydown", onKeyDown);
-      document.body.style.overflow = overflowBefore;
-      focusedBefore?.focus?.();
-    };
-  }, [onClose]);
-
-  return (
-    <div
-      className="music-api-modal-overlay"
-      onMouseDown={(event) => {
-        if (event.target === event.currentTarget) onClose();
-      }}
-    >
-      <div
-        className="music-api-modal"
-        role="dialog"
-        aria-modal="true"
-        aria-label="Music API technology stack"
-        onMouseDown={(event) => event.stopPropagation()}
-      >
-        <button
-          ref={closeRef}
-          type="button"
-          className="music-api-modal-close"
-          aria-label="Close technology stack"
-          onClick={onClose}
-        >
-          <span aria-hidden="true">×</span>
-        </button>
-        <div className="music-api-modal-groups">
-          {technologyGroups.map((group) => (
-            <div className="music-api-modal-group" key={group.heading}>
-              <h3>{group.heading}</h3>
-              {group.note && <p>{group.note}</p>}
-              <div className="music-api-modal-tags">
-                {group.skills.map((skill) => (
-                  <span key={skill}>{skill}</span>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
+  return <ProjectModal onClose={onClose} groups={technologyGroups} />;
 }
 
 export default function MusicAPI() {
+  const pageRef = useProjectPage();
   const [view, setView] = useState("music");
   const [modalOpen, setModalOpen] = useState(false);
   const [showFloatingTop, setShowFloatingTop] = useState(false);
@@ -181,11 +130,8 @@ export default function MusicAPI() {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
-    <main className="music-api-page">
-      <Link className="music-api-back" to="/">
-        <ArrowLeft size={16} strokeWidth={1.7} aria-hidden="true" />
-        <span>Back to portfolio</span>
-      </Link>
+    <main ref={pageRef} className="project-case-study music-api-page">
+      <ProjectNavigation className="music-api-back" />
 
       <article>
         <header className="music-api-hero">
@@ -199,9 +145,7 @@ export default function MusicAPI() {
                   <span key={name}>{name}</span>
                 ))}
               </div>
-              <span className="music-api-hero-type">
-                Full-stack engineering
-              </span>
+              <time dateTime="2026-05">May 2026</time>
             </div>
             <h1>Music API</h1>
             <div className="music-api-hero-bottom">
