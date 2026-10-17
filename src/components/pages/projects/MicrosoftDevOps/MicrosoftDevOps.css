@@ -1,0 +1,779 @@
+/* MicrosoftDevOps: same portfolio identity as AWSBankingRisk, independent layout. */
+.mdo-project {
+  position: relative;
+  min-height: 100vh;
+  overflow: visible;
+  background: var(--surface, #faf9f6);
+  color: var(--charcoal, #151517);
+}
+
+.mdo-project *,
+.mdo-project *::before,
+.mdo-project *::after {
+  box-sizing: border-box;
+}
+
+.mdo-project a {
+  color: inherit;
+  text-decoration: none;
+}
+.mdo-project button {
+  font-family: inherit;
+}
+.mdo-project :is(a, button):focus-visible {
+  outline: 2px solid var(--charcoal, #151517);
+  outline-offset: 4px;
+}
+
+/* Controls share the same typography and padding. Only their surfaces change. */
+.mdo-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 37px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 999px;
+  color: #66666b;
+  background: var(--surface-muted, #efeee9);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: normal;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+.mdo-button:not(:disabled):hover {
+  transform: translateY(-2px);
+}
+.mdo-button-dark {
+  background: var(--charcoal, #151517);
+  color: #fffefc !important;
+}
+.mdo-button-dark:not(:disabled):hover {
+  background: #0b0b0dda;
+  color: #fffefc !important;
+}
+.mdo-button-soft {
+  background: rgba(250, 249, 246, 0.82);
+  color: #66666b !important;
+  letter-spacing: -0.01em;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 8px 24px rgba(45, 45, 45, 0.06);
+}
+.mdo-button-soft:not(:disabled):hover {
+  background: #fff;
+  color: #444448 !important;
+}
+.mdo-button-disabled:disabled {
+  background: var(--surface-muted, #efeee9);
+  color: #99999d !important;
+  opacity: 1;
+  cursor: not-allowed;
+}
+
+.mdo-back {
+  position: fixed;
+  top: 22px;
+  left: 22px;
+  z-index: 30;
+  min-height: 35px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 14px;
+  border-radius: 999px;
+  background: rgba(250, 249, 246, 0.82);
+  color: #66666b !important;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 8px 24px rgba(45, 45, 45, 0.06);
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease;
+}
+.mdo-back:hover {
+  transform: translateY(-2px);
+  background: white;
+  color: #444448 !important;
+}
+
+/* Hero */
+.mdo-hero {
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  padding: 136px 5.6vw 108px;
+}
+.mdo-hero-inner {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+  animation: mdo-hero-in 800ms both;
+}
+.mdo-hero-topline {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 25px;
+  margin-bottom: 30px;
+}
+.mdo-hero-topline time {
+  flex-shrink: 0;
+  padding-top: 5px;
+  color: #99999d;
+  font-size: 10px;
+  font-weight: 500;
+}
+.mdo-pill-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+.mdo-pill-list span {
+  padding: 6px 10px;
+  background: var(--surface-muted, #efeee9);
+  border-radius: 999px;
+  color: #77777c;
+  font-size: 9px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+.mdo-hero h1 {
+  max-width: 1090px;
+  margin: 0;
+  color: var(--charcoal, #151517);
+  font-size: clamp(58px, 8.65vw, 119px);
+  font-weight: 500;
+  line-height: 0.88;
+  letter-spacing: -0.059em;
+}
+.mdo-hero h1 span {
+  display: block;
+}
+.mdo-hero-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 22px;
+  margin-top: 48px;
+}
+.mdo-hero-description {
+  max-width: 810px;
+  margin: 0;
+  color: #555559;
+  font-size: clamp(14px, 1.22vw, 18px);
+  font-weight: 400;
+  line-height: 1.57;
+  letter-spacing: -0.02em;
+}
+.mdo-hero-note {
+  margin: 17px 0 0;
+  color: #a0a0a4;
+  font-size: 10px;
+  line-height: 1.6;
+}
+.mdo-hero-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: min(540px, 100%);
+}
+.mdo-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.mdo-github-icon {
+  display: block;
+  width: 15px;
+  height: 15px;
+  object-fit: contain;
+  flex-shrink: 0;
+  filter: brightness(0) invert(1);
+}
+.mdo-platform-note {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  margin: 16px 0 0 30px;
+  color: #99999d;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.7;
+  letter-spacing: -0.01em;
+}
+.mdo-platform-note a {
+  color: #66666b;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+.mdo-platform-note a:hover {
+  color: #444448;
+}
+
+/* Independent editorial sections */
+.mdo-section {
+  width: min(960px, calc(100% - 38px));
+  margin: 0 auto;
+  padding: 112px 0;
+  display: grid;
+  grid-template-columns: 168px minmax(0, 1fr);
+  gap: 60px;
+}
+.mdo-section-label,
+.mdo-eyebrow {
+  color: #99999d;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+.mdo-section-label {
+  padding-top: 9px;
+}
+.mdo-section-copy {
+  min-width: 0;
+}
+.mdo-section h2,
+.mdo-agents-section h2 {
+  max-width: 710px;
+  margin: 0;
+  color: #5b5b5f;
+  font-size: clamp(32px, 4.3vw, 56px);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.045em;
+}
+.mdo-section p {
+  color: #858589;
+  font-size: 13px;
+  line-height: 1.7;
+  letter-spacing: -0.007em;
+}
+.mdo-two-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 34px;
+  margin-top: 43px;
+}
+.mdo-two-columns p {
+  margin: 0;
+}
+.mdo-section-intro {
+  max-width: 620px;
+  margin: 28px 0 0;
+}
+.mdo-summary-action {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 28px;
+}
+
+/* Distinct incident lifecycle layout, no cards or dividing rules */
+.mdo-workflow-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 35px;
+  row-gap: 38px;
+  margin-top: 56px;
+}
+.mdo-workflow-stage h3 {
+  margin: 0;
+  color: #555559;
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+}
+.mdo-workflow-stage p {
+  margin: 11px 0 0;
+  font-size: 11px;
+}
+.mdo-afterword {
+  max-width: 610px;
+  margin: 43px 0 0;
+}
+
+/* Specialist agents receive a wide editorial region */
+.mdo-agents-section {
+  padding: 115px 19px 118px;
+}
+.mdo-agents-inner {
+  width: min(1060px, 100%);
+  margin: 0 auto;
+}
+.mdo-agents-section h2 {
+  max-width: 850px;
+  margin-top: 26px;
+  color: #454549;
+}
+.mdo-agents-intro {
+  max-width: 660px;
+  margin: 27px 0 0;
+  color: #77777c;
+  font-size: 13px;
+  line-height: 1.75;
+}
+.mdo-agent-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 48px;
+  margin-top: 76px;
+}
+.mdo-agent-detail {
+  display: block;
+  max-width: 260px;
+  margin-bottom: 21px;
+  color: #99999d;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+.mdo-agent h3 {
+  margin: 0;
+  color: #555559;
+  font-size: clamp(20px, 2.2vw, 27px);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.036em;
+}
+.mdo-agent p {
+  margin: 17px 0 0;
+  color: #858589;
+  font-size: 12px;
+  line-height: 1.72;
+}
+.mdo-agents-footnote {
+  max-width: 750px;
+  margin: 49px 0 0;
+  color: #99999d;
+  font-size: 11px;
+  line-height: 1.65;
+}
+
+.mdo-decision-grid,
+.mdo-evidence-grid,
+.mdo-technology-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 48px 38px;
+  margin-top: 60px;
+}
+.mdo-decision-grid h3,
+.mdo-evidence-grid h3,
+.mdo-governance-points h3,
+.mdo-technology-grid h3 {
+  margin: 0;
+  color: #66666b;
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+.mdo-decision-grid p,
+.mdo-evidence-grid p,
+.mdo-governance-points p,
+.mdo-technology-grid p {
+  margin: 13px 0 0;
+  font-size: 12px;
+}
+.mdo-cloud-copy {
+  margin-top: 39px;
+}
+.mdo-evidence-grid {
+  margin-top: 53px;
+}
+.mdo-governance-points {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 48px 38px;
+  margin-top: 57px;
+}
+.mdo-governance-points > div:last-child {
+  grid-column: span 2;
+  max-width: 470px;
+}
+.mdo-knowledge .mdo-section-intro + .mdo-section-intro {
+  margin-top: 19px;
+}
+
+.mdo-technology-grid {
+  gap: 52px 42px;
+  margin-top: 58px;
+}
+.mdo-technology-grid h3 {
+  color: var(--charcoal, #151517);
+  font-size: 20px;
+  letter-spacing: -0.035em;
+}
+.mdo-technology-grid p {
+  max-width: 350px;
+  margin-top: 16px;
+}
+.mdo-tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 22px;
+}
+.mdo-tech-tags span {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 11px;
+  background: var(--surface-muted, #efeee9);
+  color: #66666b;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+.mdo-tech-trigger {
+  margin-top: 45px;
+}
+
+/* Closing is a technical statement, not a retrospective. */
+.mdo-closing {
+  padding: 125px 19px 68px;
+}
+.mdo-closing > div {
+  width: min(770px, 100%);
+  margin: 0 auto;
+  text-align: center;
+}
+.mdo-closing h2 {
+  margin: 24px 0 0;
+  color: #66666b;
+  font-size: clamp(29px, 4.15vw, 52px);
+  line-height: 1.04;
+  font-weight: 500;
+  letter-spacing: -0.044em;
+}
+.mdo-closing p:not(.mdo-eyebrow) {
+  width: min(700px, 100%);
+  margin: 27px auto 0;
+  color: #858589;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* Footer and floating controls retain the established AWS behaviour. */
+.mdo-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 28px 19px 116px;
+}
+.mdo-footer-back,
+.mdo-footer-top {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 40px;
+  padding: 0 15px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--surface-muted, #efeee9);
+  color: #77777c !important;
+  font-size: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease;
+}
+.mdo-footer-top {
+  width: 40px;
+  padding: 0;
+}
+.mdo-footer-back:hover,
+.mdo-footer-top:hover {
+  transform: translateY(-2px);
+  background: #dfded9;
+  color: #555559 !important;
+}
+.mdo-floating-top {
+  position: fixed;
+  z-index: 30;
+  right: 22px;
+  bottom: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(250, 249, 246, 0.82);
+  color: #66666b;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 8px 24px rgba(45, 45, 45, 0.08);
+  cursor: pointer;
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease;
+}
+.mdo-floating-top:hover {
+  transform: translateY(-2px);
+  background: white;
+}
+
+/* Identical modal surface, overlay and unboxed × to the finalized AWS reference. */
+.mdo-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 19px;
+  background: rgba(35, 35, 37, 0.28);
+  backdrop-filter: blur(11px);
+  -webkit-backdrop-filter: blur(11px);
+  animation: mdo-overlay-in 220ms ease both;
+}
+.mdo-modal {
+  position: relative;
+  width: min(100%, 600px);
+  max-height: calc(100dvh - 38px);
+  overflow-y: auto;
+  padding: 40px 34px 34px;
+  background: rgba(250, 249, 246, 0.96);
+  border-radius: 24px;
+  box-shadow:
+    0 24px 72px rgba(35, 35, 37, 0.14),
+    0 8px 24px rgba(35, 35, 37, 0.07);
+  animation: mdo-modal-in 320ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.mdo-modal-close {
+  position: absolute;
+  top: 17px;
+  right: 23px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 30px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent !important;
+  box-shadow: none !important;
+  color: #99999d;
+  font-size: 27px;
+  font-weight: 300;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    color 180ms ease,
+    transform 180ms ease;
+}
+.mdo-modal-close:hover {
+  background: transparent !important;
+  color: #151517;
+  transform: translateY(-1px);
+}
+.mdo-modal-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+  padding-right: 8px;
+}
+.mdo-modal-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.mdo-modal-category {
+  color: #66666b;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+.mdo-modal-note {
+  margin: 6px 0 0;
+  color: #99999d;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.mdo-modal-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 12px;
+}
+.mdo-modal-pills span {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 11px;
+  border-radius: 999px;
+  background: #f0efeb;
+  color: #77777c;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+@keyframes mdo-hero-in {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes mdo-overlay-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes mdo-modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 950px) {
+  .mdo-section {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .mdo-agent-grid {
+    gap: 27px;
+  }
+}
+@media (max-width: 700px) {
+  .mdo-back {
+    top: 14px;
+    left: 14px;
+  }
+  .mdo-hero {
+    min-height: auto;
+    padding: 108px 19px 67px;
+  }
+  .mdo-hero-topline {
+    flex-direction: column-reverse;
+    gap: 14px;
+    margin-bottom: 25px;
+  }
+  .mdo-hero h1 {
+    font-size: clamp(49px, 12.7vw, 80px);
+    line-height: 0.92;
+  }
+  .mdo-hero-bottom {
+    margin-top: 30px;
+  }
+  .mdo-platform-note {
+    max-width: 300px;
+    margin-left: 0;
+  }
+  .mdo-section {
+    padding: 78px 0;
+    width: calc(100% - 38px);
+  }
+  .mdo-two-columns,
+  .mdo-decision-grid,
+  .mdo-evidence-grid,
+  .mdo-technology-grid,
+  .mdo-governance-points {
+    grid-template-columns: 1fr;
+    gap: 27px;
+  }
+  .mdo-two-columns {
+    margin-top: 25px;
+  }
+  .mdo-decision-grid,
+  .mdo-evidence-grid,
+  .mdo-technology-grid,
+  .mdo-governance-points {
+    margin-top: 37px;
+  }
+  .mdo-workflow-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 23px;
+    row-gap: 27px;
+    margin-top: 39px;
+  }
+  .mdo-agents-section {
+    padding: 78px 19px 85px;
+  }
+  .mdo-agent-grid {
+    grid-template-columns: 1fr;
+    gap: 34px;
+    margin-top: 43px;
+  }
+  .mdo-agent-detail {
+    margin-bottom: 10px;
+  }
+  .mdo-agent p {
+    margin-top: 12px;
+  }
+  .mdo-agents-footnote {
+    margin-top: 36px;
+  }
+  .mdo-governance-points > div:last-child {
+    grid-column: auto;
+  }
+  .mdo-tech-trigger {
+    margin-top: 36px;
+  }
+  .mdo-closing {
+    padding: 90px 19px 45px;
+  }
+  .mdo-footer {
+    padding-bottom: 95px;
+  }
+  .mdo-modal {
+    padding: 42px 22px 26px;
+    border-radius: 21px;
+  }
+  .mdo-modal-close {
+    top: 11px;
+    right: 16px;
+  }
+  .mdo-modal-groups {
+    gap: 24px;
+  }
+}
+@media (max-width: 400px) {
+  .mdo-workflow-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mdo-project *,
+  .mdo-project *::before,
+  .mdo-project *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

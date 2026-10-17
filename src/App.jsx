@@ -31,6 +31,9 @@ import { rebuildingProjects } from "./data/rebuildingProjects.js";
 import { canonicalProjects } from "./assistant/knowledge.js";
 
 import AWSBankingRisk from "./components/pages/projects/AWSBankingRisk/AWSBankingRisk.jsx";
+import MicrosoftDevOps from "./components/pages/projects/MicrosoftDevOps/MicrosoftDevOps.jsx";
+import GCPRetail from "./components/pages/projects/GCPRetail/GCPRetail.jsx";
+import EventOpsIntelligence from "./components/pages/projects/EventOpsIntelligence/EventOpsIntelligence.jsx";
 
 const placeholderProjects = [
   ...rebuildingProjects.map((project) => ({
@@ -71,8 +74,19 @@ function App() {
       <PageScroll />
       <Routes>
         <Route path="/" element={<Home />} />
+
         {placeholderProjects
-          .filter((project) => project.id !== "banking-risk")
+          .filter(
+            (project) =>
+              project.id !== "banking-risk" &&
+              project.route !== "/projects/banking-risk" &&
+              project.id !== "microsoft-devops" &&
+              project.route !== "/projects/microsoft-devops" &&
+              project.id !== "gcp-retail" &&
+              project.route !== "/projects/gcp-retail" &&
+              project.id !== "eventops-intelligence" &&
+              project.route !== "/projects/eventops-intelligence",
+          )
           .flatMap((project) =>
             [...new Set([project.route, `/projects/${project.id}`])].map(
               (path) => (
@@ -102,6 +116,9 @@ function App() {
           .filter(
             (id) =>
               id !== "banking-risk" &&
+              id !== "microsoft-devops" &&
+              id !== "gcp-retail" &&
+              id !== "eventops-intelligence" &&
               !placeholderProjects.some((project) => project.id === id),
           )
           .map((project) => (
@@ -113,18 +130,37 @@ function App() {
           ))}
 
         <Route path="/projects/banking-risk" element={<AWSBankingRisk />} />
+
+        <Route
+          path="/projects/microsoft-devops"
+          element={<MicrosoftDevOps />}
+        />
+
+        <Route path="/projects/gcp-retail" element={<GCPRetail />} />
+
+        <Route
+          path="/projects/eventops-intelligence"
+          element={<EventOpsIntelligence />}
+        />
+
         <Route
           path="/companies/kailor"
           element={<Company company="kailor" />}
         />
+
         <Route path="/companies/kai" element={<Company company="kai" />} />
+
         <Route path="/explore" element={<Explore />} />
+
         <Route
           path="/explore/projects/:projectId"
           element={<ExploreProjectPreview />}
         />
+
         <Route path="/cv" element={<CV />} />
+
         <Route path="/recruiter-view" element={<RecruiterView />} />
+
         <Route
           path="/certifications"
           element={<Navigate to="/explore?tab=credentials" replace />}
