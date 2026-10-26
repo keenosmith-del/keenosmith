@@ -1,3 +1,7 @@
+import { auditedProjects, exactToolRecords } from './auditedProjects.js';
+import { repositoryEvidence } from '../assistant/repositoryEvidence.js';
+import { professionalSkillRecords } from './candidateProfile.js';
+import { relationships } from '../assistant/taxonomy.js';
 export const skillGroups = [
   {
     title: "Frontend & UI",
@@ -173,3 +177,13 @@ export const skillGroups = [
     ],
   },
 ];
+
+// Navigation and Explore share categorisation; new audited skills are added once.
+const categoryGroups = { frontend: 'Frontend & UI', backend: 'Backend & APIs', databases: 'Databases & Data', ai: 'AI & Machine Learning', devops: 'Cloud, DevOps & Infrastructure', infrastructure: 'Cloud, DevOps & Infrastructure', security: 'Security & Authentication', architecture: 'Architecture & Engineering', languages: 'Languages & Core Engineering' };
+for (const name of new Set([...auditedProjects.flatMap(p => p.technologies), ...repositoryEvidence.flatMap(p => p.technologies), ...professionalSkillRecords.flatMap(r => r.skills), ...Object.keys(exactToolRecords).filter(n => exactToolRecords[n].status === "candidate-declared experience")])) {
+  if (skillGroups.some(g => g.skills.includes(name))) continue;
+  const rel = relationships([name]);
+  const category = rel.categories.find(c => categoryGroups[c]);
+  const title = categoryGroups[category] || (rel.ecosystems.includes('google') ? 'Google Cloud & AI' : rel.ecosystems.includes('microsoft') ? 'Microsoft & Azure' : rel.ecosystems.includes('aws') ? 'Cloud, DevOps & Infrastructure' : 'Architecture & Engineering');
+  skillGroups.find(g => g.title === title).skills.push(name);
+}

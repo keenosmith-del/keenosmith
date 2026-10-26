@@ -28,7 +28,7 @@ export default function ExploreProjectPreview({ projectId: mappedId }) {
   ].find((item) => item.id === projectId);
   if (placeholderProject)
     return <ProjectPlaceholder project={placeholderProject} />;
-  const project = curatedProjects.find((p) => p.id === projectId);
+  const project = curatedProjects.find((p) => p.id === projectId) || canonicalProjects.find(p => p.id === projectId);
   return (
     <main className="explore-page explore-preview">
       <Link className="explore-back" to="/explore">

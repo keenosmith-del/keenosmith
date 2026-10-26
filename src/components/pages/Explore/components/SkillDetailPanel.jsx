@@ -92,6 +92,15 @@ export default function SkillDetailPanel({
       ) : (
         <p>No direct built-project evidence is recorded for this skill.</p>
       )}
+      {!!skill.professional?.length && <>
+        <h3>Professional experience</h3>
+        {skill.professional.map(r => <p key={r.roleIndex}><strong>{r.role.title} · {r.role.employer}</strong><br />{r.description}</p>)}
+      </>}
+      {skill.declared && <p>Candidate-declared experience; implementation source remains unresolved.</p>}
+      {!!skill.planned?.length && <>
+        <h3>Planned scope</h3>
+        <p>{skill.planned.map(p => p.title).join('; ')}. Planned scope is separate from implemented usage.</p>
+      </>}
       <h3>Related credentials</h3>
       {learning.length ? (
         learning.map((c) => (

@@ -1,3 +1,5 @@
+> Shared evidence refresh, 18 October 2026: see [current audit and behaviour report](../../docs/evidence/REFRESH_REPORT.md) and [maintenance process](../../docs/evidence/REFRESH_PROCESS.md). The current CV-derived profile, 6+ overall baseline, separate Python duration and instructed education assessment status supersede older candidate summaries below.
+
 # Ask my Assistant maintenance guide
 
 This assistant runs locally with no inference API, keys, external LLM or vector database. Preserve existing records when adding evidence. Production does not contact GitHub.

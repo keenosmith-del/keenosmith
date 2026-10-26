@@ -23,18 +23,13 @@ try {
   );
   assert.equal(curatedProjects.length, 19);
   assert(curatedProjects.every((p) => !p.id.startsWith("ux-ui-")));
-  for (const id of [
-    "intelligence-manufacturing-llmops",
-    "enterprise-ai-mlops",
-  ]) {
+  for (const id of ["manufacturing-qc", "customer-operations"]) {
     const project = projectIndex.find((p) => p.id === id);
     assert(
-      project.planned &&
-        !project.demonstrated &&
-        !project.implementedTechnologies.length,
+      !project.planned && project.demonstrated && project.implementedTechnologies.length,
     );
-    assert(!project.repositoryUrl);
-    assert(curatedProjects.some((p) => p.id === id));
+    assert(project.repositoryUrl);
+    assert(curatedProjects.some((p) => project.aliases.includes(p.id)));
   }
   for (const id of [
     "productivity-platform",
@@ -144,10 +139,10 @@ try {
     credentialIndex.filter((c) => matchesQuery(c, "Microsoft")).length,
     4,
   );
-  assert.equal(credentialIndex.filter((c) => c.type === "Education").length, 2);
+  assert.equal(credentialIndex.filter((c) => c.type === "Education").length, 3);
   assert.equal(
     credentialIndex.find((c) => c.id === "education-0").status,
-    "Computer Science studies",
+    "Current CV education record",
   );
   assert.ok(
     projectIndex.every(
@@ -158,11 +153,11 @@ try {
   );
   assert.equal(
     projectIndex.find((p) => p.id === "banking-risk").route,
-    "/projects/aws",
+    "/projects/banking-risk",
   );
   assert.equal(
     projectIndex.find((p) => p.id === "vertex-ai-retail").route,
-    "/projects/gcp",
+    "/projects/gcp-retail",
   );
   assert.ok(!projectIndex.some((p) => matchesQuery(p, "zzznomatchzzz")));
   console.log(

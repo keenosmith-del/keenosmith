@@ -1,4 +1,4 @@
-// Curated source audit, 5 October 2026. Runtime never fetches repositories.
+// Curated source audit; repository HEADs and implementation rechecked 18 October 2026. Runtime never fetches repositories.
 export const repositoryEvidence = [
   {
     id: "ai-assistant",
@@ -22,7 +22,7 @@ export const repositoryEvidence = [
           "https://github.com/keenosmith-del/ai-entity/blob/50ceaf6/backend/src/server.js",
         strength: "direct",
         revision: "50ceaf6",
-        inspectedOn: "2026-10-05",
+        inspectedOn: "2026-10-18",
       },
       {
         type: "source-code",
@@ -30,7 +30,7 @@ export const repositoryEvidence = [
           "https://github.com/keenosmith-del/ai-entity/blob/50ceaf6/backend/src/config/db.js",
         strength: "direct",
         revision: "50ceaf6",
-        inspectedOn: "2026-10-05",
+        inspectedOn: "2026-10-18",
       },
       {
         type: "source-code",
@@ -38,7 +38,7 @@ export const repositoryEvidence = [
           "https://github.com/keenosmith-del/ai-entity/blob/50ceaf6/backend/src/utils/cosineSimilarity.js",
         strength: "direct",
         revision: "50ceaf6",
-        inspectedOn: "2026-10-05",
+        inspectedOn: "2026-10-18",
       },
     ],
   },
@@ -65,7 +65,7 @@ export const repositoryEvidence = [
           "https://github.com/keenosmith-del/personal-productivity-desktop/blob/cc3ab00/backend/package.json",
         strength: "supporting",
         revision: "cc3ab00",
-        inspectedOn: "2026-10-05",
+        inspectedOn: "2026-10-18",
       },
       {
         type: "configuration",
@@ -73,7 +73,7 @@ export const repositoryEvidence = [
           "https://github.com/keenosmith-del/personal-productivity-desktop/blob/cc3ab00/frontend/package.json",
         strength: "supporting",
         revision: "cc3ab00",
-        inspectedOn: "2026-10-05",
+        inspectedOn: "2026-10-18",
       },
     ],
   },
@@ -89,7 +89,7 @@ export const repositoryEvidence = [
           "https://github.com/keenosmith-del/music-api/blob/4ef9fd9/backend/services/providers/spotifyService.js",
         strength: "direct",
         revision: "4ef9fd9",
-        inspectedOn: "2026-10-05",
+        inspectedOn: "2026-10-18",
       },
       {
         type: "source-code",
@@ -97,7 +97,7 @@ export const repositoryEvidence = [
           "https://github.com/keenosmith-del/music-api/blob/4ef9fd9/backend/services/providers/deezerService.js",
         strength: "direct",
         revision: "4ef9fd9",
-        inspectedOn: "2026-10-05",
+        inspectedOn: "2026-10-18",
       },
     ],
   },
@@ -113,7 +113,7 @@ export const repositoryEvidence = [
           "https://github.com/keenosmith-del/enterprise-workspace/blob/3f7be4d/server/prisma.config.ts",
         strength: "direct",
         revision: "3f7be4d",
-        inspectedOn: "2026-10-05",
+        inspectedOn: "2026-10-18",
       },
       {
         type: "source-code",
@@ -121,7 +121,7 @@ export const repositoryEvidence = [
           "https://github.com/keenosmith-del/enterprise-workspace/blob/3f7be4d/server/seed.js",
         strength: "direct",
         revision: "3f7be4d",
-        inspectedOn: "2026-10-05",
+        inspectedOn: "2026-10-18",
       },
     ],
   },
@@ -132,6 +132,7 @@ export const repositoryEvidence = [
     technologies: [
       "Azure",
       "Microsoft Foundry",
+      "Azure OpenAI",
       "Agentic AI",
       "Multi-agent orchestration",
       "Tool calling",
@@ -153,7 +154,7 @@ export const repositoryEvidence = [
           "https://github.com/keenosmith-del/microsoft-ai-powered-software-engineering-devops/blob/0b75c8a/agent-runtime/main.py",
         strength: "direct",
         revision: "0b75c8a",
-        inspectedOn: "2026-10-05",
+        inspectedOn: "2026-10-18",
       },
       {
         type: "source-code",
@@ -161,7 +162,7 @@ export const repositoryEvidence = [
           "https://github.com/keenosmith-del/microsoft-ai-powered-software-engineering-devops/blob/0b75c8a/agent-runtime/agents/foundry_client.py",
         strength: "direct",
         revision: "0b75c8a",
-        inspectedOn: "2026-10-05",
+        inspectedOn: "2026-10-18",
       },
       {
         type: "source-code",
@@ -169,7 +170,7 @@ export const repositoryEvidence = [
           "https://github.com/keenosmith-del/microsoft-ai-powered-software-engineering-devops/blob/0b75c8a/agent-runtime/tools/azure_tool.py",
         strength: "direct",
         revision: "0b75c8a",
-        inspectedOn: "2026-10-05",
+        inspectedOn: "2026-10-18",
       },
     ],
   },
@@ -203,7 +204,7 @@ export const repositoryEvidence = [
           "https://github.com/keenosmith-del/aws-ai-banking-and-payment-risk/blob/5a264ba/apps/api/src/aws-providers.ts",
         strength: "direct",
         revision: "5a264ba",
-        inspectedOn: "2026-10-05",
+        inspectedOn: "2026-10-18",
       },
       {
         type: "configuration",
@@ -211,7 +212,7 @@ export const repositoryEvidence = [
           "https://github.com/keenosmith-del/aws-ai-banking-and-payment-risk/blob/5a264ba/infrastructure/events/main.tf",
         strength: "supporting",
         revision: "5a264ba",
-        inspectedOn: "2026-10-05",
+        inspectedOn: "2026-10-18",
       },
       {
         type: "configuration",
@@ -219,7 +220,7 @@ export const repositoryEvidence = [
           "https://github.com/keenosmith-del/aws-ai-banking-and-payment-risk/blob/5a264ba/apps/api/package.json",
         strength: "supporting",
         revision: "5a264ba",
-        inspectedOn: "2026-10-05",
+        inspectedOn: "2026-10-18",
       },
     ],
   },
@@ -262,7 +263,7 @@ export const repositoryEvidence = [
           "https://github.com/keenosmith-del/gcp-ai-retail-and-supply-chain/blob/a6e1c2a/apps/api/retail/providers/analytics.py",
         strength: "direct",
         revision: "a6e1c2a",
-        inspectedOn: "2026-10-05",
+        inspectedOn: "2026-10-18",
       },
       {
         type: "source-code",
@@ -270,7 +271,7 @@ export const repositoryEvidence = [
           "https://github.com/keenosmith-del/gcp-ai-retail-and-supply-chain/blob/a6e1c2a/apps/api/retail/providers/events.py",
         strength: "direct",
         revision: "a6e1c2a",
-        inspectedOn: "2026-10-05",
+        inspectedOn: "2026-10-18",
       },
       {
         type: "source-code",
@@ -278,7 +279,7 @@ export const repositoryEvidence = [
           "https://github.com/keenosmith-del/gcp-ai-retail-and-supply-chain/blob/a6e1c2a/apps/api/retail/providers/explanations.py",
         strength: "direct",
         revision: "a6e1c2a",
-        inspectedOn: "2026-10-05",
+        inspectedOn: "2026-10-18",
       },
       {
         type: "source-code",
@@ -286,7 +287,7 @@ export const repositoryEvidence = [
           "https://github.com/keenosmith-del/gcp-ai-retail-and-supply-chain/blob/a6e1c2a/apps/api/retail/services/forecasting.py",
         strength: "direct",
         revision: "a6e1c2a",
-        inspectedOn: "2026-10-05",
+        inspectedOn: "2026-10-18",
       },
       {
         type: "configuration",
@@ -294,7 +295,7 @@ export const repositoryEvidence = [
           "https://github.com/keenosmith-del/gcp-ai-retail-and-supply-chain/blob/a6e1c2a/infrastructure/main.tf",
         strength: "supporting",
         revision: "a6e1c2a",
-        inspectedOn: "2026-10-05",
+        inspectedOn: "2026-10-18",
       },
     ],
   },
@@ -328,7 +329,7 @@ export const repositoryEvidence = [
           "https://github.com/keenosmith-del/ollama-private-business-intelligence/blob/189b77d/ai-runtime/app/main.py",
         strength: "direct",
         revision: "189b77d",
-        inspectedOn: "2026-10-05",
+        inspectedOn: "2026-10-18",
       },
       {
         type: "source-code",
@@ -336,7 +337,7 @@ export const repositoryEvidence = [
           "https://github.com/keenosmith-del/ollama-private-business-intelligence/blob/189b77d/ai-runtime/app/analytics.py",
         strength: "direct",
         revision: "189b77d",
-        inspectedOn: "2026-10-05",
+        inspectedOn: "2026-10-18",
       },
       {
         type: "source-code",
@@ -344,7 +345,7 @@ export const repositoryEvidence = [
           "https://github.com/keenosmith-del/ollama-private-business-intelligence/blob/189b77d/backend/src/app.ts",
         strength: "direct",
         revision: "189b77d",
-        inspectedOn: "2026-10-05",
+        inspectedOn: "2026-10-18",
       },
       {
         type: "source-code",
@@ -352,7 +353,7 @@ export const repositoryEvidence = [
           "https://github.com/keenosmith-del/ollama-private-business-intelligence/blob/189b77d/backend/src/security.ts",
         strength: "direct",
         revision: "189b77d",
-        inspectedOn: "2026-10-05",
+        inspectedOn: "2026-10-18",
       },
     ],
   },
@@ -381,7 +382,7 @@ export const repositoryEvidence = [
           "https://github.com/keenosmith-del/claude-powered-legal-procurement-intelligence/blob/7ad4b67/backend/src/app.ts",
         strength: "direct",
         revision: "7ad4b67",
-        inspectedOn: "2026-10-05",
+        inspectedOn: "2026-10-18",
       },
       {
         type: "source-code",
@@ -389,7 +390,7 @@ export const repositoryEvidence = [
           "https://github.com/keenosmith-del/claude-powered-legal-procurement-intelligence/blob/7ad4b67/backend/src/analysis.ts",
         strength: "direct",
         revision: "7ad4b67",
-        inspectedOn: "2026-10-05",
+        inspectedOn: "2026-10-18",
       },
       {
         type: "source-code",
@@ -397,7 +398,7 @@ export const repositoryEvidence = [
           "https://github.com/keenosmith-del/claude-powered-legal-procurement-intelligence/blob/7ad4b67/backend/src/documents.ts",
         strength: "direct",
         revision: "7ad4b67",
-        inspectedOn: "2026-10-05",
+        inspectedOn: "2026-10-18",
       },
       {
         type: "source-code",
@@ -405,7 +406,7 @@ export const repositoryEvidence = [
           "https://github.com/keenosmith-del/claude-powered-legal-procurement-intelligence/blob/7ad4b67/backend/src/migrate.ts",
         strength: "direct",
         revision: "7ad4b67",
-        inspectedOn: "2026-10-05",
+        inspectedOn: "2026-10-18",
       },
     ],
   },
@@ -442,7 +443,7 @@ export const repositoryEvidence = [
           "https://github.com/keenosmith-del/hugging-face-ai-insurance-claims/blob/0ea4cc3/ai-service/app/pipelines/ner.py",
         strength: "direct",
         revision: "0ea4cc3",
-        inspectedOn: "2026-10-05",
+        inspectedOn: "2026-10-18",
       },
       {
         type: "source-code",
@@ -450,7 +451,7 @@ export const repositoryEvidence = [
           "https://github.com/keenosmith-del/hugging-face-ai-insurance-claims/blob/0ea4cc3/ai-service/app/pipelines/image_analysis.py",
         strength: "direct",
         revision: "0ea4cc3",
-        inspectedOn: "2026-10-05",
+        inspectedOn: "2026-10-18",
       },
       {
         type: "source-code",
@@ -458,7 +459,7 @@ export const repositoryEvidence = [
           "https://github.com/keenosmith-del/hugging-face-ai-insurance-claims/blob/0ea4cc3/ai-service/app/pipelines/ocr.py",
         strength: "direct",
         revision: "0ea4cc3",
-        inspectedOn: "2026-10-05",
+        inspectedOn: "2026-10-18",
       },
       {
         type: "source-code",
@@ -466,7 +467,7 @@ export const repositoryEvidence = [
           "https://github.com/keenosmith-del/hugging-face-ai-insurance-claims/blob/0ea4cc3/ai-service/app/pipelines/embeddings.py",
         strength: "direct",
         revision: "0ea4cc3",
-        inspectedOn: "2026-10-05",
+        inspectedOn: "2026-10-18",
       },
       {
         type: "source-code",
@@ -474,7 +475,7 @@ export const repositoryEvidence = [
           "https://github.com/keenosmith-del/hugging-face-ai-insurance-claims/blob/0ea4cc3/server/src/app.ts",
         strength: "direct",
         revision: "0ea4cc3",
-        inspectedOn: "2026-10-05",
+        inspectedOn: "2026-10-18",
       },
     ],
   },
@@ -509,7 +510,7 @@ export const repositoryEvidence = [
           "https://github.com/keenosmith-del/sre-chaos-engineering/blob/dec5fc7/services/ordering/service.go",
         strength: "direct",
         revision: "dec5fc7",
-        inspectedOn: "2026-10-05",
+        inspectedOn: "2026-10-18",
       },
       {
         type: "configuration",
@@ -517,7 +518,7 @@ export const repositoryEvidence = [
           "https://github.com/keenosmith-del/sre-chaos-engineering/blob/dec5fc7/go.mod",
         strength: "supporting",
         revision: "dec5fc7",
-        inspectedOn: "2026-10-05",
+        inspectedOn: "2026-10-18",
       },
       {
         type: "configuration",
@@ -525,7 +526,7 @@ export const repositoryEvidence = [
           "https://github.com/keenosmith-del/sre-chaos-engineering/blob/dec5fc7/deploy/kubernetes/platform.json",
         strength: "supporting",
         revision: "dec5fc7",
-        inspectedOn: "2026-10-05",
+        inspectedOn: "2026-10-18",
       },
       {
         type: "source-code",
@@ -533,7 +534,7 @@ export const repositoryEvidence = [
           "https://github.com/keenosmith-del/sre-chaos-engineering/blob/dec5fc7/scripts/recovery.py",
         strength: "direct",
         revision: "dec5fc7",
-        inspectedOn: "2026-10-05",
+        inspectedOn: "2026-10-18",
       },
     ],
   },
@@ -569,7 +570,7 @@ export const repositoryEvidence = [
           "https://github.com/keenosmith-del/n8n-workflow-integration-opsflow/blob/031af48/apps/api/src/main.ts",
         strength: "direct",
         revision: "031af48",
-        inspectedOn: "2026-10-05",
+        inspectedOn: "2026-10-18",
       },
       {
         type: "source-code",
@@ -577,7 +578,7 @@ export const repositoryEvidence = [
           "https://github.com/keenosmith-del/n8n-workflow-integration-opsflow/blob/031af48/apps/api/src/operations.ts",
         strength: "direct",
         revision: "031af48",
-        inspectedOn: "2026-10-05",
+        inspectedOn: "2026-10-18",
       },
       {
         type: "configuration",
@@ -585,7 +586,7 @@ export const repositoryEvidence = [
           "https://github.com/keenosmith-del/n8n-workflow-integration-opsflow/blob/031af48/workflows/procurement-collect-v1.json",
         strength: "supporting",
         revision: "031af48",
-        inspectedOn: "2026-10-05",
+        inspectedOn: "2026-10-18",
       },
       {
         type: "configuration",
@@ -593,7 +594,7 @@ export const repositoryEvidence = [
           "https://github.com/keenosmith-del/n8n-workflow-integration-opsflow/blob/031af48/infra/tofu/main.tf",
         strength: "supporting",
         revision: "031af48",
-        inspectedOn: "2026-10-05",
+        inspectedOn: "2026-10-18",
       },
     ],
   },
@@ -629,7 +630,7 @@ export const repositoryEvidence = [
           "https://github.com/keenosmith-del/deepseek-ai-workforce-planning/blob/4a2f03b/backend/Program.cs",
         strength: "direct",
         revision: "4a2f03b",
-        inspectedOn: "2026-10-05",
+        inspectedOn: "2026-10-18",
       },
       {
         type: "source-code",
@@ -637,7 +638,7 @@ export const repositoryEvidence = [
           "https://github.com/keenosmith-del/deepseek-ai-workforce-planning/blob/4a2f03b/backend/Application/Services.cs",
         strength: "direct",
         revision: "4a2f03b",
-        inspectedOn: "2026-10-05",
+        inspectedOn: "2026-10-18",
       },
       {
         type: "source-code",
@@ -645,7 +646,7 @@ export const repositoryEvidence = [
           "https://github.com/keenosmith-del/deepseek-ai-workforce-planning/blob/4a2f03b/ai/app.py",
         strength: "direct",
         revision: "4a2f03b",
-        inspectedOn: "2026-10-05",
+        inspectedOn: "2026-10-18",
       },
       {
         type: "configuration",
@@ -653,7 +654,7 @@ export const repositoryEvidence = [
           "https://github.com/keenosmith-del/deepseek-ai-workforce-planning/blob/4a2f03b/infra/main.tf",
         strength: "supporting",
         revision: "4a2f03b",
-        inspectedOn: "2026-10-05",
+        inspectedOn: "2026-10-18",
       },
     ],
   },
@@ -682,7 +683,7 @@ export const repositoryEvidence = [
           "https://github.com/keenosmith-del/telecomms-billing-management/blob/3985c0f/backend/src/main/java/com/telecom/Application.java",
         strength: "direct",
         revision: "3985c0f",
-        inspectedOn: "2026-10-05",
+        inspectedOn: "2026-10-18",
       },
       {
         type: "source-code",
@@ -690,7 +691,7 @@ export const repositoryEvidence = [
           "https://github.com/keenosmith-del/telecomms-billing-management/blob/3985c0f/backend/src/main/java/com/telecom/security/SecurityConfig.java",
         strength: "direct",
         revision: "3985c0f",
-        inspectedOn: "2026-10-05",
+        inspectedOn: "2026-10-18",
       },
       {
         type: "source-code",
@@ -698,7 +699,7 @@ export const repositoryEvidence = [
           "https://github.com/keenosmith-del/telecomms-billing-management/blob/3985c0f/backend/src/main/java/com/telecom/metering/KafkaConfig.java",
         strength: "direct",
         revision: "3985c0f",
-        inspectedOn: "2026-10-05",
+        inspectedOn: "2026-10-18",
       },
       {
         type: "configuration",
@@ -706,7 +707,7 @@ export const repositoryEvidence = [
           "https://github.com/keenosmith-del/telecomms-billing-management/blob/3985c0f/backend/pom.xml",
         strength: "supporting",
         revision: "3985c0f",
-        inspectedOn: "2026-10-05",
+        inspectedOn: "2026-10-18",
       },
     ],
   },
@@ -735,7 +736,7 @@ export const repositoryEvidence = [
           "https://github.com/keenosmith-del/field-service-and-asset-maintenance/blob/7d875eb/api/FieldService.Api/Program.cs",
         strength: "direct",
         revision: "7d875eb",
-        inspectedOn: "2026-10-05",
+        inspectedOn: "2026-10-18",
       },
       {
         type: "source-code",
@@ -743,7 +744,7 @@ export const repositoryEvidence = [
           "https://github.com/keenosmith-del/field-service-and-asset-maintenance/blob/7d875eb/api/FieldService.Api/Auth.cs",
         strength: "direct",
         revision: "7d875eb",
-        inspectedOn: "2026-10-05",
+        inspectedOn: "2026-10-18",
       },
       {
         type: "source-code",
@@ -751,7 +752,7 @@ export const repositoryEvidence = [
           "https://github.com/keenosmith-del/field-service-and-asset-maintenance/blob/7d875eb/mobile/FieldService.Mobile.Core/OfflineStore.cs",
         strength: "direct",
         revision: "7d875eb",
-        inspectedOn: "2026-10-05",
+        inspectedOn: "2026-10-18",
       },
       {
         type: "source-code",
@@ -759,7 +760,7 @@ export const repositoryEvidence = [
           "https://github.com/keenosmith-del/field-service-and-asset-maintenance/blob/7d875eb/mobile/FieldService.Mobile/JobViewModel.cs",
         strength: "direct",
         revision: "7d875eb",
-        inspectedOn: "2026-10-05",
+        inspectedOn: "2026-10-18",
       },
     ],
   },
@@ -791,7 +792,7 @@ export const repositoryEvidence = [
           "https://github.com/keenosmith-del/real-time-logistics-and-fleet-ops/blob/a961610/backend/internal/platform/stream.go",
         strength: "direct",
         revision: "a961610",
-        inspectedOn: "2026-10-05",
+        inspectedOn: "2026-10-18",
       },
       {
         type: "source-code",
@@ -799,7 +800,7 @@ export const repositoryEvidence = [
           "https://github.com/keenosmith-del/real-time-logistics-and-fleet-ops/blob/a961610/backend/internal/platform/metrics.go",
         strength: "direct",
         revision: "a961610",
-        inspectedOn: "2026-10-05",
+        inspectedOn: "2026-10-18",
       },
       {
         type: "source-code",
@@ -807,7 +808,7 @@ export const repositoryEvidence = [
           "https://github.com/keenosmith-del/real-time-logistics-and-fleet-ops/blob/a961610/backend/internal/platform/models.go",
         strength: "direct",
         revision: "a961610",
-        inspectedOn: "2026-10-05",
+        inspectedOn: "2026-10-18",
       },
       {
         type: "configuration",
@@ -815,7 +816,7 @@ export const repositoryEvidence = [
           "https://github.com/keenosmith-del/real-time-logistics-and-fleet-ops/blob/a961610/backend/go.mod",
         strength: "supporting",
         revision: "a961610",
-        inspectedOn: "2026-10-05",
+        inspectedOn: "2026-10-18",
       },
     ],
   },

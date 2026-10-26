@@ -51,3 +51,7 @@ Completed verification: production build, index/composition tests and diff white
 The catalogue contains 19 engineering projects. The four legacy application pages now use the shared placeholder with refreshed covers; their screenshots, recordings and former decorative covers have been removed. Intelligence Manufacturing LLMOps and Enterprise AI MLOps are planned entries with no claimed implementation or repository. UX/UI showcase entries and routes have been removed. Credentials retain their records and issuer seals, with the decorative image-only tiles removed. Presentation and routes for these six projects are maintained in `src/data/rebuildingProjects.js` and `src/data/projectArtwork.js`.
 
 Run `scripts/verify-project-reset-browser.js` with `PORTFOLIO_TEST_URL` set to the local Vite server for covers, colours, placeholder destinations, credential interactions and responsive checks.
+
+## Shared skills refresh (18 October 2026)
+
+Skill sections and project skill links consume `skillRegistry` through `skillIndex`. New project records, professional scope and learning come from the shared catalogue. ONNX Runtime, Rust/Axum, MLOps, LangGraph and current Gemini associations include the new Manufacturing QC and EventOps implementations. Skill details distinguish implementation, professional usage, training and planned scope. See the [audit](../../../../docs/evidence/REFRESH_REPORT.md) and [refresh process](../../../../docs/evidence/REFRESH_PROCESS.md).

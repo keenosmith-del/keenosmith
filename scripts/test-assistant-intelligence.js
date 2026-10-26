@@ -35,7 +35,7 @@ const provider = async (url, options) => {
   request = { url, options };
   return new Response(JSON.stringify({ choices: [{ message: { content: JSON.stringify(valid) } }] }));
 };
-const result = await processMessage({ message: 'What did he implement in JavaScript?' }, { env, fetcher: provider });
+const result = await processMessage({ message: 'Compare his JavaScript and cloud architecture' }, { env, fetcher: provider });
 assert.equal(result.mode, 'llm');
 assert.equal(result.response.projects[0].id, 'ai-assistant');
 assert.equal(request.url, 'https://provider.example/v1/chat/completions');

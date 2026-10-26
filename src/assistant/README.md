@@ -1,3 +1,5 @@
+> Shared evidence refresh, 18 October 2026: see [current audit and behaviour report](../../docs/evidence/REFRESH_REPORT.md) and [maintenance process](../../docs/evidence/REFRESH_PROCESS.md). The current CV-derived profile, 6+ overall baseline, separate Python duration and instructed education assessment status supersede older candidate summaries below.
+
 # Ask my Assistant V1
 
 Runs locally: interpret → retrieve and rank → compose → structured UI. `answer(question, context)` is the provider boundary for future semantic retrieval or response generation. No network inference or keys.

@@ -54,7 +54,7 @@ assert(
 );
 assert(
   answer("What education does he have?").text.includes(
-    "An awarded degree is not confirmed",
+    "Full-Stack Software Engineering",
   ),
 );
 assert(answer("Does he know TypeScript?").indicators.some((i) => i.band >= 3)); // Source audit now verifies implemented TypeScript.
@@ -73,7 +73,7 @@ const dynamicPaths = [...cloudProjects, ...aiProjects, ...selectedProjects, kail
   .flatMap((p) => [p.route, `/projects/${p.id}`]);
 for (const p of react.projects)
   assert(
-    p.path === "/cv" || dynamicPaths.includes(p.path) ||
+    p.path === "/cv" || (p.path.startsWith("/explore/projects/") && app.includes("/explore/projects/:projectId")) || dynamicPaths.includes(p.path) ||
       app.includes(`path="${p.path}"`) ||
       projectConcepts.some((c) => c.id === p.id) ||
       p.status.includes("Planned") ||

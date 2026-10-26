@@ -1,4 +1,4 @@
-import { skills, projects } from "./knowledge.js";
+import { skills, projects, exactToolRecords } from "./knowledge.js";
 import { expandQuery } from "./taxonomy.js";
 export const normalize = (s) =>
   s
@@ -50,7 +50,15 @@ export function interpret(raw, context = {}) {
         );
         if (match) entities.push(match);
       }
+  for (const [name, record] of Object.entries(exactToolRecords))
+    if ([name, ...(record.aliases || [])].some(a => contains(text, a))) entities.push(name);
   let expansion = expandQuery(text, skills);
+  // An exact tool question does not expand into every skill in its domain.
+  if (entities.length && !/\b(platforms|technologies|skills|ecosystem|systems|applications|engineering|agents|databases|cloud|infrastructure|automation|security|observability|testing)\b/.test(text) && !['Azure', 'AWS', 'Google Cloud', 'Microsoft Foundry'].some(s => entities.includes(s))) expansion = {groups: [], terms: []};
+  const specificMatch = /(?:experience with|work(?:ed|s)? with|(?:know|use|used|using|build|deploy|design|demonstrate)\s+)\s*(.+?)(?:\?|$)/i.exec(raw);
+  const unmatchedTool = !/\b(it|that|those|them)\b/.test(text) && !entities.length && !expansion.groups.length && specificMatch ? specificMatch[1].replace(/[?.!]+$/, '').trim() : null;
+  const duration = /how long|duration/.test(text) || /how (?:much|many)|years? (?:of|with)/.test(text) && /experience|years|worked|using/.test(text);
+  const followupDetail = /production|deployed|deployment|live usage/.test(text) ? 'production' : /built or planned|completed|was that built|is (?:it|that) built/.test(text) ? 'status' : /personally|contribut|what did he implement/.test(text) ? 'contribution' : null;
   const refersBack = /^(which ones|which is|what has he built with them|explain further|explain the architecture|how does this compare|show relevant projects)/.test(text);
   if (refersBack && !entities.length && !expansion.groups.length && context.groups?.length)
     expansion = expandQuery(context.groups.join(" "), skills);
@@ -62,6 +70,7 @@ export function interpret(raw, context = {}) {
     .map((p) => p.id);
   if (/^(explain further|explain the architecture|tell me more|how does this compare)/.test(text) && !projectIds.length)
     projectIds = context.projectIds || [];
+  if (followupDetail && !projectIds.length && !entities.length) { projectIds = context.projectIds || []; entities = context.entities || []; }
   const followup =
     /^(which|what about|what has he built with|show|tell me more|explain|how does|would that|and |those)/.test(text);
   if (
@@ -69,7 +78,7 @@ export function interpret(raw, context = {}) {
     followup &&
     !/backend|frontend|cloud|certif|education/.test(text)
   )
-    entities = context.entities || [];
+    entities = unmatchedTool ? [] : context.entities || [];
   const role =
     /\b(role|position|job|suitable|suitability|fit|requirements|responsibilities|candidate|hiring)\b/.test(
       text,
@@ -104,11 +113,12 @@ export function interpret(raw, context = {}) {
     domains.push("AI & Machine Learning");
   if (/cloud|devops/.test(text)) domains.push("Cloud, DevOps & Infrastructure");
   if (!entities.length && intent === "projects" && followup)
-    entities = context.entities || [];
+    entities = unmatchedTool ? [] : context.entities || [];
   if (refersBack && intent === "unknown" && context.intent) intent = context.intent;
   if ((expansion.groups.length || entities.length) && ["experience", "unknown"].includes(intent))
     intent = "skills";
   return {
+    duration, followupDetail, unmatchedTool,
     expansion,
     text,
     entities: [...new Set(entities)],

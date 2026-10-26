@@ -86,6 +86,14 @@ export const Evidence = memo(function Evidence({ response, onNavigate }) {
                   <h4>{p.title}</h4>
                   <small className="assistant-card-status">{p.status}</small>
                   <Description text={p.description} />
+                  {p.evidence?.some(e => /^https:\/\//.test(e.source)) && (
+                    <details className="assistant-card-details">
+                      <summary>Sources <ChevronDown size={12} strokeWidth={1.5} aria-hidden="true" /></summary>
+                      {[...new Set(p.evidence.map(e => e.source).filter(source => /^https:\/\//.test(source)))].map((source, i) => (
+                        <p key={source}><a href={source} target="_blank" rel="noreferrer">Repository evidence {i + 1}</a></p>
+                      ))}
+                    </details>
+                  )}
                   {technologies.length > 0 && (
                     <div className="assistant-tags">
                       {technologies.map((t) => (

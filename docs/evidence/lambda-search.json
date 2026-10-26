@@ -1,0 +1,1865 @@
+{
+  "reviewedOn": "2026-10-18",
+  "method": "Recursive tree/path search across 157 public repositories including forks and two connected private curriculum repositories; scoped indexed content searches for handlers and deployment terms. This is not an exhaustive semantic inspection of every file in every fork.",
+  "repositories": [
+    {
+      "repository": "keenosmith-del/5-Python-Projects-For-Beginners",
+      "fork": true,
+      "size": 2,
+      "branch": "main",
+      "revision": "e3ce1cde898426f6c7d75e5457a09dc87e9daa01",
+      "truncated": false,
+      "matches": [],
+      "files": 8
+    },
+    {
+      "repository": "keenosmith-del/agent-lightning",
+      "fork": true,
+      "size": 49989,
+      "branch": "main",
+      "revision": "5518551e293052ae9450233b181d4d3b262f91a7",
+      "truncated": false,
+      "matches": [
+        {
+          "path": "examples/calc_x/job-template.yaml",
+          "sha": "41b48574ad4a6cabb0ab7380dc6ce5665bc170a2",
+          "size": 566
+        },
+        {
+          "path": "examples/llm-in-sandbox/job-template.yaml",
+          "sha": "88b5a1dbc69790331e90c72b2ff5215d7e976238",
+          "size": 788
+        }
+      ],
+      "files": 274
+    },
+    {
+      "repository": "keenosmith-del/agentscope",
+      "fork": true,
+      "size": 64953,
+      "branch": "main",
+      "revision": "6c5c9eedb0a1afe515edcf6f2abec079e7ff6d9a",
+      "truncated": false,
+      "matches": [],
+      "files": 1169
+    },
+    {
+      "repository": "keenosmith-del/ai-code-exercises",
+      "fork": true,
+      "size": 1083,
+      "branch": "main",
+      "revision": "3c1747e60b75b7086aeaab9bbfc1dd95a504d070",
+      "truncated": false,
+      "matches": [],
+      "files": 422
+    },
+    {
+      "repository": "keenosmith-del/ai-engineering-from-scratch",
+      "fork": true,
+      "size": 42610,
+      "branch": "main",
+      "revision": "d18b8fe5a913c46011a3b06cb6ebd6a924414fd3",
+      "truncated": false,
+      "matches": [],
+      "files": 6456
+    },
+    {
+      "repository": "keenosmith-del/ai-entity",
+      "fork": false,
+      "size": 8313,
+      "branch": "main",
+      "revision": "50ceaf675c9250bc1b49b70fe65679cfbb584f71",
+      "truncated": false,
+      "matches": [],
+      "files": 53
+    },
+    {
+      "repository": "keenosmith-del/AI-Infra-Guard",
+      "fork": true,
+      "size": 163882,
+      "branch": "main",
+      "revision": "982d97cc74040b46c77cef695a7489cf4a625808",
+      "truncated": false,
+      "matches": [],
+      "files": 6398
+    },
+    {
+      "repository": "keenosmith-del/ai-programming-python-transformers",
+      "fork": true,
+      "size": 491,
+      "branch": "main",
+      "revision": "e5b47b131f19ba97edceac72dddb3daa0f8faac7",
+      "truncated": false,
+      "matches": [],
+      "files": 45
+    },
+    {
+      "repository": "keenosmith-del/AI-Trader",
+      "fork": true,
+      "size": 20915,
+      "branch": "main",
+      "revision": "d03ff6c056b32ced735adf7c19ed8175adb1c8df",
+      "truncated": false,
+      "matches": [],
+      "files": 173
+    },
+    {
+      "repository": "keenosmith-del/aie-model-answers",
+      "fork": true,
+      "size": 44523,
+      "branch": "main",
+      "revision": "c8d0d025811b4eb0fcff2ade5f6af6ff3ac723f7",
+      "truncated": false,
+      "matches": [],
+      "files": 149
+    },
+    {
+      "repository": "keenosmith-del/AIPND",
+      "fork": true,
+      "size": 9671,
+      "branch": "master",
+      "revision": "65d18936c11fc3c790ecb1b2b42090d21f5936c1",
+      "truncated": false,
+      "matches": [],
+      "files": 117
+    },
+    {
+      "repository": "keenosmith-del/Auto-claude-code-research-in-sleep",
+      "fork": true,
+      "size": 33944,
+      "branch": "main",
+      "revision": "94d8093ed21d20a790830318190095b9f5036ce8",
+      "truncated": false,
+      "matches": [
+        {
+          "path": "skills/serverless-modal/SKILL.md",
+          "sha": "6fa54596fa395d2af515b8c1dab7a3871016861e",
+          "size": 13161
+        },
+        {
+          "path": "skills/skills-codex/serverless-modal/SKILL.md",
+          "sha": "9a1792025e03b5ca96b891877167b49a2964d16a",
+          "size": 13169
+        }
+      ],
+      "files": 936
+    },
+    {
+      "repository": "keenosmith-del/awesome-aws",
+      "fork": true,
+      "size": 803,
+      "branch": "master",
+      "revision": "5a49af5f118cef44bd91cdcb7aafe045ef31ad60",
+      "truncated": false,
+      "matches": [],
+      "files": 43
+    },
+    {
+      "repository": "keenosmith-del/aws-ai-banking-and-payment-risk",
+      "fork": false,
+      "size": 160,
+      "branch": "main",
+      "revision": "5a264baba4d70938a60f6ad7c3e5c5b66f9fd0b4",
+      "truncated": false,
+      "matches": [],
+      "files": 78
+    },
+    {
+      "repository": "keenosmith-del/aws-ai-programmer-image-classification",
+      "fork": false,
+      "size": 9232,
+      "branch": "main",
+      "revision": "431af861fe4f4d8bc0873219856f16f9d306f541",
+      "truncated": false,
+      "matches": [],
+      "files": 88
+    },
+    {
+      "repository": "keenosmith-del/aws-ai-programmer-sentiment-analysis",
+      "fork": false,
+      "size": 82248,
+      "branch": "main",
+      "revision": "f35c0be1a66375cb32b75aa41f374d6134abb421",
+      "truncated": false,
+      "matches": [],
+      "files": 8
+    },
+    {
+      "repository": "keenosmith-del/aws-cloud-security-incident-response",
+      "fork": false,
+      "size": 14,
+      "branch": "main",
+      "revision": "99e8fb2d458c6b1a3b986cf79d86ce83b14ea639",
+      "truncated": false,
+      "matches": [],
+      "files": 5
+    },
+    {
+      "repository": "keenosmith-del/aws-distributed-developer-deployment",
+      "fork": false,
+      "size": 0,
+      "branch": "main",
+      "error": "GitHub API error 409: {\"message\":\"Git Repository is empty.\",\"documentation_url\":\"https://docs.github.com/rest/git/trees#get-a-tree\",\"status\":\"409\"}"
+    },
+    {
+      "repository": "keenosmith-del/aws-intelligent-data-pipeline-anomaly-investigation",
+      "fork": false,
+      "size": 0,
+      "branch": "main",
+      "revision": "21f547f4aceecd2e4a710120dc979f7a9f62e219",
+      "truncated": false,
+      "matches": [],
+      "files": 2
+    },
+    {
+      "repository": "keenosmith-del/boilerplate-mochachai",
+      "fork": false,
+      "size": 73,
+      "branch": "main",
+      "revision": "e7c1806f271aa58061ccbcf19b5d7e893763e1ae",
+      "truncated": false,
+      "matches": [],
+      "files": 16
+    },
+    {
+      "repository": "keenosmith-del/caffe",
+      "fork": true,
+      "size": 76170,
+      "branch": "master",
+      "revision": "9b891540183ddc834a02b2bd81b31afae71b2153",
+      "truncated": false,
+      "matches": [],
+      "files": 771
+    },
+    {
+      "repository": "keenosmith-del/capstonejavarefactoring",
+      "fork": false,
+      "size": 12,
+      "branch": "main",
+      "revision": "0350003a7e27913b6529031408a029443239ad4c",
+      "truncated": false,
+      "matches": [],
+      "files": 12
+    },
+    {
+      "repository": "keenosmith-del/captum",
+      "fork": true,
+      "size": 375497,
+      "branch": "master",
+      "revision": "034e21a361db2cca9af5113b043f4baa51174e2a",
+      "truncated": false,
+      "matches": [],
+      "files": 470
+    },
+    {
+      "repository": "keenosmith-del/chef",
+      "fork": false,
+      "size": 11081,
+      "branch": "main",
+      "revision": "99896c2efb63d9ca138e9fd5e2db0b1661e94d88",
+      "truncated": false,
+      "matches": [],
+      "files": 8
+    },
+    {
+      "repository": "keenosmith-del/claude-architecture-analysis",
+      "fork": false,
+      "size": 0,
+      "branch": "main",
+      "error": "GitHub API error 409: {\"message\":\"Git Repository is empty.\",\"documentation_url\":\"https://docs.github.com/rest/git/trees#get-a-tree\",\"status\":\"409\"}"
+    },
+    {
+      "repository": "keenosmith-del/claude-powered-legal-procurement-intelligence",
+      "fork": false,
+      "size": 120,
+      "branch": "main",
+      "revision": "7ad4b67288cd1bfe6e23029475067dcffd466ccf",
+      "truncated": false,
+      "matches": [],
+      "files": 75
+    },
+    {
+      "repository": "keenosmith-del/claude-reg-change-impact",
+      "fork": false,
+      "size": 0,
+      "branch": "main",
+      "error": "GitHub API error 409: {\"message\":\"Git Repository is empty.\",\"documentation_url\":\"https://docs.github.com/rest/git/trees#get-a-tree\",\"status\":\"409\"}"
+    },
+    {
+      "repository": "keenosmith-del/CLIP",
+      "fork": true,
+      "size": 9143,
+      "branch": "main",
+      "revision": "d05afc436d78f1c48dc0dbf8e5980a9d471f35f6",
+      "truncated": false,
+      "matches": [],
+      "files": 28
+    },
+    {
+      "repository": "keenosmith-del/cookbook",
+      "fork": true,
+      "size": 323032,
+      "branch": "main",
+      "revision": "03db9bfd188384e59cbc1d45b835fb539dd7bea4",
+      "truncated": false,
+      "matches": [],
+      "files": 676
+    },
+    {
+      "repository": "keenosmith-del/cybersec-model-answers",
+      "fork": true,
+      "size": 48134,
+      "branch": "main",
+      "revision": "66fefb91279c460eddf660099d6689bc62c0af2c",
+      "truncated": false,
+      "matches": [],
+      "files": 84
+    },
+    {
+      "repository": "keenosmith-del/datascience-model-answers",
+      "fork": true,
+      "size": 11422,
+      "branch": "main",
+      "revision": "0c574590f1ad39745a5700957092cada26cede2b",
+      "truncated": false,
+      "matches": [],
+      "files": 131
+    },
+    {
+      "repository": "keenosmith-del/deepseek-ai-workforce-planning",
+      "fork": false,
+      "size": 79,
+      "branch": "main",
+      "revision": "4a2f03b6a4b5d911ba858adb2bcae731d3d7f463",
+      "truncated": false,
+      "matches": [],
+      "files": 75
+    },
+    {
+      "repository": "keenosmith-del/DeepSpeed",
+      "fork": true,
+      "size": 248580,
+      "branch": "master",
+      "revision": "92843ad706067f0ab551a06a079a8923dcde27b4",
+      "truncated": false,
+      "matches": [
+        {
+          "path": "csrc/deepspeed4science/evoformer_attn/gemm/mma_accum_lambda_iterator.h",
+          "sha": "5e2f0cf681bfe10fdc30c2dfcbe390c5f711dae0",
+          "size": 16280
+        }
+      ],
+      "files": 2487
+    },
+    {
+      "repository": "keenosmith-del/dicehighrollergame",
+      "fork": false,
+      "size": 129,
+      "branch": "main",
+      "revision": "5628f6e8361516c10772ed6b95b2351ca80d99f4",
+      "truncated": false,
+      "matches": [],
+      "files": 16
+    },
+    {
+      "repository": "keenosmith-del/distilly",
+      "fork": true,
+      "size": 15979,
+      "branch": "dot-skill",
+      "revision": "868c293f56116081733b78fc7db5f91634d7b62a",
+      "truncated": false,
+      "matches": [],
+      "files": 164
+    },
+    {
+      "repository": "keenosmith-del/docling",
+      "fork": true,
+      "size": 352759,
+      "branch": "main",
+      "revision": "03804a77c7b907ec3e129d014ecdacaf11d6306f",
+      "truncated": false,
+      "matches": [],
+      "files": 1928
+    },
+    {
+      "repository": "keenosmith-del/dummy-java-repo",
+      "fork": false,
+      "size": 4,
+      "branch": "main",
+      "revision": "4d883b41aeb21f09b3d5afc45e9f4ce7fe4904c8",
+      "truncated": false,
+      "matches": [],
+      "files": 3
+    },
+    {
+      "repository": "keenosmith-del/editorial-sushi-website",
+      "fork": false,
+      "size": 28145,
+      "branch": "main",
+      "revision": "bc87f22cf50c07104a2c46e438fdb7193aca9f90",
+      "truncated": false,
+      "matches": [],
+      "files": 33
+    },
+    {
+      "repository": "keenosmith-del/engineeringdatabase",
+      "fork": false,
+      "size": 0,
+      "branch": "main",
+      "error": "GitHub API error 409: {\"message\":\"Git Repository is empty.\",\"documentation_url\":\"https://docs.github.com/rest/git/trees#get-a-tree\",\"status\":\"409\"}"
+    },
+    {
+      "repository": "keenosmith-del/enterprise-ai-customer-operations",
+      "fork": false,
+      "size": 446,
+      "branch": "main",
+      "revision": "fff773c93cda452a2d3da968f5e3c1835884fb4d",
+      "truncated": false,
+      "matches": [],
+      "files": 104
+    },
+    {
+      "repository": "keenosmith-del/enterprise-workspace",
+      "fork": false,
+      "size": 6710,
+      "branch": "main",
+      "revision": "3f7be4d276d47b6f6226091882a244b4e363ce32",
+      "truncated": false,
+      "matches": [],
+      "files": 283
+    },
+    {
+      "repository": "keenosmith-del/Event-Planner",
+      "fork": false,
+      "size": 2726,
+      "branch": "main",
+      "revision": "855401952eb8263c38406c2481d7ec312d673222",
+      "truncated": false,
+      "matches": [],
+      "files": 27
+    },
+    {
+      "repository": "keenosmith-del/eventops-intelligence-v.01",
+      "fork": false,
+      "size": 20416,
+      "branch": "main",
+      "revision": "0decc5ed0867fc25c7bc2b93625a9f7da6e9f1c1",
+      "truncated": false,
+      "matches": [],
+      "files": 324
+    },
+    {
+      "repository": "keenosmith-del/eventops-intelligence-v.02",
+      "fork": false,
+      "size": 366,
+      "branch": "main",
+      "revision": "24f1a02070705e7adfa6798a5b1f229a51f4680d",
+      "truncated": false,
+      "matches": [],
+      "files": 151
+    },
+    {
+      "repository": "keenosmith-del/eventops-low-code-v.01",
+      "fork": false,
+      "size": 1,
+      "branch": "main",
+      "revision": "d1629dfe02ccdb1716a48a856ec139468d014c41",
+      "truncated": false,
+      "matches": [],
+      "files": 58
+    },
+    {
+      "repository": "keenosmith-del/eventops-low-code-v.02",
+      "fork": false,
+      "size": 1,
+      "branch": "main",
+      "revision": "1555ef0313f1349b63bfa521b01afec32c3ddc9c",
+      "truncated": false,
+      "matches": [],
+      "files": 58
+    },
+    {
+      "repository": "keenosmith-del/EverOS",
+      "fork": true,
+      "size": 3394,
+      "branch": "main",
+      "revision": "d48963cc1ebb5e14bf7b561d55d3ac699396c8c1",
+      "truncated": false,
+      "matches": [],
+      "files": 1032
+    },
+    {
+      "repository": "keenosmith-del/example-repo",
+      "fork": false,
+      "size": 9089,
+      "branch": "main",
+      "revision": "76f2b5ca4c3fc714d09bcec3136cfb37cfb896a4",
+      "truncated": false,
+      "matches": [],
+      "files": 51
+    },
+    {
+      "repository": "keenosmith-del/executorch",
+      "fork": true,
+      "size": 374967,
+      "branch": "main",
+      "revision": "517e56a0f1afcc12761fbf158f5ca875e3bfb7e9",
+      "truncated": false,
+      "matches": [],
+      "files": 10715
+    },
+    {
+      "repository": "keenosmith-del/field-service-and-asset-maintenance",
+      "fork": false,
+      "size": 134,
+      "branch": "main",
+      "revision": "7d875eb9265f832cf8022f798402622435feb237",
+      "truncated": false,
+      "matches": [],
+      "files": 105
+    },
+    {
+      "repository": "keenosmith-del/formula_one",
+      "fork": false,
+      "size": 20322,
+      "branch": "main",
+      "revision": "c75b5b1b11273aa408e0596f49a4b071c030f9bf",
+      "truncated": false,
+      "matches": [],
+      "files": 70
+    },
+    {
+      "repository": "keenosmith-del/FreeToken",
+      "fork": true,
+      "size": 2766,
+      "branch": "main",
+      "revision": "9ef3651309fe4058672f2cc92069238dea06be1b",
+      "truncated": false,
+      "matches": [],
+      "files": 556
+    },
+    {
+      "repository": "keenosmith-del/FrontierWeekHack",
+      "fork": true,
+      "size": 9043,
+      "branch": "main",
+      "revision": "cd7ec1717fbf109bf6e76edfa38a5a7cfc0d88ea",
+      "truncated": false,
+      "matches": [],
+      "files": 206
+    },
+    {
+      "repository": "keenosmith-del/garden-app",
+      "fork": false,
+      "size": 8,
+      "branch": "main",
+      "revision": "26694884bd252ef4b4b1f51d6324fc16c804da77",
+      "truncated": false,
+      "matches": [],
+      "files": 1
+    },
+    {
+      "repository": "keenosmith-del/gaussian-splatting",
+      "fork": true,
+      "size": 80569,
+      "branch": "main",
+      "revision": "54c035f7834b564019656c3e3fcc3646292f727d",
+      "truncated": false,
+      "matches": [],
+      "files": 73
+    },
+    {
+      "repository": "keenosmith-del/gcp-ai-retail-and-supply-chain",
+      "fork": false,
+      "size": 130,
+      "branch": "main",
+      "revision": "a6e1c2afb893e9c082dcb4ff70ee4f41de4eeac9",
+      "truncated": false,
+      "matches": [],
+      "files": 113
+    },
+    {
+      "repository": "keenosmith-del/gcp-data-governance-compliance",
+      "fork": false,
+      "size": 0,
+      "branch": "main",
+      "revision": "54d27b0e19552ee2e6269f1eeb07979af16e6648",
+      "truncated": false,
+      "matches": [],
+      "files": 2
+    },
+    {
+      "repository": "keenosmith-del/gcp-real-time-geospatial-event-intelligence",
+      "fork": false,
+      "size": 0,
+      "branch": "main",
+      "revision": "77d951ecac6fab0ca1717489e55f61819159b363",
+      "truncated": false,
+      "matches": [],
+      "files": 2
+    },
+    {
+      "repository": "keenosmith-del/git-task",
+      "fork": false,
+      "size": 0,
+      "branch": "main",
+      "revision": "adc01fc5ccf4a13cc01ff8f476b6a00e56bf17d1",
+      "truncated": false,
+      "matches": [],
+      "files": 2
+    },
+    {
+      "repository": "keenosmith-del/gpt-oss",
+      "fork": true,
+      "size": 10877,
+      "branch": "main",
+      "revision": "7b583341fe16729127f6d5b94a7b09ccae97e1a1",
+      "truncated": false,
+      "matches": [],
+      "files": 199
+    },
+    {
+      "repository": "keenosmith-del/graphify",
+      "fork": true,
+      "size": 17952,
+      "branch": "v8",
+      "revision": "26b02b5e3430e4ab85dd7e72c7b98836d8e65c48",
+      "truncated": false,
+      "matches": [],
+      "files": 985
+    },
+    {
+      "repository": "keenosmith-del/graphiti",
+      "fork": true,
+      "size": 15356,
+      "branch": "main",
+      "revision": "667317823c97d2ae88e797d39eb4d86861ffb396",
+      "truncated": false,
+      "matches": [],
+      "files": 432
+    },
+    {
+      "repository": "keenosmith-del/helion",
+      "fork": true,
+      "size": 34568,
+      "branch": "main",
+      "revision": "e7263f2f2abb80ffc8a0f5a2d45f71efb5a3de17",
+      "truncated": false,
+      "matches": [],
+      "files": 744
+    },
+    {
+      "repository": "keenosmith-del/horovod",
+      "fork": true,
+      "size": 7090,
+      "branch": "master",
+      "revision": "e3c4fc2f172807bba44d08c0850a93204fe5df71",
+      "truncated": false,
+      "matches": [],
+      "files": 613
+    },
+    {
+      "repository": "keenosmith-del/hugging-face-ai-insurance-claims",
+      "fork": false,
+      "size": 2901,
+      "branch": "main",
+      "revision": "0ea4cc3e4f0502f99f937b9129c9d16e33923b76",
+      "truncated": false,
+      "matches": [],
+      "files": 98
+    },
+    {
+      "repository": "keenosmith-del/hummingbird",
+      "fork": true,
+      "size": 14986,
+      "branch": "main",
+      "revision": "eb0a23538b364a021b3b723833cfb7e4dcd96134",
+      "truncated": false,
+      "matches": [],
+      "files": 219
+    },
+    {
+      "repository": "keenosmith-del/ignite",
+      "fork": true,
+      "size": 73387,
+      "branch": "master",
+      "revision": "de08e799cfb55a6cf4aa778575d6bad725385453",
+      "truncated": false,
+      "matches": [
+        {
+          "path": "ignite/metrics/metrics_lambda.py",
+          "sha": "0a2c305865fdcb5917e7f805cbd389382f15a346",
+          "size": 8407
+        },
+        {
+          "path": "tests/ignite/metrics/test_metrics_lambda.py",
+          "sha": "bad8ce1d21d0e2565ef4fde02993585af294f3d8",
+          "size": 19474
+        }
+      ],
+      "files": 626
+    },
+    {
+      "repository": "keenosmith-del/index-tts",
+      "fork": true,
+      "size": 37573,
+      "branch": "main",
+      "revision": "ee40fa7d6c6b8a2c7f06105f9f1e65775b74868c",
+      "truncated": false,
+      "matches": [],
+      "files": 417
+    },
+    {
+      "repository": "keenosmith-del/intelligent-manufacturing-qc",
+      "fork": false,
+      "size": 671,
+      "branch": "main",
+      "revision": "3ff1fcc76a7e9af14077b82b8acde229c0e52e01",
+      "truncated": false,
+      "matches": [],
+      "files": 126
+    },
+    {
+      "repository": "keenosmith-del/interactive-tutorials",
+      "fork": true,
+      "size": 56196,
+      "branch": "master",
+      "revision": "b3ef55593e48bdf25e920eaf75f66a6b5e81f675",
+      "truncated": false,
+      "matches": [
+        {
+          "path": "tutorials/learnpython.org/ar/Lambda functions.md",
+          "sha": "96fb1cb75b56888e369d99e28f6122cbd69233de",
+          "size": 1556
+        },
+        {
+          "path": "tutorials/learnpython.org/bg/Lambda functions.md",
+          "sha": "0ede202093706f39cbf7188db1d84b581920129c",
+          "size": 1810
+        },
+        {
+          "path": "tutorials/learnpython.org/cs/Lambda functions.md",
+          "sha": "3392097edeec30700bea681cd3e4894b64d59c68",
+          "size": 1120
+        },
+        {
+          "path": "tutorials/learnpython.org/da/Lambda functions.md",
+          "sha": "3c8d7fc5af7a01986182beac551bc31cb2472cd7",
+          "size": 1183
+        },
+        {
+          "path": "tutorials/learnpython.org/de/Lambda functions.md",
+          "sha": "65dc1bc130a37922311b993fe3361e0f3ebe15c1",
+          "size": 1263
+        },
+        {
+          "path": "tutorials/learnpython.org/el/Lambda functions.md",
+          "sha": "d30184c682a5bbaabb2ef51c1f51688dbb18deb0",
+          "size": 1867
+        },
+        {
+          "path": "tutorials/learnpython.org/en/Lambda functions.md",
+          "sha": "d094792138b73e07649b99a86bf18e2717e5f72f",
+          "size": 1578
+        },
+        {
+          "path": "tutorials/learnpython.org/es/Lambda functions.md",
+          "sha": "201cbc7504dd7aee4e8fac9a2ee11e1772d2460e",
+          "size": 1225
+        },
+        {
+          "path": "tutorials/learnpython.org/fi/Lambda functions.md",
+          "sha": "ab5cf2cf3936fdefc32b63031336d086659f71b7",
+          "size": 1201
+        },
+        {
+          "path": "tutorials/learnpython.org/fr/Lambda functions.md",
+          "sha": "807897530cca52658863b0f2add0b85306bc9c63",
+          "size": 1281
+        },
+        {
+          "path": "tutorials/learnpython.org/he/Lambda functions.md",
+          "sha": "5eb94cdf6c83c1acfb5e1e357853371982d78c09",
+          "size": 1533
+        },
+        {
+          "path": "tutorials/learnpython.org/hi/Lambda functions.md",
+          "sha": "04e372b85c3a6bbc9201c4144c2616e67bb7a643",
+          "size": 2760
+        },
+        {
+          "path": "tutorials/learnpython.org/hu/Lambda functions.md",
+          "sha": "d6e52291de79c111723b402a07f48d44c89838e8",
+          "size": 1314
+        },
+        {
+          "path": "tutorials/learnpython.org/id/Lambda functions.md",
+          "sha": "8b71cbdb0d2c0482f6e1e3972e4c6f222f7457d8",
+          "size": 1855
+        },
+        {
+          "path": "tutorials/learnpython.org/it/Lambda functions.md",
+          "sha": "f2c98b47400c5c86fb12b07430a575d65f788ade",
+          "size": 1265
+        },
+        {
+          "path": "tutorials/learnpython.org/ja/Lambda functions.md",
+          "sha": "e1b4df8b77c6054086ff92a21a318bf3ec106a6a",
+          "size": 1349
+        },
+        {
+          "path": "tutorials/learnpython.org/ko/Lambda functions.md",
+          "sha": "37ca21c5a491ccc35e769041f6d92df46476d6e4",
+          "size": 1341
+        },
+        {
+          "path": "tutorials/learnpython.org/ms/Lambda functions.md",
+          "sha": "1f57af3eae01fd6f721e487a51de26ff944b5c7e",
+          "size": 1232
+        },
+        {
+          "path": "tutorials/learnpython.org/nl/Lambda functions.md",
+          "sha": "751ed6d2a3ae7179f9c085f9b8b12f8b9c964e87",
+          "size": 1077
+        },
+        {
+          "path": "tutorials/learnpython.org/no/Lambda functions.md",
+          "sha": "87b483a98ff79aa5dcac27cfb52d9ac4aed59c5d",
+          "size": 927
+        },
+        {
+          "path": "tutorials/learnpython.org/pl/Lambda functions.md",
+          "sha": "e3ad5c5eb1113d0e75ffcbd02e5e63eecb6b9380",
+          "size": 1239
+        },
+        {
+          "path": "tutorials/learnpython.org/pt/Lambda functions.md",
+          "sha": "369835c6c1338feb8fd55e6e02a7b26c20f64364",
+          "size": 1205
+        },
+        {
+          "path": "tutorials/learnpython.org/ro/Lambda functions.md",
+          "sha": "afca220b2e6ba3edb8d457ab53d7377108ad266d",
+          "size": 1185
+        },
+        {
+          "path": "tutorials/learnpython.org/ru/Lambda functions.md",
+          "sha": "14421beb2f5d8ea732c650721072f115b375ab0d",
+          "size": 1950
+        },
+        {
+          "path": "tutorials/learnpython.org/sv/Lambda functions.md",
+          "sha": "987888cdde8369941fd4a77121baa9d947a567d1",
+          "size": 1228
+        },
+        {
+          "path": "tutorials/learnpython.org/th/Lambda functions.md",
+          "sha": "a4c7ea2cef226ac5d9c8c81eab4233bc9a888f2d",
+          "size": 3102
+        },
+        {
+          "path": "tutorials/learnpython.org/tr/Lambda functions.md",
+          "sha": "3184f024a286f2c71fe8e79faec00fe030ba643e",
+          "size": 1249
+        },
+        {
+          "path": "tutorials/learnpython.org/uk/Lambda functions.md",
+          "sha": "56d439fbd95a9c8d99edca6fa42da93583f8010d",
+          "size": 1919
+        },
+        {
+          "path": "tutorials/learnpython.org/vi/Lambda functions.md",
+          "sha": "40a7ae5986407e0bfc98763783e92ed52d1bbda9",
+          "size": 1337
+        },
+        {
+          "path": "tutorials/learnpython.org/zh/Lambda functions.md",
+          "sha": "4fc16fc305517390ef7a5ffeeb7ad48a9717cdf9",
+          "size": 1114
+        }
+      ],
+      "files": 2368
+    },
+    {
+      "repository": "keenosmith-del/itunes-api",
+      "fork": false,
+      "size": 5463,
+      "branch": "main",
+      "revision": "9be66c18e93dc25181d0c7f28022adcf026ffaff",
+      "truncated": false,
+      "matches": [],
+      "files": 1247
+    },
+    {
+      "repository": "keenosmith-del/java-inheritance",
+      "fork": false,
+      "size": 5,
+      "branch": "main",
+      "revision": "c259d5e5deada13162058bf0bdc71ed1aee50148",
+      "truncated": false,
+      "matches": [],
+      "files": 9
+    },
+    {
+      "repository": "keenosmith-del/javabasics",
+      "fork": false,
+      "size": 4,
+      "branch": "main",
+      "revision": "52a323f34d190c79bc90b1966ae1dc85567bd026",
+      "truncated": false,
+      "matches": [],
+      "files": 6
+    },
+    {
+      "repository": "keenosmith-del/javafiles-io",
+      "fork": false,
+      "size": 6,
+      "branch": "main",
+      "revision": "6195f65a4688d5a6610149c9769890cc3298b383",
+      "truncated": false,
+      "matches": [],
+      "files": 15
+    },
+    {
+      "repository": "keenosmith-del/javamethods",
+      "fork": false,
+      "size": 2,
+      "branch": "main",
+      "revision": "d3422e7264503c3f2a51d9e8e639b91a880b858c",
+      "truncated": false,
+      "matches": [],
+      "files": 2
+    },
+    {
+      "repository": "keenosmith-del/javaOOP",
+      "fork": false,
+      "size": 53,
+      "branch": "main",
+      "revision": "c3a982cce642e3cc77352f2a779e922ee83801b8",
+      "truncated": false,
+      "matches": [],
+      "files": 10
+    },
+    {
+      "repository": "keenosmith-del/javarecursion",
+      "fork": false,
+      "size": 6,
+      "branch": "main",
+      "revision": "971f71967364f972f386aec67bfc8c7d2ede78b2",
+      "truncated": false,
+      "matches": [],
+      "files": 9
+    },
+    {
+      "repository": "keenosmith-del/javarefactoring",
+      "fork": false,
+      "size": 8,
+      "branch": "main",
+      "revision": "454ebca3122a97d0815c11daba155e3aa0c22e91",
+      "truncated": false,
+      "matches": [],
+      "files": 26
+    },
+    {
+      "repository": "keenosmith-del/javasearch",
+      "fork": false,
+      "size": 7,
+      "branch": "main",
+      "revision": "22b6e4a4fa91d193bc0c9a255829a2872b389d1f",
+      "truncated": false,
+      "matches": [],
+      "files": 10
+    },
+    {
+      "repository": "keenosmith-del/kai",
+      "fork": false,
+      "size": 2422,
+      "branch": "main",
+      "revision": "5afd7183daf251d2df195552870783e58f52b1cd",
+      "truncated": false,
+      "matches": [],
+      "files": 138
+    },
+    {
+      "repository": "keenosmith-del/kailor",
+      "fork": false,
+      "size": 295931,
+      "branch": "main",
+      "revision": "b816e3be181493f3f81c8eb5026de018bc5eeaab",
+      "truncated": false,
+      "matches": [],
+      "files": 5617
+    },
+    {
+      "repository": "keenosmith-del/keeno",
+      "fork": false,
+      "size": 23534,
+      "branch": "main",
+      "revision": "c119b57b8b3ebf3dbbef8b50a46ca2ffb5335b8f",
+      "truncated": false,
+      "matches": [],
+      "files": 63
+    },
+    {
+      "repository": "keenosmith-del/keenosmith",
+      "fork": false,
+      "size": 359302,
+      "branch": "main",
+      "revision": "77ce323c2c11aa5c30ed0daef57cc508039135cd",
+      "truncated": false,
+      "matches": [],
+      "files": 354
+    },
+    {
+      "repository": "keenosmith-del/keenosmith-del",
+      "fork": false,
+      "size": 413,
+      "branch": "main",
+      "revision": "27304aaa50f5e1557ed43fade14d1d9013477cb1",
+      "truncated": false,
+      "matches": [],
+      "files": 2
+    },
+    {
+      "repository": "keenosmith-del/Kronos",
+      "fork": true,
+      "size": 9539,
+      "branch": "master",
+      "revision": "67b630e67f6a18c9e9be918d9b4337c960db1e9a",
+      "truncated": false,
+      "matches": [],
+      "files": 107
+    },
+    {
+      "repository": "keenosmith-del/kubernetes",
+      "fork": true,
+      "size": 1433358,
+      "branch": "master",
+      "error": "Tree unavailable"
+    },
+    {
+      "repository": "keenosmith-del/L1T20",
+      "fork": false,
+      "size": 9949,
+      "branch": "main",
+      "revision": "8ffdb2cb564fedd42fe8bba35c72403c7159a50c",
+      "truncated": false,
+      "matches": [],
+      "files": 46
+    },
+    {
+      "repository": "keenosmith-del/L2T13---Event-Planner",
+      "fork": false,
+      "size": 50524,
+      "branch": "main",
+      "revision": "9a5b9bdc148ad33b3d5bebcd8f1d11c9b390ffe6",
+      "truncated": false,
+      "matches": [],
+      "files": 9011
+    },
+    {
+      "repository": "keenosmith-del/L2T14---EVENT-PLANNER",
+      "fork": false,
+      "size": 50951,
+      "branch": "main",
+      "revision": "a2f24b8c30d5d456bd08bf6f31f262d9cc10ac32",
+      "truncated": false,
+      "matches": [],
+      "files": 9681
+    },
+    {
+      "repository": "keenosmith-del/llm-as-a-verifier",
+      "fork": true,
+      "size": 68318,
+      "branch": "main",
+      "revision": "8db8a114355a9d7fdf9a8d1d5c87f6aeebd18770",
+      "truncated": false,
+      "matches": [],
+      "files": 1139
+    },
+    {
+      "repository": "keenosmith-del/LMCache",
+      "fork": true,
+      "size": 51996,
+      "branch": "dev",
+      "revision": "1fca11ed8b919f0bda39c01aaf69801b6aa59fe7",
+      "truncated": false,
+      "matches": [],
+      "files": 2824
+    },
+    {
+      "repository": "keenosmith-del/LongCat-Video",
+      "fork": true,
+      "size": 1366898,
+      "branch": "main",
+      "revision": "6b3f4b8582a8bc3f20f795735f5383716c4ba794",
+      "truncated": false,
+      "matches": [],
+      "files": 69
+    },
+    {
+      "repository": "keenosmith-del/maintenance",
+      "fork": false,
+      "size": 3185,
+      "branch": "main",
+      "revision": "7c2739d30dfeabcfc2a38d1554421c121869ca0d",
+      "truncated": false,
+      "matches": [],
+      "files": 2166
+    },
+    {
+      "repository": "keenosmith-del/matplotlib",
+      "fork": true,
+      "size": 490081,
+      "branch": "main",
+      "revision": "ceb28043419bf7ae585be999eb3986c892a871d1",
+      "truncated": false,
+      "matches": [],
+      "files": 4776
+    },
+    {
+      "repository": "keenosmith-del/megablocks-public",
+      "fork": true,
+      "size": 3930,
+      "branch": "main",
+      "revision": "15634e007ecfff64cf19b4eefccdb5de4c1fe7c9",
+      "truncated": false,
+      "matches": [],
+      "files": 108
+    },
+    {
+      "repository": "keenosmith-del/mem0",
+      "fork": true,
+      "size": 63535,
+      "branch": "main",
+      "revision": "fdfb763d6e5e5509bdb35d4ddc9ca8003f6af009",
+      "truncated": false,
+      "matches": [],
+      "files": 2083
+    },
+    {
+      "repository": "keenosmith-del/microsoft-ai-cloud-architect-finops-optimization",
+      "fork": false,
+      "size": 17,
+      "branch": "main",
+      "revision": "9b7ae1e60500301e7f57532141e0c8b9302fe404",
+      "truncated": false,
+      "matches": [],
+      "files": 5
+    },
+    {
+      "repository": "keenosmith-del/microsoft-ai-powered-software-engineering-devops",
+      "fork": false,
+      "size": 893,
+      "branch": "main",
+      "revision": "0b75c8a7b57ab0ce3210fb084f5a3b051a27f67d",
+      "truncated": false,
+      "matches": [],
+      "files": 241
+    },
+    {
+      "repository": "keenosmith-del/microsoft-autonomous-cyber-threat-investigation-response",
+      "fork": false,
+      "size": 0,
+      "branch": "main",
+      "revision": "3bb27f08d69d82eacce91e3b0c0deaf1b27fb223",
+      "truncated": false,
+      "matches": [],
+      "files": 2
+    },
+    {
+      "repository": "keenosmith-del/microsoft-devops-incident-intelligence",
+      "fork": false,
+      "size": 17,
+      "branch": "main",
+      "revision": "0c5f070dc997d31eb3ebf867f0a181a424767200",
+      "truncated": false,
+      "matches": [],
+      "files": 83
+    },
+    {
+      "repository": "keenosmith-del/MinerU",
+      "fork": true,
+      "size": 176357,
+      "branch": "master",
+      "revision": "4fe4bde114a23ee5dd637eae99b767f4669bf58c",
+      "truncated": false,
+      "matches": [
+        {
+          "path": "mineru.template.json",
+          "sha": "a933e799fe5797e4bd594970779cf576a353be2f",
+          "size": 747
+        }
+      ],
+      "files": 511
+    },
+    {
+      "repository": "keenosmith-del/mistral-common",
+      "fork": true,
+      "size": 12669,
+      "branch": "main",
+      "revision": "208f15cf102c180363a489e96efc7b3bb8e5115b",
+      "truncated": false,
+      "matches": [],
+      "files": 269
+    },
+    {
+      "repository": "keenosmith-del/mistral-finetune",
+      "fork": true,
+      "size": 184,
+      "branch": "main",
+      "revision": "0eb00045b34e37011b57aae85d87f546b332c2f8",
+      "truncated": false,
+      "matches": [],
+      "files": 58
+    },
+    {
+      "repository": "keenosmith-del/mistral-inference",
+      "fork": true,
+      "size": 569,
+      "branch": "main",
+      "revision": "9eaeb91c17450e09021b6065a1d5cc69876507c8",
+      "truncated": false,
+      "matches": [],
+      "files": 35
+    },
+    {
+      "repository": "keenosmith-del/mistral-vibe",
+      "fork": true,
+      "size": 7256,
+      "branch": "main",
+      "revision": "50d99cf79b55ba92e43fa1ffdb0fc9c7bee83533",
+      "truncated": false,
+      "matches": [],
+      "files": 1597
+    },
+    {
+      "repository": "keenosmith-del/music-api",
+      "fork": false,
+      "size": 3473,
+      "branch": "main",
+      "revision": "4ef9fd92fd1854b46dc324a3f9f4b58631982f86",
+      "truncated": false,
+      "matches": [],
+      "files": 172
+    },
+    {
+      "repository": "keenosmith-del/mxnet",
+      "fork": true,
+      "size": 101275,
+      "branch": "master",
+      "revision": "b84609d3fc73d20929c114eab95faaa56e6c5ede",
+      "truncated": false,
+      "matches": [],
+      "files": 3349
+    },
+    {
+      "repository": "keenosmith-del/n8n",
+      "fork": true,
+      "size": 615490,
+      "branch": "master",
+      "error": "Tree unavailable"
+    },
+    {
+      "repository": "keenosmith-del/n8n-opsflow-business-orch",
+      "fork": false,
+      "size": 0,
+      "branch": "main",
+      "error": "GitHub API error 409: {\"message\":\"Git Repository is empty.\",\"documentation_url\":\"https://docs.github.com/rest/git/trees#get-a-tree\",\"status\":\"409\"}"
+    },
+    {
+      "repository": "keenosmith-del/n8n-webhooks-api-orch",
+      "fork": false,
+      "size": 0,
+      "branch": "main",
+      "error": "GitHub API error 409: {\"message\":\"Git Repository is empty.\",\"documentation_url\":\"https://docs.github.com/rest/git/trees#get-a-tree\",\"status\":\"409\"}"
+    },
+    {
+      "repository": "keenosmith-del/n8n-workflow-integration-opsflow",
+      "fork": false,
+      "size": 111,
+      "branch": "main",
+      "revision": "031af48f8676d8c2a4adb28bac09ea5850145152",
+      "truncated": false,
+      "matches": [],
+      "files": 73
+    },
+    {
+      "repository": "keenosmith-del/nats.go",
+      "fork": true,
+      "size": 5625,
+      "branch": "main",
+      "revision": "8db2025adfe5964dc264f16fdf4a405e553a57ea",
+      "truncated": false,
+      "matches": [],
+      "files": 352
+    },
+    {
+      "repository": "keenosmith-del/numpyro",
+      "fork": true,
+      "size": 107504,
+      "branch": "master",
+      "revision": "0059d3afb5bdda268ee2e5039646fe424fd960b8",
+      "truncated": false,
+      "matches": [],
+      "files": 406
+    },
+    {
+      "repository": "keenosmith-del/ollama-private-business-intelligence",
+      "fork": false,
+      "size": 151,
+      "branch": "main",
+      "revision": "189b77db1d3468093de5fab3ccc4a7dc837fda04",
+      "truncated": false,
+      "matches": [],
+      "files": 95
+    },
+    {
+      "repository": "keenosmith-del/onnxruntime",
+      "fork": true,
+      "size": 1563341,
+      "branch": "main",
+      "revision": "7e0f9b0117f31419231959f02b22508ea2d9fe63",
+      "truncated": false,
+      "matches": [],
+      "files": 12260
+    },
+    {
+      "repository": "keenosmith-del/OpenHands",
+      "fork": true,
+      "size": 413389,
+      "branch": "main",
+      "revision": "b50c60c6728e2ce123ccb6e125bee3eb88ac87d1",
+      "truncated": false,
+      "matches": [],
+      "files": 2450
+    },
+    {
+      "repository": "keenosmith-del/PaddleOCR",
+      "fork": true,
+      "size": 1964014,
+      "branch": "main",
+      "revision": "2661c7c0ef5c613e8f93c6e93b2e052399f0f854",
+      "truncated": false,
+      "matches": [],
+      "files": 3007
+    },
+    {
+      "repository": "keenosmith-del/personal-productivity-desktop",
+      "fork": false,
+      "size": 2888,
+      "branch": "main",
+      "revision": "cc3ab000864e74f81bd5e6fb0ba4146aced3dcf1",
+      "truncated": false,
+      "matches": [],
+      "files": 177
+    },
+    {
+      "repository": "keenosmith-del/php-the-right-way",
+      "fork": true,
+      "size": 1841,
+      "branch": "gh-pages",
+      "revision": "7cb67b6dc67a945b5ef782790267901a485273fd",
+      "truncated": false,
+      "matches": [],
+      "files": 145
+    },
+    {
+      "repository": "keenosmith-del/playtorch",
+      "fork": true,
+      "size": 186345,
+      "branch": "main",
+      "revision": "8efaffbe1c5b456dc68f422d01ac958eeb7456d4",
+      "truncated": false,
+      "matches": [],
+      "files": 1790
+    },
+    {
+      "repository": "keenosmith-del/pocket-tts",
+      "fork": true,
+      "size": 1352,
+      "branch": "main",
+      "revision": "a61b7878bb71e4ade8a651be6e7e9f21317e9157",
+      "truncated": false,
+      "matches": [],
+      "files": 142
+    },
+    {
+      "repository": "keenosmith-del/pokedex",
+      "fork": true,
+      "size": 22445,
+      "branch": "master",
+      "revision": "cc483e1877f22b8c19ac27ec0ff5fafd09c5cd5b",
+      "truncated": false,
+      "matches": [],
+      "files": 268
+    },
+    {
+      "repository": "keenosmith-del/portfolio",
+      "fork": false,
+      "size": 3626,
+      "branch": "main",
+      "revision": "9ada9bfcdcf8e39d0224d487e94baf1f553209d1",
+      "truncated": false,
+      "matches": [],
+      "files": 28
+    },
+    {
+      "repository": "keenosmith-del/prime-agent",
+      "fork": true,
+      "size": 49366,
+      "branch": "main",
+      "revision": "bc0fa7606abb3b7af0f765319518d255e6ae553d",
+      "truncated": false,
+      "matches": [],
+      "files": 1357
+    },
+    {
+      "repository": "keenosmith-del/pyro",
+      "fork": true,
+      "size": 96109,
+      "branch": "dev",
+      "revision": "1af296c78b8e150b3b7da4ba2f04c45617ba753b",
+      "truncated": false,
+      "matches": [],
+      "files": 983
+    },
+    {
+      "repository": "keenosmith-del/PySyft",
+      "fork": true,
+      "size": 782359,
+      "branch": "dev",
+      "revision": "89c8e49616d90cb864812ad64c3b6a4803a4703e",
+      "truncated": false,
+      "matches": [],
+      "files": 863
+    },
+    {
+      "repository": "keenosmith-del/Python",
+      "fork": false,
+      "size": 44,
+      "branch": "main",
+      "revision": "a4e4a6ceac06d852e21f5c7c6d4026bf8ec93359",
+      "truncated": false,
+      "matches": [],
+      "files": 168
+    },
+    {
+      "repository": "keenosmith-del/python-projects-for-beginners",
+      "fork": true,
+      "size": 9,
+      "branch": "main",
+      "revision": "28285f3b164ba7f52bf5c111f349cdd9eb928ddd",
+      "truncated": false,
+      "matches": [],
+      "files": 19
+    },
+    {
+      "repository": "keenosmith-del/Python_Repos",
+      "fork": false,
+      "size": 2,
+      "branch": "main",
+      "revision": "fc9360e32735e7859b09f4dfcdc06fb4add38636",
+      "truncated": false,
+      "matches": [],
+      "files": 1
+    },
+    {
+      "repository": "keenosmith-del/pytorch",
+      "fork": true,
+      "size": 1506038,
+      "branch": "main",
+      "error": "Tree unavailable"
+    },
+    {
+      "repository": "keenosmith-del/ray",
+      "fork": true,
+      "size": 786166,
+      "branch": "master",
+      "revision": "73ac18d5732460943a8a0c8fa45b2cfb5db2be2e",
+      "truncated": false,
+      "matches": [
+        {
+          "path": "doc/azure/azure-ray-template.json",
+          "sha": "b21f50ca340d85bd560969aa240a4fb319f43a2e",
+          "size": 22666
+        },
+        {
+          "path": "docker/retag-lambda/README.md",
+          "sha": "77b8a7ba4155591dda42e7a8fdeb162adf49f9db",
+          "size": 435
+        },
+        {
+          "path": "docker/retag-lambda/cuda_versions.txt",
+          "sha": "4aa92156b654ab2db719c3e53a915832c08d9f20",
+          "size": 42
+        },
+        {
+          "path": "docker/retag-lambda/lambda_function.py",
+          "sha": "b8fe19b8a121f7ba429b651fea7b368e2d4df24f",
+          "size": 3775
+        },
+        {
+          "path": "docker/retag-lambda/python_versions.txt",
+          "sha": "c541f4cd082cf692a1485885ed4cf822bab52afb",
+          "size": 22
+        },
+        {
+          "path": "java/runtime/src/main/java/io/ray/runtime/util/LambdaUtils.java",
+          "sha": "a36d7d9fef441e979b1593ba0dd844b874b68add",
+          "size": 823
+        },
+        {
+          "path": "python/ray/autoscaler/_private/_azure/azure-config-template.json",
+          "sha": "5b18cbea6fd5305edce0d74a494bf9f4ef4377d7",
+          "size": 5200
+        },
+        {
+          "path": "python/ray/autoscaler/_private/_azure/azure-vm-template.json",
+          "sha": "7ad98c3dcd66b7a0cd0c6922502ecc6647b6ee82",
+          "size": 12146
+        },
+        {
+          "path": "python/ray/tests/kuberay/test_files/ray-cluster.autoscaler-template.yaml",
+          "sha": "ef4c8a427a9b12fdcabbc90468564c7ec1875b4f",
+          "size": 2149
+        },
+        {
+          "path": "python/ray/tests/kuberay/test_files/ray-cluster.autoscaler-v2-template.yaml",
+          "sha": "ebf8d8d0d4e61fe0ac48259ef5a954492873aeba",
+          "size": 2377
+        },
+        {
+          "path": "release/k8s_tests/ray_v1alpha1_rayservice_template.yaml",
+          "sha": "7bed4fc1066cf065a1b6be5ef9a0aa963ee8e329",
+          "size": 10133
+        },
+        {
+          "path": "release/nightly_tests/chaos_test/compute_template.yaml",
+          "sha": "1b650e2ac9c9438b8e31729fe7ac16b0b0039703",
+          "size": 359
+        },
+        {
+          "path": "release/nightly_tests/dask_on_ray/dask_on_ray_sort_compute_template.yaml",
+          "sha": "b3dc8cc8be728db90048307f357c6fe8f59ee6e5",
+          "size": 264
+        },
+        {
+          "path": "rllib/connectors/action/lambdas.py",
+          "sha": "8501e66ba3c295a1dae6a2bb8acc1943f21a3a3a",
+          "size": 2317
+        },
+        {
+          "path": "rllib/connectors/agent/lambdas.py",
+          "sha": "643f5e4ec351b9ea21f0d322f53f6d5b4e0bbd48",
+          "size": 2607
+        },
+        {
+          "path": "rllib/utils/lambda_defaultdict.py",
+          "sha": "ce4653961c565304570da87eea9066dc366643e0",
+          "size": 1998
+        }
+      ],
+      "files": 11944
+    },
+    {
+      "repository": "keenosmith-del/real-time-logistics-and-fleet-ops",
+      "fork": false,
+      "size": 164,
+      "branch": "main",
+      "revision": "a96161080f9500a105f73c0f7531f9a5f086e45a",
+      "truncated": false,
+      "matches": [],
+      "files": 65
+    },
+    {
+      "repository": "keenosmith-del/rust",
+      "fork": true,
+      "size": 817485,
+      "branch": "main",
+      "error": "Tree unavailable"
+    },
+    {
+      "repository": "keenosmith-del/safetensors",
+      "fork": true,
+      "size": 2994,
+      "branch": "main",
+      "revision": "6eb4dc9a28ebce297606e0f4836bbf28839cacef",
+      "truncated": false,
+      "matches": [],
+      "files": 138
+    },
+    {
+      "repository": "keenosmith-del/scikit-learn",
+      "fork": true,
+      "size": 186818,
+      "branch": "main",
+      "revision": "ae50210b666257acef1e227f0f80000826c0e817",
+      "truncated": false,
+      "matches": [],
+      "files": 2060
+    },
+    {
+      "repository": "keenosmith-del/SenseNova-U1",
+      "fork": true,
+      "size": 754404,
+      "branch": "main",
+      "revision": "022fa663d3f1a3c6822ec0b534e336a991bb7b0b",
+      "truncated": false,
+      "matches": [],
+      "files": 731
+    },
+    {
+      "repository": "keenosmith-del/SkillOpt",
+      "fork": true,
+      "size": 24686,
+      "branch": "main",
+      "revision": "eb8c1e7bcbccdd80f9d422f12018fcd8e84ce19a",
+      "truncated": false,
+      "matches": [
+        {
+          "path": "skillopt/envs/_template/config_template.yaml",
+          "sha": "0778738b2b440bd54462001421724d3f96e8a580",
+          "size": 2997
+        }
+      ],
+      "files": 547
+    },
+    {
+      "repository": "keenosmith-del/skorch",
+      "fork": true,
+      "size": 12688,
+      "branch": "master",
+      "revision": "19e8eea47d0e64a9ceae37020ab90f6f98dcb39f",
+      "truncated": false,
+      "matches": [],
+      "files": 202
+    },
+    {
+      "repository": "keenosmith-del/software-eng-model-answers",
+      "fork": true,
+      "size": 13415,
+      "branch": "main",
+      "revision": "a73f9438de5c07f0e64d73237fc647140f93e700",
+      "truncated": false,
+      "matches": [],
+      "files": 119
+    },
+    {
+      "repository": "keenosmith-del/sonos",
+      "fork": false,
+      "size": 24447,
+      "branch": "main",
+      "revision": "ceba3cf4d15545aa2313ba6a982217371c59ed96",
+      "truncated": false,
+      "matches": [],
+      "files": 82
+    },
+    {
+      "repository": "keenosmith-del/sql-basics",
+      "fork": false,
+      "size": 2,
+      "branch": "main",
+      "revision": "7ee564cf8483cc6e1aff78e0930d9e2082e47ddb",
+      "truncated": false,
+      "matches": [],
+      "files": 2
+    },
+    {
+      "repository": "keenosmith-del/sre-chaos-engineering",
+      "fork": false,
+      "size": 97,
+      "branch": "main",
+      "revision": "dec5fc7b1fc6d271a3ab89e7e70aa25756c817c3",
+      "truncated": false,
+      "matches": [],
+      "files": 111
+    },
+    {
+      "repository": "keenosmith-del/SynapseML",
+      "fork": true,
+      "size": 183909,
+      "branch": "master",
+      "revision": "7c72c49f6fd7f8064ea19662add399d222545b85",
+      "truncated": false,
+      "matches": [
+        {
+          "path": ".github/ISSUE_TEMPLATE/bug_report_template.yaml",
+          "sha": "2dfb6a8655d7416d3e160b00b52b8f80a90b1609",
+          "size": 4536
+        },
+        {
+          "path": "core/src/main/scala/com/microsoft/azure/synapse/ml/stages/Lambda.scala",
+          "sha": "8be7ba1700ab9687c356ca808fc1fba7d5c80328",
+          "size": 2647
+        },
+        {
+          "path": "core/src/test/scala/com/microsoft/azure/synapse/ml/stages/LambdaSuite.scala",
+          "sha": "5963d96f28fdc7996a5910ed9288399ac6c86e56",
+          "size": 1207
+        }
+      ],
+      "files": 4776
+    },
+    {
+      "repository": "keenosmith-del/task-management",
+      "fork": false,
+      "size": 3954,
+      "branch": "main",
+      "revision": "505c268454099278f96380ededa2367febb2da86",
+      "truncated": false,
+      "matches": [],
+      "files": 2276
+    },
+    {
+      "repository": "keenosmith-del/telecomms-billing-management",
+      "fork": false,
+      "size": 129,
+      "branch": "main",
+      "revision": "3985c0f0650b85fe7ae1b725727a65dea4e22373",
+      "truncated": false,
+      "matches": [],
+      "files": 94
+    },
+    {
+      "repository": "keenosmith-del/TensorRT",
+      "fork": true,
+      "size": 145166,
+      "branch": "main",
+      "revision": "c93b7d4893184af4882f9f1862e13a5c64b8677d",
+      "truncated": false,
+      "matches": [],
+      "files": 2321
+    },
+    {
+      "repository": "keenosmith-del/Theano",
+      "fork": true,
+      "size": 68115,
+      "branch": "master",
+      "revision": "7505f23edd66fcdbbe04953f53c650b4d7cec4dd",
+      "truncated": false,
+      "matches": [],
+      "files": 925
+    },
+    {
+      "repository": "keenosmith-del/tiktoken",
+      "fork": true,
+      "size": 139,
+      "branch": "main",
+      "revision": "4e71bbe0c078468e00fefbf94b39849389f346e5",
+      "truncated": false,
+      "matches": [],
+      "files": 37
+    },
+    {
+      "repository": "keenosmith-del/torchdrug",
+      "fork": true,
+      "size": 2754,
+      "branch": "master",
+      "revision": "6066fbd82360abb5f270cba1eca560af01b8cc90",
+      "truncated": false,
+      "matches": [],
+      "files": 362
+    },
+    {
+      "repository": "keenosmith-del/TradingAgents",
+      "fork": true,
+      "size": 5233,
+      "branch": "main",
+      "revision": "a33fd4c0f134485a43553a2c23a63cb14adbd88f",
+      "truncated": false,
+      "matches": [],
+      "files": 179
+    },
+    {
+      "repository": "keenosmith-del/transformers",
+      "fork": true,
+      "size": 506965,
+      "branch": "main",
+      "revision": "83d024e1bfed0d425d20bcde2b46a56b2333906e",
+      "truncated": false,
+      "matches": [],
+      "files": 7689
+    },
+    {
+      "repository": "keenosmith-del/TypeScript-Website",
+      "fork": true,
+      "size": 117581,
+      "branch": "v2",
+      "revision": "9ec526c794799dbbd1de61b1586e1158d1c51867",
+      "truncated": false,
+      "matches": [
+        {
+          "path": ".vscode/settings.template.json",
+          "sha": "f3027adde42093a42ccf9e8ef3f07120f5e9b51b",
+          "size": 239
+        }
+      ],
+      "files": 1229
+    },
+    {
+      "repository": "keenosmith-del/ultralytics",
+      "fork": true,
+      "size": 64188,
+      "branch": "main",
+      "revision": "c9ecb4218b81b0e2745145ab5edc2d9cb65c4124",
+      "truncated": false,
+      "matches": [],
+      "files": 1172
+    },
+    {
+      "repository": "keenosmith-del/Unlimited-OCR",
+      "fork": true,
+      "size": 80176,
+      "branch": "main",
+      "revision": "d49ff64afffc1f47ab563dc1c589bc2f78808fa4",
+      "truncated": false,
+      "matches": [],
+      "files": 12
+    },
+    {
+      "repository": "keenosmith-del/VibeVoice",
+      "fork": true,
+      "size": 215920,
+      "branch": "main",
+      "revision": "94da20d98b2fa7688e9cbfaf7692ddb4954f7600",
+      "truncated": false,
+      "matches": [],
+      "files": 121
+    },
+    {
+      "repository": "keenosmith-del/vllm",
+      "fork": true,
+      "size": 268534,
+      "branch": "main",
+      "revision": "6ec92bcbc8ef9af25cb4834ba3d922115792fbeb",
+      "truncated": false,
+      "matches": [],
+      "files": 7611
+    },
+    {
+      "repository": "keenosmith-del/webdev-model-answers",
+      "fork": true,
+      "size": 32157,
+      "branch": "main",
+      "revision": "3d6373aa696741520dc62ca6ef985207f383fda2",
+      "truncated": false,
+      "matches": [],
+      "files": 573
+    },
+    {
+      "repository": "Connected private curriculum repository A",
+      "revision": "1dc53179cd840733dd8e195bc6e23069d8daf1e7",
+      "truncated": false,
+      "matches": [],
+      "files": 1588
+    },
+    {
+      "repository": "Connected private curriculum repository B",
+      "revision": "02397920a3ab49c6ca2a5ff34af3e899c3e3d80c",
+      "truncated": false,
+      "matches": [],
+      "files": 19
+    }
+  ]
+}

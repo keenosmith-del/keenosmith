@@ -4,9 +4,13 @@ import {
   skillGroups,
   skillRegistry,
   canonicalProjects,
+  exactToolRecords,
+  professionalSkillRecords,
 } from "./knowledge.js";
 import { contains } from "./interpret.js";
 export function relatedSkills(q) {
+  if (q.unmatchedTool) return [];
+  if (q.entities.length && !q.expansion?.groups.length) return q.entities;
   if (q.intent === "role")
     return [
       ...new Set([
@@ -80,6 +84,7 @@ export function retrieve(q, context = {}) {
       seen.add(p.canonicalId);
       return true;
     });
+  if (q.unmatchedTool) selected = [];
   if (q.more && context.projectIds?.length) {
     const others = selected.filter((p) => !context.projectIds.includes(p.id));
     if (others.length) selected = others;
@@ -142,6 +147,8 @@ export function evidence(skill) {
         ["portfolio-skill", "cv-listing"].includes(e.type),
       ),
   );
+  const professional = professionalSkillRecords.filter(r => r.skills.includes(skill));
+  const declared = exactToolRecords[skill]?.status === "candidate-declared experience";
   const band =
     used.length >= 4
       ? 4
@@ -149,20 +156,21 @@ export function evidence(skill) {
         ? 3
         : used.length === 1
           ? 2
-          : learning.length || listed
+          : learning.length || listed || professional.length || declared
             ? 1
             : 0;
   const result = {
     skill,
     band,
-    label: [
-      "Not enough evidence to assess",
-      "Learning or limited evidence",
-      "Some demonstrated evidence",
-      "Substantial demonstrated evidence",
-      "Extensive demonstrated evidence",
-    ][band],
-    detail: `${used.length} implemented project${used.length === 1 ? "" : "s"}; ${learning.length} supporting learning credential${learning.length === 1 ? "" : "s"}. Planned projects excluded. Source/configuration support does not confirm live deployment.`,
+    label: used.length ? [
+      'No matching record', 'Listed familiarity', 'Some demonstrated evidence',
+      'Substantial demonstrated evidence', 'Extensive demonstrated evidence',
+    ][band] : professional.length ? 'Documented professional usage' : declared ? 'Candidate-declared experience' : learning.length ? 'Training or coursework' : listed ? 'Listed familiarity' : canonicalProjects.some(p => !p.demonstrated && p.technologies.includes(skill)) ? 'Planned implementation' : 'No matching record',
+    detail: `${used.length} implemented project${used.length === 1 ? "" : "s"}; ${learning.length} supporting learning credential${learning.length === 1 ? "" : "s"}${professional.length ? `; professional usage at ${[...new Set(professional.map(r => r.role.employer))].join(', ')}` : ''}${declared ? '; candidate-declared experience, implementation source unresolved' : ''}.`,
+    professional,
+    declared,
+    learning,
+    planned: canonicalProjects.filter(p => !p.demonstrated && p.technologies.includes(skill)),
   };
   evidenceIndex.set(skill, result);
   return result;

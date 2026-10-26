@@ -55,6 +55,9 @@ const indexed = (item) => ({
   ),
 });
 const detailRoutes = [
+  "/projects/intelligence-manufacturing-llmops",
+  "/projects/enterprise-ai-mlops",
+  "/projects/eventops-intelligence",
   "/projects/microsoft-devops",
   "/projects/banking-risk",
   "/projects/gcp-retail",
@@ -146,6 +149,10 @@ export const skillIndex = skillRegistry.map((s, i) => {
     ...s,
     assessment,
     projects,
+    professional: assessment.professional,
+    learning: assessment.learning,
+    declared: assessment.declared,
+    planned: assessment.planned,
     presentation: skillPresentation({ assessment, projects }, i),
     technologies: [s.name],
     aliases: taxonomy
@@ -185,15 +192,15 @@ const credentialRecords = [
     }),
   ),
   // Programme certificates already represent these two shared education entries.
-  ...education.slice(2).map((description, i) =>
+  ...education.map((description, i) =>
     indexed({
       id: `education-${i}`,
       name: description.split(": ")[0],
       issuer: description.split(": ")[1]?.split(",")[0],
       description,
       type: "Education",
-      status: i === 0 ? "Computer Science studies" : "Listed education",
-      date: i === 0 ? "2017 to 2022" : "2010 to 2015",
+      status: "Current CV education record",
+      date: description.split("|")[1]?.trim() || "",
       categories: ["languages"],
       technologies: ["Computer Science", "Software Engineering"],
     }),

@@ -1,46 +1,131 @@
 {
   "key": "ai",
   "label": "AI Engineer",
-  "pdf": "/Keeno_Smith_AI_Engineering_CV.pdf",
+  "pdf": "/Keeno-Smith-CV-ATS-AI-Engineer-2026.pdf",
   "downloadFilename": "Keeno-Smith-AI-Engineer-CV.pdf",
-  "sourceSha256": "d6e48e107f04646964475b93d8aaedf821c2ce6fbd94bf6a8aa8d9f3182a5725",
-  "headline": "AI Software Engineer | Agentic AI and Intelligent Automation",
-  "emphasis": "Python · AI Agents · API Integration · Workflow Automation · Reliable AI Systems",
+  "sourceSha256": "eedc7ce6340bfcdbb378458b7acc0b32953a3a9c77bc698a2cd1fdcefba17943",
+  "headline": "AI Engineer | Agentic AI and Intelligent Automation",
+  "emphasis": "Python · AI Agents · RAG · LLMOps · Workflow Automation · API Integration",
   "summary": [
-    "AI Software Engineer specialising in agentic systems, intelligent automation and API-integrated applications. Combine Python and JavaScript/TypeScript engineering with multi-agent orchestration, tool calling, retrieval-augmented generation, document processing, structured outputs and human-in-the-loop workflows to connect AI capabilities with practical business processes.",
-    "Experience includes AI model training and evaluation, independent software delivery and business technology consulting. Design the services surrounding AI: APIs, webhooks, persistent state, authentication, asynchronous processing, evaluation and observability. Focus on dependable execution through exception handling, retries, bounded permissions and human review, while translating operational requirements into technical solutions and explaining limitations clearly."
+    "AI Engineer and Full-Stack Software Engineer with 6+ years of software and digital engineering experience, specialising in agentic AI, intelligent automation and API-integrated business applications. Build Python and TypeScript systems using LLMs, tool calling, retrieval-augmented generation (RAG), embeddings, structured outputs, workflow orchestration and human-in-the-loop decision support.",
+    "Experience spans AI application engineering, business process assessment, model training and evaluation, and production-oriented software delivery. Engineer the services around AI - FastAPI/REST services, secure integrations, persistent state, asynchronous jobs, prompt evaluation, auditability and observability - with emphasis on reliability, grounded responses and controlled execution."
   ],
-  "projectsIntro": "Independent portfolio projects demonstrating AI engineering, business integration and automation reliability.",
+  "skills": [
+    {
+      "label": "AI engineering",
+      "text": "AI agents, LangGraph, multi-agent orchestration, LLM integration, function/tool calling, RAG, embeddings, vector search, prompt/context engineering, structured outputs, model and prompt evaluation"
+    },
+    {
+      "label": "Languages and services",
+      "text": "Python (3+ years), JavaScript, TypeScript, SQL, FastAPI, Node.js, Express, REST APIs, OpenAPI, React, ASP.NET Core"
+    },
+    {
+      "label": "Automation and architecture",
+      "text": "n8n, workflow orchestration, webhooks, APIs, RabbitMQ, Azure Service Bus, asynchronous workers, event-driven systems, idempotency, retries, human approval"
+    },
+    {
+      "label": "AI platforms and tooling",
+      "text": "Microsoft Foundry, Azure OpenAI, Gemini, Ollama, Hugging Face Transformers, Claude, DeepSeek, Amazon Bedrock, Vertex AI, PyTorch"
+    },
+    {
+      "label": "Data and security",
+      "text": "PostgreSQL/pgvector, MongoDB, Redis, Prisma, embeddings, SQL analytics, authentication, RBAC, IAM, least privilege, audit trails"
+    },
+    {
+      "label": "DevOps and reliability",
+      "text": "Docker, Git, GitHub Actions, CI/CD, OpenTelemetry, Prometheus, Grafana, logging, integration tests, fault handling, Azure, AWS, Google Cloud"
+    }
+  ],
+  "experience": [
+    {
+      "title": "Python and Full-Stack Engineer in AI Training and Evaluation",
+      "employer": "Turing / OpenTrain AI",
+      "dates": "February 2026 – Present",
+      "paragraphs": [
+        "Contribute Python and JavaScript/TypeScript engineering to AI training and evaluation focused on coding quality, reasoning accuracy, technical correctness and reliable model responses."
+      ],
+      "bullets": [
+        "Develop and review programming solutions; verify correctness, test coverage, edge cases, readability and maintainability across Python and TypeScript.",
+        "Evaluate and rank model responses against defined criteria, documenting reasoning gaps, implementation defects, security concerns and reproducibility.",
+        "Prepare task-specific examples and structured human feedback for supervised fine-tuning (SFT) and reinforcement learning from human feedback (RLHF)."
+      ]
+    },
+    {
+      "title": "AI Engineer",
+      "employer": "kailor",
+      "dates": "February 2025 – Present",
+      "paragraphs": [
+        "Design and deliver AI-assisted applications, agent workflows and automation solutions that integrate language models with business systems, from process assessment to controlled implementation."
+      ],
+      "bullets": [
+        "Design AI agents and tool-using workflows with Python, TypeScript, retrieval, REST APIs and structured LLM outputs.",
+        "Build AI-assisted enquiry, administration and follow-up applications using persistent state, business rules and API integrations.",
+        "Assess manual processes and integration gaps; scope AI, conventional software or third-party automation to fit business needs.",
+        "Implement authentication, permissions, retries, exception handling, audit trails and human approval for sensitive actions.",
+        "Test model outputs and workflow reliability; document limitations and implementation trade-offs."
+      ]
+    },
+    {
+      "title": "Full-Stack Software Engineer & AI Publisher",
+      "employer": "kailor",
+      "dates": "June 2022 – January 2025",
+      "paragraphs": [
+        "Engineered full-stack web applications and digital publishing workflows, including interfaces, backend services, data handling, content operations and integrated business tools."
+      ],
+      "bullets": [
+        "Developed React/JavaScript and Node.js features, REST APIs, authentication, persistent data models and end-to-end application state.",
+        "Built and maintained digital publishing and content workflows, integrating external services and automating repetitive operational tasks.",
+        "Improved reliability through integration testing, defect resolution, workflow refinements and stakeholder-led iteration."
+      ]
+    },
+    {
+      "title": "Technical and Digital Operations Lead and Co-Founder",
+      "employer": "Firstdaes Entertainment",
+      "dates": "January 2020 – June 2022",
+      "paragraphs": [
+        "Co-founded an entertainment business and led its digital systems, workflow design and technology-enabled operations."
+      ],
+      "bullets": [
+        "Translated operational needs into technical requirements; managed implementation, testing and troubleshooting of digital services.",
+        "Integrated communications, marketing and analytics tooling; used performance data and operational feedback to refine processes."
+      ]
+    },
+    {
+      "title": "Contract Specialist in Technical Content and Documentation",
+      "employer": "3Play Media",
+      "dates": "February 2016 – January 2020",
+      "paragraphs": [],
+      "bullets": [
+        "Reviewed, transcribed and edited specialist material covering software, cloud, networking and cybersecurity, preserving technical terminology and accuracy.",
+        "Resolved ambiguous content and maintained quality and delivery standards across assignments for enterprise technology subject matter."
+      ]
+    }
+  ],
+  "projectsIntro": "Independent engineering projects demonstrating agentic AI, LLMOps, retrieval systems and reliable automation.",
   "projects": [
     {
-      "title": "Microsoft Azure DevOps Software Engineering Platform",
-      "technologies": "Microsoft Foundry · Azure · JavaScript · APIs · Docker · MongoDB · Multi-agent orchestration",
-      "description": "Designed a multi-agent engineering platform for repository analysis, application diagnostics and incident investigation. Connects GitHub, source code, documentation and operational evidence to support structured findings and remediation planning. Demonstrates tool-augmented reasoning, API integration, evidence grounding, bounded permissions and human-in-the-loop execution.",
+      "title": "Microsoft AI-Powered Software Engineering & DevOps Platform",
+      "technologies": "Microsoft Foundry · Python/FastAPI · TypeScript/Express · Azure · GitHub APIs · MongoDB · AI agents",
+      "description": "Built a three-agent engineering operations workflow for incident investigation, evidence review and remediation planning. Integrates GitHub and scoped Azure telemetry, persists investigation runs and cited evidence, and separates AI recommendations from human-approved changes. Includes signed webhook intake, audit history and recovery verification.",
       "repository": "https://github.com/keenosmith-del/microsoft-ai-powered-software-engineering-devops"
     },
     {
-      "title": "n8n Enterprise Workflow and Integration OpsFlow Platform",
-      "technologies": "n8n · React / TypeScript · Node.js · PostgreSQL · REST APIs · Webhooks · Docker",
-      "description": "Designed procurement workflows spanning request submission, budget validation, supplier quotations, manager approval and purchase-order generation. Uses n8n for orchestration while the application owns business state, permissions and audit history. Covers asynchronous integration, approval pauses, safe retries, exception handling and operational visibility.",
-      "repository": "https://github.com/keenosmith-del/n8n-workflow-integration-opsflow"
+      "title": "EventOps Intelligence — Agentic AI and RAG Workspace",
+      "technologies": "Python · FastAPI · LangGraph · Gemini · RAG · PostgreSQL · n8n · React/TypeScript",
+      "description": "Engineered an event-operations application combining knowledge ingestion, evidence-grounded retrieval and an attendee-verification agent. Implemented graph checkpoints, tool boundaries, structured extraction, persisted runs, discrepancy review and verified-only export. Local fixture-mode workflows and tests are validated; live external- provider integrations remain configuration-dependent.",
+      "repository": "https://github.com/keenosmith-del/eventops-intelligence-v.02"
     },
     {
-      "title": "Claude AI Procurement and Contract Intelligence Platform",
-      "technologies": "Anthropic Claude · Document processing · Structured outputs · RAG · React · Node.js / Python",
-      "description": "Designed an AI-assisted procurement system for extracting contract terms, comparing suppliers and identifying negotiation opportunities. Brings pricing, SLAs, renewal clauses, liability and payment terms into evidence-grounded comparisons and structured decision support, with human review of commercial recommendations.",
-      "repository": "https://github.com/keenosmith-del/claude-powered-legal-procurement-intelligence"
+      "title": "Enterprise AI Customer Operations — LLMOps Platform",
+      "technologies": "TypeScript · Node.js/Express · PostgreSQL · Prisma · RabbitMQ · Prompt evaluation · Docker",
+      "description": "Developed an event-driven customer-case triage platform with asynchronous AI classification, response recommendations and operator approvals. Added versioned prompts, labelled evaluation cases and accuracy, macro-F1 and latency reporting. Uses a transactional outbox, durable worker, idempotency, retries and dead-letter handling; model outputs remain reviewable drafts.",
+      "repository": "https://github.com/keenosmith-del/enterprise-ai-customer-operations"
     },
     {
-      "title": "Ollama Private Business Intelligence Platform",
-      "technologies": "Ollama · Python · FastAPI · RAG · Embeddings · PostgreSQL / pgvector · React · Docker",
-      "description": "Designed a private business-information application using local inference and retrieval over sensitive reports, policies and internal documents. Connects ingestion, document processing, embeddings and grounded question answering through integrated application services, supporting analysis without sending source documents to an external LLM provider.",
+      "title": "Ollama Private Business Intelligence and RAG Platform",
+      "technologies": "Ollama · Python/FastAPI · Node.js · PostgreSQL/pgvector · Embeddings · React · Docker",
+      "description": "Built a private business analysis platform with local LLM inference, document ingestion, semantic retrieval and evidence-grounded responses. Combines pgvector RAG with deterministic SQL-based financial analysis, user/role permissions, source-level access control and saved analysis history. Verified local workflows using real Ollama models and integration tests.",
       "repository": "https://github.com/keenosmith-del/ollama-private-business-intelligence"
-    },
-    {
-      "title": "Distributed Systems Reliability Chaos Engineering and Disaster Recovery Platform",
-      "technologies": "Go · React / TypeScript · PostgreSQL · Redis · Docker · k6 · Toxiproxy · OpenTelemetry",
-      "description": "Designed a distributed operations platform for observing service health, injecting controlled failures and validating recovery. Covers load generation, telemetry, retries, idempotency, queue behaviour and data-consistency checks. Demonstrates failure handling and recovery verification applicable to dependable automation services.",
-      "repository": "https://github.com/keenosmith-del/sre-chaos-engineering"
     }
   ]
 }

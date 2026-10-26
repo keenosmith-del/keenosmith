@@ -1,3 +1,5 @@
+import { candidateFacts, educationSummary, experienceSummary, professionalSkillRecords } from '../data/candidateProfile.js';
+import { auditedProjects, auditOverrides, exactToolRecords } from '../data/auditedProjects.js';
 import { rebuildingProjects } from "../data/rebuildingProjects.js";
 import {
   additionalProjects,
@@ -12,6 +14,7 @@ import { projectConcepts } from "../data/projectConcepts.js";
 import { skillGroups } from "../data/skillGroups.js";
 import { certificationGroups } from "../data/credentials.js";
 
+const canonicalSkill = name => name === "Gemini" ? "Google Gemini" : name;
 const scopeKey = (s) =>
   s
     .toLowerCase()
@@ -197,8 +200,11 @@ const canonicalAliases = {
   "microsoft-devops": "microsoft",
   aws: "banking-risk",
   gcp: "vertex-ai-retail",
+  "intelligence-manufacturing-llmops": "manufacturing-qc",
+  "enterprise-ai-mlops": "customer-operations",
 };
-export const projects = existingProjects.map((p) => {
+export const projects = [...existingProjects.filter(p => !auditedProjects.some(a => a.id === p.id)), ...auditedProjects.map(p => ({ ...p, demonstrated: true, status: "Built · Implementation reviewed", evidence: p.sources.map(source => ({type: "source-code", source: `${p.repository}/blob/main/${source}`, strength: "direct", inspectedOn: "2026-10-18"})) }))].map((originalProject) => {
+  const p = { ...originalProject, ...auditOverrides[originalProject.id] };
   const canonicalId = canonicalAliases[p.id] || p.id;
   const extra = repositoryEvidence.find((r) => r.id === canonicalId);
   const cvScope = p.id.startsWith("cv-")
@@ -207,7 +213,7 @@ export const projects = existingProjects.map((p) => {
         .filter((t) => scopeContains(p.description, t))
     : [];
   const technologies = [
-    ...new Set([...p.technologies, ...cvScope, ...(extra?.technologies || [])]),
+    ...new Set([...p.technologies, ...cvScope, ...(extra?.technologies || [])].map(canonicalSkill)),
   ];
   const built = p.demonstrated || !!extra;
   const original = existingProjects.find((r) => r.id === canonicalId) || p;
@@ -228,9 +234,9 @@ export const projects = existingProjects.map((p) => {
     technologies,
     implementedTechnologies: [
       ...new Set([
-        ...(p.demonstrated ? p.technologies : []),
+        ...(p.demonstrated ? p.technologies.map(canonicalSkill) : []),
         ...(extra?.technologies || []),
-      ]),
+      ].filter(name => !p.plannedTechnologies?.includes(name))),
     ],
     description: extra?.description || p.description,
     buildStatus: built ? "built" : p.planned ? "planned" : "in-progress",
@@ -307,7 +313,7 @@ export const credentials = certificationGroups.flatMap((g) =>
         .flatMap((t) => t.skills)
         .filter((t) => scopeContains(`${c.name} ${c.description}`, t)),
     ]),
-    status: "Listed with certificate in portfolio",
+    status: c.status || "Listed with certificate in portfolio",
     path: "/certifications",
     verification:
       c.issuer.includes("AWS") || g.id === "aws"
@@ -317,22 +323,14 @@ export const credentials = certificationGroups.flatMap((g) =>
           : null,
   })),
 );
-export const education = [
-  "Generative AI: Stellenbosch University, June to August 2026; training programme.",
-  "Full-Stack Software Engineering & Web Development: HyperionDev, January to June 2026; training programme.",
-  "BSc Computer Science studies: University of South Africa, 2017 to 2022; Programming, software development and related technical disciplines.",
-  "National Senior Certificate: Greenside High School, 2010 to 2015.",
-];
-export const experience = [
-  "Software Engineering & Application Development: 2022 to present, project-based independent engineering across frontend, backend, APIs, databases and AI integration. The source gives a start year, not a precise start date.",
-  "Technical & Digital Operations Lead / Co-Founder: Firstdaes Entertainment, January 2020 to June 2026; digital products, customer experience, business systems, workflows and operational delivery.",
-  "Contract Specialist / Technical Content & Documentation: 3Play Media, February 2021 to September 2025; technical material quality assurance and documentation. This is not described as a software engineering employment role.",
-];
+export const education = educationSummary;
+export const experience = experienceSummary;
+export { candidateFacts, exactToolRecords, professionalSkillRecords };
 export const skills = [
   ...new Set([
     ...skillGroups.flatMap((g) => g.skills),
     ...projects.flatMap((p) => p.technologies),
-    ...cvSkillEvidence.flatMap((r) => r.technologies),
+    ...cvSkillEvidence.flatMap((r) => r.technologies.map(canonicalSkill)),
   ]),
 ];
 export const skillRegistry = skills.map((name) => ({
@@ -345,6 +343,7 @@ export const skillRegistry = skills.map((name) => ({
   name,
   ...relationships([name]),
   evidence: [
+    ...professionalSkillRecords.filter(r => r.skills.includes(name)).map(r => ({ type: "professional", source: r.source, role: r.role.title, description: r.description, strength: "supporting" })),
     ...cvSkillEvidence
       .filter((r) => r.technologies.includes(name))
       .map((r) => ({

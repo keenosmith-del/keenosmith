@@ -1,182 +1,138 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
 
 function RequirementGroup({ title, rows }) {
+  if (!rows.length) return null;
   return (
     <section className="recruiter-section">
       <h3>{title}</h3>
-      {rows.length ? (
-        rows.map((r) => (
-          <div className="recruiter-match" key={r.name}>
-            <div>
-              <strong>{r.name}</strong>
-              <small>{r.detail}</small>
-            </div>
-            <span>{r.label}</span>
+      {rows.slice(0, 5).map((r) => (
+        <div className="recruiter-match" key={r.id}>
+          <div>
+            <strong>{r.name}</strong>
+            <small>
+              {r.importance} · {r.detail}
+            </small>
           </div>
-        ))
-      ) : (
-        <p className="recruiter-muted">None among recognised requirements.</p>
+          <span>{r.status}</span>
+        </div>
+      ))}
+      {rows.length > 5 && (
+        <p className="recruiter-muted">
+          {rows.length - 5} more in the detailed breakdown.
+        </p>
       )}
     </section>
   );
 }
-function EvidenceProjects({ projects }) {
+function SupportingRecord({ record: e }) {
   return (
-    <section className="recruiter-section">
-      <h3>Supporting projects</h3>
-      {!projects.length && (
-        <p>No built projects directly support the recognised requirements.</p>
+    <li>
+      <strong>{e.capability || e.context || "Supporting record"}</strong>
+      <p>{e.fact}</p>
+      <small>
+        {e.provenance}
+        {e.status && ` · ${e.status}`}
+        {e.platform && ` · ${e.platform}`}
+        {e.dates && ` · ${e.dates}`}
+        <br />
+        {e.inspectedOn
+          ? `Inspected ${e.inspectedOn}`
+          : e.reviewedOn
+            ? `Reviewed ${e.reviewedOn}`
+            : ""}
+        {e.revision && ` · revision ${e.revision}`}
+      </small>
+      <p>{e.limitations}</p>
+      {e.source?.startsWith("https://") ? (
+        <a href={e.source} target="_blank" rel="noreferrer">
+          Supporting source (new tab)
+        </a>
+      ) : (
+        <small>{e.source}</small>
       )}
-      {projects.slice(0, 5).map((p) => (
-        <article className="recruiter-evidence" key={p.id}>
-          <h4>{p.title}</h4>
-          <small>
-            {p.portfolioPublicationStatus === "not-yet-published"
-              ? "Built · Portfolio page coming soon"
-              : p.status}
-          </small>
-          <p className="recruiter-relevance">
-            Demonstrates{" "}
-            {[...new Set(p.demonstratedMatches)].slice(0, 5).join(", ")} through
-            built project implementation.
-          </p>
-          <details>
-            <summary>Project scope & evidence</summary>
-            <p>
-              {p.description ||
-                "Built implementation supported by inspected repository evidence."}
-            </p>
-            <small>
-              {p.evidence.some((e) => e.type === "source-code")
-                ? "Repository-supported implementation"
-                : "Documented project implementation"}
-            </small>
-          </details>
-          <div className="recruiter-tags">
-            {p.matches.map((t) => (
-              <span key={t}>{t}</span>
-            ))}
-          </div>
-          <div className="recruiter-links">
-            {p.portfolioPublicationStatus !== "not-yet-published" && (
-              <Link to={p.path}>
-                View project
-                <ArrowRight size={12} aria-hidden="true" />
-              </Link>
-            )}
-            {p.repository && (
-              <a href={p.repository} target="_blank" rel="noreferrer">
-                View repository
-                <span className="recruiter-sr"> (opens a new tab)</span>
-              </a>
-            )}
-          </div>
-        </article>
-      ))}
-      {projects.length > 5 && (
-        <small>
-          {projects.length - 5} additional built projects appear in the detailed
-          requirement evidence.
-        </small>
-      )}
-    </section>
+    </li>
   );
 }
 export default function RecruiterAssessment({ result: r }) {
   const [view, setView] = useState("overview");
+  const technicalGaps = r.importantGaps.filter(
+    (row) => row.score !== null && !row.ambiguous,
+  );
   return (
     <div className="recruiter-result">
       {(r.title || r.company) && (
         <p className="recruiter-role-name">
           {r.title || "Role assessment"}
-          {r.company && <small>{r.company}</small>}
+          {r.company && <small> · {r.company}</small>}
         </p>
       )}
       <small className="recruiter-session-note">
-        Assessment generated from current portfolio evidence
+        Model {r.modelRevision} · Evidence {r.evidenceRevision} · Assessed{" "}
+        {r.asOf}
       </small>
-      <section className="recruiter-requirements-summary">
-        <h3>Role requirements identified</h3>
-        <div className="recruiter-tags">
-          {r.rows.map((row) => (
-            <span
-              key={row.name}
-              title={`${row.importance} · ${row.importanceReason}`}
-            >
-              {row.name}
-            </span>
-          ))}
-        </div>
-      </section>
       <div className="recruiter-score">
         <strong>
-          {r.score}
-          <span>%</span>
+          {r.score === null ? "—" : r.score}
+          {r.score !== null && <span>%</span>}
         </strong>
-        <h3>Overall Evidence Alignment</h3>
+        <h3>Core technical and delivery alignment</h3>
         <p>
-          Based on demonstrated portfolio evidence matched against recognised
-          role requirements.
+          {r.score === null
+            ? "No core technical/delivery requirements were scored."
+            : "Weighted evidence support for the recognised core requirements."}{" "}
+          Qualifications and review criteria below must be considered
+          separately.
         </p>
         <details>
-          <summary>How alignment is calculated</summary>
+          <summary>Calculation and limits</summary>
           <p>
-            Technology requirements carry twice the base weight of broad domains
-            and contextual requirements. Required/essential phrasing multiplies
-            importance by 1.5; preferred/bonus phrasing by 0.5. Repeated neutral
-            requirements receive 1.2. Ambiguous phrasing stays neutral. Built
-            implementations score 65, with up to 15 for additional projects, 10
-            for direct source/configuration evidence and 5 for supporting
-            training. Broad domains are capped at 75. Training alone scores 25,
-            listed capabilities 15, related domains 10 and missing evidence 0.
-            Education context contributes 20; unverified tenure and
-            certification requirements contribute 0. The weighted average is
-            rounded to a whole percentage. This measures evidence coverage, not
-            hiring probability or proficiency.
+            Technologies and delivery responsibilities have equal base weight.
+            Required wording weighs 1.5; ordinary requirements weigh 1.
+            Alternatives count once. Preferred and conditional requirements,
+            overlapping parents, tenure, qualifications, logistics and
+            unassessed criteria are excluded from this percentage.
+            Source-supported implementation scores 80, documented implementation
+            65, declared professional scope 40, transferable support 30,
+            training 25, listed capability 15 and missing/conflicting evidence
+            0. Project count and extra training add no bonus. Evidence support
+            is not proficiency or hiring probability.
+          </p>
+          <p>
+            Weighted total {r.diagnostics.numerator.toFixed(2)} /{" "}
+            {r.diagnostics.denominator.toFixed(2)} ={" "}
+            {r.score === null ? "not applicable" : `${r.score}% (rounded)`}.
           </p>
         </details>
       </div>
       <div className="recruiter-coverage">
-        <strong>Evidence coverage: {r.evidenceCoverage}</strong>
-        <small>{r.coverageNote}</small>
+        <strong>{r.evidenceCoverage}</strong>
+        <small>
+          {r.coverageNote} Confidence and provenance vary by supporting record.
+          Read the original advert alongside this assessment.
+        </small>
       </div>
-      {!!r.importantGaps.length && (
+      <section className="recruiter-requirements-summary">
+        <h3>Assessment interpretation</h3>
+        <p>{r.summary}</p>
+      </section>
+      {!!technicalGaps.length && (
         <div className="recruiter-important-gaps">
-          <RequirementGroup title="Important gaps" rows={r.importantGaps} />
-          <p>
-            These essential requirements remain unverified or have insufficient
-            evidence.
-          </p>
+          <RequirementGroup
+            title="Material gaps and verification needs"
+            rows={technicalGaps}
+          />
         </div>
       )}
-      <dl className="recruiter-metrics">
-        <div>
-          <dt>Requirements recognised</dt>
-          <dd>{r.rows.length}</dd>
-        </div>
-        <div>
-          <dt>Strong / good</dt>
-          <dd>{r.strong.length}</dd>
-        </div>
-        <div>
-          <dt>Partial / limited</dt>
-          <dd>{r.partial.length}</dd>
-        </div>
-        <div>
-          <dt>Evidence gaps</dt>
-          <dd>{r.gaps.length}</dd>
-        </div>
-        <div>
-          <dt>Supporting projects</dt>
-          <dd>{r.projects.length}</dd>
-        </div>
-        <div>
-          <dt>Relevant credentials</dt>
-          <dd>{r.credentials.length}</dd>
-        </div>
-      </dl>
+      <RequirementGroup
+        title="Experience and qualification verification"
+        rows={r.qualifications}
+      />
+      <RequirementGroup title="Logistical compatibility" rows={r.logistics} />
+      <RequirementGroup
+        title="Important criteria requiring review"
+        rows={r.manualReview.filter((x) => x.type === "review" || x.ambiguous)}
+      />
       <div
         className="recruiter-view-switch"
         role="group"
@@ -195,121 +151,151 @@ export default function RecruiterAssessment({ result: r }) {
       </div>
       {view === "overview" ? (
         <>
-          <section className="recruiter-section">
-            <h3>Why Keeno aligns</h3>
-            <p>{r.summary}</p>
-          </section>
-          <section className="recruiter-section">
-            <h3>Technology alignment</h3>
-            {r.rows
-              .filter((row) => row.type === "technology")
-              .map((row) => (
-                <div className="recruiter-capability" key={row.name}>
-                  <div>
-                    <strong>{row.name}</strong>
-                    <span>
-                      {row.score}% · {row.label}
-                    </span>
-                  </div>
-                  <div className="recruiter-bar" aria-hidden="true">
-                    <i style={{ width: `${row.score}%` }} />
-                  </div>
-                </div>
-              ))}
-          </section>
-          {!!r.categoryAlignment.length && (
-            <section className="recruiter-section recruiter-category-alignment">
-              <h3>Category alignment</h3>
-              <p>
-                Weighted coverage of recognised technologies within each
-                relevant category.
-              </p>
-              {r.categoryAlignment.map((category) => (
-                <div className="recruiter-capability" key={category.name}>
-                  <div>
-                    <strong>{category.name}</strong>
-                    <span>
-                      {category.score}% · {category.label}
-                    </span>
-                  </div>
-                  <div className="recruiter-bar" aria-hidden="true">
-                    <i style={{ width: `${category.score}%` }} />
-                  </div>
-                </div>
-              ))}
-            </section>
-          )}
           <RequirementGroup
-            title="Strongest matches"
-            rows={[...r.strong].sort((a, b) => b.score - a.score)}
+            title="Strongest role-relevant support"
+            rows={r.strong}
           />
-          <RequirementGroup title="Partial matches" rows={r.partial} />
-          <RequirementGroup title="Evidence gaps" rows={r.gaps} />
-          <EvidenceProjects projects={r.projects} />
-        </>
-      ) : (
-        <section className="recruiter-section">
-          <h3>Requirement-by-requirement analysis</h3>
-          {r.rows.map((row) => (
-            <article className="recruiter-requirement" key={row.name}>
-              <div className="recruiter-match">
-                <strong>{row.name}</strong>
-                <span>
-                  {row.score}% · {row.label}
-                </span>
-              </div>
-              <p>{row.detail}</p>
-              <small className="recruiter-requirement-meta">
-                {row.importance} · {row.importanceReason}
-                <br />
-                {row.evidenceStrength}
-              </small>
-              <p className="recruiter-strongest-evidence">
-                Strongest support:{" "}
-                {row.projects[0]?.title ||
-                  row.credentials[0]?.name ||
-                  (row.type === "education"
-                    ? "Computer science coursework / structured training"
-                    : "No direct supporting record")}
+          <RequirementGroup
+            title="Partial or limited support"
+            rows={r.partial}
+          />
+          <RequirementGroup
+            title="Missing or conflicting evidence"
+            rows={r.gaps}
+          />
+          {!!r.categoryAlignment.length && (
+            <details className="recruiter-section recruiter-category-alignment">
+              <summary>Core requirements by category</summary>
+              <p>
+                These summaries use the same scored requirement rows. They add
+                no requirements or score contributions.
               </p>
-              {row.projects.map((p) => (
-                <details key={p.id}>
-                  <summary>{p.title} · Direct implementation</summary>
-                  <p>
-                    {p.description || "Source-supported built implementation."}
-                  </p>
+              {r.categoryAlignment.map((c) => (
+                <details key={c.name}>
+                  <summary>
+                    {c.name} · {c.score}% evidence alignment
+                  </summary>
+                  <p>{c.matches.join(", ")}</p>
+                </details>
+              ))}
+            </details>
+          )}
+          <section className="recruiter-section">
+            <h3>Supporting projects</h3>
+            {r.projects.length === 0 && (
+              <p>
+                No built project evidence supports the recognised requirements.
+              </p>
+            )}
+            {r.projects.slice(0, 3).map((p) => (
+              <article className="recruiter-evidence" key={p.id}>
+                <h4>{p.title}</h4>
+                <small>
+                  {p.portfolioPublicationStatus === "not-yet-published"
+                    ? "Built · Portfolio page coming soon"
+                    : p.status}
+                </small>
+                <p className="recruiter-relevance">
+                  Relevant support: {p.matches.slice(0, 5).join(", ")}.
+                </p>
+                <details>
+                  <summary>Relevant evidence and limitations</summary>
+                  <ul className="recruiter-provenance">
+                    {p.evidence.map((e) => (
+                      <SupportingRecord key={e.id} record={e} />
+                    ))}
+                  </ul>
                   <div className="recruiter-links">
-                    {p.portfolioPublicationStatus !== "not-yet-published" && (
-                      <Link to={p.path}>View project</Link>
-                    )}
+                    {p.path && <Link to={p.path}>View project</Link>}
                     {p.repository && (
                       <a href={p.repository} target="_blank" rel="noreferrer">
                         Repository (new tab)
                       </a>
                     )}
                   </div>
-                  <details className="recruiter-source-details">
-                    <summary>Source records</summary>
-                    <ul className="recruiter-provenance">
-                      {p.evidence.map((e, i) => (
-                        <li key={i}>
-                          {e.type} · {e.strength}
-                          {e.revision ? ` · revision ${e.revision}` : ""}
-                          {e.inspectedOn ? ` · inspected ${e.inspectedOn}` : ""}
-                          <br />
-                          {e.source?.startsWith("https://") ? (
-                            <a href={e.source} target="_blank" rel="noreferrer">
-                              Source record (new tab)
-                            </a>
-                          ) : (
-                            <span>{e.source}</span>
-                          )}
-                        </li>
-                      ))}
-                    </ul>
-                  </details>
                 </details>
-              ))}
+              </article>
+            ))}
+          </section>
+        </>
+      ) : (
+        <section className="recruiter-section">
+          <h3>Requirement-by-requirement analysis</h3>
+          {r.rows.map((row) => (
+            <article className="recruiter-requirement" key={row.id}>
+              <div className="recruiter-match">
+                <strong>{row.name}</strong>
+                <span>{row.status}</span>
+              </div>
+              <small className="recruiter-requirement-meta">
+                {row.importance} · {row.importanceReason}
+                <br />
+                {row.logic === "any"
+                  ? "Any accepted alternative"
+                  : row.logic === "all"
+                    ? "All required"
+                    : "Individual requirement"}
+                {row.capability && ` · ${row.capability}`}
+                {row.parentOnly &&
+                  " · Included within another scored requirement"}
+              </small>
+              <p>{row.detail}</p>
+              {row.ambiguous && (
+                <p>
+                  Needs review: conflicting importance,
+                  alternatives/conjunctions or experience bounds appear in the
+                  advert.
+                </p>
+              )}
+              <details>
+                <summary>Employer wording and evidence needed</summary>
+                {row.sources.map((s, i) => (
+                  <blockquote key={i}>
+                    {s.phrase}
+                    <small>
+                      {s.section} · {s.importance}
+                    </small>
+                  </blockquote>
+                ))}
+                <p>{row.evidenceNeeded}</p>
+              </details>
+              <p className="recruiter-strongest-evidence">
+                {row.relation || "Verification"} · {row.evidenceStrength}.{" "}
+                {row.weight
+                  ? `Score ${row.score}; weight ${row.weight}; contribution ${row.contribution.toFixed(2)} / ${r.diagnostics.denominator.toFixed(2)} total weight.`
+                  : "Excluded from headline calculation."}
+              </p>
+              {!!row.supportingRecords.length && (
+                <details>
+                  <summary>
+                    Supporting records and limitations (
+                    {row.supportingRecords.length})
+                  </summary>
+                  <ul className="recruiter-provenance">
+                    {row.supportingRecords.map((e, i) => (
+                      <SupportingRecord key={e.id || i} record={e} />
+                    ))}
+                  </ul>
+                </details>
+              )}
+              {!!row.alternatives?.length && row.logic === "any" && (
+                <details>
+                  <summary>Alternative assessment</summary>
+                  {row.alternatives.map((a) => (
+                    <p key={a.term}>
+                      {a.term}: {a.score} evidence points · {a.detail}
+                    </p>
+                  ))}
+                </details>
+              )}
+              <div className="recruiter-links">
+                {row.projects.map((p) => (
+                  <details key={p.id}>
+                    <summary>{p.title}</summary>
+                    <Link to={p.path || "/cv"}>View project</Link>
+                  </details>
+                ))}
+              </div>
               {row.credentials.map((c) => (
                 <p key={c.id}>
                   <Link to={c.path}>{c.name}</Link> ·{" "}
@@ -318,71 +304,49 @@ export default function RecruiterAssessment({ result: r }) {
               ))}
             </article>
           ))}
+          <details>
+            <summary>Calculation diagnostics</summary>
+            <pre className="recruiter-diagnostics">
+              {JSON.stringify(r.diagnostics, null, 2)}
+            </pre>
+          </details>
         </section>
       )}
       {!!r.credentials.length && (
-        <section className="recruiter-section">
-          <h3>Supporting credentials & training</h3>
+        <details className="recruiter-section recruiter-training">
+          <summary>Relevant training records</summary>
+          <p>
+            Credential types and completion status are preserved. Training does
+            not verify implementation or a requested professional certification.
+          </p>
           {r.credentials.slice(0, 4).map((c) => (
             <article className="recruiter-evidence" key={c.id}>
-              <small>{c.credentialTypes.join(" · ")}</small>
               <h4>{c.name}</h4>
-              <p>
-                {c.issuer} · {c.date}
-                <br />
-                {c.status}
-              </p>
-              <p className="recruiter-relevance">
-                Supporting training for {c.matches.join(", ")}; this is separate
-                from project implementation.
-              </p>
-              <div className="recruiter-links">
-                <Link to={c.path}>
-                  View credential record
-                  <ArrowRight size={12} aria-hidden="true" />
-                </Link>
-                {c.verification && (
-                  <a href={c.verification} target="_blank" rel="noreferrer">
-                    Issuer profile (new tab)
-                  </a>
-                )}
-              </div>
+              <small>
+                {c.credentialTypes.join(" · ")} · {c.status}
+              </small>
+              <p>Relevant to {c.matches.join(", ")}</p>
+              <Link to={c.path}>View credential record</Link>
             </article>
           ))}
-          {r.credentials.length > 4 && (
-            <details>
-              <summary>
-                Show {r.credentials.length - 4} additional credential records
-              </summary>
-              {r.credentials.slice(4).map((c) => (
-                <p key={c.id}>
-                  <Link to={c.path}>{c.name}</Link> ·{" "}
-                  {c.credentialTypes.join(" · ")} · {c.status}
-                </p>
-              ))}
-            </details>
-          )}
-        </section>
+        </details>
       )}
-      {r.rows.some((row) => ["education", "experience"].includes(row.type)) && (
+      {!!r.qualifications.length && (
         <section className="recruiter-section">
-          <h3>Education & experience context</h3>
-          {r.rows.some((row) => row.type === "education") &&
-            r.education.map((e) => <p key={e}>{e}</p>)}
-          {r.rows.some((row) => row.type === "experience") &&
-            r.experience.map((e) => <p key={e}>{e}</p>)}
+          <h3>Recorded education and professional context</h3>
+          {r.education.map((e) => (
+            <p key={e}>{e}</p>
+          ))}
+          {r.experience.map((e) => (
+            <p key={e}>{e}</p>
+          ))}
           <Link to="/cv">Review CV →</Link>
         </section>
       )}
       <p className="recruiter-limitations">
-        Local, deterministic analysis recognises portfolio technologies and{" "}
-        {r.categoryCount} shared engineering categories, plus education, tenure
-        and certification context. Ecosystems help retrieve evidence; related
-        technologies do not prove a specific tool. Importance is inferred from
-        local wording and section headings; ambiguous phrasing stays neutral.
-        Unrecognised requirements, leadership, production scale and nontechnical
-        criteria need manual review. Only the requirements shown contribute to
-        the percentage.
+        Local assessment of recorded evidence. Complex or unrecognised requirements
+        may need review; detailed sources distinguish implementation, professional
+        work, education and candidate declarations.
       </p>
     </div>
   );

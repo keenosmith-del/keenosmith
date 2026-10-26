@@ -1,46 +1,131 @@
 {
   "key": "full-stack",
   "label": "Full-Stack Engineer",
-  "pdf": "/Keeno_Smith_Full_Stack_Engineering_CV.pdf",
+  "pdf": "/Keeno-Smith-CV-ATS-Full-Stack-Engineer-2026.pdf",
   "downloadFilename": "Keeno-Smith-Full-Stack-Engineer-CV.pdf",
-  "sourceSha256": "94c4acb47782bfec5832c9e38cab86d8b86d4eaec915859af6103455092e434c",
-  "headline": "Full-Stack Software Engineer | Web Applications and API Engineering",
-  "emphasis": "JavaScript · TypeScript · Python · React · Node.js · REST APIs · SQL and NoSQL",
+  "sourceSha256": "4ff3545806682a7af1119bd28a0ac4b9bd4ec48f51e4f2428dd603dd6a18f6e8",
+  "headline": "Full-Stack Software Engineer | Backend & Distributed Systems",
+  "emphasis": "React · TypeScript · Python · REST APIs · SQL · Cloud-Native Applications",
   "summary": [
-    "Full-Stack Software Engineer developing business applications across frontend interfaces, backend services and data layers. Combine JavaScript/TypeScript and Python with React, Node.js, Express, FastAPI, REST APIs and SQL/NoSQL databases to turn functional requirements into maintainable, integrated software. Work across authentication, application state, data modelling, third-party APIs and responsive user experiences.",
-    "Experience includes independent end-to-end software delivery, AI training and evaluation, and business technology consulting. Build application workflows with testing, validation, permissions, asynchronous jobs, integration boundaries and operational visibility. Focus on readable code, practical user journeys and reliable behaviour from browser to database, while communicating technical choices and limitations clearly."
+    "Full-Stack Software Engineer with 6+ years of software and digital engineering experience, designing and developing web applications, backend services and integrated business systems. Work across React, TypeScript, JavaScript, Python, Node.js and SQL, with additional experience in Angular, Java/Spring Boot, ASP.NET Core and Go. Build maintainable user interfaces, reliable APIs and data-backed workflows.",
+    "Experience spans full-stack application engineering, AI-enabled software development, business technology consulting and technical evaluation. Focus on application architecture, authentication and authorisation, database modelling, API integrations, event-driven processing, automated testing and operational reliability. Translate requirements into practical solutions with attention to performance, security and maintainability."
   ],
-  "projectsIntro": "Independent portfolio projects demonstrating frontend, backend, API integration and maintainable business applications.",
+  "skills": [
+    {
+      "label": "Frontend engineering",
+      "text": "React, Angular, TypeScript, JavaScript, Vite, React Router, Tailwind CSS, HTML, CSS, responsive design, state management"
+    },
+    {
+      "label": "Backend engineering",
+      "text": "Node.js, Express, NestJS, Python (3+ years), FastAPI, Java, Spring Boot, C#, ASP.NET Core, Go, REST APIs, OpenAPI, WebSockets"
+    },
+    {
+      "label": "Databases and persistence",
+      "text": "PostgreSQL, Prisma, JPA, TimescaleDB, MongoDB, Mongoose, Redis, SQLite, SQL, schema design, transactions, data modelling"
+    },
+    {
+      "label": "Architecture and integration",
+      "text": "Full-stack architecture, API integrations, JWT, authentication, RBAC, Kafka/Redpanda, RabbitMQ, event-driven systems, webhooks, idempotency, background jobs"
+    },
+    {
+      "label": "Testing and delivery",
+      "text": "Unit and integration testing, automated validation, Git, GitHub Actions, CI/CD, Docker, Docker Compose, debugging, logging, API documentation"
+    },
+    {
+      "label": "Cloud, reliability and AI",
+      "text": "Azure, AWS, Google Cloud, Kubernetes, OpenTelemetry, Prometheus, Grafana, distributed systems, LLM APIs, RAG, intelligent automation"
+    }
+  ],
+  "experience": [
+    {
+      "title": "Python and Full-Stack Engineer in AI Training and Evaluation",
+      "employer": "Turing / OpenTrain AI",
+      "dates": "February 2026 – Present",
+      "paragraphs": [
+        "Contribute Python and JavaScript/TypeScript software engineering to AI training and technical evaluation workflows, with emphasis on code correctness, reasoning quality, testing and maintainability."
+      ],
+      "bullets": [
+        "Develop, review and debug programming solutions; verify correctness, test coverage, edge cases and maintainable structure across Python and TypeScript.",
+        "Evaluate technical implementations against specifications, documenting defects, security concerns and reproducibility gaps with clear code-level reasoning.",
+        "Prepare structured implementation examples and code-quality feedback for supervised fine-tuning (SFT), RLHF and model evaluation workflows."
+      ]
+    },
+    {
+      "title": "AI Engineer",
+      "employer": "kailor",
+      "dates": "February 2025 – Present",
+      "paragraphs": [
+        "Engineer full-stack AI-enabled applications connecting frontend experiences, backend services, persistent project workflows and business automation, from requirements through implementation."
+      ],
+      "bullets": [
+        "Design Python and TypeScript services, REST APIs, data processing workflows and model-integrated application features.",
+        "Build enquiry, administration and recurring-task applications with persistent state, business rules and third-party API integrations.",
+        "Translate process requirements into user flows, service contracts and maintainable software or automation solutions.",
+        "Apply authentication, permissions, input validation, retries, exception handling, audit trails and human review across application workflows.",
+        "Test integrated features, investigate failures and document architectural decisions, delivery risks and maintenance trade-offs."
+      ]
+    },
+    {
+      "title": "Full-Stack Software Engineer & AI Publisher",
+      "employer": "kailor",
+      "dates": "June 2022 – January 2025",
+      "paragraphs": [
+        "Developed full-stack web applications and digital publishing systems, connecting user interfaces with backend services, content operations, persistent data and integrated business tools."
+      ],
+      "bullets": [
+        "Built React/JavaScript interfaces, Node.js features, REST APIs, authentication, data models and end-to-end application workflows.",
+        "Developed publishing and content-management workflows, integrating external services and automating recurring operational tasks.",
+        "Improved stability and usability through integration testing, debugging, defect resolution and iterative feature delivery."
+      ]
+    },
+    {
+      "title": "Technical and Digital Operations Lead and Co-Founder",
+      "employer": "Firstdaes Entertainment",
+      "dates": "January 2020 – June 2022",
+      "paragraphs": [
+        "Co-founded an entertainment business and led its digital systems, workflow design and technology-enabled operations."
+      ],
+      "bullets": [
+        "Translated operational needs into technical requirements; managed implementation, testing and troubleshooting of digital services.",
+        "Integrated communications, marketing and analytics tooling; used performance data and operational feedback to refine processes."
+      ]
+    },
+    {
+      "title": "Contract Specialist in Technical Content and Documentation",
+      "employer": "3Play Media",
+      "dates": "February 2016 – January 2020",
+      "paragraphs": [],
+      "bullets": [
+        "Reviewed, transcribed and edited specialist material covering software, cloud, networking and cybersecurity, preserving technical terminology and accuracy.",
+        "Resolved ambiguous content and maintained quality and delivery standards across assignments for enterprise technology subject matter."
+      ]
+    }
+  ],
+  "projectsIntro": "Independent full-stack projects demonstrating web applications, backend APIs, data persistence and distributed-system reliability.",
   "projects": [
     {
-      "title": "Enterprise AI Customer Operations Platform",
-      "technologies": "React / TypeScript · Express · PostgreSQL · Prisma · RabbitMQ · Docker · Vitest",
-      "description": "Built a complete case-management workspace with filtering, review queues, saved operator decisions and audit trails. Developed REST APIs, relational data models and a separate worker for asynchronous recommendations and evaluations. Includes end-to-end case state transitions, retry controls, test coverage and responsive frontend views; AI output remains subject to human approval.",
-      "repository": "https://github.com/keenosmith-del/enterprise-ai-customer-operations"
+      "title": "Real-Time Logistics & Fleet Operations Platform",
+      "technologies": "React · TypeScript · Go · REST/WebSockets · Redpanda · PostgreSQL/TimescaleDB · Redis",
+      "description": "Built an end-to-end dispatcher platform with live fleet maps, delivery planning, assignment and recovery workflows. Connected React interfaces to Go REST and WebSocket services, streaming GPS updates through Redpanda and persisting history in TimescaleDB. Implemented alerts, transactional reassignment, durable state, restart recovery and operational metrics.",
+      "repository": "https://github.com/keenosmith-del/real-time-logistics-and-fleet-ops"
     },
     {
-      "title": "kailor Business Discovery and Technology Consultancy Platform",
-      "technologies": "React · Node.js / TypeScript · PostgreSQL · Prisma · REST APIs · Docker",
-      "description": "Developed a full-stack consultancy application for guided business discovery, conversation and structured technical assessments. Supports account and guest journeys, independent projects, persistent conversations, versioned context and report generation. Integrates application state, authentication and workflow orchestration into an end-to-end user experience.",
-      "repository": "https://github.com/keenosmith-del/kailor"
+      "title": "Field Service & Asset Maintenance Management Platform",
+      "technologies": "Angular · ASP.NET Core · C# · .NET MAUI · PostgreSQL · SQLite · JWT · Docker",
+      "description": "Developed a field-service platform spanning an Angular supervisor dashboard, ASP.NET Core APIs and a .NET MAUI technician application. Implemented asset and work-order workflows, role-based access, offline SQLite outbox synchronisation, evidence capture, conflict handling and audit history. Validated API, database and offline replay behaviour with automated tests.",
+      "repository": "https://github.com/keenosmith-del/field-service-and-asset-maintenance"
     },
     {
-      "title": "n8n Enterprise Workflow and Integration OpsFlow Platform",
-      "technologies": "React / TypeScript · NestJS · PostgreSQL · n8n · REST APIs · RabbitMQ · Docker",
-      "description": "Designed a procurement application spanning request submission, budget validation, supplier quotations, approvals and purchase-order creation. The frontend and backend own user workflows, business state, permissions and audit history; n8n handles integration orchestration. Demonstrates service boundaries, API contracts, asynchronous messaging, retries and operational visibility.",
-      "repository": "https://github.com/keenosmith-del/n8n-workflow-integration-opsflow"
+      "title": "Telecommunications Billing & Subscription Management",
+      "technologies": "Angular · Java · Spring Boot · PostgreSQL · Kafka · Redis · Flyway · Docker",
+      "description": "Engineered customer and administrator portals for subscription management, usage metering, billing and invoicing. Integrated Spring Boot APIs with PostgreSQL, Kafka and Redis; implemented transactional billing, idempotent event processing, reconciliation, access controls and PDF invoices. Verified large-event ingestion and replay against a local containerised stack.",
+      "repository": "https://github.com/keenosmith-del/telecomms-billing-management"
     },
     {
-      "title": "MERN Productivity Management Platform",
-      "technologies": "MongoDB · Express · React · Node.js · JWT · REST APIs · Mongoose",
-      "description": "Built a full-stack productivity application bringing together tasks, projects, goals, reminders, notes, folders and calendar functions. Implemented user accounts, protected routes, JWT authentication, CRUD workflows, MongoDB persistence, search and filtering. Demonstrates component-driven frontend design and modular API and data-layer engineering.",
-      "repository": "https://github.com/keenosmith-del/personal-productivity-desktop"
-    },
-    {
-      "title": "Music Streaming and API Platform",
-      "technologies": "React · JavaScript · REST APIs · External API Integration · State Management",
-      "description": "Developed a music discovery and playback experience integrating external artist, album and track data. Includes search, artist and album navigation, shared playback state, dynamic queue handling and autoplay behaviour. Emphasises asynchronous API integration, reusable UI components and coordinated frontend and backend application state.",
-      "repository": "https://github.com/keenosmith-del/music-api"
+      "title": "Distributed Systems Reliability & Chaos Engineering",
+      "technologies": "React · TypeScript · Go · PostgreSQL · RabbitMQ · Redis · Docker · Prometheus",
+      "description": "Built an e-commerce workload and reliability dashboard covering order lifecycle, durable sagas, idempotent transactions and outbox messaging. Integrated REST/SSE services with real telemetry and controlled fault experiments, then validated recovery, transactional consistency, bounded retries and isolated PostgreSQL backup restoration.",
+      "repository": "https://github.com/keenosmith-del/sre-chaos-engineering"
     }
   ]
 }

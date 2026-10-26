@@ -1,5 +1,3 @@
-import { Zap } from "lucide-react";
-
 export default function RecruiterMetadata() {
   return (
     <div className="recruiter-system-metadata">

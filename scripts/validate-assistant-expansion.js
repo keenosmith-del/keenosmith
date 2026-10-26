@@ -161,7 +161,7 @@ for (const p of projects) {
   const old = p.evidence.find((e) => e.type === "existing-assistant");
   assert(old);
   for (const skill of old.technologies)
-    assert(p.technologies.includes(skill), `${p.id}: lost ${skill}`);
+    assert(p.technologies.includes(skill === "Gemini" ? "Google Gemini" : skill), `${p.id}: lost ${skill}`);
 }
 assert(
   registry.projects

@@ -1,3 +1,5 @@
+> Shared evidence refresh, 18 October 2026: see [current audit and behaviour report](../../docs/evidence/REFRESH_REPORT.md) and [maintenance process](../../docs/evidence/REFRESH_PROCESS.md). The current CV-derived profile, 6+ overall baseline, separate Python duration and instructed education assessment status supersede older candidate summaries below.
+
 # Evidence audit: 5 October 2026
 
 27 relevant GitHub snapshot requests: 22 accessible repositories, 5 unavailable/empty snapshots (HTTP 404 from tarball endpoint). Forked upstream libraries were not treated as Keeno’s implementation evidence. Six accessible cloud repositories contain only early-development documentation. Sixteen implemented repositories have curated source/configuration links in `repositoryEvidence.js`.

@@ -1,5 +1,6 @@
 import puppeteer from "puppeteer";
 import assert from "node:assert/strict";
+import { roles } from "./fixtures/recruiter/roles.js";
 const browser = await puppeteer.launch({ headless: true });
 const base = process.env.PORTFOLIO_TEST_URL || "http://127.0.0.1:5173";
 try {
@@ -19,7 +20,7 @@ try {
     ).length,
     0,
   );
-  assert.equal((await page.$$(".recruiter-system-metadata")).length, 2);
+  assert.equal((await page.$$(".recruiter-system-metadata")).length, 1);
   assert(
     await page.$eval(
       "#recruiter-title",
@@ -122,7 +123,7 @@ try {
   await page.screenshot({ path: "/tmp/recruiter-desktop-assessment.png" });
   await page.click(".recruiter-view-switch button:nth-child(2)");
   assert(await page.$(".recruiter-requirement"));
-  await page.click(".recruiter-requirement details summary");
+  await page.click(".recruiter-requirement .recruiter-links details summary");
   const link = await page.$('.recruiter-requirement a[href^="/projects/"]');
   assert(link);
   await link.click();
@@ -139,6 +140,7 @@ try {
       "Portfolio page coming soon",
     ),
   );
+  await page.click(".recruiter-training > summary");
   const credential = await page.$(
     '.recruiter-evidence a[href="/certifications"]',
   );
@@ -216,6 +218,32 @@ try {
       "Vertex AI",
     ),
   );
+  // Verify representative strong stack support and a weak senior platform fit.
+  await assess(roles.find((r) => r.id === "B").description);
+  let resultText = await page.$eval(".recruiter-result", (e) => e.textContent);
+  assert(resultText.includes("Fastify or Express.js or NestJS"));
+  assert(resultText.includes("Core technical and delivery alignment"));
+  assert(resultText.includes("Model contextual-2.0.0"));
+  await page.screenshot({
+    path: "/tmp/recruiter-strong-fit.png",
+    fullPage: true,
+  });
+  await assess(roles.find((r) => r.id === "I").description);
+  resultText = await page.$eval(".recruiter-result", (e) => e.textContent);
+  assert(resultText.includes("Cloud foundations and landing zones"));
+  assert(resultText.includes("Needs review"));
+  assert(!resultText.includes("High coverage"));
+  await page.click(".recruiter-view-switch button:nth-child(2)");
+  await page.click(".recruiter-requirement details summary");
+  assert(
+    (await page.$eval(".recruiter-result", (e) => e.textContent)).includes(
+      "Employer wording and evidence needed",
+    ),
+  );
+  await page.screenshot({
+    path: "/tmp/recruiter-weak-fit-details.png",
+    fullPage: true,
+  });
   await page.click(".recruiter-reset");
   assert(!(await page.$(".recruiter-result")));
   assert.equal(await page.$eval("#recruiter-description", (e) => e.value), "");

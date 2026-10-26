@@ -1,46 +1,131 @@
 {
   "key": "cloud",
   "label": "Cloud Engineer",
-  "pdf": "/Keeno_Smith_Cloud_Engineering_CV.pdf",
+  "pdf": "/Keeno-Smith-CV-ATS-Cloud-Engineer-2026.pdf",
   "downloadFilename": "Keeno-Smith-Cloud-Engineer-CV.pdf",
-  "sourceSha256": "f1b994f6a7bfc3ab6c95d43be7bd5e0def77be188612857278db30e6695e6f60",
-  "headline": "Cloud Software Engineer | Cloud-Native Applications and Reliability",
-  "emphasis": "Azure · AWS · Google Cloud · DevOps · Distributed Systems · Observability",
+  "sourceSha256": "b12231b833aed584abe7b66a87873148d6aeeeafe8b9f68d6ef33c6e0e310e3f",
+  "headline": "Cloud Engineer | Cloud-Native Applications & DevOps",
+  "emphasis": "AWS · Azure · Google Cloud · Docker · Terraform · CI/CD · Reliability",
   "summary": [
-    "Cloud Software Engineer specialising in cloud-native application development, platform integration and dependable distributed systems. Combine Python, JavaScript/TypeScript and Go engineering with Azure, AWS and Google Cloud services, containerised applications, REST APIs, asynchronous processing and CI/CD to build maintainable software across cloud and local environments.",
-    "Experience spans independent software delivery, AI training and evaluation, and business technology consulting. Design the services around cloud applications: persistent data, authentication, messaging, webhooks, monitoring and recovery. Apply structured error handling, retries, access controls, reproducible tests and operational visibility, with attention to dependable service integration, clear technical boundaries and operational readiness."
+    "Cloud-focused Software Engineer with 6+ years of software and digital engineering experience developing cloud-ready applications, APIs and distributed services. Work across AWS, Microsoft Azure and Google Cloud integration patterns, with practical Docker, Terraform, Kubernetes configuration, Python, TypeScript, Go and SQL skills. Combine application engineering with infrastructure, automation and operational reliability.",
+    "Experience includes containerised services, cloud integration adapters, infrastructure-as-code definitions, event-driven processing and deployment preparation. Apply GitHub Actions, environment configuration, least-privilege access, secrets handling, monitoring, tracing, retries and recovery checks. Translate application requirements into secure, maintainable architectures, with local verification and cloud deployment status documented accurately."
   ],
-  "projectsIntro": "Independent portfolio projects demonstrating cloud-native applications, service reliability and operational engineering.",
+  "skills": [
+    {
+      "label": "Cloud platforms and services",
+      "text": "AWS (EventBridge, SQS, S3, Bedrock, SageMaker, IAM); Microsoft Azure (Foundry, Activity Logs, diagnostics); Google Cloud (Cloud Run, Cloud SQL, Pub/Sub, BigQuery, Vertex AI)"
+    },
+    {
+      "label": "Infrastructure and containers",
+      "text": "Docker, Docker Compose, Kubernetes manifests, kind, Terraform, Cloud Build, Artifact Registry, Nginx, infrastructure as code, service configuration"
+    },
+    {
+      "label": "DevOps and delivery",
+      "text": "Git, GitHub Actions, CI/CD, automated builds and tests, deployment preparation, environment configuration, secrets management, health checks, migration workflows"
+    },
+    {
+      "label": "Cloud-native and backend",
+      "text": "Python (3+ years), FastAPI, JavaScript, TypeScript, Node.js, Go, REST APIs, PostgreSQL, MongoDB, Redis, Kafka/Redpanda, RabbitMQ, event-driven systems"
+    },
+    {
+      "label": "Observability and resilience",
+      "text": "OpenTelemetry, Prometheus, Grafana, Jaeger, logging, monitoring, distributed tracing, k6, Toxiproxy, idempotency, retries, disaster recovery"
+    },
+    {
+      "label": "Security and integration",
+      "text": "IAM, RBAC, least privilege, authentication, authorisation, API integration, webhooks, signed events, network isolation, TLS, incident investigation"
+    }
+  ],
+  "experience": [
+    {
+      "title": "Python and Full-Stack Engineer in AI Training and Evaluation",
+      "employer": "Turing / OpenTrain AI",
+      "dates": "February 2026 – Present",
+      "paragraphs": [
+        "Contribute Python and JavaScript/TypeScript engineering to AI training and technical evaluation workflows, reviewing code quality, reproducibility, testing and secure execution practices."
+      ],
+      "bullets": [
+        "Develop, review and debug Python and TypeScript solutions, validating edge cases, automated tests and repeatable execution across local and Docker environments.",
+        "Evaluate implementation correctness, dependency assumptions, error handling and security concerns; document reproducible defects and technical risks.",
+        "Prepare structured engineering examples and review feedback for supervised fine-tuning (SFT), RLHF and model evaluation workflows."
+      ]
+    },
+    {
+      "title": "AI Engineer",
+      "employer": "kailor",
+      "dates": "February 2025 – Present",
+      "paragraphs": [
+        "Engineer AI-enabled software and backend services with secure integrations, persistent state and operational workflows, designing cloud-ready application boundaries and deployment considerations."
+      ],
+      "bullets": [
+        "Design Python and TypeScript APIs, integration services and data workflows with clear contracts, configuration and deployment requirements.",
+        "Build automation for enquiries, administration and recurring tasks using API integrations, durable application state and controlled execution.",
+        "Translate business processes into service architectures, integration plans and practical cloud or third-party technology recommendations.",
+        "Apply role-based permissions, input validation, secrets handling, retries, failure recovery and audit trails to application workflows.",
+        "Test integrated services, diagnose operational failures and document architecture, deployment dependencies and reliability trade-offs."
+      ]
+    },
+    {
+      "title": "Full-Stack Software Engineer & AI Publisher",
+      "employer": "kailor",
+      "dates": "June 2022 – January 2025",
+      "paragraphs": [
+        "Developed full-stack web applications and digital publishing systems, integrating frontend delivery, backend services, persistent data and hosted business tooling."
+      ],
+      "bullets": [
+        "Built React and JavaScript applications, Node.js APIs, authentication and database-backed features designed for reliable service integration.",
+        "Integrated publishing workflows and external platforms; automated repeatable content and operational tasks using APIs and managed services.",
+        "Improved deployment readiness, stability and maintainability through configuration management, testing, debugging and iterative releases."
+      ]
+    },
+    {
+      "title": "Technical and Digital Operations Lead and Co-Founder",
+      "employer": "Firstdaes Entertainment",
+      "dates": "January 2020 – June 2022",
+      "paragraphs": [
+        "Co-founded an entertainment business and led its digital systems, workflow design and technology-enabled operations."
+      ],
+      "bullets": [
+        "Translated operational needs into technical requirements; managed implementation, testing and troubleshooting of digital services.",
+        "Integrated communications, marketing and analytics tooling; used performance data and operational feedback to refine processes."
+      ]
+    },
+    {
+      "title": "Contract Specialist in Technical Content and Documentation",
+      "employer": "3Play Media",
+      "dates": "February 2016 – January 2020",
+      "paragraphs": [],
+      "bullets": [
+        "Reviewed, transcribed and edited specialist material covering software, cloud, networking and cybersecurity, preserving technical terminology and accuracy.",
+        "Resolved ambiguous content and maintained quality and delivery standards across assignments for enterprise technology subject matter."
+      ]
+    }
+  ],
+  "projectsIntro": "Independent cloud-oriented projects demonstrating provider integration, infrastructure as code, containerised delivery, observability and resilience.",
   "projects": [
     {
-      "title": "Microsoft Azure DevOps Software Engineering Platform",
-      "technologies": "Azure · Microsoft Foundry · React / TypeScript · Express · FastAPI · MongoDB · Docker",
-      "description": "Developed a full-stack engineering operations system connecting GitHub evidence with Azure activity, metrics and incident workflows. Separates React, Express and FastAPI services, persists investigations and audit history, and supports authenticated signals, scoped diagnostics, approvals and recovery verification. Demonstrates cloud-service integration and controlled operational workflows; production deployment was not claimed.",
+      "title": "AWS Banking & Payment Risk Platform",
+      "technologies": "AWS SDK · Terraform · EventBridge · SQS · S3 · Bedrock · SageMaker · Node.js · PostgreSQL",
+      "description": "Engineered a locally validated payment-risk application with AWS integration adapters for EventBridge, SQS, S3, Bedrock, SageMaker and optional Secrets Manager/KMS. Authored Terraform for an event bus, queues, dead-letter handling, storage and IAM policies. Implemented idempotent transactions, secure configuration and integration tests; cloud provisioning and live AWS calls remain unverified.",
+      "repository": "https://github.com/keenosmith-del/aws-ai-banking-and-payment-risk"
+    },
+    {
+      "title": "Google Cloud Retail & Supply Chain Platform",
+      "technologies": "Google Cloud · Terraform · Cloud Run · Cloud SQL · Pub/Sub · BigQuery · GCS · FastAPI",
+      "description": "Developed a containerised retail planning system with FastAPI, PostgreSQL, persistent jobs and event-driven processing. Implemented optional Google Cloud provider integrations and Terraform definitions for Cloud Run, Cloud SQL, Pub/Sub, BigQuery, storage, service accounts and IAM, with Cloud Build configuration. Validated local workflows; paid cloud resources were not deployed.",
+      "repository": "https://github.com/keenosmith-del/gcp-ai-retail-and-supply-chain"
+    },
+    {
+      "title": "Microsoft Azure AI-Powered DevOps Operations",
+      "technologies": "Azure · Microsoft Foundry · Python · FastAPI · GitHub APIs · Webhooks · MongoDB · Docker",
+      "description": "Built an engineering-operations application connecting GitHub evidence, Azure resource inventory, Activity Logs and scoped diagnostics to durable incident workflows. Integrated a Python agent runtime, signed webhooks, review/approval stages, verification history and secure API boundaries. Tested local lifecycle and provider contracts; live Foundry execution and production Azure deployment require configuration.",
       "repository": "https://github.com/keenosmith-del/microsoft-ai-powered-software-engineering-devops"
     },
     {
-      "title": "Distributed Systems Reliability Chaos Engineering and Disaster Recovery Platform",
-      "technologies": "Go · React / TypeScript · Docker · Kubernetes · k6 · Toxiproxy · OpenTelemetry",
-      "description": "Built a reliability-focused operations platform for testing service behaviour under controlled failure. Combines load generation, fault injection, telemetry and recovery validation across distributed components. Demonstrates retries, idempotency, data-consistency checks and observable operational behaviour relevant to cloud-native and container-based applications.",
+      "title": "Distributed Systems Reliability & Disaster Recovery",
+      "technologies": "Docker · Kubernetes manifests · Go · PostgreSQL · RabbitMQ · Prometheus · Grafana · k6",
+      "description": "Built a containerised reliability testbed with service health metrics, tracing, controlled fault injection and transaction recovery. Used durable messaging, retries, idempotency and a transactional outbox; verified failure behaviour and isolated PostgreSQL backup restoration. Added Kubernetes deployment manifests, with local Compose operation validated and cluster deployment separately unverified.",
       "repository": "https://github.com/keenosmith-del/sre-chaos-engineering"
-    },
-    {
-      "title": "n8n Enterprise Workflow and Integration OpsFlow Platform",
-      "technologies": "n8n · React / TypeScript · NestJS · PostgreSQL · RabbitMQ · Redis · Docker",
-      "description": "Engineered event-driven procurement workflows covering budget checks, supplier quotations, approval and purchase orders. Integrates an application-owned data and permission model with external orchestration, webhooks, messaging and operational audit trails. Addresses asynchronous delivery, retry behaviour, approval pauses and failure handling across service boundaries.",
-      "repository": "https://github.com/keenosmith-del/n8n-workflow-integration-opsflow"
-    },
-    {
-      "title": "Intelligent Manufacturing Quality Control Platform",
-      "technologies": "Google Cloud-ready · Firestore · Cloud Storage · Rust / Axum · ONNX Runtime · CI/CD",
-      "description": "Developed a React and Rust inspection application with Firestore-backed evidence, versioned model releases and storage adapters for local and Google Cloud environments. Includes model activation, rollback, monitoring and a manual cloud deployment workflow. Google Cloud deployment was prepared but not exercised; the implemented inspection and review workflows were verified locally.",
-      "repository": "https://github.com/keenosmith-del/intelligent-manufacturing-qc"
-    },
-    {
-      "title": "Enterprise AI Customer Operations Platform",
-      "technologies": "React · Express · PostgreSQL · RabbitMQ · Azure Service Bus SDK · Docker · CI/CD",
-      "description": "Built a full-stack case operations system with an independent worker, transactional outbox and durable asynchronous jobs. Implements acknowledgement, retries, dead-letter handling, lease recovery, idempotent outcomes and operational health views. Local RabbitMQ processing was verified; Azure Service Bus remained an optional contract-tested integration rather than a claimed live deployment.",
-      "repository": "https://github.com/keenosmith-del/enterprise-ai-customer-operations"
     }
   ]
 }

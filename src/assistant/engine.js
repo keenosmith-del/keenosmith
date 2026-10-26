@@ -1,3 +1,4 @@
+import { specificAnswer } from './specificAnswer.js';
 import { interpret } from "./interpret.js";
 import { retrieve, evidence } from "./retrieve.js";
 import { education, experience } from "./knowledge.js";
@@ -22,7 +23,7 @@ export function answer(question, context = {}) {
   }
   if (q.intent === "education") {
     cards = [];
-    text = education.join("\n\n") + "\n\nAn awarded degree is not confirmed in the portfolio.";
+    text = education.join("\n\n");
   }
   if (q.intent === "experience") {
     cards = [];
@@ -89,7 +90,7 @@ export function answer(question, context = {}) {
         "\n\nCompare the individual evidence bands below; they reflect documented implementation rather than a claim that one technology is objectively his strongest.";
     if (names.includes("React"))
       text +=
-        "\n\nThe CV also documents full-stack training at HyperionDev in January to June 2026. Project-based engineering is listed from 2022; that does not establish a React-specific start date.";
+        "\n\nThe CV also documents full-stack training at HyperionDev in January to June 2026. His 6+ years of overall relevant experience is distinct from technology-specific duration.";
   }
   if (q.intent === "role") {
     indicators = names.slice(0, 8).map(evidence);
@@ -112,6 +113,8 @@ export function answer(question, context = {}) {
         "\n\n",
       )}\n\nThe local parser recognises portfolio technologies and engineering domains. Unrecognised requirements, years-of-experience thresholds, management expectations and nontechnical criteria are not fully evaluated. ${q.long ? "Please review requirements not named above individually." : ""}`;
   }
+  const specific = specificAnswer(q, found, context);
+  if (specific) { text = specific.text; cards = specific.projects; creds = specific.credentials; indicators = specific.indicators; }
   const prompts =
     q.intent === "credentials"
       ? ["What is his education?", "Show cloud projects"]
@@ -141,6 +144,7 @@ export function answer(question, context = {}) {
         q.intent === "role" ? [question.slice(0, 300)] : context.roles || [],
     },
     interpretation: q,
+    specific: !!specific,
     debug: { intent: q.intent, ...found.debug },
   };
 }

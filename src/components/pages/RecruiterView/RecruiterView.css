@@ -11,8 +11,7 @@
 }
 
 .recruiter-hero {
-  min-height: 68vh;
-  padding: 136px 0 72px;
+  padding: 88px 0 48px;
   display: flex;
   align-items: center;
 }
@@ -574,10 +573,6 @@
     grid-template-columns: 1fr;
   }
 
-  .recruiter-hero {
-    min-height: 58vh;
-  }
-
   .recruiter-panel {
     padding: 28px;
   }
@@ -593,7 +588,7 @@
   }
 
   .recruiter-hero {
-    padding-top: 130px;
+    padding-top: 88px;
     padding-bottom: 48px;
     min-height: auto;
   }
@@ -907,4 +902,34 @@
     animation: none !important;
     transition: none !important;
   }
+}
+
+.recruiter-result blockquote {
+  margin: 14px 0;
+  padding: 12px;
+  background: rgba(232, 226, 216, 0.3);
+  border-radius: 10px;
+  font-size: 13px;
+  line-height: 1.65;
+}
+.recruiter-result blockquote small {
+  display: block;
+  margin-top: 8px;
+}
+.recruiter-diagnostics {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: 11px;
+}
+.recruiter-result .recruiter-role-name small {
+  display: block;
+  margin-top: 6px;
+}
+.recruiter-result .recruiter-session-note,
+.recruiter-result .recruiter-provenance,
+.recruiter-result .recruiter-match strong {
+  overflow-wrap: anywhere;
+}
+.recruiter-result .recruiter-match > div {
+  min-width: 0;
 }

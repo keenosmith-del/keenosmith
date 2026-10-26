@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { ArrowLeft, ArrowRight, ArrowUp } from "lucide-react";
 import mascot from "../../../assets/images/mascot/mascot.png";
 import mascot2 from "../../../assets/images/mascot/mascot-2.png";
-import { assessRole } from "./utils/recruiterScoring.js";
+import { assessRole, isAssessmentCurrent } from "./utils/recruiterScoring.js";
 import RecruiterAssessment from "./components/RecruiterAssessment.jsx";
 import RecruiterMetadata from "./components/RecruiterMetadata.jsx";
 import "./RecruiterView.css";
@@ -150,11 +150,11 @@ export default function RecruiterView() {
           className="recruiter-panel recruiter-input"
           aria-labelledby="role-input-title"
         >
-          <span className="recruiter-eyebrow">Role input</span>
           <h2 id="role-input-title">Start with the role.</h2>
           <p>
-            Paste the requirements to compare them with the same evidence used
-            by Ask my Assistant. Assessment runs locally.
+            Paste the role to compare its requirements with reconciled evidence
+            across the portfolio and a curated source audit. Assessment runs
+            locally.
           </p>
           <form onSubmit={submit}>
             <label htmlFor="recruiter-title">Role title</label>
@@ -243,7 +243,6 @@ export default function RecruiterView() {
           <header className="recruiter-identity">
             <img src={mascot2} alt="" />
             <div>
-              <span className="recruiter-eyebrow">Portfolio intelligence</span>
               <h2 id="assessment-title">Role Fit Assessment</h2>
             </div>
           </header>
@@ -265,6 +264,11 @@ export default function RecruiterView() {
               <h3>{stages[stage]}</h3>
               <p>Comparing projects, credentials and documented evidence.</p>
             </div>
+          ) : result && !isAssessmentCurrent(result) ? (
+            <p role="status">
+              The evidence, model or assessment date has changed. Run the
+              assessment again to use current records.
+            </p>
           ) : result ? (
             <RecruiterAssessment result={result} />
           ) : (

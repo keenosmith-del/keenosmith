@@ -1,5 +1,5 @@
 import { answer } from './engine.js';
-import { education, experience } from './knowledge.js';
+import { experience } from './knowledge.js';
 import { evidence } from './retrieve.js';
 
 export { starterQuestions } from './social.js';
@@ -22,12 +22,12 @@ export function conversationalAnswer(question, context = {}) {
   const direct = result.projects.filter((p) => p.demonstrated && (!names.length || p.implementedTechnologies.some((t) => names.includes(t))));
   const strong = result.indicators.filter((i) => i.band >= 2).map((i) => i.skill);
   const limited = result.indicators.filter((i) => i.band < 2).map((i) => i.skill);
-  if (interpretation.intent === 'experience') {
-    result.text = `${experience[0].split('. ')[0]}. He also led technical and digital operations at Firstdaes Entertainment (2020–2026) and worked on technical content and documentation at 3Play Media (2021–2025). The engineering experience is project-based; the portfolio does not establish equivalent employed engineering tenure.`;
-  } else if (interpretation.intent === 'education') {
-    result.text = `${education.slice(0, 2).join(' ')} He also studied Computer Science at UNISA (2017–2022). An awarded degree is not confirmed in the portfolio.`;
+  if (result.specific) {
+    // Preserve the exact scoped answer from the shared engine.
+  } else if (interpretation.intent === 'experience') {
+    result.text = `${experience[0]} Current work includes Python and full-stack AI training and evaluation at Turing / OpenTrain AI and AI solutions consulting and application engineering at KAILOR. Earlier roles cover digital platforms and operations at Firstdaes Entertainment, plus technical documentation at 3Play Media.`;
   } else if (interpretation.intent === 'credentials') {
-    result.text = result.credentials.length ? `The portfolio lists ${result.credentials.length} relevant credentials, including Applied Skills, training and technical learning records; these are not all professional certifications. The credential cards link to the records; issuer profiles do not independently verify each credential.` : 'No matching earned credential is documented. A listed skill or planned exam does not establish certification.';
+    result.text = result.credentials.length ? `His relevant records include ${result.credentials.slice(0, 3).map(c => c.name).join('; ')}. The credential cards distinguish qualifications, Applied Skills, programmes and coursework.` : 'No matching completed credential is recorded.';
   } else if (['skills', 'projects'].includes(interpretation.intent)) {
     const focus = interpretation.entities.length <= 3 && interpretation.entities.some((s) => evidence(s).band < 2) && strong.length ? strong.join(' and ') : interpretation.expansion.groups.length ? interpretation.expansion.groups.join(', ') : interpretation.entities.slice(0, 3).join(' and ') || 'full-stack, AI and cloud engineering';
     const support = names.map(evidence).filter((i) => i.band >= 2).map((i) => i.skill);
@@ -44,11 +44,11 @@ export function conversationalAnswer(question, context = {}) {
       result.projects = []; result.credentials = [];
     }
   }
-  if (analytical) {
+  if (analytical && !result.specific) {
     result.text = 'His documented full-stack, AI integration, cloud and workflow engineering are relevant to enterprise applications and automation. Supporting projects demonstrate applied systems, with implementation and planned scope identified separately. I have no live market evidence to establish current hiring demand or employment outcomes.';
   }
-  if (/develop further|improve|gaps|missing experience/.test(social)) {
-    result.text = 'The portfolio does not establish employed engineering tenure, production scale or team leadership in an engineering organisation. Those areas need further evidence; any additional gaps depend on the target role. Paste its requirements for a specific assessment in Recruiter View.';
+  if (!result.specific && /develop further|improve|gaps|missing experience/.test(social)) {
+    result.text = 'Areas to examine depend on the target role, especially documented leadership scope, live operating scale and technology-specific tenure. Paste its requirements for a specific assessment in Recruiter View.';
     result.projects = [];
   }
   if (/^which ones/.test(social) && context.groups?.includes('cloud'))
@@ -63,7 +63,7 @@ export function conversationalAnswer(question, context = {}) {
   // Keep every retrieved record available via progressive disclosure, without an oversized first reply.
   result.indicators = result.indicators.slice(0, interpretation.intent === 'role' ? 5 : 3);
   // Direct single-skill checks already have a reliable evidence-band answer.
-  result.local = !analytical && interpretation.intent === 'skills' && interpretation.entities.length === 1 && /^(does|has)\b.*\b(know|use|work with)\b/.test(social) && !interpretation.comparison;
+  result.local = result.specific || (!analytical && interpretation.intent === 'skills' && interpretation.entities.length === 1 && /^(does|has)\b.*\b(know|use|work with)\b/.test(social) && !interpretation.comparison);
   result.compact = true;
   return result;
 }

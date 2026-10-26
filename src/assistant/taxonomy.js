@@ -375,12 +375,26 @@ export const taxonomy = [
     ],
   },
   {
+    id: 'architecture', label: 'Architecture & Engineering', aliases: ['architecture', 'system design'],
+    skills: ['Software Architecture', 'System Design', 'RESTful Architecture', 'Microservices', 'Event-driven Architecture', 'Serverless Architecture', 'Distributed Systems', 'Asynchronous Workflows', 'Message Queues', 'API Design', 'Integration Patterns', 'Error Handling', 'Observability'],
+  },
+  {
     id: "cloud",
     label: "Cloud",
     aliases: ["cloud", "cloud engineering"],
     skills: [],
   },
 ];
+// Refreshed capabilities use the same category rules for retrieval and Explore.
+for (const [id, names] of Object.entries({
+  ai: ['LangGraph', 'Context engineering', 'ONNX Runtime', 'MLOps'],
+  backend: ['Axum', 'Zod'],
+  languages: ['Rust'],
+  architecture: ['Code Review', 'Testing', 'Documentation', 'Stakeholder Communication', 'Solution Architecture', 'Workflow Design', 'Requirements Analysis', 'Troubleshooting', 'Operational Delivery', 'Technical Communication', 'Quality Assurance'],
+})) {
+  const group = taxonomy.find(t => t.id === id);
+  if (group) group.skills = [...new Set([...group.skills, ...names])];
+}
 taxonomy.find((t) => t.id === "cloud").skills = [
   ...new Set(
     taxonomy
