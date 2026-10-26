@@ -1192,11 +1192,13 @@
 }
 
 .explore-project-cover {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  height: 180px;
+  height: 100%;
   object-fit: contain;
-  flex-shrink: 0;
-  margin-bottom: 24px;
+  object-position: center bottom;
+  margin: 0;
   pointer-events: none;
 }
 @media (min-width: 1101px) and (hover: hover) and (pointer: fine) {
@@ -1460,4 +1462,39 @@ a.explore-project:focus-visible { outline: 2px solid var(--charcoal); outline-of
 .explore-preview > footer { width: min(1180px, 100%); margin: 48px auto 0; font-size: 12px; }
 @media (max-width: 600px) {
   .explore-page.explore-preview { padding-top: 112px; }
+}
+
+/* Artwork stays contained against the tile floor at every viewport size. */
+.explore-project-panel .explore-project-cover {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  margin: 0;
+}
+.explore-project::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: var(--tile-bg);
+  opacity: 0.6;
+  pointer-events: none;
+}
+.explore-project .explore-project-reveal { position: relative; z-index: 2; }
+@media (hover: hover) and (pointer: fine) {
+  /* CrewAI: top pill and title at rest; its technology pills reveal on hover/focus. */
+  .explore-project-pills-on-hover .explore-project-reveal { opacity: 1; transform: none; }
+  .explore-project-pills-on-hover:not(:hover):not(:focus-within) { padding-bottom: 27.2px; }
+  .explore-project-pills-on-hover:not(:hover):not(:focus-within)::after { opacity: 0.25; }
+  .explore-project-pills-on-hover:not(:hover):not(:focus-within) .explore-tags { display: none; }
+  .explore-project-pills-on-hover:not(:hover):not(:focus-within) h2 { margin-bottom: 0; }
+  .explore-project-arrow { opacity: 0; transform: translateY(9.6px) scale(0.9); }
+  .explore-project:hover .explore-project-arrow,
+  .explore-project:focus-within .explore-project-arrow { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .explore-project-reveal, .explore-project::after, .explore-project-arrow { transition: none; }
 }

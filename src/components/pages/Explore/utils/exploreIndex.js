@@ -1,3 +1,4 @@
+import { exploreProjectPresentation } from "./exploreProjectDetails.js";
 import { aliasesForSkill } from "../../../../data/skillNames.js";
 import { projectEvidenceById, galleryProjectIds } from "../../../../data/projectEvidence.js";
 import {
@@ -92,10 +93,12 @@ export const projectIndex = [...canonicalProjects]
 export const curatedProjects = galleryProjectIds.map((canonicalId, index) => {
   const source = projectIndex.find(project => project.id === canonicalId);
   const facts = projectEvidenceById.get(canonicalId);
+  const presentation = exploreProjectPresentation[canonicalId];
   return indexed({
     ...source,
     id: facts.displayId,
     canonicalId,
+    ...presentation,
     title: facts.title,
     technologies: facts.implementedTechnologies,
     summary: facts.description,

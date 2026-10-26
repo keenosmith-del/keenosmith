@@ -12,32 +12,6 @@ export function ProjectLink({ project, children, className, ...props }) {
     </Link>
   );
 }
-// Pin the original catalogue selections, even when filters change their positions.
-const alwaysVisibleProjects = new Set([
-  "banking-risk",
-  "ollama",
-  "hugging-face",
-  "eventops-intelligence",
-  "claude",
-  "field-service",
-  "enterprise-workspace",
-  "productivity-platform",
-  "music-api",
-  "ai-assistant",
-  "intelligence-manufacturing-llmops",
-  "enterprise-ai-mlops",
-]);
-
-const titleVisibleProjects = new Set([
-  "distributed-reliability",
-  "n8n",
-  "microsoft-devops",
-  "vertex-ai-retail",
-  "deepseek",
-  "telecom-billing",
-  "fleet-operations",
-]);
-
 export function ProjectTile({ project }) {
   const artwork = projectArtwork[project.id];
   const cover = artwork?.image;
@@ -55,7 +29,7 @@ export function ProjectTile({ project }) {
             }
           : undefined
       }
-      className={`explore-project explore-tone-${project.tone} ${cover ? "explore-project-with-cover" : ""} ${alwaysVisibleProjects.has(project.id) ? "explore-project-always-visible" : ""} ${titleVisibleProjects.has(project.id) ? "explore-project-title-visible" : ""}`}
+      className={`explore-project explore-tone-${project.tone} ${cover ? "explore-project-with-cover" : ""} ${project.visibility === "details" ? "explore-project-always-visible" : "explore-project-title-visible"} ${project.visibility === "title-pills" ? "explore-project-pills-on-hover" : ""}`}
     >
       {cover && (
         <img
@@ -66,13 +40,13 @@ export function ProjectTile({ project }) {
         />
       )}
       <div className="explore-project-reveal">
-        <span className="explore-domain">{project.domain}</span>
+        <span className="explore-domain">{project.topSkills.join(" · ")}</span>
         <div className="explore-project-text">
           <h2>{project.title}</h2>
-          <p className="explore-description">{project.summary}</p>
+          {project.visibility !== "title-pills" && <p className="explore-description">{project.summary}</p>}
         </div>
         <div className="explore-tags">
-          {project.technologies.slice(0, 3).map((skill) => (
+          {project.tileSkills.map((skill) => (
             <span key={skill}>{skill}</span>
           ))}
         </div>
