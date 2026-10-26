@@ -26,22 +26,22 @@ export default function Kailor() {
               className="cloud-tile"
               data-company-id="kailor"
               style={{
-                "--cloud-tile-bg": "#78b8be",
+                "--cloud-tile-bg": "#f6e6da",
                 "--cloud-tile-ink": "var(--charcoal)",
               }}
             >
               <div className="kailor-project-pills">
-                {["React", "Node.js", "PostgreSQL"].map(technology => <span className="cloud-platform" key={technology}>{technology}</span>)}
+                {["Software engineering", "AI & automation", "Cloud"].map(technology => <span className="cloud-platform" key={technology}>{technology}</span>)}
               </div>
               <div className="cloud-artwork">
                 <img src={kailorMascot} alt="kailor mascot" loading="lazy" />
               </div>
               <div className="cloud-overlay" aria-hidden="true" />
               <div className="cloud-tile-caption">
-                <h3>AI Consultancy &amp; Software Solutions</h3>
+                <h3>Technology consultancy &amp; engineering</h3>
                 <div className="cloud-tile-details">
                   <p>
-                    My technology consultancy helps businesses identify useful AI opportunities, improve workflows and plan tailored software. The consulting workspace supports discovery, evidence review, recommendations and reports, connecting business needs to practical technology decisions.
+                    kailor brings together technology consulting, full-stack software engineering, AI and automation, and cloud infrastructure. My work spans discovery, assessment, solution design, implementation and ongoing improvement. The aim is to recommend and deliver technology that genuinely fits the problem, whether that means improving an existing process, integrating established tools or engineering something new.
                   </p>
                 </div>
               </div>
@@ -54,13 +54,7 @@ export default function Kailor() {
             <div className="kailor-intro" data-scroll-fade>
               <h2 id="kailor-heading">intelligence, put to work.</h2>
               <p>
-                kailor is my technology consultancy, helping businesses identify
-                opportunities for AI, improve existing processes, and turn
-                practical ideas into tailored software solutions. Alongside it,
-                kai is an AI knowledge hub designed to make emerging
-                technologies, tools, and applications easier to understand and
-                explore. Together, they connect business insight, AI education,
-                and real-world engineering.
+                kailor insider began as an independent publishing platform I founded to explore developments and ideas in technology. That work grew into kailor, a technology consultancy bringing together software engineering, AI and automation, cloud infrastructure and practical business advisory. I approach the work by understanding what people and businesses need, then designing and delivering solutions that make sense for their context. Today, kailor insider continues as a dedicated place for publishing, discovery and conversation, while kailor turns the same curiosity into engineered systems and practical outcomes.
               </p>
             </div>
             <div className="kailor-launch" data-scroll-fade>
@@ -90,7 +84,7 @@ export default function Kailor() {
           </div>
         </div>
         <p className="kailor-metadata" data-scroll-fade>
-          I apply the same hybrid intelligence approach behind Kailor to this
+          I apply the same hybrid intelligence approach behind kailor to this
           portfolio's Assistant and Recruiter View, combining structured
           evidence with contextual analysis.
         </p>
