@@ -37,8 +37,8 @@ try {
     "enterprise-workspace",
     "ai-assistant",
   ]) {
-    assert(!curatedProjects.find((p) => p.id === id).hasDetailPage);
-    assert(projectIndex.find((p) => p.id === id).status.includes("Rebuilding"));
+    assert(curatedProjects.find((p) => p.id === id).hasDetailPage);
+    assert(projectIndex.find((p) => p.id === id).demonstrated);
   }
   assert.equal(new Set(curatedProjects.map((p) => p.id)).size, 22);
   assert.equal(
@@ -135,7 +135,11 @@ try {
     relatedCredentials(skillIndex.find((s) => s.name === "Azure")).length,
   );
   // A broader skill must not count as direct evidence for a specific tool.
-  assert.ok(evidence("React Router").band < evidence("React").band);
+  assert.ok(evidence("React Router").band <= evidence("React").band);
+  const router = skillIndex.find(s => s.name === 'React Router');
+  assert(router.projects.every(p => p.implementedTechnologies.includes('React Router')));
+  assert(!router.projects.some(p => p.id === 'eventops-streamlit'));
+  assert(!skillIndex.find(s => s.name === 'Kubernetes').projects.some(p => p.id === 'distributed-reliability'));
   for (const s of skillIndex)
     assert.ok(
       s.assessment.detail.startsWith(

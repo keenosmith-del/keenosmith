@@ -1,3 +1,4 @@
+import { canonicalSkill } from "../data/skillNames.js";
 import {
   projects,
   credentials,
@@ -124,11 +125,11 @@ const evidenceIndex = new Map();
 export function implementedSkillProjects(skill) {
   return [
     ...new Map(
-      projects
+      canonicalProjects
         .filter(
           (p) =>
             p.demonstrated &&
-            p.implementedTechnologies.some((t) => contains(t, skill)),
+            p.implementedTechnologies.includes(canonicalSkill(skill)),
         )
         .map((p) => [p.canonicalId, p]),
     ).values(),
@@ -168,6 +169,7 @@ export function evidence(skill) {
     ][band] : professional.length ? 'Documented professional usage' : declared ? 'Candidate-declared experience' : learning.length ? 'Training or coursework' : listed ? 'Listed familiarity' : canonicalProjects.some(p => !p.demonstrated && p.technologies.includes(skill)) ? 'Planned implementation' : 'No matching record',
     detail: `${used.length} implemented project${used.length === 1 ? "" : "s"}; ${learning.length} supporting learning credential${learning.length === 1 ? "" : "s"}${professional.length ? `; professional usage at ${[...new Set(professional.map(r => r.role.employer))].join(', ')}` : ''}${declared ? '; candidate-declared experience, implementation source unresolved' : ''}.`,
     professional,
+    configured: canonicalProjects.filter(p => p.configuredTechnologies?.includes(canonicalSkill(skill))),
     declared,
     learning,
     planned: canonicalProjects.filter(p => !p.demonstrated && p.technologies.includes(skill)),

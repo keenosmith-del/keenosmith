@@ -1,3 +1,4 @@
+import { canonicalSkill, normalizeSkills } from "../data/skillNames.js";
 import { candidateFacts, educationSummary, experienceSummary, professionalSkillRecords } from '../data/candidateProfile.js';
 import { auditedProjects, auditOverrides, exactToolRecords } from '../data/auditedProjects.js';
 import { rebuildingProjects } from "../data/rebuildingProjects.js";
@@ -14,7 +15,6 @@ import { projectConcepts } from "../data/projectConcepts.js";
 import { skillGroups } from "../data/skillGroups.js";
 import { certificationGroups } from "../data/credentials.js";
 
-const canonicalSkill = name => name === "Gemini" ? "Google Gemini" : name;
 const scopeKey = (s) =>
   s
     .toLowerCase()
@@ -202,11 +202,13 @@ const canonicalAliases = {
   gcp: "vertex-ai-retail",
   "intelligence-manufacturing-llmops": "manufacturing-qc",
   "enterprise-ai-mlops": "customer-operations",
+  "company-websites": "kailor-ai",
 };
 export const projects = [...existingProjects.filter(p => !auditedProjects.some(a => a.id === p.id)), ...auditedProjects.map(p => ({ ...p, demonstrated: true, status: "Built · Implementation reviewed", evidence: p.sources.map(source => ({type: "source-code", source: `${p.repository}/blob/main/${source}`, strength: "direct", inspectedOn: p.inspectedOn || "2026-10-18"})) }))].map((originalProject) => {
   const p = { ...originalProject, ...auditOverrides[originalProject.id] };
   const canonicalId = canonicalAliases[p.id] || p.id;
   const extra = repositoryEvidence.find((r) => r.id === canonicalId);
+  if (extra) Object.assign(p, extra, { id: p.id });
   const cvScope = p.id.startsWith("cv-")
     ? taxonomy
         .flatMap((t) => t.skills)
@@ -217,7 +219,7 @@ export const projects = [...existingProjects.filter(p => !auditedProjects.some(a
   ];
   const built = p.demonstrated || !!extra;
   const original = existingProjects.find((r) => r.id === canonicalId) || p;
-  const rebuilding = rebuildingProjects.some((r) => r.id === canonicalId && !r.planned);
+  const rebuilding = !extra && rebuildingProjects.some((r) => r.id === canonicalId && !r.planned);
   const publication =
     rebuilding ? "not-yet-published" : extra && !original.demonstrated
       ? "not-yet-published"
@@ -231,11 +233,11 @@ export const projects = [...existingProjects.filter(p => !auditedProjects.some(a
     aliases: Object.entries(canonicalAliases)
       .filter(([, id]) => id === canonicalId)
       .map(([id]) => id).concat(p.aliases || []),
-    technologies,
+    technologies: extra ? normalizeSkills(extra.technologies) : technologies,
     implementedTechnologies: [
       ...new Set([
-        ...(p.demonstrated ? p.technologies.map(canonicalSkill) : []),
-        ...(extra?.technologies || []),
+        ...(extra ? extra.implementedTechnologies : p.demonstrated ? p.technologies.map(canonicalSkill) : []),
+        ...(extra?.implementedTechnologies || []),
       ].filter(name => !p.plannedTechnologies?.includes(name))),
     ],
     description: extra?.description || p.description,
@@ -257,7 +259,8 @@ export const projects = [...existingProjects.filter(p => !auditedProjects.some(a
     repositoryUrl: extra?.repository || p.repository || null,
     routes: [p.path],
     demoUrl: null,
-    ...relationships(technologies),
+    ...relationships(extra ? extra.technologies : technologies),
+    ...(extra?.categories ? { categories: extra.categories } : {}),
     evidence: [
       {
         type: "existing-assistant",
@@ -328,8 +331,8 @@ export const experience = experienceSummary;
 export { candidateFacts, exactToolRecords, professionalSkillRecords };
 export const skills = [
   ...new Set([
-    ...skillGroups.flatMap((g) => g.skills),
-    ...projects.flatMap((p) => p.technologies),
+    ...skillGroups.flatMap((g) => g.skills).map(canonicalSkill),
+    ...projects.flatMap((p) => p.technologies).map(canonicalSkill),
     ...cvSkillEvidence.flatMap((r) => r.technologies.map(canonicalSkill)),
   ]),
 ];

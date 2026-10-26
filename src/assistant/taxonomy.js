@@ -1,3 +1,4 @@
+import { canonicalSkill, normalizeSkills } from "../data/skillNames.js";
 // Shared relationships drive query expansion and registry classification.
 export const taxonomy = [
   {
@@ -395,6 +396,22 @@ for (const [id, names] of Object.entries({
   const group = taxonomy.find(t => t.id === id);
   if (group) group.skills = [...new Set([...group.skills, ...names])];
 }
+for (const [id, skills] of Object.entries({
+  ai: ['CrewAI', 'FastEmbed', 'Structured outputs', 'Agent observability', 'Evidence validation', 'Prompt-injection boundaries'],
+  frontend: ['Streamlit'],
+  backend: ['Pydantic', 'Webhooks', 'Background workers', 'Workflow automation'],
+  databases: ['SQLAlchemy', 'Alembic', 'Database transactions', 'Concurrency control', 'Idempotency', 'Data normalization', 'Financial calculations'],
+  devops: ['Docker Compose', 'Caddy', 'GitHub Actions', 'Deployment Automation', 'Rollback procedures', 'Release validation', 'OIDC', 'Cloudflare Workers', 'Cloudflare Pages'],
+  infrastructure: ['Bicep', 'Terraform', 'OpenTofu'],
+  microsoft: ['Bicep', 'Azure Language', 'Microsoft Graph'],
+  security: ['Human approval', 'Audit logging', 'Tenant isolation', 'OIDC', 'TOTP', 'Prompt-injection boundaries', 'Request replay protection'],
+  architecture: ['State machines', 'API contracts', 'Schema validation', 'Evidence validation'],
+})) {
+  const group = taxonomy.find(t => t.id === id);
+  if (group) group.skills.push(...skills);
+}
+taxonomy.push({ id: 'testing', label: 'Testing & Evaluation', aliases: ['testing', 'automated testing', 'test engineering', 'evaluation'], skills: ['Testing', 'Playwright', 'Vitest', 'pytest', 'AI Evaluation', 'Release validation', 'Concurrency control'] });
+for (const group of taxonomy) group.skills = normalizeSkills(group.skills);
 taxonomy.find((t) => t.id === "cloud").skills = [
   ...new Set(
     taxonomy
@@ -408,7 +425,7 @@ const key = (s) =>
     .replace(/[^a-z0-9]+/g, " ")
     .trim();
 export function relationships(technologies) {
-  const keys = new Set(technologies.map(key));
+  const keys = new Set(technologies.map(canonicalSkill).map(key));
   const matches = taxonomy
     .filter((t) => t.skills.some((s) => keys.has(key(s))))
     .map((t) => t.id);

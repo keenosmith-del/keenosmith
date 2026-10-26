@@ -74,6 +74,10 @@ export default function SkillDetailPanel({
       )}
       <EvidenceBar assessment={skill.assessment} />
       <p>{skill.assessment.detail}</p>
+      {!!skill.assessment.configured?.length && <>
+        <h3>Prepared configuration</h3>
+        {skill.assessment.configured.map(project => <p key={project.id}><strong>{project.title}</strong>: {project.deployment}</p>)}
+      </>}
       <h3>Project evidence</h3>
       {skill.projects.length ? (
         <div className="explore-detail-list">

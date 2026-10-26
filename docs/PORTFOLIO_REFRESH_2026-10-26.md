@@ -49,3 +49,26 @@ links and implementation/deployment boundaries. Tiles are single links with no n
 interactive element. Generic previews share project-origin back navigation.
 The 22-card catalogue test checks exact count, uniqueness and the new preview routes.
 `npm run lint`, `npm run build` and the Explore index test pass at this stage.
+
+### Stage 3 — Shared facts and skills
+
+`src/data/projectEvidence.js` and `reviewedProjectFacts.json` now own 25 current
+source-reviewed implementations. The former active audit modules are compatibility
+exports; the original source audit is archived. Concept/rebuild files preserve only
+presentation selections and consume current facts. One company-websites alias is
+consolidated into the existing consultancy record, reducing canonical records from
+45 to 44 without deleting historical evidence.
+
+Explore has 22 unique displayed implementations: the existing 19 and the requested
+three. The existing working custom pages are correctly labelled as available. Removed
+unconditional frontend/backend categories and stale LLMOps/MLOps descriptions.
+Explicit alias normalization covers Express, Google Gemini, Microsoft Foundry,
+PostgreSQL, CI/CD, Bicep, Compose and duplicate capitalization. Public skill IDs are
+unique; capability counts use exact canonical technology matches and canonical
+projects, not substring tags or aliases. Prepared Kubernetes configuration is
+searchable and shown separately in Skills, without direct runtime evidence credit.
+Current provider adapters retain explicit limitations; configured cloud services are
+separate from implemented skills. Skill panel/bar meaning remains unchanged.
+
+The Explore index regression, lint and build pass at this stage. The remaining lint
+warning is the pre-existing unused import in the legacy CV generator; it is not used.

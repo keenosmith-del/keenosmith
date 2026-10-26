@@ -1,4 +1,6 @@
+import { projectEvidenceById } from "./projectEvidence.js";
 export const eventOps = {
+  ...projectEvidenceById.get("eventops-intelligence"),
   id: "eventops-intelligence",
   buildStatus: "built",
   title: "EventOps Intelligence",
@@ -14,7 +16,7 @@ export const eventOps = {
     "PostgreSQL",
     "pgvector",
     "LangGraph",
-    "Gemini",
+    "Google Gemini",
     "RAG",
   ],
 };

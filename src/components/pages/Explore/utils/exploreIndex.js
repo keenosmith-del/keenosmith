@@ -1,5 +1,5 @@
-import { newProjects } from "../../../../data/projectEvidence.js";
-import { rebuildingProjects } from "../../../../data/rebuildingProjects.js";
+import { aliasesForSkill } from "../../../../data/skillNames.js";
+import { projectEvidenceById, galleryProjectIds } from "../../../../data/projectEvidence.js";
 import {
   canonicalProjects,
   skillRegistry,
@@ -17,9 +17,7 @@ import {
   skillPresentation,
   credentialTone,
 } from "./explorePresentation.js";
-import { eventOps } from "../../../../data/eventOps.js";
 import { projectConcepts } from "../../../../data/projectConcepts.js";
-import { exploreProjectDetails } from "./exploreProjectDetails.js";
 
 export const normalize = (value) =>
   String(value || "")
@@ -46,6 +44,8 @@ const indexed = (item) => ({
       item.status,
       item.date,
       ...(item.technologies || []),
+      ...(item.configuredTechnologies || []),
+      ...(item.plannedTechnologies || []),
       ...(item.aliases || []),
       labelText(item),
       ...(item.evidence || []).map(
@@ -84,63 +84,29 @@ export const projectIndex = [...canonicalProjects]
         p.categories.slice(0, 2).map(categoryName).join(" / ") ||
         "Software Engineering",
       route,
-      hasDetailPage: !!detailRoute,
+      hasDetailPage: p.caseStudyAvailable ?? !!detailRoute,
       tone: projectTone(i),
     });
   });
 // The visual catalogue is deliberately independent of the retrieval archive.
-export const curatedProjects = [
-  ...newProjects.map(project => ({ ...projectIndex.find(p => p.id === project.id), ...project, route: project.path, summary: project.description, repositoryUrl: project.repository, hasDetailPage: false })),
-  ...projectConcepts.map((concept) => {
-    const source = projectIndex.find(
-      (p) => p.id === concept.id || p.aliases.includes(concept.id),
-    );
-    return {
-      ...source,
-      ...concept,
-      route: source?.route || concept.path,
-      categories: [
-        ...new Set([...(source?.categories || []), "backend", "frontend"]),
-      ],
-      technologies: source?.technologies || concept.technologies,
-      summary: concept.description,
-      domain: concept.domain,
-    };
-  }),
-  ...rebuildingProjects.map((project) => ({
-    ...projectIndex.find((p) => p.id === project.id),
-    ...project,
-    summary: project.description,
-    hasDetailPage: false,
-  })),
-  {
-    ...eventOps,
-    summary: eventOps.description,
-    domain: "AI / Event Operations",
-    categories: ["ai", "backend", "frontend", "databases"],
-    ecosystems: [],
-    route: "/projects/eventops-intelligence",
-    hasDetailPage: true,
-  },
-].map((project, i) =>
-  indexed({
-    ...project,
-    ...exploreProjectDetails[project.id],
-    summary: exploreProjectDetails[project.id]?.description || project.summary,
-    planned: false,
-    buildStatus: "built",
-    tone:
-      project.id === "claude"
-        ? "orange"
-        : project.id === "hugging-face"
-          ? "yellow"
-          : project.id === "telecom-billing"
-            ? "pink"
-            : i % 2 === 0
-              ? "charcoal"
-              : "surface",
-  }),
-);
+export const curatedProjects = galleryProjectIds.map((canonicalId, index) => {
+  const source = projectIndex.find(project => project.id === canonicalId);
+  const facts = projectEvidenceById.get(canonicalId);
+  return indexed({
+    ...source,
+    id: facts.displayId,
+    canonicalId,
+    title: facts.title,
+    technologies: facts.implementedTechnologies,
+    summary: facts.description,
+    description: facts.description,
+    route: facts.path,
+    domain: facts.domain || facts.categories.map(categoryName).slice(0, 3).join(' / '),
+    categories: facts.categories,
+    hasDetailPage: facts.caseStudyAvailable,
+    tone: canonicalId === 'claude' ? 'orange' : canonicalId === 'hugging-face' ? 'yellow' : canonicalId === 'telecom-billing' ? 'pink' : index % 2 ? 'surface' : 'charcoal',
+  });
+});
 export const skillIndex = skillRegistry.map((s, i) => {
   const usedIds = new Set(
     implementedSkillProjects(s.name).map((p) => p.canonicalId),
@@ -157,9 +123,7 @@ export const skillIndex = skillRegistry.map((s, i) => {
     planned: assessment.planned,
     presentation: skillPresentation({ assessment, projects }, i),
     technologies: [s.name],
-    aliases: taxonomy
-      .filter((t) => t.skills.includes(s.name))
-      .flatMap((t) => t.aliases),
+    aliases: aliasesForSkill(s.name),
   });
 });
 function credentialType(c) {

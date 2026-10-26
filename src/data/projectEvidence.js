@@ -1,8 +1,11 @@
+import existingProjectFacts from './reviewedProjectFacts.json' with { type: 'json' };
+import { normalizeSkills } from './skillNames.js';
+import { relationships } from '../assistant/taxonomy.js';
 // Authoritative source-reviewed engineering facts. Presentation and career facts
 // live separately; repository services are never contacted during rendering.
 export const evidenceRevision = '2026-10-26.1';
 export const newProjectIds = ['crewai-revenueops', 'eventops-streamlit', 'ms-assessflow'];
-export const newProjects = [
+const newProjectDefinitions = [
   {
     id: 'crewai-revenueops', title: 'CrewAI RevenueOps Intelligence',
     aliases: ['revenueops', 'revenue ops', 'crew ai revenueops'],
@@ -48,4 +51,47 @@ export const newProjects = [
     deployment: 'Local application and real PostgreSQL/browser verification are recorded; successful hosted GitHub Actions CI is documented. Azure provider adapters, Bicep infrastructure and protected OIDC staging release automation are implemented/prepared, not a live Azure tenant deployment. Microsoft sign-in, Foundry inference, Language, Search, Graph and Copilot integration await authorised activation and live verification.',
     aiImplemented: true,
   },
-].map(p => ({ ...p, inspectedOn: '2026-10-26', verificationScope: 'source-verified implementation; project test results are repository-recorded, not rerun by this portfolio', capabilities: p.technologies.map(skill => ({ skill, status: p.adapterTechnologies?.includes(skill) ? 'adapter' : 'implemented', source: p.sources[0] })) }));
+];
+
+const displayIds = { microsoft: 'microsoft-devops', 'manufacturing-qc': 'intelligence-manufacturing-llmops', 'customer-operations': 'enterprise-ai-mlops' };
+export const galleryProjectIds = [
+  ...newProjectIds, 'microsoft', 'banking-risk', 'vertex-ai-retail', 'ollama', 'claude', 'hugging-face',
+  'distributed-reliability', 'n8n', 'deepseek', 'telecom-billing', 'field-service', 'fleet-operations',
+  'productivity-platform', 'music-api', 'enterprise-workspace', 'ai-assistant', 'manufacturing-qc', 'customer-operations', 'eventops-intelligence',
+];
+function review(project) {
+  const configuredTechnologies = normalizeSkills(project.configuredTechnologies || []);
+  const technologies = normalizeSkills(project.technologies).filter(s => !configuredTechnologies.includes(s));
+  const capabilities = technologies.map(skill => ({
+    skill,
+    status: project.adapterTechnologies?.includes(skill) ? 'adapter' : 'implemented',
+    // A capability is scoped to an inspected implementation plus its contracts,
+    // manifests and verification record, never proved by a free-floating tag.
+    sources: project.sources,
+    revision: project.sourceCommit,
+    limitations: project.deployment,
+  }));
+  return {
+    ...project, technologies, implementedTechnologies: technologies, configuredTechnologies, capabilities,
+    displayId: displayIds[project.id] || project.id,
+    inspectedOn: '2026-10-26',
+    verificationScope: 'Source implementation reviewed; test outcomes are repository records, not company suites executed by this portfolio.',
+    aliases: [...new Set([...(project.aliases || []), ...(displayIds[project.id] ? [displayIds[project.id]] : [])])],
+    ...relationships(technologies),
+    ...(project.categories ? { categories: project.categories } : {}),
+    caseStudyAvailable: galleryProjectIds.includes(project.id) && !newProjectIds.includes(project.id),
+    showInExplore: galleryProjectIds.includes(project.id),
+    showcaseVisible: true,
+    deploymentStatus: project.id === 'eventops-intelligence' ? 'documented assessment deployment; not reverified live' : 'local implementation; public deployment not established',
+    deploymentVerified: false,
+    evidence: project.sources.map(path => ({
+      type: /\.(json|toml|ya?ml|txt)$/.test(path) ? 'configuration' : /\.md$/.test(path) ? 'documentation' : 'source-code',
+      source: `${project.repository}/blob/${project.sourceCommit}/${path}`,
+      strength: /\.md$/.test(path) ? 'supporting' : 'direct',
+      revision: project.sourceCommit, inspectedOn: '2026-10-26',
+    })),
+  };
+}
+export const newProjects = newProjectDefinitions.map(review);
+export const reviewedProjects = [...existingProjectFacts.map(review), ...newProjects];
+export const projectEvidenceById = new Map(reviewedProjects.map(project => [project.id, project]));
