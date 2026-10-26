@@ -7,15 +7,15 @@ import { canonicalProjects } from "../../../assistant/knowledge.js";
 
 const fallbackProjects = {
   "company-websites": {
-    title: "Kailor & Kai: Website Engineering",
+    title: "kailor and kailor insider",
     description:
-      "Building the company websites for AI business assessment and an AI insights and research hub.",
+      "Founder-led technology consultancy and independent technology publishing, with separate application systems.",
     planned: true,
   },
   "kailor-ai": {
-    title: "Kailor: AI Business Assessment",
+    title: "kailor Consulting and Engineering Platform",
     description:
-      "Exploring how AI can assess business needs and identify practical opportunities.",
+      "Discovery, evidence, solution canvases and consultancy intake within the broader engineering company.",
     planned: true,
   },
   "go-dotnet": {

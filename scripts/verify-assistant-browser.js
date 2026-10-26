@@ -17,7 +17,7 @@ try {
   );
   assert.equal(
     await page.$eval(".portfolio-chat-footer", (e) => e.textContent),
-    "Powered by my own Hybrid Intelligence system · KAILOR",
+    "Built by my own Hybrid Intelligence system · kailor",
   );
   assert.equal(
     await page.$eval(".assistant-footer-secondary", (e) => e.textContent),

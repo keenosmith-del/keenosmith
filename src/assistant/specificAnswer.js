@@ -1,15 +1,18 @@
+import { companyAnswer } from "./companyAnswer.js";
 import { candidateFacts, education, credentials, exactToolRecords, professionalSkillRecords, skillRegistry } from './knowledge.js';
 import { implementedSkillProjects, evidence } from './retrieve.js';
 
 // Specific enquiries never fall through to a biography or a different skill.
 export function specificAnswer(q, found) {
+  const company = companyAnswer(q);
+  if (company) return company;
   const names = q.entities;
   const selected = q.projectIds.length ? found.projects.filter(p => q.projectIds.includes(p.id)) : found.projects;
   if (q.duration) {
     const tool = names.find(s => candidateFacts.technologyDuration[s]);
     return { text: names.length
       ? tool ? `Keeno records ${candidateFacts.technologyDuration[tool].label} of ${tool} experience. This is separate from his ${candidateFacts.overallExperience.label} of overall relevant experience.` : `A ${names.join(' / ')}-specific duration is not recorded. Keeno has ${candidateFacts.overallExperience.label} of overall relevant experience; that does not establish the same duration with each technology.`
-      : `${candidateFacts.identity.join(', ')} with ${candidateFacts.overallExperience.label} of overall relevant experience across independent engineering, founder work, consulting, professional roles and hands-on delivery. His work includes AI training and evaluation at Turing / OpenTrain AI, KAILOR consulting and application development, and digital platforms and operations at Firstdaes. Overlapping roles are not summed.`, projects: [], credentials: [], indicators: [] };
+      : `${candidateFacts.identity.join(', ')} with ${candidateFacts.overallExperience.label} of overall relevant experience across independent engineering, founder work, consulting, professional roles and hands-on delivery. His work includes AI training and evaluation at Turing / OpenTrain AI, kailor consulting and application development, and digital platforms and operations at Firstdaes. Overlapping roles are not summed.`, projects: [], credentials: [], indicators: [] };
   }
   if (q.intent === 'education') {
     return { text: `${education.join(' ')} His full-stack certification and Generative AI learning are supported by the credential records, including WeThinkCode_, AWS × Udacity, and Microsoft × Founderz. The degree requirement is treated as complete for Recruiter View assessment.`, projects: [], credentials, indicators: [] };

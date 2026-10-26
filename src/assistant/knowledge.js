@@ -174,14 +174,14 @@ const existingProjects = [
     ],
     [
       "company-websites",
-      "Kailor & Kai: Website Engineering",
-      "Company websites in development.",
+      "kailor and kailor insider",
+      "Independent consultancy and publishing ventures, founded in 2025 and 2024 respectively. The current company case study documents their history and separate systems.",
       ["React"],
     ],
     [
       "kailor-ai",
-      "Kailor: AI Business Assessment",
-      "Planned AI business assessment.",
+      "kailor Consulting and Engineering Platform",
+      "Consulting platform supporting the wider technology consultancy and engineering company.",
       ["AI"],
     ],
   ].map(([id, title, description, technologies]) => ({
@@ -203,7 +203,7 @@ const canonicalAliases = {
   "intelligence-manufacturing-llmops": "manufacturing-qc",
   "enterprise-ai-mlops": "customer-operations",
 };
-export const projects = [...existingProjects.filter(p => !auditedProjects.some(a => a.id === p.id)), ...auditedProjects.map(p => ({ ...p, demonstrated: true, status: "Built · Implementation reviewed", evidence: p.sources.map(source => ({type: "source-code", source: `${p.repository}/blob/main/${source}`, strength: "direct", inspectedOn: "2026-10-18"})) }))].map((originalProject) => {
+export const projects = [...existingProjects.filter(p => !auditedProjects.some(a => a.id === p.id)), ...auditedProjects.map(p => ({ ...p, demonstrated: true, status: "Built · Implementation reviewed", evidence: p.sources.map(source => ({type: "source-code", source: `${p.repository}/blob/main/${source}`, strength: "direct", inspectedOn: p.inspectedOn || "2026-10-18"})) }))].map((originalProject) => {
   const p = { ...originalProject, ...auditOverrides[originalProject.id] };
   const canonicalId = canonicalAliases[p.id] || p.id;
   const extra = repositoryEvidence.find((r) => r.id === canonicalId);

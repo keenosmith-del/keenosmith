@@ -25,7 +25,7 @@ export function conversationalAnswer(question, context = {}) {
   if (result.specific) {
     // Preserve the exact scoped answer from the shared engine.
   } else if (interpretation.intent === 'experience') {
-    result.text = `${experience[0]} Current work includes Python and full-stack AI training and evaluation at Turing / OpenTrain AI and AI solutions consulting and application engineering at KAILOR. Earlier roles cover digital platforms and operations at Firstdaes Entertainment, plus technical documentation at 3Play Media.`;
+    result.text = `${experience[0]} Current work includes Python and full-stack AI training and evaluation at Turing / OpenTrain AI and AI solutions consulting and application engineering at kailor. Earlier roles cover digital platforms and operations at Firstdaes Entertainment, plus technical documentation at 3Play Media.`;
   } else if (interpretation.intent === 'credentials') {
     result.text = result.credentials.length ? `His relevant records include ${result.credentials.slice(0, 3).map(c => c.name).join('; ')}. The credential cards distinguish qualifications, Applied Skills, programmes and coursework.` : 'No matching completed credential is recorded.';
   } else if (['skills', 'projects'].includes(interpretation.intent)) {
