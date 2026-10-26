@@ -1,3 +1,4 @@
+import { aliasesForSkill } from "../data/skillNames.js";
 import { skills, projects, exactToolRecords } from "./knowledge.js";
 import { expandQuery } from "./taxonomy.js";
 export const normalize = (s) =>
@@ -36,7 +37,7 @@ export const contains = (text, term) =>
 export function interpret(raw, context = {}) {
   const text = normalize(raw.slice(0, 16000));
   let entities = skills.filter((s) =>
-    [s, ...(aliases[s] || [])].some((a) => contains(text, a)),
+    [s, ...(aliases[s] || []), ...aliasesForSkill(s)].some((a) => contains(text, a)),
   );
   // One-edit tolerance only for long technology tokens, never short acronyms.
   if (!entities.length)
@@ -58,14 +59,14 @@ export function interpret(raw, context = {}) {
   const specificMatch = /(?:experience with|work(?:ed|s)? with|(?:know|use|used|using|build|deploy|design|demonstrate)\s+)\s*(.+?)(?:\?|$)/i.exec(raw);
   const unmatchedTool = !/\b(it|that|those|them)\b/.test(text) && !entities.length && !expansion.groups.length && specificMatch ? specificMatch[1].replace(/[?.!]+$/, '').trim() : null;
   const duration = /how long|duration/.test(text) || /how (?:much|many)|years? (?:of|with)/.test(text) && /experience|years|worked|using/.test(text);
-  const followupDetail = /production|deployed|deployment|live usage/.test(text) ? 'production' : /built or planned|completed|was that built|is (?:it|that) built/.test(text) ? 'status' : /personally|contribut|what did he implement/.test(text) ? 'contribution' : null;
+  const followupDetail = /production|deployed|deployment|\blive\b|limitations|accuracy|benchmark/.test(text) ? 'production' : /built or planned|completed|was that built|is (?:it|that) built/.test(text) ? 'status' : /personally|contribut|what did he implement/.test(text) ? 'contribution' : null;
   const refersBack = /^(which ones|which is|what has he built with them|explain further|explain the architecture|how does this compare|show relevant projects)/.test(text);
   if (refersBack && !entities.length && !expansion.groups.length && context.groups?.length)
     expansion = expandQuery(context.groups.join(" "), skills);
   let projectIds = projects
     .filter(
       (p) =>
-        contains(text, p.id.replaceAll("-", " ")) || contains(text, p.title),
+        contains(text, p.id.replaceAll("-", " ")) || contains(text, p.title) || (p.aliases || []).some(alias => contains(text, alias.replaceAll("-", " "))),
     )
     .map((p) => p.id);
   if (/^(explain further|explain the architecture|tell me more|how does this compare)/.test(text) && !projectIds.length)
@@ -126,7 +127,7 @@ export function interpret(raw, context = {}) {
     intent,
     domains: [...new Set(domains)],
     more: /other|more|those/.test(text),
-    comparison: /compar|versus|\bvs\b/.test(text),
+    comparison: /compar|differ|versus|\bvs\b/.test(text),
     long: raw.length > 500,
   };
 }

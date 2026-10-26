@@ -64,6 +64,7 @@ export function conversationalAnswer(question, context = {}) {
   result.indicators = result.indicators.slice(0, interpretation.intent === 'role' ? 5 : 3);
   // Direct single-skill checks already have a reliable evidence-band answer.
   result.local = result.specific || (!analytical && interpretation.intent === 'skills' && interpretation.entities.length === 1 && /^(does|has)\b.*\b(know|use|work with)\b/.test(social) && !interpretation.comparison);
+  if (!result.specific && ['skills', 'projects'].includes(interpretation.intent) && interpretation.expansion.groups.some(group => ['google', 'microsoft', 'aws', 'cloud'].includes(group))) result.text += ' Cloud integrations include implemented adapters and prepared configuration; live cloud deployment is not verified by this portfolio refresh.';
   result.compact = true;
   return result;
 }

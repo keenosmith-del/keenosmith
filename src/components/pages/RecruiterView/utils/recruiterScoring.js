@@ -7,7 +7,7 @@ import {
   evidenceFingerprint,
 } from "./candidateEvidence.js";
 
-export const MODEL_REVISION = "contextual-2.0.0";
+export const MODEL_REVISION = "contextual-2.1.0";
 export const alignmentLabel = (score) =>
   score >= 75
     ? "Implementation supported"
@@ -223,6 +223,12 @@ function assessCapability(term, row, records, profile) {
   if (confirmedGaps.length) {
     score = 0;
     detail = "Candidate evidence explicitly records this capability gap.";
+  }
+  const requiresLiveCloud = /\b(?:production|live|deployed)\b/i.test(row.sourcePhrase) && /azure|tenant|cloud|aws|gcp|openai|foundry/i.test(row.sourcePhrase) && /Azure|AWS|Google Cloud|Vertex AI|Foundry|Entra|Microsoft Graph|Cloud Run|OIDC|Bicep/.test(term);
+  if (requiresLiveCloud && built.length && !built.some(record => record.deploymentVerified === true)) {
+    score = Math.min(score, 30);
+    relation = 'transferable';
+    detail = 'Implementation or provider-adapter evidence supports transferable engineering; live cloud deployment and tenant operation are not verified for this requirement.';
   }
   const support = confirmedGaps.length
     ? confirmedGaps

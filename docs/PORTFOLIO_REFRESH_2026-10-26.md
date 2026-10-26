@@ -72,3 +72,29 @@ separate from implemented skills. Skill panel/bar meaning remains unchanged.
 
 The Explore index regression, lint and build pass at this stage. The remaining lint
 warning is the pre-existing unused import in the legacy CV generator; it is not used.
+
+### Stage 4 — Assistant and Recruiter View
+
+The Assistant recognizes current project/common skill aliases, retrieves all refreshed
+records, gives concrete architecture comparisons and retains project context for
+follow-ups. CrewAI now resolves to implemented RevenueOps evidence, while the earlier
+FinOps concept remains separate planned scope. Named-project and model-limit answers
+include recorded boundaries. Prepared Kubernetes configuration can be discussed as
+supporting evidence without becoming demonstrated runtime experience. Certification
+and role questions remain separate from project aliases. The server's generated
+catalogue now includes engineering, provenance and deployment limits, not just tags.
+
+Recruiter capability records consume the same project/capability model, with source
+revision, links, implementation/adapter status and explicit deployment limits. Specific
+new tools require specific evidence. Live Azure/tenant/cloud requirements receive
+only transferable support when deployment evidence is absent. Existing weights,
+qualification logic, compensation interpretation and six-year baseline are retained.
+Evidence/model revision identifiers invalidate earlier saved assessments.
+
+Added `scripts/validate-portfolio-refresh.js` to `npm run test:refresh`. It verifies
+new project retrieval, aliases, limitations, comparisons, follow-ups, exact skill
+relationships, source revisions, representative AI/full-stack/cloud roles, unsupported
+tools, production-cloud restraint, unchanged tenure and all protected CV digests.
+Existing assertions for the retired negative CrewAI record and obsolete publication
+badges are replaced with positive source-specific checks, retaining absent-tool and
+planned/deployed safeguards.

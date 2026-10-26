@@ -221,7 +221,7 @@ export const projects = [...existingProjects.filter(p => !auditedProjects.some(a
   const original = existingProjects.find((r) => r.id === canonicalId) || p;
   const rebuilding = !extra && rebuildingProjects.some((r) => r.id === canonicalId && !r.planned);
   const publication =
-    rebuilding ? "not-yet-published" : extra && !original.demonstrated
+    extra?.caseStudyAvailable ? "published" : rebuilding ? "not-yet-published" : extra && !original.demonstrated
       ? "not-yet-published"
       : original.demonstrated
         ? "published"

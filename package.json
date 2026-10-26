@@ -14,7 +14,7 @@
     "test:assistant": "node scripts/build-assistant-server.js && node scripts/validate-assistant.js && node scripts/validate-assistant-expansion.js && node scripts/test-assistant-intelligence.js",
     "test:recruiter": "node scripts/validate-recruiter.js",
     "test:recruiter:browser": "node scripts/verify-recruiter-browser.js",
-    "test:refresh": "node scripts/validate-evidence-refresh.js"
+    "test:refresh": "node scripts/validate-evidence-refresh.js && node scripts/validate-portfolio-refresh.js"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",

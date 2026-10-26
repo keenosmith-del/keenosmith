@@ -21,7 +21,7 @@ try {
     await page.waitForFunction(n => document.querySelectorAll('.assistant-message.user').length === n + 1 && !document.querySelector('.assistant-pending'), {}, count.length);
     return page.$$eval('.assistant-prose', es => es.at(-1).textContent);
   }
-  assert.match(await send('Does Keeno have experience with CrewAI?'), /No implemented CrewAI/);
+  assert.match(await send('Does Keeno have experience with CrewAI?'), /implemented CrewAI/);
   assert(await page.$eval('.portfolio-chat-header img', e => e.naturalWidth > 0));
   await page.screenshot({path:'/tmp/refresh-assistant-crewai-desktop.png'});
   assert.match(await send('Does he use Gemini?'), /implemented Google Gemini/);

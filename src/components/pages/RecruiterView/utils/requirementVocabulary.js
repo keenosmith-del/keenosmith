@@ -1,3 +1,4 @@
+import { aliasesForSkill } from "../../../../data/skillNames.js";
 import { skillRegistry } from "../../../../assistant/knowledge.js";
 
 const escape = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
@@ -111,7 +112,7 @@ export const technologyVocabulary = [
   .filter(
     (n) => ![...excluded].some((e) => e.toLowerCase() === n.toLowerCase()),
   )
-  .map((name) => ({ name, pattern: overrides[name] || word(name) }));
+  .map((name) => ({ name, pattern: overrides[name] || new RegExp([name, ...aliasesForSkill(name)].map(value => word(value).source).join('|'), 'ig') }));
 
 export function technologyMentions(text) {
   const matches = technologyVocabulary.flatMap(({ name, pattern }) =>

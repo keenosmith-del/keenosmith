@@ -1,3 +1,4 @@
+import { evidenceRevision } from "../../../../data/projectEvidence.js";
 import { candidateFacts } from '../../../../data/candidateProfile.js';
 import {
   canonicalProjects,
@@ -9,7 +10,7 @@ import fullStackCV from "../../CV/data/full-stack.json";
 import { eventOps } from "../../../../data/eventOps.js";
 import { technologyMentions } from "./requirementVocabulary.js";
 
-export const EVIDENCE_REVISION = candidateFacts.revision;
+export const EVIDENCE_REVISION = `${candidateFacts.revision}:${evidenceRevision}`;
 const inspectedOn = "2026-10-18";
 const limitations =
   "Implementation evidence; live deployment and operating scale are recorded separately where available.";
@@ -64,23 +65,22 @@ function record(
       ...extra,
     });
 }
-// Existing source audit is retained as historical documentation, not re-inspection.
-// A source file listed at project level proves only the claims scoped to it below.
-for (const p of canonicalProjects.filter(
-  (p) => p.demonstrated && p.id !== "claude",
-)) {
-  for (const capability of p.implementedTechnologies)
-    record(
-      p.id,
-      [capability],
-      `${capability} is documented in the implemented scope of ${p.title}.`,
-      "src/assistant/knowledge.js + src/assistant/repositoryEvidence.js",
-      "documented implementation",
-      {
-        limitations: `${p.description || limitations} Repository source and documented scope reconciled on 2026-10-18; live services were not executed.`,
-        revision: EVIDENCE_REVISION,
-      },
-    );
+// Source-reviewed capabilities share the same versioned model as Explore and the
+// Assistant. Career facts below retain their independent CV/declaration provenance.
+for (const project of canonicalProjects.filter(p => p.demonstrated && p.id !== 'claude')) {
+  for (const capability of project.capabilities || project.implementedTechnologies.map(skill => ({ skill, status: 'documented' }))) {
+    record(project.id, [capability.skill], `${capability.skill}: ${project.engineering || project.description}`,
+      project.sourceCommit ? `${project.repositoryUrl}/tree/${project.sourceCommit}` : 'Historical portfolio implementation record',
+      project.sourceCommit ? 'inspected source/configuration' : 'documented implementation', {
+        limitations: project.deployment || limitations,
+        reviewedOn: project.inspectedOn || inspectedOn,
+        sourceRevision: project.sourceCommit,
+        sourceReferences: project.evidence,
+        implementationStatus: capability.status,
+        deploymentVerified: project.deploymentVerified,
+      });
+  }
+  for (const capability of project.configuredTechnologies || []) record(project.id, [capability], `${capability} is prepared configuration for ${project.title}.`, `${project.repositoryUrl}/tree/${project.sourceCommit}`, 'inspected source/configuration', { status: 'configured', implementationStatus: 'configured', limitations: project.deployment, deploymentVerified: false });
 }
 const eventRepo =
   "https://github.com/keenosmith-del/eventops-intelligence-v.01/blob/0decc5ed0867fc25c7bc2b93625a9f7da6e9f1c1/";

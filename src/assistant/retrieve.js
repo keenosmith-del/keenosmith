@@ -69,7 +69,7 @@ export function retrieve(q, context = {}) {
           0,
         ) +
         (p.demonstrated ? 20 : 0) +
-        (p.id === p.canonicalId ? 2 : 0),
+        (p.id === p.canonicalId ? 2 : 0) + terms.filter(term => p.configuredTechnologies?.includes(term)).length * 4,
     }))
     .filter(({ score, p }) =>
       terms.length || q.projectIds.length

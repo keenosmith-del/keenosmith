@@ -113,6 +113,7 @@ export function answer(question, context = {}) {
         "\n\n",
       )}\n\nThe local parser recognises portfolio technologies and engineering domains. Unrecognised requirements, years-of-experience thresholds, management expectations and nontechnical criteria are not fully evaluated. ${q.long ? "Please review requirements not named above individually." : ""}`;
   }
+  if (['skills', 'projects'].includes(q.intent) && q.expansion.groups.some(group => ['google', 'microsoft', 'aws', 'cloud'].includes(group))) text += "\n\nCloud integrations include implemented adapters and prepared configuration; live cloud deployment is not verified by this portfolio refresh.";
   const specific = specificAnswer(q, found, context);
   if (specific) { text = specific.text; cards = specific.projects; creds = specific.credentials; indicators = specific.indicators; }
   const prompts =

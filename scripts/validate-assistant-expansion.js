@@ -143,10 +143,10 @@ for (const group of registry.skills)
   assert(group.evidence.length > 0, group.name);
 const retail = projects.find((p) => p.id === "vertex-ai-retail");
 assert.equal(retail.buildStatus, "built");
-assert.equal(retail.portfolioPublicationStatus, "not-yet-published");
+assert.equal(retail.portfolioPublicationStatus, "published");
 assert(
   retail.evidence.some(
-    (e) => e.type === "existing-assistant" && e.status.includes("Planned"),
+    (e) => e.type === "source-code" && e.revision === retail.sourceCommit,
   ),
 );
 assert(retail.evidence.some((e) => e.type === "source-code"));

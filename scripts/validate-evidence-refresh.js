@@ -9,9 +9,9 @@ export { assessRole } from './src/components/pages/RecruiterView/utils/recruiter
 const m = await import('/tmp/portfolio-refresh-tests.mjs');
 for (const answer of [m.answer, m.conversationalAnswer]) {
   const crew = answer('Does Keeno have experience with CrewAI?');
-  assert.match(crew.text, /No implemented CrewAI/);
-  assert.match(crew.text, /idea/);
-  assert(!crew.projects.length);
+  assert.match(crew.text, /implemented CrewAI/);
+  assert.match(crew.text, /0\/4|typed-output failures/);
+  assert(crew.projects.some(p => p.id === "crewai-revenueops"));
   assert(!/Firstdaes|biography|employed engineering/.test(crew.text));
   const gemini = answer('Does he use Gemini?');
   assert(gemini.projects.some(p => p.id === 'eventops-intelligence'));
@@ -44,7 +44,7 @@ for (const answer of [m.answer, m.conversationalAnswer]) {
   assert(planned.projects.every(p => !p.demonstrated));
   assert.match(planned.text, /planned|progress/);
   const claude = answer('Does he use Anthropic?');
-  assert(claude.projects.some(p => p.id === 'claude' && p.demonstrated && p.showcaseVisible === false));
+  assert(claude.projects.some(p => p.id === 'claude' && p.demonstrated && p.showcaseVisible === true));
 }
 for (const name of ['TensorFlow','Rust','ONNX Runtime','LangGraph','Google Gemini','RabbitMQ','Lambda','Context engineering']) {
   const skill = m.skillIndex.find(s => s.name === name);
@@ -73,5 +73,5 @@ const edu = m.assessRole({ title: 'Engineer', description: 'Requirements: Degree
 assert(edu.qualifications.find(q => q.type === 'education').verified);
 assert.notEqual(m.evidenceFingerprint(), m.evidenceFingerprint(m.candidateEvidence, {...m.candidateProfile, overallExperience: {years: 7}}));
 const local = await m.respond('Does Keeno have experience with CrewAI?', {}, [], { fetcher: () => { throw Error('Specific answers must stay authoritative locally'); } });
-assert(local.local && /No implemented CrewAI/.test(local.text));
+assert(local.local && /implemented CrewAI/.test(local.text));
 console.log('Shared evidence refresh: exact tools, duration, education, planned/hidden status, follow-ups, project eligibility, categories, duplicates and fingerprint checks passed.');
