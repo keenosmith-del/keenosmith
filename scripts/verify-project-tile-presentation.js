@@ -11,7 +11,7 @@ assert.equal(curatedProjects.length,22);
 const topSets=new Set(), lowerSets=new Set();
 for(const project of curatedProjects){
   assert(project.topSkills?.length && project.tileSkills?.length,project.id);
-  assert(['details','title-details','title-pills'].includes(project.visibility),project.id);
+  assert(['details','title-details'].includes(project.visibility),project.id);
   for(const skill of [...project.topSkills,...project.tileSkills]) assert(project.implementedTechnologies.includes(skill),`${project.id}: unsupported display pill ${skill}`);
   assert.equal(new Set([...project.topSkills,...project.tileSkills]).size,project.topSkills.length+project.tileSkills.length,project.id);
   topSets.add(project.topSkills.join('|')); lowerSets.add(project.tileSkills.join('|'));
@@ -45,10 +45,15 @@ try{
       assert(rest.imageBottom<1&&rest.fit==='contain'&&rest.position==='50% 100%',`${project.id} artwork is not contained at the bottom at ${width}`);
       assert.equal(await page.$eval(`${selector} .explore-domain`,e=>e.textContent),project.topSkills.join(' · '));
       assert.deepEqual(await page.$$eval(`${selector} .explore-tags span`,els=>els.map(e=>e.textContent)),project.tileSkills);
-      if(project.id==='crewai-revenueops')assert(!rest.description&&!rest.pills,`CrewAI resting state incorrect at ${width}`);
+      if(project.id==='crewai-revenueops')assert.equal(rest.description || rest.pills,width<=1100,`CrewAI resting state must match Chaos at ${width}`);
       if(['eventops-streamlit','ms-assessflow'].includes(project.id))assert(rest.description&&rest.pills,`${project.id} must show details initially at ${width}`);
       await page.hover(selector);
       await page.waitForFunction(sel=>Number(getComputedStyle(document.querySelector(`${sel} .explore-project-arrow`)).opacity)>.95,{},selector);
+      if(project.id==='crewai-revenueops') {
+        assert(await page.$eval(`${selector} .explore-description`,e=>getComputedStyle(e).display!=='none'&&e.textContent.trim().length>0),'CrewAI must reveal its description on hover');
+        const classes=await page.$$eval('[data-explore-id="crewai-revenueops"], [data-explore-id="distributed-reliability"]',els=>els.map(e=>[...e.classList].filter(c=>!c.startsWith('explore-tone-')).sort().join(' ')));
+        assert.equal(classes[0],classes[1],'CrewAI must use the same presentation classes as Chaos');
+      }
       const content=await page.$eval(selector,e=>{
         const box=e.getBoundingClientRect();
         return [...e.querySelectorAll('.explore-domain,h2,.explore-description,.explore-tags,.explore-project-arrow')].filter(node=>getComputedStyle(node).display!=='none').map(node=>{const r=node.getBoundingClientRect();return {name:node.className||node.tagName,left:r.left-box.left,right:box.right-r.right,top:r.top-box.top,bottom:box.bottom-r.bottom};});

@@ -1485,12 +1485,6 @@ a.explore-project:focus-visible { outline: 2px solid var(--charcoal); outline-of
 }
 .explore-project .explore-project-reveal { position: relative; z-index: 2; }
 @media (hover: hover) and (pointer: fine) {
-  /* CrewAI: top pill and title at rest; its technology pills reveal on hover/focus. */
-  .explore-project-pills-on-hover .explore-project-reveal { opacity: 1; transform: none; }
-  .explore-project-pills-on-hover:not(:hover):not(:focus-within) { padding-bottom: 27.2px; }
-  .explore-project-pills-on-hover:not(:hover):not(:focus-within)::after { opacity: 0.25; }
-  .explore-project-pills-on-hover:not(:hover):not(:focus-within) .explore-tags { display: none; }
-  .explore-project-pills-on-hover:not(:hover):not(:focus-within) h2 { margin-bottom: 0; }
   .explore-project-arrow { opacity: 0; transform: translateY(9.6px) scale(0.9); }
   .explore-project:hover .explore-project-arrow,
   .explore-project:focus-within .explore-project-arrow { opacity: 1; transform: none; }

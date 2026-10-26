@@ -3,7 +3,7 @@
 export { galleryProjectIds } from '../../../../data/projectEvidence.js';
 const tile = (topSkills, tileSkills, visibility) => ({ topSkills, tileSkills, visibility });
 export const exploreProjectPresentation = {
-  'crewai-revenueops': tile(['CrewAI'], ['Python', 'Pydantic', 'Ollama', 'SQLAlchemy'], 'title-pills'),
+  'crewai-revenueops': tile(['CrewAI'], ['Python', 'Pydantic', 'Ollama', 'SQLAlchemy'], 'title-details'),
   'eventops-streamlit': tile(['Streamlit'], ['n8n', 'FastEmbed', 'Google Gemini', 'SQLite'], 'details'),
   'ms-assessflow': tile(['Microsoft Foundry'], ['FastAPI', 'JWT', 'Bicep', 'OIDC'], 'details'),
   microsoft: tile(['Microsoft Foundry', 'Azure OpenAI'], ['Python', 'FastAPI', 'MongoDB', 'GitHub APIs'], 'title-details'),

@@ -29,7 +29,7 @@ export function ProjectTile({ project }) {
             }
           : undefined
       }
-      className={`explore-project explore-tone-${project.tone} ${cover ? "explore-project-with-cover" : ""} ${project.visibility === "details" ? "explore-project-always-visible" : "explore-project-title-visible"} ${project.visibility === "title-pills" ? "explore-project-pills-on-hover" : ""}`}
+      className={`explore-project explore-tone-${project.tone} ${cover ? "explore-project-with-cover" : ""} ${project.visibility === "details" ? "explore-project-always-visible" : "explore-project-title-visible"}`}
     >
       {cover && (
         <img
@@ -43,7 +43,7 @@ export function ProjectTile({ project }) {
         <span className="explore-domain">{project.topSkills.join(" · ")}</span>
         <div className="explore-project-text">
           <h2>{project.title}</h2>
-          {project.visibility !== "title-pills" && <p className="explore-description">{project.summary}</p>}
+          <p className="explore-description">{project.summary}</p>
         </div>
         <div className="explore-tags">
           {project.tileSkills.map((skill) => (
