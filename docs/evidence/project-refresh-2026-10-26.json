@@ -1,0 +1,1511 @@
+{
+  "reviewedOn": "2026-10-26",
+  "method": "Current GitHub HEAD, README, recursive tree and selected source/manifests/workflows; read-only local company/new-project checkouts. No project tests or cloud deployments executed.",
+  "projects": [
+    {
+      "id": "cv-1",
+      "repository": "https://github.com/keenosmith-del/microsoft-ai-cloud-architect-finops-optimization",
+      "remoteCommit": "9b7ae1e60500301e7f57532141e0c8b9302fe404",
+      "localCommit": null,
+      "reviewedOn": "2026-10-26",
+      "sourceStatus": "documentation-only; no runtime implementation verified",
+      "sources": [
+        {
+          "path": "README.md",
+          "kind": "documentation",
+          "sha256": "95ed92e50f35209380b26c6bc1ef72b31b7d2c6672f4f03f6dc426a2925cdd30"
+        }
+      ],
+      "companySuitesExecuted": false
+    },
+    {
+      "id": "cv-2",
+      "repository": "https://github.com/keenosmith-del/aws-cloud-security-incident-response",
+      "remoteCommit": "99e8fb2d458c6b1a3b986cf79d86ce83b14ea639",
+      "localCommit": null,
+      "reviewedOn": "2026-10-26",
+      "sourceStatus": "documentation-only; no runtime implementation verified",
+      "sources": [
+        {
+          "path": "README.md",
+          "kind": "documentation",
+          "sha256": "4ab6fe9691c281fcd136527f41a4c6708e1e16cc1cb90c59e78e9f439fdc7745"
+        }
+      ],
+      "companySuitesExecuted": false
+    },
+    {
+      "id": "cv-3",
+      "repository": "https://github.com/keenosmith-del/aws-distributed-developer-deployment",
+      "remoteCommit": null,
+      "localCommit": null,
+      "reviewedOn": "2026-10-26",
+      "sourceStatus": "unavailable; preserve prior evidence",
+      "sources": [],
+      "companySuitesExecuted": false
+    },
+    {
+      "id": "cv-4",
+      "repository": "https://github.com/keenosmith-del/gcp-supply-chain-risk",
+      "remoteCommit": null,
+      "localCommit": null,
+      "reviewedOn": "2026-10-26",
+      "sourceStatus": "unavailable; preserve prior evidence",
+      "sources": [],
+      "companySuitesExecuted": false
+    },
+    {
+      "id": "cv-5",
+      "repository": "https://github.com/keenosmith-del/gcp-data-governance-compliance",
+      "remoteCommit": "54d27b0e19552ee2e6269f1eeb07979af16e6648",
+      "localCommit": null,
+      "reviewedOn": "2026-10-26",
+      "sourceStatus": "documentation-only; no runtime implementation verified",
+      "sources": [
+        {
+          "path": "README.md",
+          "kind": "documentation",
+          "sha256": "c9c28d915527de557b2a4070c13211fd88629c75ae65ab9057c8bd7f2f6cc9d6"
+        }
+      ],
+      "companySuitesExecuted": false
+    },
+    {
+      "id": "cv-6",
+      "repository": "https://github.com/keenosmith-del/claude-reg-change-impact",
+      "remoteCommit": null,
+      "localCommit": null,
+      "reviewedOn": "2026-10-26",
+      "sourceStatus": "unavailable; preserve prior evidence",
+      "sources": [],
+      "companySuitesExecuted": false
+    },
+    {
+      "id": "cv-7",
+      "repository": "https://github.com/keenosmith-del/claude-architecture-analysis",
+      "remoteCommit": null,
+      "localCommit": null,
+      "reviewedOn": "2026-10-26",
+      "sourceStatus": "unavailable; preserve prior evidence",
+      "sources": [],
+      "companySuitesExecuted": false
+    },
+    {
+      "id": "cv-8",
+      "repository": "https://github.com/keenosmith-del/n8n-opsflow-business-orch",
+      "remoteCommit": null,
+      "localCommit": null,
+      "reviewedOn": "2026-10-26",
+      "sourceStatus": "unavailable; preserve prior evidence",
+      "sources": [],
+      "companySuitesExecuted": false
+    },
+    {
+      "id": "cv-9",
+      "repository": "https://github.com/keenosmith-del/n8n-webhooks-api-orch",
+      "remoteCommit": null,
+      "localCommit": null,
+      "reviewedOn": "2026-10-26",
+      "sourceStatus": "unavailable; preserve prior evidence",
+      "sources": [],
+      "companySuitesExecuted": false
+    },
+    {
+      "id": "geospatial-intelligence",
+      "repository": "https://github.com/keenosmith-del/gcp-real-time-geospatial-event-intelligence",
+      "remoteCommit": "77d951ecac6fab0ca1717489e55f61819159b363",
+      "localCommit": null,
+      "reviewedOn": "2026-10-26",
+      "sourceStatus": "documentation-only; no runtime implementation verified",
+      "sources": [
+        {
+          "path": "README.md",
+          "kind": "documentation",
+          "sha256": "06f7b580c3598b2525a99ae1c9fc31d1626017732eb5ddd6dc5ac8639a45562f"
+        }
+      ],
+      "companySuitesExecuted": false
+    },
+    {
+      "id": "aws-data-pipeline",
+      "repository": "https://github.com/keenosmith-del/aws-intelligent-data-pipeline-anomaly-investigation",
+      "remoteCommit": "21f547f4aceecd2e4a710120dc979f7a9f62e219",
+      "localCommit": null,
+      "reviewedOn": "2026-10-26",
+      "sourceStatus": "documentation-only; no runtime implementation verified",
+      "sources": [
+        {
+          "path": "README.md",
+          "kind": "documentation",
+          "sha256": "a0c7944c4aca6b6d5e0571c4c70ce9b6c208e66bde21e05766af0354d99955a1"
+        }
+      ],
+      "companySuitesExecuted": false
+    },
+    {
+      "id": "azure-cyber-threat",
+      "repository": "https://github.com/keenosmith-del/microsoft-autonomous-cyber-threat-investigation-response",
+      "remoteCommit": "3bb27f08d69d82eacce91e3b0c0deaf1b27fb223",
+      "localCommit": null,
+      "reviewedOn": "2026-10-26",
+      "sourceStatus": "documentation-only; no runtime implementation verified",
+      "sources": [
+        {
+          "path": "README.md",
+          "kind": "documentation",
+          "sha256": "734cd0655b13bac52c8ca34c459ed3784509e12e05fddb440c08087502cac668"
+        }
+      ],
+      "companySuitesExecuted": false
+    },
+    {
+      "id": "ai-assistant",
+      "repository": "https://github.com/keenosmith-del/ai-entity",
+      "remoteCommit": "50ceaf675c9250bc1b49b70fe65679cfbb584f71",
+      "localCommit": null,
+      "reviewedOn": "2026-10-26",
+      "sourceStatus": "source reviewed",
+      "sources": [
+        {
+          "path": "README.md",
+          "kind": "documentation",
+          "sha256": "b5ef8c3a523acd36d0f4d9d2d3e645b9bd84a263ef907648534614e7b6ffa8d5"
+        },
+        {
+          "path": "backend/package.json",
+          "kind": "configuration",
+          "sha256": "cbdb4474458133171bedf196ff24e183cb13f2d6fc6108996a6d6b7c04e86edd"
+        },
+        {
+          "path": "frontend/package.json",
+          "kind": "configuration",
+          "sha256": "e4c6d05bf67da4343b8c5badff47c62edeb2db357cd827a7c3bfa39d109a8b58"
+        },
+        {
+          "path": "package.json",
+          "kind": "configuration",
+          "sha256": "097ca09517687c7f2c170d49f482fd41af04dcc590015c7cdec9f3ac420b3fa7"
+        },
+        {
+          "path": "backend/src/server.js",
+          "kind": "source-or-documentation",
+          "sha256": "32aaca3bc7a11b277aabf3420c77e529d1f9686f91284c0aa1060628b378a949"
+        },
+        {
+          "path": "backend/src/config/db.js",
+          "kind": "source-or-documentation",
+          "sha256": "1a82adc4150690a09b28d6501ecebfe1153ad2d61d9869cae2f645c4c06967d6"
+        }
+      ],
+      "companySuitesExecuted": false
+    },
+    {
+      "id": "productivity-platform",
+      "repository": "https://github.com/keenosmith-del/personal-productivity-desktop",
+      "remoteCommit": "cc3ab000864e74f81bd5e6fb0ba4146aced3dcf1",
+      "localCommit": null,
+      "reviewedOn": "2026-10-26",
+      "sourceStatus": "source reviewed",
+      "sources": [
+        {
+          "path": "README.md",
+          "kind": "documentation",
+          "sha256": "08abc0a787f563bd3bb687259e8c9e9a2dff4b81b16b4b1bb90645f9667ba484"
+        },
+        {
+          "path": "backend/package.json",
+          "kind": "configuration",
+          "sha256": "55846067e4be227ebb42d8f3294d1df63bdc253b11b0016ae8f32c46abc2f3e1"
+        },
+        {
+          "path": "frontend/package.json",
+          "kind": "configuration",
+          "sha256": "d15a3124f22f7486e8fecad15e23c377190e22de0d002b63d12d82a1657baa1f"
+        },
+        {
+          "path": "backend/middleware/authMiddleware.js",
+          "kind": "source-or-documentation",
+          "sha256": "867ff662321c97bd91e0879c5f4f2dfccda85ed34c5620b62595f4f355482fa0"
+        },
+        {
+          "path": "backend/middleware/uploadAvatar.js",
+          "kind": "source-or-documentation",
+          "sha256": "986e70e4f5814926499ac3a6bdb46dc387e303bb5608ea686beb0069e84dcb18"
+        }
+      ],
+      "companySuitesExecuted": false
+    },
+    {
+      "id": "music-api",
+      "repository": "https://github.com/keenosmith-del/music-api",
+      "remoteCommit": "4ef9fd92fd1854b46dc324a3f9f4b58631982f86",
+      "localCommit": null,
+      "reviewedOn": "2026-10-26",
+      "sourceStatus": "source reviewed",
+      "sources": [
+        {
+          "path": "README.md",
+          "kind": "documentation",
+          "sha256": "909fc7eeb42f1a7287c2129122be625e5bdc78bfb7c7d7a0ce3c0526c0dfdc54"
+        },
+        {
+          "path": "backend/package.json",
+          "kind": "configuration",
+          "sha256": "8c12aff9f744d11e4a010868245865f7784fb3aa882b2b2a1e631b42a00a0ef5"
+        },
+        {
+          "path": "frontend/package.json",
+          "kind": "configuration",
+          "sha256": "5224467cbfabdf3aaecd0d57b072585368e2fccf62170a8a1edb1433a1e843f6"
+        },
+        {
+          "path": "backend/services/providers/spotifyService.js",
+          "kind": "source-or-documentation",
+          "sha256": "246450d9349f71e2dd227e0990f13543b01fa0e137250d24d384d775a588e28a"
+        },
+        {
+          "path": "backend/services/providers/deezerService.js",
+          "kind": "source-or-documentation",
+          "sha256": "b35b1a021314731b55daba16b646949ab5f921c9471c9a4b9ac80be7f03fdbad"
+        }
+      ],
+      "companySuitesExecuted": false
+    },
+    {
+      "id": "enterprise-workspace",
+      "repository": "https://github.com/keenosmith-del/enterprise-workspace",
+      "remoteCommit": "3f7be4d276d47b6f6226091882a244b4e363ce32",
+      "localCommit": null,
+      "reviewedOn": "2026-10-26",
+      "sourceStatus": "source reviewed",
+      "sources": [
+        {
+          "path": "README.md",
+          "kind": "documentation",
+          "sha256": "1cb6af81d3a0dc28baa3dec239a33127c045443be30156d2c2e93952394fb6cc"
+        },
+        {
+          "path": "client/package.json",
+          "kind": "configuration",
+          "sha256": "f9d51664314edef40863bd300567d26d529d425c1476a7fef0004b8866fb8004"
+        },
+        {
+          "path": "package.json",
+          "kind": "configuration",
+          "sha256": "4259fd7494478a49a120a0aeb7046f67649089fd15b99027b727ac17981c159e"
+        },
+        {
+          "path": "server/package.json",
+          "kind": "configuration",
+          "sha256": "279eda47bdb82d343639b4ad9e99acee14c92188ad8fa5eb4e403fda2a2f5b0b"
+        },
+        {
+          "path": "server/prisma.config.ts",
+          "kind": "source-or-documentation",
+          "sha256": "872a918165e1f43f679596b66b116786456aa3b4724028b4fa4dc3150234220e"
+        },
+        {
+          "path": "server/seed.js",
+          "kind": "source-or-documentation",
+          "sha256": "4e89a0430f7d3bedcf5c8a99499c20248ad974ef2316b262114ea74af2cab4af"
+        }
+      ],
+      "companySuitesExecuted": false
+    },
+    {
+      "id": "microsoft",
+      "repository": "https://github.com/keenosmith-del/microsoft-ai-powered-software-engineering-devops",
+      "remoteCommit": "0b75c8a7b57ab0ce3210fb084f5a3b051a27f67d",
+      "localCommit": null,
+      "reviewedOn": "2026-10-26",
+      "sourceStatus": "source reviewed",
+      "sources": [
+        {
+          "path": "README.md",
+          "kind": "documentation",
+          "sha256": "0c2bbc2567c26ff19bb99699f382943229042d298e18f047faed26c9de6509c3"
+        },
+        {
+          "path": "agent-runtime/requirements.txt",
+          "kind": "configuration",
+          "sha256": "49a71982a7a3cc0338150035b4c0b8a4b142d1aab087c399ab9acec34f519072"
+        },
+        {
+          "path": "frontend/package.json",
+          "kind": "configuration",
+          "sha256": "5c35ad223a990b01072586df52c55950bc2170a4e824534362115cc9e538a747"
+        },
+        {
+          "path": "package.json",
+          "kind": "configuration",
+          "sha256": "7c4494df2d592cfdc7630faa2af7dd3ebc736e29faf330d4b4b6c1f5f8551dcd"
+        },
+        {
+          "path": "agent-runtime/main.py",
+          "kind": "source-or-documentation",
+          "sha256": "4a97eef150b5f573dcf786c5d06215361e278f4777105501b9808f84f8281ae4"
+        },
+        {
+          "path": "agent-runtime/agents/foundry_client.py",
+          "kind": "source-or-documentation",
+          "sha256": "df57d798d413c75e04e7b4e5050383fb88b37db697609a4f111303cc2c478097"
+        },
+        {
+          "path": ".github/workflows/ci.yml",
+          "kind": "configuration",
+          "sha256": "5b6403e4aaa749f10a756727e136dd4e7822f08bdefe467ff61c7352b64856e4"
+        },
+        {
+          "path": "docs/ARCHITECTURE.md",
+          "kind": "source-or-documentation",
+          "sha256": "d8903b1632b0caf38c28dabd7e2c206d13f31c18df411ea74b8331ee1644e9b2"
+        },
+        {
+          "path": "docs/phase-3/ARCHITECTURE.md",
+          "kind": "source-or-documentation",
+          "sha256": "d4cb697dea19b3fac0afe5754c9c09a5e6f0ed1de9966d9ebd178efe781f3e00"
+        }
+      ],
+      "companySuitesExecuted": false
+    },
+    {
+      "id": "banking-risk",
+      "repository": "https://github.com/keenosmith-del/aws-ai-banking-and-payment-risk",
+      "remoteCommit": "5a264baba4d70938a60f6ad7c3e5c5b66f9fd0b4",
+      "localCommit": null,
+      "reviewedOn": "2026-10-26",
+      "sourceStatus": "source reviewed",
+      "sources": [
+        {
+          "path": "README.md",
+          "kind": "documentation",
+          "sha256": "55c9a8fc04bdd8f80adb6535e14a64c333640152aaed85462b96056e6c0f6d61"
+        },
+        {
+          "path": "apps/api/package.json",
+          "kind": "configuration",
+          "sha256": "334558d5d540561e2e2468e9b6c645fa4a4de480df9909c635cb63a39985a25a"
+        },
+        {
+          "path": "apps/web/package.json",
+          "kind": "configuration",
+          "sha256": "160f8ae974e4d5432be2e5ade95ca7a6d9de54e5b3295b59a46cab26d0bbef96"
+        },
+        {
+          "path": "package.json",
+          "kind": "configuration",
+          "sha256": "6a8d3eb66fb03455ec0c67a62c37eb693a4ffdd4b63bc458502e6ca892841086"
+        },
+        {
+          "path": "apps/api/src/aws-providers.ts",
+          "kind": "source-or-documentation",
+          "sha256": "8d91964f2035928a0363b0569631dd0a34b9b36b7847f7f69e8db862e0a7f00b"
+        },
+        {
+          "path": "infrastructure/events/main.tf",
+          "kind": "source-or-documentation",
+          "sha256": "2f9ccfbeaf8a7c658cd057c418df96353f6a795c423a1d8f88ea49b5fdc164d1"
+        },
+        {
+          "path": "docs/architecture.md",
+          "kind": "source-or-documentation",
+          "sha256": "1e89f309aa46461fbefccfd846f6cf13a29860db82e8bca638f53b9b6d7dc3c8"
+        },
+        {
+          "path": "docs/completion-audit.md",
+          "kind": "source-or-documentation",
+          "sha256": "7d6c5570ca40f5e2bcf032b04a415083e1f13b325019611cb54752b0b6cdcb06"
+        }
+      ],
+      "companySuitesExecuted": false
+    },
+    {
+      "id": "vertex-ai-retail",
+      "repository": "https://github.com/keenosmith-del/gcp-ai-retail-and-supply-chain",
+      "remoteCommit": "a6e1c2afb893e9c082dcb4ff70ee4f41de4eeac9",
+      "localCommit": null,
+      "reviewedOn": "2026-10-26",
+      "sourceStatus": "source reviewed",
+      "sources": [
+        {
+          "path": "README.md",
+          "kind": "documentation",
+          "sha256": "25938dec3b7e99734ec2cedf7a8d649fd5eb7bfded17ac08ae05cfa015f9e660"
+        },
+        {
+          "path": "apps/api/pyproject.toml",
+          "kind": "configuration",
+          "sha256": "9764ad0c84e0e698c51b6c888bc91c4d86f4be71a76b6fb9fd65faea5032abf0"
+        },
+        {
+          "path": "apps/web/package.json",
+          "kind": "configuration",
+          "sha256": "f960d7bc402c739f9242731f575c3445fb3b130fd67fd1e06cd224de3500a24c"
+        },
+        {
+          "path": "pyproject.toml",
+          "kind": "configuration",
+          "sha256": "42c11f949f328c84471ff11c9abea1e314e5b41bd6568035c4a281ee80e7a76d"
+        },
+        {
+          "path": "apps/api/retail/providers/analytics.py",
+          "kind": "source-or-documentation",
+          "sha256": "51d347aabd8404faf7b5bc009c78c196b868e1c34b4631fc115f190bc4a4158d"
+        },
+        {
+          "path": "apps/api/retail/providers/events.py",
+          "kind": "source-or-documentation",
+          "sha256": "580cce544608a2411331702825236a5d1015e511b7a53c84d10aa37ca2d5a0a2"
+        },
+        {
+          "path": ".github/workflows/verify.yaml",
+          "kind": "configuration",
+          "sha256": "093c5f707ffa9d28fbdbabcc759dfc4c643a1fee7eb978bc7d441c4dd7f65b8d"
+        },
+        {
+          "path": "docs/architecture.md",
+          "kind": "source-or-documentation",
+          "sha256": "e7b11cbeba17c9b8c99a53265699f7fffc7a481026f2da6214c2fd7b6c9b83e9"
+        },
+        {
+          "path": "docs/event-architecture.md",
+          "kind": "source-or-documentation",
+          "sha256": "7eaba0016d42c7f96e305cc558899f687f2f961ea9da85ea7d33543543208f89"
+        }
+      ],
+      "companySuitesExecuted": false
+    },
+    {
+      "id": "ollama",
+      "repository": "https://github.com/keenosmith-del/ollama-private-business-intelligence",
+      "remoteCommit": "189b77db1d3468093de5fab3ccc4a7dc837fda04",
+      "localCommit": null,
+      "reviewedOn": "2026-10-26",
+      "sourceStatus": "source reviewed",
+      "sources": [
+        {
+          "path": "README.md",
+          "kind": "documentation",
+          "sha256": "93aedd1008a5c6b79952b716b9a6072f808850426e6a38117315358bd8c4ea6c"
+        },
+        {
+          "path": "ai-runtime/pyproject.toml",
+          "kind": "configuration",
+          "sha256": "f1c9aa830a3e4f9e963d09371410fc5f31096d4ea20adacac9c23ccf4bbd1bbf"
+        },
+        {
+          "path": "ai-runtime/requirements.txt",
+          "kind": "configuration",
+          "sha256": "eb8369f7ced8a580eba9dbb6a951c4440942d309d778eb9ece5aa04d62744902"
+        },
+        {
+          "path": "backend/package.json",
+          "kind": "configuration",
+          "sha256": "043dcc92f01183fde8e51e3356b90e9c2748d1160a2b956ccdd392b3a5bdfb7b"
+        },
+        {
+          "path": "ai-runtime/app/main.py",
+          "kind": "source-or-documentation",
+          "sha256": "42796088262cb3eafc27d4253ba42bbb02d47399af425af069e43cebb3a0adc5"
+        },
+        {
+          "path": "ai-runtime/app/analytics.py",
+          "kind": "source-or-documentation",
+          "sha256": "58a41a565602d1366c247868fe92bac262c563335317bd7aa8149bfe49f349b2"
+        },
+        {
+          "path": ".github/workflows/ci.yml",
+          "kind": "configuration",
+          "sha256": "41e585c3276419e78f30dd5cbda4e1e0adb14410784c825b31d45f01285cc544"
+        },
+        {
+          "path": "docs/COMPLETION_AUDIT.md",
+          "kind": "source-or-documentation",
+          "sha256": "4675cc9107313b709019cf9e73a057b0ba975cdd63eac85e5723584f7d0a8979"
+        },
+        {
+          "path": "scripts/completion-audit.py",
+          "kind": "source-or-documentation",
+          "sha256": "c215d697c9870fd21a106c3ad084240871bd176dcec3cc41514cff51fff5832c"
+        }
+      ],
+      "companySuitesExecuted": false
+    },
+    {
+      "id": "claude",
+      "repository": "https://github.com/keenosmith-del/claude-powered-legal-procurement-intelligence",
+      "remoteCommit": "7ad4b67288cd1bfe6e23029475067dcffd466ccf",
+      "localCommit": null,
+      "reviewedOn": "2026-10-26",
+      "sourceStatus": "source reviewed",
+      "sources": [
+        {
+          "path": "README.md",
+          "kind": "documentation",
+          "sha256": "db257cec5e126677cc339e0995ff5e6903bbef02ba7785b63bb8858d652f9472"
+        },
+        {
+          "path": "backend/package.json",
+          "kind": "configuration",
+          "sha256": "0e7c8d9531cf60deae4509b12d793cf5be7dcb78a2fac92ec0a8e14ea01095b8"
+        },
+        {
+          "path": "frontend/package.json",
+          "kind": "configuration",
+          "sha256": "d2c9c48556f560bc90ec9e925380c373f1d1c8ed7c1b21c35665ef71ecf5453e"
+        },
+        {
+          "path": "package.json",
+          "kind": "configuration",
+          "sha256": "57083f5f281a179b45e35d24cb24d546cf40a5af18a51075d869c6cce24ed171"
+        },
+        {
+          "path": "backend/src/app.ts",
+          "kind": "source-or-documentation",
+          "sha256": "a1cd00aa0a392fe1b3a4513187b78d0905d99b2ffd5fe6ed5e3f5ca111308013"
+        },
+        {
+          "path": "backend/src/analysis.ts",
+          "kind": "source-or-documentation",
+          "sha256": "f4816bd2a8e36a495acb7dd351b19cc7e71fbe62cb66546b50b4a61055e581da"
+        },
+        {
+          "path": "VERIFICATION.md",
+          "kind": "source-or-documentation",
+          "sha256": "c72e98ba3b11c22603a09f8c150123444433675c0a7ba9e3ee570ee3f4afdc63"
+        }
+      ],
+      "companySuitesExecuted": false
+    },
+    {
+      "id": "hugging-face",
+      "repository": "https://github.com/keenosmith-del/hugging-face-ai-insurance-claims",
+      "remoteCommit": "0ea4cc3e4f0502f99f937b9129c9d16e33923b76",
+      "localCommit": null,
+      "reviewedOn": "2026-10-26",
+      "sourceStatus": "source reviewed",
+      "sources": [
+        {
+          "path": "README.md",
+          "kind": "documentation",
+          "sha256": "c5a1561c975159c3ac96700b57948d8ae21682a5a700899c9da4fac2415abe96"
+        },
+        {
+          "path": "ai-service/requirements.txt",
+          "kind": "configuration",
+          "sha256": "5287a5b83408fceaf1726dcad89f84f091085f62ac0477c5a92b0fbd21675a17"
+        },
+        {
+          "path": "frontend/package.json",
+          "kind": "configuration",
+          "sha256": "52aa53a388b1849c5df41d2a90fd80db789ac0e910c1ed5f5edde1934d768a20"
+        },
+        {
+          "path": "package.json",
+          "kind": "configuration",
+          "sha256": "282bd1bbe59eacabbb633336af08e1bcc9d5c40e89398ef549bb939f0ddea8a4"
+        },
+        {
+          "path": "ai-service/app/pipelines/ner.py",
+          "kind": "source-or-documentation",
+          "sha256": "5f1bd05629e72cf1e14091c1d9596e129d161aabbe0aef8c77f4456390ae79c4"
+        },
+        {
+          "path": "ai-service/app/pipelines/image_analysis.py",
+          "kind": "source-or-documentation",
+          "sha256": "d8c0cfaf74e81044e405a5595c380f238e9830e4b0b64d908ab03f63ce56e85e"
+        },
+        {
+          "path": "docs/ARCHITECTURE.md",
+          "kind": "source-or-documentation",
+          "sha256": "5e3b5eeb1691657b5846156817390e7375d22842ef2a5b180955591184d915d9"
+        },
+        {
+          "path": "docs/COMPLETION_AUDIT.md",
+          "kind": "source-or-documentation",
+          "sha256": "e5a564e886fd8157c76fd648025033fcb846010b3646899a1d4871a3b1395417"
+        }
+      ],
+      "companySuitesExecuted": false
+    },
+    {
+      "id": "distributed-reliability",
+      "repository": "https://github.com/keenosmith-del/sre-chaos-engineering",
+      "remoteCommit": "dec5fc7b1fc6d271a3ab89e7e70aa25756c817c3",
+      "localCommit": null,
+      "reviewedOn": "2026-10-26",
+      "sourceStatus": "source reviewed",
+      "sources": [
+        {
+          "path": "README.md",
+          "kind": "documentation",
+          "sha256": "349aa28bbebed47c43780ce5e44bcab7e455b4f8d031fb58c8b0a713269d737a"
+        },
+        {
+          "path": "apps/dashboard/package.json",
+          "kind": "configuration",
+          "sha256": "bad5ae3ac2cc1781c028a67d7d496a9cca4ba6acfbf61d0a6cd2c1b8ffaa5bdf"
+        },
+        {
+          "path": "go.mod",
+          "kind": "source-or-documentation",
+          "sha256": "d78690ab98c7d68df53c5bfe846f2d7b90383eaaa7028f287f1c1215a45b1387"
+        },
+        {
+          "path": "services/ordering/service.go",
+          "kind": "source-or-documentation",
+          "sha256": "a08763ba058506ac24eec7ded094125682daa72aef69695f070a54d28e075b8b"
+        },
+        {
+          "path": ".github/workflows/check.yaml",
+          "kind": "configuration",
+          "sha256": "bdc06511a202a4fbf13b305f9a3f529f122c27ba8ad9b46c6e9c435a0266b0d2"
+        },
+        {
+          "path": "docs/architecture.md",
+          "kind": "source-or-documentation",
+          "sha256": "72a696d6b6e532d295337e00734827703621283749a0fff0d8286cbfada45f46"
+        }
+      ],
+      "companySuitesExecuted": false
+    },
+    {
+      "id": "n8n",
+      "repository": "https://github.com/keenosmith-del/n8n-workflow-integration-opsflow",
+      "remoteCommit": "031af48f8676d8c2a4adb28bac09ea5850145152",
+      "localCommit": null,
+      "reviewedOn": "2026-10-26",
+      "sourceStatus": "source reviewed",
+      "sources": [
+        {
+          "path": "README.md",
+          "kind": "documentation",
+          "sha256": "c5c34bd2baa7efe71baa63ecb471116d0373e6740cfb022db1e2ec7db3e6f577"
+        },
+        {
+          "path": "apps/api/package.json",
+          "kind": "configuration",
+          "sha256": "e665395a488417e458900ad44ed0513bc080ccafb6a67cd04c60f4c9a27f1bb4"
+        },
+        {
+          "path": "apps/simulators/package.json",
+          "kind": "configuration",
+          "sha256": "4435b1661383d24040ad96527179538b78bae46367d4749036781e3494c4dfc9"
+        },
+        {
+          "path": "apps/web/package.json",
+          "kind": "configuration",
+          "sha256": "15d7762c34ef66fab36bbc7f5c98d9410b6b64bea877c3ea8ad6424f94ff8672"
+        },
+        {
+          "path": "apps/api/src/main.ts",
+          "kind": "source-or-documentation",
+          "sha256": "33d6b5d15b6a811f62a529af97b07b48d5b82505792335799333454090b1aaeb"
+        },
+        {
+          "path": "apps/api/src/operations.ts",
+          "kind": "source-or-documentation",
+          "sha256": "f0f6ac03657df12fc42be7f7bce5fc5028df9cb1128cb126d1878ae73bd9c6bc"
+        },
+        {
+          "path": "docs/architecture.md",
+          "kind": "source-or-documentation",
+          "sha256": "212afc281827955d256e912ee098fe5d2ae0284b44f293af25a75d7ff80b2e81"
+        }
+      ],
+      "companySuitesExecuted": false
+    },
+    {
+      "id": "deepseek",
+      "repository": "https://github.com/keenosmith-del/deepseek-ai-workforce-planning",
+      "remoteCommit": "4a2f03b6a4b5d911ba858adb2bcae731d3d7f463",
+      "localCommit": null,
+      "reviewedOn": "2026-10-26",
+      "sourceStatus": "source reviewed",
+      "sources": [
+        {
+          "path": "README.md",
+          "kind": "documentation",
+          "sha256": "680816190c3ec57daef6ed6ff285156df61ae6751d792801067013f067a87f72"
+        },
+        {
+          "path": "ai/requirements.txt",
+          "kind": "configuration",
+          "sha256": "fcf4c10bec23176f8b892142eec4e7f71758a4999eea6ca4356ed9f6cc2dc6ed"
+        },
+        {
+          "path": "frontend/package.json",
+          "kind": "configuration",
+          "sha256": "5b6e0d0a8841bf2a7ef77a93056533d26c3393f0757af3c4bfbaa72c18fc372d"
+        },
+        {
+          "path": "backend/Program.cs",
+          "kind": "source-or-documentation",
+          "sha256": "b8c06816008c5c0a455fd00717b23a6e5aa10892258e15e513bc7eb0fe107fc0"
+        },
+        {
+          "path": "backend/Application/Services.cs",
+          "kind": "source-or-documentation",
+          "sha256": "8ba12af5a1e786cb3e01bf2773ab0ca5cf888e90f643506a9924d08de453e80d"
+        },
+        {
+          "path": ".github/workflows/ci.yml",
+          "kind": "configuration",
+          "sha256": "ac85c95dbff03ce7fabd32a40aac384b64beb2f79b0c8270a559d18658f0bf76"
+        },
+        {
+          "path": "docs/VERIFICATION.md",
+          "kind": "source-or-documentation",
+          "sha256": "240c6f340985577322560dfbc934bfd516560d9391336dbd9ca4ff1b7ef19d2d"
+        }
+      ],
+      "companySuitesExecuted": false
+    },
+    {
+      "id": "telecom-billing",
+      "repository": "https://github.com/keenosmith-del/telecomms-billing-management",
+      "remoteCommit": "3985c0f0650b85fe7ae1b725727a65dea4e22373",
+      "localCommit": null,
+      "reviewedOn": "2026-10-26",
+      "sourceStatus": "source reviewed",
+      "sources": [
+        {
+          "path": "README.md",
+          "kind": "documentation",
+          "sha256": "9a8f1724740456b14476951ddd09d8fb096b885f55e9255c71c696f25226c1f9"
+        },
+        {
+          "path": "backend/pom.xml",
+          "kind": "source-or-documentation",
+          "sha256": "7d9620114a2b201879f30965aa0b62db1a48939a138e4682aec772c4539853d1"
+        },
+        {
+          "path": "frontend/package.json",
+          "kind": "configuration",
+          "sha256": "e536868ce9c8e088fff7dd57b630a8ce4c152d8d4457d75ccbd12eaf6e8c17a9"
+        },
+        {
+          "path": "backend/src/main/java/com/telecom/Application.java",
+          "kind": "source-or-documentation",
+          "sha256": "fbc6fa4e127ef57a27309e650ceb4f945cb95d197f618b4682dacf06143006a9"
+        },
+        {
+          "path": "backend/src/main/java/com/telecom/security/SecurityConfig.java",
+          "kind": "source-or-documentation",
+          "sha256": "7ef09ab30663b6ee4ce5510f6a2ec55b08b54cb8865b205c37a649111bae902d"
+        },
+        {
+          "path": ".github/workflows/ci.yml",
+          "kind": "configuration",
+          "sha256": "30fef18eec100853800164f88409f7f63d9f5022906135967b2699434096d0c6"
+        }
+      ],
+      "companySuitesExecuted": false
+    },
+    {
+      "id": "field-service",
+      "repository": "https://github.com/keenosmith-del/field-service-and-asset-maintenance",
+      "remoteCommit": "7d875eb9265f832cf8022f798402622435feb237",
+      "localCommit": null,
+      "reviewedOn": "2026-10-26",
+      "sourceStatus": "source reviewed",
+      "sources": [
+        {
+          "path": "README.md",
+          "kind": "documentation",
+          "sha256": "28869b59894e8268ffebd1b5c20a093bd6b260a19a93e09f54242f5ca9a64f79"
+        },
+        {
+          "path": "web/package.json",
+          "kind": "configuration",
+          "sha256": "cc735028280cc5a5f925f5b4719681b22f587e96dd0c1a138ab2c28783508ff8"
+        },
+        {
+          "path": "api/FieldService.Api/Program.cs",
+          "kind": "source-or-documentation",
+          "sha256": "86a289995d84b6aa5554552cff53867fa01770903fb9a70cab72a472c4a43302"
+        },
+        {
+          "path": "api/FieldService.Api/Auth.cs",
+          "kind": "source-or-documentation",
+          "sha256": "87218a6da5d208c8f9907dd51acd11984151cbf9de95ed01a540404dc4535101"
+        },
+        {
+          "path": ".github/workflows/ci.yml",
+          "kind": "configuration",
+          "sha256": "662dde6930ede96bc7eef4e6405b9c29907bf95aacaa66d0e152920c1c8e042f"
+        }
+      ],
+      "companySuitesExecuted": false
+    },
+    {
+      "id": "fleet-operations",
+      "repository": "https://github.com/keenosmith-del/real-time-logistics-and-fleet-ops",
+      "remoteCommit": "a96161080f9500a105f73c0f7531f9a5f086e45a",
+      "localCommit": null,
+      "reviewedOn": "2026-10-26",
+      "sourceStatus": "source reviewed",
+      "sources": [
+        {
+          "path": "README.md",
+          "kind": "documentation",
+          "sha256": "adaf6b336963f21462e57bbe3a733e36c50d5975ec416ddf39b18ab65e8801ad"
+        },
+        {
+          "path": "backend/go.mod",
+          "kind": "source-or-documentation",
+          "sha256": "4b196e984b049866ea9de74446fd5928b9999755d995cf4e26080b868986c615"
+        },
+        {
+          "path": "frontend/package.json",
+          "kind": "configuration",
+          "sha256": "2fea12ea97a0f4da86eef21ac878780527bb443b5b5504d2fcfaa0c66619e508"
+        },
+        {
+          "path": "backend/internal/platform/stream.go",
+          "kind": "source-or-documentation",
+          "sha256": "0ac226c4c51ead2a349239d7811e30c9c5d73f52889dc884a919d3c6b3dc3e1a"
+        },
+        {
+          "path": "backend/internal/platform/metrics.go",
+          "kind": "source-or-documentation",
+          "sha256": "d6b83ae7eed46764805fc04c6917c60c33a3d972c9d45e8a1ccf9c95630edd64"
+        },
+        {
+          "path": "docs/architecture.md",
+          "kind": "source-or-documentation",
+          "sha256": "b3ef58c84bb421d164a7b725b6a50f56b70161b39e566eb9792ece89783b71c0"
+        }
+      ],
+      "companySuitesExecuted": false
+    },
+    {
+      "id": "rabbitmq",
+      "repository": null,
+      "remoteCommit": null,
+      "localCommit": null,
+      "reviewedOn": "2026-10-26",
+      "sourceStatus": "historical placeholder; no repository supplied",
+      "sources": [],
+      "companySuitesExecuted": false
+    },
+    {
+      "id": "kinesis",
+      "repository": null,
+      "remoteCommit": null,
+      "localCommit": null,
+      "reviewedOn": "2026-10-26",
+      "sourceStatus": "historical placeholder; no repository supplied",
+      "sources": [],
+      "companySuitesExecuted": false
+    },
+    {
+      "id": "opentofu",
+      "repository": null,
+      "remoteCommit": null,
+      "localCommit": null,
+      "reviewedOn": "2026-10-26",
+      "sourceStatus": "historical placeholder; no repository supplied",
+      "sources": [],
+      "companySuitesExecuted": false
+    },
+    {
+      "id": "duckdb",
+      "repository": null,
+      "remoteCommit": null,
+      "localCommit": null,
+      "reviewedOn": "2026-10-26",
+      "sourceStatus": "historical placeholder; no repository supplied",
+      "sources": [],
+      "companySuitesExecuted": false
+    },
+    {
+      "id": "go-dotnet",
+      "repository": null,
+      "remoteCommit": null,
+      "localCommit": null,
+      "reviewedOn": "2026-10-26",
+      "sourceStatus": "historical placeholder; no repository supplied",
+      "sources": [],
+      "companySuitesExecuted": false
+    },
+    {
+      "id": "openai",
+      "repository": null,
+      "remoteCommit": null,
+      "localCommit": null,
+      "reviewedOn": "2026-10-26",
+      "sourceStatus": "historical placeholder; no repository supplied",
+      "sources": [],
+      "companySuitesExecuted": false
+    },
+    {
+      "id": "jwt-redpanda",
+      "repository": null,
+      "remoteCommit": null,
+      "localCommit": null,
+      "reviewedOn": "2026-10-26",
+      "sourceStatus": "historical placeholder; no repository supplied",
+      "sources": [],
+      "companySuitesExecuted": false
+    },
+    {
+      "id": "company-websites",
+      "repository": null,
+      "remoteCommit": null,
+      "localCommit": null,
+      "reviewedOn": "2026-10-26",
+      "sourceStatus": "historical placeholder; no repository supplied",
+      "sources": [],
+      "companySuitesExecuted": false
+    },
+    {
+      "id": "eventops-intelligence-v2",
+      "repository": "https://github.com/keenosmith-del/eventops-intelligence-v.02",
+      "remoteCommit": "24f1a02070705e7adfa6798a5b1f229a51f4680d",
+      "localCommit": null,
+      "reviewedOn": "2026-10-26",
+      "sourceStatus": "source reviewed",
+      "sources": [
+        {
+          "path": "README.md",
+          "kind": "documentation",
+          "sha256": "b5aa4dfa5c0ea589e9c124d1408814519f9508174a3f6085a72a920502434f3f"
+        },
+        {
+          "path": "backend/pyproject.toml",
+          "kind": "configuration",
+          "sha256": "e8c4628ed8f1f109ed9455dff39a67374c0711c7e24e6a5114517abe41fb61db"
+        },
+        {
+          "path": "backend/requirements.txt",
+          "kind": "configuration",
+          "sha256": "fd69d8965988fc48d3c0135de196b0cc414cfb1dd908e5949c05f278bde65dc8"
+        },
+        {
+          "path": "frontend/package.json",
+          "kind": "configuration",
+          "sha256": "d0cf7b01ed39c5b924cbd800a332b6247749dfb1bb325f92e3bc66e6a5acf7e0"
+        },
+        {
+          "path": "docs/testing/results.md",
+          "kind": "source-or-documentation",
+          "sha256": "60173b4ea85665a57a347646871966dbac2070c42091fde5dad7040388e6957f"
+        },
+        {
+          "path": "backend/app/__init__.py",
+          "kind": "source-or-documentation",
+          "sha256": "0f50826c003d9be8690f914965821505c72b78c15fbed74c281d06c70ce05777"
+        },
+        {
+          "path": "backend/app/agent.py",
+          "kind": "source-or-documentation",
+          "sha256": "ff38e5c0aaf42d2f0441d38a2b2a9f6571fe0de1399e8e537e7f8a7e56d11723"
+        }
+      ],
+      "companySuitesExecuted": false
+    },
+    {
+      "id": "eventops-intelligence",
+      "repository": "https://github.com/keenosmith-del/eventops-intelligence-v.01",
+      "remoteCommit": "0decc5ed0867fc25c7bc2b93625a9f7da6e9f1c1",
+      "localCommit": null,
+      "reviewedOn": "2026-10-26",
+      "sourceStatus": "source reviewed",
+      "sources": [
+        {
+          "path": "README.md",
+          "kind": "documentation",
+          "sha256": "f40112a4cfaae5f51ceea0f5f238b4428a3d555d199b46a09237c179ffbdb756"
+        },
+        {
+          "path": "backend/requirements.txt",
+          "kind": "configuration",
+          "sha256": "762fff2db5756f64a659f7eb1459710620a31ba54c027bfc75bbd31de2a243ff"
+        },
+        {
+          "path": "frontend/package.json",
+          "kind": "configuration",
+          "sha256": "a6aeb430c5de0138549b42ab76ad5487cec5230f2be8e748d622a8136ebb5738"
+        },
+        {
+          "path": ".github/workflows/ci.yml",
+          "kind": "configuration",
+          "sha256": "613d2d01d38ab5dfae572a60fe4e6bfb390ee149793d6ee5846bb1c9af94690a"
+        },
+        {
+          "path": "docs/iterations/post-submission/ARCHITECTURE_DECISIONS.md",
+          "kind": "source-or-documentation",
+          "sha256": "3c483b610f0424d4d09f496bce67d910590e3cc4e63bc9faab9fd3fe069e74fb"
+        },
+        {
+          "path": "backend/app/agents/workflow.py",
+          "kind": "source-or-documentation",
+          "sha256": "de88d66eb2f5675d2f4178a7ffd950647a4b00ec4e10caa209feaba2dedca137"
+        }
+      ],
+      "companySuitesExecuted": false
+    },
+    {
+      "id": "customer-operations",
+      "repository": "https://github.com/keenosmith-del/enterprise-ai-customer-operations",
+      "remoteCommit": "fff773c93cda452a2d3da968f5e3c1835884fb4d",
+      "localCommit": null,
+      "reviewedOn": "2026-10-26",
+      "sourceStatus": "source reviewed",
+      "sources": [
+        {
+          "path": "README.md",
+          "kind": "documentation",
+          "sha256": "2a4fd2fb74b8bd223735f4adb044fb746d2cc420669d48b639e8b96761118d4b"
+        },
+        {
+          "path": "backend/package.json",
+          "kind": "configuration",
+          "sha256": "cfaad28c3630265a00e101f0043c16b471c1a80f83be0feb2f7d799661c21efc"
+        },
+        {
+          "path": "frontend/package.json",
+          "kind": "configuration",
+          "sha256": "9837f7ddaa7745e901118dbf223081ce33a5b1420f0b1d1f8f5767363ce46bea"
+        },
+        {
+          "path": "package.json",
+          "kind": "configuration",
+          "sha256": "1636b52ea86d53710650899a3dad0b938857f2517c012d516241e4805fbf2ee5"
+        },
+        {
+          "path": ".github/workflows/ci.yml",
+          "kind": "configuration",
+          "sha256": "8418d939248e217c21bee93f8e569fbc42001df5e222b3635cc741f0f33ec4df"
+        },
+        {
+          "path": "docs/architecture.md",
+          "kind": "source-or-documentation",
+          "sha256": "a89be8b6bb48f5a2985d92dc78ca79d4a31c7917b268eae241d4f2aff20e6bfb"
+        },
+        {
+          "path": "backend/prisma/seed.ts",
+          "kind": "source-or-documentation",
+          "sha256": "36db166472474c89f0eecff19c9edf6e4d24d2219e71b2a8aed9e62edc1a0661"
+        },
+        {
+          "path": "backend/src/ai/providers.ts",
+          "kind": "source-or-documentation",
+          "sha256": "0e0d153bf01c55a045b051f6475271e1b03ed593e36f81142ef2d52715839c5c"
+        }
+      ],
+      "companySuitesExecuted": false
+    },
+    {
+      "id": "manufacturing-qc",
+      "repository": "https://github.com/keenosmith-del/intelligent-manufacturing-qc",
+      "remoteCommit": "3ff1fcc76a7e9af14077b82b8acde229c0e52e01",
+      "localCommit": null,
+      "reviewedOn": "2026-10-26",
+      "sourceStatus": "source reviewed",
+      "sources": [
+        {
+          "path": "README.md",
+          "kind": "documentation",
+          "sha256": "a064f6015dd1ea8eee79f474ea7f76d77e011be6b27263713b246f1cb43d7ad6"
+        },
+        {
+          "path": "backend/Cargo.toml",
+          "kind": "configuration",
+          "sha256": "300df670675956a0ad2b5d293f72ab55d77a1d5bb72ba5e5cbdff663ae9ffe1d"
+        },
+        {
+          "path": "frontend/package.json",
+          "kind": "configuration",
+          "sha256": "331ac2e6f8024e736ff30893faaff2ea081fbccadb0a918d6947fe302b837d3b"
+        },
+        {
+          "path": "ml/pyproject.toml",
+          "kind": "configuration",
+          "sha256": "c19bffc01919d7314e725cad5710eb96c7a58580a5ef39f583facd882ce99c99"
+        },
+        {
+          "path": ".github/workflows/application.yml",
+          "kind": "configuration",
+          "sha256": "38996e6412886f43151b6d1cc97f81dce79b88f0ef90e26d348f88cc823f113c"
+        },
+        {
+          "path": "docs/architecture.md",
+          "kind": "source-or-documentation",
+          "sha256": "7b0a0853e579c52da32e663402530425369e70a6f367fec43de7af04e2d46d30"
+        },
+        {
+          "path": "backend/src/error.rs",
+          "kind": "source-or-documentation",
+          "sha256": "a26ef31f6d6ce8a25c833db731cf481a5d83df8fef892e1a38b4566b246d37ee"
+        },
+        {
+          "path": "backend/src/firestore.rs",
+          "kind": "source-or-documentation",
+          "sha256": "8631b5aff08d918e46ff22a261e14c74b9b34e7224db70179ed89c2d453fe282"
+        }
+      ],
+      "companySuitesExecuted": false
+    },
+    {
+      "id": "kailor-ai",
+      "repository": "https://github.com/keenosmith-del/kailor",
+      "remoteCommit": null,
+      "localCommit": "3d6d4598c67d58248c18bc8bbdbada45a58e713a",
+      "reviewedOn": "2026-10-26",
+      "sourceStatus": "source reviewed",
+      "sources": [
+        {
+          "path": "README.md",
+          "origin": "local checkout",
+          "sha256": "0b7f21eb67527581bbc8f1a9465e667505ac69cbcba30750f482c903f6b596dd"
+        },
+        {
+          "path": "backend/package.json",
+          "origin": "local checkout",
+          "sha256": "a8b1967ebd40f49bde774796e1f4e5c4ac274b657d8b715c88d1245875e29896"
+        },
+        {
+          "path": "docs/architecture/ARCHITECTURE.md",
+          "origin": "local checkout",
+          "sha256": "e5efd7115440da770d859bc038c484a89cd934d1c53ca71a572e567a2a11147d"
+        },
+        {
+          "path": "backend/src/ai.ts",
+          "origin": "local checkout",
+          "sha256": "14a66549e74942253e266b83017868798efe537ac900ee0ee6f9256d931651f0"
+        },
+        {
+          "path": "backend/src/assessment.ts",
+          "origin": "local checkout",
+          "sha256": "29ab7ddd8709bc088e807836b5c77ef56d9a2ee4e567ce1623549db84155b27d"
+        }
+      ],
+      "companySuitesExecuted": false
+    },
+    {
+      "id": "kailor-insider",
+      "repository": "https://github.com/keenosmith-del/kailor-insider",
+      "remoteCommit": null,
+      "localCommit": "f5f3c2f3b83e7fb6ff7ac0e8f02ebce5c5f7a735",
+      "reviewedOn": "2026-10-26",
+      "sourceStatus": "source reviewed",
+      "sources": [
+        {
+          "path": "README.md",
+          "origin": "local checkout",
+          "sha256": "ab07c95792b0e38b6de41a4f2cd7f0bb4513f47a2e30c7642537c4bb29ad2959"
+        },
+        {
+          "path": "package.json",
+          "origin": "local checkout",
+          "sha256": "ab30ff6b04a8b373d15f9b9c6dc5ad73579491d1ba5d6f770dc85cee567d658a"
+        },
+        {
+          "path": "docs/ARCHITECTURE.md",
+          "origin": "local checkout",
+          "sha256": "fc2b117d0886c1b79c9284ebcb48687d8bbc5f8e52536097ffc5a1404990181e"
+        },
+        {
+          "path": "backend/src/services/articles.ts",
+          "origin": "local checkout",
+          "sha256": "807c27bd3904b9797d23122f33f4f44f8bc29339c8e65cd54c6edc830824894b"
+        },
+        {
+          "path": "backend/src/services/auth.ts",
+          "origin": "local checkout",
+          "sha256": "ff01f3ca8ac9a0c8d1b8cd37ed953f980d72dd1c02eb97eea2b6e28fd746e41e"
+        }
+      ],
+      "companySuitesExecuted": false
+    },
+    {
+      "id": "crewai-revenueops",
+      "repository": "https://github.com/keenosmith-del/crewai-revenueops",
+      "remoteCommit": "f7270742ec3c81dcd7532ebf222f2280f4e8e8b7",
+      "localCommit": "f7270742ec3c81dcd7532ebf222f2280f4e8e8b7",
+      "reviewedOn": "2026-10-26",
+      "sourceStatus": "source reviewed",
+      "sources": [
+        {
+          "path": "README.md",
+          "kind": "documentation",
+          "sha256": "841b3d7d9952c0720376c557c7f8938772b1619c390c3343f00fb7811e4c17e0"
+        },
+        {
+          "path": "backend/pyproject.toml",
+          "kind": "configuration",
+          "sha256": "6c8bb300bdb51d1b0a10c04bfe634c59b287e1d1a6f58413b89d0e02e86d89df"
+        },
+        {
+          "path": "backend/requirements.txt",
+          "kind": "configuration",
+          "sha256": "0f0f2ab60a36abb2d058de23b4de802f66f30017a54736109223cfeaccb4a45d"
+        },
+        {
+          "path": "frontend/package.json",
+          "kind": "configuration",
+          "sha256": "1ebce476546a460a539547b3b3d9ff4d2dc06908c364b7998ea3f6e86f8e1257"
+        },
+        {
+          "path": ".github/workflows/deploy-staging.yml",
+          "kind": "configuration",
+          "sha256": "0f8d30d063db046ce0829cb26bb155d0bdaa06aeb788a3f0a06dec9c0ce86d33"
+        },
+        {
+          "path": "docs/decisions/architecture.md",
+          "kind": "source-or-documentation",
+          "sha256": "1d2436e4a5bde892879a630ecd233fa34573da4bc86d51f1531d5f0f14a055f9"
+        },
+        {
+          "path": "docs/portfolio/engineering.md",
+          "kind": "source-or-documentation",
+          "sha256": "cc1a1333c03193593fa40efd8f6bfec04c4301362d7bfdacabe48fbe300ee201"
+        },
+        {
+          "path": "backend/app/accounting/money.py",
+          "kind": "source-or-documentation",
+          "sha256": "b26362880d7f96356b4bedabc3ca6eadf9322258ac9224445c95bf19bf050cdf"
+        },
+        {
+          "path": "README.md",
+          "origin": "local checkout",
+          "sha256": "841b3d7d9952c0720376c557c7f8938772b1619c390c3343f00fb7811e4c17e0"
+        },
+        {
+          "path": "docs/portfolio/engineering.md",
+          "origin": "local checkout",
+          "sha256": "cc1a1333c03193593fa40efd8f6bfec04c4301362d7bfdacabe48fbe300ee201"
+        },
+        {
+          "path": "backend/app/agents/crews/investigation.py",
+          "origin": "local checkout",
+          "sha256": "ac5232a4825eb8d9a84edb39c6f8524081e9e2bd4478d31d5a817f58e7afc063"
+        },
+        {
+          "path": "backend/app/flows/reconciliation.py",
+          "origin": "local checkout",
+          "sha256": "03f906c70c767e6009e1316b7787156b7d5d8272b962cb062521943d966eea8b"
+        },
+        {
+          "path": "backend/app/reconciliation/engine.py",
+          "origin": "local checkout",
+          "sha256": "781f482a48a852bfa4f44da02b8ac262b5f59fe6895726cf8d87a0c39a6d0fa3"
+        },
+        {
+          "path": "backend/app/security/auth.py",
+          "origin": "local checkout",
+          "sha256": "ea5d09d4121ec5fef293ecd8d37727490f631ea7bb928c06a2030ecf2d19e3eb"
+        },
+        {
+          "path": ".github/workflows/verify.yml",
+          "origin": "local checkout",
+          "sha256": "ef6a80991b14f169ae4077e6912cc03a47acad861f456b4c1c071c8d4a895fbe"
+        }
+      ],
+      "companySuitesExecuted": false
+    },
+    {
+      "id": "eventops-streamlit",
+      "repository": "https://github.com/keenosmith-del/eventops-intelligence-streamlit",
+      "remoteCommit": "084bd04336f2a92672c6b4285527ed0591582ec3",
+      "localCommit": "a1dab9d8942a5fad27e71fb828bd5da274f5a382",
+      "reviewedOn": "2026-10-26",
+      "sourceStatus": "source reviewed",
+      "sources": [
+        {
+          "path": "README.md",
+          "kind": "documentation",
+          "sha256": "83417d745a6042b4598da5f4fd521d8d1b107eec70ee52ada240d1b6a088a6c6"
+        },
+        {
+          "path": "pyproject.toml",
+          "kind": "configuration",
+          "sha256": "fde642d9fb3f20b0a14ebdc79ab854aaa44ed0ea4db146836954b744fad30a5a"
+        },
+        {
+          "path": "requirements.txt",
+          "kind": "configuration",
+          "sha256": "d4e97f3e74b7fe326004a2389c43eae3f9c354005b5a0e96ea9995af9cc9bc72"
+        },
+        {
+          "path": ".github/workflows/quality.yml",
+          "kind": "configuration",
+          "sha256": "bb5dd2dbe33d37650946ed4e96f20ad7805a4fb850f08d25cede9e3c7f2490a2"
+        },
+        {
+          "path": "docs/ARCHITECTURE.md",
+          "kind": "source-or-documentation",
+          "sha256": "744d9d9fd1efb686f4440f1e6a3b349170476599723c237dab581aaecdc71264"
+        },
+        {
+          "path": "docs/iterations/002/ARCHITECTURE_DECISIONS.md",
+          "kind": "source-or-documentation",
+          "sha256": "a766608cd77593a4baabe67f3dece15dfffb1a12a48a2cf7c4d51f84bc397423"
+        },
+        {
+          "path": "eventops/__init__.py",
+          "kind": "source-or-documentation",
+          "sha256": "d7ece5cf8dc028e6419178f7e9521a8b9025d4ec8adab9840f39207e2a76d9ee"
+        },
+        {
+          "path": "eventops/client.py",
+          "kind": "source-or-documentation",
+          "sha256": "705a6a55cd564999d22dc72c4c8a2ddf22a24c10cb12139bc4da9e80bc2c661e"
+        },
+        {
+          "path": "README.md",
+          "origin": "local checkout",
+          "sha256": "83417d745a6042b4598da5f4fd521d8d1b107eec70ee52ada240d1b6a088a6c6"
+        },
+        {
+          "path": "docs/ARCHITECTURE.md",
+          "origin": "local checkout",
+          "sha256": "744d9d9fd1efb686f4440f1e6a3b349170476599723c237dab581aaecdc71264"
+        },
+        {
+          "path": "eventops/rag.py",
+          "origin": "local checkout",
+          "sha256": "eb6b127838399f479fa59037c4d9a8bb3abd2847b4bfda0754e4961101f941e8"
+        },
+        {
+          "path": "eventops/gemini.py",
+          "origin": "local checkout",
+          "sha256": "e6a3df651661a5a3004ad27711e2f474b13027590cd474fb0a7e994848f75e23"
+        },
+        {
+          "path": "eventops/store.py",
+          "origin": "local checkout",
+          "sha256": "5c558c472eb76e9d58d9a7c6db317886d70bac8ac8f72b593cd328e43b228391"
+        },
+        {
+          "path": "eventops/pipeline.py",
+          "origin": "local checkout",
+          "sha256": "a0ae1d0db73aab144b701e6ffe89c609fa037080953d68f8f6195d3f10b91a53"
+        },
+        {
+          "path": "eventops/operations.py",
+          "origin": "local checkout",
+          "sha256": "73703bba6f2fd0ca5fda0674c1716d7ef9a6d24c912ad7b1d405b24ef079fc02"
+        },
+        {
+          "path": "eventops/providers.py",
+          "origin": "local checkout",
+          "sha256": "9c2e711ff66d065b3e2d5c91e79e921c5f64d7b8102dca0eebb786a45ebf4abd"
+        },
+        {
+          "path": "deploy/Caddyfile",
+          "origin": "local checkout",
+          "sha256": "d8e19e9a214acdfe249d4e74b479969b5d2c20e0f06a0daa8e2020af66ca9eb0"
+        }
+      ],
+      "companySuitesExecuted": false
+    },
+    {
+      "id": "ms-assessflow",
+      "repository": "https://github.com/keenosmith-del/ms-assessflow",
+      "remoteCommit": "1ba858faee6841a2bb61b2132844b44614524055",
+      "localCommit": "1ba858faee6841a2bb61b2132844b44614524055",
+      "reviewedOn": "2026-10-26",
+      "sourceStatus": "source reviewed",
+      "sources": [
+        {
+          "path": "README.md",
+          "kind": "documentation",
+          "sha256": "e2cd30e7c84755eefcfc89d1e886ab8926ca6985a72caa85c4f35df21565db54"
+        },
+        {
+          "path": "backend/pyproject.toml",
+          "kind": "configuration",
+          "sha256": "ac03abdcaca828152abfe8aaea7343314bc877198b3f3d00e3fe75b2d653bfa8"
+        },
+        {
+          "path": "frontend/package.json",
+          "kind": "configuration",
+          "sha256": "12336e5fd83d4fc8fe505c3fabc0f4864dcdb43d896f70cb1844de9e1c8a9d6d"
+        },
+        {
+          "path": ".github/workflows/deploy-staging.yml",
+          "kind": "configuration",
+          "sha256": "cbb12f9d39ba2036449ee36143f3ead166e216aae8a8dc628b9d0e17b2901db9"
+        },
+        {
+          "path": "docs/portfolio/engineering.md",
+          "kind": "source-or-documentation",
+          "sha256": "5f43c62ac7a97dda1f42589db8574db70c8eb5d73a03170e5366f08f0664ddb8"
+        },
+        {
+          "path": "docs/testing/results.md",
+          "kind": "source-or-documentation",
+          "sha256": "6a2ac6510e460c6cf6cc41921aff5e8d0f80b711016d8882f71c1e026d388bcc"
+        },
+        {
+          "path": "backend/app/__init__.py",
+          "kind": "source-or-documentation",
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "path": "backend/app/agents/__init__.py",
+          "kind": "source-or-documentation",
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "path": "README.md",
+          "origin": "local checkout",
+          "sha256": "e2cd30e7c84755eefcfc89d1e886ab8926ca6985a72caa85c4f35df21565db54"
+        },
+        {
+          "path": "docs/portfolio/engineering.md",
+          "origin": "local checkout",
+          "sha256": "5f43c62ac7a97dda1f42589db8574db70c8eb5d73a03170e5366f08f0664ddb8"
+        },
+        {
+          "path": "backend/app/agents/assessment.py",
+          "origin": "local checkout",
+          "sha256": "bc860788eb8eb15defac4fd7a00ba9b1cf64af8083bdfb3f691dc2d240454ea3"
+        },
+        {
+          "path": "backend/app/services/workflow.py",
+          "origin": "local checkout",
+          "sha256": "45f2a753252b1a0032f3dae01ed2cdead5a2cbbfbffd90b17449f2d12f1f0e5d"
+        },
+        {
+          "path": "backend/app/security/auth.py",
+          "origin": "local checkout",
+          "sha256": "76a79e331731dfed3d8be37cec3cfd2641992858873c53035598bec732c7d2da"
+        },
+        {
+          "path": "backend/app/integrations/microsoft/providers.py",
+          "origin": "local checkout",
+          "sha256": "53717df672cabaacfb9420093e8cc5bf0b139ab4369ef657808d710a9a24a86d"
+        },
+        {
+          "path": ".github/workflows/verify.yml",
+          "origin": "local checkout",
+          "sha256": "d3e03829ca3b1343b56b82c67526cbbb2a4dc97a00f8c77811c604ac551ae78a"
+        },
+        {
+          "path": "infra/main.bicep",
+          "origin": "local checkout",
+          "sha256": "be4751722f4ba8d1d95bd502db2299a4fe4034127df758c4653da7d1bae5088f"
+        }
+      ],
+      "companySuitesExecuted": false
+    }
+  ],
+  "protectedCVs": [
+    {
+      "path": "public/Keeno-Smith-CV-ATS-AI-Engineer-2026.pdf",
+      "sha256": "eedc7ce6340bfcdbb378458b7acc0b32953a3a9c77bc698a2cd1fdcefba17943"
+    },
+    {
+      "path": "public/Keeno-Smith-CV-ATS-Cloud-Engineer-2026.pdf",
+      "sha256": "b12231b833aed584abe7b66a87873148d6aeeeafe8b9f68d6ef33c6e0e310e3f"
+    },
+    {
+      "path": "public/Keeno-Smith-CV-ATS-Full-Stack-Engineer-2026.pdf",
+      "sha256": "4ff3545806682a7af1119bd28a0ac4b9bd4ec48f51e4f2428dd603dd6a18f6e8"
+    }
+  ]
+}
