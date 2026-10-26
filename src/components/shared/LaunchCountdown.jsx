@@ -25,7 +25,7 @@ export default function LaunchCountdown({ variant = "compact" }) {
       className={`company-launch-countdown${variant === "editorial" ? " is-editorial" : ""}`}
       role="timer"
       aria-live="off"
-      aria-label={`Time until site launch on ${companyLaunchLabel}`}
+      aria-label={`Time until app launch on ${companyLaunchLabel}`}
       data-launch-date={companyLaunchDate}
     >
       <div className="company-launch-time">
@@ -39,7 +39,7 @@ export default function LaunchCountdown({ variant = "compact" }) {
         </span>
       </div>
       {variant === "editorial" && (
-        <span className="company-launch-label">Until site launch</span>
+        <span className="company-launch-label">Until app launch</span>
       )}
     </div>
   );

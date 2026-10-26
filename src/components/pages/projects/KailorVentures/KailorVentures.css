@@ -325,7 +325,7 @@
   scroll-margin-top: 70px;
 }
 
-.kk-kai-section {
+.kk-insider-section {
   background: #faf9f6;
 }
 .kk-product-inner {
@@ -459,13 +459,13 @@
   margin-top: 54px;
   color: #aaa9ad;
 }
-.kk-kai-grid {
+.kk-insider-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 45px 62px;
   margin-top: 89px;
 }
-.kk-kai-grid h3 {
+.kk-insider-grid h3 {
   margin: 0;
   color: #56565a;
   font-size: 20px;
@@ -473,7 +473,7 @@
   line-height: 1.2;
   letter-spacing: -0.03em;
 }
-.kk-kai-grid p {
+.kk-insider-grid p {
   margin: 13px 0 0;
   color: #858589;
   font-size: 12px;
@@ -805,7 +805,7 @@
   .kk-architecture-grid,
   .kk-verification-grid,
   .kk-technology-grid,
-  .kk-kai-grid {
+  .kk-insider-grid {
     grid-template-columns: 1fr;
     gap: 28px;
   }
@@ -854,7 +854,7 @@
     transform: rotate(90deg);
     margin: 0 0 0 2px;
   }
-  .kk-kai-grid {
+  .kk-insider-grid {
     margin-top: 55px;
   }
   .kk-architecture-grid {

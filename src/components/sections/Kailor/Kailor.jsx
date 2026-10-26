@@ -61,23 +61,25 @@ export default function Kailor() {
               <LaunchCountdown variant="editorial" />
               <div
                 className="kailor-actions"
-                aria-label="Company websites coming soon"
+                aria-label="Company websites and application availability"
               >
-                <button
-                  type="button"
+                <a
+                  href="https://kailor.co.za"
                   className="hero-button hero-button-primary"
-                  disabled
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <Globe size={14} strokeWidth={1.7} aria-hidden="true" />
                   Visit kailor
-                </button>
+                </a>
                 <button
                   type="button"
                   className="hero-button hero-button-secondary"
+                  title="Public application access is not yet available"
                   disabled
                 >
                   <Globe size={14} strokeWidth={1.7} aria-hidden="true" />
-                  Visit kai
+                  Visit kailor insider
                 </button>
               </div>
             </div>

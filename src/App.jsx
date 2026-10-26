@@ -21,7 +21,6 @@ import { selectedProjects } from "./data/selectedProjects.js";
 import SelectedProjects from "./components/sections/SelectedProjects/SelectedProjects.jsx";
 import Footer from "./components/sections/Footer/Footer.jsx";
 
-import Company from "./components/pages/Company/Company.jsx";
 import Explore from "./components/pages/Explore/Explore.jsx";
 import ExploreProjectPreview from "./components/pages/Explore/ExploreProjectPreview.jsx";
 import CV from "./components/pages/CV/CV.jsx";
@@ -37,7 +36,7 @@ import GCPRetail from "./components/pages/projects/GCPRetail/GCPRetail.jsx";
 import EventOpsIntelligence from "./components/pages/projects/EventOpsIntelligence/EventOpsIntelligence.jsx";
 import OllamaPrivateBI from "./components/pages/projects/OllamaPrivateBI/OllamaPrivateBI.jsx";
 
-import KailorKai from "./components/pages/projects/KailorKai/KailorKai.jsx";
+import KailorVentures from "./components/pages/projects/KailorVentures/KailorVentures.jsx";
 
 import OpsFlow from "./components/pages/projects/OpsFlow/OpsFlow.jsx";
 
@@ -225,9 +224,15 @@ function App() {
 
         <Route path="/projects/n8n" element={<OpsFlow />} />
 
-        <Route path="/companies/kailor" element={<KailorKai />} />
+        <Route path="/companies/kailor" element={<KailorVentures />} />
 
-        <Route path="/companies/kai" element={<KailorKai />} />
+        <Route path="/companies/kai" element={<Navigate to="/companies/kailor#kailor-insider" replace />} />
+        <Route path="/companies/kailor-insider" element={<Navigate to="/companies/kailor#kailor-insider" replace />} />
+        <Route path="/explore/projects/kai" element={<Navigate to="/companies/kailor#kailor-insider" replace />} />
+        <Route path="/explore/projects/kailor-insider" element={<Navigate to="/companies/kailor#kailor-insider" replace />} />
+        <Route path="/projects/company-websites" element={<Navigate to="/companies/kailor" replace />} />
+        <Route path="/projects/kailor-ai" element={<Navigate to="/companies/kailor#kailor-platform" replace />} />
+        <Route path="/explore/projects/kailor-ai" element={<Navigate to="/companies/kailor#kailor-platform" replace />} />
 
         <Route path="/projects/claude" element={<ClaudeProcurement />} />
 

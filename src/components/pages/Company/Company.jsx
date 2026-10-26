@@ -1,37 +1,7 @@
-import { ArrowLeft } from "lucide-react";
-import { Link } from "react-router-dom";
-import LaunchCountdown from "../../shared/LaunchCountdown.jsx";
-import { companyLaunchLabel } from "../../../data/companyLaunch.js";
-import "../ProjectPreview/ProjectPreview.css";
+import { Navigate } from "react-router-dom";
 
-const companies = {
-  kailor: {
-    name: "kailor",
-    description:
-      "An AI company focused on assessing business needs and identifying where AI can help. I’m building the company and its website alongside my software engineering work.",
-  },
-  kai: {
-    name: "Kai",
-    description:
-      "Kailor’s sister company: a hub for AI insights, research and articles. I’m creating a place to explore developments in AI and what they mean in practice.",
-  },
-};
-
+// Preserve the old component API for historical company links.
 export default function Company({ company }) {
-  const { name, description } = companies[company];
-  return (
-    <main className="project-preview">
-      <span>Website in progress</span>
-      <h1>{name}</h1>
-      <p>{description}</p>
-      <LaunchCountdown />
-      <p style={{ marginTop: 20 }}>
-        Planned launch: {companyLaunchLabel}. The website is being prepared.
-      </p>
-      <Link className="project-preview-button portfolio-back-link" to="/">
-        <ArrowLeft size={14} strokeWidth={1.7} aria-hidden="true" />
-        Back to Portfolio
-      </Link>
-    </main>
-  );
+  const anchor = company === "kailor" ? "kailor" : "kailor-insider";
+  return <Navigate to={`/companies/kailor#${anchor}`} replace />;
 }

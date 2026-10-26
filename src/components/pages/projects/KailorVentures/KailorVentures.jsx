@@ -8,7 +8,7 @@ import githubSvg from "../../../../assets/svgs/header/github.svg";
 import LaunchCountdown from "../../../shared/LaunchCountdown.jsx";
 import { companyLaunchLabel } from "../../../../data/companyLaunch.js";
 import { companyStory, companyStackGroups } from "../../../../data/companyVentures.js";
-import "./KailorKai.css";
+import "./KailorVentures.css";
 
 const repositories = {
   kailor: "https://github.com/keenosmith-del/kailor",
@@ -62,13 +62,23 @@ function StackModal({ onClose }) {
   return <ProjectModal onClose={onClose} groups={companyStackGroups} />;
 }
 
-export default function KailorKai() {
+export default function KailorVentures() {
   const pageRef = useProjectPage();
   const [showStack, setShowStack] = useState(false);
   const [showTop, setShowTop] = useState(false);
   const [footerVisible, setFooterVisible] = useState(false);
   const footerRef = useRef(null);
   const closeStack = useCallback(() => setShowStack(false), []);
+
+  useEffect(() => {
+    const previousTitle = document.title;
+    document.title = "kailor and kailor insider | Keeno Smith";
+    const anchor = window.location.hash.slice(1);
+    const frame = requestAnimationFrame(() => {
+      if (anchor) document.getElementById(anchor)?.scrollIntoView();
+    });
+    return () => { cancelAnimationFrame(frame); document.title = previousTitle; };
+  }, []);
 
   useEffect(() => {
     const onScroll = () => setShowTop(window.scrollY > 300);

@@ -1,6 +1,6 @@
-// Fifteen South African calendar days after 12 October 2026. This is a fixed
-// date, never a rolling target. Midnight is the date boundary, not a launch hour.
-export const companyLaunchDate = "2026-10-27";
+// Fixed app-launch target: 10 South African calendar days after 27 October 2026.
+// Midnight in Africa/Johannesburg; the public company website is already live.
+export const companyLaunchDate = "2026-11-06";
 export const companyLaunchLabel = new Intl.DateTimeFormat("en-ZA", {
   day: "numeric",
   month: "long",
