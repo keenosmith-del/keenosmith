@@ -1,3 +1,4 @@
+import { aiProjectTarget, aiProjectCounterLabel } from "../../../data/aiInventory.js";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
@@ -30,7 +31,7 @@ export default function AI() {
       if (frame !== null) window.cancelAnimationFrame(frame);
       frame = null;
       started = true;
-      numeral.textContent = "9";
+      numeral.textContent = String(aiProjectTarget);
       plus.style.opacity = "1";
       observer?.disconnect();
     };
@@ -43,7 +44,7 @@ export default function AI() {
       const tick = (timestamp) => {
         if (disposed) return;
         const progress = Math.min(1, (timestamp - startedAt) / 1600);
-        const value = Math.floor(progress * 9);
+        const value = Math.floor(progress * aiProjectTarget);
         if (value !== previous) {
           numeral.textContent = String(value);
           previous = value;
@@ -89,7 +90,7 @@ export default function AI() {
               ref={counterRef}
               className="ai-counter"
               role="group"
-              aria-label="9+ AI projects"
+              aria-label={aiProjectCounterLabel}
             >
               <strong aria-hidden="true">
                 <span ref={numeralRef}>0</span>

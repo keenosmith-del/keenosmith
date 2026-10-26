@@ -1,48 +1,5 @@
-// Additional CV evidence stays supporting: architecture descriptions do not prove delivery.
-export const cvSkillEvidence = [
-  {
-    source: "src/components/pages/CV/CV.jsx:923",
-    technologies: [
-      "Compute Engine",
-      "Google Kubernetes Engine",
-      "Cloud Storage",
-      "Cloud Run",
-      "Cloud Functions",
-      "Cloud SQL",
-      "Firestore",
-      "BigQuery",
-      "Vertex AI",
-      "Google Gemini",
-      "Artifact Registry",
-      "Cloud Build",
-      "IAM",
-    ],
-  },
-  {
-    source: "src/components/pages/CV/CV.jsx:1242",
-    technologies: [
-      "ADK",
-      "Cloud KMS",
-      "Dataplex",
-      "Gemini",
-      "Vertex AI",
-      "BigQuery",
-      "Cloud Run",
-    ],
-  },
-  {
-    source: "src/components/pages/CV/CV.jsx:1682",
-    technologies: [
-      "Azure OpenAI",
-      "Bedrock",
-      "Bedrock AgentCore",
-      "SageMaker",
-      "Serverless Architecture",
-      "Containerisation",
-      "Event-driven Architecture",
-    ],
-  },
-];
+// Current CV listings are derived from the three authoritative structured variants.
+export { currentCVSkillEvidence as cvSkillEvidence } from '../data/currentCVEvidence.js';
 export const additionalProjects = [
   {
     id: "geospatial-intelligence",

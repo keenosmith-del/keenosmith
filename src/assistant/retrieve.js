@@ -76,7 +76,7 @@ export function retrieve(q, context = {}) {
         ? score > (p.demonstrated ? 22 : 2)
         : true,
     )
-    .sort((a, b) => b.score - a.score);
+    .sort((a, b) => Number(q.projectIds.includes(b.p.id)) - Number(q.projectIds.includes(a.p.id)) || Number(b.p.demonstrated) - Number(a.p.demonstrated) || b.score - a.score);
   const seen = new Set();
   let selected = ranked
     .map((x) => canonicalIndex.get(x.p.canonicalId) || x.p)

@@ -88,7 +88,7 @@ export const timelineChapters = [
     indexTitle: "Connected systems",
     title: "Engineering across boundaries.",
     description:
-      "Independent projects bring together agentic AI, retrieval, LLMOps, full-stack applications and distributed services. Work spans AWS, Azure and Google Cloud integrations, infrastructure as code, containers, observability and recovery testing. Local verification and cloud deployment status are documented separately, with human review built into AI-assisted workflows.",
-    dateEvidence: "Selected Projects sections across all three updated CVs; no project delivery dates or unverified live deployments are asserted.",
+      "Independent engineering now includes CrewAI financial investigations, policy-grounded access governance, a Streamlit and n8n EventOps companion, retrieval systems, full-stack applications and distributed services. I separate deterministic controls from model interpretation, preserve workflow state and test transactions, authorization and recovery. Cloud adapters and protected release automation are documented alongside their deployment limits; these projects add technical evidence rather than employment years.",
+    dateEvidence: "Current CV project sections and source-reviewed portfolio repositories, 26 October 2026. Independent projects add engineering scope, not career dates or additional tenure.",
   },
 ];

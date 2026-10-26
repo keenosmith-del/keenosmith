@@ -34,7 +34,7 @@ export default function ExploreProjectPreview({ projectId: mappedId }) {
       <ProjectNavigation className="explore-back" />
       <section className="explore-width">
         <span className="explore-eyebrow">
-          {project ? "Built · Portfolio page coming soon" : "Project not found"}
+          {project ? project.demonstrated ? "Built · Portfolio page coming soon" : "Historical scope · Implementation not verified" : "Project not found"}
         </span>
         <h1>{project?.title || "Return to Explore"}</h1>
         <p>

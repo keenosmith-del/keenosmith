@@ -1,3 +1,4 @@
+import { currentCVSkillEvidence } from "./currentCVEvidence.js";
 import { canonicalSkill, normalizeSkills } from "./skillNames.js";
 import { auditedProjects, exactToolRecords } from './auditedProjects.js';
 import { repositoryEvidence } from '../assistant/repositoryEvidence.js';
@@ -183,7 +184,7 @@ export const skillGroups = [
 skillGroups.push({ title: 'Testing & Evaluation', skills: ['Testing', 'Playwright', 'Vitest', 'AI Evaluation'] });
 for (const group of skillGroups) group.skills = normalizeSkills(group.skills);
 const categoryGroups = { testing: 'Testing & Evaluation', frontend: 'Frontend & UI', backend: 'Backend & APIs', databases: 'Databases & Data', ai: 'AI & Machine Learning', devops: 'Cloud, DevOps & Infrastructure', infrastructure: 'Cloud, DevOps & Infrastructure', security: 'Security & Authentication', architecture: 'Architecture & Engineering', languages: 'Languages & Core Engineering' };
-for (const name of new Set([...auditedProjects.flatMap(p => p.technologies), ...repositoryEvidence.flatMap(p => p.technologies), ...professionalSkillRecords.flatMap(r => r.skills), ...Object.keys(exactToolRecords).filter(n => exactToolRecords[n].status === "candidate-declared experience")].map(canonicalSkill))) {
+for (const name of new Set([...auditedProjects.flatMap(p => p.technologies), ...repositoryEvidence.flatMap(p => p.technologies), ...professionalSkillRecords.flatMap(r => r.skills), ...currentCVSkillEvidence.flatMap(r => r.technologies), ...Object.keys(exactToolRecords).filter(n => exactToolRecords[n].status === "candidate-declared experience")].map(canonicalSkill))) {
   if (skillGroups.some(g => g.skills.includes(name))) continue;
   const rel = relationships([name]);
   const category = rel.categories.find(c => categoryGroups[c]);

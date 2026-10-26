@@ -1,4 +1,5 @@
-// Source: CV project descriptions. Detailed project pages take precedence when scope conflicts.
+// Historical CV project scope, preserved for provenance. These records are not
+// current professional claims; current CVs and reviewed implementations take precedence.
 export const cvProjects = [
   {
     id: "cv-1",
@@ -9,7 +10,7 @@ export const cvProjects = [
     path: "/cv",
     repository:
       "https://github.com/keenosmith-del/microsoft-ai-cloud-architect-finops-optimization",
-    status: "CV-described architecture \u00b7 Completion not verified",
+    status: "Historical CV scope \u00b7 Not in current CV; completion not verified",
     demonstrated: false,
   },
   {
@@ -21,7 +22,7 @@ export const cvProjects = [
     path: "/cv",
     repository:
       "https://github.com/keenosmith-del/aws-cloud-security-incident-response",
-    status: "CV-described architecture \u00b7 Completion not verified",
+    status: "Historical CV scope \u00b7 Not in current CV; completion not verified",
     demonstrated: false,
   },
   {
@@ -33,7 +34,7 @@ export const cvProjects = [
     path: "/cv",
     repository:
       "https://github.com/keenosmith-del/aws-distributed-developer-deployment",
-    status: "CV-described architecture \u00b7 Completion not verified",
+    status: "Historical CV scope \u00b7 Not in current CV; completion not verified",
     demonstrated: false,
   },
   {
@@ -44,7 +45,7 @@ export const cvProjects = [
     technologies: [],
     path: "/cv",
     repository: "https://github.com/keenosmith-del/gcp-supply-chain-risk",
-    status: "CV-described architecture \u00b7 Completion not verified",
+    status: "Historical CV scope \u00b7 Not in current CV; completion not verified",
     demonstrated: false,
   },
   {
@@ -56,7 +57,7 @@ export const cvProjects = [
     path: "/cv",
     repository:
       "https://github.com/keenosmith-del/gcp-data-governance-compliance",
-    status: "CV-described architecture \u00b7 Completion not verified",
+    status: "Historical CV scope \u00b7 Not in current CV; completion not verified",
     demonstrated: false,
   },
   {
@@ -67,7 +68,7 @@ export const cvProjects = [
     technologies: [],
     path: "/cv",
     repository: "https://github.com/keenosmith-del/claude-reg-change-impact",
-    status: "CV-described architecture \u00b7 Completion not verified",
+    status: "Historical CV scope \u00b7 Not in current CV; completion not verified",
     demonstrated: false,
   },
   {
@@ -80,7 +81,7 @@ export const cvProjects = [
     path: "/cv",
     repository:
       "https://github.com/keenosmith-del/claude-architecture-analysis",
-    status: "CV-described architecture \u00b7 Completion not verified",
+    status: "Historical CV scope \u00b7 Not in current CV; completion not verified",
     demonstrated: false,
   },
   {
@@ -91,7 +92,7 @@ export const cvProjects = [
     technologies: [],
     path: "/cv",
     repository: "https://github.com/keenosmith-del/n8n-opsflow-business-orch",
-    status: "CV-described architecture \u00b7 Completion not verified",
+    status: "Historical CV scope \u00b7 Not in current CV; completion not verified",
     demonstrated: false,
   },
   {
@@ -102,7 +103,7 @@ export const cvProjects = [
     technologies: [],
     path: "/cv",
     repository: "https://github.com/keenosmith-del/n8n-webhooks-api-orch",
-    status: "CV-described architecture \u00b7 Completion not verified",
+    status: "Historical CV scope \u00b7 Not in current CV; completion not verified",
     demonstrated: false,
   },
 ];

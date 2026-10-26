@@ -1,0 +1,26 @@
+[
+  {
+    "variant": "ai",
+    "pdf": "public/Keeno-Smith-CV-ATS-AI-Engineer-2026.pdf",
+    "structured": "src/components/pages/CV/data/ai.json",
+    "sha256": "eedc7ce6340bfcdbb378458b7acc0b32953a3a9c77bc698a2cd1fdcefba17943",
+    "checks": 50,
+    "result": "matched; no PDF or structured CV modified"
+  },
+  {
+    "variant": "full-stack",
+    "pdf": "public/Keeno-Smith-CV-ATS-Full-Stack-Engineer-2026.pdf",
+    "structured": "src/components/pages/CV/data/full-stack.json",
+    "sha256": "4ff3545806682a7af1119bd28a0ac4b9bd4ec48f51e4f2428dd603dd6a18f6e8",
+    "checks": 50,
+    "result": "matched; no PDF or structured CV modified"
+  },
+  {
+    "variant": "cloud",
+    "pdf": "public/Keeno-Smith-CV-ATS-Cloud-Engineer-2026.pdf",
+    "structured": "src/components/pages/CV/data/cloud.json",
+    "sha256": "b12231b833aed584abe7b66a87873148d6aeeeafe8b9f68d6ef33c6e0e310e3f",
+    "checks": 50,
+    "result": "matched; no PDF or structured CV modified"
+  }
+]

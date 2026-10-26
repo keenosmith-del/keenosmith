@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { createHash } from 'node:crypto';
 import { build } from 'esbuild';
-await build({ stdin: { contents: `export * from './src/assistant/knowledge.js'; export { answer } from './src/assistant/engine.js'; export { conversationalAnswer } from './src/assistant/conversation.js'; export { skillIndex, curatedProjects, matchesQuery } from './src/components/pages/Explore/utils/exploreIndex.js'; export { candidateEvidence, evidenceFingerprint, candidateProfile } from './src/components/pages/RecruiterView/utils/candidateEvidence.js'; export { assessRole } from './src/components/pages/RecruiterView/utils/recruiterScoring.js'; export { reviewedProjects, newProjectIds } from './src/data/projectEvidence.js';`, resolveDir: process.cwd() }, bundle: true, platform: 'node', format: 'esm', outfile: '/tmp/portfolio-complete-refresh.mjs', loader: { '.png': 'empty' } });
+await build({ stdin: { contents: `export * from './src/assistant/knowledge.js'; export { answer } from './src/assistant/engine.js'; export { conversationalAnswer } from './src/assistant/conversation.js'; export { skillIndex, curatedProjects, matchesQuery } from './src/components/pages/Explore/utils/exploreIndex.js'; export { candidateEvidence, evidenceFingerprint, candidateProfile } from './src/components/pages/RecruiterView/utils/candidateEvidence.js'; export { assessRole } from './src/components/pages/RecruiterView/utils/recruiterScoring.js'; export { reviewedProjects, newProjectIds } from './src/data/projectEvidence.js'; export { aiProjectTarget, qualifyingAIProjects, aiProjectCounterLabel } from './src/data/aiInventory.js';`, resolveDir: process.cwd() }, bundle: true, platform: 'node', format: 'esm', outfile: '/tmp/portfolio-complete-refresh.mjs', loader: { '.png': 'empty' } });
 const m = await import('/tmp/portfolio-complete-refresh.mjs');
 for (const fn of [m.answer, m.conversationalAnswer]) {
   for (const [query, id] of [
@@ -26,6 +26,11 @@ for (const fn of [m.answer, m.conversationalAnswer]) {
 }
 assert.equal(new Set(m.canonicalProjects.map(p => p.id)).size, m.canonicalProjects.length);
 assert.equal(m.curatedProjects.length, 22);
+assert.equal(m.aiProjectTarget, 15);
+assert(m.qualifyingAIProjects.length >= m.aiProjectTarget);
+assert.equal(new Set(m.qualifyingAIProjects.map(p => p.repository)).size, m.qualifyingAIProjects.length);
+assert.equal(m.aiProjectCounterLabel, '15+ AI projects');
+assert(!m.qualifyingAIProjects.some(p => p.id === 'banking-risk' || p.id === 'n8n'));
 assert.equal(new Set(m.skillIndex.map(s => s.id)).size, m.skillIndex.length);
 for (const skill of ['CrewAI','FastEmbed','Streamlit','SQLAlchemy','Alembic','Pydantic','Bicep','OIDC','Concurrency control','Human approval']) {
   const entry = m.skillIndex.find(s => s.name === skill);

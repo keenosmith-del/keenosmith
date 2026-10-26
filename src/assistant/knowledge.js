@@ -1,3 +1,4 @@
+import { currentCVProjectEvidence } from "../data/currentCVEvidence.js";
 import { canonicalSkill, normalizeSkills } from "../data/skillNames.js";
 import { candidateFacts, educationSummary, experienceSummary, professionalSkillRecords } from '../data/candidateProfile.js';
 import { auditedProjects, auditOverrides, exactToolRecords } from '../data/auditedProjects.js';
@@ -273,6 +274,7 @@ export const projects = [...existingProjects.filter(p => !auditedProjects.some(a
       ...(p.evidence || []),
       ...repositoryDocumentationEvidence.filter((r) => r.id === p.id),
       ...(extra?.evidence || []),
+      ...currentCVProjectEvidence.filter(record => record.repository === (extra?.repository || p.repository)),
     ],
   };
 });

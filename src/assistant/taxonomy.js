@@ -398,14 +398,14 @@ for (const [id, names] of Object.entries({
 }
 for (const [id, skills] of Object.entries({
   ai: ['CrewAI', 'FastEmbed', 'Structured outputs', 'Agent observability', 'Evidence validation', 'Prompt-injection boundaries'],
-  frontend: ['Streamlit'],
+  frontend: ['Streamlit', 'State Management'],
   backend: ['Pydantic', 'Webhooks', 'Background workers', 'Workflow automation'],
-  databases: ['SQLAlchemy', 'Alembic', 'Database transactions', 'Concurrency control', 'Idempotency', 'Data normalization', 'Financial calculations'],
-  devops: ['Docker Compose', 'Caddy', 'GitHub Actions', 'Deployment Automation', 'Rollback procedures', 'Release validation', 'OIDC', 'Cloudflare Workers', 'Cloudflare Pages'],
+  databases: ['JPA', 'SQLAlchemy', 'Alembic', 'Database transactions', 'Concurrency control', 'Idempotency', 'Data normalization', 'Financial calculations'],
+  devops: ['Docker Compose', 'Caddy', 'GitHub Actions', 'Deployment Automation', 'Rollback procedures', 'Release validation', 'OIDC', 'Cloudflare Workers', 'Cloudflare Pages', 'Nginx', 'kind', 'Logging', 'Disaster Recovery'],
   infrastructure: ['Bicep', 'Terraform', 'OpenTofu'],
   microsoft: ['Bicep', 'Azure Language', 'Microsoft Graph'],
-  security: ['Human approval', 'Audit logging', 'Tenant isolation', 'OIDC', 'TOTP', 'Prompt-injection boundaries', 'Request replay protection'],
-  architecture: ['State machines', 'API contracts', 'Schema validation', 'Evidence validation'],
+  security: ['Least privilege', 'TLS', 'Human approval', 'Audit logging', 'Tenant isolation', 'OIDC', 'TOTP', 'Prompt-injection boundaries', 'Request replay protection'],
+  architecture: ['Retries', 'State machines', 'API contracts', 'Schema validation', 'Evidence validation'],
 })) {
   const group = taxonomy.find(t => t.id === id);
   if (group) group.skills.push(...skills);
