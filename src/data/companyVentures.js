@@ -11,7 +11,7 @@ export const companyStory = [
   {
     id: 'evolution', label: 'The evolution', title: 'From understanding technology to applying it.',
     paragraphs: [
-      'Researching and explaining technology kept bringing me back to practical questions: what does a business actually need, which constraints matter, and what is worth building? That experience contributed to the creation of kailor in 2025. I developed it into a founder-led technology consultancy and engineering company, carrying the same curiosity into operational problems and delivery.',
+      'Researching and explaining technology kept bringing me back to practical questions: what does a business actually need, which constraints matter, and what is worth building? That experience contributed to the creation of kailor in 2025. I developed it into a founder-led technology consultancy and engineering company, carrying that thinking into operational problems and delivery.',
       'The publication continues independently. kailor insider communicates, publishes and connects ideas; kailor evaluates, engineers and delivers technology. I founded and operate these ventures as ongoing businesses, with software platforms supporting their different responsibilities.',
     ],
   },

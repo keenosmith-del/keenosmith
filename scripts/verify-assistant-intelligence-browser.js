@@ -74,7 +74,8 @@ try {
   await page.click('.assistant-clear');
   await new Promise((r) => setTimeout(r, 650));
   assert.equal((await page.$$('.assistant-message')).length, 1);
-  assert((await send('Does Keeno know React?')).includes('documented'));
+  assert.match(await send('Does Keeno know React?'), /Keeno has implemented React/);
+  assert(await page.$('.assistant-evidence section'));
   // Close/reopen retains a completed conversation and keyboard focus.
   await page.keyboard.press('Escape');
   await page.waitForFunction(() => document.querySelector('.portfolio-chat-panel').hidden);

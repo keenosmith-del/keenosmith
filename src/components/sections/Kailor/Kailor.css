@@ -161,3 +161,13 @@
     width: 100%;
   }
 }
+
+.kailor-intro strong, .kailor-feature .cloud-tile-details strong { font-weight: 600; }
+
+@media (max-width: 600px) {
+  /* Longer editorial copy needs contrast above the bottom of the artwork. */
+  .kailor-feature .cloud-overlay {
+    background: linear-gradient(to top, rgba(25, 25, 27, 0.94) 0%, rgba(25, 25, 27, 0.78) 74%, rgba(25, 25, 27, 0.05) 100%);
+  }
+  .kailor-feature .cloud-tile-details p { color: #f3f2ee; }
+}

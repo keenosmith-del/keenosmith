@@ -13,5 +13,12 @@
       "source": "/((?!api/).*)",
       "destination": "/index.html"
     }
+  ],
+  "redirects": [
+    {
+      "source": "/documents/kailor-kai-engineering-brief.pdf",
+      "destination": "/documents/kailor-insider-engineering-brief.pdf",
+      "permanent": true
+    }
   ]
 }

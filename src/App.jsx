@@ -172,8 +172,6 @@ function App() {
             "go-dotnet",
             "openai",
             "jwt-redpanda",
-            "company-websites",
-            "kailor-ai",
           ]),
         ]
           .filter(

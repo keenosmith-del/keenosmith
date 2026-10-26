@@ -5,6 +5,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowUp, Globe2, Layers3 } from "lucide-react";
 import githubSvg from "../../../../assets/svgs/header/github.svg";
+import CompanyEmphasis from "../../../shared/CompanyEmphasis.jsx";
 import LaunchCountdown from "../../../shared/LaunchCountdown.jsx";
 import { companyLaunchLabel } from "../../../../data/companyLaunch.js";
 import { companyStory, companyStackGroups } from "../../../../data/companyVentures.js";
@@ -75,7 +76,7 @@ export default function KailorVentures() {
     document.title = "kailor and kailor insider | Keeno Smith";
     const anchor = window.location.hash.slice(1);
     const frame = requestAnimationFrame(() => {
-      if (anchor) document.getElementById(anchor)?.scrollIntoView();
+      if (anchor) document.getElementById(anchor)?.scrollIntoView({ behavior: "instant", block: "start" });
     });
     return () => { cancelAnimationFrame(frame); document.title = previousTitle; };
   }, []);
@@ -109,17 +110,17 @@ export default function KailorVentures() {
               <div className="kk-pills" aria-label="Company disciplines">
                 <span>Consultancy</span><span>Software engineering</span><span>AI &amp; automation</span><span>Cloud</span><span>Publishing</span>
               </div>
-              <time dateTime="2026-10">October 2026</time>
+              <time dateTime="2022-02">February 2022</time>
             </div>
             <div className="kk-hero-grid">
               <div className="kk-hero-copy">
                 <h1>From publishing <span>to practical engineering.</span></h1>
-                <p className="kk-hero-description">
+                <p className="kk-hero-description"><CompanyEmphasis>
                   I founded kailor insider in 2024 to research, publish and connect ideas in technology.
                   That work helped shape kailor, the technology consultancy and engineering company
                   I established in 2025. Today, I operate two distinct ventures and build the complete
                   systems that support their work.
-                </p>
+                </CompanyEmphasis></p>
                 <div className="kk-hero-actions">
                   <a className="kk-button kk-button-main" href="#kailor">Explore kailor</a>
                   <a className="kk-button kk-button-light" href="#kailor-insider">Explore kailor insider</a>
@@ -141,7 +142,7 @@ export default function KailorVentures() {
             <div className="kk-side-label">{section.label}</div>
             <div className="kk-section-content">
               <h2 id={`kk-${section.id}-title`}>{section.title}</h2>
-              {section.paragraphs.map(paragraph => <p className="kk-narrative" key={paragraph}>{paragraph}</p>)}
+              {section.paragraphs.map(paragraph => <p className="kk-narrative" key={paragraph}><CompanyEmphasis>{paragraph}</CompanyEmphasis></p>)}
               {section.id === 'kailor' && <div className="kk-product-links">
                 <SourceButton href={repositories.kailor} label="kailor source" />
                 <WebsiteButton href={websites.kailor} label="Visit kailor" />

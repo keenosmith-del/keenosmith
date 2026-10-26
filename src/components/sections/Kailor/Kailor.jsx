@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Globe } from "lucide-react";
 import kailorMascot from "../../../assets/images/kailor/kailor-unamused.png";
 import useScrollFade from "../../../hooks/useScrollFade.js";
+import CompanyEmphasis from "../../shared/CompanyEmphasis.jsx";
 import LaunchCountdown from "../../shared/LaunchCountdown.jsx";
 import "../Cloud/Cloud.css";
 import "./Kailor.css";
@@ -40,9 +41,9 @@ export default function Kailor() {
               <div className="cloud-tile-caption">
                 <h3>Technology consultancy &amp; engineering</h3>
                 <div className="cloud-tile-details">
-                  <p>
+                  <p><CompanyEmphasis>
                     kailor brings together technology consulting, full-stack software engineering, AI and automation, and cloud infrastructure. My work spans discovery, assessment, solution design, implementation and ongoing improvement. The aim is to recommend and deliver technology that genuinely fits the problem, whether that means improving an existing process, integrating established tools or engineering something new.
-                  </p>
+                  </CompanyEmphasis></p>
                 </div>
               </div>
               <span className="cloud-arrow" aria-hidden="true">
@@ -53,9 +54,9 @@ export default function Kailor() {
           <div className="kailor-company">
             <div className="kailor-intro" data-scroll-fade>
               <h2 id="kailor-heading">intelligence, put to work.</h2>
-              <p>
-                kailor insider began as an independent publishing platform I founded to explore developments and ideas in technology. That work grew into kailor, a technology consultancy bringing together software engineering, AI and automation, cloud infrastructure and practical business advisory. I approach the work by understanding what people and businesses need, then designing and delivering solutions that make sense for their context. Today, kailor insider continues as a dedicated place for publishing, discovery and conversation, while kailor turns the same curiosity into engineered systems and practical outcomes.
-              </p>
+              <p><CompanyEmphasis>
+                kailor insider began as an independent publishing platform I founded to explore developments and ideas in technology. That work grew into kailor, a technology consultancy bringing together software engineering, AI and automation, cloud infrastructure and practical business advisory. I approach the work by understanding what people and businesses need, then designing and delivering solutions that make sense for their context. Today, kailor insider continues as a dedicated place for publishing, discovery and conversation, while kailor turns the same thinking into engineered systems and practical outcomes.
+              </CompanyEmphasis></p>
             </div>
             <div className="kailor-launch" data-scroll-fade>
               <LaunchCountdown variant="editorial" />
