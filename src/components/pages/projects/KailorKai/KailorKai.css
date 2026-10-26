@@ -896,3 +896,13 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* The company narrative uses the existing editorial grid and type scale. */
+.kk-narrative {
+  margin: 20px 0 0;
+  max-width: 760px;
+  font-size: clamp(16px, 1.35vw, 18px);
+  line-height: 1.75;
+  color: var(--charcoal);
+}
+.kk-editorial-section[id] { scroll-margin-top: 100px; }
