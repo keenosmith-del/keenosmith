@@ -7,10 +7,10 @@ try {
   await page.setViewport({width:1440,height:900});
   const explore='/explore?tab=projects';
   await page.goto(base+explore,{waitUntil:'networkidle0'});
-  const links=await page.$$eval('.explore-project a',els=>els.map(e=>e.getAttribute('href')));
-  assert.equal(links.length,19);
+  const links=await page.$$eval('a.explore-project',els=>els.map(e=>e.getAttribute('href')));
+  assert.equal(links.length,22);
   for(const route of links) {
-    const selector=`.explore-project a[href="${route}"]`;
+    const selector=`a.explore-project[href="${route}"]`;
     await page.$eval(selector,e=>e.scrollIntoView({behavior:'instant',block:'center'}));
     await page.click(selector);
     await page.waitForSelector('[data-project-back]');
@@ -22,11 +22,11 @@ try {
     assert.equal(new URL(page.url()).pathname+new URL(page.url()).search,explore);
   }
   await page.goto(base+'/explore?tab=projects&q=music',{waitUntil:'networkidle0'});
-  await page.click('.explore-project a'); await page.waitForSelector('[data-project-back]');
+  await page.click('a.explore-project'); await page.waitForSelector('[data-project-back]');
   await page.click('[data-project-back]');await page.waitForSelector('.explore-project');
   assert.equal(new URL(page.url()).search,'?tab=projects&q=music');
   assert.equal(await page.$$eval('.explore-project',els=>els.length),1);
-  await page.click('.explore-project a');await page.waitForSelector('[data-project-back]');
+  await page.click('a.explore-project');await page.waitForSelector('[data-project-back]');
   await page.reload({waitUntil:'networkidle0'});
   assert.equal(await page.$eval('[data-project-back]',e=>e.textContent.trim()),'Back to portfolio');
   assert.equal(await page.$eval('[data-project-back]',e=>e.getAttribute('href')),'/');
@@ -36,5 +36,5 @@ try {
   await page.emulateMediaFeatures([{name:'prefers-reduced-motion',value:'reduce'}]);
   await page.goto(base+'/projects/field-service',{waitUntil:'networkidle0'});
   assert.equal(await page.$eval('.project-hero-content',e=>getComputedStyle(e).opacity),'1');
-  console.log('PASS: all 19 Explore entry/return paths, filter retention, direct/refresh fallback, portfolio footer and reduced-motion visibility.');
+  console.log('PASS: all 22 Explore entry/return paths, filter retention, direct/refresh fallback, portfolio footer and reduced-motion visibility.');
 } finally {await browser.close();}

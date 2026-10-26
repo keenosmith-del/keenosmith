@@ -21,7 +21,7 @@ try {
   const { composeProjects } = await server.ssrLoadModule(
     "/src/components/pages/Explore/utils/explorePresentation.js",
   );
-  assert.equal(curatedProjects.length, 19);
+  assert.equal(curatedProjects.length, 22);
   assert(curatedProjects.every((p) => !p.id.startsWith("ux-ui-")));
   for (const id of ["manufacturing-qc", "customer-operations"]) {
     const project = projectIndex.find((p) => p.id === id);
@@ -40,10 +40,10 @@ try {
     assert(!curatedProjects.find((p) => p.id === id).hasDetailPage);
     assert(projectIndex.find((p) => p.id === id).status.includes("Rebuilding"));
   }
-  assert.equal(new Set(curatedProjects.map((p) => p.id)).size, 19);
+  assert.equal(new Set(curatedProjects.map((p) => p.id)).size, 22);
   assert.equal(
     curatedProjects.filter((p) => p.categories.includes("backend")).length,
-    19,
+    22,
   );
   assert.equal(
     curatedProjects.filter((p) => !p.categories.includes("backend")).length,
@@ -55,7 +55,15 @@ try {
     curatedProjects.find((p) => p.id === "hugging-face").tone,
     "yellow",
   );
-  assert.ok(curatedProjects.every((p) => p.route.startsWith("/projects/")));
+  assert.ok(curatedProjects.every((p) => p.route.startsWith("/projects/") || p.route.startsWith("/explore/projects/")));
+  for (const id of ['crewai-revenueops', 'eventops-streamlit', 'ms-assessflow']) {
+    const entries = curatedProjects.filter(p => p.id === id);
+    assert.equal(entries.length, 1);
+    assert.equal(entries[0].route, `/explore/projects/${id}`);
+    assert(entries[0].repositoryUrl);
+    assert(entries[0].technologies.length > 5);
+  }
+  assert(!curatedProjects.find(p => p.id === 'eventops-streamlit').categories.includes('frontend'));
   assert.ok(
     curatedProjects
       .filter((p) => matchesQuery(p, "Azure"))

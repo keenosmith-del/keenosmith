@@ -1,3 +1,6 @@
+import revenueOpsCover from "../assets/images/custom-projects/crewai-revenueops.png";
+import streamlitCover from "../assets/images/custom-projects/eventops-low-code-streamlit.png";
+import assessFlowCover from "../assets/images/custom-projects/ms-assessflow.png";
 import huggingFaceCover from "../assets/images/ai-section/hugging-face-project.png";
 import azureCover from "../assets/images/cloud-section/ms-project.png";
 import awsCover from "../assets/images/cloud-section/aws-project.png";
@@ -21,6 +24,9 @@ import eventOpsCover from "../assets/images/ai-section/eventops-project.png";
 
 // Shared by Explore and Selected projects; key by ID to keep artwork and colours aligned.
 export const projectArtwork = {
+  "crewai-revenueops": { image: revenueOpsCover, background: "#353336", ink: "var(--surface)" },
+  "eventops-streamlit": { image: streamlitCover, background: "#9b9692", ink: "var(--charcoal)" },
+  "ms-assessflow": { image: assessFlowCover, background: "#b0814b", ink: "var(--surface)" },
   "intelligence-manufacturing-llmops": {
     image: manufacturingCover,
     background: "#a8a9aa",

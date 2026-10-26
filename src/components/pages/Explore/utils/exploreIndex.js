@@ -1,3 +1,4 @@
+import { newProjects } from "../../../../data/projectEvidence.js";
 import { rebuildingProjects } from "../../../../data/rebuildingProjects.js";
 import {
   canonicalProjects,
@@ -89,6 +90,7 @@ export const projectIndex = [...canonicalProjects]
   });
 // The visual catalogue is deliberately independent of the retrieval archive.
 export const curatedProjects = [
+  ...newProjects.map(project => ({ ...projectIndex.find(p => p.id === project.id), ...project, route: project.path, summary: project.description, repositoryUrl: project.repository, hasDetailPage: false })),
   ...projectConcepts.map((concept) => {
     const source = projectIndex.find(
       (p) => p.id === concept.id || p.aliases.includes(concept.id),

@@ -39,3 +39,13 @@ Stage receipts, catalogue/skill changes, AI inventory, CV reconciliation, tests 
 remaining limitations are appended as each stage completes. Detailed custom pages
 for the three new projects are explicitly reserved for a future iteration; this
 iteration uses the existing generic preview infrastructure.
+
+### Stage 2 — Explore catalogue
+
+Added the three source-reviewed records and supplied PNGs without modification.
+Exact artwork backgrounds are #353336 (RevenueOps), #9b9692 (Streamlit), and #b0814b
+(AssessFlow). All three use existing generic previews with technology lists, repository
+links and implementation/deployment boundaries. Tiles are single links with no nested
+interactive element. Generic previews share project-origin back navigation.
+The 22-card catalogue test checks exact count, uniqueness and the new preview routes.
+`npm run lint`, `npm run build` and the Explore index test pass at this stage.

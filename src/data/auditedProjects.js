@@ -1,6 +1,8 @@
+import { newProjects } from "./projectEvidence.js";
 // Development-time review, 18 October 2026. No repository requests at runtime.
 // Only scoped implemented technologies belong here; visibility is independent.
 export const auditedProjects = [
+  ...newProjects,
   {
     id: 'eventops-intelligence-v2', title: 'EventOps Intelligence v2',
     repository: 'https://github.com/keenosmith-del/eventops-intelligence-v.02', path: '/explore/projects/eventops-intelligence-v2',

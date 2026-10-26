@@ -42,7 +42,9 @@ export function ProjectTile({ project }) {
   const artwork = projectArtwork[project.id];
   const cover = artwork?.image;
   return (
-    <article
+    <ProjectLink
+      project={project}
+      aria-label={`View ${project.title}`}
       data-explore-id={project.id}
       style={
         artwork
@@ -75,14 +77,10 @@ export function ProjectTile({ project }) {
           ))}
         </div>
       </div>
-      <ProjectLink
-        project={project}
-        className="explore-project-arrow"
-        aria-label={`View ${project.title}`}
-      >
-        <ArrowRight size={18} strokeWidth={1.7} aria-hidden="true" />
-      </ProjectLink>
-    </article>
+      <span className="explore-project-arrow" aria-hidden="true">
+        <ArrowRight size={18} strokeWidth={1.7} />
+      </span>
+    </ProjectLink>
   );
 }
 export function ProjectGallery({ projects }) {

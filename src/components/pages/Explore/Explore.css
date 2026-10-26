@@ -1450,3 +1450,7 @@
     transform: none;
   }
 }
+
+/* A project tile is one keyboard-accessible link; its arrow is decorative. */
+a.explore-project { text-decoration: none; }
+a.explore-project:focus-visible { outline: 2px solid var(--charcoal); outline-offset: 4px; }

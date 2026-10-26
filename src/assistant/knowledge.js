@@ -230,7 +230,7 @@ export const projects = [...existingProjects.filter(p => !auditedProjects.some(a
     name: p.title,
     aliases: Object.entries(canonicalAliases)
       .filter(([, id]) => id === canonicalId)
-      .map(([id]) => id),
+      .map(([id]) => id).concat(p.aliases || []),
     technologies,
     implementedTechnologies: [
       ...new Set([
