@@ -4,7 +4,7 @@
 
 Runs locally: interpret → retrieve and rank → compose → structured UI. `answer(question, context)` is the provider boundary for future semantic retrieval or response generation. No network inference or keys.
 
-Sources: shared featuredProjects, projectConcepts, skillGroups and credentials; curated implementation facts from project detail pages; CV education, experience and architecture descriptions. CV architecture records have unverified completion. Microsoft detail-page implemented/planned scope overrides broader CV wording. Certification images are records, not independent issuer verification. Issuer-profile links are labelled accordingly. Exam plans, commented-out records and aggregate badge counters are excluded. Update cvProjects when CV architecture descriptions change.
+Sources: current implementation metadata and capability provenance in `src/data/projectEvidence.js` and `reviewedProjectFacts.json`; role-specific CV facts in the three structured variants under CV/data; separate credentials and career declarations. Explore, Assistant and Recruiter View share the same reviewed facts. Legacy CV architecture scopes remain historical/unverified. Adapter/configuration evidence does not establish live deployment. Current CV skill listings are derived from the authoritative variants, not legacy component line references.
 
 Evidence bands are deterministic ordinal categories: 0 no direct/listed/learning support; 1 listed skill or supporting credential; 2 one implemented project; 3 two or three; 4 four or more. Explicit project technology usage counts once per project. Planned and unverified architecture work never count. Bars show evidence availability, not ability or hiring match percentages. Details expose supporting counts.
 
@@ -53,3 +53,5 @@ Production paid inference additionally requires `ASSISTANT_RATE_LIMIT_URL` and `
 Model output is limited to 450 tokens and 24 KB transport; invalid JSON, unverified evidence IDs, links/HTML, percentage claims or answers above the prose limit trigger fallback. Prompt instructions treat user/history/catalogue content as data and forbid overrides, invented claims and external actions. This reduces injection risk without claiming language-model prompts can guarantee factual accuracy. No current-market data source is available; material market claims must state that limitation.
 
 Follow-up suggestions sit directly beneath replies; empty evidence sections render nothing. Social replies are shared by the deterministic engine and conversational wrapper.
+
+The comprehensive refresh and limitations are documented in [the 26 October report](../../docs/PORTFOLIO_REFRESH_2026-10-26.md).

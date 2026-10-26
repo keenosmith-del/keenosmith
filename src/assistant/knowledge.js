@@ -1,3 +1,4 @@
+import historicalProjectSources from "../data/historicalProjectSources.json";
 import { currentCVProjectEvidence } from "../data/currentCVEvidence.js";
 import { canonicalSkill, normalizeSkills } from "../data/skillNames.js";
 import { candidateFacts, educationSummary, experienceSummary, professionalSkillRecords } from '../data/candidateProfile.js';
@@ -209,6 +210,7 @@ export const projects = [...existingProjects.filter(p => !auditedProjects.some(a
   const p = { ...originalProject, ...auditOverrides[originalProject.id] };
   const canonicalId = canonicalAliases[p.id] || p.id;
   const extra = repositoryEvidence.find((r) => r.id === canonicalId);
+  const historicalSource = historicalProjectSources.find(record => record.id === canonicalId);
   if (extra) Object.assign(p, extra, { id: p.id });
   const cvScope = p.id.startsWith("cv-")
     ? taxonomy
@@ -221,15 +223,14 @@ export const projects = [...existingProjects.filter(p => !auditedProjects.some(a
   const built = p.demonstrated || !!extra;
   const original = existingProjects.find((r) => r.id === canonicalId) || p;
   const rebuilding = !extra && rebuildingProjects.some((r) => r.id === canonicalId && !r.planned);
-  const publication =
-    extra?.caseStudyAvailable ? "published" : rebuilding ? "not-yet-published" : extra && !original.demonstrated
-      ? "not-yet-published"
-      : original.demonstrated
-        ? "published"
-        : "partially-published";
+  const publication = extra
+    ? extra.caseStudyAvailable ? 'published' : 'not-yet-published'
+    : rebuilding ? 'not-yet-published' : original.demonstrated ? 'published' : 'partially-published';
   return {
     ...p,
     canonicalId,
+    sourceCommit: extra?.sourceCommit || historicalSource?.remoteCommit || null,
+    sourceStatus: extra ? "source-reviewed implementation" : historicalSource?.sourceStatus,
     name: p.title,
     aliases: Object.entries(canonicalAliases)
       .filter(([, id]) => id === canonicalId)
@@ -274,6 +275,7 @@ export const projects = [...existingProjects.filter(p => !auditedProjects.some(a
       ...(p.evidence || []),
       ...repositoryDocumentationEvidence.filter((r) => r.id === p.id),
       ...(extra?.evidence || []),
+      ...(historicalSource?.remoteCommit ? [{ type: 'repository-documentation', source: `${historicalSource.repository}/blob/${historicalSource.remoteCommit}/README.md`, revision: historicalSource.remoteCommit, inspectedOn: historicalSource.reviewedOn, strength: 'supporting', scope: historicalSource.sourceStatus }] : []),
       ...currentCVProjectEvidence.filter(record => record.repository === (extra?.repository || p.repository)),
     ],
   };

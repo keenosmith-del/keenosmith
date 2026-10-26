@@ -59,7 +59,7 @@ export async function processMessage(body, { env = process.env, fetcher = fetch,
   const { message, history } = validateRequest(body);
   const fallback = conversationalAnswer(message, contextFromHistory(history));
   if (fallback.local || !env.ASSISTANT_LLM_API_KEY || !env.ASSISTANT_LLM_BASE_URL || !env.ASSISTANT_LLM_MODEL || !(await allowInference(ip, env, fetcher))) return { response: fallback, mode: 'deterministic' };
-  const compactProjects = projects.map(({ id, title, description, engineering, deployment, sourceCommit, aliases, adapterTechnologies, configuredTechnologies, status, implementedTechnologies, technologies, demonstrated }) => ({ id, title, description, engineering, deployment, sourceCommit, aliases, adapterTechnologies, configuredTechnologies, status, implementedTechnologies, technologies, demonstrated }));
+  const compactProjects = projects.map(({ id, title, description, engineering, deployment, sourceCommit, sourceStatus, aliases, adapterTechnologies, configuredTechnologies, status, implementedTechnologies, technologies, demonstrated }) => ({ id, title, description, engineering, deployment, sourceCommit, sourceStatus, aliases, adapterTechnologies, configuredTechnologies, status, implementedTechnologies, technologies, demonstrated }));
   const compactCredentials = credentials.map(({ id, name, issuer, status }) => ({ id, name, issuer, status }));
   const catalogue = { candidateFacts, exactToolRecords, projects: compactProjects, credentials: compactCredentials, skills, education, experience,
     retrievedIds: fallback.projects.slice(0, 3).map((p) => p.id), evidence: fallback.indicators };

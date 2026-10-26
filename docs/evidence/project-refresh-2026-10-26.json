@@ -471,6 +471,11 @@
           "path": "docs/event-architecture.md",
           "kind": "source-or-documentation",
           "sha256": "7eaba0016d42c7f96e305cc558899f687f2f961ea9da85ea7d33543543208f89"
+        },
+        {
+          "path": "apps/api/retail/services/forecasting.py",
+          "origin": "supplementary pinned GitHub source review",
+          "blobSha": "a1181b761c8609ca4ad7a4c58388ed5b2dbae476"
         }
       ],
       "companySuitesExecuted": false
@@ -665,6 +670,11 @@
           "path": "docs/architecture.md",
           "kind": "source-or-documentation",
           "sha256": "72a696d6b6e532d295337e00734827703621283749a0fff0d8286cbfada45f46"
+        },
+        {
+          "path": "docs/kubernetes.md",
+          "origin": "supplementary pinned GitHub source review",
+          "blobSha": "b40fd3fb0f94499f6e39c74e26b16ed6cdd4fa8f"
         }
       ],
       "companySuitesExecuted": false
@@ -1162,6 +1172,11 @@
           "sha256": "0b7f21eb67527581bbc8f1a9465e667505ac69cbcba30750f482c903f6b596dd"
         },
         {
+          "path": "frontend/package.json",
+          "origin": "local checkout",
+          "sha256": "71b28144edc152d5a7ec92b17207f2b7a45f7c2de8c53daa7c08e777677606c8"
+        },
+        {
           "path": "backend/package.json",
           "origin": "local checkout",
           "sha256": "a8b1967ebd40f49bde774796e1f4e5c4ac274b657d8b715c88d1245875e29896"
@@ -1294,6 +1309,11 @@
           "sha256": "781f482a48a852bfa4f44da02b8ac262b5f59fe6895726cf8d87a0c39a6d0fa3"
         },
         {
+          "path": "backend/app/accounting/money.py",
+          "origin": "local checkout",
+          "sha256": "b26362880d7f96356b4bedabc3ca6eadf9322258ac9224445c95bf19bf050cdf"
+        },
+        {
           "path": "backend/app/security/auth.py",
           "origin": "local checkout",
           "sha256": "ea5d09d4121ec5fef293ecd8d37727490f631ea7bb928c06a2030ecf2d19e3eb"
@@ -1355,6 +1375,11 @@
           "sha256": "705a6a55cd564999d22dc72c4c8a2ddf22a24c10cb12139bc4da9e80bc2c661e"
         },
         {
+          "path": "eventops/service.py",
+          "origin": "supplementary pinned GitHub source review",
+          "blobSha": "9dce6fc3d501c26468962ed9e198032d38c344ab"
+        },
+        {
           "path": "README.md",
           "origin": "local checkout",
           "sha256": "83417d745a6042b4598da5f4fd521d8d1b107eec70ee52ada240d1b6a088a6c6"
@@ -1368,6 +1393,11 @@
           "path": "eventops/rag.py",
           "origin": "local checkout",
           "sha256": "eb6b127838399f479fa59037c4d9a8bb3abd2847b4bfda0754e4961101f941e8"
+        },
+        {
+          "path": "eventops/service.py",
+          "origin": "local checkout",
+          "sha256": "050e9b8bddd2b43df4602dfe125edc40cc0eb596c043545b2a3a1deaa9702238"
         },
         {
           "path": "eventops/gemini.py",

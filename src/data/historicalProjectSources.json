@@ -1,0 +1,142 @@
+[
+  {
+    "id": "cv-1",
+    "repository": "https://github.com/keenosmith-del/microsoft-ai-cloud-architect-finops-optimization",
+    "remoteCommit": "9b7ae1e60500301e7f57532141e0c8b9302fe404",
+    "sourceStatus": "documentation-only; no runtime implementation verified",
+    "reviewedOn": "2026-10-26"
+  },
+  {
+    "id": "cv-2",
+    "repository": "https://github.com/keenosmith-del/aws-cloud-security-incident-response",
+    "remoteCommit": "99e8fb2d458c6b1a3b986cf79d86ce83b14ea639",
+    "sourceStatus": "documentation-only; no runtime implementation verified",
+    "reviewedOn": "2026-10-26"
+  },
+  {
+    "id": "cv-3",
+    "repository": "https://github.com/keenosmith-del/aws-distributed-developer-deployment",
+    "remoteCommit": null,
+    "sourceStatus": "unavailable; preserve prior evidence",
+    "reviewedOn": "2026-10-26"
+  },
+  {
+    "id": "cv-4",
+    "repository": "https://github.com/keenosmith-del/gcp-supply-chain-risk",
+    "remoteCommit": null,
+    "sourceStatus": "unavailable; preserve prior evidence",
+    "reviewedOn": "2026-10-26"
+  },
+  {
+    "id": "cv-5",
+    "repository": "https://github.com/keenosmith-del/gcp-data-governance-compliance",
+    "remoteCommit": "54d27b0e19552ee2e6269f1eeb07979af16e6648",
+    "sourceStatus": "documentation-only; no runtime implementation verified",
+    "reviewedOn": "2026-10-26"
+  },
+  {
+    "id": "cv-6",
+    "repository": "https://github.com/keenosmith-del/claude-reg-change-impact",
+    "remoteCommit": null,
+    "sourceStatus": "unavailable; preserve prior evidence",
+    "reviewedOn": "2026-10-26"
+  },
+  {
+    "id": "cv-7",
+    "repository": "https://github.com/keenosmith-del/claude-architecture-analysis",
+    "remoteCommit": null,
+    "sourceStatus": "unavailable; preserve prior evidence",
+    "reviewedOn": "2026-10-26"
+  },
+  {
+    "id": "cv-8",
+    "repository": "https://github.com/keenosmith-del/n8n-opsflow-business-orch",
+    "remoteCommit": null,
+    "sourceStatus": "unavailable; preserve prior evidence",
+    "reviewedOn": "2026-10-26"
+  },
+  {
+    "id": "cv-9",
+    "repository": "https://github.com/keenosmith-del/n8n-webhooks-api-orch",
+    "remoteCommit": null,
+    "sourceStatus": "unavailable; preserve prior evidence",
+    "reviewedOn": "2026-10-26"
+  },
+  {
+    "id": "geospatial-intelligence",
+    "repository": "https://github.com/keenosmith-del/gcp-real-time-geospatial-event-intelligence",
+    "remoteCommit": "77d951ecac6fab0ca1717489e55f61819159b363",
+    "sourceStatus": "documentation-only; no runtime implementation verified",
+    "reviewedOn": "2026-10-26"
+  },
+  {
+    "id": "aws-data-pipeline",
+    "repository": "https://github.com/keenosmith-del/aws-intelligent-data-pipeline-anomaly-investigation",
+    "remoteCommit": "21f547f4aceecd2e4a710120dc979f7a9f62e219",
+    "sourceStatus": "documentation-only; no runtime implementation verified",
+    "reviewedOn": "2026-10-26"
+  },
+  {
+    "id": "azure-cyber-threat",
+    "repository": "https://github.com/keenosmith-del/microsoft-autonomous-cyber-threat-investigation-response",
+    "remoteCommit": "3bb27f08d69d82eacce91e3b0c0deaf1b27fb223",
+    "sourceStatus": "documentation-only; no runtime implementation verified",
+    "reviewedOn": "2026-10-26"
+  },
+  {
+    "id": "rabbitmq",
+    "repository": null,
+    "remoteCommit": null,
+    "sourceStatus": "historical placeholder; no repository supplied",
+    "reviewedOn": "2026-10-26"
+  },
+  {
+    "id": "kinesis",
+    "repository": null,
+    "remoteCommit": null,
+    "sourceStatus": "historical placeholder; no repository supplied",
+    "reviewedOn": "2026-10-26"
+  },
+  {
+    "id": "opentofu",
+    "repository": null,
+    "remoteCommit": null,
+    "sourceStatus": "historical placeholder; no repository supplied",
+    "reviewedOn": "2026-10-26"
+  },
+  {
+    "id": "duckdb",
+    "repository": null,
+    "remoteCommit": null,
+    "sourceStatus": "historical placeholder; no repository supplied",
+    "reviewedOn": "2026-10-26"
+  },
+  {
+    "id": "go-dotnet",
+    "repository": null,
+    "remoteCommit": null,
+    "sourceStatus": "historical placeholder; no repository supplied",
+    "reviewedOn": "2026-10-26"
+  },
+  {
+    "id": "openai",
+    "repository": null,
+    "remoteCommit": null,
+    "sourceStatus": "historical placeholder; no repository supplied",
+    "reviewedOn": "2026-10-26"
+  },
+  {
+    "id": "jwt-redpanda",
+    "repository": null,
+    "remoteCommit": null,
+    "sourceStatus": "historical placeholder; no repository supplied",
+    "reviewedOn": "2026-10-26"
+  },
+  {
+    "id": "company-websites",
+    "repository": null,
+    "remoteCommit": null,
+    "sourceStatus": "historical placeholder; no repository supplied",
+    "reviewedOn": "2026-10-26"
+  }
+]

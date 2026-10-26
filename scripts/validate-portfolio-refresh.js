@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { createHash } from 'node:crypto';
 import { build } from 'esbuild';
-await build({ stdin: { contents: `export * from './src/assistant/knowledge.js'; export { answer } from './src/assistant/engine.js'; export { conversationalAnswer } from './src/assistant/conversation.js'; export { skillIndex, curatedProjects, matchesQuery } from './src/components/pages/Explore/utils/exploreIndex.js'; export { candidateEvidence, evidenceFingerprint, candidateProfile } from './src/components/pages/RecruiterView/utils/candidateEvidence.js'; export { assessRole } from './src/components/pages/RecruiterView/utils/recruiterScoring.js'; export { reviewedProjects, newProjectIds } from './src/data/projectEvidence.js'; export { aiProjectTarget, qualifyingAIProjects, aiProjectCounterLabel } from './src/data/aiInventory.js';`, resolveDir: process.cwd() }, bundle: true, platform: 'node', format: 'esm', outfile: '/tmp/portfolio-complete-refresh.mjs', loader: { '.png': 'empty' } });
+await build({ stdin: { contents: `export * from './src/assistant/knowledge.js'; export { taxonomy } from './src/assistant/taxonomy.js'; export { answer } from './src/assistant/engine.js'; export { conversationalAnswer } from './src/assistant/conversation.js'; export { skillIndex, curatedProjects, matchesQuery } from './src/components/pages/Explore/utils/exploreIndex.js'; export { candidateEvidence, evidenceFingerprint, candidateProfile } from './src/components/pages/RecruiterView/utils/candidateEvidence.js'; export { assessRole } from './src/components/pages/RecruiterView/utils/recruiterScoring.js'; export { reviewedProjects, newProjectIds } from './src/data/projectEvidence.js'; export { aiProjectTarget, qualifyingAIProjects, aiProjectCounterLabel } from './src/data/aiInventory.js';`, resolveDir: process.cwd() }, bundle: true, platform: 'node', format: 'esm', outfile: '/tmp/portfolio-complete-refresh.mjs', loader: { '.png': 'empty' } });
 const m = await import('/tmp/portfolio-complete-refresh.mjs');
 for (const fn of [m.answer, m.conversationalAnswer]) {
   for (const [query, id] of [
@@ -32,6 +32,8 @@ assert.equal(new Set(m.qualifyingAIProjects.map(p => p.repository)).size, m.qual
 assert.equal(m.aiProjectCounterLabel, '15+ AI projects');
 assert(!m.qualifyingAIProjects.some(p => p.id === 'banking-risk' || p.id === 'n8n'));
 assert.equal(new Set(m.skillIndex.map(s => s.id)).size, m.skillIndex.length);
+assert.equal(new Set(m.taxonomy.map(group => group.id)).size, m.taxonomy.length);
+for (const skill of m.skillIndex) assert(skill.categories.length || skill.ecosystems.length, `Unclassified skill: ${skill.name}`);
 for (const skill of ['CrewAI','FastEmbed','Streamlit','SQLAlchemy','Alembic','Pydantic','Bicep','OIDC','Concurrency control','Human approval']) {
   const entry = m.skillIndex.find(s => s.name === skill);
   assert(entry && entry.projects.length, skill);
@@ -40,6 +42,7 @@ for (const skill of ['CrewAI','FastEmbed','Streamlit','SQLAlchemy','Alembic','Py
 for (const [query, canonical] of [['Postgres','PostgreSQL'],['Express','Express.js'],['Gemini','Google Gemini'],['Azure Foundry','Microsoft Foundry'],['Continuous Integration / Continuous Delivery','CI/CD']]) {
   assert(m.skillIndex.filter(s => m.matchesQuery(s, query)).some(s => s.name === canonical), query);
 }
+for (const id of m.newProjectIds) assert.equal(m.canonicalProjects.find(project => project.id === id).portfolioPublicationStatus, 'not-yet-published');
 for (const project of m.reviewedProjects) {
   assert.match(project.sourceCommit, /^[0-9a-f]{40}$/);
   assert(project.repository && project.sources.length && project.capabilities.length, project.id);

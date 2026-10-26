@@ -22,7 +22,8 @@
       "ONNX",
       "Groq",
       "LLM Integration",
-      "API Integration"
+      "API Integration",
+      "Document processing"
     ],
     "sources": [
       "README.md",
@@ -403,7 +404,8 @@
       "Database transactions",
       "Docker",
       "Docker Compose",
-      "Testing"
+      "Testing",
+      "Document processing"
     ],
     "sources": [
       "README.md",
@@ -451,7 +453,8 @@
       "Audit logging",
       "Docker",
       "Docker Compose",
-      "Testing"
+      "Testing",
+      "Document processing"
     ],
     "sources": [
       "README.md",
@@ -846,7 +849,8 @@
       "Event-driven Architecture",
       "Distributed Systems",
       "Testing",
-      "Zod"
+      "Zod",
+      "LLMOps"
     ],
     "sources": [
       "README.md",
@@ -939,7 +943,9 @@
       "Context engineering",
       "Authentication",
       "Zod",
-      "Testing"
+      "Testing",
+      "Vite",
+      "React Router"
     ],
     "sources": [
       "README.md",
@@ -948,7 +954,8 @@
       "backend/src/ai.ts",
       "backend/src/assessment.ts",
       "backend/src/app.ts",
-      "docs/iterations/018-solution-canvas-rebuild.md"
+      "docs/iterations/018-solution-canvas-rebuild.md",
+      "frontend/package.json"
     ],
     "inspectedOn": "2026-10-26",
     "deployment": "Company website kailor.co.za is live; its static Pages build excludes the private app runtime. Local project workspaces, multi-solution selection, consultancy intake and a founder inbox are implemented. Commercial commissioning, billing and delivery tracking remain developing workflows. No client outcomes or public application deployment are established by this portfolio review.",

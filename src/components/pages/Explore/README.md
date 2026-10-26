@@ -1,6 +1,6 @@
 # Explore: tile refinement
 
-Explore remains one standalone route with Projects, Skills and Credentials tabs. All 37 canonical projects, 228 skills and 25 credential/education records remain indexed. Shared evidence records and ordinal proficiency calculations are unchanged by this refinement.
+Explore remains one standalone route with Projects, Skills and Credentials tabs. The shared registry indexes 44 canonical records and 260 unique skills; the gallery displays 22 implemented projects and 26 credential/education records. Source status, implementation and case-study availability are separate.
 
 ## Presentation
 
@@ -44,14 +44,14 @@ No artwork was created, added or generated. Credential images stay in their exis
 
 Run `node src/components/pages/Explore/tests/exploreIndex.test.js` for existing query/evidence assertions plus complete rectangular puzzle coverage for every result count from 1 to 37 and valid destination coverage. Production build and focused lint are required after the visual changes. Browser checks cover the Header link, current mode, source record counts, Azure/Google/Microsoft queries, skill URL/traversal/Escape, hover/focus credential reveal, education, mascot empty state, real and fallback navigation, and responsive grid/overflow checks. Reduced-motion CSS and the existing animation guard remain in place; preference switching is not emulated by the browser tooling.
 
-Completed verification: production build, index/composition tests and diff whitespace checks pass. Focused lint reports only the two existing unused Header variables. Browser checks pass at desktop, 768px tablet, 390px mobile and 320px narrow mobile; no horizontal overflow was observed. Azure returns five projects, Google returns 24 skills and Microsoft returns four credential records. The production build retains Vite's existing large-chunk warning.
+Current verification and exact commands are recorded in [the 26 October refresh report](../../../../docs/PORTFOLIO_REFRESH_2026-10-26.md). Data suites and responsive browser checks pass; the existing build chunk-size advisory and legacy CV-generator unused-import warning remain.
 
 ## Project rebuild update — 14 October 2026
 
-The catalogue contains 19 engineering projects. The four legacy application pages now use the shared placeholder with refreshed covers; their screenshots, recordings and former decorative covers have been removed. Intelligence Manufacturing LLMOps and Enterprise AI MLOps are planned entries with no claimed implementation or repository. UX/UI showcase entries and routes have been removed. Credentials retain their records and issuer seals, with the decorative image-only tiles removed. Presentation and routes for these six projects are maintained in `src/data/rebuildingProjects.js` and `src/data/projectArtwork.js`.
+The catalogue contains 22 engineering projects: the existing 19 with their working custom pages, plus CrewAI RevenueOps Intelligence, Low-Code Streamlit EventOps and Microsoft AssessFlow using generic previews. Current facts and capability proof come from `src/data/projectEvidence.js`; artwork remains in `src/data/projectArtwork.js`. Historic rebuilding/concept modules preserve selections while consuming current facts. All tiles are single accessible links; preview back navigation preserves Explore filters.
 
 Run `scripts/verify-project-reset-browser.js` with `PORTFOLIO_TEST_URL` set to the local Vite server for covers, colours, placeholder destinations, credential interactions and responsive checks.
 
-## Shared skills refresh (18 October 2026)
+## Historical skills refresh (18 October 2026)
 
 Skill sections and project skill links consume `skillRegistry` through `skillIndex`. New project records, professional scope and learning come from the shared catalogue. ONNX Runtime, Rust/Axum, MLOps, LangGraph and current Gemini associations include the new Manufacturing QC and EventOps implementations. Skill details distinguish implementation, professional usage, training and planned scope. See the [audit](../../../../docs/evidence/REFRESH_REPORT.md) and [refresh process](../../../../docs/evidence/REFRESH_PROCESS.md).

@@ -12,12 +12,12 @@ This assistant runs locally with no inference API, keys, external LLM or vector 
 - `interpret.js`: normalisation, aliases, single-edit tolerance for long technology tokens, intent detection, requirements parsing and contextual follow-ups.
 - `taxonomy.js`: 16 reusable ecosystem/category relationships. Vendor + AI enquiries intersect those groups. Shared IAM terminology alone does not establish a vendor ecosystem.
 - `knowledge.js`: canonical registry and backwards-compatible project records. `registry.projects` merges duplicate routes/provenance; old IDs remain available. Separate `buildStatus`, `portfolioPublicationStatus` and `verificationStatus`. `implementedTechnologies` controls evidence bands; planned stack claims never count as implementation.
-- `repositoryEvidence.js`: curated static source/configuration audit with commit links and inspection date. These are source verification claims, not assertions that an external cloud deployment or native app was run.
+- `repositoryEvidence.js`: compatibility export of the shared current source-reviewed model; the original audit is archived. These are source verification claims, not assertions that an external cloud deployment or native app was run.
 - `supplementalEvidence.js`: supporting CV skill listings and early-development repository records.
 - `retrieve.js`: expansion, lexical ranking, vendor filtering, canonical deduplication, contextual exclusion and credentials. Explicit project matches outrank stack matches. Existing demonstrated projects receive a priority; evidence bands are memoised. Counts deduplicate canonical projects.
 - Shared sources: `src/data/featuredProjects.js`, `projectConcepts.js`, `cvProjects.js`, `skillGroups.js`, `credentials.js`; project detail pages in `src/components/pages/projects`; CV in `src/components/pages/CV/CV.jsx`. Credential types distinguish Applied Skills, courses, labs, programmes, bootcamps and attached badges. No documented licence or in-progress credential is inferred from plans. Commented future exam records remain excluded.
 
-The registry retains previous descriptions/status/stacks in `evidence` while using stronger inspected scope for current answers. `projects` has 40 backwards-compatible records representing 37 distinct projects; 228 skills and 23 credentials are indexed. Eleven distinct built projects have unpublished detail pages. Counts are checked by the expansion script.
+The registry retains previous descriptions/status/stacks in `evidence` while using stronger inspected scope for current answers. `projects` has 48 compatibility records representing 44 canonical records; 260 skills and 23 credentials are indexed. The source-reviewed subset has 25 implementations; four use generic previews while custom case studies remain pending. Counts are checked by the expansion script.
 
 ## Exact styling locations
 

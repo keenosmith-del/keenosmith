@@ -137,7 +137,7 @@ try {
   );
   assert(
     (await page.$eval(".recruiter-result", (e) => e.textContent)).includes(
-      "Portfolio page coming soon",
+      "Google Cloud Intelligent Retail & Supply Chain",
     ),
   );
   await page.click(".recruiter-training > summary");
@@ -146,7 +146,7 @@ try {
   );
   assert(credential);
   await credential.click();
-  await page.waitForFunction(() => location.pathname === "/certifications");
+  await page.waitForFunction(() => location.pathname === "/explore" && new URLSearchParams(location.search).get("tab") === "credentials");
   await page.goBack();
   await page.waitForSelector(".recruiter-input");
   await assess(
@@ -223,7 +223,7 @@ try {
   let resultText = await page.$eval(".recruiter-result", (e) => e.textContent);
   assert(resultText.includes("Fastify or Express.js or NestJS"));
   assert(resultText.includes("Core technical and delivery alignment"));
-  assert(resultText.includes("Model contextual-2.0.0"));
+  assert(resultText.includes("Model contextual-2.1.0"));
   await page.screenshot({
     path: "/tmp/recruiter-strong-fit.png",
     fullPage: true,

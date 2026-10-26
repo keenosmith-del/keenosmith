@@ -25,8 +25,8 @@ import eventOpsCover from "../assets/images/ai-section/eventops-project.png";
 // Shared by Explore and Selected projects; key by ID to keep artwork and colours aligned.
 export const projectArtwork = {
   "crewai-revenueops": { image: revenueOpsCover, background: "#353336", ink: "var(--surface)" },
-  "eventops-streamlit": { image: streamlitCover, background: "#9b9692", ink: "var(--charcoal)" },
-  "ms-assessflow": { image: assessFlowCover, background: "#b0814b", ink: "var(--surface)" },
+  "eventops-streamlit": { image: streamlitCover, background: "#9b9692", ink: "#202022" },
+  "ms-assessflow": { image: assessFlowCover, background: "#b0814b", ink: "#202022" },
   "intelligence-manufacturing-llmops": {
     image: manufacturingCover,
     background: "#a8a9aa",

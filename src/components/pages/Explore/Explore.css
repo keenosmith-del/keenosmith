@@ -1454,3 +1454,10 @@
 /* A project tile is one keyboard-accessible link; its arrow is decorative. */
 a.explore-project { text-decoration: none; }
 a.explore-project:focus-visible { outline: 2px solid var(--charcoal); outline-offset: 4px; }
+
+/* Generic project previews keep one editorial column at every breakpoint. */
+.explore-page.explore-preview { display: block; padding-top: 130px; }
+.explore-preview > footer { width: min(1180px, 100%); margin: 48px auto 0; font-size: 12px; }
+@media (max-width: 600px) {
+  .explore-page.explore-preview { padding-top: 112px; }
+}

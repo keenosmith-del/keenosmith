@@ -397,20 +397,24 @@ for (const [id, names] of Object.entries({
   if (group) group.skills = [...new Set([...group.skills, ...names])];
 }
 for (const [id, skills] of Object.entries({
-  ai: ['CrewAI', 'FastEmbed', 'Structured outputs', 'Agent observability', 'Evidence validation', 'Prompt-injection boundaries'],
-  frontend: ['Streamlit', 'State Management'],
-  backend: ['Pydantic', 'Webhooks', 'Background workers', 'Workflow automation'],
-  databases: ['JPA', 'SQLAlchemy', 'Alembic', 'Database transactions', 'Concurrency control', 'Idempotency', 'Data normalization', 'Financial calculations'],
-  devops: ['Docker Compose', 'Caddy', 'GitHub Actions', 'Deployment Automation', 'Rollback procedures', 'Release validation', 'OIDC', 'Cloudflare Workers', 'Cloudflare Pages', 'Nginx', 'kind', 'Logging', 'Disaster Recovery'],
+  ai: ['LangChain', 'scikit-learn', 'OR-Tools', 'LLMOps', 'Document processing', 'JSON Schema', 'CrewAI', 'FastEmbed', 'Structured outputs', 'Agent observability', 'Evidence validation', 'Prompt-injection boundaries'],
+  frontend: ['Angular Material', 'MVVM', 'MapLibre GL', 'Tiptap', 'Streamlit', 'State Management'],
+  backend: ['GitHub APIs', 'PDF Parse', 'Mammoth', '.NET', 'Pydantic', 'Webhooks', 'Background workers', 'Workflow automation'],
+  databases: ['EF Core', 'Spring Data JPA', 'JPA', 'SQLAlchemy', 'Alembic', 'Database transactions', 'Concurrency control', 'Idempotency', 'Data normalization', 'Financial calculations'],
+  devops: ['Cloudflare', 'Render', 'Vercel', 'Git', 'GitHub', 'Docker Compose', 'Caddy', 'GitHub Actions', 'Deployment Automation', 'Rollback procedures', 'Release validation', 'OIDC', 'Cloudflare Workers', 'Cloudflare Pages', 'Nginx', 'kind', 'Logging', 'Disaster Recovery'],
   infrastructure: ['Bicep', 'Terraform', 'OpenTofu'],
   microsoft: ['Bicep', 'Azure Language', 'Microsoft Graph'],
   security: ['Least privilege', 'TLS', 'Human approval', 'Audit logging', 'Tenant isolation', 'OIDC', 'TOTP', 'Prompt-injection boundaries', 'Request replay protection'],
+  languages: ['Object-oriented Programming', 'Data Structures', 'Algorithms', 'Git', 'GitHub', 'JSON'],
   architecture: ['Retries', 'State machines', 'API contracts', 'Schema validation', 'Evidence validation'],
 })) {
   const group = taxonomy.find(t => t.id === id);
   if (group) group.skills.push(...skills);
 }
-taxonomy.push({ id: 'testing', label: 'Testing & Evaluation', aliases: ['testing', 'automated testing', 'test engineering', 'evaluation'], skills: ['Testing', 'Playwright', 'Vitest', 'pytest', 'AI Evaluation', 'Release validation', 'Concurrency control'] });
+const testingGroup = taxonomy.find(group => group.id === 'testing');
+testingGroup.label = 'Testing & Evaluation';
+testingGroup.aliases = [...new Set([...testingGroup.aliases, 'automated testing', 'test engineering', 'evaluation'])];
+testingGroup.skills.push('AI Evaluation', 'Release validation', 'Concurrency control');
 for (const group of taxonomy) group.skills = normalizeSkills(group.skills);
 taxonomy.find((t) => t.id === "cloud").skills = [
   ...new Set(

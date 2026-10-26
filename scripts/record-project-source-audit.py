@@ -22,10 +22,10 @@ locals_by_id = {
     'eventops-streamlit': '/Users/keenosmith/Programming/Projects/inference-group/eventops-intelligence-streamlit',
 }
 local_refs = {
-    'crewai-revenueops': ['README.md', 'docs/portfolio/engineering.md', 'backend/app/agents/crews/investigation.py', 'backend/app/flows/reconciliation.py', 'backend/app/reconciliation/engine.py', 'backend/app/security/auth.py', '.github/workflows/verify.yml'],
+    'crewai-revenueops': ['README.md', 'docs/portfolio/engineering.md', 'backend/app/agents/crews/investigation.py', 'backend/app/flows/reconciliation.py', 'backend/app/reconciliation/engine.py', 'backend/app/accounting/money.py', 'backend/app/security/auth.py', '.github/workflows/verify.yml'],
     'ms-assessflow': ['README.md', 'docs/portfolio/engineering.md', 'backend/app/agents/assessment.py', 'backend/app/services/workflow.py', 'backend/app/security/auth.py', 'backend/app/integrations/microsoft/providers.py', '.github/workflows/verify.yml', 'infra/main.bicep'],
-    'eventops-streamlit': ['README.md', 'docs/ARCHITECTURE.md', 'eventops/rag.py', 'eventops/gemini.py', 'eventops/store.py', 'eventops/pipeline.py', 'eventops/operations.py', 'eventops/providers.py', 'deploy/Caddyfile'],
-    'kailor-ai': ['README.md', 'backend/package.json', 'docs/architecture/ARCHITECTURE.md', 'backend/src/ai.ts', 'backend/src/assessment.ts'],
+    'eventops-streamlit': ['README.md', 'docs/ARCHITECTURE.md', 'eventops/rag.py', 'eventops/service.py', 'eventops/gemini.py', 'eventops/store.py', 'eventops/pipeline.py', 'eventops/operations.py', 'eventops/providers.py', 'deploy/Caddyfile'],
+    'kailor-ai': ['README.md', 'frontend/package.json', 'backend/package.json', 'docs/architecture/ARCHITECTURE.md', 'backend/src/ai.ts', 'backend/src/assessment.ts'],
     'kailor-insider': ['README.md', 'package.json', 'docs/ARCHITECTURE.md', 'backend/src/services/articles.ts', 'backend/src/services/auth.ts'],
 }
 records = []
@@ -35,6 +35,10 @@ for p in inventory:
     reviewed = json.loads(snapshot.read_text())['files'] if snapshot.exists() else []
     sources = [{'path': 'README.md', 'kind': 'documentation', 'sha256': hashlib.sha256(r['readme'].encode()).hexdigest()}] if r.get('readme') else []
     sources += [{'path': f['path'], 'kind': 'configuration' if f['path'].endswith(('.json','.toml','.yml','.yaml','.txt')) else 'source-or-documentation', 'sha256': hashlib.sha256(f['content'].encode()).hexdigest()} for f in reviewed]
+    extra_refs = {'vertex-ai-retail': ['apps/api/retail/services/forecasting.py'], 'distributed-reliability': ['docs/kubernetes.md'], 'eventops-streamlit': ['eventops/service.py']}
+    for ref in extra_refs.get(pid, []):
+        blob = next(item for item in tree if item['path'] == ref)
+        sources.append({'path': ref, 'origin': 'supplementary pinned GitHub source review', 'blobSha': blob['sha']})
     local = locals_by_id.get(pid); local_sha = None
     if local:
         local_sha = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=local, text=True).strip()
