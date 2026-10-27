@@ -24,12 +24,18 @@ Only the four audited files and neutral cleanup records are changed. All five it
 ## Verification
 
 - `npm run verify`: passed locally, including lint, build, Assistant, Recruiter, refresh, hardening/API, Explore, catalogue-route and static SEO checks. Lint: zero warnings. Generated static output: 87 shells, 27 canonical sitemap entries.
-- `npm run test:browser`: full existing controlled local production-build suite started; final result will be recorded after completion.
-- Neutral-branch GitHub verification: outcome will be recorded after the pushed correction runs.
-- Final case-insensitive content/path audit and unchanged-runtime hash comparison: final evidence will be recorded after verification.
+- `npm run test:browser`: all 17 existing controlled local production-build browser/raw-response suites passed; individual exit codes are preserved in the compact audit evidence. Includes contact, video fallback, Recruiter, CV downloads, Assistant, project navigation/pages/styles, three case studies, catalogue refresh, tile interactions, accessibility, links and launch behavior.
+- Neutral-branch GitHub verification: [run 40573182715](https://github.com/keenosmith-del/keenosmith/actions/runs/40573182715) passed source checks and all 17 browser/raw-response suites on correction `2a08749f357fbd5b196494902aa937ed12244e4e`. The original 17-suite workflow is unchanged apart from its push branch selector. The subsequent evidence-only commit is covered by the existing documentation push exclusion; its runtime/workflow tree is identical to the green correction.
+- Final case-insensitive content/path audit: zero name references in current tracked contents, filenames or directory names. The initial four references are removed; new cleanup records do not reintroduce them. Hash comparison found exactly four changed existing files (listed above), with all other 496 original tracked files byte-identical, including 428 implementation files. All 20 records across the five iteration directories remain byte-identical. No visual or functional changes were introduced.
 
-Temporary logs are outside Git at `/tmp/portfolio-neutral-cleanup`. Compact permanent evidence is under `evidence/attribution-cleanup-audit.json`; final workflow evidence is recorded separately from earlier CI history.
+Temporary logs are outside Git at `/tmp/portfolio-neutral-cleanup`. Compact permanent evidence is under `evidence/attribution-cleanup-audit.json` and `evidence/attribution-cleanup-ci.json`; earlier CI history remains intact. These two records and this cleanup report are the only three added files. The four corrected files are listed with original line numbers above.
 
 ## Release status
 
 This cleanup does not resolve or erase existing production gates: authenticated Vercel-preview route/header checks, the public AI-project count decision, EmailJS account restrictions/live-delivery approval, optional CV project proposals, external-link review and main required-check protection. The documented transient animation contrast and performance/browser-coverage limitations remain. Production release still requires owner review. Removal of the original engineering branch is not authorised.
+
+## Repository and release checks
+
+Git ancestry confirms the neutral branch contains handover `81e5a548de1422c7449d68dc35cbbdde26025c18` and every prior hardening commit. The original branch still points to that handover. Read-only GitHub inspection confirms main and the latest recorded Production deployment remain at `79a314553f897135c17095dea1f84df7c8d142ef`. No deployment command, production mutation, real contact delivery or paid inference was performed. The final handover commit only closes these neutral evidence records; it does not alter the verified implementation or workflow.
+
+A fresh production build also matches the prior verified hardening build byte-for-byte: all 261 generated files are identical, including route HTML, SEO output, scripts, styles and assets.
