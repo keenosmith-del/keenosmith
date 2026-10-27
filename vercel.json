@@ -8,10 +8,6 @@
     {
       "source": "/api/assistant",
       "destination": "/api/assistant"
-    },
-    {
-      "source": "/((?!api/).*)",
-      "destination": "/index.html"
     }
   ],
   "redirects": [
@@ -20,5 +16,6 @@
       "destination": "/documents/kailor-insider-engineering-brief.pdf",
       "permanent": true
     }
-  ]
+  ],
+  "cleanUrls": true
 }

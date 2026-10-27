@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "cross-env NODE_ENV=production vite build",
+    "build": "cross-env NODE_ENV=production vite build && node scripts/build-route-html.js",
     "lint": "oxlint",
     "preview": "vite preview",
     "cv:pdf": "node scripts/generate-cv-pdf.js",

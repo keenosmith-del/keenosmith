@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import { projectConcepts } from "./data/projectConcepts.js";
 
+import RouteMetadata from "./components/navigation/RouteMetadata.jsx";
 import PageScroll from "./components/navigation/PageScroll.jsx";
 import Header from "./components/navigation/Header.jsx";
 import PortfolioActions from "./components/navigation/PortfolioActions.jsx";
@@ -132,6 +133,7 @@ function App() {
   return (
     <BrowserRouter>
       <PageScroll />
+      <RouteMetadata />
       <Suspense fallback={<div role="status" aria-label="Loading page" style={{ minHeight: '100svh', background: '#faf9f6' }} />}>
       <Routes>
         <Route path="/" element={<Home />} />
