@@ -18,4 +18,44 @@ Re-inspected actual AWS/Microsoft JSX/CSS and shared navigation/modal/page utili
 
 ## Implementation and verification
 
-To be completed after executing the portfolio checks and visual comparison. Protected existing source/PDF hashes are recorded in `/tmp/streamlit-case-study-qa/protected-files.json`; authorised source integration paths are excluded.
+Created `src/components/pages/projects/EventOpsStreamlit/EventOpsStreamlit.jsx` and `EventOpsStreamlit.css`. The page covers native interface ownership, the two-lane architecture, semantic index/query planning and separate evaluation, real n8n source orchestration, deterministic verification, bounded Gemini tools and observed citation rejection, replay/CAS/checkpoint uncertainty, workspace review/exports, release checks, deployment boundaries and comparison with the original application. Technology is grouped from actual source, with the shared stack modal below the groups.
+
+Canonical route `/projects/eventops-streamlit` and compatibility route `/explore/projects/eventops-streamlit` render the same page. The existing canonical record is marked published; its single Explore tile retains title, artwork, `#9b9692` background, repository and filter/back origin behavior. The original EventOps route and all other project implementations remain unchanged.
+
+Exactly two hero actions: functional GitHub **Source** and disabled **Visit platform**. The unchanged PDF opens from **Executive summary** in the overview. The exact deployment note links to `mailto:keenosmith@kailor.co.za`. No section has more than two CTA buttons. Existing shared navigation, modal and page effects are reused. Back button, normal/hover controls, 40px centered adjacent footer pair with 7px gap, and 38px floating ArrowUp match Microsoft DevOps computed styles; AWS is independently captured as the second visual authority. Floating visibility begins after 300px, hides at the footer, and reduced-motion scrolling is immediate.
+
+### Executed checks
+
+| Check | Actual result |
+| --- | --- |
+| `npm run lint` | Passed; existing unused `fs` import warning in CV generator |
+| `npm run build` | Passed; existing bundle size advisory |
+| `npm run test:assistant` | Passed all validation, expansion and intelligence checks |
+| `npm run test:recruiter` | Passed nine representative roles and evidence regressions |
+| `npm run test:refresh` | Passed shared evidence and full refresh regressions |
+| `verify-project-pages.js` | 46 page/viewport checks, no failures or browser errors |
+| `verify-project-navigation.js` | All 22 Explore entry/return paths, retained filters, direct/refresh fallback and reduced motion passed |
+| `verify-portfolio-refresh-browser.js` | Three tiles at four widths, all 260 skill panels, search/back, counter animation/reduced motion, Kailor follow-ups; no errors |
+| `verify-project-style-consistency.js` | Five pages at 1440/768/390px, exact Microsoft control/hero/section/modal computed styles, normal/hover states, footer centering, floating behavior and reduced motion passed |
+| `verify-streamlit-case-study.js` | 1440/1024/768/390/320px: header and section actions, scenario/source boundaries, open canvas, section bounds, modal focus trap/Escape/close/backdrop/focus restoration/inertness/scroll lock, PDF, legacy route, Explore origin, skill link, direct refresh and top controls passed |
+| Source references | All 13 pinned source paths exist in the equivalent reviewed source tree |
+| Protected files | All 255 prior source/document hashes unchanged |
+| PDF | HTTP 200, PDF content type and signature; served/local/original SHA-256 identical |
+| `git diff --check` | Passed |
+
+Actual visual inspection included desktop and mobile Streamlit heroes, architecture, semantic retrieval and n8n sections; five-page desktop/tablet hero comparison boards; desktop modal comparison; mobile control and footer comparison. Typography, whitespace, small pills, cream canvas and action placement follow the references; custom technical content stays open with no filled panels, screenshots or decorative dashboards. Captures and computed-style results are available at `/tmp/streamlit-case-study-qa/style/comparison.html`; focused captures/results at `/tmp/eventops-streamlit-case-study-qa`. Protected hashes are at `/tmp/streamlit-case-study-qa/protected-files.json` (authorised App/evidence/test integration excluded).
+
+### Changed files and commits
+
+- New page: `src/components/pages/projects/EventOpsStreamlit/EventOpsStreamlit.jsx`, `EventOpsStreamlit.css`.
+- Route/record integration: `src/App.jsx`, `src/data/projectEvidence.js`.
+- Supplied document: `public/documents/eventops-streamlit-executive-summary.pdf` (unchanged bytes).
+- Regression integration: `src/components/pages/Explore/tests/exploreIndex.test.js`, `scripts/validate-portfolio-refresh.js`, `scripts/verify-portfolio-refresh-browser.js`, `scripts/verify-project-pages.js`, `scripts/verify-project-style-consistency.js`.
+- New focused browser suite: `scripts/verify-streamlit-case-study.js`.
+- Engineering report: this file.
+
+Meaningful stages committed and pushed to `origin/main`: `df813ab` source/reference audit, `80c4511` case-study implementation, `8b4cbfd` route/document integration, `160b981` responsive and interaction verification. This final report is saved in the following documentation commit. No force push or deployment was performed.
+
+### Remaining boundaries
+
+Portfolio verification establishes this page and its integration. The source application was reviewed rather than modified or re-tested in this task. Its historical and current acceptance results remain separately labeled. Public infrastructure, hosted database, real release-browser acceptance and newly enabled Gemini acceptance remain pending; no live platform URL, SLA, generalized RAG accuracy, enterprise tenancy or automatic distributed recovery is claimed.
