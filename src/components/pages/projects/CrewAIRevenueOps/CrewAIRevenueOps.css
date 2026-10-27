@@ -29,7 +29,7 @@
 /* A typographic opening, with the authority key set apart from the narrative. */
 .revenueops-project .revenueops-hero { padding-top: 100px; padding-bottom: 50px; }
 .revenueops-hero-topline { display: flex; justify-content: space-between; gap: 20px; margin-bottom: 34px; }
-.revenueops-project .revenueops-hero h1 { max-width: 100%; font-size: clamp(52px, 7.7vw, 106px); letter-spacing: -.065em; line-height: .99; font-weight: 500; }
+.project-case-study.revenueops-project .revenueops-hero h1 { max-width: 100%; font-size: clamp(52px, 7.7vw, 106px); letter-spacing: -.065em; line-height: .99; font-weight: 500; }
 .revenueops-hero h1 > span:first-child { display: block; margin-bottom: 8px; font-size: .66em; letter-spacing: -.05em; }
 .revenueops-title-stop { color: #a4a19b; }
 .revenueops-hero-bottom { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(240px, 1fr); gap: 60px; margin-top: 38px; align-items: start; }
@@ -134,7 +134,7 @@
 .revenueops-comparison > p { font-size: 11px; margin-top: 15px; }
 .revenueops-evaluation-observations { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 35px; padding: 35px 8px; margin-top: 20px !important; }
 .revenueops-evaluation-observations dt { font-size: 11px; color: #858589; }
-.revenueops-evaluation-observations dd { font-size: 43px; letter-spacing: -.05em; margin: 13px 0 10px; line-height: 1; }
+.revenueops-evaluation-observations dd > strong { display: block; font-weight: 500; font-size: 43px; letter-spacing: -.05em; margin: 13px 0 10px; line-height: 1; }
 .revenueops-evaluation-observations p { font-size: 12px; }
 .revenueops-evaluation-finding { max-width: 890px; margin-top: 15px; }
 .revenueops-evaluation-finding h3 { margin-bottom: 20px; font-size: 23px; }
@@ -198,7 +198,7 @@
   .revenueops-project p { font-size: 13px; }
   .revenueops-project .revenueops-eyebrow { margin-bottom: 16px; font-size: 10px; }
   .revenueops-project .revenueops-hero { padding: 84px 19px 35px; }
-  .revenueops-project .revenueops-hero h1 { font-size: clamp(42px,11vw,70px); }
+  .project-case-study.revenueops-project .revenueops-hero h1 { font-size: clamp(42px,11vw,70px); }
   .revenueops-project .revenueops-hero-bottom { display: block; margin-top: 25px; }
   .revenueops-authority-note { display: none; }
   .revenueops-actions { margin-top: 23px; gap: 7px; }
@@ -241,7 +241,8 @@
   .revenueops-comparison tbody td { font-size: 23px; }
   .revenueops-evaluation-observations { grid-template-columns: minmax(0,1fr); gap: 30px; padding: 23px 0; }
   .revenueops-evaluation-observations > div { display: grid; grid-template-columns: 1fr auto; gap: 12px 20px; }
-  .revenueops-evaluation-observations dd { grid-column: 2; grid-row: 1 / 3; align-self: center; margin: 0; font-size: 37px; }
+  .revenueops-evaluation-observations dd { display: contents; }
+  .revenueops-evaluation-observations dd > strong { grid-column: 2; grid-row: 1 / 3; align-self: center; margin: 0; font-size: 37px; }
   .revenueops-evaluation-observations p { grid-column: 1; font-size: 12px; }
   .revenueops-evaluation-finding h3 { font-size: 22px; }
   .revenueops-release-details { grid-template-columns: minmax(0,1fr); gap: 28px; }
