@@ -34,6 +34,7 @@ import MicrosoftDevOps from "./components/pages/projects/MicrosoftDevOps/Microso
 import GCPRetail from "./components/pages/projects/GCPRetail/GCPRetail.jsx";
 
 import EventOpsIntelligence from "./components/pages/projects/EventOpsIntelligence/EventOpsIntelligence.jsx";
+import CrewAIRevenueOps from "./components/pages/projects/CrewAIRevenueOps/CrewAIRevenueOps.jsx";
 import OllamaPrivateBI from "./components/pages/projects/OllamaPrivateBI/OllamaPrivateBI.jsx";
 
 import KailorVentures from "./components/pages/projects/KailorVentures/KailorVentures.jsx";
@@ -204,6 +205,8 @@ function App() {
             />
           ))}
 
+        <Route path="/projects/crewai-revenueops" element={<CrewAIRevenueOps />} />
+        <Route path="/explore/projects/crewai-revenueops" element={<CrewAIRevenueOps />} />
         <Route path="/projects/banking-risk" element={<AWSBankingRisk />} />
 
         <Route
