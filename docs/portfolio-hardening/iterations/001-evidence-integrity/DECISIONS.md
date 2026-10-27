@@ -13,3 +13,5 @@ D105: Preserve accepted AI CV selection. Owner may choose CrewAI/AssessFlow subs
 Initial audit commit: a90ebc8. Implementation SHA is recorded in git history and final release report, avoiding self-referential commit hashes.
 
 D106: Final model contextual-2.2.2 also excludes the generic delivery-leadership parent when the same source clause already produces the more specific technical-leadership/mentoring row. Evidence stays visible but contributes once. This prevents the newly recognised professional record from creating an overlapping score bonus. Upper-bound tenure support is review-only because the accepted overall figure is a lower bound. Weights and thresholds remain unchanged.
+
+D107: Release model contextual-2.2.3 keeps leadership/mentoring/management-specific tenure separate from the overall 6+ baseline, including combined software-and-leadership duration clauses. Genuine responsibility evidence remains available, but the overall duration is not automatically assigned to every responsibility. Added a five-year combined-scope regression.

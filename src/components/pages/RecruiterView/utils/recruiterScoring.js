@@ -8,7 +8,7 @@ import {
   evidenceFingerprint,
 } from "./candidateEvidence.js";
 
-export const MODEL_REVISION = "contextual-2.2.2";
+export const MODEL_REVISION = "contextual-2.2.3";
 export const alignmentLabel = (score) =>
   score >= 75
     ? "Implementation supported"
@@ -66,7 +66,7 @@ function evaluateTenure(row, profile, records, asOf) {
     detail = "",
     supporting = [];
   const excludedContext =
-    /\b(?:paid|employment|employed|production|commercial|regulated)\b/i.test(
+    /\b(?:paid|employment|employed|production|commercial|regulated|leadership|mentoring|management|supervision)\b/i.test(
       text,
     );
   if (d.technologies.length) {
