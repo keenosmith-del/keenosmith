@@ -29,9 +29,8 @@
 /* A typographic opening, with the authority key set apart from the narrative. */
 .revenueops-project .revenueops-hero { padding-top: 100px; padding-bottom: 50px; }
 .revenueops-hero-topline { display: flex; justify-content: space-between; gap: 20px; margin-bottom: 34px; }
-.project-case-study.revenueops-project .revenueops-hero h1 { max-width: 100%; font-size: clamp(52px, 7.7vw, 106px); letter-spacing: -.065em; line-height: .99; font-weight: 500; }
-.revenueops-hero h1 > span:first-child { display: block; margin-bottom: 8px; font-size: .66em; letter-spacing: -.05em; }
-.revenueops-title-stop { color: #a4a19b; }
+.project-case-study.revenueops-project .revenueops-hero h1 { max-width: 100%; font-size: clamp(52px, 7.7vw, 106px); letter-spacing: -.065em; line-height: .99; font-weight: 400; }
+.revenueops-hero h1 > span:first-child { display: block; margin-bottom: 8px; font-size: .66em; font-weight: 500; letter-spacing: -.05em; }
 .revenueops-hero-bottom { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(240px, 1fr); gap: 60px; margin-top: 38px; align-items: start; }
 .revenueops-project .revenueops-hero-description { max-width: 660px; }
 .revenueops-project .revenueops-hero-note { max-width: 540px; color: #858589; }

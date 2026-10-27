@@ -86,7 +86,7 @@ export default function CrewAIRevenueOps() {
               </div>
               <time dateTime="2026-10">October 2026</time>
             </div>
-            <h1><span>CrewAI RevenueOps</span>Intelligence<span className="revenueops-title-stop" aria-hidden="true">.</span></h1>
+            <h1><span>CrewAI RevenueOps</span>Intelligence</h1>
             <div className="revenueops-hero-bottom">
               <div>
                 <p className="revenueops-hero-description">I engineered RevenueOps Intelligence to separate <strong>financial accuracy</strong> from model interpretation. Deterministic reconciliation, persistent evidence and human-controlled approvals form the core system. CrewAI investigates exceptions within defined boundaries, without authority to change financial records.</p>
