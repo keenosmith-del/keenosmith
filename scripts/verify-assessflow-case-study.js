@@ -1,0 +1,132 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs/promises';
+import { createHash } from 'node:crypto';
+import puppeteer from 'puppeteer';
+
+const base = process.env.PORTFOLIO_TEST_URL || 'http://127.0.0.1:4178';
+const output = '/tmp/assessflow-case-study-qa';
+const pdfPath = '/documents/ms-assessflow-executive-summary.pdf';
+const hash = data => createHash('sha256').update(data).digest('hex');
+await fs.mkdir(output, { recursive: true });
+const browser = await puppeteer.launch({ headless: true });
+const errors = [], results = [];
+try {
+  const page = await browser.newPage();
+  page.on('pageerror', error => errors.push(error.message));
+  page.on('console', message => { if (message.type() === 'error') errors.push(message.text()); });
+  for (const viewport of [{ width: 1440, height: 900 }, { width: 1024, height: 900 }, { width: 768, height: 1000 }, { width: 390, height: 844 }, { width: 320, height: 700 }]) {
+    await page.setViewport(viewport);
+    await page.goto(`${base}/projects/ms-assessflow`, { waitUntil: 'networkidle0' });
+    await page.waitForFunction(() => Number(document.querySelector('.project-hero-content')?.style.getPropertyValue('--scroll-load-opacity')) >= 1);
+    assert.equal(await page.$eval('h1', e => e.textContent), 'MicrosoftAssessFlow');
+    assert.equal(await page.$eval('h1', e => getComputedStyle(e).fontWeight), '400');
+    assert.equal(await page.$eval('[data-project-back]', e => e.getAttribute('href')), '/');
+    assert.deepEqual(await page.$$eval('header .assessflow-button', els => els.map(e => e.textContent.trim())), ['Source repository', 'Visit platform']);
+    assert.equal(await page.$eval('.assessflow-hero-actions a', e => e.href), 'https://github.com/keenosmith-del/ms-assessflow');
+    assert(await page.$eval('.assessflow-hero-actions button', e => e.disabled && !e.hasAttribute('href')));
+    assert.equal(await page.$eval('.assessflow-platform-note a', e => e.getAttribute('href')), 'mailto:keenosmith@kailor.co.za');
+    assert.equal(await page.$$eval('article .assessflow-button', els => els.length), 6);
+    assert(await page.$$eval('article > header, article > section', sections => sections.every(s => s.querySelectorAll('.assessflow-button').length <= 2)));
+    assert.equal(await page.$eval('#about-project a.assessflow-button', e => e.getAttribute('href')), pdfPath);
+    assert.equal(await page.$$eval('.assessflow-lifecycle-stages > li', els => els.length), 7);
+    assert.equal(await page.$$eval('.assessflow-assessment-steps > li', els => els.length), 8);
+    assert.equal(await page.$$eval('.assessflow-integration-list > div', els => els.length), 8);
+    assert.equal(await page.$$eval('.assessflow-application-areas > li', els => els.length), 9);
+    assert.deepEqual(await page.$$eval('.assessflow-results dd', els => els.map(e => e.firstChild.textContent)), ['65', '33', '6', '3', '13/13']);
+    assert.match(await page.$eval('.assessflow-verification', e => e.textContent), /no live model execution/);
+    assert.match(await page.$eval('.assessflow-release-limits', e => e.textContent), /staging workflow has not been executed/);
+    assert.match(await page.$eval('.assessflow-integration-list', e => e.textContent), /No hybrid vectors or embeddings/);
+    const fills = await page.$$eval('article :is(section,figure,div,li,dl,dd,dt)', els => els.filter(e => {
+      const r = e.getBoundingClientRect(), style = getComputedStyle(e);
+      return r.width > 180 && r.height > 70 && !['rgba(0, 0, 0, 0)', 'rgb(250, 249, 246)'].includes(style.backgroundColor);
+    }).map(e => ({ className: e.className, background: getComputedStyle(e).backgroundColor })));
+    assert.deepEqual(fills, [], 'Content must remain on the open cream canvas');
+    assert(!await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), `Overflow ${viewport.width}`);
+    const buttons = await page.$$eval('.assessflow-hero-actions .assessflow-button', els => els.map(e => { const r = e.getBoundingClientRect(); return { height: r.height, left: r.left, right: r.right, width: r.width }; }));
+    assert.equal(buttons[0].height, buttons[1].height);
+    assert(buttons.every(r => r.left >= 0 && r.right <= viewport.width && r.width < 220));
+    await page.screenshot({ path: `${output}/hero-${viewport.width}.png` });
+    const sections = await page.$$('article > section');
+    for (let i = 0; i < sections.length; i++) {
+      await sections[i].evaluate(e => window.scrollTo({ top: e.getBoundingClientRect().top + scrollY - 70, behavior: 'instant' }));
+      await page.waitForFunction(index => Number(getComputedStyle(document.querySelectorAll('article > section')[index]).opacity) > .99, {}, i);
+      const clipped = await sections[i].evaluate(e => [...e.querySelectorAll('h2,h3,p,li,dt,dd,a,button')].filter(node => { const r = node.getBoundingClientRect(); return r.width && (r.left < -1 || r.right > innerWidth + 1); }).map(node => node.textContent));
+      assert.deepEqual(clipped, [], `Clipped section ${i} at ${viewport.width}`);
+      if ([1440, 390].includes(viewport.width)) await sections[i].screenshot({ path: `${output}/section-${i}-${viewport.width}.png` });
+    }
+    for (const id of ['about-project', 'tech-used']) {
+      await page.$eval(`a[href="#${id}"]`, e => e.scrollIntoView({ block: 'center', behavior: 'instant' }));
+      await page.click(`a[href="#${id}"]`);
+      await page.waitForFunction(target => Math.abs(document.getElementById(target).getBoundingClientRect().top - 78) < 2, {}, id);
+      assert(await page.$eval(`#${id}`, e => e === document.activeElement));
+    }
+    const trigger = await page.$('.assessflow-tech-trigger');
+    await trigger.evaluate(e => e.scrollIntoView({ block: 'center', behavior: 'instant' }));
+    await trigger.click(); await page.waitForSelector('[role="dialog"]');
+    assert(await page.$eval('[role="dialog"]', e => e.contains(document.activeElement)));
+    assert.equal(await page.evaluate(() => document.body.style.overflow), 'hidden');
+    assert(await page.$eval('article', e => e.inert));
+    assert.equal(await page.$$eval('.project-modal-group', els => els.length), 6);
+    assert(await page.$eval('.project-modal', e => { const r = e.getBoundingClientRect(); return r.left >= 0 && r.right <= innerWidth && r.top >= 0 && r.bottom <= innerHeight && e.scrollWidth === e.clientWidth; }));
+    await page.keyboard.press('Tab'); await page.keyboard.press('Tab');
+    assert(await page.$eval('.project-modal-close', e => e === document.activeElement));
+    await page.keyboard.down('Shift'); await page.keyboard.press('Tab'); await page.keyboard.up('Shift');
+    assert(await page.$eval('.project-modal-close', e => e === document.activeElement));
+    await page.screenshot({ path: `${output}/modal-${viewport.width}.png` });
+    await page.keyboard.press('Escape');
+    assert.equal(await page.$('[role="dialog"]'), null);
+    assert(await trigger.evaluate(e => e === document.activeElement));
+    assert.equal(await page.evaluate(() => document.body.style.overflow), '');
+    assert(!await page.$eval('article', e => e.inert));
+    await trigger.click(); await page.waitForSelector('[role="dialog"]'); await page.click('.project-modal-close');
+    assert.equal(await page.$('[role="dialog"]'), null);
+    await trigger.click(); await page.waitForSelector('[role="dialog"]'); await page.mouse.click(2, 2);
+    assert.equal(await page.$('[role="dialog"]'), null);
+    await page.$eval('.assessflow-footer', e => e.scrollIntoView({ behavior: 'instant' }));
+    await page.waitForFunction(() => !document.querySelector('.assessflow-floating-top'));
+    await page.click('.assessflow-footer-top'); await page.waitForFunction(() => scrollY < 2);
+    await page.$eval('#about-project', e => e.scrollIntoView({ behavior: 'instant' }));
+    await page.waitForSelector('.assessflow-floating-top');
+    await page.click('.assessflow-floating-top'); await page.waitForFunction(() => scrollY < 2);
+    results.push({ ...viewport, sections: sections.length, actions: 'two in header, six distributed', canvas: 'no filled content containers', bounds: 'passed', anchors: 'passed', modal: 'passed' });
+  }
+  const response = await fetch(base + pdfPath);
+  assert.equal(response.status, 200); assert.match(response.headers.get('content-type'), /application\/pdf/);
+  const pdf = Buffer.from(await response.arrayBuffer());
+  assert.equal(pdf.subarray(0, 5).toString(), '%PDF-');
+  assert.equal(hash(pdf), hash(await fs.readFile(`public${pdfPath}`)));
+  assert.equal(hash(pdf), 'ea1dc03abf40d9be8ac5a265eb07c4187b71a66bd1e94544a8b4a162151364fa');
+  await page.goto(base + '/explore/projects/ms-assessflow', { waitUntil: 'networkidle0' });
+  assert(await page.$('.assessflow-project'));
+  const filtered = '/explore?tab=projects&q=AssessFlow&category=ai';
+  await page.goto(base + filtered, { waitUntil: 'networkidle0' });
+  const tile = '[data-explore-id="ms-assessflow"]';
+  assert.equal(await page.$$eval(tile, els => els.length), 1);
+  assert.equal(await page.$eval(tile, e => e.getAttribute('href')), '/projects/ms-assessflow');
+  assert.equal(await page.$eval(tile, e => getComputedStyle(e).backgroundColor), 'rgb(176, 129, 75)');
+  assert.match(await page.$eval(`${tile} img`, e => e.src), /ms-assessflow/);
+  await page.click(tile); await page.waitForSelector('.assessflow-project');
+  assert.equal(await page.$eval('[data-project-back]', e => e.getAttribute('href')), filtered);
+  await page.click('[data-project-back]'); await page.waitForSelector('.explore-project');
+  assert.equal(new URL(page.url()).pathname + new URL(page.url()).search, filtered);
+  await page.click(tile); await page.waitForSelector('.assessflow-project'); await page.reload({ waitUntil: 'networkidle0' });
+  assert.equal(await page.$eval('[data-project-back]', e => e.getAttribute('href')), '/');
+  await page.goto(base + '/explore?tab=skills&q=Bicep', { waitUntil: 'networkidle0' });
+  await page.click('[data-explore-id="bicep"]'); await page.waitForSelector('dialog[open]');
+  assert(await page.$('dialog a[href="/projects/ms-assessflow"]'));
+  await page.keyboard.press('Escape');
+  await page.emulateMediaFeatures([{ name: 'prefers-reduced-motion', value: 'reduce' }]);
+  await page.setViewport({ width: 390, height: 844 });
+  await page.goto(base + '/projects/ms-assessflow', { waitUntil: 'networkidle0' });
+  assert.equal(await page.$eval('.project-hero-content', e => getComputedStyle(e).opacity), '1');
+  assert.equal(await page.$eval('.assessflow-button', e => getComputedStyle(e).transitionDuration), '0s');
+  for (const id of ['about-project', 'tech-used']) {
+    await page.$eval(`a[href="#${id}"]`, e => e.scrollIntoView({ block: 'center', behavior: 'instant' }));
+    await page.click(`a[href="#${id}"]`);
+    assert(await page.$eval(`#${id}`, e => Math.abs(e.getBoundingClientRect().top - 78) < 2));
+  }
+  await page.screenshot({ path: `${output}/full-mobile-reduced-motion.png`, fullPage: true });
+  assert.deepEqual(errors, []);
+  await fs.writeFile(`${output}/results.json`, JSON.stringify({ results, pdf: 'supplied bytes unchanged', legacyRoute: 'passed', exploreOrigin: 'passed', skillLink: 'passed', refreshFallback: 'passed', reducedMotion: 'passed', errors }, null, 2));
+  console.log('PASS: AssessFlow at 5 sizes; two header CTAs and six distributed actions; anchors/focus; open canvas; PDF hash; modal keyboard/scroll/close; canonical/legacy routes; Explore filters, unchanged tile, skill link; top controls; reduced motion.');
+} finally { await browser.close(); }
