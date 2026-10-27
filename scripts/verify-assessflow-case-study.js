@@ -19,13 +19,16 @@ try {
     await page.goto(`${base}/projects/ms-assessflow`, { waitUntil: 'networkidle0' });
     await page.waitForFunction(() => Number(document.querySelector('.project-hero-content')?.style.getPropertyValue('--scroll-load-opacity')) >= 1);
     assert.equal(await page.$eval('h1', e => e.textContent), 'MicrosoftAssessFlow');
-    assert.equal(await page.$eval('h1', e => getComputedStyle(e).fontWeight), '400');
+    assert.equal(await page.$eval('h1', e => getComputedStyle(e).fontWeight), '500');
     assert.equal(await page.$eval('[data-project-back]', e => e.getAttribute('href')), '/');
-    assert.deepEqual(await page.$$eval('header .assessflow-button', els => els.map(e => e.textContent.trim())), ['Source repository', 'Visit platform']);
+    assert.deepEqual(await page.$$eval('header .assessflow-button', els => els.map(e => e.textContent.trim())), ['Source', 'Visit platform']);
     assert.equal(await page.$eval('.assessflow-hero-actions a', e => e.href), 'https://github.com/keenosmith-del/ms-assessflow');
     assert(await page.$eval('.assessflow-hero-actions button', e => e.disabled && !e.hasAttribute('href')));
     assert.equal(await page.$eval('.assessflow-platform-note a', e => e.getAttribute('href')), 'mailto:keenosmith@kailor.co.za');
-    assert.equal(await page.$$eval('article .assessflow-button', els => els.length), 6);
+    assert.equal(await page.$$eval('article .assessflow-button', els => els.length), 4);
+    assert.equal(await page.$('.assessflow-reading-guide'), null);
+    assert(await page.$('#tech-used .assessflow-tech-trigger'));
+    assert(await page.$('#about-project .assessflow-summary-action'));
     assert(await page.$$eval('article > header, article > section', sections => sections.every(s => s.querySelectorAll('.assessflow-button').length <= 2)));
     assert.equal(await page.$eval('#about-project a.assessflow-button', e => e.getAttribute('href')), pdfPath);
     assert.equal(await page.$$eval('.assessflow-lifecycle-stages > li', els => els.length), 7);
@@ -53,12 +56,6 @@ try {
       const clipped = await sections[i].evaluate(e => [...e.querySelectorAll('h2,h3,p,li,dt,dd,a,button')].filter(node => { const r = node.getBoundingClientRect(); return r.width && (r.left < -1 || r.right > innerWidth + 1); }).map(node => node.textContent));
       assert.deepEqual(clipped, [], `Clipped section ${i} at ${viewport.width}`);
       if ([1440, 390].includes(viewport.width)) await sections[i].screenshot({ path: `${output}/section-${i}-${viewport.width}.png` });
-    }
-    for (const id of ['about-project', 'tech-used']) {
-      await page.$eval(`a[href="#${id}"]`, e => e.scrollIntoView({ block: 'center', behavior: 'instant' }));
-      await page.click(`a[href="#${id}"]`);
-      await page.waitForFunction(target => Math.abs(document.getElementById(target).getBoundingClientRect().top - 78) < 2, {}, id);
-      assert(await page.$eval(`#${id}`, e => e === document.activeElement));
     }
     const trigger = await page.$('.assessflow-tech-trigger');
     await trigger.evaluate(e => e.scrollIntoView({ block: 'center', behavior: 'instant' }));
@@ -88,7 +85,7 @@ try {
     await page.$eval('#about-project', e => e.scrollIntoView({ behavior: 'instant' }));
     await page.waitForSelector('.assessflow-floating-top');
     await page.click('.assessflow-floating-top'); await page.waitForFunction(() => scrollY < 2);
-    results.push({ ...viewport, sections: sections.length, actions: 'two in header, six distributed', canvas: 'no filled content containers', bounds: 'passed', anchors: 'passed', modal: 'passed' });
+    results.push({ ...viewport, sections: sections.length, actions: 'Source/Visit in header; summary in overview; stack in Technology', canvas: 'no filled content containers', bounds: 'passed', modal: 'passed' });
   }
   const response = await fetch(base + pdfPath);
   assert.equal(response.status, 200); assert.match(response.headers.get('content-type'), /application\/pdf/);
@@ -120,13 +117,9 @@ try {
   await page.goto(base + '/projects/ms-assessflow', { waitUntil: 'networkidle0' });
   assert.equal(await page.$eval('.project-hero-content', e => getComputedStyle(e).opacity), '1');
   assert.equal(await page.$eval('.assessflow-button', e => getComputedStyle(e).transitionDuration), '0s');
-  for (const id of ['about-project', 'tech-used']) {
-    await page.$eval(`a[href="#${id}"]`, e => e.scrollIntoView({ block: 'center', behavior: 'instant' }));
-    await page.click(`a[href="#${id}"]`);
-    assert(await page.$eval(`#${id}`, e => Math.abs(e.getBoundingClientRect().top - 78) < 2));
-  }
+  assert.equal(await page.$eval('#tech-used', e => getComputedStyle(e).transitionDuration), '0s');
   await page.screenshot({ path: `${output}/full-mobile-reduced-motion.png`, fullPage: true });
   assert.deepEqual(errors, []);
   await fs.writeFile(`${output}/results.json`, JSON.stringify({ results, pdf: 'supplied bytes unchanged', legacyRoute: 'passed', exploreOrigin: 'passed', skillLink: 'passed', refreshFallback: 'passed', reducedMotion: 'passed', errors }, null, 2));
-  console.log('PASS: AssessFlow at 5 sizes; two header CTAs and six distributed actions; anchors/focus; open canvas; PDF hash; modal keyboard/scroll/close; canonical/legacy routes; Explore filters, unchanged tile, skill link; top controls; reduced motion.');
+  console.log('PASS: AssessFlow at 5 sizes; exact Source/Visit header; overview summary and Technology stack placement; open canvas; PDF hash; modal keyboard/scroll/close; canonical/legacy routes; Explore filters, unchanged tile, skill link; top controls; reduced motion.');
 } finally { await browser.close(); }

@@ -25,6 +25,11 @@ try {
     assert(await page.$eval('.revenueops-hero-inner', e => e.getBoundingClientRect().bottom <= innerHeight + 1), `Hero content clipped at ${viewport.width}`);
     assert.equal(await page.$eval('.revenueops-actions a', e => e.getAttribute('href')), 'https://github.com/keenosmith-del/crewai-revenueops');
     assert.equal(await page.$$eval('.revenueops-actions :is(a,button)', els => els.length), 2);
+    assert.equal(await page.$eval('.revenueops-actions a', e => e.textContent.trim()), 'Source');
+    assert.equal(await page.$eval('.revenueops-title-regular', e => getComputedStyle(e).fontWeight), '400');
+    assert.equal(await page.$eval('.revenueops-platform-note a', e => e.getAttribute('href')), 'mailto:keenosmith@kailor.co.za');
+    assert(await page.$('.revenueops-summary-action a'));
+    assert(await page.$('.revenueops-technology .revenueops-tech-trigger'));
     assert.equal(await page.$('.revenueops-hero a[href$=".pdf"]'), null);
     assert.equal(await page.$eval('.revenueops-problem a', e => e.getAttribute('href')), pdfPath);
     assert(await page.$$eval('article > header, article > section', sections => sections.every(section => section.querySelectorAll('.revenueops-button').length <= 2)));
