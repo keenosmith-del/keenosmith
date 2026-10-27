@@ -22,7 +22,7 @@ export default defineConfig(({ mode }) => {
         try { pathname = decodeURIComponent(new URL(req.url, 'http://localhost').pathname); }
         catch { res.statusCode=400; res.end('Invalid path'); return; }
         if (pathname === '/') return next();
-        const root=path.resolve('dist');
+        const root=path.resolve(server.config.build.outDir);
         const candidate=path.resolve(root, '.'+pathname+(path.extname(pathname)?'':'.html'));
         if (!candidate.startsWith(root+path.sep)) { res.statusCode=404; res.end('Not found'); return; }
         try {
@@ -33,13 +33,14 @@ export default defineConfig(({ mode }) => {
         } catch (error) {
           if(error.code!=='ENOENT'&&error.code!=='EISDIR')return next(error);
           res.statusCode=404;res.setHeader('Content-Type','text/html; charset=utf-8');
-          res.end(req.method==='HEAD'?undefined:await fs.readFile(path.join(root,'404.html')));
+          res.end(req.method==='HEAD'?undefined:await fs.readFile(path.join(root,'404.html')).catch(()=>Buffer.from('Not found.')));
         }
       });
     },
   }],
   preview: { headers: Object.fromEntries(vercelConfig.headers[0].headers.map(({key,value})=>[key,value])) },
   build: {
+    outDir: process.env.PORTFOLIO_PREVIEW_DIR || 'dist',
     cssMinify: 'esbuild',
   },
   };

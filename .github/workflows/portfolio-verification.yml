@@ -11,7 +11,7 @@ concurrency:
   cancel-in-progress: true
 jobs:
   verify:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 30
     env:
       NODE_ENV: production
@@ -28,6 +28,18 @@ jobs:
           cache: npm
       - run: npm ci --include=dev
       - run: npx puppeteer browsers install chrome
+      - name: Allow the test browser to create its isolation namespaces
+        run: |
+          chrome_binary="$(node scripts/print-browser-path.js)"
+          cat > "$RUNNER_TEMP/portfolio-chromium" <<EOF
+          abi <abi/4.0>,
+          include <tunables/global>
+          profile portfolio-chromium "$chrome_binary" flags=(unconfined) {
+            userns,
+          }
+          EOF
+          sudo install -m 0644 "$RUNNER_TEMP/portfolio-chromium" /etc/apparmor.d/portfolio-chromium
+          sudo apparmor_parser -r /etc/apparmor.d/portfolio-chromium
       - run: npm run verify
       - name: Browser and raw HTTP verification against production assets
         run: node scripts/run-browser-verification.js

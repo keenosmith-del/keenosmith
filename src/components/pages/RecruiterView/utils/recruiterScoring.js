@@ -99,9 +99,9 @@ function evaluateTenure(row, profile, records, asOf) {
         verified: false,
       };
     const years = profile.overallExperience.years;
-    supported = d.bound === 'maximum' ? years <= d.years : d.strict ? years > d.years : years >= d.years;
-    if (d.upperYears) supported = supported && years <= d.upperYears;
-    detail = `Recorded overall relevant experience: ${profile.overallExperience.label}. Requested ${d.bound === 'maximum' ? 'maximum' : 'minimum'}: ${d.years} years${d.upperYears ? `, upper bound ${d.upperYears}` : ''}. ${supported ? 'The recorded baseline supports this threshold.' : d.bound === 'maximum' ? 'Level mismatch: the recorded baseline exceeds this upper limit.' : 'The requested threshold is higher than the recorded baseline.'} Technology-specific and leadership durations are assessed separately.`;
+    supported = d.bound === 'maximum' ? false : d.strict ? years > d.years : years >= d.years;
+    if (d.upperYears) supported = false; // A declared lower bound cannot prove an upper limit.
+    detail = `Recorded overall relevant experience: ${profile.overallExperience.label}. Requested ${d.bound === 'maximum' ? 'maximum' : 'minimum'}: ${d.years} years${d.upperYears ? `, upper bound ${d.upperYears}` : ''}. ${supported ? 'The recorded baseline supports this threshold.' : d.bound === 'maximum' ? 'A declared lower bound cannot establish this upper limit; level compatibility needs review.' : 'The requested threshold is higher than the recorded baseline.'} Technology-specific and leadership durations are assessed separately.`;
     supporting = [
       {
         id: "career-baseline",

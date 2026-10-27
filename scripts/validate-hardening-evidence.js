@@ -38,6 +38,7 @@ assert.equal(countedAIProjects.length,13,'Policy change requires explicit count 
 assert.equal(new Set(countedAIProjects.map(p=>projectCountPolicy.implementationFamilies[p.id]||p.id)).size,13);
 assert(!countedAIProjects.some(p=>projectCountPolicy.excludedIds.includes(p.id)));
 assert(countedAIProjects.length>=projectCountPolicy.publicLowerBound||projectCountPolicy.claimStatus==='owner-review-required');
+for (const description of ['Requirements: Up to 8 years software engineering experience with React applications.', 'Requirements: 3 to 8 years software engineering experience with React applications.']) assert(assessRole({description}).qualifications.filter(row=>row.type==='experience').every(row=>!row.verified),'Lower-bound years cannot prove an upper bound');
 const comparison=[...roles,...hardeningRoles].map(role=>{const r=assessRole(role,{asOf:'2026-10-27'});return {title:role.title,id:role.id,score:r.score,qualifications:r.qualifications.map(q=>({name:q.name,status:q.status,verified:q.verified})),leadership:r.rows.filter(q=>/leadership/i.test(q.name)).map(q=>({name:q.name,score:q.score}))}});
 await fs.mkdir('/tmp/portfolio-hardening',{recursive:true});await fs.writeFile('/tmp/portfolio-hardening/role-comparison-final.json',JSON.stringify(comparison,null,2));
 console.log('Hardening evidence: 11 constructed roles, qualification adversaries, reproducibility, contribution exclusions, context, leadership and conservative 13-family count passed.');

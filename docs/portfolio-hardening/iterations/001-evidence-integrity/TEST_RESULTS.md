@@ -13,3 +13,5 @@ Baseline browser issue: original sequential run overlapped Vite restarts and lat
 No public form delivery, live provider call, qualification issuer validation or source-application test execution performed. Automated tests do not establish full accessibility. Full screenshot and CV/download reconciliation remain pending integrated verification. Logs outside Git under /tmp/portfolio-hardening.
 
 Isolated baseline rerun: CV, Recruiter, Streamlit, all 260 skill panels/portfolio refresh, and project style suites passed. Assistant still fails the stale expected title, independently reproduced on original source. Accepted CV/PDF reconciliation is therefore browser verified, not inferred from hashes alone.
+
+Final tenure review: the 6+ declaration is a lower bound, so it cannot prove a requested maximum or a closed experience range. Corrected that remaining interpretation and added maximum-eight/range-three-to-eight adversarial checks. Minimum-year support and all arithmetic weights are unchanged.

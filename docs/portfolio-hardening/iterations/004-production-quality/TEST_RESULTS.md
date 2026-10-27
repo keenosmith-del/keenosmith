@@ -9,3 +9,7 @@
 - Raw SEO delivery previously passed 87 HTTP routes. Header-specific and integrated browser checks follow the final build.
 
 Remote Actions status and hosted CSP/contact compatibility are not inferred from local success. Production GET smoke is read-only; old production robots/sitemap may return SPA HTML and must be distinguished from task-branch fixes. No production Assistant POST or contact submission performed.
+
+Remote rerun 40524627313 passed installation/static suites and reached browser tests. Ubuntu blocked downloaded Chrome's user namespaces (No usable sandbox). Added an exact-executable AppArmor allowance only on the ephemeral Ubuntu 24.04 runner, retaining Chrome's browser sandbox. No global host-policy disable and no no-sandbox flag. This follows the scoped approach in [Chromium's namespace guidance](https://raw.githubusercontent.com/chromium/chromium/main/docs/security/apparmor-userns-restrictions.md). Browser preflight now fails once if setup is broken, rather than repeating the same launch failure in every suite.
+
+Local verification also exposed concurrent-build interference: rebuilding dist removed 404.html while a preview was reading it. Browser orchestration now snapshots built output into its temporary evidence directory before starting preview; middleware uses the configured output directory and has a safe missing-404 fallback. Browser runs are independent of active workspace builds.
