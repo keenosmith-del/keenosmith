@@ -1,0 +1,10 @@
+[
+  {
+    "label": "baseline",
+    "requestBytes": 93301
+  },
+  {
+    "label": "current",
+    "requestBytes": 38026
+  }
+]

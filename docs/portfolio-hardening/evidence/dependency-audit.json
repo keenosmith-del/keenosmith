@@ -1,0 +1,19 @@
+{
+  "before": {
+    "high": 6,
+    "critical": 0
+  },
+  "after": {
+    "info": 0,
+    "low": 0,
+    "moderate": 0,
+    "high": 0,
+    "critical": 0,
+    "total": 0
+  },
+  "versions": {
+    "vite": "8.3.5",
+    "puppeteer": "25.16.0"
+  },
+  "scope": "npm audit full locked dependency graph; task-executed, not a guarantee against future advisories"
+}

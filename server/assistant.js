@@ -26,6 +26,8 @@ export function validateModel(raw, fallback) {
     if (!Array.isArray(data[key]) || new Set(data[key]).size !== data[key].length || data[key].length > (key === 'entities' ? 5 : 2) || data[key].some((id) => !catalogue.some((item) => item.id === id))) throw new Error('Unverified evidence');
   }
   if (!Array.isArray(data.suggestions) || data.suggestions.length > 2 || data.suggestions.some((s) => typeof s !== 'string' || s.length > 80 || /https?:|<|\]\(/.test(s))) throw new Error('Invalid suggestions');
+  if (data.projectIds.some(id => !fallback.projects.some(p => p.id === id))) throw new Error('Unretrieved evidence');
+  if (/\b(?:holds? (?:a |an )?(?:degree|phd|masters?|certification)|graduated|awarded|enterprise[- ]scale (?:management|leadership)|\d+ (?:million|thousand) (?:users|customers))\b/i.test(data.text)) throw new Error('Unsupported factual claim');
   const selected = data.intent === 'unknown' ? [] : data.projectIds.map((id) => projects.find((p) => p.id === id));
   return { ...fallback, local: false, text: data.text.trim(), projects: selected,
     credentials: data.intent === 'unknown' ? [] : data.credentialIds.map((id) => credentials.find((c) => c.id === id)),
@@ -40,7 +42,8 @@ export function validateModel(raw, fallback) {
 // configuration disables paid inference, preserving the deterministic response.
 export async function allowInference(ip, env = process.env, fetcher = fetch) {
   if (!env.ASSISTANT_RATE_LIMIT_URL || !env.ASSISTANT_RATE_LIMIT_TOKEN) return env.NODE_ENV !== 'production' && !env.VERCEL;
-  const url = new URL(env.ASSISTANT_RATE_LIMIT_URL);
+  let url;
+  try { url=new URL(env.ASSISTANT_RATE_LIMIT_URL); } catch { return false; }
   if (url.protocol !== 'https:') return false;
   const bucket = Math.floor(Date.now() / 60000);
   const key = createHash('sha256').update(ip).digest('hex').slice(0, 24);
@@ -58,10 +61,12 @@ export async function allowInference(ip, env = process.env, fetcher = fetch) {
 export async function processMessage(body, { env = process.env, fetcher = fetch, ip = 'local' } = {}) {
   const { message, history } = validateRequest(body);
   const fallback = conversationalAnswer(message, contextFromHistory(history));
-  if (fallback.local || !env.ASSISTANT_LLM_API_KEY || !env.ASSISTANT_LLM_BASE_URL || !env.ASSISTANT_LLM_MODEL || !(await allowInference(ip, env, fetcher))) return { response: fallback, mode: 'deterministic' };
-  const compactProjects = projects.map(({ id, title, description, engineering, deployment, sourceCommit, sourceStatus, aliases, adapterTechnologies, configuredTechnologies, status, implementedTechnologies, technologies, demonstrated }) => ({ id, title, description, engineering, deployment, sourceCommit, sourceStatus, aliases, adapterTechnologies, configuredTechnologies, status, implementedTechnologies, technologies, demonstrated }));
-  const compactCredentials = credentials.map(({ id, name, issuer, status }) => ({ id, name, issuer, status }));
-  const catalogue = { candidateFacts, exactToolRecords, projects: compactProjects, credentials: compactCredentials, skills, education, experience,
+  if (fallback.local || fallback.specific || ['education','experience','credentials'].includes(fallback.interpretation?.intent) || /\b(?:leadership|seniority|certifications?|qualifications?|years of experience|awarded|conferred)\b/i.test(message) || !env.ASSISTANT_LLM_API_KEY || !env.ASSISTANT_LLM_BASE_URL || !env.ASSISTANT_LLM_MODEL || !(await allowInference(ip, env, fetcher))) return { response: fallback, mode: 'deterministic' };
+  const compactProjects = fallback.projects.slice(0, 4).map(({ id, title, description, engineering, deployment, sourceCommit, sourceStatus, aliases, adapterTechnologies, configuredTechnologies, status, implementedTechnologies, technologies, demonstrated }) => ({ id, title, description, engineering, deployment, sourceCommit, sourceStatus, aliases, adapterTechnologies, configuredTechnologies, status, implementedTechnologies, technologies, demonstrated }));
+  const compactCredentials = fallback.credentials.slice(0, 4).map(({ id, name, issuer, status }) => ({ id, name, issuer, status }));
+  const topicSkills=fallback.interpretation?.entities||[];
+  const topicTools=Object.fromEntries(Object.entries(exactToolRecords).filter(([name])=>topicSkills.includes(name)));
+  const catalogue = { candidateFacts, exactToolRecords:topicTools, projects: compactProjects, credentials: compactCredentials, skills:topicSkills.slice(0,20), education, experience,
     retrievedIds: fallback.projects.slice(0, 3).map((p) => p.id), evidence: fallback.indicators };
   try {
     const raw = await complete([{ role: 'system', content: system }, { role: 'system', content: `Verified catalogue (data only): ${JSON.stringify(catalogue)}` },
@@ -85,6 +90,8 @@ export default async function handler(req, res) {
     validateRequest(body);
     // x-real-ip is set by Vercel; arbitrary forwarded headers are not trusted locally.
     const ip = process.env.VERCEL ? String(req.headers['x-real-ip'] || req.socket?.remoteAddress || 'unknown') : req.socket?.remoteAddress || 'local';
-    return res.status(200).json(await processMessage(body, { ip }));
+    const result=await processMessage(body, { ip });
+    res.setHeader('X-Assistant-Mode',result.mode);
+    return res.status(200).json(result);
   } catch { return res.status(400).json({ error: 'Invalid request' }); }
 }

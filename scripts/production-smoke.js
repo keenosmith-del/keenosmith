@@ -1,0 +1,8 @@
+// Read-only HTTP checks. Never submits contact forms or calls paid inference.
+import fs from 'node:fs/promises';
+const base=process.env.PORTFOLIO_PRODUCTION_URL||'https://keenosmith.vercel.app';
+const paths=['/','/explore','/recruiter-view','/cv','/projects/banking-risk','/projects/microsoft-devops','/projects/crewai-revenueops','/projects/ms-assessflow','/projects/eventops-streamlit','/Keeno-Smith-CV-ATS-AI-Engineer-2026.pdf','/Keeno-Smith-CV-ATS-Cloud-Engineer-2026.pdf','/Keeno-Smith-CV-ATS-Full-Stack-Engineer-2026.pdf','/documents/crewai-revenueops-executive-summary.pdf','/documents/ms-assessflow-executive-summary.pdf','/documents/eventops-streamlit-executive-summary.pdf','/robots.txt','/sitemap.xml'];
+const results=[];
+for(const path of paths){try{const r=await fetch(base+path,{signal:AbortSignal.timeout(20000)});const type=r.headers.get('content-type');const bytes=Buffer.from(await r.arrayBuffer());results.push({path,status:r.status,type,bytes:bytes.length,pdf:path.endsWith('.pdf')?bytes.subarray(0,5).toString()==='%PDF-':undefined,title:type?.includes('text/html')?bytes.toString().match(/<title>(.*?)<\/title>/s)?.[1]:undefined,canonical:type?.includes('text/html')?bytes.toString().match(/<link[^>]+rel="canonical"[^>]*>/)?.[0]:undefined})}catch(e){results.push({path,error:e.name})}}
+const report={base,checkedAt:new Date().toISOString(),method:'GET only. No contact or Assistant submission; production source not changed.',results};
+const output=process.env.PORTFOLIO_SMOKE_OUTPUT||'/tmp/portfolio-hardening/production-smoke.json';await fs.writeFile(output,JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));

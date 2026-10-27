@@ -6,14 +6,14 @@ try {
   const errors = [];
   page.on("pageerror", (e) => errors.push(e.message));
   await page.setViewport({ width: 1440, height: 1000 });
-  await page.goto("http://127.0.0.1:5173", { waitUntil: "domcontentloaded" });
+  await page.goto(process.env.PORTFOLIO_TEST_URL || "http://127.0.0.1:5173", { waitUntil: "domcontentloaded" });
   await page.click(".portfolio-skills-helper");
   await page.waitForFunction(
     () => document.activeElement.id === "assistant-input",
   );
   assert.equal(
     await page.$eval("#portfolio-chat-title", (e) => e.textContent),
-    "Keeno's Assistant",
+    "Portfolio Assistant",
   );
   assert.equal(
     await page.$eval(".portfolio-chat-footer", (e) => e.textContent),
@@ -21,9 +21,9 @@ try {
   );
   assert.equal(
     await page.$eval(".assistant-footer-secondary", (e) => e.textContent),
-    "Built and designed by Keeno Smith © September 2026",
+    "Keeno Smith © September 2026",
   );
-  assert(await page.$(".assistant-footer-zap"));
+  assert.equal(await page.$eval(".portfolio-chat-footer strong", e => e.textContent), "kailor");
   await page.hover(".portfolio-chat-header button");
   assert.equal(
     await page.$eval(
@@ -48,7 +48,7 @@ try {
     await page.$eval(
       ".portfolio-chat-header img",
       (e) =>
-        e.src.includes("/src/assets/images/mascot/mascot.png") &&
+        /mascot(?:-[\w-]+)?\.(?:png|webp)/.test(e.src) &&
         e.naturalWidth > 0,
     ),
   );
@@ -205,7 +205,7 @@ try {
     () =>
       !document.querySelector(".assistant-pending") &&
       [...document.querySelectorAll(".assistant-text-section h3")].some(
-        (e) => e.textContent === "Recognised requirements",
+        (e) => e.textContent === "Demonstrated alignment",
       ),
   );
   assert(

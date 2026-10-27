@@ -1,3 +1,4 @@
+import NotFound from "./components/pages/NotFound.jsx";
 import { lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
@@ -333,6 +334,7 @@ function App() {
           path="/certifications"
           element={<Navigate to="/explore?tab=credentials" replace />}
         />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       </Suspense>
     </BrowserRouter>
