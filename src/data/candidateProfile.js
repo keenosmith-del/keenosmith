@@ -1,13 +1,17 @@
-import commonCV from '../components/pages/CV/data/common.json';
+import commonCV from '../components/pages/CV/data/common.json' with { type: 'json' };
 
 // Candidate instructions override older inferred summaries. CV wording is retained;
 // assessment completion does not invent an award date or conferral claim.
 export const candidateFacts = {
-  revision: '2026-10-18.2',
+  revision: '2026-10-27.1',
   identity: ['Full-Stack Software Engineer', 'AI Engineer', 'Cloud Engineer'],
   overallExperience: { years: 6, label: '6+ years', source: 'Candidate instruction, 2026-10-18' },
   technologyDuration: { Python: { years: 3, strict: true, label: 'more than three years', source: 'Candidate instruction, 2026-10-18' } },
-  education: { assessmentComplete: true, wording: commonCV.education.map(e => `${e.label}: ${e.text}`), source: 'Current CV wording; degree requirement complete under candidate instruction, 2026-10-18' },
+  education: { assessmentComplete: true, records: [
+    { kind: 'degree', name: 'BSc Computer Science', discipline: 'Computer Science', level: 'bachelor', completion: 'candidate-declared complete', award: 'not explicitly recorded', wording: commonCV.education[2].text },
+    { kind: 'professional certification', identifier: 'AI-103', completion: 'completed', wording: commonCV.credentials[0].text },
+    { kind: 'professional certification', identifier: 'AI-500', completion: 'in progress', wording: commonCV.credentials[0].text },
+  ], wording: commonCV.education.map(e => `${e.label}: ${e.text}`), source: 'Current CV wording; degree requirement complete under candidate instruction, 2026-10-18' },
   professionalExperience: commonCV.experience,
 };
 export const educationSummary = commonCV.education.map(e => `${e.label}: ${e.text}.`);
@@ -23,3 +27,11 @@ export const professionalSkillRecords = [
   { skills: ['Requirements Analysis', 'API Integration', 'Troubleshooting', 'Operational Delivery', 'Stakeholder Communication'], roleIndex: 3 },
   { skills: ['Documentation', 'Technical Communication', 'Quality Assurance'], roleIndex: 4 },
 ].map(r => ({ ...r, type: 'professional', source: 'Current CV', role: commonCV.experience[r.roleIndex], description: commonCV.experience[r.roleIndex].bullets.join(' ') }));
+
+// Professional responsibility is established by the accepted record, without
+// inferring staff counts, enterprise management or a mentoring remit.
+export const leadershipRecords = [1, 2, 3].map(roleIndex => ({
+  role: commonCV.experience[roleIndex], source: 'src/components/pages/CV/data/common.json',
+  description: [...commonCV.experience[roleIndex].paragraphs, ...commonCV.experience[roleIndex].bullets].join(' '),
+  limitations: 'Candidate-declared technical delivery and operational responsibility; engineering staff management, mentoring scope and enterprise scale are not established.',
+}));

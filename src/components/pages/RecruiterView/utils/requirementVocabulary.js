@@ -207,6 +207,10 @@ export const responsibilities = [
     /\b(?:thousands|millions|\d[\d,]*\s+(?:concurrent )?(?:users|transactions)|at scale|high[- ]traffic)\b/i,
   ],
   [
+    'Leadership and delivery responsibility',
+    /\b(?:leadership|led|co-founder|founder|delivery responsibility|operational leadership|lead(?:ing)? (?:digital|technical) (?:systems|delivery))\b/i,
+  ],
+  [
     "Technical leadership and mentoring",
     /\b(?:technical leadership|mentor(?:ing)?|lead(?:ing)? (?:a |the )?(?:engineering |technical )?team|enablement)\b/i,
   ],

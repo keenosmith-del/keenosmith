@@ -1,0 +1,685 @@
+[
+  {
+    "title": "Full Stack Developer",
+    "before": {
+      "title": "Full Stack Developer",
+      "score": 54,
+      "qualifications": [
+        {
+          "name": "At least 3 years Azure experience.",
+          "status": "Needs review",
+          "verified": false
+        },
+        {
+          "name": "At least 3 years full-stack software engineering experience.",
+          "status": "Candidate-declared support",
+          "verified": true
+        },
+        {
+          "name": "At least 3 years Python experience.",
+          "status": "Candidate-declared support",
+          "verified": true
+        }
+      ]
+    },
+    "after": {
+      "title": "Full Stack Developer",
+      "id": "A",
+      "score": 54,
+      "qualifications": [
+        {
+          "name": "At least 3 years Azure experience.",
+          "status": "Needs review",
+          "verified": false
+        },
+        {
+          "name": "At least 3 years full-stack software engineering experience.",
+          "status": "Candidate-declared support",
+          "verified": true
+        },
+        {
+          "name": "At least 3 years Python experience.",
+          "status": "Candidate-declared support",
+          "verified": true
+        }
+      ],
+      "leadership": []
+    }
+  },
+  {
+    "title": "Intermediate Full Stack",
+    "before": {
+      "title": "Intermediate Full Stack",
+      "score": 69,
+      "qualifications": []
+    },
+    "after": {
+      "title": "Intermediate Full Stack",
+      "id": "B",
+      "score": 69,
+      "qualifications": [],
+      "leadership": []
+    }
+  },
+  {
+    "title": "Senior AI Full Stack",
+    "before": {
+      "title": "Senior AI Full Stack",
+      "score": 42,
+      "qualifications": [
+        {
+          "name": "Minimum 5 years software engineering experience.",
+          "status": "Candidate-declared support",
+          "verified": true
+        }
+      ]
+    },
+    "after": {
+      "title": "Senior AI Full Stack",
+      "id": "C",
+      "score": 42,
+      "qualifications": [
+        {
+          "name": "Minimum 5 years software engineering experience.",
+          "status": "Candidate-declared support",
+          "verified": true
+        }
+      ],
+      "leadership": []
+    }
+  },
+  {
+    "title": "Software Engineer",
+    "before": {
+      "title": "Software Engineer",
+      "score": 56,
+      "qualifications": [
+        {
+          "name": "A diploma, degree, relevant certification or practical experience in software engineering.",
+          "status": "Candidate-declared alternative support",
+          "verified": true
+        }
+      ]
+    },
+    "after": {
+      "title": "Software Engineer",
+      "id": "D",
+      "score": 56,
+      "qualifications": [
+        {
+          "name": "A diploma, degree, relevant certification or practical experience in software engineering.",
+          "status": "Candidate-declared alternative support",
+          "verified": true
+        }
+      ],
+      "leadership": []
+    }
+  },
+  {
+    "title": "Senior Software Engineer (AI Enabled)",
+    "before": {
+      "title": "Senior Software Engineer (AI Enabled)",
+      "score": 51,
+      "qualifications": [
+        {
+          "name": "Minimum 7 years software engineering experience and technical leadership.",
+          "status": "Needs review",
+          "verified": false
+        }
+      ]
+    },
+    "after": {
+      "title": "Senior Software Engineer (AI Enabled)",
+      "id": "E",
+      "score": 53,
+      "qualifications": [
+        {
+          "name": "Minimum 7 years software engineering experience and technical leadership.",
+          "status": "Needs review",
+          "verified": false
+        }
+      ],
+      "leadership": [
+        {
+          "name": "Leadership and delivery responsibility",
+          "score": 40
+        },
+        {
+          "name": "Technical leadership and mentoring",
+          "score": 30
+        },
+        {
+          "name": "Minimum 7 years software engineering experience and technical leadership.",
+          "score": null
+        }
+      ]
+    }
+  },
+  {
+    "title": "Senior Full Stack .NET & React",
+    "before": {
+      "title": "Senior Full Stack .NET & React",
+      "score": 28,
+      "qualifications": [
+        {
+          "name": "An awarded computer science degree is required.",
+          "status": "Complete",
+          "verified": true
+        },
+        {
+          "name": "Minimum 5 years software engineering experience.",
+          "status": "Candidate-declared support",
+          "verified": true
+        }
+      ]
+    },
+    "after": {
+      "title": "Senior Full Stack .NET & React",
+      "id": "F",
+      "score": 28,
+      "qualifications": [
+        {
+          "name": "An awarded computer science degree is required.",
+          "status": "Needs review",
+          "verified": false
+        },
+        {
+          "name": "Minimum 5 years software engineering experience.",
+          "status": "Candidate-declared support",
+          "verified": true
+        }
+      ],
+      "leadership": []
+    }
+  },
+  {
+    "title": "Systems & AI Automation Engineer",
+    "before": {
+      "title": "Systems & AI Automation Engineer",
+      "score": 70,
+      "qualifications": [
+        {
+          "name": "2 years minimum experience in software engineering, AI/ML engineering or a related technical field.",
+          "status": "Candidate-declared support",
+          "verified": true
+        },
+        {
+          "name": "Diploma, degree, relevant certification or practical experience.",
+          "status": "Candidate-declared alternative support",
+          "verified": true
+        },
+        {
+          "name": "maximum two years .",
+          "status": "Needs review",
+          "verified": false
+        },
+        {
+          "name": "Up to two years relevant engineering experience",
+          "status": "Level compatibility needs review",
+          "verified": false
+        }
+      ]
+    },
+    "after": {
+      "title": "Systems & AI Automation Engineer",
+      "id": "G",
+      "score": 70,
+      "qualifications": [
+        {
+          "name": "2 years minimum experience in software engineering, AI/ML engineering or a related technical field.",
+          "status": "Candidate-declared support",
+          "verified": true
+        },
+        {
+          "name": "Diploma, degree, relevant certification or practical experience.",
+          "status": "Needs review",
+          "verified": false
+        },
+        {
+          "name": "maximum two years .",
+          "status": "Needs review",
+          "verified": false
+        },
+        {
+          "name": "Up to two years relevant engineering experience",
+          "status": "Level compatibility needs review",
+          "verified": false
+        }
+      ],
+      "leadership": []
+    }
+  },
+  {
+    "title": "Intermediate AI Engineer",
+    "before": {
+      "title": "Intermediate AI Engineer",
+      "score": 74,
+      "qualifications": [
+        {
+          "name": "At least 2 years software engineering, AI/ML engineering or related technical experience.",
+          "status": "Candidate-declared support",
+          "verified": true
+        }
+      ]
+    },
+    "after": {
+      "title": "Intermediate AI Engineer",
+      "id": "H",
+      "score": 74,
+      "qualifications": [
+        {
+          "name": "At least 2 years software engineering, AI/ML engineering or related technical experience.",
+          "status": "Candidate-declared support",
+          "verified": true
+        }
+      ],
+      "leadership": []
+    }
+  },
+  {
+    "title": "Senior GCP Cloud Engineer",
+    "before": {
+      "title": "Senior GCP Cloud Engineer",
+      "score": 32,
+      "qualifications": [
+        {
+          "name": "Minimum 5 years cloud/platform experience.",
+          "status": "Needs review",
+          "verified": false
+        },
+        {
+          "name": "Google Cloud professional certification or CKA/CKAD certifications.",
+          "status": "Needs review",
+          "verified": false
+        }
+      ]
+    },
+    "after": {
+      "title": "Senior GCP Cloud Engineer",
+      "id": "I",
+      "score": 32,
+      "qualifications": [
+        {
+          "name": "Minimum 5 years cloud/platform experience.",
+          "status": "Needs review",
+          "verified": false
+        },
+        {
+          "name": "Google Cloud professional certification or CKA/CKAD certifications.",
+          "status": "Needs review",
+          "verified": false
+        }
+      ],
+      "leadership": []
+    }
+  },
+  {
+    "title": "Senior Full-Stack Software Engineer",
+    "before": {
+      "title": "Senior Full-Stack Software Engineer",
+      "score": 53,
+      "qualifications": [
+        {
+          "name": "An awarded bachelor degree in computer science.",
+          "status": "Complete",
+          "verified": true
+        },
+        {
+          "name": "More than 5 years software engineering experience.",
+          "status": "Candidate-declared support",
+          "verified": true
+        }
+      ]
+    },
+    "after": {
+      "title": "Senior Full-Stack Software Engineer",
+      "score": 58,
+      "qualifications": [
+        {
+          "name": "An awarded bachelor degree in computer science.",
+          "status": "Needs review",
+          "verified": false
+        },
+        {
+          "name": "More than 5 years software engineering experience.",
+          "status": "Candidate-declared support",
+          "verified": true
+        }
+      ],
+      "leadership": [
+        {
+          "name": "Leadership and delivery responsibility",
+          "score": 40
+        },
+        {
+          "name": "Technical leadership and mentoring",
+          "score": 30
+        },
+        {
+          "name": "Technical leadership and mentoring.",
+          "score": null
+        }
+      ]
+    }
+  },
+  {
+    "title": "Intermediate Full-Stack Developer",
+    "before": {
+      "title": "Intermediate Full-Stack Developer",
+      "score": 80,
+      "qualifications": [
+        {
+          "name": "3 years software engineering experience.",
+          "status": "Candidate-declared support",
+          "verified": true
+        },
+        {
+          "name": "A degree or practical experience in software engineering.",
+          "status": "Candidate-declared alternative support",
+          "verified": true
+        }
+      ]
+    },
+    "after": {
+      "title": "Intermediate Full-Stack Developer",
+      "score": 80,
+      "qualifications": [
+        {
+          "name": "3 years software engineering experience.",
+          "status": "Candidate-declared support",
+          "verified": true
+        },
+        {
+          "name": "A degree or practical experience in software engineering.",
+          "status": "Candidate-declared alternative support",
+          "verified": true
+        }
+      ],
+      "leadership": []
+    }
+  },
+  {
+    "title": "AI Engineer",
+    "before": {
+      "title": "AI Engineer",
+      "score": 80,
+      "qualifications": [
+        {
+          "name": "A completed bachelor degree in Computer Science.",
+          "status": "Complete",
+          "verified": true
+        },
+        {
+          "name": "AWS professional certification.",
+          "status": "Needs review",
+          "verified": false
+        }
+      ]
+    },
+    "after": {
+      "title": "AI Engineer",
+      "score": 80,
+      "qualifications": [
+        {
+          "name": "A completed bachelor degree in Computer Science.",
+          "status": "Candidate-declared support",
+          "verified": true
+        },
+        {
+          "name": "AWS professional certification.",
+          "status": "Needs review",
+          "verified": false
+        }
+      ],
+      "leadership": []
+    }
+  },
+  {
+    "title": "Agentic AI Engineer",
+    "before": {
+      "title": "Agentic AI Engineer",
+      "score": 80,
+      "qualifications": []
+    },
+    "after": {
+      "title": "Agentic AI Engineer",
+      "score": 80,
+      "qualifications": [],
+      "leadership": []
+    }
+  },
+  {
+    "title": "Microsoft AI Developer",
+    "before": {
+      "title": "Microsoft AI Developer",
+      "score": 30,
+      "qualifications": [
+        {
+          "name": "AI-103 certification.",
+          "status": "Needs review",
+          "verified": false
+        },
+        {
+          "name": "AI-500 certification.",
+          "status": "Needs review",
+          "verified": false
+        }
+      ]
+    },
+    "after": {
+      "title": "Microsoft AI Developer",
+      "score": 30,
+      "qualifications": [
+        {
+          "name": "AI-103 certification.",
+          "status": "Candidate-declared support",
+          "verified": true
+        },
+        {
+          "name": "AI-500 certification.",
+          "status": "Needs review",
+          "verified": false
+        }
+      ],
+      "leadership": []
+    }
+  },
+  {
+    "title": "Cloud Engineer",
+    "before": {
+      "title": "Cloud Engineer",
+      "score": 75,
+      "qualifications": [
+        {
+          "name": "AWS Solutions Architect certification is mandatory.",
+          "status": "Needs review",
+          "verified": false
+        }
+      ]
+    },
+    "after": {
+      "title": "Cloud Engineer",
+      "score": 75,
+      "qualifications": [
+        {
+          "name": "AWS Solutions Architect certification is mandatory.",
+          "status": "Needs review",
+          "verified": false
+        }
+      ],
+      "leadership": []
+    }
+  },
+  {
+    "title": "Senior Software Developer",
+    "before": {
+      "title": "Senior Software Developer",
+      "score": 28,
+      "qualifications": [
+        {
+          "name": "Minimum 8 years software engineering experience.",
+          "status": "Needs review",
+          "verified": false
+        }
+      ]
+    },
+    "after": {
+      "title": "Senior Software Developer",
+      "score": 32,
+      "qualifications": [
+        {
+          "name": "Minimum 8 years software engineering experience.",
+          "status": "Needs review",
+          "verified": false
+        }
+      ],
+      "leadership": [
+        {
+          "name": "Leadership and delivery responsibility",
+          "score": 40
+        },
+        {
+          "name": "Operational leadership and stakeholder communication.",
+          "score": null
+        }
+      ]
+    }
+  },
+  {
+    "title": "Full-Stack C#/.NET Engineer",
+    "before": {
+      "title": "Full-Stack C#/.NET Engineer",
+      "score": 48,
+      "qualifications": [
+        {
+          "name": "A master degree in Computer Science.",
+          "status": "Complete",
+          "verified": true
+        }
+      ]
+    },
+    "after": {
+      "title": "Full-Stack C#/.NET Engineer",
+      "score": 48,
+      "qualifications": [
+        {
+          "name": "A master degree in Computer Science.",
+          "status": "Needs review",
+          "verified": false
+        }
+      ],
+      "leadership": []
+    }
+  },
+  {
+    "title": "Python Backend Engineer",
+    "before": {
+      "title": "Python Backend Engineer",
+      "score": 80,
+      "qualifications": [
+        {
+          "name": "5 years commercial Python experience.",
+          "status": "Needs review",
+          "verified": false
+        },
+        {
+          "name": "A degree or 5 years commercial Python experience.",
+          "status": "Needs review",
+          "verified": false
+        },
+        {
+          "name": "More than 3 years Python experience.",
+          "status": "Candidate-declared support",
+          "verified": true
+        }
+      ]
+    },
+    "after": {
+      "title": "Python Backend Engineer",
+      "score": 80,
+      "qualifications": [
+        {
+          "name": "5 years commercial Python experience.",
+          "status": "Needs review",
+          "verified": false
+        },
+        {
+          "name": "A degree or 5 years commercial Python experience.",
+          "status": "Needs review",
+          "verified": false
+        },
+        {
+          "name": "More than 3 years Python experience.",
+          "status": "Candidate-declared support",
+          "verified": true
+        }
+      ],
+      "leadership": []
+    }
+  },
+  {
+    "title": "DevOps Engineer",
+    "before": {
+      "title": "DevOps Engineer",
+      "score": 80,
+      "qualifications": [
+        {
+          "name": "Up to 4 years software engineering experience.",
+          "status": "Level compatibility needs review",
+          "verified": false
+        }
+      ]
+    },
+    "after": {
+      "title": "DevOps Engineer",
+      "score": 80,
+      "qualifications": [
+        {
+          "name": "Up to 4 years software engineering experience.",
+          "status": "Level compatibility needs review",
+          "verified": false
+        }
+      ],
+      "leadership": []
+    }
+  },
+  {
+    "title": "Enterprise Automation Engineer",
+    "before": {
+      "title": "Enterprise Automation Engineer",
+      "score": 53,
+      "qualifications": [
+        {
+          "name": "A diploma in business administration.",
+          "status": "Complete",
+          "verified": true
+        }
+      ]
+    },
+    "after": {
+      "title": "Enterprise Automation Engineer",
+      "score": 56,
+      "qualifications": [
+        {
+          "name": "A diploma in business administration.",
+          "status": "Needs review",
+          "verified": false
+        }
+      ],
+      "leadership": [
+        {
+          "name": "Leadership and delivery responsibility",
+          "score": 40
+        },
+        {
+          "name": "Technical leadership and mentoring",
+          "score": 30
+        },
+        {
+          "name": "Technical leadership and documentation.",
+          "score": null
+        }
+      ]
+    }
+  }
+]

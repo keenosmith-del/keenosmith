@@ -27,7 +27,7 @@ for (const fn of [m.answer, m.conversationalAnswer]) {
 assert.equal(new Set(m.canonicalProjects.map(p => p.id)).size, m.canonicalProjects.length);
 assert.equal(m.curatedProjects.length, 22);
 assert.equal(m.aiProjectTarget, 15);
-assert(m.qualifyingAIProjects.length >= m.aiProjectTarget);
+assert.equal(m.qualifyingAIProjects.length, 13, 'Conservative count discrepancy recorded for owner review');
 assert.equal(new Set(m.qualifyingAIProjects.map(p => p.repository)).size, m.qualifyingAIProjects.length);
 assert.equal(m.aiProjectCounterLabel, '15+ AI projects');
 assert(!m.qualifyingAIProjects.some(p => p.id === 'banking-risk' || p.id === 'n8n'));

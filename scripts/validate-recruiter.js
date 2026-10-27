@@ -96,12 +96,12 @@ assert(!row(d, "Production AI operations"));
 assert(names(e).includes(".NET 8"));
 assert(!names(e).includes(".NET"));
 assert(row(e, "Docker") && row(e, "Kubernetes"));
-assert.equal(row(e, "Technical leadership and mentoring").score, 0);
+assert.equal(row(e, "Technical leadership and mentoring").score, 30);
 assert.equal(row(e, "Team AI coding standards").score, 0);
 assert.equal(row(e, "Python").importance, "Preferred");
 assert(names(f).includes("SQL Server") && !names(f).includes("SQL"));
 assert(row(f, ".NET Core or .NET Framework"));
-assert(f.qualifications.some((x) => x.type === "education" && x.verified));
+assert(f.qualifications.some((x) => x.type === "education" && !x.verified));
 assert(!row(f, "Security"));
 assert(g.rows.some((x) => x.type === "experience" && x.ambiguous));
 assert(g.logistics.length);
@@ -182,7 +182,6 @@ assert(
     .filter((x) =>
       [
         "Operational scale",
-        "Technical leadership and mentoring",
         "Live-system migration",
         "Team AI coding standards",
       ].includes(x.name),
@@ -204,8 +203,8 @@ assert(career.qualifications[0].verified);
 const noAward = run(
   "Requirements: An awarded degree in computer science with no alternative qualification.",
 );
-assert(noAward.qualifications[0].verified);
-assert(noAward.qualifications[0].verified);
+assert(!noAward.qualifications[0].verified);
+assert(!noAward.qualifications[0].verified);
 assert(!JSON.stringify(noAward.education).includes("324/360"));
 // Specificity: related tools never become exact requested operations.
 for (const phrase of [
