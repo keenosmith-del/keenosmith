@@ -5,7 +5,7 @@ import puppeteer from 'puppeteer';
 const base = process.env.PORTFOLIO_TEST_URL || 'http://127.0.0.1:4178';
 const output = '/tmp/portfolio-tile-correction';
 await fs.mkdir(output,{recursive:true});
-await build({stdin:{contents:`export { curatedProjects } from './src/components/pages/Explore/utils/exploreIndex.js';`,resolveDir:process.cwd()},bundle:true,platform:'node',format:'esm',outfile:`${output}/expected.mjs`,loader:{'.png':'empty'}});
+await build({stdin:{contents:`export { curatedProjects } from './src/components/pages/Explore/utils/exploreIndex.js';`,resolveDir:process.cwd()},bundle:true,platform:'node',format:'esm',outfile:`${output}/expected.mjs`,loader:{'.png':'empty','.webp':'empty'}});
 const {curatedProjects}=await import(`${output}/expected.mjs`);
 assert.equal(curatedProjects.length,22);
 const topSets=new Set(), lowerSets=new Set();

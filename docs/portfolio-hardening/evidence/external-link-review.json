@@ -55,5 +55,9 @@
       "finalUrl": "https://github.com/keenosmith-del/kailor-insider",
       "classification": "potentially broken; confirm visibility"
     }
-  ]
+  ],
+  "authenticatedCompanyVisibility": {
+    "kailor": "private",
+    "kailor-insider": "private"
+  }
 }

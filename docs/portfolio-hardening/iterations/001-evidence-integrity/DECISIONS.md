@@ -11,3 +11,5 @@ D104: Preserve public 15+ wording pending owner decision on conservative 13-fami
 D105: Preserve accepted AI CV selection. Owner may choose CrewAI/AssessFlow substitution later; no career content/PDF updates performed.
 
 Initial audit commit: a90ebc8. Implementation SHA is recorded in git history and final release report, avoiding self-referential commit hashes.
+
+D106: Final model contextual-2.2.2 also excludes the generic delivery-leadership parent when the same source clause already produces the more specific technical-leadership/mentoring row. Evidence stays visible but contributes once. This prevents the newly recognised professional record from creating an overlapping score bonus. Upper-bound tenure support is review-only because the accepted overall figure is a lower bound. Weights and thresholds remain unchanged.

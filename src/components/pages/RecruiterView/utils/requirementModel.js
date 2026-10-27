@@ -366,6 +366,8 @@ export function extractRequirements(description) {
   }
   // A standalone parent covered by explicit children does not enter the denominator again.
   for (const row of result) {
+    if (row.name === 'Leadership and delivery responsibility' && result.some(other =>
+      other.name === 'Technical leadership and mentoring' && other.sourcePhrase === row.sourcePhrase)) row.parentOnly = true;
     if (
       row.name === "Infrastructure as Code" &&
       result.some(

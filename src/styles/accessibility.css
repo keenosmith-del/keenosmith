@@ -4,7 +4,6 @@
 .navigation-links :is(.navigation-skills-trigger,.navigation-projects-trigger,.navigation-links-trigger,.navigation-cloud-trigger):not(:hover):not([aria-expanded="true"]) { color: #6c6c71; }
 .timeline-index-track button:not([aria-current="step"]) span { color: #6c6c71; }
 .explore-page .explore-hero :is(p,small),
-.explore-page .explore-tabs button[aria-selected="false"],
 .explore-page span[role="status"] { color: #6c6c71; }
 .recruiter-page .recruiter-input label > span,
 .recruiter-page .recruiter-system-secondary { color: #6c6c71; }
@@ -20,3 +19,5 @@
 .portfolio-chat-panel .portfolio-chat-footer,
 .portfolio-chat-panel .assistant-section-label { color: #626268; }
 .navigation-pill .navigation-menu-toggle { color: #626268; }
+
+.explore-page .explore-tabs button[aria-selected="false"] { color: #626268; }
