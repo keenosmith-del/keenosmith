@@ -15,3 +15,11 @@ Candidate facts revision 2026-10-18.2; project evidence 2026-10-26.1. Recruiter 
 CV data README says existing three 2026 PDFs are authoritative, with source hashes and browser text reconciliation. Do not regenerate them with the legacy generator. New AI selected-project substitutions require owner editorial review; no automatic substitution.
 
 Route inventory, browser findings, visual references and transfer measurements are supplemented by evidence JSON and iteration reports as execution completes. No production form submission or paid provider request is authorized by this audit.
+
+## Completed baseline evidence
+
+Captured 70 original screenshots across 1440/1024/768/390/320px with no horizontal overflow. After excluding the Vite-restart-contaminated initial run, git-archived baseline checks passed for CV, Recruiter, Streamlit, all 260 skill panels and exact project styles. Original Assistant browser checks failed stale title/footer expectations; that failure is historical task evidence, not a production outage claim.
+
+Original registry: 44 retrieval projects, 25 reviewed implementation records, 22 gallery entries, 16 AI-flagged records before policy exclusions. Current accepted CVs comprise three original three-page PDFs and four JSON records. PDF inventory is 31 files (28 documents and three CVs); root CVs remained byte-identical throughout the task.
+
+The matched preview baseline (Chrome 152, 390×844, 150ms latency, 200kB/s down, 4× CPU) measured cold homepage encoded resources 13,275,399 B, image bodies 11,956,082 B, LCP 36,236ms and CLS 0; repeat LCP 1,312ms. Matching-server Lighthouse measured Performance 46, Accessibility 96, simulated LCP 14,062.7ms, TBT 1,208ms and CLS 0. Earlier baseline Lighthouse on a plain static server is retained outside Git but is not the primary comparison because compression differed.

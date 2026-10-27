@@ -1,0 +1,126 @@
+{
+  "base": "https://keenosmith.vercel.app",
+  "checkedAt": "2026-10-27T14:31:32.355Z",
+  "method": "GET only. No contact or Assistant submission; production source not changed.",
+  "results": [
+    {
+      "path": "/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "bytes": 459,
+      "title": "Keeno Smith"
+    },
+    {
+      "path": "/explore",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "bytes": 459,
+      "title": "Keeno Smith"
+    },
+    {
+      "path": "/recruiter-view",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "bytes": 459,
+      "title": "Keeno Smith"
+    },
+    {
+      "path": "/cv",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "bytes": 459,
+      "title": "Keeno Smith"
+    },
+    {
+      "path": "/projects/banking-risk",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "bytes": 459,
+      "title": "Keeno Smith"
+    },
+    {
+      "path": "/projects/microsoft-devops",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "bytes": 459,
+      "title": "Keeno Smith"
+    },
+    {
+      "path": "/projects/crewai-revenueops",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "bytes": 459,
+      "title": "Keeno Smith"
+    },
+    {
+      "path": "/projects/ms-assessflow",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "bytes": 459,
+      "title": "Keeno Smith"
+    },
+    {
+      "path": "/projects/eventops-streamlit",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "bytes": 459,
+      "title": "Keeno Smith"
+    },
+    {
+      "path": "/Keeno-Smith-CV-ATS-AI-Engineer-2026.pdf",
+      "status": 200,
+      "type": "application/pdf",
+      "bytes": 91808,
+      "pdf": true
+    },
+    {
+      "path": "/Keeno-Smith-CV-ATS-Cloud-Engineer-2026.pdf",
+      "status": 200,
+      "type": "application/pdf",
+      "bytes": 93280,
+      "pdf": true
+    },
+    {
+      "path": "/Keeno-Smith-CV-ATS-Full-Stack-Engineer-2026.pdf",
+      "status": 200,
+      "type": "application/pdf",
+      "bytes": 93783,
+      "pdf": true
+    },
+    {
+      "path": "/documents/crewai-revenueops-executive-summary.pdf",
+      "status": 200,
+      "type": "application/pdf",
+      "bytes": 122407,
+      "pdf": true
+    },
+    {
+      "path": "/documents/ms-assessflow-executive-summary.pdf",
+      "status": 200,
+      "type": "application/pdf",
+      "bytes": 77519,
+      "pdf": true
+    },
+    {
+      "path": "/documents/eventops-streamlit-executive-summary.pdf",
+      "status": 200,
+      "type": "application/pdf",
+      "bytes": 77697,
+      "pdf": true
+    },
+    {
+      "path": "/robots.txt",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "bytes": 459,
+      "title": "Keeno Smith"
+    },
+    {
+      "path": "/sitemap.xml",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "bytes": 459,
+      "title": "Keeno Smith"
+    }
+  ]
+}

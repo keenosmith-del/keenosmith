@@ -19,3 +19,9 @@ Root README rewritten as engineering entry point covering architecture, evidence
 Link audit: 27 canonical routes, 148 distinct rendered links, 57 local links and 28 executive-summary/brief PDFs checked; no local failures/page errors. All three root CV downloads are separately checked. 82 external URLs checked read-only: 73 HTTP reachable, 9 restricted/unverified/potentially missing. Do not rewrite accepted profile/company URLs without verified replacement or visibility evidence.
 
 CI diagnostic: first remote run failed at root-required --install-deps before source tests; remove that flag and retain matching browser install. First Vercel branch deployment environment is Preview, independently confirmed. Preview routes are login-protected; anonymous responses are Vercel login HTML, not portfolio verification.
+
+## Final closure — 27 October 2026
+
+Status: complete within the documented verification scope. Verified application/source revision `b72b16a941c2c35515b3ff0918980aedf099f1bd`. Final GitHub run 40535005760 passed source checks and all 17 browser/raw HTTP suites. Earlier pending statements above describe checkpoints, not outstanding local work. The full final outcomes, exact measurements, source/file manifest, commits and remaining owner gates are recorded in [Release readiness](../../RELEASE_READINESS.md) and [Test matrix](../../TEST_MATRIX.md).
+
+All 70 final responsive captures had no horizontal overflow; 45 geometry cases covering 905 elements had no differences at 0.5px tolerance. Accepted CV/PDF/reference-page hashes remain unchanged; 198 PDF text checks passed. No production merge/deployment, real mail or paid inference occurred. Hosted preview remains login-protected.

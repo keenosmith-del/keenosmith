@@ -15,5 +15,13 @@
     "vite": "8.3.5",
     "puppeteer": "25.16.0"
   },
-  "scope": "npm audit full locked dependency graph; task-executed, not a guarantee against future advisories"
+  "scope": "npm audit full locked dependency graph; task-executed, not a guarantee against future advisories",
+  "finalDependencyGraph": {
+    "prod": 10,
+    "dev": 176,
+    "optional": 72,
+    "peer": 0,
+    "peerOptional": 0,
+    "total": 185
+  }
 }

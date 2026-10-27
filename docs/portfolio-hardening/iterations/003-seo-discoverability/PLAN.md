@@ -1,6 +1,6 @@
 # 003-seo-discoverability
 
-Status: planned.
+Status: partial — local/source verification complete; hosted verification blocked by preview authentication. Original execution plan retained below.
 
 ## Objective and inspected problem
 
