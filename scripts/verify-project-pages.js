@@ -3,7 +3,7 @@ import fs from 'node:fs/promises';
 import puppeteer from 'puppeteer';
 
 const base = process.env.PORTFOLIO_TEST_URL || 'http://127.0.0.1:5173';
-const routes = ['banking-risk','microsoft-devops','gcp-retail','eventops-intelligence','ollama','n8n','claude','distributed-reliability','deepseek','telecom-billing','field-service','fleet-operations','hugging-face','productivity-platform','music-api','enterprise-workspace','ai-assistant','intelligence-manufacturing-llmops','enterprise-ai-mlops'].map(id=>`/projects/${id}`).concat('/companies/kailor');
+const routes = ['crewai-revenueops','banking-risk','microsoft-devops','gcp-retail','eventops-intelligence','ollama','n8n','claude','distributed-reliability','deepseek','telecom-billing','field-service','fleet-operations','hugging-face','productivity-platform','music-api','enterprise-workspace','ai-assistant','intelligence-manufacturing-llmops','enterprise-ai-mlops'].map(id=>`/projects/${id}`).concat('/companies/kailor');
 const failures = []; const errors = []; const results = [];
 const check = (condition, message) => { if (!condition) failures.push(message); };
 const browser = await puppeteer.launch({headless:true});
@@ -32,7 +32,7 @@ try {
           overflow:document.documentElement.scrollWidth>innerWidth,
           heroBottom:content.bottom,
           heroHeight:hero.getBoundingClientRect().height,
-          hasDate:/\w+ 2026/.test(hero.querySelector('time')?.textContent || ''),
+          hasDate:/^\w+ \d{4}$/.test(hero.querySelector('time')?.textContent || ''),
           conclusion:!!closing?.querySelector('h2') && !!closing?.querySelector('p') && !closing.querySelector('button'),
           footerText:footer?.textContent.trim().replace(/\s+/g,' '),
           footerTop:footer?.querySelector('button')?.textContent.trim(),

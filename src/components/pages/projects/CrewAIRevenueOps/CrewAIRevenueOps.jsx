@@ -99,7 +99,6 @@ export default function CrewAIRevenueOps() {
             </div>
             <div className="revenueops-actions">
               <a className="revenueops-button revenueops-button-dark" href={repository} target="_blank" rel="noopener noreferrer"><img src={githubSvg} alt="" aria-hidden="true" />Source repository</a>
-              <a className="revenueops-button revenueops-button-light" href={summary} target="_blank" rel="noopener noreferrer">Executive summary</a>
               <button className="revenueops-button" type="button" disabled>Visit platform</button>
             </div>
           </div>

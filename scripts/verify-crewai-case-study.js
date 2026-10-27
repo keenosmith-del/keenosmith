@@ -23,7 +23,11 @@ try {
     assert.equal(await page.$eval('[data-project-back]', e => e.getAttribute('href')), '/');
     assert(await page.$eval('.revenueops-hero', e => e.getBoundingClientRect().height <= innerHeight + 1), `Hero exceeds viewport at ${viewport.width}`);
     assert(await page.$eval('.revenueops-hero-inner', e => e.getBoundingClientRect().bottom <= innerHeight + 1), `Hero content clipped at ${viewport.width}`);
-    assert.equal(await page.$$eval('.revenueops-actions a', els => els.map(e => e.getAttribute('href')).join('|')), `https://github.com/keenosmith-del/crewai-revenueops|${pdfPath}`);
+    assert.equal(await page.$eval('.revenueops-actions a', e => e.getAttribute('href')), 'https://github.com/keenosmith-del/crewai-revenueops');
+    assert.equal(await page.$$eval('.revenueops-actions :is(a,button)', els => els.length), 2);
+    assert.equal(await page.$('.revenueops-hero a[href$=".pdf"]'), null);
+    assert.equal(await page.$eval('.revenueops-problem a', e => e.getAttribute('href')), pdfPath);
+    assert(await page.$$eval('article > header, article > section', sections => sections.every(section => section.querySelectorAll('.revenueops-button').length <= 2)));
     assert(await page.$eval('.revenueops-actions button', e => e.disabled));
     assert.equal(await page.$$eval('.revenueops-journey-grid > li', els => els.length), 6);
     assert.equal(await page.$$eval('.revenueops-specialists > div', els => els.length), 4);
