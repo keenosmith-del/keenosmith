@@ -36,3 +36,12 @@ for original, width in [('src/assets/images/avatar/url-icon.png',96), ('src/asse
     with Image.open(source) as image:
         image.thumbnail((width,width),Image.Resampling.LANCZOS)
         image.save(source.with_name(source.stem+f'-{width}.webp'),'WEBP',lossless=True,exact=True,method=4,icc_profile=image.info.get('icc_profile',b''))
+
+# Reproduce the existing-footage fallback, not new artwork. Only failure paths load it.
+import subprocess
+import tempfile
+with tempfile.TemporaryDirectory(prefix='portfolio-video-poster-') as temporary:
+    frame=Path(temporary)/'frame.png'
+    subprocess.run(['ffmpeg','-hide_banner','-loglevel','error','-ss','1','-i','src/assets/images/full-stack-section/full-stack-engineering-automation.mp4','-frames:v','1',str(frame)],check=True)
+    with Image.open(frame) as image:
+        image.save('src/assets/images/full-stack-section/full-stack-engineering-poster.webp','WEBP',lossless=True,exact=True,method=6)

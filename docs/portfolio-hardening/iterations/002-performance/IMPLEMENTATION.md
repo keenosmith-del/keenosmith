@@ -13,3 +13,7 @@ Reproducible conversion: `python3 scripts/optimize-images.py` with Pillow. Bundl
 Entry JS after responsive variants: 480.22 kB / 144.67 kB gzip versus 984.69 / 266.79 baseline. The 478.08 kB intermediate entry predates srcSet mapping. Route chunks are separate (e.g. AssessFlow ≈27kB, Recruiter ≈61kB). No >500kB entry warning. CSS stays broadly unchanged by design.
 
 New scripts: optimize-images.py, measure-hardening-performance.js; modified App, image imports, projectArtwork, artwork consumers, index favicon and verification loaders. No AWSBankingRisk/MicrosoftDevOps source or stylesheet edits.
+
+Final QA found that a failed video resource had only a blank background, despite the existing paused-frame behavior when decoding succeeds. Added a 60,044-byte lossless WebP decoded from the existing footage at one second (matching its established reduced-motion frame selection). It loads only after video load/playback failure; normal playback retains its existing pixels, animation and network behavior. Policy-driven AbortError on pause does not activate the fallback. Successful retry restores video display. No generated/replacement artwork or CSS geometry change.
+
+The image regeneration utility now reproduces this poster with FFmpeg plus Pillow. The new media regression checks actual intercepted missing media, blocked play(), normal playback and reduced motion, verifies image decoding and identical tile dimensions. Test screenshots remain outside Git.

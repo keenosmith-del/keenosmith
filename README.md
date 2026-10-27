@@ -56,7 +56,7 @@ npm run verify
 npm run test:browser
 ```
 
-`verify` runs lint, production build, existing Assistant/Recruiter/evidence-refresh suites, expanded qualification/API regressions, Explore assertions, catalogue destinations and static SEO validation. `test:browser` owns a local preview on port 4181 and runs the existing browser suites plus intercepted contact-failure/retry and raw HTTP/404 checks. Use an unused loopback URL through `PORTFOLIO_TEST_URL` when needed. Do not run another preview on that port simultaneously. All ordinary CI tests clear inference configuration and avoid live contact delivery.
+`verify` runs lint, production build, existing Assistant/Recruiter/evidence-refresh suites, expanded qualification/API regressions, Explore assertions, catalogue destinations and static SEO validation. `test:browser` owns a local preview on port 4181 and runs the existing browser suites plus intercepted contact-failure/retry and raw HTTP/404 checks. Use an unused loopback URL through `PORTFOLIO_TEST_URL` when needed. Do not run another preview on that port simultaneously. All ordinary CI tests clear inference configuration and avoid live contact delivery. Linux CI supplies a virtual desktop for the hover-specific tile check and a scoped browser namespace profile; normal local checks remain headless.
 
 Additional scripts:
 
@@ -76,7 +76,7 @@ Existing project/modal/navigation/style/CV/Assistant/Recruiter browser scripts r
 
 ## Assets and deployment
 
-Original artwork stays in source. Lossless WebP delivery assets and responsive variants are regenerated with `python3 scripts/optimize-images.py` using Pillow; full-size derivatives assert decoded RGBA equality. The small header/Assistant derivatives are resized for their actual displayed dimensions. Do not replace existing artwork or modify reference-page styles to mask regressions.
+Original artwork stays in source. Lossless WebP delivery assets and responsive variants are regenerated with `python3 scripts/optimize-images.py` using Pillow and FFmpeg; full-size derivatives assert decoded RGBA equality. The video fallback is a lossless frame from the existing footage and loads only on failure. The small header/Assistant derivatives are resized for their actual displayed dimensions. Do not replace existing artwork or modify reference-page styles to mask regressions.
 
 Vercel builds the static frontend and separate Assistant function. `cleanUrls` maps generated HTML files to existing routes; `404.html` handles unknown paths. Existing PDF compatibility redirects remain. CSP permits local scripts/media, existing inline styles and EmailJS connections. Verify actual preview responses before release.
 

@@ -5,6 +5,7 @@ import { fullStackProject as project } from "../../../data/fullStackProject.js";
 import { projectArtwork } from "../../../data/projectArtwork.js";
 import useScrollFade from "../../../hooks/useScrollFade.js";
 import videoSource from "../../../assets/images/full-stack-section/full-stack-engineering-automation.mp4";
+import videoFallback from "../../../assets/images/full-stack-section/full-stack-engineering-poster.webp";
 import linkedinIcon from "../../../assets/svgs/header/linkedin.svg";
 import "../Cloud/Cloud.css";
 import "./FullStack.css";
@@ -30,7 +31,9 @@ export default function FullStack() {
     const updatePlayback = () => {
       if (visible && !preference.matches && !document.hidden) {
         // Autoplay can be denied; the decoded frame remains a quiet fallback.
-        video.play().catch(() => {});
+        video.play().then(() => setVideoFailed(false)).catch(error => {
+          if (error.name !== 'AbortError') setVideoFailed(true);
+        });
       } else video.pause();
     };
     const updatePreference = () => {
@@ -131,6 +134,7 @@ export default function FullStack() {
           </Link>
           <div
             className={`cloud-tile full-stack-video${active === "video" ? " is-expanded" : ""}`}
+            style={videoFailed ? { backgroundImage: `url(${videoFallback})`, backgroundSize: 'cover', backgroundPosition: 'center' } : undefined}
             role="img"
             aria-label={
               videoFailed

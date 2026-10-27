@@ -11,3 +11,5 @@ Baseline Lighthouse mobile: Performance 47, Accessibility 96, LCP 49,953.7ms, CL
 Project-style run on development source was interrupted by HMR (DOM context invalid); no pass claimed. Stable production style run started with explicit protected reference manifest. Results will be finalized in integrated verification. No visual redesign or source-image deletion.
 
 Stable production style rerun: PASS, five pages × three widths, exact reference computed control/hero/section/modal styles, normal/hover states, centered footers, floating control hiding, reduced motion and four protected source/style hashes. Responsive variants were included in this build. Integrated full-portfolio screenshot comparison is still reserved for iteration 005.
+
+Final media verification passed all four scenarios: normal video, intercepted resource failure, blocked autoplay and reduced motion. The poster actually decoded, the healthy path had no fallback background, reduced motion stayed paused on a readable frame, and tile geometry matched in all cases. This closes the unavailable-media fallback gap without changing healthy playback.
