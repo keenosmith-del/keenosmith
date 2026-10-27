@@ -54,7 +54,7 @@ try {
     assert.equal(home.href, 'https://kailor.co.za/');
     assert(home.disabled && home.disabledText === 'Visit kailor insider');
     assert(!home.overflow, `Homepage overflow at ${width}`);
-    assert.match(home.timer, /app launch on 6 November 2026/);
+    assert.match(home.timer, /app launch target on 6 November 2026/);
     await page.keyboard.press('Tab');
     await page.focus('[data-company-id="kailor"]');
     await page.waitForFunction(() => Number(getComputedStyle(document.querySelector('.kailor-feature .cloud-tile-details')).opacity) > .95);

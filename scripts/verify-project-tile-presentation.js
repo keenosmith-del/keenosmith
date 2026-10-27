@@ -19,7 +19,9 @@ for(const project of curatedProjects){
 }
 assert.equal(topSets.size,22,'Top pills must be deliberately project-specific');
 assert.equal(lowerSets.size,22,'Each technology-pill selection must be project-specific');
-const browser=await puppeteer.launch({headless:true});
+// Linux headless Chrome reports a non-hover primary device. CI supplies a
+// virtual desktop so this regression exercises the real hover media query.
+const browser=await puppeteer.launch({headless:process.env.PORTFOLIO_TEST_HEADFUL !== '1'});
 const errors=[], results=[];
 try{
   const page=await browser.newPage();page.on('pageerror',error=>errors.push(error.message));

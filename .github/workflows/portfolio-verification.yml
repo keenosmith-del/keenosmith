@@ -45,4 +45,6 @@ jobs:
           sudo apparmor_parser -r /etc/apparmor.d/portfolio-chromium
       - run: npm run verify
       - name: Browser and raw HTTP verification against production assets
-        run: node scripts/run-browser-verification.js
+        env:
+          PORTFOLIO_TEST_HEADFUL: '1'
+        run: xvfb-run --auto-servernum --server-args="-screen 0 1920x1200x24" node scripts/run-browser-verification.js

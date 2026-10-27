@@ -131,7 +131,7 @@
     "after": {
       "title": "Senior Software Engineer (AI Enabled)",
       "id": "E",
-      "score": 53,
+      "score": 54,
       "qualifications": [
         {
           "name": "Minimum 7 years software engineering experience and technical leadership.",
@@ -141,12 +141,12 @@
       ],
       "leadership": [
         {
-          "name": "Leadership and delivery responsibility",
-          "score": 40
-        },
-        {
           "name": "Technical leadership and mentoring",
           "score": 30
+        },
+        {
+          "name": "Leadership and delivery responsibility",
+          "score": 40
         },
         {
           "name": "Minimum 7 years software engineering experience and technical leadership.",
@@ -333,7 +333,7 @@
     },
     "after": {
       "title": "Senior Full-Stack Software Engineer",
-      "score": 58,
+      "score": 63,
       "qualifications": [
         {
           "name": "An awarded bachelor degree in computer science.",
@@ -348,12 +348,12 @@
       ],
       "leadership": [
         {
-          "name": "Leadership and delivery responsibility",
-          "score": 40
-        },
-        {
           "name": "Technical leadership and mentoring",
           "score": 30
+        },
+        {
+          "name": "Leadership and delivery responsibility",
+          "score": 40
         },
         {
           "name": "Technical leadership and mentoring.",
@@ -658,7 +658,7 @@
     },
     "after": {
       "title": "Enterprise Automation Engineer",
-      "score": 56,
+      "score": 59,
       "qualifications": [
         {
           "name": "A diploma in business administration.",
@@ -668,12 +668,12 @@
       ],
       "leadership": [
         {
-          "name": "Leadership and delivery responsibility",
-          "score": 40
-        },
-        {
           "name": "Technical leadership and mentoring",
           "score": 30
+        },
+        {
+          "name": "Leadership and delivery responsibility",
+          "score": 40
         },
         {
           "name": "Technical leadership and documentation.",
