@@ -31,7 +31,7 @@ try {
       assert.equal(await page.$$eval(selector, els => els.length), 1);
       assert.equal(await page.$eval(`${selector} h2`, e => e.textContent), title);
       assert.equal(await page.$eval(selector, e => getComputedStyle(e).backgroundColor), rgb(color));
-      assert.equal(await page.$eval(selector, e => e.getAttribute('href')), id === 'crewai-revenueops' ? `/projects/${id}` : `/explore/projects/${id}`);
+      assert.equal(await page.$eval(selector, e => e.getAttribute('href')), id === 'eventops-streamlit' ? `/explore/projects/${id}` : `/projects/${id}`);
       await page.$eval(selector, e => e.scrollIntoView({behavior:'instant',block:'center'}));
       await page.waitForFunction(sel => document.querySelector(`${sel} img`).naturalWidth > 0, {}, selector);
       assert((await page.$eval(`${selector} img`, e => e.src)).includes(artwork));
@@ -39,15 +39,16 @@ try {
       await (await page.$(selector)).screenshot({ path: `${output}/${id}-${width}.png` });
       await page.focus(selector);
       await page.keyboard.press('Enter');
-      const completed = id === 'crewai-revenueops';
-      await page.waitForSelector(completed ? '.revenueops-project h1' : '.explore-preview h1');
-      if (completed) assert.match(await page.$eval('h1', e => e.textContent), /CrewAI RevenueOps.*Intelligence/);
+      const completed = id !== 'eventops-streamlit';
+      const pageSelector = id === 'ms-assessflow' ? '.assessflow-project' : '.revenueops-project';
+      await page.waitForSelector(completed ? `${pageSelector} h1` : '.explore-preview h1');
+      if (completed) assert.match(await page.$eval('h1', e => e.textContent), id === 'ms-assessflow' ? /Microsoft.*AssessFlow/ : /CrewAI RevenueOps.*Intelligence/);
       else {
         assert.equal(await page.$eval('h1', e => e.textContent), title);
         assert.match(await page.$eval('.explore-eyebrow', e => e.textContent), /Built.*coming soon/);
       }
       const repository = id === 'eventops-streamlit' ? 'eventops-intelligence-streamlit' : id;
-      assert.equal(await page.$eval(completed ? '.revenueops-actions a' : '.project-repository-button', e => e.href), `https://github.com/keenosmith-del/${repository}`);
+      assert.equal(await page.$eval(completed ? `${pageSelector} header a[href^="https://github.com"]` : '.project-repository-button', e => e.href), `https://github.com/keenosmith-del/${repository}`);
       assert(!await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), `${id} preview overflow ${width}`);
       if (!completed) {
         assert(await page.$eval('.explore-preview > section', e => e.getBoundingClientRect().top >= 96), `${id} preview header overlaps navigation`);
@@ -87,7 +88,7 @@ try {
     assert(await page.$(`[data-explore-id="${id}"]`));
     assert.equal(await page.$$eval(`[data-explore-id="${id}"]`,els=>els.length),1);
     await page.click(`[data-explore-id="${id}"]`);
-    await page.waitForSelector(id === 'crewai-revenueops' ? '.revenueops-project' : '.explore-preview');
+    await page.waitForSelector(id === 'crewai-revenueops' ? '.revenueops-project' : id === 'ms-assessflow' ? '.assessflow-project' : '.explore-preview');
     await page.click('[data-project-back]');
     await page.waitForSelector('.explore-project');
     assert.equal(new URL(page.url()).search,`?tab=projects&q=${query}`);
