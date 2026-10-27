@@ -4,12 +4,13 @@ import { createHash } from 'node:crypto';
 import puppeteer from 'puppeteer';
 
 const base = process.env.PORTFOLIO_TEST_URL || 'http://127.0.0.1:4178';
-const output = '/tmp/project-style-correction/after';
+const output = process.env.PORTFOLIO_STYLE_OUTPUT || '/tmp/project-style-correction/after';
 const pages = [
   { id: 'banking-risk', prefix: 'aws-banking', reference: true },
   { id: 'microsoft-devops', prefix: 'mdo', reference: true },
   { id: 'crewai-revenueops', prefix: 'revenueops' },
   { id: 'ms-assessflow', prefix: 'assessflow' },
+  { id: 'eventops-streamlit', prefix: 'eventops-streamlit', repository: 'https://github.com/keenosmith-del/eventops-intelligence-streamlit' },
 ];
 const controlProperties = ['display', 'alignItems', 'justifyContent', 'minHeight', 'height', 'padding', 'gap', 'borderRadius', 'borderWidth', 'backgroundColor', 'color', 'opacity', 'fontFamily', 'fontSize', 'fontWeight', 'lineHeight', 'letterSpacing', 'boxShadow', 'backdropFilter', 'transitionDuration', 'transitionProperty'];
 const floatingProperties = [...controlProperties, 'position', 'zIndex', 'right', 'bottom', 'width'];
@@ -69,7 +70,7 @@ try {
       assert.deepEqual(await page.$$eval(`.${prefix}-hero-actions :is(a,button)`, elements => elements.map(e => e.textContent.trim())), ['Source', 'Visit platform']);
       assert(await page.$eval(`.${prefix}-hero-actions button`, e => e.disabled && !e.hasAttribute('href')));
       if (!project.reference) {
-        assert.equal(await page.$eval(`.${prefix}-hero-actions a`, e => e.href), `https://github.com/keenosmith-del/${id}`);
+        assert.equal(await page.$eval(`.${prefix}-hero-actions a`, e => e.href), project.repository || `https://github.com/keenosmith-del/${id}`);
         assert.equal(await page.$eval(`.${prefix}-platform-note a`, e => e.getAttribute('href')), 'mailto:keenosmith@kailor.co.za');
         assert.equal(await page.$eval(`.${prefix}-summary-action a`, e => e.getAttribute('href')), `/documents/${id}-executive-summary.pdf`);
         const backgrounds = await page.$$eval('article :is(section,div,li,figure,table,tr,td,th,dl,dd)', elements => elements.filter(e => {
@@ -139,7 +140,7 @@ try {
     // MicrosoftDevOps supplies the exact common-control declarations. AWS is
     // independently captured as the second visual authority; its summary is equivalent.
     const reference = snapshots['microsoft-devops'];
-    for (const id of ['crewai-revenueops', 'ms-assessflow']) {
+    for (const { id } of pages.filter(p => !p.reference)) {
       for (const [component, expected] of Object.entries(reference)) {
         const actual = snapshots[id][component];
         const differences = Object.keys(expected).filter(key => actual[key] !== expected[key]);
@@ -159,16 +160,16 @@ try {
   }
   let protectedFiles = 0;
   try {
-    const hashes = JSON.parse(await fs.readFile('/tmp/project-style-correction/protected-files.json', 'utf8'));
+    const hashes = JSON.parse(await fs.readFile(process.env.PORTFOLIO_PROTECTED_MANIFEST || '/tmp/project-style-correction/protected-files.json', 'utf8'));
     for (const [path, expected] of Object.entries(hashes)) assert.equal(createHash('sha256').update(await fs.readFile(path)).digest('hex'), expected, `Protected file changed: ${path}`);
     protectedFiles = Object.keys(hashes).length;
   } catch (error) { if (error.code !== 'ENOENT') throw error; }
   const reportPage = await browser.newPage();
-  let html = '<!doctype html><meta charset="utf-8"><title>Project style comparison</title><style>body{margin:20px;background:#faf9f6;color:#151517;font:14px Arial}h1{font-size:24px}h2{font-size:18px;margin:30px 0 14px}.board{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}figure{margin:0}figcaption{padding:9px 0}img{display:block;width:100%;height:auto}.controls{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}.controls img{width:auto;max-width:100%}</style><h1>AWS / Microsoft DevOps / CrewAI / AssessFlow</h1>';
+  let html = '<!doctype html><meta charset="utf-8"><title>Project style comparison</title><style>body{margin:20px;background:#faf9f6;color:#151517;font:14px Arial}h1{font-size:24px}h2{font-size:18px;margin:30px 0 14px}.board{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}figure{margin:0}figcaption{padding:9px 0}img{display:block;width:100%;height:auto}.controls{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:20px}.controls img{width:auto;max-width:100%}</style><h1>AWS / Microsoft DevOps / CrewAI / AssessFlow / Streamlit</h1>';
   for (const width of [1440, 768, 390]) {
     for (const kind of ['hero', 'summary', 'technology', 'modal', 'footer']) {
-      const boardWidth = width === 390 ? 1560 : width === 768 ? 1536 : 1440;
-      let board = `<h2>${kind} · ${width}px</h2><div class="board" style="grid-template-columns:repeat(${width === 390 ? 4 : 2},minmax(0,1fr))">`;
+      const boardWidth = width === 390 ? 1950 : width === 768 ? 1536 : 1440;
+      let board = `<h2>${kind} · ${width}px</h2><div class="board" style="grid-template-columns:repeat(${width === 390 ? 5 : 2},minmax(0,1fr))">`;
       for (const project of pages) {
         const data = (await fs.readFile(`${output}/${project.id}-${width}-${kind}.png`)).toString('base64');
         board += `<figure><figcaption>${project.id}</figcaption><img src="data:image/png;base64,${data}"></figure>`;
@@ -188,12 +189,12 @@ try {
       controls += '</div>';
     }
     controls += '</div>'; html += controls;
-    await reportPage.setViewport({ width: 1200, height: 900 });
-    await reportPage.setContent(`<style>body{font:12px Arial;background:#faf9f6}.controls{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}figure{margin:12px 0}figcaption{padding:6px 0}img{max-width:100%}</style>${controls}`);
+    await reportPage.setViewport({ width: 1500, height: 900 });
+    await reportPage.setContent(`<style>body{font:12px Arial;background:#faf9f6}.controls{display:grid;grid-template-columns:repeat(5,1fr);gap:20px}figure{margin:12px 0}figcaption{padding:6px 0}img{max-width:100%}</style>${controls}`);
     await reportPage.screenshot({ path: `${output}/comparison-controls-${width}.png`, fullPage: true });
   }
   await fs.writeFile(`${output}/comparison.html`, html);
   assert.deepEqual(errors, []);
   await fs.writeFile(`${output}/results.json`, JSON.stringify({ results, protectedFiles, errors }, null, 2));
-  console.log(`PASS: 4 rendered pages at 3 sizes; both corrected pages exactly match reference control/hero/section/modal styles, normal and hover states; centered footer and floating behavior; reduced motion; ${protectedFiles} protected source/document hashes unchanged. Comparison boards saved.`);
+  console.log(`PASS: 5 rendered pages at 3 sizes; all three new pages exactly match reference control/hero/section/modal styles, normal and hover states; centered footer and floating behavior; reduced motion; ${protectedFiles} protected source/document hashes unchanged. Comparison boards saved.`);
 } finally { await browser.close(); }
