@@ -1,0 +1,32 @@
+{
+  "sourceRevision": "81e5a548de1422c7449d68dc35cbbdde26025c18",
+  "trackedFiles": 500,
+  "utf8TextFiles": 297,
+  "filenameMatches": [],
+  "initialOccurrences": [
+    {
+      "file": ".github/workflows/portfolio-verification.yml",
+      "line": 5,
+      "references": 1
+    },
+    {
+      "file": "docs/evidence/lambda-search.json",
+      "line": 140,
+      "references": 1
+    },
+    {
+      "file": "docs/portfolio-hardening/BASELINE.md",
+      "line": 3,
+      "references": 1
+    },
+    {
+      "file": "docs/portfolio-hardening/RELEASE_READINESS.md",
+      "line": 3,
+      "references": 1
+    }
+  ],
+  "removedReferences": 4,
+  "remainingContentReferences": 0,
+  "remainingFilenameReferences": 0,
+  "status": "Corrections applied; integrated local/remote verification and final tracked-file audit pending."
+}

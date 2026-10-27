@@ -137,7 +137,8 @@
           "size": 13161
         },
         {
-          "path": "skills/skills-codex/serverless-modal/SKILL.md",
+          "path": "skills/[tool-specific directory omitted]/serverless-modal/SKILL.md",
+          "pathRedaction": "Development-assistant directory name omitted from the recorded external path; repository revision, blob SHA and size remain unchanged.",
           "sha": "9a1792025e03b5ca96b891877167b49a2964d16a",
           "size": 13169
         }

@@ -1,6 +1,6 @@
 # Release readiness and engineering handover
 
-Status: source work is review-ready on `codex/portfolio-hardening`; production approval is withheld pending the owner gates below. Four iterations are complete within their stated verification scope. Iteration 003 is partial only at the hosted-preview verification gate. No merge to main or deliberate production deployment occurred.
+Status: source work is review-ready on `portfolio-hardening`; production approval is withheld pending the owner gates below. Four iterations are complete within their stated verification scope. Iteration 003 is partial only at the hosted-preview verification gate. No merge to main or deliberate production deployment occurred.
 
 Baseline: `79a314553f897135c17095dea1f84df7c8d142ef`. Final application and integrated verification: `b72b16a941c2c35515b3ff0918980aedf099f1bd`. Subsequent handover commit changes documentation/evidence only. Its hash is available in Git and the chat handover; it cannot be embedded in its own content. Main remains at the baseline revision. No source application repository was modified.
 
@@ -71,3 +71,7 @@ High simulated home LCP remains a performance risk. Preserve/assess the intentio
 ## Rollback and deployment status
 
 All implementation is on the task branch; main and production remain unchanged. Review with `git diff 79a314553f897135c17095dea1f84df7c8d142ef..b72b16a941c2c35515b3ff0918980aedf099f1bd`. To abandon before merge, retain/archive the branch and leave main at baseline. If later released, revert the reviewed implementation commits through a new reviewed change or redeploy the known baseline Vercel deployment, then repeat the smoke checklist; do not reset shared history or force-push. Original assets/CVs remain available. This task has not performed that future release or rollback.
+
+## Neutral documentation and branch correction
+
+The engineering history through handover `81e5a548de1422c7449d68dc35cbbdde26025c18` is retained on `portfolio-hardening`. [Cleanup audit](ATTRIBUTION_CLEANUP.md) records the four corrected name references, original file/line locations, unchanged implementation scope and replacement-branch verification. The original branch remains until owner-approved removal; no main merge or production deployment is part of the correction. Earlier application verification and production limitations above remain valid.

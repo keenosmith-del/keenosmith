@@ -1,6 +1,6 @@
 # Baseline audit
 
-Started 27 October 2026 (Africa/Johannesburg). Source `79a314553f897135c17095dea1f84df7c8d142ef`; clean main checkout. Task branch `codex/portfolio-hardening`. No other repositories modified.
+Started 27 October 2026 (Africa/Johannesburg). Source `79a314553f897135c17095dea1f84df7c8d142ef`; clean main checkout. Original engineering branch retains the verified history; the current neutral working branch is `portfolio-hardening`, based on handover `81e5a548de1422c7449d68dc35cbbdde26025c18`. No other repositories modified.
 
 React 19, React Router 7, Vite 8; EmailJS browser contact, Puppeteer 25; oxlint. Vercel serves a Vite SPA and `api/assistant.js`, which imports the server-only deterministic/optional inference handler. No GitHub Actions workflow existed. `vercel.json` rewrote all non-API paths to index.html; no security headers. Raw HTML title was only Keeno Smith; no description, canonical, social metadata, sitemap or robots source.
 
