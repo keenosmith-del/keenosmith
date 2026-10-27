@@ -1,0 +1,881 @@
+{
+  "revision": "79a314553f897135c17095dea1f84df7c8d142ef",
+  "branchAtStart": "main",
+  "initialChanges": [],
+  "dist": [
+    {
+      "path": "dist/Keeno-Smith-CV-ATS-Full-Stack-Engineer-2026.pdf",
+      "bytes": 93783
+    },
+    {
+      "path": "dist/index.html",
+      "bytes": 459
+    },
+    {
+      "path": "dist/.DS_Store",
+      "bytes": 8196
+    },
+    {
+      "path": "dist/url-icon.png",
+      "bytes": 1812159
+    },
+    {
+      "path": "dist/Keeno-Smith-CV-ATS-Cloud-Engineer-2026.pdf",
+      "bytes": 93280
+    },
+    {
+      "path": "dist/Keeno-Smith-CV-ATS-AI-Engineer-2026.pdf",
+      "bytes": 91808
+    },
+    {
+      "path": "dist/cv/avatar-cv.png",
+      "bytes": 1445542
+    },
+    {
+      "path": "dist/cv/signature.png",
+      "bytes": 130686
+    },
+    {
+      "path": "dist/documents/music-api-technical-brief.pdf",
+      "bytes": 5955
+    },
+    {
+      "path": "dist/documents/deepseek-workforce-technical-brief.pdf",
+      "bytes": 8471
+    },
+    {
+      "path": "dist/documents/kailor-insider-engineering-brief.pdf",
+      "bytes": 9831
+    },
+    {
+      "path": "dist/documents/hugging-face-insurance-technical-brief.pdf",
+      "bytes": 58572
+    },
+    {
+      "path": "dist/documents/microsoft-devops-technical-brief.pdf",
+      "bytes": 49214
+    },
+    {
+      "path": "dist/documents/ms-assessflow-executive-summary.pdf",
+      "bytes": 77519
+    },
+    {
+      "path": "dist/documents/.DS_Store",
+      "bytes": 6148
+    },
+    {
+      "path": "dist/documents/eventops-streamlit-executive-summary.pdf",
+      "bytes": 77697
+    },
+    {
+      "path": "dist/documents/gcp-retail-technical-brief.pdf",
+      "bytes": 7185
+    },
+    {
+      "path": "dist/documents/enterprise-workspace-technical-brief.pdf",
+      "bytes": 47566
+    },
+    {
+      "path": "dist/documents/intelligent-manufacturing-qc-technical-brief.pdf",
+      "bytes": 48646
+    },
+    {
+      "path": "dist/documents/crewai-revenueops-executive-summary.pdf",
+      "bytes": 122407
+    },
+    {
+      "path": "dist/documents/ai-entity-technical-brief.pdf",
+      "bytes": 47644
+    },
+    {
+      "path": "dist/documents/supporting-doc-project-1.pdf",
+      "bytes": 371807
+    },
+    {
+      "path": "dist/documents/telecom-billing-technical-brief.pdf",
+      "bytes": 73941
+    },
+    {
+      "path": "dist/documents/fleet-operations-technical-brief.pdf",
+      "bytes": 47858
+    },
+    {
+      "path": "dist/documents/supporting-doc-project-3.pdf",
+      "bytes": 342739
+    },
+    {
+      "path": "dist/documents/supporting-doc-project-2.pdf",
+      "bytes": 498493
+    },
+    {
+      "path": "dist/documents/field-service-maintenance-technical-brief.pdf",
+      "bytes": 41157
+    },
+    {
+      "path": "dist/documents/ollama-private-bi-technical-brief.pdf",
+      "bytes": 49383
+    },
+    {
+      "path": "dist/documents/supporting-doc-project-4.pdf",
+      "bytes": 293973
+    },
+    {
+      "path": "dist/documents/sre-chaos-engineering-technical-brief.pdf",
+      "bytes": 8397
+    },
+    {
+      "path": "dist/documents/EventOps-Executive-Technical-Brief-2.pdf",
+      "bytes": 8598
+    },
+    {
+      "path": "dist/documents/EventOps-Executive-Technical-Brief.pdf",
+      "bytes": 93202
+    },
+    {
+      "path": "dist/documents/n8n-opsflow-technical-brief.pdf",
+      "bytes": 58785
+    },
+    {
+      "path": "dist/documents/aws-banking-risk-executive-summary.pdf",
+      "bytes": 53002
+    },
+    {
+      "path": "dist/documents/enterprise-ai-customer-operations-technical-brief.pdf",
+      "bytes": 41549
+    },
+    {
+      "path": "dist/documents/productivity-platform-technical-brief.pdf",
+      "bytes": 57532
+    },
+    {
+      "path": "dist/documents/claude-procurement-technical-brief.pdf",
+      "bytes": 7465
+    },
+    {
+      "path": "dist/assets/enterprise-ai-mlops-D2gIQ8xh.png",
+      "bytes": 2483887
+    },
+    {
+      "path": "dist/assets/gcp-project-B_Tt1oRK.png",
+      "bytes": 1660257
+    },
+    {
+      "path": "dist/assets/cert1-BN31I0E9.png",
+      "bytes": 285102
+    },
+    {
+      "path": "dist/assets/badge2-DvTXK4iO.png",
+      "bytes": 478547
+    },
+    {
+      "path": "dist/assets/hugging-face-project-5dnkCnKu.png",
+      "bytes": 715143
+    },
+    {
+      "path": "dist/assets/cert3-JUFcaDNb.png",
+      "bytes": 283714
+    },
+    {
+      "path": "dist/assets/hero-full-body-laughing-Dr7EVmkT.png",
+      "bytes": 1059712
+    },
+    {
+      "path": "dist/assets/badge6-BNzoysLm.png",
+      "bytes": 28132
+    },
+    {
+      "path": "dist/assets/logistics-project-BhUIWzpf.png",
+      "bytes": 1539012
+    },
+    {
+      "path": "dist/assets/music-api-project-D-ytLv8_.png",
+      "bytes": 1404682
+    },
+    {
+      "path": "dist/assets/badge4-1eICFoTD.png",
+      "bytes": 31550
+    },
+    {
+      "path": "dist/assets/field-service-project-BqRJyZM_.png",
+      "bytes": 2150615
+    },
+    {
+      "path": "dist/assets/eventops-project-BHgKHcH4.png",
+      "bytes": 704067
+    },
+    {
+      "path": "dist/assets/cert1-GbqOCbTJ.png",
+      "bytes": 653161
+    },
+    {
+      "path": "dist/assets/full-stack-engineering-automation-BVGiS_ZV.mp4",
+      "bytes": 999292
+    },
+    {
+      "path": "dist/assets/badge2-CMpaZrOo.png",
+      "bytes": 38004
+    },
+    {
+      "path": "dist/assets/claude-project-tkFPx_ye.png",
+      "bytes": 2449499
+    },
+    {
+      "path": "dist/assets/ms-project-CJlU-hbp.png",
+      "bytes": 2223468
+    },
+    {
+      "path": "dist/assets/n8n-project-BZDG189j.png",
+      "bytes": 1383992
+    },
+    {
+      "path": "dist/assets/cert7-BUqFsC5n.png",
+      "bytes": 279129
+    },
+    {
+      "path": "dist/assets/laurel-wreath-2-C-dzEHq_.png",
+      "bytes": 301356
+    },
+    {
+      "path": "dist/assets/cert1-CnY6QzWr.png",
+      "bytes": 545978
+    },
+    {
+      "path": "dist/assets/mern-project-Dun5rdQT.png",
+      "bytes": 2244188
+    },
+    {
+      "path": "dist/assets/cert4-CCywrc03.png",
+      "bytes": 228736
+    },
+    {
+      "path": "dist/assets/cert4-iRWLjgo5.png",
+      "bytes": 521385
+    },
+    {
+      "path": "dist/assets/ai-model-project-Cjsdv9bV.png",
+      "bytes": 1571759
+    },
+    {
+      "path": "dist/assets/badge2-DblCjF2e.png",
+      "bytes": 49773
+    },
+    {
+      "path": "dist/assets/cert2-D14vQ8u2.png",
+      "bytes": 197782
+    },
+    {
+      "path": "dist/assets/enterprise-workspace-project-Cb9U6aqt.png",
+      "bytes": 1895201
+    },
+    {
+      "path": "dist/assets/eventops-low-code-streamlit-ChyCaTEG.png",
+      "bytes": 2126314
+    },
+    {
+      "path": "dist/assets/cert1-M4N2xfmm.png",
+      "bytes": 188210
+    },
+    {
+      "path": "dist/assets/cert2-7KuatdBG.png",
+      "bytes": 288917
+    },
+    {
+      "path": "dist/assets/badge1-Ch6v2CX_.png",
+      "bytes": 30887
+    },
+    {
+      "path": "dist/assets/star-wreath-DNLeAhpU.png",
+      "bytes": 231523
+    },
+    {
+      "path": "dist/assets/ollama-project-Db9Jv50b.png",
+      "bytes": 1567347
+    },
+    {
+      "path": "dist/assets/cert3-BcPIdN_C.png",
+      "bytes": 1673404
+    },
+    {
+      "path": "dist/assets/hero-full-body-CR4LzhpR.png",
+      "bytes": 1098917
+    },
+    {
+      "path": "dist/assets/cert2-BQq5G2CM.png",
+      "bytes": 1661697
+    },
+    {
+      "path": "dist/assets/cert6-CdkqXTDn.png",
+      "bytes": 278970
+    },
+    {
+      "path": "dist/assets/cert4-H2EEyumD.png",
+      "bytes": 288321
+    },
+    {
+      "path": "dist/assets/badge9-DgF1Cldv.png",
+      "bytes": 32294
+    },
+    {
+      "path": "dist/assets/laurel-wreath-1-C2eI9CPN.png",
+      "bytes": 328002
+    },
+    {
+      "path": "dist/assets/badge1-1-BoCAJV6T.png",
+      "bytes": 248573
+    },
+    {
+      "path": "dist/assets/mascot-Bwu4zOoL.png",
+      "bytes": 2293777
+    },
+    {
+      "path": "dist/assets/cert2-Clj_hOPH.png",
+      "bytes": 657176
+    },
+    {
+      "path": "dist/assets/badge4-D_uu-lnj.png",
+      "bytes": 42796
+    },
+    {
+      "path": "dist/assets/crewai-revenueops-i5--HQ8g.png",
+      "bytes": 1865411
+    },
+    {
+      "path": "dist/assets/index-BHECZlmy.css",
+      "bytes": 420341,
+      "gzipBytes": 55716
+    },
+    {
+      "path": "dist/assets/cert1-DkFliUjV.png",
+      "bytes": 1557067
+    },
+    {
+      "path": "dist/assets/telecom-project-CiDmide2.png",
+      "bytes": 1682958
+    },
+    {
+      "path": "dist/assets/aws-project-BtDeC7bQ.png",
+      "bytes": 1551934
+    },
+    {
+      "path": "dist/assets/cert5-B0ZqaKnD.png",
+      "bytes": 282679
+    },
+    {
+      "path": "dist/assets/cert1-BVs-NNaA.png",
+      "bytes": 113194
+    },
+    {
+      "path": "dist/assets/badge7-DkN9kPQq.png",
+      "bytes": 30574
+    },
+    {
+      "path": "dist/assets/badge1-k7JCVuuH.png",
+      "bytes": 387407
+    },
+    {
+      "path": "dist/assets/badge8-DaBbiaIW.png",
+      "bytes": 29523
+    },
+    {
+      "path": "dist/assets/mascot-2-J9IBrkhV.png",
+      "bytes": 842097
+    },
+    {
+      "path": "dist/assets/cert1-DUiHrui4.png",
+      "bytes": 51513
+    },
+    {
+      "path": "dist/assets/cert9-D_VEiiit.png",
+      "bytes": 285585
+    },
+    {
+      "path": "dist/assets/badge1-2-DMtgzZiJ.png",
+      "bytes": 257871
+    },
+    {
+      "path": "dist/assets/hr-project-C2fueLRg.png",
+      "bytes": 2288216
+    },
+    {
+      "path": "dist/assets/cert3-BPVTp9E0.png",
+      "bytes": 526893
+    },
+    {
+      "path": "dist/assets/cert2-B9Qnc6CZ.png",
+      "bytes": 527545
+    },
+    {
+      "path": "dist/assets/badge1-CTfJM4xR.png",
+      "bytes": 48508
+    },
+    {
+      "path": "dist/assets/badge5-DZTO-GDX.png",
+      "bytes": 31079
+    },
+    {
+      "path": "dist/assets/cert8-DNuxFpY8.png",
+      "bytes": 278157
+    },
+    {
+      "path": "dist/assets/ms-assessflow-DUDbm3mR.png",
+      "bytes": 2351440
+    },
+    {
+      "path": "dist/assets/intelligence-manufacturing-project-BiF6y3b4.png",
+      "bytes": 2420922
+    },
+    {
+      "path": "dist/assets/kailor-unamused-CtxxCK8S.png",
+      "bytes": 1169435
+    },
+    {
+      "path": "dist/assets/url-icon-B4n83CWA.png",
+      "bytes": 1916115
+    },
+    {
+      "path": "dist/assets/chaos-project-DK4ki844.png",
+      "bytes": 1573321
+    },
+    {
+      "path": "dist/assets/index-BRovxuag.js",
+      "bytes": 984696,
+      "gzipBytes": 264464
+    },
+    {
+      "path": "dist/media/full-stack-engineering-automation-poster.webp",
+      "bytes": 20690
+    },
+    {
+      "path": "dist/media/full-stack-engineering-automation.mp4",
+      "bytes": 999292
+    }
+  ],
+  "images": [
+    {
+      "path": "src/assets/.DS_Store",
+      "bytes": 8196
+    },
+    {
+      "path": "src/assets/images/.DS_Store",
+      "bytes": 8196
+    },
+    {
+      "path": "src/assets/explore-creds/star-wreath.png",
+      "bytes": 231523
+    },
+    {
+      "path": "src/assets/explore-creds/laurel-wreath-1.png",
+      "bytes": 328002
+    },
+    {
+      "path": "src/assets/explore-creds/laurel-wreath-2.png",
+      "bytes": 301356
+    },
+    {
+      "path": "src/assets/svgs/.DS_Store",
+      "bytes": 6148
+    },
+    {
+      "path": "src/assets/certifications/google/cert1.png",
+      "bytes": 51513
+    },
+    {
+      "path": "src/assets/certifications/microsoft/cert3.png",
+      "bytes": 1673404
+    },
+    {
+      "path": "src/assets/certifications/microsoft/cert2.png",
+      "bytes": 1661697
+    },
+    {
+      "path": "src/assets/certifications/microsoft/cert1.png",
+      "bytes": 113194
+    },
+    {
+      "path": "src/assets/certifications/microsoft/cert4.png",
+      "bytes": 228736
+    },
+    {
+      "path": "src/assets/certifications/microsoft/badge1.png",
+      "bytes": 387407
+    },
+    {
+      "path": "src/assets/certifications/n8n/cert3.png",
+      "bytes": 526893
+    },
+    {
+      "path": "src/assets/certifications/n8n/cert2.png",
+      "bytes": 527545
+    },
+    {
+      "path": "src/assets/certifications/n8n/cert1.png",
+      "bytes": 545978
+    },
+    {
+      "path": "src/assets/certifications/n8n/cert4.png",
+      "bytes": 521385
+    },
+    {
+      "path": "src/assets/certifications/n8n/badge4.png",
+      "bytes": 42796
+    },
+    {
+      "path": "src/assets/certifications/n8n/badge1.png",
+      "bytes": 48508
+    },
+    {
+      "path": "src/assets/certifications/n8n/badge2.png",
+      "bytes": 49773
+    },
+    {
+      "path": "src/assets/certifications/ai-ml-scholars/badge1-1.png",
+      "bytes": 248573
+    },
+    {
+      "path": "src/assets/certifications/ai-ml-scholars/badge1-2.png",
+      "bytes": 257871
+    },
+    {
+      "path": "src/assets/certifications/ai-ml-scholars/cert2.png",
+      "bytes": 197782
+    },
+    {
+      "path": "src/assets/certifications/ai-ml-scholars/cert1.png",
+      "bytes": 188210
+    },
+    {
+      "path": "src/assets/certifications/ai-ml-scholars/badge2.png",
+      "bytes": 478547
+    },
+    {
+      "path": "src/assets/certifications/aws/badge9.png",
+      "bytes": 32294
+    },
+    {
+      "path": "src/assets/certifications/aws/badge8.png",
+      "bytes": 29523
+    },
+    {
+      "path": "src/assets/certifications/aws/cert3.png",
+      "bytes": 283714
+    },
+    {
+      "path": "src/assets/certifications/aws/cert2.png",
+      "bytes": 288917
+    },
+    {
+      "path": "src/assets/certifications/aws/cert1.png",
+      "bytes": 285102
+    },
+    {
+      "path": "src/assets/certifications/aws/cert5.png",
+      "bytes": 282679
+    },
+    {
+      "path": "src/assets/certifications/aws/cert4.png",
+      "bytes": 288321
+    },
+    {
+      "path": "src/assets/certifications/aws/cert6.png",
+      "bytes": 278970
+    },
+    {
+      "path": "src/assets/certifications/aws/cert7.png",
+      "bytes": 279129
+    },
+    {
+      "path": "src/assets/certifications/aws/cert9.png",
+      "bytes": 285585
+    },
+    {
+      "path": "src/assets/certifications/aws/cert8.png",
+      "bytes": 278157
+    },
+    {
+      "path": "src/assets/certifications/aws/badge6.png",
+      "bytes": 28132
+    },
+    {
+      "path": "src/assets/certifications/aws/badge7.png",
+      "bytes": 30574
+    },
+    {
+      "path": "src/assets/certifications/aws/badge5.png",
+      "bytes": 31079
+    },
+    {
+      "path": "src/assets/certifications/aws/badge4.png",
+      "bytes": 31550
+    },
+    {
+      "path": "src/assets/certifications/aws/badge1.png",
+      "bytes": 30887
+    },
+    {
+      "path": "src/assets/certifications/aws/badge2.png",
+      "bytes": 38004
+    },
+    {
+      "path": "src/assets/certifications/hyperiondev-stellenbosch/cert2.png",
+      "bytes": 657176
+    },
+    {
+      "path": "src/assets/certifications/hyperiondev-stellenbosch/cert1.png",
+      "bytes": 653161
+    },
+    {
+      "path": "src/assets/certifications/wethinkcode/cert1.png",
+      "bytes": 1557067
+    },
+    {
+      "path": "src/assets/svgs/header/home.svg",
+      "bytes": 932
+    },
+    {
+      "path": "src/assets/svgs/header/github.svg",
+      "bytes": 2058
+    },
+    {
+      "path": "src/assets/svgs/header/linkedin.svg",
+      "bytes": 1032
+    },
+    {
+      "path": "src/assets/images/custom-projects/intelligence-manufacturing-project.png",
+      "bytes": 2420922
+    },
+    {
+      "path": "src/assets/images/custom-projects/crewai-revenueops.png",
+      "bytes": 1865411
+    },
+    {
+      "path": "src/assets/images/custom-projects/.DS_Store",
+      "bytes": 6148
+    },
+    {
+      "path": "src/assets/images/custom-projects/chaos-project.png",
+      "bytes": 1573321
+    },
+    {
+      "path": "src/assets/images/custom-projects/ai-model-project.png",
+      "bytes": 1571759
+    },
+    {
+      "path": "src/assets/images/custom-projects/hr-project.png",
+      "bytes": 2288216
+    },
+    {
+      "path": "src/assets/images/custom-projects/ms-assessflow.png",
+      "bytes": 2351440
+    },
+    {
+      "path": "src/assets/images/custom-projects/field-service-project.png",
+      "bytes": 2150615
+    },
+    {
+      "path": "src/assets/images/custom-projects/claude-project.png",
+      "bytes": 2449499
+    },
+    {
+      "path": "src/assets/images/custom-projects/mern-project.png",
+      "bytes": 2244188
+    },
+    {
+      "path": "src/assets/images/custom-projects/enterprise-workspace-project.png",
+      "bytes": 1895201
+    },
+    {
+      "path": "src/assets/images/custom-projects/enterprise-ai-mlops.png",
+      "bytes": 2483887
+    },
+    {
+      "path": "src/assets/images/custom-projects/music-api-project.png",
+      "bytes": 1404682
+    },
+    {
+      "path": "src/assets/images/custom-projects/eventops-low-code-streamlit.png",
+      "bytes": 2126314
+    },
+    {
+      "path": "src/assets/images/custom-projects/telecom-project.png",
+      "bytes": 1682958
+    },
+    {
+      "path": "src/assets/images/custom-projects/logistics-project.png",
+      "bytes": 1539012
+    },
+    {
+      "path": "src/assets/images/kailor/kailor-unamused.png",
+      "bytes": 1169435
+    },
+    {
+      "path": "src/assets/images/mascot/mascot-2.png",
+      "bytes": 842097
+    },
+    {
+      "path": "src/assets/images/mascot/mascot.png",
+      "bytes": 2293777
+    },
+    {
+      "path": "src/assets/images/avatar/hero-full-body.png",
+      "bytes": 1098917
+    },
+    {
+      "path": "src/assets/images/avatar/hero-full-body-laughing.png",
+      "bytes": 1059712
+    },
+    {
+      "path": "src/assets/images/avatar/url-icon.png",
+      "bytes": 1916115
+    },
+    {
+      "path": "src/assets/images/cloud-section/ms-project.png",
+      "bytes": 2223468
+    },
+    {
+      "path": "src/assets/images/cloud-section/gcp-project.png",
+      "bytes": 1660257
+    },
+    {
+      "path": "src/assets/images/cloud-section/aws-project.png",
+      "bytes": 1551934
+    },
+    {
+      "path": "src/assets/images/ai-section/eventops-project.png",
+      "bytes": 704067
+    },
+    {
+      "path": "src/assets/images/ai-section/hugging-face-project.png",
+      "bytes": 715143
+    },
+    {
+      "path": "src/assets/images/ai-section/ollama-project.png",
+      "bytes": 1567347
+    },
+    {
+      "path": "src/assets/images/full-stack-section/n8n-project.png",
+      "bytes": 1383992
+    },
+    {
+      "path": "src/assets/images/full-stack-section/full-stack-engineering-automation.mp4",
+      "bytes": 999292
+    }
+  ],
+  "pdfs": [
+    {
+      "path": "public/documents/music-api-technical-brief.pdf",
+      "bytes": 5955
+    },
+    {
+      "path": "public/documents/deepseek-workforce-technical-brief.pdf",
+      "bytes": 8471
+    },
+    {
+      "path": "public/documents/kailor-insider-engineering-brief.pdf",
+      "bytes": 9831
+    },
+    {
+      "path": "public/documents/hugging-face-insurance-technical-brief.pdf",
+      "bytes": 58572
+    },
+    {
+      "path": "public/documents/microsoft-devops-technical-brief.pdf",
+      "bytes": 49214
+    },
+    {
+      "path": "public/documents/ms-assessflow-executive-summary.pdf",
+      "bytes": 77519
+    },
+    {
+      "path": "public/documents/.DS_Store",
+      "bytes": 6148
+    },
+    {
+      "path": "public/documents/eventops-streamlit-executive-summary.pdf",
+      "bytes": 77697
+    },
+    {
+      "path": "public/documents/gcp-retail-technical-brief.pdf",
+      "bytes": 7185
+    },
+    {
+      "path": "public/documents/enterprise-workspace-technical-brief.pdf",
+      "bytes": 47566
+    },
+    {
+      "path": "public/documents/intelligent-manufacturing-qc-technical-brief.pdf",
+      "bytes": 48646
+    },
+    {
+      "path": "public/documents/crewai-revenueops-executive-summary.pdf",
+      "bytes": 122407
+    },
+    {
+      "path": "public/documents/ai-entity-technical-brief.pdf",
+      "bytes": 47644
+    },
+    {
+      "path": "public/documents/supporting-doc-project-1.pdf",
+      "bytes": 371807
+    },
+    {
+      "path": "public/documents/telecom-billing-technical-brief.pdf",
+      "bytes": 73941
+    },
+    {
+      "path": "public/documents/fleet-operations-technical-brief.pdf",
+      "bytes": 47858
+    },
+    {
+      "path": "public/documents/supporting-doc-project-3.pdf",
+      "bytes": 342739
+    },
+    {
+      "path": "public/documents/supporting-doc-project-2.pdf",
+      "bytes": 498493
+    },
+    {
+      "path": "public/documents/field-service-maintenance-technical-brief.pdf",
+      "bytes": 41157
+    },
+    {
+      "path": "public/documents/ollama-private-bi-technical-brief.pdf",
+      "bytes": 49383
+    },
+    {
+      "path": "public/documents/supporting-doc-project-4.pdf",
+      "bytes": 293973
+    },
+    {
+      "path": "public/documents/sre-chaos-engineering-technical-brief.pdf",
+      "bytes": 8397
+    },
+    {
+      "path": "public/documents/EventOps-Executive-Technical-Brief-2.pdf",
+      "bytes": 8598
+    },
+    {
+      "path": "public/documents/EventOps-Executive-Technical-Brief.pdf",
+      "bytes": 93202
+    },
+    {
+      "path": "public/documents/n8n-opsflow-technical-brief.pdf",
+      "bytes": 58785
+    },
+    {
+      "path": "public/documents/aws-banking-risk-executive-summary.pdf",
+      "bytes": 53002
+    },
+    {
+      "path": "public/documents/enterprise-ai-customer-operations-technical-brief.pdf",
+      "bytes": 41549
+    },
+    {
+      "path": "public/documents/productivity-platform-technical-brief.pdf",
+      "bytes": 57532
+    },
+    {
+      "path": "public/documents/claude-procurement-technical-brief.pdf",
+      "bytes": 7465
+    }
+  ]
+}
