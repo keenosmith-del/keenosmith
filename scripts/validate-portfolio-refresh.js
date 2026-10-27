@@ -42,7 +42,7 @@ for (const skill of ['CrewAI','FastEmbed','Streamlit','SQLAlchemy','Alembic','Py
 for (const [query, canonical] of [['Postgres','PostgreSQL'],['Express','Express.js'],['Gemini','Google Gemini'],['Azure Foundry','Microsoft Foundry'],['Continuous Integration / Continuous Delivery','CI/CD']]) {
   assert(m.skillIndex.filter(s => m.matchesQuery(s, query)).some(s => s.name === canonical), query);
 }
-for (const id of m.newProjectIds) assert.equal(m.canonicalProjects.find(project => project.id === id).portfolioPublicationStatus, id === 'eventops-streamlit' ? 'not-yet-published' : 'published');
+for (const id of m.newProjectIds) assert.equal(m.canonicalProjects.find(project => project.id === id).portfolioPublicationStatus, 'published');
 assert.equal(m.curatedProjects.find(project => project.id === 'crewai-revenueops').route, '/projects/crewai-revenueops');
 assert.equal(m.curatedProjects.find(project => project.id === 'ms-assessflow').route, '/projects/ms-assessflow');
 for (const project of m.reviewedProjects) {

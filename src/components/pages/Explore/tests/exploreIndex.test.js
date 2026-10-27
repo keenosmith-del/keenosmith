@@ -59,7 +59,7 @@ try {
   for (const id of ['crewai-revenueops', 'eventops-streamlit', 'ms-assessflow']) {
     const entries = curatedProjects.filter(p => p.id === id);
     assert.equal(entries.length, 1);
-    assert.equal(entries[0].route, id === 'eventops-streamlit' ? `/explore/projects/${id}` : `/projects/${id}`);
+    assert.equal(entries[0].route, `/projects/${id}`);
     assert(entries[0].repositoryUrl);
     assert(entries[0].technologies.length > 5);
   }

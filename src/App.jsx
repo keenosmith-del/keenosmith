@@ -35,6 +35,7 @@ import GCPRetail from "./components/pages/projects/GCPRetail/GCPRetail.jsx";
 
 import EventOpsIntelligence from "./components/pages/projects/EventOpsIntelligence/EventOpsIntelligence.jsx";
 import CrewAIRevenueOps from "./components/pages/projects/CrewAIRevenueOps/CrewAIRevenueOps.jsx";
+import EventOpsStreamlit from "./components/pages/projects/EventOpsStreamlit/EventOpsStreamlit.jsx";
 import MicrosoftAssessFlow from "./components/pages/projects/MicrosoftAssessFlow/MicrosoftAssessFlow.jsx";
 import OllamaPrivateBI from "./components/pages/projects/OllamaPrivateBI/OllamaPrivateBI.jsx";
 
@@ -208,6 +209,8 @@ function App() {
 
         <Route path="/projects/crewai-revenueops" element={<CrewAIRevenueOps />} />
         <Route path="/explore/projects/crewai-revenueops" element={<CrewAIRevenueOps />} />
+        <Route path="/projects/eventops-streamlit" element={<EventOpsStreamlit />} />
+        <Route path="/explore/projects/eventops-streamlit" element={<EventOpsStreamlit />} />
         <Route path="/projects/ms-assessflow" element={<MicrosoftAssessFlow />} />
         <Route path="/explore/projects/ms-assessflow" element={<MicrosoftAssessFlow />} />
         <Route path="/projects/banking-risk" element={<AWSBankingRisk />} />

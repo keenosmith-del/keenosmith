@@ -27,7 +27,7 @@ const newProjectDefinitions = [
     repository: 'https://github.com/keenosmith-del/eventops-intelligence-streamlit',
     sourceCommit: '084bd04336f2a92672c6b4285527ed0591582ec3',
     localSourceCommit: 'a1dab9d8942a5fad27e71fb828bd5da274f5a382',
-    path: '/explore/projects/eventops-streamlit', domain: 'AI / Event Operations / Automation',
+    path: '/projects/eventops-streamlit', caseStudyAvailable: true, domain: 'AI / Event Operations / Automation',
     description: 'A Streamlit and n8n event operations companion integrating Gemini, evidence-grounded retrieval, source verification and reviewable AI-assisted workflows.',
     engineering: 'FastEmbed creates genuine semantic vectors; event-aware retrieval and validated citations ground Gemini responses. n8n orchestrates protected webhooks and source-specific checkpoints. A bounded Gemini investigation agent uses read-only tools, while deterministic normalization, replay protection and authoritative source verification govern persisted workflows. SQLAlchemy supports SQLite development persistence and isolated PostgreSQL verification.',
     technologies: ['Streamlit', 'Python', 'n8n', 'FastAPI', 'Google Gemini', 'FastEmbed', 'RAG', 'Embeddings', 'Vector Search', 'Tool calling', 'Structured outputs', 'AI Evaluation', 'Workflow automation', 'Webhooks', 'API Integration', 'Pydantic', 'SQLAlchemy', 'PostgreSQL', 'SQLite', 'Idempotency', 'Database transactions', 'Human approval', 'API Security', 'Docker', 'Docker Compose', 'Caddy', 'GitHub Actions', 'Testing'],
