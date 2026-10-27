@@ -9,3 +9,7 @@
 - Full controlled production-browser suite, 70-shot responsive comparison, final Lighthouse/transfer/repeat-load results, post-target browser check, CI rerun and release report are in progress. Their results must be added before completion status.
 
 Actual visible changes are limited to scoped text contrast and error/post-target feedback. CV body/PDFs, artwork compositions and reference-page source/style hashes are unchanged. No production merge/deployment or live message/provider test performed.
+
+Final comparison caught a real CSS-cascade regression on Explore/Recruiter headings after lazy loading (route CSS arrived after the existing interface overrides). Corrected by keeping all established page CSS in its original static order, while keeping route JavaScript split. This preserves baseline typography rather than accepting the larger standalone headings. Initial final screenshots are superseded; repeat the matrix after correction.
+
+Remote CI rerun 40524222006 passed browser installation and all source/evidence suites, then exposed a workflow sequencing defect: globally exported PORTFOLIO_TEST_URL caused file-only SEO validation to contact a not-yet-started server. Removed that global setting; the browser runner owns its URL/startup. No application outage was involved.

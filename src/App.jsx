@@ -10,7 +10,9 @@ import Header from "./components/navigation/Header.jsx";
 import PortfolioActions from "./components/navigation/PortfolioActions.jsx";
 import Hero from "./components/sections/Hero/Hero.jsx";
 import Cloud from "./components/sections/Cloud/Cloud.jsx";
+import "./components/pages/ProjectPreview/ProjectPreview.css";
 const ProjectPreview = lazy(() => import("./components/pages/ProjectPreview/ProjectPreview.jsx"));
+import "./components/pages/ProjectPlaceholder/ProjectPlaceholder.css";
 const ProjectPlaceholder = lazy(() => import("./components/pages/ProjectPlaceholder/ProjectPlaceholder.jsx"));
 import { cloudProjects } from "./data/cloudProjects.js";
 import AI from "./components/sections/AI/AI.jsx";
@@ -24,9 +26,13 @@ import { selectedProjects } from "./data/selectedProjects.js";
 import SelectedProjects from "./components/sections/SelectedProjects/SelectedProjects.jsx";
 import Footer from "./components/sections/Footer/Footer.jsx";
 
+import "./components/pages/Explore/components/CredentialGallery.css";
+import "./components/pages/Explore/Explore.css";
 const Explore = lazy(() => import("./components/pages/Explore/Explore.jsx"));
 const ExploreProjectPreview = lazy(() => import("./components/pages/Explore/ExploreProjectPreview.jsx"));
+import "./components/pages/CV/CV.css";
 const CV = lazy(() => import("./components/pages/CV/CV.jsx"));
+import "./components/pages/RecruiterView/RecruiterView.css";
 const RecruiterView = lazy(() => import("./components/pages/RecruiterView/RecruiterView.jsx"));
 
 import { rebuildingProjects } from "./data/rebuildingProjects.js";

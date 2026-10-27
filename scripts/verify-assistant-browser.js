@@ -265,8 +265,9 @@ try {
       await page.screenshot({ path: `/tmp/assistant-v2-${width}.png` });
     }
   }
-  // Simulate the viewport metrics delivered when a mobile keyboard opens.
+  // Let the actual resize handler finish before injecting keyboard metrics.
   await page.setViewport({ width: 390, height: 844 });
+  await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
   await page.evaluate(() => {
     document.documentElement.style.setProperty(
       "--assistant-keyboard-offset",
@@ -277,15 +278,10 @@ try {
       "504px",
     );
   });
-  assert(
-    await page.$eval(
-      ".portfolio-chat-panel",
-      (e) =>
-        e.getBoundingClientRect().top >= 0 &&
-        e.querySelector(".assistant-composer").getBoundingClientRect().bottom <
-          504,
-    ),
-  );
+  await page.waitForFunction(() => {
+    const panel=document.querySelector('.portfolio-chat-panel');
+    return panel.getBoundingClientRect().top>=0 && panel.querySelector('.assistant-composer').getBoundingClientRect().bottom<504;
+  });
   await page.evaluate(() => {
     document.documentElement.style.removeProperty(
       "--assistant-keyboard-offset",
