@@ -28,7 +28,7 @@ jobs:
           node-version: '24'
           cache: npm
       - run: npm ci --include=dev
-      - run: npx puppeteer browsers install chrome --install-deps
+      - run: npx puppeteer browsers install chrome
       - run: npm run verify
       - name: Browser and raw HTTP verification against production assets
         run: node scripts/run-browser-verification.js

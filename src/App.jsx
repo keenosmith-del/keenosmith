@@ -97,6 +97,39 @@ import "./components/pages/projects/ManufacturingQC/ManufacturingQC.css";
 import "./components/pages/projects/EnterpriseCustomerOperations/EnterpriseCustomerOperations.css";
 import "./components/pages/projects/shared/ProjectPage.css";
 
+// Concrete pages are declared once; placeholders cannot shadow these routes.
+const projectPageRoutes = [
+  ["/projects/crewai-revenueops", CrewAIRevenueOps],
+  ["/explore/projects/crewai-revenueops", CrewAIRevenueOps],
+  ["/projects/eventops-streamlit", EventOpsStreamlit],
+  ["/explore/projects/eventops-streamlit", EventOpsStreamlit],
+  ["/projects/ms-assessflow", MicrosoftAssessFlow],
+  ["/explore/projects/ms-assessflow", MicrosoftAssessFlow],
+  ["/projects/banking-risk", AWSBankingRisk],
+  ["/projects/microsoft-devops", MicrosoftDevOps],
+  ["/projects/gcp-retail", GCPRetail],
+  ["/projects/eventops-intelligence", EventOpsIntelligence],
+  ["/projects/ollama", OllamaPrivateBI],
+  ["/projects/n8n", OpsFlow],
+  ["/companies/kailor", KailorVentures],
+  ["/projects/claude", ClaudeProcurement],
+  ["/projects/distributed-reliability", SREChaosEngineering],
+  ["/projects/deepseek", DeepSeekWorkforce],
+  ["/projects/telecom-billing", TelecomBilling],
+  ["/projects/field-service", FieldServiceMaintenance],
+  ["/projects/fleet-operations", FleetOperations],
+  ["/projects/hugging-face", HuggingFaceInsurance],
+  ["/projects/productivity-platform", ProductivityPlatform],
+  ["/projects/music-api", MusicAPI],
+  ["/projects/enterprise-workspace", EnterpriseWorkspace],
+  ["/projects/ai-assistant", AIEntity],
+  ["/projects/intelligence-manufacturing-llmops", ManufacturingQC],
+  ["/projects/enterprise-ai-mlops", EnterpriseCustomerOperations],
+  ["/explore/projects/:projectId", ExploreProjectPreview],
+];
+const detailedPaths = new Set(projectPageRoutes.map(([route]) => route));
+const detailedIds = new Set(projectPageRoutes.map(([route]) => route.split('/').at(-1)));
+
 const placeholderProjects = [
   ...rebuildingProjects.map((project) => ({
     ...project,
@@ -138,49 +171,10 @@ function App() {
       <Suspense fallback={<div role="status" aria-label="Loading page" style={{ minHeight: '100svh', background: '#faf9f6' }} />}>
       <Routes>
         <Route path="/" element={<Home />} />
+        {projectPageRoutes.map(([route, Component]) => <Route key={route} path={route} element={<Component />} />)}
 
         {placeholderProjects
-          .filter(
-            (project) =>
-              project.id !== "banking-risk" &&
-              project.route !== "/projects/banking-risk" &&
-              project.id !== "microsoft-devops" &&
-              project.route !== "/projects/microsoft-devops" &&
-              project.id !== "gcp-retail" &&
-              project.route !== "/projects/gcp-retail" &&
-              project.id !== "eventops-intelligence" &&
-              project.route !== "/projects/eventops-intelligence" &&
-              project.id !== "ollama" &&
-              project.route !== "/projects/ollama" &&
-              project.id !== "n8n" &&
-              project.route !== "/projects/n8n" &&
-              project.id !== "claude" &&
-              project.route !== "/projects/claude" &&
-              project.id !== "distributed-reliability" &&
-              project.route !== "/projects/distributed-reliability" &&
-              project.id !== "deepseek" &&
-              project.route !== "/projects/deepseek" &&
-              project.id !== "telecom-billing" &&
-              project.route !== "telecom-billing" &&
-              project.id !== "field-service" &&
-              project.route !== "field-service" &&
-              project.id !== "fleet-operations" &&
-              project.route !== "fleet-operations" &&
-              project.id !== "hugging-face" &&
-              project.route !== "/projects/hugging-face" &&
-              project.id !== "productivity-platform" &&
-              project.route !== "productivity-platform" &&
-              project.id !== "music-api" &&
-              project.route !== "music-api" &&
-              project.id !== "enterprise-workspace" &&
-              project.route !== "enterprise-workspace" &&
-              project.id !== "ai-assistant" &&
-              project.route !== "ai-assistant" &&
-              project.id !== "intelligence-manufacturing-llmops" &&
-              project.route !== "intelligence-manufacturing-llmops" &&
-              project.id !== "enterprise-ai-mlops" &&
-              project.route !== "enterprise-ai-mlops",
-          )
+          .filter(project => !detailedIds.has(project.id) && !detailedPaths.has(project.route))
           .flatMap((project) =>
             [...new Set([project.route, `/projects/${project.id}`])].map(
               (path) => (
@@ -205,28 +199,7 @@ function App() {
             "jwt-redpanda",
           ]),
         ]
-          .filter(
-            (id) =>
-              id !== "banking-risk" &&
-              id !== "microsoft-devops" &&
-              id !== "gcp-retail" &&
-              id !== "eventops-intelligence" &&
-              id !== "ollama" &&
-              id !== "n8n" &&
-              id !== "claude" &&
-              id !== "distributed-reliability" &&
-              id !== "deepseek" &&
-              id !== "field-service" &&
-              id !== "fleet-operations" &&
-              id !== "hugging-face" &&
-              id != "productivity-platform" &&
-              id !== "music-api" &&
-              id !== "enterprise-workspace" &&
-              id !== "ai-entity" &&
-              id != "intelligence-manufacturing-llmops" &&
-              id !== "enterprise-ai-mlops" &&
-              !placeholderProjects.some((project) => project.id === id),
-          )
+          .filter(id => !detailedIds.has(id) && !placeholderProjects.some(project => project.id === id))
           .map((project) => (
             <Route
               key={project}
@@ -234,32 +207,6 @@ function App() {
               element={<ProjectPreview project={project} />}
             />
           ))}
-
-        <Route path="/projects/crewai-revenueops" element={<CrewAIRevenueOps />} />
-        <Route path="/explore/projects/crewai-revenueops" element={<CrewAIRevenueOps />} />
-        <Route path="/projects/eventops-streamlit" element={<EventOpsStreamlit />} />
-        <Route path="/explore/projects/eventops-streamlit" element={<EventOpsStreamlit />} />
-        <Route path="/projects/ms-assessflow" element={<MicrosoftAssessFlow />} />
-        <Route path="/explore/projects/ms-assessflow" element={<MicrosoftAssessFlow />} />
-        <Route path="/projects/banking-risk" element={<AWSBankingRisk />} />
-
-        <Route
-          path="/projects/microsoft-devops"
-          element={<MicrosoftDevOps />}
-        />
-
-        <Route path="/projects/gcp-retail" element={<GCPRetail />} />
-
-        <Route
-          path="/projects/eventops-intelligence"
-          element={<EventOpsIntelligence />}
-        />
-
-        <Route path="/projects/ollama" element={<OllamaPrivateBI />} />
-
-        <Route path="/projects/n8n" element={<OpsFlow />} />
-
-        <Route path="/companies/kailor" element={<KailorVentures />} />
 
         <Route path="/companies/kai" element={<Navigate to="/companies/kailor#kailor-insider" replace />} />
         <Route path="/companies/kailor-insider" element={<Navigate to="/companies/kailor#kailor-insider" replace />} />
@@ -269,62 +216,7 @@ function App() {
         <Route path="/projects/kailor-ai" element={<Navigate to="/companies/kailor#kailor-platform" replace />} />
         <Route path="/explore/projects/kailor-ai" element={<Navigate to="/companies/kailor#kailor-platform" replace />} />
 
-        <Route path="/projects/claude" element={<ClaudeProcurement />} />
-
-        <Route
-          path="/projects/distributed-reliability"
-          element={<SREChaosEngineering />}
-        />
-
-        <Route path="/projects/deepseek" element={<DeepSeekWorkforce />} />
-
-        <Route path="/projects/telecom-billing" element={<TelecomBilling />} />
-
-        <Route
-          path="/projects/field-service"
-          element={<FieldServiceMaintenance />}
-        />
-
-        <Route
-          path="/projects/fleet-operations"
-          element={<FleetOperations />}
-        />
-
-        <Route
-          path="/projects/hugging-face"
-          element={<HuggingFaceInsurance />}
-        />
-
-        <Route
-          path="/projects/productivity-platform"
-          element={<ProductivityPlatform />}
-        />
-
-        <Route path="/projects/music-api" element={<MusicAPI />} />
-
-        <Route
-          path="/projects/enterprise-workspace"
-          element={<EnterpriseWorkspace />}
-        />
-
-        <Route path="/projects/ai-assistant" element={<AIEntity />} />
-
-        <Route
-          path="/projects/intelligence-manufacturing-llmops"
-          element={<ManufacturingQC />}
-        />
-
-        <Route
-          path="/projects/enterprise-ai-mlops"
-          element={<EnterpriseCustomerOperations />}
-        />
-
         <Route path="/explore" element={<Explore />} />
-
-        <Route
-          path="/explore/projects/:projectId"
-          element={<ExploreProjectPreview />}
-        />
 
         <Route path="/cv" element={<CV />} />
 

@@ -50,7 +50,7 @@ export default function CV() {
               <ChevronDown size={14} strokeWidth={1.7} aria-hidden="true" />
             </div>
           </div>
-          <a className="cv-page-control cv-download" href={version.pdf} download={version.downloadFilename} aria-label={`Download ${version.label} CV (PDF)`}>
+          <a className="cv-page-control cv-download" href={version.pdf} download={version.downloadFilename} aria-label={`Download CV — ${version.label} (PDF)`}>
             <span>Download CV</span><Download size={15} strokeWidth={1.8} aria-hidden="true" />
           </a>
         </div>

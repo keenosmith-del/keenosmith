@@ -30,3 +30,9 @@ for source in sorted(Path('src/assets/images').rglob('*.webp')):
         if image.width <= 640: continue
         image.thumbnail((640, 2048), Image.Resampling.LANCZOS)
         image.save(source.with_name(source.stem+'-640.webp'), 'WEBP', lossless=True, exact=True, method=4, icc_profile=image.info.get('icc_profile', b''))
+
+for original, width in [('src/assets/images/avatar/url-icon.png',96), ('src/assets/images/mascot/mascot.png',192)]:
+    source=Path(original)
+    with Image.open(source) as image:
+        image.thumbnail((width,width),Image.Resampling.LANCZOS)
+        image.save(source.with_name(source.stem+f'-{width}.webp'),'WEBP',lossless=True,exact=True,method=4,icc_profile=image.info.get('icc_profile',b''))

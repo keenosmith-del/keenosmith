@@ -38,3 +38,12 @@ export const publicRouteInventory = [...routes.values()];
 const notFound={path:'/404',canonical:null,indexable:false,title:'Page not found — Keeno Smith',description:'This portfolio page could not be found. Return to the portfolio or Explore.'};
 export const routeMetadata = pathname => routes.get(pathname.replace(/\/$/,'')||'/') || notFound;
 export const notFoundMetadata = notFound;
+
+export function structuredDataFor(page) {
+  const url=page.canonical?siteOrigin+page.canonical:null;
+  return {'@context':'https://schema.org','@graph':[
+    {'@type':'Person','@id':siteOrigin+'/#person',name:'Keeno Smith',url:siteOrigin,jobTitle:['Full-Stack Software Engineer','AI Engineer','Cloud Engineer'],sameAs:['https://github.com/keenosmith-del','https://www.linkedin.com/in/keenotreysmith/']},
+    {'@type':'WebSite','@id':siteOrigin+'/#website',url:siteOrigin,name:'Keeno Smith — Engineering Portfolio',author:{'@id':siteOrigin+'/#person'}},
+    ...(url?[{'@type':page.repository?'CreativeWork':'WebPage',name:page.title,description:page.description,url,author:{'@id':siteOrigin+'/#person'},...(page.repository?{isBasedOn:page.repository}: {})}]:[]),
+  ]};
+}

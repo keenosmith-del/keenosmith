@@ -204,9 +204,8 @@ try {
   await page.waitForFunction(
     () =>
       !document.querySelector(".assistant-pending") &&
-      [...document.querySelectorAll(".assistant-text-section h3")].some(
-        (e) => e.textContent === "Demonstrated alignment",
-      ),
+      [...document.querySelectorAll('.assistant-prose')].at(-1)?.textContent.includes('Lacking direct evidence') &&
+      [...document.querySelectorAll('.assistant-prose')].at(-1)?.textContent.includes('Rust'),
   );
   assert(
     (

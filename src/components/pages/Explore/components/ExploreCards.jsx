@@ -18,7 +18,6 @@ export function ProjectTile({ project }) {
   return (
     <ProjectLink
       project={project}
-      aria-label={`View ${project.title}`}
       data-explore-id={project.id}
       style={
         artwork

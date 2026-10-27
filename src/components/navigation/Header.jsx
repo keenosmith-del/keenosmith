@@ -7,7 +7,7 @@ import "./Header.css";
 import { skillGroups } from "../../data/skillGroups.js";
 import { projectConcepts } from "../../data/projectConcepts.js";
 
-import avatar from "../../assets/images/avatar/url-icon.webp";
+import avatar from "../../assets/images/avatar/url-icon-96.webp";
 import githubIcon from "../../assets/svgs/header/github.svg";
 import linkedinIcon from "../../assets/svgs/header/linkedin.svg";
 import homeIcon from "../../assets/svgs/header/home.svg";
@@ -802,6 +802,7 @@ function Header() {
             className={`navigation-links-panel ${isLinksOpen ? "is-open" : ""}`}
             id="navigation-links-panel"
             aria-hidden={!isLinksOpen}
+            inert={!isLinksOpen}
           >
             <div className="navigation-links-grid">
               {linkGroups.map((group) => (

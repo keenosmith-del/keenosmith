@@ -1,0 +1,21 @@
+/* Scoped corrections for task-observed contrast failures. Geometry, backgrounds,
+   type scale and interaction styles remain defined by the existing components. */
+.navigation-links > a:not([aria-current="location"]):not(:hover),
+.navigation-links :is(.navigation-skills-trigger,.navigation-projects-trigger,.navigation-links-trigger,.navigation-cloud-trigger):not(:hover):not([aria-expanded="true"]) { color: #6c6c71; }
+.timeline-index-track button:not([aria-current="step"]) span { color: #6c6c71; }
+.explore-page .explore-hero :is(p,small),
+.explore-page .explore-tabs button[aria-selected="false"],
+.explore-page span[role="status"] { color: #6c6c71; }
+.recruiter-page .recruiter-input label > span,
+.recruiter-page .recruiter-system-secondary { color: #6c6c71; }
+.cv .cv-version-field > label,
+.cv .cv-version-select select { color: #6c6c71; }
+.project-case-study .project-hero :is([class$="pill-list"] span,time,[class$="hero-note"],[class$="platform-note"],[class$="platform-note"] a) { color: #626268; }
+.navigation-links-panel :is(h3,a:not(.is-disabled)) { color: #6c6c71; }
+.project-case-study .project-modal :is(p,.project-modal-pills span) { color: #626268; }
+.portfolio-chat-panel .portfolio-chat-header small,
+.portfolio-chat-panel :is(.assistant-footer-secondary,.assistant-composer-hint) { color: #6c6c71; }
+.chat-modal #chat-modal-title,
+.chat-modal .chat-form-field label { color: #626268; }
+.portfolio-chat-panel .portfolio-chat-footer,
+.portfolio-chat-panel .assistant-section-label { color: #626268; }

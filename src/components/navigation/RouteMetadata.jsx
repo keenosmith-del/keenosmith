@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { routeMetadata, siteOrigin } from '../../data/siteRoutes.js';
+import { routeMetadata, siteOrigin, structuredDataFor } from '../../data/siteRoutes.js';
 
 export default function RouteMetadata() {
   const { pathname } = useLocation();
@@ -18,8 +18,9 @@ export default function RouteMetadata() {
     meta('twitter:card','summary_large_image');meta('twitter:title',page.title);meta('twitter:description',page.description);meta('twitter:image',siteOrigin+'/social-preview.png');
     let canonical=document.head.querySelector('link[rel="canonical"]');
     if(!page.canonical){canonical?.remove()}else{if(!canonical){canonical=document.createElement('link');canonical.rel='canonical';document.head.append(canonical)}canonical.href=siteOrigin+page.canonical}
-    // Raw HTML owns route-specific structured data; remove it after SPA route changes.
-    document.getElementById('route-structured-data')?.remove();
+    let structured=document.getElementById('route-structured-data');
+    if(!structured){structured=document.createElement('script');structured.id='route-structured-data';structured.type='application/ld+json';document.head.append(structured)}
+    structured.textContent=JSON.stringify(structuredDataFor(page));
   },[pathname]);
   return null;
 }

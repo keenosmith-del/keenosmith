@@ -39,7 +39,7 @@ try {
     assert.equal(normalize(await page.$eval(".cv-page", element => element.innerText)), normalize(documentText(version)), `${version.key}: complete document must match its reviewed source data`);
     assert.equal(await page.$eval(".cv-download", element => element.getAttribute("href")), version.pdf);
     assert.equal(await page.$eval(".cv-download", element => element.download), version.downloadFilename);
-    assert.equal(await page.$eval(".cv-download", element => element.getAttribute("aria-label")), `Download ${version.label} CV (PDF)`);
+    assert.equal(await page.$eval(".cv-download", element => element.getAttribute("aria-label")), `Download CV — ${version.label} (PDF)`);
     assert.deepEqual(await page.$$eval(".cv-document-repository a", elements => elements.map(element => element.href)), version.projects.map(project => project.repository));
     assert.equal(await page.$$eval(".cv-download", elements => elements.length), 1);
     assert(!(await page.$eval(".cv-page-controls", element => element.textContent)).includes("ATS"));

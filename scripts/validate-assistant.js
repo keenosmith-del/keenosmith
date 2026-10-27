@@ -74,7 +74,7 @@ const dynamicPaths = [...cloudProjects, ...aiProjects, ...selectedProjects, kail
 for (const p of react.projects)
   assert(
     p.path === "/cv" || (p.path.startsWith("/explore/projects/") && app.includes("/explore/projects/:projectId")) || dynamicPaths.includes(p.path) ||
-      app.includes(`path="${p.path}"`) ||
+      app.includes(`path="${p.path}"`) || app.includes(`["${p.path}",`) ||
       projectConcepts.some((c) => c.id === p.id) ||
       p.status.includes("Planned") ||
       app.includes(`'${p.id}'`) || app.includes(`"${p.id}"`),

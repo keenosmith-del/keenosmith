@@ -19,7 +19,7 @@
     "test:explore": "node src/components/pages/Explore/tests/exploreIndex.test.js",
     "test:seo": "node scripts/verify-seo.js",
     "test:browser": "node scripts/run-browser-verification.js",
-    "verify": "npm run lint && npm run build && npm run test:assistant && npm run test:recruiter && npm run test:refresh && npm run test:hardening && npm run test:explore && npm run test:seo"
+    "verify": "npm run lint && npm run build && npm run test:assistant && npm run test:recruiter && npm run test:refresh && npm run test:hardening && npm run test:explore && node scripts/validate-catalogue-routes.js && npm run test:seo"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
@@ -29,6 +29,7 @@
     "react-router-dom": "^7.18.3"
   },
   "devDependencies": {
+    "@axe-core/puppeteer": "^4.14.0",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.4",
     "@vitejs/plugin-react": "^6.1.0",

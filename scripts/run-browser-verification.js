@@ -24,7 +24,7 @@ try{
   await new Promise(resolve=>setTimeout(resolve,250));
  }
  if(!ready)throw Error('Preview did not become ready');
- for(const script of ['verify-seo','verify-contact-browser','verify-recruiter-browser','verify-cv-browser','verify-assistant-browser','verify-project-navigation','verify-project-pages','verify-project-style-consistency','verify-crewai-case-study','verify-assessflow-case-study','verify-streamlit-case-study','verify-portfolio-refresh-browser','verify-project-tile-presentation']){
+ for(const script of ['verify-seo','verify-contact-browser','verify-recruiter-browser','verify-cv-browser','verify-assistant-browser','verify-project-navigation','verify-project-pages','verify-project-style-consistency','verify-crewai-case-study','verify-assessflow-case-study','verify-streamlit-case-study','verify-portfolio-refresh-browser','verify-project-tile-presentation','verify-accessibility-browser','verify-links-browser','verify-launch-browser']){
   const code=await new Promise((resolve,reject)=>{const child=spawn(process.execPath,[`scripts/${script}.js`],{env,stdio:['ignore','pipe','pipe']});let text='';child.stdout.on('data',chunk=>{text+=chunk;process.stdout.write(chunk)});child.stderr.on('data',chunk=>{text+=chunk;process.stderr.write(chunk)});child.on('error',reject);child.on('exit',async code=>{await fs.writeFile(path.join(output,script+'.log'),text);resolve(code)})});
   results.push({script,code});await fs.writeFile(path.join(output,'results.json'),JSON.stringify(results,null,2));
  }
