@@ -5,7 +5,7 @@ export { conversationalAnswer, respond } from './src/assistant/conversation.js';
 export * from './src/assistant/knowledge.js';
 export { skillIndex, projectIndex } from './src/components/pages/Explore/utils/exploreIndex.js';
 export { candidateProfile, candidateProjects, candidateEvidence, evidenceFingerprint } from './src/components/pages/RecruiterView/utils/candidateEvidence.js';
-export { assessRole } from './src/components/pages/RecruiterView/utils/recruiterScoring.js';`, resolveDir: process.cwd() }, bundle: true, platform: 'node', format: 'esm', outfile: '/tmp/portfolio-refresh-tests.mjs', loader: { '.png': 'empty' } });
+export { assessRole } from './src/components/pages/RecruiterView/utils/recruiterScoring.js';`, resolveDir: process.cwd() }, bundle: true, platform: 'node', format: 'esm', outfile: '/tmp/portfolio-refresh-tests.mjs', loader: { '.png': 'empty', '.webp': 'empty' } });
 const m = await import('/tmp/portfolio-refresh-tests.mjs');
 for (const answer of [m.answer, m.conversationalAnswer]) {
   const crew = answer('Does Keeno have experience with CrewAI?');

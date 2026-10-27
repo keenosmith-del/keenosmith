@@ -5,7 +5,7 @@ import puppeteer from 'puppeteer';
 const base = process.env.PORTFOLIO_TEST_URL || 'http://127.0.0.1:4178';
 const output = '/tmp/portfolio-full-refresh-qa';
 await fs.mkdir(output, { recursive: true });
-await build({ stdin: { contents: `export { skillIndex } from './src/components/pages/Explore/utils/exploreIndex.js';`, resolveDir: process.cwd() }, bundle: true, platform: 'node', format: 'esm', outfile: `${output}/expected.mjs`, loader: { '.png': 'empty' } });
+await build({ stdin: { contents: `export { skillIndex } from './src/components/pages/Explore/utils/exploreIndex.js';`, resolveDir: process.cwd() }, bundle: true, platform: 'node', format: 'esm', outfile: `${output}/expected.mjs`, loader: { '.png': 'empty', '.webp': 'empty' } });
 const { skillIndex } = await import(`${output}/expected.mjs`);
 const projects = [
   ['crewai-revenueops', 'CrewAI RevenueOps Intelligence', '#353336', 'crewai-revenueops'],

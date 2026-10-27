@@ -1,67 +1,67 @@
 // microsoft
-import microsoftCert1 from "../assets/certifications/microsoft/cert1.png";
-import microsoftBadge1 from "../assets/certifications/microsoft/badge1.png";
+import microsoftCert1 from "../assets/certifications/microsoft/cert1.webp";
+import microsoftBadge1 from "../assets/certifications/microsoft/badge1.webp";
 
-import microsoftCert2 from "../assets/certifications/microsoft/cert2.png";
-import microsoftCert3 from "../assets/certifications/microsoft/cert3.png";
-import microsoftCert4 from "../assets/certifications/microsoft/cert4.png";
+import microsoftCert2 from "../assets/certifications/microsoft/cert2.webp";
+import microsoftCert3 from "../assets/certifications/microsoft/cert3.webp";
+import microsoftCert4 from "../assets/certifications/microsoft/cert4.webp";
 
 // aws
-import awsCert1 from "../assets/certifications/aws/cert1.png";
-import badge1 from "../assets/certifications/aws/badge1.png";
+import awsCert1 from "../assets/certifications/aws/cert1.webp";
+import badge1 from "../assets/certifications/aws/badge1.webp";
 
-import awsCert2 from "../assets/certifications/aws/cert2.png";
-import badge2 from "../assets/certifications/aws/badge2.png";
+import awsCert2 from "../assets/certifications/aws/cert2.webp";
+import badge2 from "../assets/certifications/aws/badge2.webp";
 
-import awsCert3 from "../assets/certifications/aws/cert3.png";
+import awsCert3 from "../assets/certifications/aws/cert3.webp";
 
-import awsCert4 from "../assets/certifications/aws/cert4.png";
-import badge4 from "../assets/certifications/aws/badge4.png";
+import awsCert4 from "../assets/certifications/aws/cert4.webp";
+import badge4 from "../assets/certifications/aws/badge4.webp";
 
-import awsCert5 from "../assets/certifications/aws/cert5.png";
-import badge5 from "../assets/certifications/aws/badge5.png";
+import awsCert5 from "../assets/certifications/aws/cert5.webp";
+import badge5 from "../assets/certifications/aws/badge5.webp";
 
-import awsCert6 from "../assets/certifications/aws/cert6.png";
-import badge6 from "../assets/certifications/aws/badge6.png";
+import awsCert6 from "../assets/certifications/aws/cert6.webp";
+import badge6 from "../assets/certifications/aws/badge6.webp";
 
-import awsCert7 from "../assets/certifications/aws/cert7.png";
-import badge7 from "../assets/certifications/aws/badge7.png";
+import awsCert7 from "../assets/certifications/aws/cert7.webp";
+import badge7 from "../assets/certifications/aws/badge7.webp";
 
-import awsCert8 from "../assets/certifications/aws/cert8.png";
-import badge8 from "../assets/certifications/aws/badge8.png";
+import awsCert8 from "../assets/certifications/aws/cert8.webp";
+import badge8 from "../assets/certifications/aws/badge8.webp";
 
-import awsCert9 from "../assets/certifications/aws/cert9.png";
-import badge9 from "../assets/certifications/aws/badge9.png";
+import awsCert9 from "../assets/certifications/aws/cert9.webp";
+import badge9 from "../assets/certifications/aws/badge9.webp";
 
 // hyperion-dev stellenbosch
-import hdStellenboschCert1 from "../assets/certifications/hyperiondev-stellenbosch/cert1.png";
-import hdStellenboschCert2 from "../assets/certifications/hyperiondev-stellenbosch/cert2.png";
+import hdStellenboschCert1 from "../assets/certifications/hyperiondev-stellenbosch/cert1.webp";
+import hdStellenboschCert2 from "../assets/certifications/hyperiondev-stellenbosch/cert2.webp";
 
 // n8n
-import n8nCert1 from "../assets/certifications/n8n/cert1.png";
-import n8nBadge1 from "../assets/certifications/n8n/badge1.png";
+import n8nCert1 from "../assets/certifications/n8n/cert1.webp";
+import n8nBadge1 from "../assets/certifications/n8n/badge1.webp";
 
-import n8nCert2 from "../assets/certifications/n8n/cert2.png";
-import n8nBadge2 from "../assets/certifications/n8n/badge2.png";
+import n8nCert2 from "../assets/certifications/n8n/cert2.webp";
+import n8nBadge2 from "../assets/certifications/n8n/badge2.webp";
 
-import n8nCert3 from "../assets/certifications/n8n/cert3.png";
+import n8nCert3 from "../assets/certifications/n8n/cert3.webp";
 
-import n8nCert4 from "../assets/certifications/n8n/cert4.png";
-import n8nBadge4 from "../assets/certifications/n8n/badge4.png";
+import n8nCert4 from "../assets/certifications/n8n/cert4.webp";
+import n8nBadge4 from "../assets/certifications/n8n/badge4.webp";
 
 // google
-import googleCloudCert1 from "../assets/certifications/google/cert1.png";
+import googleCloudCert1 from "../assets/certifications/google/cert1.webp";
 
 // wethinkcode
-import wtcCert1 from "../assets/certifications/wethinkcode/cert1.png";
+import wtcCert1 from "../assets/certifications/wethinkcode/cert1.webp";
 
 // aws ai/ml scholars
-import aiMLCert1 from "../assets/certifications/ai-ml-scholars/cert1.png";
-import aiMLbadge1_1 from "../assets/certifications/ai-ml-scholars/badge1-1.png";
-import aiMLbadge1_2 from "../assets/certifications/ai-ml-scholars/badge1-2.png";
+import aiMLCert1 from "../assets/certifications/ai-ml-scholars/cert1.webp";
+import aiMLbadge1_1 from "../assets/certifications/ai-ml-scholars/badge1-1.webp";
+import aiMLbadge1_2 from "../assets/certifications/ai-ml-scholars/badge1-2.webp";
 
-import aiMLCert2 from "../assets/certifications/ai-ml-scholars/cert2.png";
-import aiMLbadge2 from "../assets/certifications/ai-ml-scholars/badge2.png";
+import aiMLCert2 from "../assets/certifications/ai-ml-scholars/cert2.webp";
+import aiMLbadge2 from "../assets/certifications/ai-ml-scholars/badge2.webp";
 
 // =========================================================
 // CERTIFICATION DATA

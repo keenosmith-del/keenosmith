@@ -6,7 +6,7 @@ await build({
   platform: "node",
   format: "esm",
   outdir: "/tmp/assistant-expansion",
-  loader: { ".png": "dataurl" },
+  loader: { ".png": "dataurl", ".webp": "dataurl" },
 });
 const { answer } = await import("/tmp/assistant-expansion/engine.js");
 const { projects, skills, credentials, registry } =

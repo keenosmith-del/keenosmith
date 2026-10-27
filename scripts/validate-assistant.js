@@ -7,7 +7,7 @@ await build({
   platform: "node",
   format: "esm",
   outfile: "/tmp/portfolio-assistant-engine.mjs",
-  loader: { ".png": "dataurl" },
+  loader: { ".png": "dataurl", ".webp": "dataurl" },
 });
 const { answer } = await import(
   pathToFileURL("/tmp/portfolio-assistant-engine.mjs")
@@ -67,7 +67,7 @@ export { selectedProjects } from './src/data/selectedProjects.js';
 export { kailorProject } from './src/data/kailorProject.js';
 export { fullStackProject } from './src/data/fullStackProject.js';
 export { rebuildingProjects } from './src/data/rebuildingProjects.js';`, resolveDir: process.cwd() },
- bundle: true, platform: 'node', format: 'esm', outfile: '/tmp/portfolio-assistant-routes.mjs', loader: { '.png': 'empty' } });
+ bundle: true, platform: 'node', format: 'esm', outfile: '/tmp/portfolio-assistant-routes.mjs', loader: { '.png': 'empty', '.webp': 'empty' } });
 const { cloudProjects, aiProjects, selectedProjects, kailorProject, fullStackProject, rebuildingProjects } = await import('/tmp/portfolio-assistant-routes.mjs');
 const dynamicPaths = [...cloudProjects, ...aiProjects, ...selectedProjects, kailorProject, fullStackProject, ...rebuildingProjects]
   .flatMap((p) => [p.route, `/projects/${p.id}`]);

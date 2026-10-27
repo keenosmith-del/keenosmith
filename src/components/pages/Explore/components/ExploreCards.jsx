@@ -34,7 +34,7 @@ export function ProjectTile({ project }) {
       {cover && (
         <img
           className="explore-project-cover"
-          src={cover}
+          src={cover} srcSet={artwork.srcSet} sizes="(max-width: 700px) 90vw, (max-width: 1100px) 60vw, 50vw"
           alt=""
           loading="lazy"
         />

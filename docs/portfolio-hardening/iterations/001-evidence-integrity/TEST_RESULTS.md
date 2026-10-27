@@ -11,3 +11,5 @@
 Baseline browser issue: original sequential run overlapped Vite restarts and later model revision edits. Those results are not claimed as clean baseline. Re-running remaining baseline checks from git-archived 79a3145 under /tmp/portfolio-hardening/baseline-source, isolated port 5175. Initial style run used stale unrelated /tmp protected manifest; actual geometry/style assertions passed before stale hash failed. Final runs use a baseline-captured explicit manifest protecting both reference page sources/styles.
 
 No public form delivery, live provider call, qualification issuer validation or source-application test execution performed. Automated tests do not establish full accessibility. Full screenshot and CV/download reconciliation remain pending integrated verification. Logs outside Git under /tmp/portfolio-hardening.
+
+Isolated baseline rerun: CV, Recruiter, Streamlit, all 260 skill panels/portfolio refresh, and project style suites passed. Assistant still fails the stale expected title, independently reproduced on original source. Accepted CV/PDF reconciliation is therefore browser verified, not inferred from hashes alone.

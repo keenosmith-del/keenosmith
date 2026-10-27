@@ -43,7 +43,7 @@ function ProjectRow({ projects }) {
             </div>
             <div className="cloud-artwork">
               <img
-                src={artwork.image}
+                src={artwork.image} srcSet={artwork.srcSet} sizes="(max-width: 700px) 90vw, (max-width: 1100px) 60vw, 50vw"
                 alt={`${project.title} cover artwork`}
                 loading="lazy"
               />

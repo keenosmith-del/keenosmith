@@ -55,7 +55,7 @@ export default function Cloud() {
               >
                 <span className="cloud-platform">{project.skill}</span>
                 <div className="cloud-artwork">
-                  <img src={artwork.image} alt="" loading="lazy" />
+                  <img src={artwork.image} srcSet={artwork.srcSet} sizes="(max-width: 700px) 90vw, (max-width: 1100px) 60vw, 50vw" alt="" loading="lazy" />
                 </div>
                 <div className="cloud-overlay" aria-hidden="true" />
                 <div className="cloud-tile-caption">

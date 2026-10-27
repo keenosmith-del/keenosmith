@@ -1,3 +1,4 @@
+import { lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import { projectConcepts } from "./data/projectConcepts.js";
@@ -7,8 +8,8 @@ import Header from "./components/navigation/Header.jsx";
 import PortfolioActions from "./components/navigation/PortfolioActions.jsx";
 import Hero from "./components/sections/Hero/Hero.jsx";
 import Cloud from "./components/sections/Cloud/Cloud.jsx";
-import ProjectPreview from "./components/pages/ProjectPreview/ProjectPreview.jsx";
-import ProjectPlaceholder from "./components/pages/ProjectPlaceholder/ProjectPlaceholder.jsx";
+const ProjectPreview = lazy(() => import("./components/pages/ProjectPreview/ProjectPreview.jsx"));
+const ProjectPlaceholder = lazy(() => import("./components/pages/ProjectPlaceholder/ProjectPlaceholder.jsx"));
 import { cloudProjects } from "./data/cloudProjects.js";
 import AI from "./components/sections/AI/AI.jsx";
 import { aiProjects } from "./data/aiProjects.js";
@@ -21,54 +22,77 @@ import { selectedProjects } from "./data/selectedProjects.js";
 import SelectedProjects from "./components/sections/SelectedProjects/SelectedProjects.jsx";
 import Footer from "./components/sections/Footer/Footer.jsx";
 
-import Explore from "./components/pages/Explore/Explore.jsx";
-import ExploreProjectPreview from "./components/pages/Explore/ExploreProjectPreview.jsx";
-import CV from "./components/pages/CV/CV.jsx";
-import RecruiterView from "./components/pages/RecruiterView/RecruiterView.jsx";
+const Explore = lazy(() => import("./components/pages/Explore/Explore.jsx"));
+const ExploreProjectPreview = lazy(() => import("./components/pages/Explore/ExploreProjectPreview.jsx"));
+const CV = lazy(() => import("./components/pages/CV/CV.jsx"));
+const RecruiterView = lazy(() => import("./components/pages/RecruiterView/RecruiterView.jsx"));
 
 import { rebuildingProjects } from "./data/rebuildingProjects.js";
 import { canonicalProjects } from "./assistant/knowledge.js";
 
-import AWSBankingRisk from "./components/pages/projects/AWSBankingRisk/AWSBankingRisk.jsx";
-import MicrosoftDevOps from "./components/pages/projects/MicrosoftDevOps/MicrosoftDevOps.jsx";
-import GCPRetail from "./components/pages/projects/GCPRetail/GCPRetail.jsx";
+const AWSBankingRisk = lazy(() => import("./components/pages/projects/AWSBankingRisk/AWSBankingRisk.jsx"));
+const MicrosoftDevOps = lazy(() => import("./components/pages/projects/MicrosoftDevOps/MicrosoftDevOps.jsx"));
+const GCPRetail = lazy(() => import("./components/pages/projects/GCPRetail/GCPRetail.jsx"));
 
-import EventOpsIntelligence from "./components/pages/projects/EventOpsIntelligence/EventOpsIntelligence.jsx";
-import CrewAIRevenueOps from "./components/pages/projects/CrewAIRevenueOps/CrewAIRevenueOps.jsx";
-import EventOpsStreamlit from "./components/pages/projects/EventOpsStreamlit/EventOpsStreamlit.jsx";
-import MicrosoftAssessFlow from "./components/pages/projects/MicrosoftAssessFlow/MicrosoftAssessFlow.jsx";
-import OllamaPrivateBI from "./components/pages/projects/OllamaPrivateBI/OllamaPrivateBI.jsx";
+const EventOpsIntelligence = lazy(() => import("./components/pages/projects/EventOpsIntelligence/EventOpsIntelligence.jsx"));
+const CrewAIRevenueOps = lazy(() => import("./components/pages/projects/CrewAIRevenueOps/CrewAIRevenueOps.jsx"));
+const EventOpsStreamlit = lazy(() => import("./components/pages/projects/EventOpsStreamlit/EventOpsStreamlit.jsx"));
+const MicrosoftAssessFlow = lazy(() => import("./components/pages/projects/MicrosoftAssessFlow/MicrosoftAssessFlow.jsx"));
+const OllamaPrivateBI = lazy(() => import("./components/pages/projects/OllamaPrivateBI/OllamaPrivateBI.jsx"));
 
-import KailorVentures from "./components/pages/projects/KailorVentures/KailorVentures.jsx";
+const KailorVentures = lazy(() => import("./components/pages/projects/KailorVentures/KailorVentures.jsx"));
 
-import OpsFlow from "./components/pages/projects/OpsFlow/OpsFlow.jsx";
+const OpsFlow = lazy(() => import("./components/pages/projects/OpsFlow/OpsFlow.jsx"));
 
-import ClaudeProcurement from "./components/pages/projects/ClaudeProcurement/ClaudeProcurement.jsx";
+const ClaudeProcurement = lazy(() => import("./components/pages/projects/ClaudeProcurement/ClaudeProcurement.jsx"));
 
-import SREChaosEngineering from "./components/pages/projects/SREChaosEngineering/SREChaosEngineering.jsx";
+const SREChaosEngineering = lazy(() => import("./components/pages/projects/SREChaosEngineering/SREChaosEngineering.jsx"));
 
-import DeepSeekWorkforce from "./components/pages/projects/DeepSeekWorkforce/DeepSeekWorkforce.jsx";
+const DeepSeekWorkforce = lazy(() => import("./components/pages/projects/DeepSeekWorkforce/DeepSeekWorkforce.jsx"));
 
-import TelecomBilling from "./components/pages/projects/TelecomBilling/TelecomBilling.jsx";
+const TelecomBilling = lazy(() => import("./components/pages/projects/TelecomBilling/TelecomBilling.jsx"));
 
-import FieldServiceMaintenance from "./components/pages/projects/FieldServiceMaintenance/FieldServiceMaintenance.jsx";
+const FieldServiceMaintenance = lazy(() => import("./components/pages/projects/FieldServiceMaintenance/FieldServiceMaintenance.jsx"));
 
-import FleetOperations from "./components/pages/projects/FleetOperations/FleetOperations.jsx";
+const FleetOperations = lazy(() => import("./components/pages/projects/FleetOperations/FleetOperations.jsx"));
 
-import HuggingFaceInsurance from "./components/pages/projects/HuggingFaceInsurance/HuggingFaceInsurance.jsx";
+const HuggingFaceInsurance = lazy(() => import("./components/pages/projects/HuggingFaceInsurance/HuggingFaceInsurance.jsx"));
 
-import ProductivityPlatform from "./components/pages/projects/ProductivityPlatform/ProductivityPlatform.jsx";
+const ProductivityPlatform = lazy(() => import("./components/pages/projects/ProductivityPlatform/ProductivityPlatform.jsx"));
 
-import MusicAPI from "./components/pages/projects/MusicAPI/MusicAPI.jsx";
+const MusicAPI = lazy(() => import("./components/pages/projects/MusicAPI/MusicAPI.jsx"));
 
-import EnterpriseWorkspace from "./components/pages/projects/EnterpriseWorkspace/EnterpriseWorkspace.jsx";
+const EnterpriseWorkspace = lazy(() => import("./components/pages/projects/EnterpriseWorkspace/EnterpriseWorkspace.jsx"));
 
-import AIEntity from "./components/pages/projects/AIEntity/AIEntity.jsx";
+const AIEntity = lazy(() => import("./components/pages/projects/AIEntity/AIEntity.jsx"));
 
-import ManufacturingQC from "./components/pages/projects/ManufacturingQC/ManufacturingQC.jsx";
+const ManufacturingQC = lazy(() => import("./components/pages/projects/ManufacturingQC/ManufacturingQC.jsx"));
 
-import EnterpriseCustomerOperations from "./components/pages/projects/EnterpriseCustomerOperations/EnterpriseCustomerOperations.jsx";
+const EnterpriseCustomerOperations = lazy(() => import("./components/pages/projects/EnterpriseCustomerOperations/EnterpriseCustomerOperations.jsx"));
 
+import "./components/pages/projects/AWSBankingRisk/AWSBankingRisk.css";
+import "./components/pages/projects/MicrosoftDevOps/MicrosoftDevOps.css";
+import "./components/pages/projects/GCPRetail/GCPRetail.css";
+import "./components/pages/projects/EventOpsIntelligence/EventOpsIntelligence.css";
+import "./components/pages/projects/CrewAIRevenueOps/CrewAIRevenueOps.css";
+import "./components/pages/projects/EventOpsStreamlit/EventOpsStreamlit.css";
+import "./components/pages/projects/MicrosoftAssessFlow/MicrosoftAssessFlow.css";
+import "./components/pages/projects/OllamaPrivateBI/OllamaPrivateBI.css";
+import "./components/pages/projects/KailorVentures/KailorVentures.css";
+import "./components/pages/projects/OpsFlow/OpsFlow.css";
+import "./components/pages/projects/ClaudeProcurement/ClaudeProcurement.css";
+import "./components/pages/projects/SREChaosEngineering/SREChaosEngineering.css";
+import "./components/pages/projects/DeepSeekWorkforce/DeepSeekWorkforce.css";
+import "./components/pages/projects/TelecomBilling/TelecomBilling.css";
+import "./components/pages/projects/FieldServiceMaintenance/FieldServiceMaintenance.css";
+import "./components/pages/projects/FleetOperations/FleetOperations.css";
+import "./components/pages/projects/HuggingFaceInsurance/HuggingFaceInsurance.css";
+import "./components/pages/projects/ProductivityPlatform/ProductivityPlatform.css";
+import "./components/pages/projects/MusicAPI/MusicAPI.css";
+import "./components/pages/projects/EnterpriseWorkspace/EnterpriseWorkspace.css";
+import "./components/pages/projects/AIEntity/AIEntity.css";
+import "./components/pages/projects/ManufacturingQC/ManufacturingQC.css";
+import "./components/pages/projects/EnterpriseCustomerOperations/EnterpriseCustomerOperations.css";
 import "./components/pages/projects/shared/ProjectPage.css";
 
 const placeholderProjects = [
@@ -108,6 +132,7 @@ function App() {
   return (
     <BrowserRouter>
       <PageScroll />
+      <Suspense fallback={<div role="status" aria-label="Loading page" style={{ minHeight: '100svh', background: '#faf9f6' }} />}>
       <Routes>
         <Route path="/" element={<Home />} />
 
@@ -307,6 +332,7 @@ function App() {
           element={<Navigate to="/explore?tab=credentials" replace />}
         />
       </Routes>
+      </Suspense>
     </BrowserRouter>
   );
 }

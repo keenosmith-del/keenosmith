@@ -12,7 +12,7 @@ import {
 import { ProjectGallery, TileGallery } from "./components/ExploreCards.jsx";
 import CredentialGallery from "./components/CredentialGallery.jsx";
 import SkillDetailPanel from "./components/SkillDetailPanel.jsx";
-import mascot from "../../../assets/images/mascot/mascot.png";
+import mascot from "../../../assets/images/mascot/mascot.webp";
 import "./Explore.css";
 
 const tabs = ["projects", "skills", "credentials"];

@@ -7,7 +7,7 @@ import {
   useState,
 } from "react";
 import { ArrowDown, ArrowRight, SquarePen, X } from "lucide-react";
-import mascot from "../assets/images/mascot/mascot.png";
+import mascot from "../assets/images/mascot/mascot.webp";
 import { respond, starterQuestions } from "./conversation.js";
 import { Evidence, Suggestions } from "./Evidence.jsx";
 import MessageText from "./MessageText.jsx";

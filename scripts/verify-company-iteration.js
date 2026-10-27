@@ -11,7 +11,7 @@ const target = Date.parse('2026-11-06T00:00:00+02:00');
 assert.equal(companyLaunchDate, '2026-11-06');
 assert.equal(target - Date.parse('2026-10-27T00:00:00+02:00'), 10 * 86400000);
 for (const [now, expected] of [[target - 1000, 1000], [target, 0], [target + 1000, 0], [target + 10 * 86400000, 0]]) assert.equal(getLaunchRemaining(now), expected);
-await build({ stdin: { contents: `export { answer } from './src/assistant/engine.js'; export { conversationalAnswer, respond } from './src/assistant/conversation.js';`, resolveDir: process.cwd() }, bundle: true, platform: 'node', format: 'esm', outfile: `${output}/company-engine.mjs`, loader: { '.png': 'empty' } });
+await build({ stdin: { contents: `export { answer } from './src/assistant/engine.js'; export { conversationalAnswer, respond } from './src/assistant/conversation.js';`, resolveDir: process.cwd() }, bundle: true, platform: 'node', format: 'esm', outfile: `${output}/company-engine.mjs`, loader: { '.png': 'empty', '.webp': 'empty' } });
 const { answer, conversationalAnswer, respond } = await import(`${output}/company-engine.mjs`);
 for (const fn of [answer, conversationalAnswer]) {
   for (const query of ['What is kailor?', 'Tell me about kailor insider', 'How are kailor and kailor insider connected?', 'Tell me about kai', 'What is the kailor insider architecture?', 'Is kailor live?', 'Is kailor insider publicly available?']) {

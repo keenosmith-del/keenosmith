@@ -10,7 +10,7 @@ await build({
   platform: "node",
   format: "esm",
   outdir: "/tmp/portfolio-recruiter-tests",
-  loader: { ".png": "dataurl" },
+  loader: { ".png": "dataurl", ".webp": "dataurl" },
   outExtension: { ".js": ".mjs" },
 });
 const { assessRole, assessmentKey, isAssessmentCurrent } =

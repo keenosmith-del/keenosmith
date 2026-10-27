@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Globe } from "lucide-react";
-import kailorMascot from "../../../assets/images/kailor/kailor-unamused.png";
+import kailorMascot from "../../../assets/images/kailor/kailor-unamused.webp";
 import useScrollFade from "../../../hooks/useScrollFade.js";
 import CompanyEmphasis from "../../shared/CompanyEmphasis.jsx";
 import LaunchCountdown from "../../shared/LaunchCountdown.jsx";
