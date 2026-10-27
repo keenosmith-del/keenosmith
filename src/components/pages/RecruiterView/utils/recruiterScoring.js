@@ -8,7 +8,7 @@ import {
   evidenceFingerprint,
 } from "./candidateEvidence.js";
 
-export const MODEL_REVISION = "contextual-2.2.0";
+export const MODEL_REVISION = "contextual-2.2.1";
 export const alignmentLabel = (score) =>
   score >= 75
     ? "Implementation supported"

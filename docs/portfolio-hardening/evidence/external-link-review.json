@@ -1,0 +1,59 @@
+{
+  "checked": 82,
+  "reachable": 73,
+  "review": [
+    {
+      "href": "https://leetcode.com/u/keenosmith/",
+      "status": 403,
+      "finalUrl": "https://leetcode.com/u/keenosmith/",
+      "classification": "restricted/error; manual review"
+    },
+    {
+      "href": "https://stackoverflow.com/users/32030841/keenosmith",
+      "status": 403,
+      "finalUrl": "https://stackoverflow.com/users/32030841/keenosmith",
+      "classification": "restricted/error; manual review"
+    },
+    {
+      "href": "https://www.kaggle.com/keenotreysmith",
+      "status": 404,
+      "finalUrl": "https://www.kaggle.com/keenotreysmith",
+      "classification": "potentially broken; confirm visibility"
+    },
+    {
+      "href": "https://www.linkedin.com/in/keenotreysmith/",
+      "status": 999,
+      "finalUrl": "https://www.linkedin.com/in/keenotreysmith",
+      "classification": "restricted/error; manual review"
+    },
+    {
+      "href": "https://www.npmjs.com/~keenosmith",
+      "status": 403,
+      "finalUrl": "https://www.npmjs.com/~keenosmith",
+      "classification": "restricted/error; manual review"
+    },
+    {
+      "href": "https://dev.to/keenosmithdel",
+      "error": "TypeError",
+      "classification": "unverified network response"
+    },
+    {
+      "href": "https://medium.com/@business.keenosmith",
+      "status": 403,
+      "finalUrl": "https://medium.com/@business.keenosmith",
+      "classification": "restricted/error; manual review"
+    },
+    {
+      "href": "https://github.com/keenosmith-del/kailor",
+      "status": 404,
+      "finalUrl": "https://github.com/keenosmith-del/kailor",
+      "classification": "potentially broken; confirm visibility"
+    },
+    {
+      "href": "https://github.com/keenosmith-del/kailor-insider",
+      "status": 404,
+      "finalUrl": "https://github.com/keenosmith-del/kailor-insider",
+      "classification": "potentially broken; confirm visibility"
+    }
+  ]
+}

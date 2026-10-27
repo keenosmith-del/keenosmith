@@ -11,3 +11,5 @@ D404: Factual Assistant answers use curated deterministic content even with opti
 D405: Update compatible vulnerable packages and lockfile, preserve application framework and existing scripts. Browser tooling belongs in devDependencies. Re-run final matrix on the patched integrated revision.
 
 D406: Branch pushes may trigger existing Vercel previews. Do not merge main or deliberately deploy production. Earlier branch SHA 2917d9a has a successful Vercel check; actual environment/URL still needs inspection.
+
+D407: Pushes changing only docs/** or the root README skip the expensive browser workflow; pull-request verification remains unconditional. This permits a final factual evidence/report commit after a passing application revision without rerunning the same browser matrix solely to record its SHA. Every runtime/tooling/workflow change still triggers verification.

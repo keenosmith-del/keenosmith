@@ -223,7 +223,7 @@ try {
   let resultText = await page.$eval(".recruiter-result", (e) => e.textContent);
   assert(resultText.includes("Fastify or Express.js or NestJS"));
   assert(resultText.includes("Core technical and delivery alignment"));
-  assert(resultText.includes("Model contextual-2.2.0"));
+  assert(resultText.includes("Model contextual-2.2.1"));
   await page.screenshot({
     path: "/tmp/recruiter-strong-fit.png",
     fullPage: true,
