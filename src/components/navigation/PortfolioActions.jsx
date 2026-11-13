@@ -112,6 +112,7 @@ export default function PortfolioActions() {
       <div
         ref={actionsRef}
         className="portfolio-actions"
+        role="complementary"
         aria-label="Portfolio actions"
       >
         <button

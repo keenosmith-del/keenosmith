@@ -1,3 +1,4 @@
+import { portfolioLedger } from './portfolioLedger.js';
 import existingProjectFacts from './reviewedProjectFacts.json' with { type: 'json' };
 import { normalizeSkills } from './skillNames.js';
 import { relationships } from '../assistant/taxonomy.js';
@@ -6,6 +7,7 @@ import { relationships } from '../assistant/taxonomy.js';
 export const evidenceRevision = '2026-10-26.1';
 export const newProjectIds = ['crewai-revenueops', 'eventops-streamlit', 'ms-assessflow'];
 const newProjectDefinitions = [
+  portfolioLedger,
   {
     id: 'crewai-revenueops', title: 'CrewAI RevenueOps Intelligence',
     aliases: ['revenueops', 'revenue ops', 'crew ai revenueops'],
@@ -57,7 +59,7 @@ const newProjectDefinitions = [
 
 const displayIds = { microsoft: 'microsoft-devops', 'manufacturing-qc': 'intelligence-manufacturing-llmops', 'customer-operations': 'enterprise-ai-mlops' };
 export const galleryProjectIds = [
-  ...newProjectIds, 'microsoft', 'banking-risk', 'vertex-ai-retail', 'ollama', 'claude', 'hugging-face',
+  'portfolio-ledger', ...newProjectIds, 'microsoft', 'banking-risk', 'vertex-ai-retail', 'ollama', 'claude', 'hugging-face',
   'distributed-reliability', 'n8n', 'deepseek', 'telecom-billing', 'field-service', 'fleet-operations',
   'productivity-platform', 'music-api', 'enterprise-workspace', 'ai-assistant', 'manufacturing-qc', 'customer-operations', 'eventops-intelligence',
 ];
@@ -76,7 +78,7 @@ function review(project) {
   return {
     ...project, technologies, implementedTechnologies: technologies, configuredTechnologies, capabilities,
     displayId: displayIds[project.id] || project.id,
-    inspectedOn: '2026-10-26',
+    inspectedOn: project.inspectedOn || '2026-10-26',
     verificationScope: 'Source implementation reviewed; test outcomes are repository records, not company suites executed by this portfolio.',
     aliases: [...new Set([...(project.aliases || []), ...(displayIds[project.id] ? [displayIds[project.id]] : [])])],
     ...relationships(technologies),
@@ -84,13 +86,13 @@ function review(project) {
     caseStudyAvailable: project.caseStudyAvailable ?? ((galleryProjectIds.includes(project.id) && !newProjectIds.includes(project.id)) || ['kailor-ai', 'kailor-insider'].includes(project.id)),
     showInExplore: galleryProjectIds.includes(project.id),
     showcaseVisible: true,
-    deploymentStatus: project.id === 'eventops-intelligence' ? 'documented assessment deployment; not reverified live' : 'local implementation; public deployment not established',
+    deploymentStatus: project.deploymentStatus || (project.id === 'eventops-intelligence' ? 'documented assessment deployment; not reverified live' : 'local implementation; public deployment not established'),
     deploymentVerified: false,
     evidence: project.sources.map(path => ({
       type: /\.(json|toml|ya?ml|txt)$/.test(path) ? 'configuration' : /\.md$/.test(path) ? 'documentation' : 'source-code',
       source: `${project.repository}/blob/${project.sourceCommit}/${path}`,
       strength: /\.md$/.test(path) ? 'supporting' : 'direct',
-      revision: project.sourceCommit, inspectedOn: '2026-10-26',
+      revision: project.sourceCommit, inspectedOn: project.inspectedOn || '2026-10-26',
     })),
   };
 }

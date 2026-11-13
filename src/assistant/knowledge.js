@@ -1,7 +1,7 @@
 import historicalProjectSources from "../data/historicalProjectSources.json";
 import { currentCVProjectEvidence } from "../data/currentCVEvidence.js";
 import { canonicalSkill, normalizeSkills } from "../data/skillNames.js";
-import { candidateFacts, educationSummary, experienceSummary, professionalSkillRecords } from '../data/candidateProfile.js';
+import { candidateFacts, educationSummary, experienceSummary, professionalSkillRecords, leadershipRecords } from '../data/candidateProfile.js';
 import { auditedProjects, auditOverrides, exactToolRecords } from '../data/auditedProjects.js';
 import { rebuildingProjects } from "../data/rebuildingProjects.js";
 import {
@@ -332,7 +332,7 @@ export const credentials = certificationGroups.flatMap((g) =>
 );
 export const education = educationSummary;
 export const experience = experienceSummary;
-export { candidateFacts, exactToolRecords, professionalSkillRecords };
+export { candidateFacts, exactToolRecords, professionalSkillRecords, leadershipRecords };
 export const skills = [
   ...new Set([
     ...skillGroups.flatMap((g) => g.skills).map(canonicalSkill),

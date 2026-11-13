@@ -1,0 +1,50 @@
+name: Portfolio verification
+on:
+  pull_request:
+  push:
+    branches: [main, portfolio-hardening]
+    paths-ignore:
+      - 'docs/**'
+      - 'README.md'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: portfolio-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      NODE_ENV: production
+      ASSISTANT_LLM_API_KEY: ''
+      ASSISTANT_LLM_BASE_URL: ''
+      ASSISTANT_LLM_MODEL: ''
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci --include=dev
+      - run: npx puppeteer browsers install chrome
+      - name: Allow the test browser to create its isolation namespaces
+        run: |
+          chrome_binary="$(node scripts/print-browser-path.js)"
+          cat > "$RUNNER_TEMP/portfolio-chromium" <<EOF
+          abi <abi/4.0>,
+          include <tunables/global>
+          profile portfolio-chromium "$chrome_binary" flags=(unconfined) {
+            userns,
+          }
+          EOF
+          sudo install -m 0644 "$RUNNER_TEMP/portfolio-chromium" /etc/apparmor.d/portfolio-chromium
+          sudo apparmor_parser -r /etc/apparmor.d/portfolio-chromium
+      - run: npm run verify
+      - name: Browser and raw HTTP verification against production assets
+        env:
+          PORTFOLIO_TEST_HEADFUL: '1'
+        run: xvfb-run --auto-servernum --server-args="-screen 0 1920x1200x24" node scripts/run-browser-verification.js

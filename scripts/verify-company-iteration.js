@@ -7,11 +7,11 @@ import { companyLaunchDate, getLaunchRemaining } from '../src/data/companyLaunch
 const base = process.env.PORTFOLIO_TEST_URL || 'http://127.0.0.1:5173';
 const output = process.env.COMPANY_QA_OUTPUT || '/tmp/portfolio-company-qa';
 await fs.mkdir(output, { recursive: true });
-const target = Date.parse('2026-11-06T00:00:00+02:00');
-assert.equal(companyLaunchDate, '2026-11-06');
-assert.equal(target - Date.parse('2026-10-27T00:00:00+02:00'), 10 * 86400000);
+const target = Date.parse('2027-05-04T00:00:00+02:00');
+assert.equal(companyLaunchDate, '2027-05-04');
+assert.equal(new Date(target).toISOString(), '2027-05-03T22:00:00.000Z');
 for (const [now, expected] of [[target - 1000, 1000], [target, 0], [target + 1000, 0], [target + 10 * 86400000, 0]]) assert.equal(getLaunchRemaining(now), expected);
-await build({ stdin: { contents: `export { answer } from './src/assistant/engine.js'; export { conversationalAnswer, respond } from './src/assistant/conversation.js';`, resolveDir: process.cwd() }, bundle: true, platform: 'node', format: 'esm', outfile: `${output}/company-engine.mjs`, loader: { '.png': 'empty' } });
+await build({ stdin: { contents: `export { answer } from './src/assistant/engine.js'; export { conversationalAnswer, respond } from './src/assistant/conversation.js';`, resolveDir: process.cwd() }, bundle: true, platform: 'node', format: 'esm', outfile: `${output}/company-engine.mjs`, loader: { '.png': 'empty', '.webp': 'empty' } });
 const { answer, conversationalAnswer, respond } = await import(`${output}/company-engine.mjs`);
 for (const fn of [answer, conversationalAnswer]) {
   for (const query of ['What is kailor?', 'Tell me about kailor insider', 'How are kailor and kailor insider connected?', 'Tell me about kai', 'What is the kailor insider architecture?', 'Is kailor live?', 'Is kailor insider publicly available?']) {
@@ -27,7 +27,7 @@ for (const fn of [answer, conversationalAnswer]) {
   assert.match(insider.text, /owner-only|Owner-only/);
   assert.match(insider.text, /Not production-ready/);
   assert(!insider.projects.some(p => p.implementedTechnologies.includes('Express.js')));
-  assert.match(fn('Is kailor live?').text, /6 November 2026/);
+  assert.match(fn('Is kailor live?').text, /4 May 2027/);
 }
 assert((await respond('What is kailor?', {}, [], { fetcher: () => { throw new Error('Company identity must remain authoritative'); } })).local);
 
@@ -54,7 +54,7 @@ try {
     assert.equal(home.href, 'https://kailor.co.za/');
     assert(home.disabled && home.disabledText === 'Visit kailor insider');
     assert(!home.overflow, `Homepage overflow at ${width}`);
-    assert.match(home.timer, /app launch on 6 November 2026/);
+    assert.match(home.timer, /app launch target on 4 May 2027/);
     await page.keyboard.press('Tab');
     await page.focus('[data-company-id="kailor"]');
     await page.waitForFunction(() => Number(getComputedStyle(document.querySelector('.kailor-feature .cloud-tile-details')).opacity) > .95);

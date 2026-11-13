@@ -6,7 +6,7 @@ import { build } from 'esbuild';
 import { reviewedProjects, evidenceRevision } from '../src/data/projectEvidence.js';
 import { qualifyingAIProjects, aiProjectTarget } from '../src/data/aiInventory.js';
 import { canonicalSkill } from '../src/data/skillNames.js';
-await build({ stdin: { contents: `export { skills, canonicalProjects } from './src/assistant/knowledge.js';`, resolveDir: process.cwd() }, bundle:true, platform:'node', format:'esm', outfile:'/tmp/portfolio-current-evidence-export.mjs', loader:{'.png':'empty'} });
+await build({ stdin: { contents: `export { skills, canonicalProjects } from './src/assistant/knowledge.js';`, resolveDir: process.cwd() }, bundle:true, platform:'node', format:'esm', outfile:'/tmp/portfolio-current-evidence-export.mjs', loader:{'.png':'empty','.webp':'empty'} });
 const current = await import('/tmp/portfolio-current-evidence-export.mjs');
 const baseline = '8bdabc9';
 await build({ stdin: { contents: `export { skills } from './src/assistant/knowledge.js';`, resolveDir:process.cwd() }, bundle:true, platform:'node', format:'esm', outfile:'/tmp/portfolio-baseline-skills.mjs', plugins:[{

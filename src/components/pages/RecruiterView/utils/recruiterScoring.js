@@ -1,3 +1,4 @@
+import { evaluateQualification } from './qualificationEvidence.js';
 import { taxonomy } from "../../../../assistant/taxonomy.js";
 import { extractRequirements } from "./requirementModel.js";
 import {
@@ -7,7 +8,7 @@ import {
   evidenceFingerprint,
 } from "./candidateEvidence.js";
 
-export const MODEL_REVISION = "contextual-2.1.0";
+export const MODEL_REVISION = "contextual-2.2.3";
 export const alignmentLabel = (score) =>
   score >= 75
     ? "Implementation supported"
@@ -65,7 +66,7 @@ function evaluateTenure(row, profile, records, asOf) {
     detail = "",
     supporting = [];
   const excludedContext =
-    /\b(?:paid|employment|employed|production|commercial|regulated)\b/i.test(
+    /\b(?:paid|employment|employed|production|commercial|regulated|leadership|mentoring|management|supervision)\b/i.test(
       text,
     );
   if (d.technologies.length) {
@@ -98,9 +99,9 @@ function evaluateTenure(row, profile, records, asOf) {
         verified: false,
       };
     const years = profile.overallExperience.years;
-    supported = d.bound === 'maximum' ? years <= d.years : d.strict ? years > d.years : years >= d.years;
-    if (d.upperYears) supported = supported && years <= d.upperYears;
-    detail = `Recorded overall relevant experience: ${profile.overallExperience.label}. Requested ${d.bound === 'maximum' ? 'maximum' : 'minimum'}: ${d.years} years${d.upperYears ? `, upper bound ${d.upperYears}` : ''}. ${supported ? 'The recorded baseline supports this threshold.' : d.bound === 'maximum' ? 'Level mismatch: the recorded baseline exceeds this upper limit.' : 'The requested threshold is higher than the recorded baseline.'} Technology-specific and leadership durations are assessed separately.`;
+    supported = d.bound === 'maximum' ? false : d.strict ? years > d.years : years >= d.years;
+    if (d.upperYears) supported = false; // A declared lower bound cannot prove an upper limit.
+    detail = `Recorded overall relevant experience: ${profile.overallExperience.label}. Requested ${d.bound === 'maximum' ? 'maximum' : 'minimum'}: ${d.years} years${d.upperYears ? `, upper bound ${d.upperYears}` : ''}. ${supported ? 'The recorded baseline supports this threshold.' : d.bound === 'maximum' ? 'A declared lower bound cannot establish this upper limit; level compatibility needs review.' : 'The requested threshold is higher than the recorded baseline.'} Technology-specific and leadership durations are assessed separately.`;
     supporting = [
       {
         id: "career-baseline",
@@ -224,6 +225,11 @@ function assessCapability(term, row, records, profile) {
     score = 0;
     detail = "Candidate evidence explicitly records this capability gap.";
   }
+  if (term === 'Technical leadership and mentoring' && declarations.length && !inspected.length) {
+    score = Math.min(score, 30);
+    relation = 'transferable';
+    detail = 'Accepted CV records technical delivery, founder and operational leadership at Firstdaes and kailor. Mentoring, engineering staff management and enterprise-scale leadership are not established.';
+  }
   const requiresLiveCloud = /\b(?:production|live|deployed)\b/i.test(row.sourcePhrase) && /azure|tenant|cloud|aws|gcp|openai|foundry/i.test(row.sourcePhrase) && /Azure|AWS|Google Cloud|Vertex AI|Foundry|Entra|Microsoft Graph|Cloud Run|OIDC|Bicep/.test(term);
   if (requiresLiveCloud && built.length && !built.some(record => record.deploymentVerified === true)) {
     score = Math.min(score, 30);
@@ -277,38 +283,9 @@ function assessRequirement(row, records, profile, asOf) {
   if (row.type === "experience")
     return { ...base, ...evaluateTenure(row, profile, records, asOf) };
   if (["education", "qualification", "certification"].includes(row.type)) {
-    const practical = row.practicalRoute && profile.experience.length > 0;
-    const complete = row.type === "education" && profile.education.assessmentComplete;
-    return {
-      ...base,
-      status: complete ? "Complete" : practical
-        ? "Candidate-declared alternative support"
-        : "Needs review",
-      verified: complete || practical,
-      detail: complete ? "Degree/education requirement complete under the instructed candidate profile. Current CV education wording is retained without adding conferral details." : practical
-        ? "The advert accepts practical experience. The recorded 6+ years across independent engineering, founder work, consulting and professional delivery provide the practical-experience route."
-        : row.type === "education"
-          ? profile.education.wording.join("; ")
-          : "Check the exact named qualification and completion status. Portfolio courses, labs, badges and Applied Skills do not automatically establish a professional certification.",
-      supportingRecords: practical
-        ? [
-            {
-              id: "qualification-route",
-              fact: profile.experience[0].limitations,
-              source: profile.experience[0].source,
-              provenance: "candidate declaration",
-            },
-          ]
-        : [
-            {
-              id: "education-status",
-              fact: profile.education.source,
-              source: "src/components/pages/CV/data/common.json",
-              provenance: "candidate declaration",
-            },
-          ],
-    };
+    return { ...base, ...evaluateQualification(row, profile) };
   }
+
   if (row.type === "condition" || row.type === "review")
     return {
       ...base,

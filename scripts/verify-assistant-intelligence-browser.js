@@ -98,11 +98,14 @@ try {
   // Verify every catalogue destination renders a route instead of an empty outlet.
   for (const path of new Set(projects.map((p) => p.path))) {
     await page.goto(`${base}${path}`, { waitUntil: 'domcontentloaded' });
+    await page.waitForSelector('main, .cv, .project-preview, .project-placeholder');
     assert(await page.$('main, .cv, .project-preview, .project-placeholder'), `Missing page: ${path}`);
   }
   await page.goto(`${base}/explore`, { waitUntil: 'domcontentloaded' });
+  await page.waitForSelector('.explore-page');
   assert(await page.$('.explore-page'));
   await page.goto(`${base}/recruiter-view`, { waitUntil: 'domcontentloaded' });
+  await page.waitForSelector('.recruiter-page');
   assert(await page.$('.recruiter-page'));
   assert.deepEqual(errors, []);
   console.log('Browser: original suggestions, context, Clear/cancellation, failure fallback, close/reopen, typing, five responsive widths, button decoration, every project route, Explore and Recruiter View passed.');

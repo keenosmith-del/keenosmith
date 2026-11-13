@@ -7,7 +7,7 @@ import "./Header.css";
 import { skillGroups } from "../../data/skillGroups.js";
 import { projectConcepts } from "../../data/projectConcepts.js";
 
-import avatar from "../../assets/images/avatar/url-icon.png";
+import avatar from "../../assets/images/avatar/url-icon-96.webp";
 import githubIcon from "../../assets/svgs/header/github.svg";
 import linkedinIcon from "../../assets/svgs/header/linkedin.svg";
 import homeIcon from "../../assets/svgs/header/home.svg";
@@ -254,6 +254,8 @@ function Header() {
 
   const [invalidFields, setInvalidFields] = useState({});
   const [sending, setSending] = useState(false);
+  const [sendError, setSendError] = useState('');
+  const submissionRef = useRef(false);
   const [showSuccess, setShowSuccess] = useState(false);
   const [toastExiting, setToastExiting] = useState(false);
 
@@ -272,6 +274,7 @@ function Header() {
   const handleChatClose = () => {
     setIsChatOpen(false);
     setInvalidFields({});
+    setSendError('');
     setShowSuccess(false);
     setToastExiting(false);
   };
@@ -300,7 +303,7 @@ function Header() {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    if (sending) {
+    if (submissionRef.current) {
       return;
     }
 
@@ -336,6 +339,8 @@ function Header() {
       return;
     }
 
+    submissionRef.current = true;
+    setSendError('');
     setSending(true);
 
     try {
@@ -367,10 +372,10 @@ function Header() {
         setShowSuccess(false);
         setToastExiting(false);
       }, 3500);
-    } catch (error) {
-      console.error("EMAILJS FAILED");
-      console.error(error);
+    } catch {
+      setSendError("Your message was not sent. Please try again or email me directly.");
     } finally {
+      submissionRef.current = false;
       setSending(false);
     }
   };
@@ -448,16 +453,24 @@ function Header() {
       return undefined;
     }
 
-    const handleEscape = (event) => {
-      if (event.key === "Escape") {
-        handleChatClose();
-      }
+    const trigger = document.activeElement;
+    const bodyOverflow=document.body.style.overflow;
+    const htmlOverflow=document.documentElement.style.overflow;
+    document.body.style.overflow='hidden';document.documentElement.style.overflow='hidden';
+    nameRef.current?.focus({preventScroll:true});
+    const handleKeys = (event) => {
+      if (event.key === 'Escape') handleChatClose();
+      if (event.key !== 'Tab') return;
+      const controls=[...document.querySelectorAll('.chat-modal :is(button,input,textarea,a)')].filter(e=>!e.disabled&&e.getClientRects().length);
+      const first=controls[0],last=controls.at(-1);
+      if(event.shiftKey&&document.activeElement===first){event.preventDefault();last?.focus()}
+      else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first?.focus()}
     };
-
-    document.addEventListener("keydown", handleEscape);
-
+    document.addEventListener('keydown',handleKeys);
     return () => {
-      document.removeEventListener("keydown", handleEscape);
+      document.removeEventListener('keydown',handleKeys);
+      document.body.style.overflow=bodyOverflow;document.documentElement.style.overflow=htmlOverflow;
+      if(trigger?.isConnected)trigger.focus({preventScroll:true});
     };
   }, [isChatOpen]);
 
@@ -789,6 +802,7 @@ function Header() {
             className={`navigation-links-panel ${isLinksOpen ? "is-open" : ""}`}
             id="navigation-links-panel"
             aria-hidden={!isLinksOpen}
+            inert={!isLinksOpen}
           >
             <div className="navigation-links-grid">
               {linkGroups.map((group) => (
@@ -908,6 +922,7 @@ function Header() {
               ref={formRef}
               className="chat-form"
               onSubmit={handleSubmit}
+              aria-busy={sending}
               noValidate
             >
               <div className="chat-form-row">
@@ -923,6 +938,8 @@ function Header() {
                     value={formData.name}
                     onChange={handleInputChange}
                     autoComplete="name"
+                    aria-invalid={!!invalidFields.name}
+                    aria-describedby={invalidFields.name ? "contact-validation" : undefined}
                     className={invalidFields.name ? "is-invalid" : ""}
                     required
                   />
@@ -940,6 +957,8 @@ function Header() {
                     value={formData.email}
                     onChange={handleInputChange}
                     autoComplete="email"
+                    aria-invalid={!!invalidFields.email}
+                    aria-describedby={invalidFields.email ? "contact-validation" : undefined}
                     className={invalidFields.email ? "is-invalid" : ""}
                     required
                   />
@@ -957,7 +976,9 @@ function Header() {
                   placeholder="What would you like to discuss?"
                   value={formData.subject}
                   onChange={handleInputChange}
-                  className={invalidFields.subject ? "is-invalid" : ""}
+                  aria-invalid={!!invalidFields.subject}
+                    aria-describedby={invalidFields.subject ? "contact-validation" : undefined}
+                    className={invalidFields.subject ? "is-invalid" : ""}
                   required
                 />
               </div>
@@ -977,6 +998,8 @@ function Header() {
                 />
               </div>
 
+              {Object.values(invalidFields).some(Boolean) && <p id="contact-validation" role="alert">Enter your name, a valid email address and a subject.</p>}
+              {sendError && <p className="chat-form-error" role="alert">{sendError} <a href="mailto:keenosmith@kailor.co.za">keenosmith@kailor.co.za</a></p>}
               <div className="chat-form-actions">
                 <button
                   className="chat-button chat-button-cancel"

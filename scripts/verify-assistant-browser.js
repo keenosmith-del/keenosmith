@@ -6,14 +6,14 @@ try {
   const errors = [];
   page.on("pageerror", (e) => errors.push(e.message));
   await page.setViewport({ width: 1440, height: 1000 });
-  await page.goto("http://127.0.0.1:5173", { waitUntil: "domcontentloaded" });
+  await page.goto(process.env.PORTFOLIO_TEST_URL || "http://127.0.0.1:5173", { waitUntil: "domcontentloaded" });
   await page.click(".portfolio-skills-helper");
   await page.waitForFunction(
     () => document.activeElement.id === "assistant-input",
   );
   assert.equal(
     await page.$eval("#portfolio-chat-title", (e) => e.textContent),
-    "Keeno's Assistant",
+    "Portfolio Assistant",
   );
   assert.equal(
     await page.$eval(".portfolio-chat-footer", (e) => e.textContent),
@@ -21,9 +21,9 @@ try {
   );
   assert.equal(
     await page.$eval(".assistant-footer-secondary", (e) => e.textContent),
-    "Built and designed by Keeno Smith © September 2026",
+    "Keeno Smith © September 2026",
   );
-  assert(await page.$(".assistant-footer-zap"));
+  assert.equal(await page.$eval(".portfolio-chat-footer strong", e => e.textContent), "kailor");
   await page.hover(".portfolio-chat-header button");
   assert.equal(
     await page.$eval(
@@ -48,7 +48,7 @@ try {
     await page.$eval(
       ".portfolio-chat-header img",
       (e) =>
-        e.src.includes("/src/assets/images/mascot/mascot.png") &&
+        /mascot(?:-[\w-]+)?\.(?:png|webp)/.test(e.src) &&
         e.naturalWidth > 0,
     ),
   );
@@ -204,9 +204,8 @@ try {
   await page.waitForFunction(
     () =>
       !document.querySelector(".assistant-pending") &&
-      [...document.querySelectorAll(".assistant-text-section h3")].some(
-        (e) => e.textContent === "Recognised requirements",
-      ),
+      [...document.querySelectorAll('.assistant-prose')].at(-1)?.textContent.includes('Lacking direct evidence') &&
+      [...document.querySelectorAll('.assistant-prose')].at(-1)?.textContent.includes('Rust'),
   );
   assert(
     (
@@ -266,8 +265,9 @@ try {
       await page.screenshot({ path: `/tmp/assistant-v2-${width}.png` });
     }
   }
-  // Simulate the viewport metrics delivered when a mobile keyboard opens.
+  // Let the actual resize handler finish before injecting keyboard metrics.
   await page.setViewport({ width: 390, height: 844 });
+  await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
   await page.evaluate(() => {
     document.documentElement.style.setProperty(
       "--assistant-keyboard-offset",
@@ -278,15 +278,10 @@ try {
       "504px",
     );
   });
-  assert(
-    await page.$eval(
-      ".portfolio-chat-panel",
-      (e) =>
-        e.getBoundingClientRect().top >= 0 &&
-        e.querySelector(".assistant-composer").getBoundingClientRect().bottom <
-          504,
-    ),
-  );
+  await page.waitForFunction(() => {
+    const panel=document.querySelector('.portfolio-chat-panel');
+    return panel.getBoundingClientRect().top>=0 && panel.querySelector('.assistant-composer').getBoundingClientRect().bottom<504;
+  });
   await page.evaluate(() => {
     document.documentElement.style.removeProperty(
       "--assistant-keyboard-offset",

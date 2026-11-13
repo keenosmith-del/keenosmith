@@ -1,0 +1,867 @@
+{
+  "baseline": "79a314553f897135c17095dea1f84df7c8d142ef",
+  "applicationRevision": "b72b16a941c2c35515b3ff0918980aedf099f1bd",
+  "verificationRevision": "b72b16a941c2c35515b3ff0918980aedf099f1bd",
+  "scope": "Committed baseline-to-verified-source changes. Final report-only additions are listed separately; this manifest does not claim its own future commit hash.",
+  "files": [
+    {
+      "status": "A",
+      "path": ".github/workflows/portfolio-verification.yml"
+    },
+    {
+      "status": "M",
+      "path": "README.md"
+    },
+    {
+      "status": "A",
+      "path": "docs/portfolio-hardening/BASELINE.md"
+    },
+    {
+      "status": "A",
+      "path": "docs/portfolio-hardening/CHANGELOG.md"
+    },
+    {
+      "status": "A",
+      "path": "docs/portfolio-hardening/DECISION_LOG.md"
+    },
+    {
+      "status": "A",
+      "path": "docs/portfolio-hardening/DESIGN_CONTRACT.md"
+    },
+    {
+      "status": "A",
+      "path": "docs/portfolio-hardening/PRODUCTION_SMOKE_CHECKLIST.md"
+    },
+    {
+      "status": "A",
+      "path": "docs/portfolio-hardening/README.md"
+    },
+    {
+      "status": "A",
+      "path": "docs/portfolio-hardening/RELEASE_READINESS.md"
+    },
+    {
+      "status": "A",
+      "path": "docs/portfolio-hardening/TEST_MATRIX.md"
+    },
+    {
+      "status": "A",
+      "path": "docs/portfolio-hardening/evidence/assistant-context.json"
+    },
+    {
+      "status": "A",
+      "path": "docs/portfolio-hardening/evidence/baseline.json"
+    },
+    {
+      "status": "A",
+      "path": "docs/portfolio-hardening/evidence/cv-pdf-reconciliation.json"
+    },
+    {
+      "status": "A",
+      "path": "docs/portfolio-hardening/evidence/dependency-audit.json"
+    },
+    {
+      "status": "A",
+      "path": "docs/portfolio-hardening/evidence/external-link-review.json"
+    },
+    {
+      "status": "A",
+      "path": "docs/portfolio-hardening/evidence/image-derivatives.json"
+    },
+    {
+      "status": "A",
+      "path": "docs/portfolio-hardening/evidence/media-fallback.json"
+    },
+    {
+      "status": "A",
+      "path": "docs/portfolio-hardening/evidence/performance-baseline.json"
+    },
+    {
+      "status": "A",
+      "path": "docs/portfolio-hardening/evidence/protected-design.json"
+    },
+    {
+      "status": "A",
+      "path": "docs/portfolio-hardening/evidence/role-comparison.json"
+    },
+    {
+      "status": "A",
+      "path": "docs/portfolio-hardening/iterations/001-evidence-integrity/DECISIONS.md"
+    },
+    {
+      "status": "A",
+      "path": "docs/portfolio-hardening/iterations/001-evidence-integrity/IMPLEMENTATION.md"
+    },
+    {
+      "status": "A",
+      "path": "docs/portfolio-hardening/iterations/001-evidence-integrity/PLAN.md"
+    },
+    {
+      "status": "A",
+      "path": "docs/portfolio-hardening/iterations/001-evidence-integrity/TEST_RESULTS.md"
+    },
+    {
+      "status": "A",
+      "path": "docs/portfolio-hardening/iterations/002-performance/DECISIONS.md"
+    },
+    {
+      "status": "A",
+      "path": "docs/portfolio-hardening/iterations/002-performance/IMPLEMENTATION.md"
+    },
+    {
+      "status": "A",
+      "path": "docs/portfolio-hardening/iterations/002-performance/PLAN.md"
+    },
+    {
+      "status": "A",
+      "path": "docs/portfolio-hardening/iterations/002-performance/TEST_RESULTS.md"
+    },
+    {
+      "status": "A",
+      "path": "docs/portfolio-hardening/iterations/003-seo-discoverability/DECISIONS.md"
+    },
+    {
+      "status": "A",
+      "path": "docs/portfolio-hardening/iterations/003-seo-discoverability/IMPLEMENTATION.md"
+    },
+    {
+      "status": "A",
+      "path": "docs/portfolio-hardening/iterations/003-seo-discoverability/PLAN.md"
+    },
+    {
+      "status": "A",
+      "path": "docs/portfolio-hardening/iterations/003-seo-discoverability/TEST_RESULTS.md"
+    },
+    {
+      "status": "A",
+      "path": "docs/portfolio-hardening/iterations/004-production-quality/DECISIONS.md"
+    },
+    {
+      "status": "A",
+      "path": "docs/portfolio-hardening/iterations/004-production-quality/IMPLEMENTATION.md"
+    },
+    {
+      "status": "A",
+      "path": "docs/portfolio-hardening/iterations/004-production-quality/PLAN.md"
+    },
+    {
+      "status": "A",
+      "path": "docs/portfolio-hardening/iterations/004-production-quality/TEST_RESULTS.md"
+    },
+    {
+      "status": "A",
+      "path": "docs/portfolio-hardening/iterations/005-consolidation-qa/DECISIONS.md"
+    },
+    {
+      "status": "A",
+      "path": "docs/portfolio-hardening/iterations/005-consolidation-qa/IMPLEMENTATION.md"
+    },
+    {
+      "status": "A",
+      "path": "docs/portfolio-hardening/iterations/005-consolidation-qa/PLAN.md"
+    },
+    {
+      "status": "A",
+      "path": "docs/portfolio-hardening/iterations/005-consolidation-qa/TEST_RESULTS.md"
+    },
+    {
+      "status": "M",
+      "path": "index.html"
+    },
+    {
+      "status": "M",
+      "path": "package-lock.json"
+    },
+    {
+      "status": "M",
+      "path": "package.json"
+    },
+    {
+      "status": "A",
+      "path": "public/favicon.png"
+    },
+    {
+      "status": "A",
+      "path": "public/social-preview.png"
+    },
+    {
+      "status": "M",
+      "path": "scripts/build-assistant-server.js"
+    },
+    {
+      "status": "A",
+      "path": "scripts/build-route-html.js"
+    },
+    {
+      "status": "M",
+      "path": "scripts/export-project-evidence.js"
+    },
+    {
+      "status": "A",
+      "path": "scripts/fixtures/recruiter/hardeningRoles.js"
+    },
+    {
+      "status": "M",
+      "path": "scripts/generate-cv-pdf.js"
+    },
+    {
+      "status": "A",
+      "path": "scripts/measure-hardening-performance.js"
+    },
+    {
+      "status": "A",
+      "path": "scripts/optimize-images.py"
+    },
+    {
+      "status": "A",
+      "path": "scripts/print-browser-path.js"
+    },
+    {
+      "status": "A",
+      "path": "scripts/production-smoke.js"
+    },
+    {
+      "status": "A",
+      "path": "scripts/run-browser-verification.js"
+    },
+    {
+      "status": "A",
+      "path": "scripts/validate-api-hardening.js"
+    },
+    {
+      "status": "M",
+      "path": "scripts/validate-assistant-expansion.js"
+    },
+    {
+      "status": "M",
+      "path": "scripts/validate-assistant.js"
+    },
+    {
+      "status": "A",
+      "path": "scripts/validate-catalogue-routes.js"
+    },
+    {
+      "status": "M",
+      "path": "scripts/validate-evidence-refresh.js"
+    },
+    {
+      "status": "A",
+      "path": "scripts/validate-hardening-evidence.js"
+    },
+    {
+      "status": "M",
+      "path": "scripts/validate-portfolio-refresh.js"
+    },
+    {
+      "status": "M",
+      "path": "scripts/validate-recruiter.js"
+    },
+    {
+      "status": "A",
+      "path": "scripts/verify-accessibility-browser.js"
+    },
+    {
+      "status": "M",
+      "path": "scripts/verify-assistant-browser.js"
+    },
+    {
+      "status": "M",
+      "path": "scripts/verify-assistant-intelligence-browser.js"
+    },
+    {
+      "status": "M",
+      "path": "scripts/verify-company-iteration.js"
+    },
+    {
+      "status": "A",
+      "path": "scripts/verify-contact-browser.js"
+    },
+    {
+      "status": "M",
+      "path": "scripts/verify-cv-browser.js"
+    },
+    {
+      "status": "A",
+      "path": "scripts/verify-external-links.js"
+    },
+    {
+      "status": "A",
+      "path": "scripts/verify-hardening-visual.js"
+    },
+    {
+      "status": "A",
+      "path": "scripts/verify-launch-browser.js"
+    },
+    {
+      "status": "A",
+      "path": "scripts/verify-links-browser.js"
+    },
+    {
+      "status": "A",
+      "path": "scripts/verify-media-browser.js"
+    },
+    {
+      "status": "M",
+      "path": "scripts/verify-portfolio-refresh-browser.js"
+    },
+    {
+      "status": "M",
+      "path": "scripts/verify-project-tile-presentation.js"
+    },
+    {
+      "status": "M",
+      "path": "scripts/verify-recruiter-browser.js"
+    },
+    {
+      "status": "A",
+      "path": "scripts/verify-seo.js"
+    },
+    {
+      "status": "M",
+      "path": "server/assistant.js"
+    },
+    {
+      "status": "M",
+      "path": "src/App.jsx"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/certifications/ai-ml-scholars/badge1-1.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/certifications/ai-ml-scholars/badge1-2.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/certifications/ai-ml-scholars/badge2.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/certifications/ai-ml-scholars/cert1.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/certifications/ai-ml-scholars/cert2.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/certifications/aws/badge1.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/certifications/aws/badge2.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/certifications/aws/badge4.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/certifications/aws/badge5.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/certifications/aws/badge6.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/certifications/aws/badge7.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/certifications/aws/badge8.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/certifications/aws/badge9.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/certifications/aws/cert1.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/certifications/aws/cert2.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/certifications/aws/cert3.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/certifications/aws/cert4.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/certifications/aws/cert5.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/certifications/aws/cert6.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/certifications/aws/cert7.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/certifications/aws/cert8.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/certifications/aws/cert9.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/certifications/google/cert1.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/certifications/hyperiondev-stellenbosch/cert1.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/certifications/hyperiondev-stellenbosch/cert2.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/certifications/microsoft/badge1.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/certifications/microsoft/cert1.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/certifications/microsoft/cert2.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/certifications/microsoft/cert3.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/certifications/microsoft/cert4.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/certifications/n8n/badge1.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/certifications/n8n/badge2.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/certifications/n8n/badge4.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/certifications/n8n/cert1.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/certifications/n8n/cert2.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/certifications/n8n/cert3.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/certifications/n8n/cert4.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/certifications/wethinkcode/cert1.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/explore-creds/laurel-wreath-1.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/explore-creds/laurel-wreath-2.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/explore-creds/star-wreath.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/images/ai-section/eventops-project-640.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/images/ai-section/eventops-project.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/images/ai-section/hugging-face-project-640.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/images/ai-section/hugging-face-project.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/images/ai-section/ollama-project-640.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/images/ai-section/ollama-project.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/images/avatar/hero-full-body-laughing.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/images/avatar/hero-full-body.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/images/avatar/url-icon-96.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/images/avatar/url-icon.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/images/cloud-section/aws-project-640.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/images/cloud-section/aws-project.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/images/cloud-section/gcp-project-640.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/images/cloud-section/gcp-project.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/images/cloud-section/ms-project-640.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/images/cloud-section/ms-project.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/images/custom-projects/ai-model-project-640.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/images/custom-projects/ai-model-project.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/images/custom-projects/chaos-project-640.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/images/custom-projects/chaos-project.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/images/custom-projects/claude-project-640.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/images/custom-projects/claude-project.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/images/custom-projects/crewai-revenueops-640.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/images/custom-projects/crewai-revenueops.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/images/custom-projects/enterprise-ai-mlops-640.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/images/custom-projects/enterprise-ai-mlops.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/images/custom-projects/enterprise-workspace-project-640.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/images/custom-projects/enterprise-workspace-project.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/images/custom-projects/eventops-low-code-streamlit-640.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/images/custom-projects/eventops-low-code-streamlit.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/images/custom-projects/field-service-project-640.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/images/custom-projects/field-service-project.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/images/custom-projects/hr-project-640.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/images/custom-projects/hr-project.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/images/custom-projects/intelligence-manufacturing-project-640.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/images/custom-projects/intelligence-manufacturing-project.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/images/custom-projects/logistics-project-640.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/images/custom-projects/logistics-project.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/images/custom-projects/mern-project-640.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/images/custom-projects/mern-project.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/images/custom-projects/ms-assessflow-640.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/images/custom-projects/ms-assessflow.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/images/custom-projects/music-api-project-640.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/images/custom-projects/music-api-project.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/images/custom-projects/telecom-project-640.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/images/custom-projects/telecom-project.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/images/full-stack-section/full-stack-engineering-poster.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/images/full-stack-section/n8n-project-640.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/images/full-stack-section/n8n-project.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/images/kailor/kailor-unamused.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/images/mascot/mascot-192.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/images/mascot/mascot-2.webp"
+    },
+    {
+      "status": "A",
+      "path": "src/assets/images/mascot/mascot.webp"
+    },
+    {
+      "status": "M",
+      "path": "src/assistant/AssistantPanel.jsx"
+    },
+    {
+      "status": "M",
+      "path": "src/assistant/TypedResponse.jsx"
+    },
+    {
+      "status": "M",
+      "path": "src/assistant/knowledge.js"
+    },
+    {
+      "status": "M",
+      "path": "src/assistant/specificAnswer.js"
+    },
+    {
+      "status": "M",
+      "path": "src/components/navigation/Header.css"
+    },
+    {
+      "status": "M",
+      "path": "src/components/navigation/Header.jsx"
+    },
+    {
+      "status": "M",
+      "path": "src/components/navigation/PortfolioActions.jsx"
+    },
+    {
+      "status": "A",
+      "path": "src/components/navigation/RouteMetadata.jsx"
+    },
+    {
+      "status": "M",
+      "path": "src/components/pages/CV/CV.jsx"
+    },
+    {
+      "status": "M",
+      "path": "src/components/pages/Explore/Explore.jsx"
+    },
+    {
+      "status": "M",
+      "path": "src/components/pages/Explore/components/CredentialSeal.jsx"
+    },
+    {
+      "status": "M",
+      "path": "src/components/pages/Explore/components/ExploreCards.jsx"
+    },
+    {
+      "status": "A",
+      "path": "src/components/pages/NotFound.css"
+    },
+    {
+      "status": "A",
+      "path": "src/components/pages/NotFound.jsx"
+    },
+    {
+      "status": "M",
+      "path": "src/components/pages/RecruiterView/README.md"
+    },
+    {
+      "status": "M",
+      "path": "src/components/pages/RecruiterView/RecruiterView.jsx"
+    },
+    {
+      "status": "M",
+      "path": "src/components/pages/RecruiterView/utils/candidateEvidence.js"
+    },
+    {
+      "status": "A",
+      "path": "src/components/pages/RecruiterView/utils/qualificationEvidence.js"
+    },
+    {
+      "status": "M",
+      "path": "src/components/pages/RecruiterView/utils/recruiterScoring.js"
+    },
+    {
+      "status": "M",
+      "path": "src/components/pages/RecruiterView/utils/requirementModel.js"
+    },
+    {
+      "status": "M",
+      "path": "src/components/pages/RecruiterView/utils/requirementVocabulary.js"
+    },
+    {
+      "status": "M",
+      "path": "src/components/sections/AI/AI.jsx"
+    },
+    {
+      "status": "M",
+      "path": "src/components/sections/Cloud/Cloud.jsx"
+    },
+    {
+      "status": "M",
+      "path": "src/components/sections/FullStack/FullStack.jsx"
+    },
+    {
+      "status": "M",
+      "path": "src/components/sections/Hero/Hero.jsx"
+    },
+    {
+      "status": "M",
+      "path": "src/components/sections/Kailor/Kailor.jsx"
+    },
+    {
+      "status": "M",
+      "path": "src/components/sections/SelectedProjects/SelectedProjects.jsx"
+    },
+    {
+      "status": "M",
+      "path": "src/components/shared/LaunchCountdown.jsx"
+    },
+    {
+      "status": "M",
+      "path": "src/data/aiInventory.js"
+    },
+    {
+      "status": "M",
+      "path": "src/data/candidateProfile.js"
+    },
+    {
+      "status": "M",
+      "path": "src/data/credentials.js"
+    },
+    {
+      "status": "M",
+      "path": "src/data/projectArtwork.js"
+    },
+    {
+      "status": "A",
+      "path": "src/data/projectCountPolicy.js"
+    },
+    {
+      "status": "A",
+      "path": "src/data/siteRoutes.js"
+    },
+    {
+      "status": "M",
+      "path": "src/main.jsx"
+    },
+    {
+      "status": "A",
+      "path": "src/styles/accessibility.css"
+    },
+    {
+      "status": "M",
+      "path": "vercel.json"
+    },
+    {
+      "status": "M",
+      "path": "vite.config.js"
+    }
+  ],
+  "finalReportAdditions": [
+    "docs/portfolio-hardening/evidence/ci.json",
+    "docs/portfolio-hardening/evidence/changed-files.json",
+    "docs/portfolio-hardening/evidence/compare-layout.mjs",
+    "docs/portfolio-hardening/evidence/production-read-only.json",
+    "docs/portfolio-hardening/evidence/final-comparison.json",
+    "docs/portfolio-hardening/evidence/verify-contact-inflight.mjs",
+    "docs/portfolio-hardening/evidence/network-waterfall.json",
+    "docs/portfolio-hardening/evidence/commit-history.txt",
+    "docs/portfolio-hardening/evidence/routes.json"
+  ]
+}

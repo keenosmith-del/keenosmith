@@ -8,7 +8,7 @@ try {
   const explore='/explore?tab=projects';
   await page.goto(base+explore,{waitUntil:'networkidle0'});
   const links=await page.$$eval('a.explore-project',els=>els.map(e=>e.getAttribute('href')));
-  assert.equal(links.length,22);
+  assert.equal(links.length,23);
   for(const route of links) {
     const selector=`a.explore-project[href="${route}"]`;
     await page.$eval(selector,e=>e.scrollIntoView({behavior:'instant',block:'center'}));
@@ -36,5 +36,5 @@ try {
   await page.emulateMediaFeatures([{name:'prefers-reduced-motion',value:'reduce'}]);
   await page.goto(base+'/projects/field-service',{waitUntil:'networkidle0'});
   assert.equal(await page.$eval('.project-hero-content',e=>getComputedStyle(e).opacity),'1');
-  console.log('PASS: all 22 Explore entry/return paths, filter retention, direct/refresh fallback, portfolio footer and reduced-motion visibility.');
+  console.log('PASS: all 23 Explore entry/return paths, filter retention, direct/refresh fallback, portfolio footer and reduced-motion visibility.');
 } finally {await browser.close();}

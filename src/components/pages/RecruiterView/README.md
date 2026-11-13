@@ -1,3 +1,5 @@
+> Hardening update 27 October 2026: completed BSc CS is a candidate declaration, not a universal qualification pass. Exact discipline/level and explicit award requests are checked separately. See [hardening decisions](../../../../docs/portfolio-hardening/iterations/001-evidence-integrity/DECISIONS.md). This supersedes broad completion claims in the historical audit below.
+
 > Candidate facts refreshed on 18 October 2026: the shared CV-derived profile uses 6+ overall relevant years, a separate more-than-three-year Python record, and completed degree requirement assessment under candidate instruction. Credit-count and incomplete-degree presentation are superseded. See the [shared audit](../../../../docs/evidence/REFRESH_REPORT.md) and [maintenance process](../../../../docs/evidence/REFRESH_PROCESS.md).
 
 # Recruiter View

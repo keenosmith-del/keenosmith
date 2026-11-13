@@ -18,7 +18,6 @@ export function ProjectTile({ project }) {
   return (
     <ProjectLink
       project={project}
-      aria-label={`View ${project.title}`}
       data-explore-id={project.id}
       style={
         artwork
@@ -31,10 +30,14 @@ export function ProjectTile({ project }) {
       }
       className={`explore-project explore-tone-${project.tone} ${cover ? "explore-project-with-cover" : ""} ${project.visibility === "details" ? "explore-project-always-visible" : "explore-project-title-visible"}`}
     >
-      {cover && (
+      {cover && artwork.viewBox ? (
+        <svg className="explore-project-cover" viewBox={artwork.viewBox} preserveAspectRatio="xMidYMax meet" aria-hidden="true" focusable="false">
+          <image href={cover} width={artwork.width} height={artwork.height} />
+        </svg>
+      ) : cover && (
         <img
           className="explore-project-cover"
-          src={cover}
+          src={cover} srcSet={artwork.srcSet} sizes="(max-width: 700px) 90vw, (max-width: 1100px) 60vw, 50vw"
           alt=""
           loading="lazy"
         />

@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import "./Hero.css";
 
-import avatar from "../../../assets/images/avatar/hero-full-body.png";
-import laughingAvatar from "../../../assets/images/avatar/hero-full-body-laughing.png";
+import avatar from "../../../assets/images/avatar/hero-full-body.webp";
+import laughingAvatar from "../../../assets/images/avatar/hero-full-body-laughing.webp";
 import githubIcon from "../../../assets/svgs/header/github.svg";
 
 function Hero() {

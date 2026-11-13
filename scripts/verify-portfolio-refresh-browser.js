@@ -5,7 +5,7 @@ import puppeteer from 'puppeteer';
 const base = process.env.PORTFOLIO_TEST_URL || 'http://127.0.0.1:4178';
 const output = '/tmp/portfolio-full-refresh-qa';
 await fs.mkdir(output, { recursive: true });
-await build({ stdin: { contents: `export { skillIndex } from './src/components/pages/Explore/utils/exploreIndex.js';`, resolveDir: process.cwd() }, bundle: true, platform: 'node', format: 'esm', outfile: `${output}/expected.mjs`, loader: { '.png': 'empty' } });
+await build({ stdin: { contents: `export { skillIndex } from './src/components/pages/Explore/utils/exploreIndex.js';`, resolveDir: process.cwd() }, bundle: true, platform: 'node', format: 'esm', outfile: `${output}/expected.mjs`, loader: { '.png': 'empty', '.webp': 'empty' } });
 const { skillIndex } = await import(`${output}/expected.mjs`);
 const projects = [
   ['crewai-revenueops', 'CrewAI RevenueOps Intelligence', '#353336', 'crewai-revenueops'],
@@ -23,7 +23,7 @@ try {
   for (const width of [1440, 768, 390, 320]) {
     await page.setViewport({ width, height: 1000 });
     await page.goto(`${base}/explore?tab=projects`, { waitUntil:'networkidle0' });
-    assert.equal(await page.$$eval('.explore-project', tiles => tiles.length), 22);
+    assert.equal(await page.$$eval('.explore-project', tiles => tiles.length), 23);
     assert.equal(await page.$$eval('.explore-project a, .explore-project button', controls => controls.length), 0);
     assert(!await page.evaluate(() => document.documentElement.scrollWidth > innerWidth));
     for (const [id, title, color, artwork] of projects) {

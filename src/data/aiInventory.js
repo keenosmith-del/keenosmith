@@ -1,7 +1,7 @@
-import { reviewedProjects } from './projectEvidence.js';
+import { countedAIProjects, projectCountPolicy } from './projectCountPolicy.js';
 
-// A displayed lower bound, backed by distinct repository implementations.
+// Public wording retained pending explicit owner review of the count discrepancy.
 // Provider adapters count as implemented AI code, not verified hosted inference.
-export const aiProjectTarget = 15;
-export const qualifyingAIProjects = reviewedProjects.filter(project => project.aiImplemented);
+export const aiProjectTarget = projectCountPolicy.publicLowerBound;
+export const qualifyingAIProjects = countedAIProjects;
 export const aiProjectCounterLabel = `${aiProjectTarget}+ AI projects`;

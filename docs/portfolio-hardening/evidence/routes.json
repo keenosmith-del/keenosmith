@@ -1,0 +1,550 @@
+{
+  "canonicalCount": 27,
+  "shellCount": 87,
+  "routes": [
+    {
+      "path": "/",
+      "canonical": "/",
+      "indexable": true
+    },
+    {
+      "path": "/explore",
+      "canonical": "/explore",
+      "indexable": true
+    },
+    {
+      "path": "/recruiter-view",
+      "canonical": "/recruiter-view",
+      "indexable": true
+    },
+    {
+      "path": "/cv",
+      "canonical": "/cv",
+      "indexable": true
+    },
+    {
+      "path": "/companies/kailor",
+      "canonical": "/companies/kailor",
+      "indexable": true
+    },
+    {
+      "path": "/projects/ai-assistant",
+      "canonical": "/projects/ai-assistant",
+      "indexable": true,
+      "id": "ai-assistant",
+      "repository": "https://github.com/keenosmith-del/ai-entity"
+    },
+    {
+      "path": "/projects/productivity-platform",
+      "canonical": "/projects/productivity-platform",
+      "indexable": true,
+      "id": "productivity-platform",
+      "repository": "https://github.com/keenosmith-del/personal-productivity-desktop"
+    },
+    {
+      "path": "/projects/music-api",
+      "canonical": "/projects/music-api",
+      "indexable": true,
+      "id": "music-api",
+      "repository": "https://github.com/keenosmith-del/music-api"
+    },
+    {
+      "path": "/projects/enterprise-workspace",
+      "canonical": "/projects/enterprise-workspace",
+      "indexable": true,
+      "id": "enterprise-workspace",
+      "repository": "https://github.com/keenosmith-del/enterprise-workspace"
+    },
+    {
+      "path": "/projects/microsoft-devops",
+      "canonical": "/projects/microsoft-devops",
+      "indexable": true,
+      "id": "microsoft",
+      "repository": "https://github.com/keenosmith-del/microsoft-ai-powered-software-engineering-devops"
+    },
+    {
+      "path": "/projects/banking-risk",
+      "canonical": "/projects/banking-risk",
+      "indexable": true,
+      "id": "banking-risk",
+      "repository": "https://github.com/keenosmith-del/aws-ai-banking-and-payment-risk"
+    },
+    {
+      "path": "/projects/gcp-retail",
+      "canonical": "/projects/gcp-retail",
+      "indexable": true,
+      "id": "vertex-ai-retail",
+      "repository": "https://github.com/keenosmith-del/gcp-ai-retail-and-supply-chain"
+    },
+    {
+      "path": "/projects/ollama",
+      "canonical": "/projects/ollama",
+      "indexable": true,
+      "id": "ollama",
+      "repository": "https://github.com/keenosmith-del/ollama-private-business-intelligence"
+    },
+    {
+      "path": "/projects/claude",
+      "canonical": "/projects/claude",
+      "indexable": true,
+      "id": "claude",
+      "repository": "https://github.com/keenosmith-del/claude-powered-legal-procurement-intelligence"
+    },
+    {
+      "path": "/projects/hugging-face",
+      "canonical": "/projects/hugging-face",
+      "indexable": true,
+      "id": "hugging-face",
+      "repository": "https://github.com/keenosmith-del/hugging-face-ai-insurance-claims"
+    },
+    {
+      "path": "/projects/distributed-reliability",
+      "canonical": "/projects/distributed-reliability",
+      "indexable": true,
+      "id": "distributed-reliability",
+      "repository": "https://github.com/keenosmith-del/sre-chaos-engineering"
+    },
+    {
+      "path": "/projects/n8n",
+      "canonical": "/projects/n8n",
+      "indexable": true,
+      "id": "n8n",
+      "repository": "https://github.com/keenosmith-del/n8n-workflow-integration-opsflow"
+    },
+    {
+      "path": "/projects/deepseek",
+      "canonical": "/projects/deepseek",
+      "indexable": true,
+      "id": "deepseek",
+      "repository": "https://github.com/keenosmith-del/deepseek-ai-workforce-planning"
+    },
+    {
+      "path": "/projects/telecom-billing",
+      "canonical": "/projects/telecom-billing",
+      "indexable": true,
+      "id": "telecom-billing",
+      "repository": "https://github.com/keenosmith-del/telecomms-billing-management"
+    },
+    {
+      "path": "/projects/field-service",
+      "canonical": "/projects/field-service",
+      "indexable": true,
+      "id": "field-service",
+      "repository": "https://github.com/keenosmith-del/field-service-and-asset-maintenance"
+    },
+    {
+      "path": "/projects/fleet-operations",
+      "canonical": "/projects/fleet-operations",
+      "indexable": true,
+      "id": "fleet-operations",
+      "repository": "https://github.com/keenosmith-del/real-time-logistics-and-fleet-ops"
+    },
+    {
+      "path": "/projects/eventops-intelligence",
+      "canonical": "/projects/eventops-intelligence",
+      "indexable": true,
+      "id": "eventops-intelligence",
+      "repository": "https://github.com/keenosmith-del/eventops-intelligence-v.01"
+    },
+    {
+      "path": "/projects/enterprise-ai-mlops",
+      "canonical": "/projects/enterprise-ai-mlops",
+      "indexable": true,
+      "id": "customer-operations",
+      "repository": "https://github.com/keenosmith-del/enterprise-ai-customer-operations"
+    },
+    {
+      "path": "/projects/intelligence-manufacturing-llmops",
+      "canonical": "/projects/intelligence-manufacturing-llmops",
+      "indexable": true,
+      "id": "manufacturing-qc",
+      "repository": "https://github.com/keenosmith-del/intelligent-manufacturing-qc"
+    },
+    {
+      "path": "/projects/crewai-revenueops",
+      "canonical": "/projects/crewai-revenueops",
+      "indexable": true,
+      "id": "crewai-revenueops",
+      "repository": "https://github.com/keenosmith-del/crewai-revenueops"
+    },
+    {
+      "path": "/projects/eventops-streamlit",
+      "canonical": "/projects/eventops-streamlit",
+      "indexable": true,
+      "id": "eventops-streamlit",
+      "repository": "https://github.com/keenosmith-del/eventops-intelligence-streamlit"
+    },
+    {
+      "path": "/projects/ms-assessflow",
+      "canonical": "/projects/ms-assessflow",
+      "indexable": true,
+      "id": "ms-assessflow",
+      "repository": "https://github.com/keenosmith-del/ms-assessflow"
+    },
+    {
+      "path": "/explore/projects/cv-1",
+      "canonical": "/cv",
+      "indexable": false
+    },
+    {
+      "path": "/explore/projects/cv-2",
+      "canonical": "/cv",
+      "indexable": false
+    },
+    {
+      "path": "/explore/projects/cv-3",
+      "canonical": "/cv",
+      "indexable": false
+    },
+    {
+      "path": "/explore/projects/cv-4",
+      "canonical": "/cv",
+      "indexable": false
+    },
+    {
+      "path": "/explore/projects/cv-5",
+      "canonical": "/cv",
+      "indexable": false
+    },
+    {
+      "path": "/explore/projects/cv-6",
+      "canonical": "/cv",
+      "indexable": false
+    },
+    {
+      "path": "/explore/projects/cv-7",
+      "canonical": "/cv",
+      "indexable": false
+    },
+    {
+      "path": "/explore/projects/cv-8",
+      "canonical": "/cv",
+      "indexable": false
+    },
+    {
+      "path": "/explore/projects/cv-9",
+      "canonical": "/cv",
+      "indexable": false
+    },
+    {
+      "path": "/explore/projects/geospatial-intelligence",
+      "canonical": "/cv",
+      "indexable": false
+    },
+    {
+      "path": "/explore/projects/aws-data-pipeline",
+      "canonical": "/cv",
+      "indexable": false
+    },
+    {
+      "path": "/explore/projects/azure-cyber-threat",
+      "canonical": "/cv",
+      "indexable": false
+    },
+    {
+      "path": "/projects/rabbitmq",
+      "canonical": "/projects/rabbitmq",
+      "indexable": false,
+      "repository": null
+    },
+    {
+      "path": "/explore/projects/rabbitmq",
+      "canonical": "/projects/rabbitmq",
+      "indexable": false,
+      "repository": null
+    },
+    {
+      "path": "/projects/kinesis",
+      "canonical": "/projects/kinesis",
+      "indexable": false,
+      "repository": null
+    },
+    {
+      "path": "/explore/projects/kinesis",
+      "canonical": "/projects/kinesis",
+      "indexable": false,
+      "repository": null
+    },
+    {
+      "path": "/projects/opentofu",
+      "canonical": "/projects/opentofu",
+      "indexable": false,
+      "repository": null
+    },
+    {
+      "path": "/explore/projects/opentofu",
+      "canonical": "/projects/opentofu",
+      "indexable": false,
+      "repository": null
+    },
+    {
+      "path": "/projects/duckdb",
+      "canonical": "/projects/duckdb",
+      "indexable": false,
+      "repository": null
+    },
+    {
+      "path": "/explore/projects/duckdb",
+      "canonical": "/projects/duckdb",
+      "indexable": false,
+      "repository": null
+    },
+    {
+      "path": "/projects/go-dotnet",
+      "canonical": "/projects/go-dotnet",
+      "indexable": false,
+      "repository": null
+    },
+    {
+      "path": "/explore/projects/go-dotnet",
+      "canonical": "/projects/go-dotnet",
+      "indexable": false,
+      "repository": null
+    },
+    {
+      "path": "/projects/openai",
+      "canonical": "/projects/openai",
+      "indexable": false,
+      "repository": null
+    },
+    {
+      "path": "/explore/projects/openai",
+      "canonical": "/projects/openai",
+      "indexable": false,
+      "repository": null
+    },
+    {
+      "path": "/projects/jwt-redpanda",
+      "canonical": "/projects/jwt-redpanda",
+      "indexable": false,
+      "repository": null
+    },
+    {
+      "path": "/explore/projects/jwt-redpanda",
+      "canonical": "/projects/jwt-redpanda",
+      "indexable": false,
+      "repository": null
+    },
+    {
+      "path": "/explore/projects/ai-assistant",
+      "canonical": "/projects/ai-assistant",
+      "indexable": false,
+      "id": "ai-assistant",
+      "repository": "https://github.com/keenosmith-del/ai-entity"
+    },
+    {
+      "path": "/explore/projects/productivity-platform",
+      "canonical": "/projects/productivity-platform",
+      "indexable": false,
+      "id": "productivity-platform",
+      "repository": "https://github.com/keenosmith-del/personal-productivity-desktop"
+    },
+    {
+      "path": "/explore/projects/music-api",
+      "canonical": "/projects/music-api",
+      "indexable": false,
+      "id": "music-api",
+      "repository": "https://github.com/keenosmith-del/music-api"
+    },
+    {
+      "path": "/explore/projects/enterprise-workspace",
+      "canonical": "/projects/enterprise-workspace",
+      "indexable": false,
+      "id": "enterprise-workspace",
+      "repository": "https://github.com/keenosmith-del/enterprise-workspace"
+    },
+    {
+      "path": "/explore/projects/microsoft",
+      "canonical": "/projects/microsoft-devops",
+      "indexable": false,
+      "id": "microsoft",
+      "repository": "https://github.com/keenosmith-del/microsoft-ai-powered-software-engineering-devops"
+    },
+    {
+      "path": "/explore/projects/microsoft-devops",
+      "canonical": "/projects/microsoft-devops",
+      "indexable": false,
+      "id": "microsoft",
+      "repository": "https://github.com/keenosmith-del/microsoft-ai-powered-software-engineering-devops"
+    },
+    {
+      "path": "/explore/projects/banking-risk",
+      "canonical": "/projects/banking-risk",
+      "indexable": false,
+      "id": "banking-risk",
+      "repository": "https://github.com/keenosmith-del/aws-ai-banking-and-payment-risk"
+    },
+    {
+      "path": "/explore/projects/vertex-ai-retail",
+      "canonical": "/projects/gcp-retail",
+      "indexable": false,
+      "id": "vertex-ai-retail",
+      "repository": "https://github.com/keenosmith-del/gcp-ai-retail-and-supply-chain"
+    },
+    {
+      "path": "/explore/projects/ollama",
+      "canonical": "/projects/ollama",
+      "indexable": false,
+      "id": "ollama",
+      "repository": "https://github.com/keenosmith-del/ollama-private-business-intelligence"
+    },
+    {
+      "path": "/explore/projects/claude",
+      "canonical": "/projects/claude",
+      "indexable": false,
+      "id": "claude",
+      "repository": "https://github.com/keenosmith-del/claude-powered-legal-procurement-intelligence"
+    },
+    {
+      "path": "/explore/projects/hugging-face",
+      "canonical": "/projects/hugging-face",
+      "indexable": false,
+      "id": "hugging-face",
+      "repository": "https://github.com/keenosmith-del/hugging-face-ai-insurance-claims"
+    },
+    {
+      "path": "/explore/projects/distributed-reliability",
+      "canonical": "/projects/distributed-reliability",
+      "indexable": false,
+      "id": "distributed-reliability",
+      "repository": "https://github.com/keenosmith-del/sre-chaos-engineering"
+    },
+    {
+      "path": "/explore/projects/n8n",
+      "canonical": "/projects/n8n",
+      "indexable": false,
+      "id": "n8n",
+      "repository": "https://github.com/keenosmith-del/n8n-workflow-integration-opsflow"
+    },
+    {
+      "path": "/explore/projects/deepseek",
+      "canonical": "/projects/deepseek",
+      "indexable": false,
+      "id": "deepseek",
+      "repository": "https://github.com/keenosmith-del/deepseek-ai-workforce-planning"
+    },
+    {
+      "path": "/explore/projects/telecom-billing",
+      "canonical": "/projects/telecom-billing",
+      "indexable": false,
+      "id": "telecom-billing",
+      "repository": "https://github.com/keenosmith-del/telecomms-billing-management"
+    },
+    {
+      "path": "/explore/projects/field-service",
+      "canonical": "/projects/field-service",
+      "indexable": false,
+      "id": "field-service",
+      "repository": "https://github.com/keenosmith-del/field-service-and-asset-maintenance"
+    },
+    {
+      "path": "/explore/projects/fleet-operations",
+      "canonical": "/projects/fleet-operations",
+      "indexable": false,
+      "id": "fleet-operations",
+      "repository": "https://github.com/keenosmith-del/real-time-logistics-and-fleet-ops"
+    },
+    {
+      "path": "/explore/projects/eventops-intelligence",
+      "canonical": "/projects/eventops-intelligence",
+      "indexable": false,
+      "id": "eventops-intelligence",
+      "repository": "https://github.com/keenosmith-del/eventops-intelligence-v.01"
+    },
+    {
+      "path": "/explore/projects/eventops-intelligence-v2",
+      "canonical": "/explore/projects/eventops-intelligence-v2",
+      "indexable": false,
+      "repository": "https://github.com/keenosmith-del/eventops-intelligence-v.02"
+    },
+    {
+      "path": "/explore/projects/customer-operations",
+      "canonical": "/projects/enterprise-ai-mlops",
+      "indexable": false,
+      "id": "customer-operations",
+      "repository": "https://github.com/keenosmith-del/enterprise-ai-customer-operations"
+    },
+    {
+      "path": "/explore/projects/enterprise-ai-mlops",
+      "canonical": "/projects/enterprise-ai-mlops",
+      "indexable": false,
+      "id": "customer-operations",
+      "repository": "https://github.com/keenosmith-del/enterprise-ai-customer-operations"
+    },
+    {
+      "path": "/explore/projects/manufacturing-qc",
+      "canonical": "/projects/intelligence-manufacturing-llmops",
+      "indexable": false,
+      "id": "manufacturing-qc",
+      "repository": "https://github.com/keenosmith-del/intelligent-manufacturing-qc"
+    },
+    {
+      "path": "/explore/projects/intelligence-manufacturing-llmops",
+      "canonical": "/projects/intelligence-manufacturing-llmops",
+      "indexable": false,
+      "id": "manufacturing-qc",
+      "repository": "https://github.com/keenosmith-del/intelligent-manufacturing-qc"
+    },
+    {
+      "path": "/explore/projects/crewai-revenueops",
+      "canonical": "/projects/crewai-revenueops",
+      "indexable": false,
+      "id": "crewai-revenueops",
+      "repository": "https://github.com/keenosmith-del/crewai-revenueops"
+    },
+    {
+      "path": "/explore/projects/eventops-streamlit",
+      "canonical": "/projects/eventops-streamlit",
+      "indexable": false,
+      "id": "eventops-streamlit",
+      "repository": "https://github.com/keenosmith-del/eventops-intelligence-streamlit"
+    },
+    {
+      "path": "/explore/projects/ms-assessflow",
+      "canonical": "/projects/ms-assessflow",
+      "indexable": false,
+      "id": "ms-assessflow",
+      "repository": "https://github.com/keenosmith-del/ms-assessflow"
+    },
+    {
+      "path": "/companies/kai",
+      "canonical": "/companies/kailor",
+      "indexable": false
+    },
+    {
+      "path": "/companies/kailor-insider",
+      "canonical": "/companies/kailor",
+      "indexable": false
+    },
+    {
+      "path": "/projects/company-websites",
+      "canonical": "/companies/kailor",
+      "indexable": false
+    },
+    {
+      "path": "/projects/kailor-ai",
+      "canonical": "/companies/kailor",
+      "indexable": false
+    },
+    {
+      "path": "/explore/projects/kai",
+      "canonical": "/companies/kailor",
+      "indexable": false
+    },
+    {
+      "path": "/explore/projects/kailor-insider",
+      "canonical": "/companies/kailor",
+      "indexable": false
+    },
+    {
+      "path": "/explore/projects/kailor-ai",
+      "canonical": "/companies/kailor",
+      "indexable": false
+    },
+    {
+      "path": "/certifications",
+      "canonical": "/explore",
+      "indexable": false
+    }
+  ]
+}

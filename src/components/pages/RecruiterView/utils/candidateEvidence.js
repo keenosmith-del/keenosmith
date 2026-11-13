@@ -1,5 +1,5 @@
 import { evidenceRevision } from "../../../../data/projectEvidence.js";
-import { candidateFacts } from '../../../../data/candidateProfile.js';
+import { candidateFacts, leadershipRecords } from '../../../../data/candidateProfile.js';
 import {
   canonicalProjects,
   credentials,
@@ -391,6 +391,13 @@ record(
   },
 );
 record(null, ['Lambda'], 'Candidate-declared Lambda experience in AWS event processing and incident-response workflows. Implementation source unresolved after repository search.', 'Candidate instruction, 2026-10-18; cloud-security architecture records', 'candidate declaration', { status: 'candidate-declared', limitations: 'No inspected handler, deployment or production claim.' });
+for (const leadership of leadershipRecords) record(null,
+  ['Leadership and delivery responsibility', 'Technical leadership and mentoring'],
+  `${leadership.role.title} at ${leadership.role.employer}: ${leadership.description}`,
+  leadership.source, 'candidate declaration', {
+    context: leadership.role.title, dates: leadership.role.dates,
+    status: 'candidate-declared', limitations: leadership.limitations,
+  });
 export const candidateEvidence = records;
 export const candidateProfile = {
   education: candidateFacts.education,

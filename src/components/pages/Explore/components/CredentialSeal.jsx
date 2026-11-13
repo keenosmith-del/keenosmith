@@ -1,6 +1,6 @@
-import starWreath from "../../../../assets/explore-creds/star-wreath.png";
-import laurelWreathOne from "../../../../assets/explore-creds/laurel-wreath-1.png";
-import laurelWreathTwo from "../../../../assets/explore-creds/laurel-wreath-2.png";
+import starWreath from "../../../../assets/explore-creds/star-wreath.webp";
+import laurelWreathOne from "../../../../assets/explore-creds/laurel-wreath-1.webp";
+import laurelWreathTwo from "../../../../assets/explore-creds/laurel-wreath-2.webp";
 
 const wreaths = [starWreath, laurelWreathOne, laurelWreathTwo];
 const issuerMarks = [

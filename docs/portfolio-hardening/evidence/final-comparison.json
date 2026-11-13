@@ -1,0 +1,295 @@
+{
+  "baselineRevision": "79a314553f897135c17095dea1f84df7c8d142ef",
+  "applicationRevision": "b72b16a941c2c35515b3ff0918980aedf099f1bd",
+  "verificationRevision": "b72b16a941c2c35515b3ff0918980aedf099f1bd",
+  "build": {
+    "baseline": {
+      "entryJavaScript": {
+        "file": "/assets/index-BRovxuag.js",
+        "bytes": 984696,
+        "gzipBytes": 264464
+      },
+      "entryCss": {
+        "file": "/assets/index-BHECZlmy.css",
+        "bytes": 420341,
+        "gzipBytes": 55716
+      },
+      "totalJavaScriptBytes": 984696,
+      "totalCssBytes": 420341,
+      "buildBytes": 72229360
+    },
+    "final": {
+      "entryJavaScript": {
+        "file": "/assets/index-D_CeRtNS.js",
+        "bytes": 484861,
+        "gzipBytes": 144824
+      },
+      "entryCss": {
+        "file": "/assets/index-DsTspt3K.css",
+        "bytes": 422133,
+        "gzipBytes": 56192
+      },
+      "totalJavaScriptBytes": 1007854,
+      "totalCssBytes": 422133,
+      "buildBytes": 49226319
+    }
+  },
+  "performance": {
+    "baseline": {
+      "browser": "Chrome/152.0.7977.75",
+      "conditions": "390x844, Chromium, cache cleared before cold and retained for repeat, 150ms RTT, 200kB/s down, CPU 4x. One diagnostic sample per route/load, not Lighthouse, field INP or statistical proof. Focus latency is a synthetic click-to-focus diagnostic.",
+      "results": [
+        {
+          "route": "/",
+          "load": "cold",
+          "lcpMs": 36108,
+          "cls": 0,
+          "encodedResourceBytes": 13275399,
+          "resourceTransferBytes": 13278399,
+          "imageEncodedBytes": 11956082,
+          "jsHeapUsedBytes": 5432392,
+          "syntheticFocusLatencyMs": 47.599999994039536
+        },
+        {
+          "route": "/",
+          "load": "repeat",
+          "lcpMs": 1356,
+          "cls": 0,
+          "encodedResourceBytes": 3131476,
+          "resourceTransferBytes": 1002292,
+          "imageEncodedBytes": 1812159,
+          "jsHeapUsedBytes": 9285420,
+          "syntheticFocusLatencyMs": 17.200000002980232
+        }
+      ]
+    },
+    "final": {
+      "browser": "Chrome/152.0.7977.75",
+      "conditions": "390x844, Chromium, cache cleared before cold and retained for repeat, 150ms RTT, 200kB/s down, CPU 4x. One diagnostic sample per route/load, not Lighthouse, field INP or statistical proof. Focus latency is a synthetic click-to-focus diagnostic.",
+      "results": [
+        {
+          "route": "/",
+          "load": "cold",
+          "lcpMs": 14136,
+          "cls": 0,
+          "encodedResourceBytes": 3038717,
+          "resourceTransferBytes": 3041717,
+          "imageEncodedBytes": 1838417,
+          "jsHeapUsedBytes": 4627944,
+          "syntheticFocusLatencyMs": 43.3999999910593
+        },
+        {
+          "route": "/",
+          "load": "repeat",
+          "lcpMs": 1060,
+          "cls": 0,
+          "encodedResourceBytes": 1204545,
+          "resourceTransferBytes": 1002292,
+          "imageEncodedBytes": 4245,
+          "jsHeapUsedBytes": 6772468,
+          "syntheticFocusLatencyMs": 24.5
+        }
+      ]
+    },
+    "finalFourRouteDiagnostic": {
+      "browser": "Chrome/152.0.7977.75",
+      "conditions": "390x844, Chromium, cache cleared before cold and retained for repeat, 150ms RTT, 200kB/s down, CPU 4x. One diagnostic sample per route/load, not Lighthouse, field INP or statistical proof. Focus latency is a synthetic click-to-focus diagnostic.",
+      "results": [
+        {
+          "route": "/",
+          "load": "cold",
+          "lcpMs": 14160,
+          "cls": 0,
+          "encodedResourceBytes": 3038717,
+          "resourceTransferBytes": 3041717,
+          "imageEncodedBytes": 1838417,
+          "jsHeapUsedBytes": 4626296,
+          "syntheticFocusLatencyMs": 52.5
+        },
+        {
+          "route": "/",
+          "load": "repeat",
+          "lcpMs": 1108,
+          "cls": 0,
+          "encodedResourceBytes": 1204545,
+          "resourceTransferBytes": 1002292,
+          "imageEncodedBytes": 4245,
+          "jsHeapUsedBytes": 6777368,
+          "syntheticFocusLatencyMs": 24.599999994039536
+        },
+        {
+          "route": "/explore",
+          "load": "cold",
+          "lcpMs": 2676,
+          "cls": 0,
+          "encodedResourceBytes": 2028291,
+          "resourceTransferBytes": 2031291,
+          "imageEncodedBytes": 1818663,
+          "jsHeapUsedBytes": 5064100,
+          "syntheticFocusLatencyMs": null
+        },
+        {
+          "route": "/explore",
+          "load": "repeat",
+          "lcpMs": 1472,
+          "cls": 0,
+          "encodedResourceBytes": 4245,
+          "resourceTransferBytes": 3000,
+          "imageEncodedBytes": 4245,
+          "jsHeapUsedBytes": 7258572,
+          "syntheticFocusLatencyMs": null
+        },
+        {
+          "route": "/recruiter-view",
+          "load": "cold",
+          "lcpMs": 2468,
+          "cls": 0,
+          "encodedResourceBytes": 1954239,
+          "resourceTransferBytes": 1956339,
+          "imageEncodedBytes": 1732823,
+          "jsHeapUsedBytes": 5689456,
+          "syntheticFocusLatencyMs": null
+        },
+        {
+          "route": "/recruiter-view",
+          "load": "repeat",
+          "lcpMs": 1184,
+          "cls": 0,
+          "encodedResourceBytes": 4245,
+          "resourceTransferBytes": 2100,
+          "imageEncodedBytes": 4245,
+          "jsHeapUsedBytes": 6664604,
+          "syntheticFocusLatencyMs": null
+        },
+        {
+          "route": "/projects/ms-assessflow",
+          "load": "cold",
+          "lcpMs": 2440,
+          "cls": 0,
+          "encodedResourceBytes": 215309,
+          "resourceTransferBytes": 217409,
+          "imageEncodedBytes": 4245,
+          "jsHeapUsedBytes": 4710652,
+          "syntheticFocusLatencyMs": null
+        },
+        {
+          "route": "/projects/ms-assessflow",
+          "load": "repeat",
+          "lcpMs": 1200,
+          "cls": 0,
+          "encodedResourceBytes": 4245,
+          "resourceTransferBytes": 2100,
+          "imageEncodedBytes": 4245,
+          "jsHeapUsedBytes": 6647380,
+          "syntheticFocusLatencyMs": null
+        }
+      ]
+    }
+  },
+  "lighthouse": {
+    "baseline": {
+      "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/152.0.0.0 Safari/537.36",
+      "fetchTime": "2026-10-27T15:59:39.645Z",
+      "performanceScore": 46,
+      "accessibilityScore": 96,
+      "lcpMs": 54239.289300000004,
+      "cls": 0,
+      "totalBlockingTimeMs": 1144,
+      "remainingContrastSelectors": [
+        "header.site-header > nav.navigation-pill > button.navigation-menu-toggle > span",
+        "section#cloud > div.cloud-inner > div.cloud-intro > h2#cloud-heading",
+        "nav.timeline-index > div.timeline-index-track > button > span",
+        "nav.timeline-index > div.timeline-index-track > button > span",
+        "nav.timeline-index > div.timeline-index-track > button > span",
+        "nav.timeline-index > div.timeline-index-track > button > span",
+        "nav.timeline-index > div.timeline-index-track > button > span",
+        "nav.timeline-index > div.timeline-index-track > button > span",
+        "nav.timeline-index > div.timeline-index-track > button > span",
+        "nav.timeline-index > div.timeline-index-track > button > span",
+        "nav.timeline-index > div.timeline-index-track > button > span"
+      ]
+    },
+    "final": {
+      "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/152.0.0.0 Safari/537.36",
+      "fetchTime": "2026-10-27T15:59:51.776Z",
+      "performanceScore": 62,
+      "accessibilityScore": 96,
+      "lcpMs": 14710.48275,
+      "cls": 0,
+      "totalBlockingTimeMs": 484,
+      "remainingContrastSelectors": [
+        "section#cloud > div.cloud-inner > div.cloud-intro > h2#cloud-heading"
+      ]
+    }
+  },
+  "visual": {
+    "screenshotsPerPhase": 70,
+    "widths": [
+      1440,
+      1024,
+      768,
+      390,
+      320
+    ],
+    "overflowCases": [],
+    "headingAndBackgroundDifferences": [],
+    "intentionalDifferences": [
+      "Scoped muted-text contrast corrections",
+      "96px header and 192px Assistant derivatives",
+      "Responsive artwork selection",
+      "Contact error/post-target feedback when activated",
+      "Failure-only same-footage video poster; healthy path does not request it"
+    ],
+    "artifacts": "/tmp/portfolio-hardening/baseline and /tmp/portfolio-hardening/release-final",
+    "geometry": {
+      "cases": 45,
+      "elements": 905,
+      "tolerancePixels": 0.5,
+      "casesWithDifferences": [],
+      "baselineSource": "79a314553f897135c17095dea1f84df7c8d142ef",
+      "applicationSource": "b72b16a941c2c35515b3ff0918980aedf099f1bd"
+    }
+  },
+  "limits": [
+    "One sequential controlled sample per phase is the final timing comparison; earlier noisy samples are historical. Not field INP, statistical proof or production Core Web Vitals.",
+    "Controlled Lighthouse 46 to 62, but earlier comparable pair had worse final LCP; do not claim uniform timing improvement. Repeat synthetic focus latency increased 17.2 to 24.5ms.",
+    "Transient Cloud-heading fade contrast retained by design; settled/reduced-motion behavior is separate.",
+    "Hosted preview is login protected. No production merge, live mail delivery or paid inference performed."
+  ],
+  "historicalLighthousePair": {
+    "baseline": {
+      "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/152.0.0.0 Safari/537.36",
+      "fetchTime": "2026-10-27T15:00:38.060Z",
+      "performanceScore": 46,
+      "accessibilityScore": 96,
+      "lcpMs": 14062.66515,
+      "cls": 0,
+      "totalBlockingTimeMs": 1208,
+      "remainingContrastSelectors": [
+        "header.site-header > nav.navigation-pill > button.navigation-menu-toggle > span",
+        "section#cloud > div.cloud-inner > div.cloud-intro > h2#cloud-heading",
+        "nav.timeline-index > div.timeline-index-track > button > span",
+        "nav.timeline-index > div.timeline-index-track > button > span",
+        "nav.timeline-index > div.timeline-index-track > button > span",
+        "nav.timeline-index > div.timeline-index-track > button > span",
+        "nav.timeline-index > div.timeline-index-track > button > span",
+        "nav.timeline-index > div.timeline-index-track > button > span",
+        "nav.timeline-index > div.timeline-index-track > button > span",
+        "nav.timeline-index > div.timeline-index-track > button > span",
+        "nav.timeline-index > div.timeline-index-track > button > span"
+      ]
+    },
+    "final": {
+      "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/152.0.0.0 Safari/537.36",
+      "fetchTime": "2026-10-27T15:54:24.746Z",
+      "performanceScore": 52,
+      "accessibilityScore": 96,
+      "lcpMs": 14712.1485,
+      "cls": 0,
+      "totalBlockingTimeMs": 981,
+      "remainingContrastSelectors": [
+        "section#cloud > div.cloud-inner > div.cloud-intro > h2#cloud-heading"
+      ]
+    }
+  }
+}

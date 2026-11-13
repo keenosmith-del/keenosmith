@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ArrowLeft, ArrowRight, ArrowUp } from "lucide-react";
-import mascot from "../../../assets/images/mascot/mascot.png";
-import mascot2 from "../../../assets/images/mascot/mascot-2.png";
+import mascot from "../../../assets/images/mascot/mascot.webp";
+import mascot2 from "../../../assets/images/mascot/mascot-2.webp";
 import { assessRole, isAssessmentCurrent } from "./utils/recruiterScoring.js";
 import RecruiterAssessment from "./components/RecruiterAssessment.jsx";
 import RecruiterMetadata from "./components/RecruiterMetadata.jsx";

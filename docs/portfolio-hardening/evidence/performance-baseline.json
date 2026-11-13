@@ -1,0 +1,221 @@
+{
+  "conditions": "390x844, Chromium, cold cache, 150ms RTT, 200kB/s down, CPU 4x; one diagnostic run, not Lighthouse or field metrics",
+  "results": [
+    {
+      "route": "/",
+      "cls": 0,
+      "lcp": 36052,
+      "navigation": [
+        {
+          "domContentLoaded": 2791.2000000029802,
+          "load": 2791.7000000029802
+        }
+      ],
+      "paints": [
+        {
+          "name": "first-paint",
+          "startTime": 928
+        },
+        {
+          "name": "first-contentful-paint",
+          "startTime": 3036
+        }
+      ],
+      "encodedResourceBytes": 13275399,
+      "majorResources": [
+        {
+          "name": "/assets/mascot-Bwu4zOoL.png",
+          "bytes": 2293777,
+          "transfer": 2294077,
+          "type": "img"
+        },
+        {
+          "name": "/assets/ms-project-CJlU-hbp.png",
+          "bytes": 2223468,
+          "transfer": 2223768,
+          "type": "img"
+        },
+        {
+          "name": "/assets/url-icon-B4n83CWA.png",
+          "bytes": 1916115,
+          "transfer": 1916415,
+          "type": "img"
+        },
+        {
+          "name": "/url-icon.png",
+          "bytes": 1812159,
+          "transfer": 1812459,
+          "type": "other"
+        },
+        {
+          "name": "/assets/aws-project-BtDeC7bQ.png",
+          "bytes": 1551934,
+          "transfer": 1552234,
+          "type": "img"
+        },
+        {
+          "name": "/assets/hero-full-body-CR4LzhpR.png",
+          "bytes": 1098917,
+          "transfer": 1099217,
+          "type": "img"
+        },
+        {
+          "name": "/assets/hero-full-body-laughing-Dr7EVmkT.png",
+          "bytes": 1059712,
+          "transfer": 1060012,
+          "type": "img"
+        },
+        {
+          "name": "/assets/full-stack-engineering-automation-BVGiS_ZV.mp4",
+          "bytes": 999292,
+          "transfer": 999592,
+          "type": "video"
+        }
+      ]
+    },
+    {
+      "route": "/explore",
+      "cls": 0,
+      "lcp": 2956,
+      "navigation": [
+        {
+          "domContentLoaded": 2776.3999999910593,
+          "load": 2777.0999999940395
+        }
+      ],
+      "paints": [
+        {
+          "name": "first-paint",
+          "startTime": 920
+        },
+        {
+          "name": "first-contentful-paint",
+          "startTime": 2956
+        }
+      ],
+      "encodedResourceBytes": 8886658,
+      "majorResources": [
+        {
+          "name": "/assets/ms-assessflow-DUDbm3mR.png",
+          "bytes": 2351440,
+          "transfer": 2351740,
+          "type": "img"
+        },
+        {
+          "name": "/assets/ms-project-CJlU-hbp.png",
+          "bytes": 2223468,
+          "transfer": 2223768,
+          "type": "img"
+        },
+        {
+          "name": "/assets/eventops-low-code-streamlit-ChyCaTEG.png",
+          "bytes": 2126314,
+          "transfer": 2126614,
+          "type": "img"
+        },
+        {
+          "name": "/assets/crewai-revenueops-i5--HQ8g.png",
+          "bytes": 1865411,
+          "transfer": 1865711,
+          "type": "img"
+        },
+        {
+          "name": "/assets/index-BRovxuag.js",
+          "bytes": 264415,
+          "transfer": 264715,
+          "type": "script"
+        },
+        {
+          "name": "/assets/index-BHECZlmy.css",
+          "bytes": 55610,
+          "transfer": 55910,
+          "type": "link"
+        }
+      ]
+    },
+    {
+      "route": "/recruiter-view",
+      "cls": 0,
+      "lcp": 2972,
+      "navigation": [
+        {
+          "domContentLoaded": 2844,
+          "load": 2844
+        }
+      ],
+      "paints": [
+        {
+          "name": "first-paint",
+          "startTime": 936
+        },
+        {
+          "name": "first-contentful-paint",
+          "startTime": 2972
+        }
+      ],
+      "encodedResourceBytes": 3455899,
+      "majorResources": [
+        {
+          "name": "/assets/mascot-Bwu4zOoL.png",
+          "bytes": 2293777,
+          "transfer": 2294077,
+          "type": "img"
+        },
+        {
+          "name": "/assets/mascot-2-J9IBrkhV.png",
+          "bytes": 842097,
+          "transfer": 842397,
+          "type": "img"
+        },
+        {
+          "name": "/assets/index-BRovxuag.js",
+          "bytes": 264415,
+          "transfer": 264715,
+          "type": "script"
+        },
+        {
+          "name": "/assets/index-BHECZlmy.css",
+          "bytes": 55610,
+          "transfer": 55910,
+          "type": "link"
+        }
+      ]
+    },
+    {
+      "route": "/projects/ms-assessflow",
+      "cls": 0,
+      "lcp": 2944,
+      "navigation": [
+        {
+          "domContentLoaded": 2777.8999999910593,
+          "load": 2778.2999999970198
+        }
+      ],
+      "paints": [
+        {
+          "name": "first-paint",
+          "startTime": 924
+        },
+        {
+          "name": "first-contentful-paint",
+          "startTime": 2944
+        }
+      ],
+      "encodedResourceBytes": 320025,
+      "majorResources": [
+        {
+          "name": "/assets/index-BRovxuag.js",
+          "bytes": 264415,
+          "transfer": 264715,
+          "type": "script"
+        },
+        {
+          "name": "/assets/index-BHECZlmy.css",
+          "bytes": 55610,
+          "transfer": 55910,
+          "type": "link"
+        }
+      ]
+    }
+  ]
+}

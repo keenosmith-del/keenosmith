@@ -25,7 +25,7 @@ export default function LaunchCountdown({ variant = "compact" }) {
       className={`company-launch-countdown${variant === "editorial" ? " is-editorial" : ""}`}
       role="timer"
       aria-live="off"
-      aria-label={`Time until app launch on ${companyLaunchLabel}`}
+      aria-label={remaining > 0 ? `Time until app launch target on ${companyLaunchLabel}` : `App launch target ${companyLaunchLabel} reached; public availability is not confirmed`}
       data-launch-date={companyLaunchDate}
     >
       <div className="company-launch-time">
@@ -38,7 +38,8 @@ export default function LaunchCountdown({ variant = "compact" }) {
           {String(secs).padStart(2, "0")}s
         </span>
       </div>
-      {variant === "editorial" && (
+      {remaining === 0 && <span className="company-launch-label">Launch target reached · availability to be confirmed</span>}
+      {variant === "editorial" && remaining > 0 && (
         <span className="company-launch-label">Until app launch</span>
       )}
     </div>

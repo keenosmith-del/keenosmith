@@ -33,7 +33,7 @@ const yearPattern =
 const excluded =
   /\b(?:cover[- ]letter|cv (?:length|pages?)|curriculum vitae|apply (?:now|by|with)|send (?:your|a)|salary|remuneration|equal opportunity|our benefits)\b/i;
 const logistics =
-  /\b(?:south africa|uk\/us|time[- ]zone|overlap|work authori[sz]ation|right to work|work permit|citizenship|must (?:be based|reside|relocate)|mandatory on.?site|required on.?site|security clearance|professional licen[cs]e)\b/i;
+  /\b(?:south africa|uk\/us|time[- ]zone|overlap|work authori[sz]ation|right to work|work permit|citizenship|must (?:be based|reside|relocate)|mandatory on.?site|required on.?site|hybrid|on[- ]?site|remote[- ]only|security clearance|professional licen[cs]e)\b/i;
 
 export function roleClauses(description) {
   const lines = [];
@@ -129,14 +129,14 @@ export function extractRequirements(description) {
       });
     const years = [...text.matchAll(yearPattern)];
     const qualification =
-      /\b(?:degree|diploma|certificat\w*|certified|education)\b/i.test(text);
+      /\b(?:degree|bachelor|master|bsc|msc|phd|diploma|certificat\w*|certified|education)\b/i.test(text);
     if (qualification) {
       const alternative = /\bor\b|\balternatively\b/i.test(text);
       add(clause, {
         name: text,
         type: alternative
           ? "qualification"
-          : /degree|diploma|education/i.test(text)
+          : /degree|bachelor|master|bsc|msc|phd|diploma|education/i.test(text)
             ? "education"
             : "certification",
         terms: [],
@@ -366,6 +366,8 @@ export function extractRequirements(description) {
   }
   // A standalone parent covered by explicit children does not enter the denominator again.
   for (const row of result) {
+    if (row.name === 'Leadership and delivery responsibility' && result.some(other =>
+      other.name === 'Technical leadership and mentoring' && other.sourcePhrase === row.sourcePhrase)) row.parentOnly = true;
     if (
       row.name === "Infrastructure as Code" &&
       result.some(

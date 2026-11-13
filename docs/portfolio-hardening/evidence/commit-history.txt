@@ -1,0 +1,13 @@
+a90ebc80b63e05c76caa329bf7bcae78f9a24ebe docs: establish portfolio hardening baseline and design contract
+2917d9ae5de99d6ac710be6af3a272ef27f5d076 fix: evaluate exact qualifications and bounded professional evidence
+89113a5a4ba0c78bf48296dd38a094460775933b perf: split route markup and deliver lossless responsive artwork
+4fac91bf78d601d0e496b1e15cbfd073c429b7cf feat: deliver canonical route metadata in static HTML shells
+f5be020189cbd388976e08e706505f6d5f33b503 fix: harden contact recovery API boundaries and release verification
+19c5fb1228c3ffc33b1b069b84429d570059958f refactor: consolidate routes and finish scoped accessibility corrections
+8420569fe1c4b70e4753caeaf7396fce87025348 fix: preserve the original page CSS cascade and sequence CI checks
+b572cc9ec1d1604f939d04e524d6e1760f0a0c61 fix: isolate browser verification and configure scoped CI browser permissions
+6eaffcbb24ace12ba14ab39243ae24dce4deccbf test: finalize measured verification and invalidate the revised tenure model
+fe56a1a7565b123e88168526fa6d9e8496b4ebb0 fix: reconcile final contrast and evidence overlap regressions
+9fa2f62d982605c6176f63e99bed7358a07f3c4d fix: keep leadership-specific tenure separate from overall experience
+88afd9b9b5b655657f19b89eb3579dfe2dd7a482 test: run hover regression on a virtual Linux desktop
+b72b16a941c2c35515b3ff0918980aedf099f1bd fix: retain a same-footage fallback when video playback is unavailable

@@ -1,14 +1,19 @@
+import NotFound from "./components/pages/NotFound.jsx";
+import { lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import { projectConcepts } from "./data/projectConcepts.js";
 
+import RouteMetadata from "./components/navigation/RouteMetadata.jsx";
 import PageScroll from "./components/navigation/PageScroll.jsx";
 import Header from "./components/navigation/Header.jsx";
 import PortfolioActions from "./components/navigation/PortfolioActions.jsx";
 import Hero from "./components/sections/Hero/Hero.jsx";
 import Cloud from "./components/sections/Cloud/Cloud.jsx";
-import ProjectPreview from "./components/pages/ProjectPreview/ProjectPreview.jsx";
-import ProjectPlaceholder from "./components/pages/ProjectPlaceholder/ProjectPlaceholder.jsx";
+import "./components/pages/ProjectPreview/ProjectPreview.css";
+const ProjectPreview = lazy(() => import("./components/pages/ProjectPreview/ProjectPreview.jsx"));
+import "./components/pages/ProjectPlaceholder/ProjectPlaceholder.css";
+const ProjectPlaceholder = lazy(() => import("./components/pages/ProjectPlaceholder/ProjectPlaceholder.jsx"));
 import { cloudProjects } from "./data/cloudProjects.js";
 import AI from "./components/sections/AI/AI.jsx";
 import { aiProjects } from "./data/aiProjects.js";
@@ -21,55 +26,119 @@ import { selectedProjects } from "./data/selectedProjects.js";
 import SelectedProjects from "./components/sections/SelectedProjects/SelectedProjects.jsx";
 import Footer from "./components/sections/Footer/Footer.jsx";
 
-import Explore from "./components/pages/Explore/Explore.jsx";
-import ExploreProjectPreview from "./components/pages/Explore/ExploreProjectPreview.jsx";
-import CV from "./components/pages/CV/CV.jsx";
-import RecruiterView from "./components/pages/RecruiterView/RecruiterView.jsx";
+import "./components/pages/Explore/components/CredentialGallery.css";
+import "./components/pages/Explore/Explore.css";
+const Explore = lazy(() => import("./components/pages/Explore/Explore.jsx"));
+const ExploreProjectPreview = lazy(() => import("./components/pages/Explore/ExploreProjectPreview.jsx"));
+import "./components/pages/CV/CV.css";
+const CV = lazy(() => import("./components/pages/CV/CV.jsx"));
+import "./components/pages/RecruiterView/RecruiterView.css";
+const RecruiterView = lazy(() => import("./components/pages/RecruiterView/RecruiterView.jsx"));
 
 import { rebuildingProjects } from "./data/rebuildingProjects.js";
 import { canonicalProjects } from "./assistant/knowledge.js";
 
-import AWSBankingRisk from "./components/pages/projects/AWSBankingRisk/AWSBankingRisk.jsx";
-import MicrosoftDevOps from "./components/pages/projects/MicrosoftDevOps/MicrosoftDevOps.jsx";
-import GCPRetail from "./components/pages/projects/GCPRetail/GCPRetail.jsx";
+const AWSBankingRisk = lazy(() => import("./components/pages/projects/AWSBankingRisk/AWSBankingRisk.jsx"));
+const MicrosoftDevOps = lazy(() => import("./components/pages/projects/MicrosoftDevOps/MicrosoftDevOps.jsx"));
+const GCPRetail = lazy(() => import("./components/pages/projects/GCPRetail/GCPRetail.jsx"));
 
-import EventOpsIntelligence from "./components/pages/projects/EventOpsIntelligence/EventOpsIntelligence.jsx";
-import CrewAIRevenueOps from "./components/pages/projects/CrewAIRevenueOps/CrewAIRevenueOps.jsx";
-import EventOpsStreamlit from "./components/pages/projects/EventOpsStreamlit/EventOpsStreamlit.jsx";
-import MicrosoftAssessFlow from "./components/pages/projects/MicrosoftAssessFlow/MicrosoftAssessFlow.jsx";
-import OllamaPrivateBI from "./components/pages/projects/OllamaPrivateBI/OllamaPrivateBI.jsx";
+const PortfolioLedger = lazy(() => import("./components/pages/projects/PortfolioLedger/PortfolioLedger.jsx"));
+const EventOpsIntelligence = lazy(() => import("./components/pages/projects/EventOpsIntelligence/EventOpsIntelligence.jsx"));
+const CrewAIRevenueOps = lazy(() => import("./components/pages/projects/CrewAIRevenueOps/CrewAIRevenueOps.jsx"));
+const EventOpsStreamlit = lazy(() => import("./components/pages/projects/EventOpsStreamlit/EventOpsStreamlit.jsx"));
+const MicrosoftAssessFlow = lazy(() => import("./components/pages/projects/MicrosoftAssessFlow/MicrosoftAssessFlow.jsx"));
+const OllamaPrivateBI = lazy(() => import("./components/pages/projects/OllamaPrivateBI/OllamaPrivateBI.jsx"));
 
-import KailorVentures from "./components/pages/projects/KailorVentures/KailorVentures.jsx";
+const KailorVentures = lazy(() => import("./components/pages/projects/KailorVentures/KailorVentures.jsx"));
 
-import OpsFlow from "./components/pages/projects/OpsFlow/OpsFlow.jsx";
+const OpsFlow = lazy(() => import("./components/pages/projects/OpsFlow/OpsFlow.jsx"));
 
-import ClaudeProcurement from "./components/pages/projects/ClaudeProcurement/ClaudeProcurement.jsx";
+const ClaudeProcurement = lazy(() => import("./components/pages/projects/ClaudeProcurement/ClaudeProcurement.jsx"));
 
-import SREChaosEngineering from "./components/pages/projects/SREChaosEngineering/SREChaosEngineering.jsx";
+const SREChaosEngineering = lazy(() => import("./components/pages/projects/SREChaosEngineering/SREChaosEngineering.jsx"));
 
-import DeepSeekWorkforce from "./components/pages/projects/DeepSeekWorkforce/DeepSeekWorkforce.jsx";
+const DeepSeekWorkforce = lazy(() => import("./components/pages/projects/DeepSeekWorkforce/DeepSeekWorkforce.jsx"));
 
-import TelecomBilling from "./components/pages/projects/TelecomBilling/TelecomBilling.jsx";
+const TelecomBilling = lazy(() => import("./components/pages/projects/TelecomBilling/TelecomBilling.jsx"));
 
-import FieldServiceMaintenance from "./components/pages/projects/FieldServiceMaintenance/FieldServiceMaintenance.jsx";
+const FieldServiceMaintenance = lazy(() => import("./components/pages/projects/FieldServiceMaintenance/FieldServiceMaintenance.jsx"));
 
-import FleetOperations from "./components/pages/projects/FleetOperations/FleetOperations.jsx";
+const FleetOperations = lazy(() => import("./components/pages/projects/FleetOperations/FleetOperations.jsx"));
 
-import HuggingFaceInsurance from "./components/pages/projects/HuggingFaceInsurance/HuggingFaceInsurance.jsx";
+const HuggingFaceInsurance = lazy(() => import("./components/pages/projects/HuggingFaceInsurance/HuggingFaceInsurance.jsx"));
 
-import ProductivityPlatform from "./components/pages/projects/ProductivityPlatform/ProductivityPlatform.jsx";
+const ProductivityPlatform = lazy(() => import("./components/pages/projects/ProductivityPlatform/ProductivityPlatform.jsx"));
 
-import MusicAPI from "./components/pages/projects/MusicAPI/MusicAPI.jsx";
+const MusicAPI = lazy(() => import("./components/pages/projects/MusicAPI/MusicAPI.jsx"));
 
-import EnterpriseWorkspace from "./components/pages/projects/EnterpriseWorkspace/EnterpriseWorkspace.jsx";
+const EnterpriseWorkspace = lazy(() => import("./components/pages/projects/EnterpriseWorkspace/EnterpriseWorkspace.jsx"));
 
-import AIEntity from "./components/pages/projects/AIEntity/AIEntity.jsx";
+const AIEntity = lazy(() => import("./components/pages/projects/AIEntity/AIEntity.jsx"));
 
-import ManufacturingQC from "./components/pages/projects/ManufacturingQC/ManufacturingQC.jsx";
+const ManufacturingQC = lazy(() => import("./components/pages/projects/ManufacturingQC/ManufacturingQC.jsx"));
 
-import EnterpriseCustomerOperations from "./components/pages/projects/EnterpriseCustomerOperations/EnterpriseCustomerOperations.jsx";
+const EnterpriseCustomerOperations = lazy(() => import("./components/pages/projects/EnterpriseCustomerOperations/EnterpriseCustomerOperations.jsx"));
 
+import "./components/pages/projects/AWSBankingRisk/AWSBankingRisk.css";
+import "./components/pages/projects/MicrosoftDevOps/MicrosoftDevOps.css";
+import "./components/pages/projects/GCPRetail/GCPRetail.css";
+import "./components/pages/projects/EventOpsIntelligence/EventOpsIntelligence.css";
+import "./components/pages/projects/CrewAIRevenueOps/CrewAIRevenueOps.css";
+import "./components/pages/projects/EventOpsStreamlit/EventOpsStreamlit.css";
+import "./components/pages/projects/MicrosoftAssessFlow/MicrosoftAssessFlow.css";
+import "./components/pages/projects/OllamaPrivateBI/OllamaPrivateBI.css";
+import "./components/pages/projects/KailorVentures/KailorVentures.css";
+import "./components/pages/projects/OpsFlow/OpsFlow.css";
+import "./components/pages/projects/ClaudeProcurement/ClaudeProcurement.css";
+import "./components/pages/projects/SREChaosEngineering/SREChaosEngineering.css";
+import "./components/pages/projects/DeepSeekWorkforce/DeepSeekWorkforce.css";
+import "./components/pages/projects/TelecomBilling/TelecomBilling.css";
+import "./components/pages/projects/FieldServiceMaintenance/FieldServiceMaintenance.css";
+import "./components/pages/projects/FleetOperations/FleetOperations.css";
+import "./components/pages/projects/HuggingFaceInsurance/HuggingFaceInsurance.css";
+import "./components/pages/projects/ProductivityPlatform/ProductivityPlatform.css";
+import "./components/pages/projects/MusicAPI/MusicAPI.css";
+import "./components/pages/projects/EnterpriseWorkspace/EnterpriseWorkspace.css";
+import "./components/pages/projects/AIEntity/AIEntity.css";
+import "./components/pages/projects/ManufacturingQC/ManufacturingQC.css";
+import "./components/pages/projects/EnterpriseCustomerOperations/EnterpriseCustomerOperations.css";
+import "./components/pages/projects/PortfolioLedger/PortfolioLedger.css";
 import "./components/pages/projects/shared/ProjectPage.css";
+
+// Concrete pages are declared once; placeholders cannot shadow these routes.
+const projectPageRoutes = [
+  ["/projects/portfolio-ledger", PortfolioLedger],
+  ["/explore/projects/portfolio-ledger", PortfolioLedger],
+  ["/projects/crewai-revenueops", CrewAIRevenueOps],
+  ["/explore/projects/crewai-revenueops", CrewAIRevenueOps],
+  ["/projects/eventops-streamlit", EventOpsStreamlit],
+  ["/explore/projects/eventops-streamlit", EventOpsStreamlit],
+  ["/projects/ms-assessflow", MicrosoftAssessFlow],
+  ["/explore/projects/ms-assessflow", MicrosoftAssessFlow],
+  ["/projects/banking-risk", AWSBankingRisk],
+  ["/projects/microsoft-devops", MicrosoftDevOps],
+  ["/projects/gcp-retail", GCPRetail],
+  ["/projects/eventops-intelligence", EventOpsIntelligence],
+  ["/projects/ollama", OllamaPrivateBI],
+  ["/projects/n8n", OpsFlow],
+  ["/companies/kailor", KailorVentures],
+  ["/projects/claude", ClaudeProcurement],
+  ["/projects/distributed-reliability", SREChaosEngineering],
+  ["/projects/deepseek", DeepSeekWorkforce],
+  ["/projects/telecom-billing", TelecomBilling],
+  ["/projects/field-service", FieldServiceMaintenance],
+  ["/projects/fleet-operations", FleetOperations],
+  ["/projects/hugging-face", HuggingFaceInsurance],
+  ["/projects/productivity-platform", ProductivityPlatform],
+  ["/projects/music-api", MusicAPI],
+  ["/projects/enterprise-workspace", EnterpriseWorkspace],
+  ["/projects/ai-assistant", AIEntity],
+  ["/projects/intelligence-manufacturing-llmops", ManufacturingQC],
+  ["/projects/enterprise-ai-mlops", EnterpriseCustomerOperations],
+  ["/explore/projects/:projectId", ExploreProjectPreview],
+];
+const detailedPaths = new Set(projectPageRoutes.map(([route]) => route));
+const detailedIds = new Set(projectPageRoutes.map(([route]) => route.split('/').at(-1)));
 
 const placeholderProjects = [
   ...rebuildingProjects.map((project) => ({
@@ -108,51 +177,14 @@ function App() {
   return (
     <BrowserRouter>
       <PageScroll />
+      <RouteMetadata />
+      <Suspense fallback={<div role="status" aria-label="Loading page" style={{ minHeight: '100svh', background: '#faf9f6' }} />}>
       <Routes>
         <Route path="/" element={<Home />} />
+        {projectPageRoutes.map(([route, Component]) => <Route key={route} path={route} element={<Component />} />)}
 
         {placeholderProjects
-          .filter(
-            (project) =>
-              project.id !== "banking-risk" &&
-              project.route !== "/projects/banking-risk" &&
-              project.id !== "microsoft-devops" &&
-              project.route !== "/projects/microsoft-devops" &&
-              project.id !== "gcp-retail" &&
-              project.route !== "/projects/gcp-retail" &&
-              project.id !== "eventops-intelligence" &&
-              project.route !== "/projects/eventops-intelligence" &&
-              project.id !== "ollama" &&
-              project.route !== "/projects/ollama" &&
-              project.id !== "n8n" &&
-              project.route !== "/projects/n8n" &&
-              project.id !== "claude" &&
-              project.route !== "/projects/claude" &&
-              project.id !== "distributed-reliability" &&
-              project.route !== "/projects/distributed-reliability" &&
-              project.id !== "deepseek" &&
-              project.route !== "/projects/deepseek" &&
-              project.id !== "telecom-billing" &&
-              project.route !== "telecom-billing" &&
-              project.id !== "field-service" &&
-              project.route !== "field-service" &&
-              project.id !== "fleet-operations" &&
-              project.route !== "fleet-operations" &&
-              project.id !== "hugging-face" &&
-              project.route !== "/projects/hugging-face" &&
-              project.id !== "productivity-platform" &&
-              project.route !== "productivity-platform" &&
-              project.id !== "music-api" &&
-              project.route !== "music-api" &&
-              project.id !== "enterprise-workspace" &&
-              project.route !== "enterprise-workspace" &&
-              project.id !== "ai-assistant" &&
-              project.route !== "ai-assistant" &&
-              project.id !== "intelligence-manufacturing-llmops" &&
-              project.route !== "intelligence-manufacturing-llmops" &&
-              project.id !== "enterprise-ai-mlops" &&
-              project.route !== "enterprise-ai-mlops",
-          )
+          .filter(project => !detailedIds.has(project.id) && !detailedPaths.has(project.route))
           .flatMap((project) =>
             [...new Set([project.route, `/projects/${project.id}`])].map(
               (path) => (
@@ -177,28 +209,7 @@ function App() {
             "jwt-redpanda",
           ]),
         ]
-          .filter(
-            (id) =>
-              id !== "banking-risk" &&
-              id !== "microsoft-devops" &&
-              id !== "gcp-retail" &&
-              id !== "eventops-intelligence" &&
-              id !== "ollama" &&
-              id !== "n8n" &&
-              id !== "claude" &&
-              id !== "distributed-reliability" &&
-              id !== "deepseek" &&
-              id !== "field-service" &&
-              id !== "fleet-operations" &&
-              id !== "hugging-face" &&
-              id != "productivity-platform" &&
-              id !== "music-api" &&
-              id !== "enterprise-workspace" &&
-              id !== "ai-entity" &&
-              id != "intelligence-manufacturing-llmops" &&
-              id !== "enterprise-ai-mlops" &&
-              !placeholderProjects.some((project) => project.id === id),
-          )
+          .filter(id => !detailedIds.has(id) && !placeholderProjects.some(project => project.id === id))
           .map((project) => (
             <Route
               key={project}
@@ -206,32 +217,6 @@ function App() {
               element={<ProjectPreview project={project} />}
             />
           ))}
-
-        <Route path="/projects/crewai-revenueops" element={<CrewAIRevenueOps />} />
-        <Route path="/explore/projects/crewai-revenueops" element={<CrewAIRevenueOps />} />
-        <Route path="/projects/eventops-streamlit" element={<EventOpsStreamlit />} />
-        <Route path="/explore/projects/eventops-streamlit" element={<EventOpsStreamlit />} />
-        <Route path="/projects/ms-assessflow" element={<MicrosoftAssessFlow />} />
-        <Route path="/explore/projects/ms-assessflow" element={<MicrosoftAssessFlow />} />
-        <Route path="/projects/banking-risk" element={<AWSBankingRisk />} />
-
-        <Route
-          path="/projects/microsoft-devops"
-          element={<MicrosoftDevOps />}
-        />
-
-        <Route path="/projects/gcp-retail" element={<GCPRetail />} />
-
-        <Route
-          path="/projects/eventops-intelligence"
-          element={<EventOpsIntelligence />}
-        />
-
-        <Route path="/projects/ollama" element={<OllamaPrivateBI />} />
-
-        <Route path="/projects/n8n" element={<OpsFlow />} />
-
-        <Route path="/companies/kailor" element={<KailorVentures />} />
 
         <Route path="/companies/kai" element={<Navigate to="/companies/kailor#kailor-insider" replace />} />
         <Route path="/companies/kailor-insider" element={<Navigate to="/companies/kailor#kailor-insider" replace />} />
@@ -241,62 +226,7 @@ function App() {
         <Route path="/projects/kailor-ai" element={<Navigate to="/companies/kailor#kailor-platform" replace />} />
         <Route path="/explore/projects/kailor-ai" element={<Navigate to="/companies/kailor#kailor-platform" replace />} />
 
-        <Route path="/projects/claude" element={<ClaudeProcurement />} />
-
-        <Route
-          path="/projects/distributed-reliability"
-          element={<SREChaosEngineering />}
-        />
-
-        <Route path="/projects/deepseek" element={<DeepSeekWorkforce />} />
-
-        <Route path="/projects/telecom-billing" element={<TelecomBilling />} />
-
-        <Route
-          path="/projects/field-service"
-          element={<FieldServiceMaintenance />}
-        />
-
-        <Route
-          path="/projects/fleet-operations"
-          element={<FleetOperations />}
-        />
-
-        <Route
-          path="/projects/hugging-face"
-          element={<HuggingFaceInsurance />}
-        />
-
-        <Route
-          path="/projects/productivity-platform"
-          element={<ProductivityPlatform />}
-        />
-
-        <Route path="/projects/music-api" element={<MusicAPI />} />
-
-        <Route
-          path="/projects/enterprise-workspace"
-          element={<EnterpriseWorkspace />}
-        />
-
-        <Route path="/projects/ai-assistant" element={<AIEntity />} />
-
-        <Route
-          path="/projects/intelligence-manufacturing-llmops"
-          element={<ManufacturingQC />}
-        />
-
-        <Route
-          path="/projects/enterprise-ai-mlops"
-          element={<EnterpriseCustomerOperations />}
-        />
-
         <Route path="/explore" element={<Explore />} />
-
-        <Route
-          path="/explore/projects/:projectId"
-          element={<ExploreProjectPreview />}
-        />
 
         <Route path="/cv" element={<CV />} />
 
@@ -306,7 +236,9 @@ function App() {
           path="/certifications"
           element={<Navigate to="/explore?tab=credentials" replace />}
         />
+        <Route path="*" element={<NotFound />} />
       </Routes>
+      </Suspense>
     </BrowserRouter>
   );
 }

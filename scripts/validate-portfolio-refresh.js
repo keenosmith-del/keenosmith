@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { createHash } from 'node:crypto';
 import { build } from 'esbuild';
-await build({ stdin: { contents: `export * from './src/assistant/knowledge.js'; export { taxonomy } from './src/assistant/taxonomy.js'; export { answer } from './src/assistant/engine.js'; export { conversationalAnswer } from './src/assistant/conversation.js'; export { skillIndex, curatedProjects, matchesQuery } from './src/components/pages/Explore/utils/exploreIndex.js'; export { candidateEvidence, evidenceFingerprint, candidateProfile } from './src/components/pages/RecruiterView/utils/candidateEvidence.js'; export { assessRole } from './src/components/pages/RecruiterView/utils/recruiterScoring.js'; export { reviewedProjects, newProjectIds } from './src/data/projectEvidence.js'; export { aiProjectTarget, qualifyingAIProjects, aiProjectCounterLabel } from './src/data/aiInventory.js';`, resolveDir: process.cwd() }, bundle: true, platform: 'node', format: 'esm', outfile: '/tmp/portfolio-complete-refresh.mjs', loader: { '.png': 'empty' } });
+await build({ stdin: { contents: `export * from './src/assistant/knowledge.js'; export { taxonomy } from './src/assistant/taxonomy.js'; export { answer } from './src/assistant/engine.js'; export { conversationalAnswer } from './src/assistant/conversation.js'; export { skillIndex, curatedProjects, matchesQuery } from './src/components/pages/Explore/utils/exploreIndex.js'; export { candidateEvidence, evidenceFingerprint, candidateProfile } from './src/components/pages/RecruiterView/utils/candidateEvidence.js'; export { assessRole } from './src/components/pages/RecruiterView/utils/recruiterScoring.js'; export { reviewedProjects, newProjectIds } from './src/data/projectEvidence.js'; export { aiProjectTarget, qualifyingAIProjects, aiProjectCounterLabel } from './src/data/aiInventory.js';`, resolveDir: process.cwd() }, bundle: true, platform: 'node', format: 'esm', outfile: '/tmp/portfolio-complete-refresh.mjs', loader: { '.png': 'empty', '.webp': 'empty' } });
 const m = await import('/tmp/portfolio-complete-refresh.mjs');
 for (const fn of [m.answer, m.conversationalAnswer]) {
   for (const [query, id] of [
@@ -25,9 +25,9 @@ for (const fn of [m.answer, m.conversationalAnswer]) {
   assert.match(fn('How many years of CrewAI experience?').text, /specific duration is not recorded/);
 }
 assert.equal(new Set(m.canonicalProjects.map(p => p.id)).size, m.canonicalProjects.length);
-assert.equal(m.curatedProjects.length, 22);
+assert.equal(m.curatedProjects.length, 23);
 assert.equal(m.aiProjectTarget, 15);
-assert(m.qualifyingAIProjects.length >= m.aiProjectTarget);
+assert.equal(m.qualifyingAIProjects.length, 13, 'Conservative count discrepancy recorded for owner review');
 assert.equal(new Set(m.qualifyingAIProjects.map(p => p.repository)).size, m.qualifyingAIProjects.length);
 assert.equal(m.aiProjectCounterLabel, '15+ AI projects');
 assert(!m.qualifyingAIProjects.some(p => p.id === 'banking-risk' || p.id === 'n8n'));

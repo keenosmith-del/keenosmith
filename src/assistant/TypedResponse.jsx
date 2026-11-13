@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import mascot from "../assets/images/mascot/mascot.png";
+import mascot from "../assets/images/mascot/mascot.webp";
 import MessageText from "./MessageText.jsx";
 
 // Only this in-flight message renders on a typing tick. Completed cards and

@@ -2,7 +2,6 @@
 // must be running on local
 
 import puppeteer from "puppeteer";
-import fs from "fs";
 
 const browser = await puppeteer.launch();
 

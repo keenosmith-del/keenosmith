@@ -21,7 +21,10 @@ try {
   const { composeProjects } = await server.ssrLoadModule(
     "/src/components/pages/Explore/utils/explorePresentation.js",
   );
-  assert.equal(curatedProjects.length, 22);
+  assert.equal(curatedProjects.length, 23);
+  const ledger = curatedProjects.find(p => p.id === "portfolio-ledger");
+  assert.equal(ledger.route, "/projects/portfolio-ledger");
+  assert(ledger.hasDetailPage && matchesQuery(ledger, "SQLAlchemy"));
   assert(curatedProjects.every((p) => !p.id.startsWith("ux-ui-")));
   for (const id of ["manufacturing-qc", "customer-operations"]) {
     const project = projectIndex.find((p) => p.id === id);
@@ -40,10 +43,10 @@ try {
     assert(curatedProjects.find((p) => p.id === id).hasDetailPage);
     assert(projectIndex.find((p) => p.id === id).demonstrated);
   }
-  assert.equal(new Set(curatedProjects.map((p) => p.id)).size, 22);
+  assert.equal(new Set(curatedProjects.map((p) => p.id)).size, 23);
   assert.equal(
     curatedProjects.filter((p) => p.categories.includes("backend")).length,
-    22,
+    23,
   );
   assert.equal(
     curatedProjects.filter((p) => !p.categories.includes("backend")).length,

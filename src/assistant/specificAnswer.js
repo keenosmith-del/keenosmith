@@ -1,5 +1,5 @@
 import { companyAnswer } from "./companyAnswer.js";
-import { candidateFacts, education, credentials, exactToolRecords, professionalSkillRecords, skillRegistry } from './knowledge.js';
+import { candidateFacts, leadershipRecords, education, credentials, exactToolRecords, professionalSkillRecords, skillRegistry } from './knowledge.js';
 import { implementedSkillProjects, evidence } from './retrieve.js';
 
 // Specific enquiries never fall through to a biography or a different skill.
@@ -14,8 +14,11 @@ export function specificAnswer(q, found) {
       ? tool ? `Keeno records ${candidateFacts.technologyDuration[tool].label} of ${tool} experience. This is separate from his ${candidateFacts.overallExperience.label} of overall relevant experience.` : `A ${names.join(' / ')}-specific duration is not recorded. Keeno has ${candidateFacts.overallExperience.label} of overall relevant experience; that does not establish the same duration with each technology.`
       : `${candidateFacts.identity.join(', ')} with ${candidateFacts.overallExperience.label} of overall relevant experience across independent engineering, founder work, consulting, professional roles and hands-on delivery. His work includes AI training and evaluation at Turing / OpenTrain AI, kailor consulting and application development, and digital platforms and operations at Firstdaes. Overlapping roles are not summed.`, projects: [], credentials: [], indicators: [] };
   }
+  if (/\b(?:leadership|led|mentor(?:ing)?|management responsibility)\b/i.test(q.text)) {
+    return { text: `${leadershipRecords.map(r => `${r.role.title}, ${r.role.employer}: ${r.description}`).join(' ')} ${leadershipRecords[0].limitations}`, projects: [], credentials: [], indicators: [] };
+  }
   if (q.intent === 'education') {
-    return { text: `${education.join(' ')} His full-stack certification and Generative AI learning are supported by the credential records, including WeThinkCode_, AWS × Udacity, and Microsoft × Founderz. The degree requirement is treated as complete for Recruiter View assessment.`, projects: [], credentials, indicators: [] };
+    return { text: `${education.join(' ')} His full-stack certification and Generative AI learning are supported by the credential records, including WeThinkCode_, AWS × Udacity, and Microsoft × Founderz. BSc Computer Science completion is candidate-declared; exact qualification, discipline and level are assessed separately in Recruiter View. An explicit award/conferral requirement needs review.`, projects: [], credentials, indicators: [] };
   }
   if (q.unmatchedTool || names.some(n => exactToolRecords[n])) {
     const name = q.unmatchedTool || names.find(n => exactToolRecords[n]);

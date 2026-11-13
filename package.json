@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "cross-env NODE_ENV=production vite build",
+    "build": "cross-env NODE_ENV=production vite build && node scripts/build-route-html.js",
     "lint": "oxlint",
     "preview": "vite preview",
     "cv:pdf": "node scripts/generate-cv-pdf.js",
@@ -14,17 +14,22 @@
     "test:assistant": "node scripts/build-assistant-server.js && node scripts/validate-assistant.js && node scripts/validate-assistant-expansion.js && node scripts/test-assistant-intelligence.js",
     "test:recruiter": "node scripts/validate-recruiter.js",
     "test:recruiter:browser": "node scripts/verify-recruiter-browser.js",
-    "test:refresh": "node scripts/validate-evidence-refresh.js && node scripts/validate-portfolio-refresh.js"
+    "test:refresh": "node scripts/validate-evidence-refresh.js && node scripts/validate-portfolio-refresh.js",
+    "test:hardening": "node scripts/validate-hardening-evidence.js && node scripts/validate-api-hardening.js",
+    "test:explore": "node src/components/pages/Explore/tests/exploreIndex.test.js",
+    "test:seo": "node scripts/verify-seo.js",
+    "test:browser": "node scripts/run-browser-verification.js",
+    "verify": "npm run lint && npm run build && npm run test:assistant && npm run test:recruiter && npm run test:refresh && npm run test:hardening && npm run test:explore && node scripts/validate-catalogue-routes.js && npm run test:seo"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "lucide-react": "^1.39.0",
-    "puppeteer": "^25.10.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "react-router-dom": "^7.18.3"
   },
   "devDependencies": {
+    "@axe-core/puppeteer": "^4.14.0",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.4",
     "@vitejs/plugin-react": "^6.1.0",
@@ -32,6 +37,7 @@
     "esbuild": "^0.28.2",
     "gh-pages": "^6.3.0",
     "oxlint": "^1.79.0",
+    "puppeteer": "^25.16.0",
     "vite": "^8.2.2"
   }
 }

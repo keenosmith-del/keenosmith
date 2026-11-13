@@ -1,0 +1,485 @@
+[
+  {
+    "source": "src/assets/certifications/ai-ml-scholars/badge1-1.png",
+    "target": "src/assets/certifications/ai-ml-scholars/badge1-1.webp",
+    "originalBytes": 248573,
+    "bytes": 114528,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/certifications/ai-ml-scholars/badge1-2.png",
+    "target": "src/assets/certifications/ai-ml-scholars/badge1-2.webp",
+    "originalBytes": 257871,
+    "bytes": 122060,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/certifications/ai-ml-scholars/badge2.png",
+    "target": "src/assets/certifications/ai-ml-scholars/badge2.webp",
+    "originalBytes": 478547,
+    "bytes": 246134,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/certifications/ai-ml-scholars/cert1.png",
+    "target": "src/assets/certifications/ai-ml-scholars/cert1.webp",
+    "originalBytes": 188210,
+    "bytes": 52488,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/certifications/ai-ml-scholars/cert2.png",
+    "target": "src/assets/certifications/ai-ml-scholars/cert2.webp",
+    "originalBytes": 197782,
+    "bytes": 54350,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/certifications/aws/badge1.png",
+    "target": "src/assets/certifications/aws/badge1.webp",
+    "originalBytes": 30887,
+    "bytes": 16588,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/certifications/aws/badge2.png",
+    "target": "src/assets/certifications/aws/badge2.webp",
+    "originalBytes": 38004,
+    "bytes": 21162,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/certifications/aws/badge4.png",
+    "target": "src/assets/certifications/aws/badge4.webp",
+    "originalBytes": 31550,
+    "bytes": 17622,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/certifications/aws/badge5.png",
+    "target": "src/assets/certifications/aws/badge5.webp",
+    "originalBytes": 31079,
+    "bytes": 16674,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/certifications/aws/badge6.png",
+    "target": "src/assets/certifications/aws/badge6.webp",
+    "originalBytes": 28132,
+    "bytes": 15316,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/certifications/aws/badge7.png",
+    "target": "src/assets/certifications/aws/badge7.webp",
+    "originalBytes": 30574,
+    "bytes": 16034,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/certifications/aws/badge8.png",
+    "target": "src/assets/certifications/aws/badge8.webp",
+    "originalBytes": 29523,
+    "bytes": 15886,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/certifications/aws/badge9.png",
+    "target": "src/assets/certifications/aws/badge9.webp",
+    "originalBytes": 32294,
+    "bytes": 16834,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/certifications/aws/cert1.png",
+    "target": "src/assets/certifications/aws/cert1.webp",
+    "originalBytes": 285102,
+    "bytes": 105220,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/certifications/aws/cert2.png",
+    "target": "src/assets/certifications/aws/cert2.webp",
+    "originalBytes": 288917,
+    "bytes": 109194,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/certifications/aws/cert3.png",
+    "target": "src/assets/certifications/aws/cert3.webp",
+    "originalBytes": 283714,
+    "bytes": 106978,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/certifications/aws/cert4.png",
+    "target": "src/assets/certifications/aws/cert4.webp",
+    "originalBytes": 288321,
+    "bytes": 108734,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/certifications/aws/cert5.png",
+    "target": "src/assets/certifications/aws/cert5.webp",
+    "originalBytes": 282679,
+    "bytes": 104018,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/certifications/aws/cert6.png",
+    "target": "src/assets/certifications/aws/cert6.webp",
+    "originalBytes": 278970,
+    "bytes": 102632,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/certifications/aws/cert7.png",
+    "target": "src/assets/certifications/aws/cert7.webp",
+    "originalBytes": 279129,
+    "bytes": 102506,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/certifications/aws/cert8.png",
+    "target": "src/assets/certifications/aws/cert8.webp",
+    "originalBytes": 278157,
+    "bytes": 101290,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/certifications/aws/cert9.png",
+    "target": "src/assets/certifications/aws/cert9.webp",
+    "originalBytes": 285585,
+    "bytes": 105442,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/certifications/google/cert1.png",
+    "target": "src/assets/certifications/google/cert1.webp",
+    "originalBytes": 51513,
+    "bytes": 10430,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/certifications/hyperiondev-stellenbosch/cert1.png",
+    "target": "src/assets/certifications/hyperiondev-stellenbosch/cert1.webp",
+    "originalBytes": 653161,
+    "bytes": 168454,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/certifications/hyperiondev-stellenbosch/cert2.png",
+    "target": "src/assets/certifications/hyperiondev-stellenbosch/cert2.webp",
+    "originalBytes": 657176,
+    "bytes": 172624,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/certifications/microsoft/badge1.png",
+    "target": "src/assets/certifications/microsoft/badge1.webp",
+    "originalBytes": 387407,
+    "bytes": 246138,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/certifications/microsoft/cert1.png",
+    "target": "src/assets/certifications/microsoft/cert1.webp",
+    "originalBytes": 113194,
+    "bytes": 44372,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/certifications/microsoft/cert2.png",
+    "target": "src/assets/certifications/microsoft/cert2.webp",
+    "originalBytes": 1661697,
+    "bytes": 922852,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/certifications/microsoft/cert3.png",
+    "target": "src/assets/certifications/microsoft/cert3.webp",
+    "originalBytes": 1673404,
+    "bytes": 927810,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/certifications/microsoft/cert4.png",
+    "target": "src/assets/certifications/microsoft/cert4.webp",
+    "originalBytes": 228736,
+    "bytes": 84110,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/certifications/n8n/badge1.png",
+    "target": "src/assets/certifications/n8n/badge1.webp",
+    "originalBytes": 48508,
+    "bytes": 26080,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/certifications/n8n/badge2.png",
+    "target": "src/assets/certifications/n8n/badge2.webp",
+    "originalBytes": 49773,
+    "bytes": 26788,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/certifications/n8n/badge4.png",
+    "target": "src/assets/certifications/n8n/badge4.webp",
+    "originalBytes": 42796,
+    "bytes": 22038,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/certifications/n8n/cert1.png",
+    "target": "src/assets/certifications/n8n/cert1.webp",
+    "originalBytes": 545978,
+    "bytes": 229224,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/certifications/n8n/cert2.png",
+    "target": "src/assets/certifications/n8n/cert2.webp",
+    "originalBytes": 527545,
+    "bytes": 221822,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/certifications/n8n/cert3.png",
+    "target": "src/assets/certifications/n8n/cert3.webp",
+    "originalBytes": 526893,
+    "bytes": 219988,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/certifications/n8n/cert4.png",
+    "target": "src/assets/certifications/n8n/cert4.webp",
+    "originalBytes": 521385,
+    "bytes": 217158,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/certifications/wethinkcode/cert1.png",
+    "target": "src/assets/certifications/wethinkcode/cert1.webp",
+    "originalBytes": 1557067,
+    "bytes": 818140,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/explore-creds/laurel-wreath-1.png",
+    "target": "src/assets/explore-creds/laurel-wreath-1.webp",
+    "originalBytes": 328002,
+    "bytes": 152688,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/explore-creds/laurel-wreath-2.png",
+    "target": "src/assets/explore-creds/laurel-wreath-2.webp",
+    "originalBytes": 301356,
+    "bytes": 139278,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/explore-creds/star-wreath.png",
+    "target": "src/assets/explore-creds/star-wreath.webp",
+    "originalBytes": 231523,
+    "bytes": 100576,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/images/ai-section/eventops-project.png",
+    "target": "src/assets/images/ai-section/eventops-project.webp",
+    "originalBytes": 704067,
+    "bytes": 397074,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/images/ai-section/hugging-face-project.png",
+    "target": "src/assets/images/ai-section/hugging-face-project.webp",
+    "originalBytes": 715143,
+    "bytes": 416766,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/images/ai-section/ollama-project.png",
+    "target": "src/assets/images/ai-section/ollama-project.webp",
+    "originalBytes": 1567347,
+    "bytes": 833060,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/images/avatar/hero-full-body-laughing.png",
+    "target": "src/assets/images/avatar/hero-full-body-laughing.webp",
+    "originalBytes": 1059712,
+    "bytes": 514338,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/images/avatar/hero-full-body.png",
+    "target": "src/assets/images/avatar/hero-full-body.webp",
+    "originalBytes": 1098917,
+    "bytes": 541474,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/images/avatar/url-icon.png",
+    "target": "src/assets/images/avatar/url-icon.webp",
+    "originalBytes": 1916115,
+    "bytes": 1263116,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/images/cloud-section/aws-project.png",
+    "target": "src/assets/images/cloud-section/aws-project.webp",
+    "originalBytes": 1551934,
+    "bytes": 801844,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/images/cloud-section/gcp-project.png",
+    "target": "src/assets/images/cloud-section/gcp-project.webp",
+    "originalBytes": 1660257,
+    "bytes": 809828,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/images/cloud-section/ms-project.png",
+    "target": "src/assets/images/cloud-section/ms-project.webp",
+    "originalBytes": 2223468,
+    "bytes": 1165182,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/images/custom-projects/ai-model-project.png",
+    "target": "src/assets/images/custom-projects/ai-model-project.webp",
+    "originalBytes": 1571759,
+    "bytes": 777404,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/images/custom-projects/chaos-project.png",
+    "target": "src/assets/images/custom-projects/chaos-project.webp",
+    "originalBytes": 1573321,
+    "bytes": 801558,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/images/custom-projects/claude-project.png",
+    "target": "src/assets/images/custom-projects/claude-project.webp",
+    "originalBytes": 2449499,
+    "bytes": 1274070,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/images/custom-projects/crewai-revenueops.png",
+    "target": "src/assets/images/custom-projects/crewai-revenueops.webp",
+    "originalBytes": 1865411,
+    "bytes": 1030990,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/images/custom-projects/enterprise-ai-mlops.png",
+    "target": "src/assets/images/custom-projects/enterprise-ai-mlops.webp",
+    "originalBytes": 2483887,
+    "bytes": 1318104,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/images/custom-projects/enterprise-workspace-project.png",
+    "target": "src/assets/images/custom-projects/enterprise-workspace-project.webp",
+    "originalBytes": 1895201,
+    "bytes": 1027538,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/images/custom-projects/eventops-low-code-streamlit.png",
+    "target": "src/assets/images/custom-projects/eventops-low-code-streamlit.webp",
+    "originalBytes": 2126314,
+    "bytes": 1233782,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/images/custom-projects/field-service-project.png",
+    "target": "src/assets/images/custom-projects/field-service-project.webp",
+    "originalBytes": 2150615,
+    "bytes": 1072836,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/images/custom-projects/hr-project.png",
+    "target": "src/assets/images/custom-projects/hr-project.webp",
+    "originalBytes": 2288216,
+    "bytes": 1260038,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/images/custom-projects/intelligence-manufacturing-project.png",
+    "target": "src/assets/images/custom-projects/intelligence-manufacturing-project.webp",
+    "originalBytes": 2420922,
+    "bytes": 1243444,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/images/custom-projects/logistics-project.png",
+    "target": "src/assets/images/custom-projects/logistics-project.webp",
+    "originalBytes": 1539012,
+    "bytes": 792860,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/images/custom-projects/mern-project.png",
+    "target": "src/assets/images/custom-projects/mern-project.webp",
+    "originalBytes": 2244188,
+    "bytes": 1199100,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/images/custom-projects/ms-assessflow.png",
+    "target": "src/assets/images/custom-projects/ms-assessflow.webp",
+    "originalBytes": 2351440,
+    "bytes": 1367554,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/images/custom-projects/music-api-project.png",
+    "target": "src/assets/images/custom-projects/music-api-project.webp",
+    "originalBytes": 1404682,
+    "bytes": 730096,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/images/custom-projects/telecom-project.png",
+    "target": "src/assets/images/custom-projects/telecom-project.webp",
+    "originalBytes": 1682958,
+    "bytes": 880422,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/images/full-stack-section/n8n-project.png",
+    "target": "src/assets/images/full-stack-section/n8n-project.webp",
+    "originalBytes": 1383992,
+    "bytes": 704116,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/images/kailor/kailor-unamused.png",
+    "target": "src/assets/images/kailor/kailor-unamused.webp",
+    "originalBytes": 1169435,
+    "bytes": 696372,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/images/mascot/mascot-2.png",
+    "target": "src/assets/images/mascot/mascot-2.webp",
+    "originalBytes": 842097,
+    "bytes": 449336,
+    "pixelIdentical": true
+  },
+  {
+    "source": "src/assets/images/mascot/mascot.png",
+    "target": "src/assets/images/mascot/mascot.webp",
+    "originalBytes": 2293777,
+    "bytes": 1279242,
+    "pixelIdentical": true
+  }
+]
