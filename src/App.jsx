@@ -42,6 +42,7 @@ const AWSBankingRisk = lazy(() => import("./components/pages/projects/AWSBanking
 const MicrosoftDevOps = lazy(() => import("./components/pages/projects/MicrosoftDevOps/MicrosoftDevOps.jsx"));
 const GCPRetail = lazy(() => import("./components/pages/projects/GCPRetail/GCPRetail.jsx"));
 
+const PortfolioLedger = lazy(() => import("./components/pages/projects/PortfolioLedger/PortfolioLedger.jsx"));
 const EventOpsIntelligence = lazy(() => import("./components/pages/projects/EventOpsIntelligence/EventOpsIntelligence.jsx"));
 const CrewAIRevenueOps = lazy(() => import("./components/pages/projects/CrewAIRevenueOps/CrewAIRevenueOps.jsx"));
 const EventOpsStreamlit = lazy(() => import("./components/pages/projects/EventOpsStreamlit/EventOpsStreamlit.jsx"));
@@ -101,10 +102,13 @@ import "./components/pages/projects/EnterpriseWorkspace/EnterpriseWorkspace.css"
 import "./components/pages/projects/AIEntity/AIEntity.css";
 import "./components/pages/projects/ManufacturingQC/ManufacturingQC.css";
 import "./components/pages/projects/EnterpriseCustomerOperations/EnterpriseCustomerOperations.css";
+import "./components/pages/projects/PortfolioLedger/PortfolioLedger.css";
 import "./components/pages/projects/shared/ProjectPage.css";
 
 // Concrete pages are declared once; placeholders cannot shadow these routes.
 const projectPageRoutes = [
+  ["/projects/portfolio-ledger", PortfolioLedger],
+  ["/explore/projects/portfolio-ledger", PortfolioLedger],
   ["/projects/crewai-revenueops", CrewAIRevenueOps],
   ["/explore/projects/crewai-revenueops", CrewAIRevenueOps],
   ["/projects/eventops-streamlit", EventOpsStreamlit],

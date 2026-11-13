@@ -1,3 +1,4 @@
+import ledgerCover from "../assets/images/custom-projects/portfolio-ledger-full.png";
 import revenueOpsCover from "../assets/images/custom-projects/crewai-revenueops.webp";
 import revenueOpsCoverSmall from "../assets/images/custom-projects/crewai-revenueops-640.webp";
 import streamlitCover from "../assets/images/custom-projects/eventops-low-code-streamlit.webp";
@@ -46,6 +47,7 @@ import eventOpsCoverSmall from "../assets/images/ai-section/eventops-project-640
 
 // Shared by Explore and Selected projects; key by ID to keep artwork and colours aligned.
 export const projectArtwork = {
+  "portfolio-ledger": { image: ledgerCover, viewBox: "205 0 690 976", width: 1122, height: 976, background: "#73614f", ink: "var(--surface)" },
   "crewai-revenueops": { image: revenueOpsCover, srcSet: `${revenueOpsCoverSmall} 640w, ${revenueOpsCover} 1122w`, background: "#353336", ink: "var(--surface)" },
   "eventops-streamlit": { image: streamlitCover, srcSet: `${streamlitCoverSmall} 640w, ${streamlitCover} 1122w`, background: "#9b9692", ink: "#202022" },
   "ms-assessflow": { image: assessFlowCover, srcSet: `${assessFlowCoverSmall} 640w, ${assessFlowCover} 1024w`, background: "#b0814b", ink: "#202022" },

@@ -1474,6 +1474,10 @@ a.explore-project:focus-visible { outline: 2px solid var(--charcoal); outline-of
   object-position: center bottom;
   margin: 0;
 }
+/* Frame the Ledger character without the PNG's wide transparent side margins. */
+.explore-project-panel [data-explore-id="portfolio-ledger"] .explore-project-cover {
+  overflow: hidden;
+}
 .explore-project::after {
   content: "";
   position: absolute;

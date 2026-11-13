@@ -25,7 +25,7 @@ for (const fn of [m.answer, m.conversationalAnswer]) {
   assert.match(fn('How many years of CrewAI experience?').text, /specific duration is not recorded/);
 }
 assert.equal(new Set(m.canonicalProjects.map(p => p.id)).size, m.canonicalProjects.length);
-assert.equal(m.curatedProjects.length, 22);
+assert.equal(m.curatedProjects.length, 23);
 assert.equal(m.aiProjectTarget, 15);
 assert.equal(m.qualifyingAIProjects.length, 13, 'Conservative count discrepancy recorded for owner review');
 assert.equal(new Set(m.qualifyingAIProjects.map(p => p.repository)).size, m.qualifyingAIProjects.length);
