@@ -5,7 +5,7 @@ const browser=await puppeteer.launch({headless:true});
 try{
  const page=await browser.newPage();
  await page.evaluateOnNewDocument(()=>{
-  const NativeDate=Date;const fixed=NativeDate.parse('2026-11-07T00:00:00+02:00');
+  const NativeDate=Date;const fixed=NativeDate.parse('2027-05-05T00:00:00+02:00');
   window.Date=class extends NativeDate{constructor(...args){super(...(args.length?args:[fixed]))}static now(){return fixed}};
  });
  for(const route of ['/','/companies/kailor']){

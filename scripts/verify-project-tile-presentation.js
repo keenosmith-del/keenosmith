@@ -7,7 +7,7 @@ const output = '/tmp/portfolio-tile-correction';
 await fs.mkdir(output,{recursive:true});
 await build({stdin:{contents:`export { curatedProjects } from './src/components/pages/Explore/utils/exploreIndex.js';`,resolveDir:process.cwd()},bundle:true,platform:'node',format:'esm',outfile:`${output}/expected.mjs`,loader:{'.png':'empty','.webp':'empty'}});
 const {curatedProjects}=await import(`${output}/expected.mjs`);
-assert.equal(curatedProjects.length,22);
+assert.equal(curatedProjects.length,23);
 const topSets=new Set(), lowerSets=new Set();
 for(const project of curatedProjects){
   assert(project.topSkills?.length && project.tileSkills?.length,project.id);
@@ -17,8 +17,8 @@ for(const project of curatedProjects){
   topSets.add(project.topSkills.join('|')); lowerSets.add(project.tileSkills.join('|'));
   assert.notDeepEqual(project.tileSkills,['React','TypeScript','Vite']);
 }
-assert.equal(topSets.size,22,'Top pills must be deliberately project-specific');
-assert.equal(lowerSets.size,22,'Each technology-pill selection must be project-specific');
+assert.equal(topSets.size,curatedProjects.length,'Top pills must be deliberately project-specific');
+assert.equal(lowerSets.size,curatedProjects.length,'Each technology-pill selection must be project-specific');
 // Linux headless Chrome reports a non-hover primary device. CI supplies a
 // virtual desktop so this regression exercises the real hover media query.
 const browser=await puppeteer.launch({headless:process.env.PORTFOLIO_TEST_HEADFUL !== '1'});
@@ -36,14 +36,17 @@ try{
       const selector=`[data-explore-id="${project.id}"]`;
       await page.$eval(selector,e=>e.scrollIntoView({behavior:'instant',block:'center'}));
       await page.mouse.move(0,0);
-      await page.waitForFunction(sel=>document.querySelector(`${sel} img`).naturalWidth>0,{},selector);
+      await page.waitForFunction(sel=>document.querySelector(`${sel} img`)?.naturalWidth>0 || !!document.querySelector(`${sel} svg image`)?.getAttribute('href'),{},selector);
       await page.waitForFunction(sel=>Number(getComputedStyle(document.querySelector(`${sel} .explore-project-arrow`)).opacity)<.05,{},selector);
       const rest=await page.$eval(selector,e=>{
-        const box=e.getBoundingClientRect(),image=e.querySelector('img').getBoundingClientRect();
+        const box=e.getBoundingClientRect(),image=e.querySelector('.explore-project-cover').getBoundingClientRect();
         const visible=node=>!!node&&getComputedStyle(node).display!=='none'&&getComputedStyle(node).visibility!=='hidden'&&Number(getComputedStyle(node).opacity)>.95&&node.getBoundingClientRect().height>0;
-        return {reveal:Number(getComputedStyle(e.querySelector('.explore-project-reveal')).opacity),title:visible(e.querySelector('h2')),top:visible(e.querySelector('.explore-domain')),description:visible(e.querySelector('.explore-description')),pills:visible(e.querySelector('.explore-tags')),arrow:Number(getComputedStyle(e.querySelector('.explore-project-arrow')).opacity),imageBottom:Math.abs(image.bottom-box.bottom),fit:getComputedStyle(e.querySelector('img')).objectFit,position:getComputedStyle(e.querySelector('img')).objectPosition};
+        return {reveal:Number(getComputedStyle(e.querySelector('.explore-project-reveal')).opacity),title:visible(e.querySelector('h2')),top:visible(e.querySelector('.explore-domain')),description:visible(e.querySelector('.explore-description')),pills:visible(e.querySelector('.explore-tags')),arrow:Number(getComputedStyle(e.querySelector('.explore-project-arrow')).opacity),imageBottom:Math.abs(image.bottom-box.bottom),fit:getComputedStyle(e.querySelector('.explore-project-cover')).objectFit,position:getComputedStyle(e.querySelector('.explore-project-cover')).objectPosition};
       });
       assert(rest.reveal>.95&&rest.title&&rest.top,`${project.id} missing initial title/top at ${width}`);
+      if (project.id === 'portfolio-ledger') {
+        assert.equal(await page.$eval(`${selector} svg`, e => e.getAttribute('preserveAspectRatio')), 'xMidYMax meet');
+      }
       assert(rest.imageBottom<1&&rest.fit==='contain'&&rest.position==='50% 100%',`${project.id} artwork is not contained at the bottom at ${width}`);
       assert.equal(await page.$eval(`${selector} .explore-domain`,e=>e.textContent),project.topSkills.join(' · '));
       assert.deepEqual(await page.$$eval(`${selector} .explore-tags span`,els=>els.map(e=>e.textContent)),project.tileSkills);
@@ -73,7 +76,7 @@ try{
       }
     }
     assert(!await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),`Page overflow ${width}`);
-    results.push({width,tiles:22,artwork:'contained at bottom',restHoverFocus:'passed'});
+    results.push({width,tiles:curatedProjects.length,artwork:'contained at bottom',restHoverFocus:'passed'});
   }
   await page.setViewport({width:390,height:844,isMobile:true,hasTouch:true});
   await page.goto(`${base}/explore?tab=projects`,{waitUntil:'networkidle0'});
@@ -85,5 +88,5 @@ try{
   }
   assert.deepEqual(errors,[]);
   await fs.writeFile(`${output}/results.json`,JSON.stringify({results,topPillSelections:topSets.size,technologySelections:lowerSets.size,touch:'passed',errors},null,2));
-  console.log('PASS: 22 source-backed unique top/technology pill selections; all tiles at 5 sizes; actual resting/hover/focus states, touch, artwork bottom alignment and caption/control bounds.');
+  console.log('PASS: 23 source-backed unique top/technology pill selections; all tiles at 5 sizes; actual resting/hover/focus states, touch, artwork bottom alignment and caption/control bounds.');
 }finally{await browser.close();}
